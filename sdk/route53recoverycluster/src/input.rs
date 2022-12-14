@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
 pub mod get_routing_control_state_input {
-    
+
     /// A builder for [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
@@ -16,82 +16,130 @@ pub mod get_routing_control_state_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.routing_control_arn = input; self
+        pub fn set_routing_control_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_control_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
-        pub fn build(self) -> Result<crate::input::GetRoutingControlStateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetRoutingControlStateInput {
-                    routing_control_arn: self.routing_control_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetRoutingControlStateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetRoutingControlStateInput {
+                routing_control_arn: self.routing_control_arn,
+            })
         }
     }
-    
-    
 }
 impl GetRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`GetRoutingControlState`](crate::operation::GetRoutingControlState)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRoutingControlState, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRoutingControlState,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetRoutingControlStateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetRoutingControlStateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetRoutingControlStateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRoutingControlStateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "ToggleCustomerAPI.GetRoutingControlState"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ToggleCustomerAPI.GetRoutingControlState",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_routing_control_state(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_routing_control_state(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRoutingControlState::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRoutingControlState", "route53recoverycluster"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRoutingControlState::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRoutingControlState",
+            "route53recoverycluster",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -103,9 +151,9 @@ impl GetRoutingControlStateInput {
 
 /// See [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
 pub mod list_routing_controls_input {
-    
+
     /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -118,8 +166,12 @@ pub mod list_routing_controls_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-        pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.control_panel_arn = input; self
+        pub fn set_control_panel_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.control_panel_arn = input;
+            self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +180,8 @@ pub mod list_routing_controls_input {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -137,85 +190,126 @@ pub mod list_routing_controls_input {
         }
         /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
-        pub fn build(self) -> Result<crate::input::ListRoutingControlsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRoutingControlsInput {
-                    control_panel_arn: self.control_panel_arn
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRoutingControlsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRoutingControlsInput {
+                control_panel_arn: self.control_panel_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListRoutingControlsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingControls`](crate::operation::ListRoutingControls)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRoutingControls, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRoutingControls,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRoutingControlsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRoutingControlsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRoutingControlsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRoutingControlsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "ToggleCustomerAPI.ListRoutingControls"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ToggleCustomerAPI.ListRoutingControls",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_routing_controls(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_routing_controls(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRoutingControls::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRoutingControls", "route53recoverycluster"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRoutingControls::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRoutingControls",
+            "route53recoverycluster",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -227,13 +321,14 @@ impl ListRoutingControlsInput {
 
 /// See [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
 pub mod update_routing_control_state_input {
-    
+
     /// A builder for [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
-        pub(crate) safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) safety_rules_to_override:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
@@ -242,8 +337,12 @@ pub mod update_routing_control_state_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.routing_control_arn = input; self
+        pub fn set_routing_control_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.routing_control_arn = input;
+            self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>
         pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
@@ -251,103 +350,155 @@ pub mod update_routing_control_state_input {
             self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-        pub fn set_routing_control_state(mut self, input: std::option::Option<crate::model::RoutingControlState>) -> Self {
-            self.routing_control_state = input; self
+        pub fn set_routing_control_state(
+            mut self,
+            input: std::option::Option<crate::model::RoutingControlState>,
+        ) -> Self {
+            self.routing_control_state = input;
+            self
         }
         /// Appends an item to `safety_rules_to_override`.
         ///
         /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
         ///
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.safety_rules_to_override.unwrap_or_default();
-                            v.push(input.into());
-                            self.safety_rules_to_override = Some(v);
-                            self
+            v.push(input.into());
+            self.safety_rules_to_override = Some(v);
+            self
         }
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn set_safety_rules_to_override(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.safety_rules_to_override = input; self
+        pub fn set_safety_rules_to_override(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.safety_rules_to_override = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
-        pub fn build(self) -> Result<crate::input::UpdateRoutingControlStateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateRoutingControlStateInput {
-                    routing_control_arn: self.routing_control_arn
-                    ,
-                    routing_control_state: self.routing_control_state
-                    ,
-                    safety_rules_to_override: self.safety_rules_to_override
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateRoutingControlStateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateRoutingControlStateInput {
+                routing_control_arn: self.routing_control_arn,
+                routing_control_state: self.routing_control_state,
+                safety_rules_to_override: self.safety_rules_to_override,
+            })
         }
     }
-    
-    
 }
 impl UpdateRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlState`](crate::operation::UpdateRoutingControlState)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRoutingControlState, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRoutingControlState,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateRoutingControlStateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateRoutingControlStateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateRoutingControlStateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRoutingControlStateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "ToggleCustomerAPI.UpdateRoutingControlState"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ToggleCustomerAPI.UpdateRoutingControlState",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_control_state(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_control_state(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRoutingControlState::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRoutingControlState", "route53recoverycluster"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRoutingControlState::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRoutingControlState",
+            "route53recoverycluster",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -359,12 +510,14 @@ impl UpdateRoutingControlStateInput {
 
 /// See [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
 pub mod update_routing_control_states_input {
-    
+
     /// A builder for [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) update_routing_control_state_entries: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
-        pub(crate) safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) update_routing_control_state_entries:
+            std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
+        pub(crate) safety_rules_to_override:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `update_routing_control_state_entries`.
@@ -372,71 +525,104 @@ pub mod update_routing_control_states_input {
         /// To override the contents of this collection use [`set_update_routing_control_state_entries`](Self::set_update_routing_control_state_entries).
         ///
         /// <p>A set of routing control entries that you want to update.</p>
-        pub fn update_routing_control_state_entries(mut self, input: crate::model::UpdateRoutingControlStateEntry) -> Self {
-            let mut v = self.update_routing_control_state_entries.unwrap_or_default();
-                            v.push(input);
-                            self.update_routing_control_state_entries = Some(v);
-                            self
+        pub fn update_routing_control_state_entries(
+            mut self,
+            input: crate::model::UpdateRoutingControlStateEntry,
+        ) -> Self {
+            let mut v = self
+                .update_routing_control_state_entries
+                .unwrap_or_default();
+            v.push(input);
+            self.update_routing_control_state_entries = Some(v);
+            self
         }
         /// <p>A set of routing control entries that you want to update.</p>
-        pub fn set_update_routing_control_state_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>) -> Self {
-            self.update_routing_control_state_entries = input; self
+        pub fn set_update_routing_control_state_entries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
+        ) -> Self {
+            self.update_routing_control_state_entries = input;
+            self
         }
         /// Appends an item to `safety_rules_to_override`.
         ///
         /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).
         ///
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
         pub fn safety_rules_to_override(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.safety_rules_to_override.unwrap_or_default();
-                            v.push(input.into());
-                            self.safety_rules_to_override = Some(v);
-                            self
+            v.push(input.into());
+            self.safety_rules_to_override = Some(v);
+            self
         }
-        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+        /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-        pub fn set_safety_rules_to_override(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.safety_rules_to_override = input; self
+        pub fn set_safety_rules_to_override(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.safety_rules_to_override = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
-        pub fn build(self) -> Result<crate::input::UpdateRoutingControlStatesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateRoutingControlStatesInput {
-                    update_routing_control_state_entries: self.update_routing_control_state_entries
-                    ,
-                    safety_rules_to_override: self.safety_rules_to_override
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateRoutingControlStatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateRoutingControlStatesInput {
+                update_routing_control_state_entries: self.update_routing_control_state_entries,
+                safety_rules_to_override: self.safety_rules_to_override,
+            })
         }
     }
-    
-    
 }
 impl UpdateRoutingControlStatesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlStates`](crate::operation::UpdateRoutingControlStates)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRoutingControlStates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRoutingControlStates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateRoutingControlStatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateRoutingControlStatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateRoutingControlStatesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRoutingControlStatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "ToggleCustomerAPI.UpdateRoutingControlStates"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ToggleCustomerAPI.UpdateRoutingControlStates",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -444,36 +630,58 @@ impl UpdateRoutingControlStatesInput {
             crate::operation_ser::serialize_operation_crate_operation_update_routing_control_states(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRoutingControlStates::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRoutingControlStates", "route53recoverycluster"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRoutingControlStates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRoutingControlStates",
+            "route53recoverycluster",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -484,61 +692,74 @@ impl UpdateRoutingControlStatesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateRoutingControlStatesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
-    #[doc(hidden)]pub update_routing_control_state_entries: std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
-    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+    #[doc(hidden)]
+    pub update_routing_control_state_entries:
+        std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[doc(hidden)]pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateRoutingControlStatesInput {
     /// <p>A set of routing control entries that you want to update.</p>
-    pub fn update_routing_control_state_entries(&self) -> std::option::Option<& [crate::model::UpdateRoutingControlStateEntry]> {
+    pub fn update_routing_control_state_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateRoutingControlStateEntry]> {
         self.update_routing_control_state_entries.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn safety_rules_to_override(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn safety_rules_to_override(&self) -> std::option::Option<&[std::string::String]> {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateRoutingControlStatesInput  {
+impl std::fmt::Debug for UpdateRoutingControlStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlStatesInput");
-        formatter.field("update_routing_control_state_entries", &self.update_routing_control_state_entries);
+        formatter.field(
+            "update_routing_control_state_entries",
+            &self.update_routing_control_state_entries,
+        );
         formatter.field("safety_rules_to_override", &self.safety_rules_to_override);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateRoutingControlStateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    #[doc(hidden)]pub routing_control_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    #[doc(hidden)]pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
-    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+    #[doc(hidden)]
+    pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    #[doc(hidden)]pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub safety_rules_to_override: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn routing_control_state(&self) -> std::option::Option<& crate::model::RoutingControlState> {
+    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
-    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p> 
+    /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn safety_rules_to_override(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn safety_rules_to_override(&self) -> std::option::Option<&[std::string::String]> {
         self.safety_rules_to_override.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateRoutingControlStateInput  {
+impl std::fmt::Debug for UpdateRoutingControlStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlStateInput");
         formatter.field("routing_control_arn", &self.routing_control_arn);
@@ -549,22 +770,26 @@ impl  std::fmt::Debug for UpdateRoutingControlStateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRoutingControlsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    #[doc(hidden)]pub control_panel_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListRoutingControlsInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<& str> {
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
@@ -572,7 +797,7 @@ impl ListRoutingControlsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListRoutingControlsInput  {
+impl std::fmt::Debug for ListRoutingControlsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRoutingControlsInput");
         formatter.field("control_panel_arn", &self.control_panel_arn);
@@ -583,22 +808,23 @@ impl  std::fmt::Debug for ListRoutingControlsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetRoutingControlStateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    #[doc(hidden)]pub routing_control_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl GetRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for GetRoutingControlStateInput  {
+impl std::fmt::Debug for GetRoutingControlStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoutingControlStateInput");
         formatter.field("routing_control_arn", &self.routing_control_arn);
         formatter.finish()
     }
 }
-

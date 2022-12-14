@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AddAttributesToFindingsInput`](crate::input::AddAttributesToFindingsInput).
 pub mod add_attributes_to_findings_input {
-    
+
     /// A builder for [`AddAttributesToFindingsInput`](crate::input::AddAttributesToFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -18,13 +18,17 @@ pub mod add_attributes_to_findings_input {
         /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
         pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.finding_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.finding_arns = Some(v);
+            self
         }
         /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-        pub fn set_finding_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.finding_arns = input; self
+        pub fn set_finding_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.finding_arns = input;
+            self
         }
         /// Appends an item to `attributes`.
         ///
@@ -33,89 +37,138 @@ pub mod add_attributes_to_findings_input {
         /// <p>The array of attributes that you want to assign to specified findings.</p>
         pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-                            v.push(input);
-                            self.attributes = Some(v);
-                            self
+            v.push(input);
+            self.attributes = Some(v);
+            self
         }
         /// <p>The array of attributes that you want to assign to specified findings.</p>
-        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
-            self.attributes = input; self
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddAttributesToFindingsInput`](crate::input::AddAttributesToFindingsInput).
-        pub fn build(self) -> Result<crate::input::AddAttributesToFindingsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddAttributesToFindingsInput {
-                    finding_arns: self.finding_arns
-                    ,
-                    attributes: self.attributes
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AddAttributesToFindingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AddAttributesToFindingsInput {
+                finding_arns: self.finding_arns,
+                attributes: self.attributes,
+            })
         }
     }
-    
-    
 }
 impl AddAttributesToFindingsInput {
     /// Consumes the builder and constructs an Operation<[`AddAttributesToFindings`](crate::operation::AddAttributesToFindings)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddAttributesToFindings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddAttributesToFindings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddAttributesToFindingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddAttributesToFindingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddAttributesToFindingsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddAttributesToFindingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.AddAttributesToFindings"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.AddAttributesToFindings",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_attributes_to_findings(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_attributes_to_findings(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddAttributesToFindings::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddAttributesToFindings", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddAttributesToFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddAttributesToFindings",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -127,9 +180,9 @@ impl AddAttributesToFindingsInput {
 
 /// See [`CreateAssessmentTargetInput`](crate::input::CreateAssessmentTargetInput).
 pub mod create_assessment_target_input {
-    
+
     /// A builder for [`CreateAssessmentTargetInput`](crate::input::CreateAssessmentTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_name: std::option::Option<std::string::String>,
         pub(crate) resource_group_arn: std::option::Option<std::string::String>,
@@ -141,8 +194,12 @@ pub mod create_assessment_target_input {
             self
         }
         /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-        pub fn set_assessment_target_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_target_name = input; self
+        pub fn set_assessment_target_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_target_name = input;
+            self
         }
         /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,84 +207,131 @@ pub mod create_assessment_target_input {
             self
         }
         /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-        pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_group_arn = input; self
+        pub fn set_resource_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_group_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateAssessmentTargetInput`](crate::input::CreateAssessmentTargetInput).
-        pub fn build(self) -> Result<crate::input::CreateAssessmentTargetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateAssessmentTargetInput {
-                    assessment_target_name: self.assessment_target_name
-                    ,
-                    resource_group_arn: self.resource_group_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateAssessmentTargetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateAssessmentTargetInput {
+                assessment_target_name: self.assessment_target_name,
+                resource_group_arn: self.resource_group_arn,
+            })
         }
     }
-    
-    
 }
 impl CreateAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssessmentTarget`](crate::operation::CreateAssessmentTarget)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAssessmentTarget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAssessmentTarget,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateAssessmentTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateAssessmentTargetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateAssessmentTargetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAssessmentTargetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.CreateAssessmentTarget"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.CreateAssessmentTarget",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_assessment_target(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_assessment_target(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAssessmentTarget::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAssessmentTarget", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAssessmentTarget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAssessmentTarget",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -239,15 +343,16 @@ impl CreateAssessmentTargetInput {
 
 /// See [`CreateAssessmentTemplateInput`](crate::input::CreateAssessmentTemplateInput).
 pub mod create_assessment_template_input {
-    
+
     /// A builder for [`CreateAssessmentTemplateInput`](crate::input::CreateAssessmentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
         pub(crate) assessment_template_name: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i32>,
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+        pub(crate) user_attributes_for_findings:
+            std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
         /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
@@ -256,8 +361,12 @@ pub mod create_assessment_template_input {
             self
         }
         /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-        pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_target_arn = input; self
+        pub fn set_assessment_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_target_arn = input;
+            self
         }
         /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
         pub fn assessment_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,8 +374,12 @@ pub mod create_assessment_template_input {
             self
         }
         /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-        pub fn set_assessment_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_template_name = input; self
+        pub fn set_assessment_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_template_name = input;
+            self
         }
         /// <p>The duration of the assessment run in seconds.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -275,7 +388,8 @@ pub mod create_assessment_template_input {
         }
         /// <p>The duration of the assessment run in seconds.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input; self
+            self.duration_in_seconds = input;
+            self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -284,13 +398,17 @@ pub mod create_assessment_template_input {
         /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.rules_package_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.rules_package_arns = Some(v);
+            self
         }
         /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.rules_package_arns = input; self
+        pub fn set_rules_package_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.rules_package_arns = input;
+            self
         }
         /// Appends an item to `user_attributes_for_findings`.
         ///
@@ -299,96 +417,141 @@ pub mod create_assessment_template_input {
         /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
         pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-                            v.push(input);
-                            self.user_attributes_for_findings = Some(v);
-                            self
+            v.push(input);
+            self.user_attributes_for_findings = Some(v);
+            self
         }
         /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-        pub fn set_user_attributes_for_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
-            self.user_attributes_for_findings = input; self
+        pub fn set_user_attributes_for_findings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+        ) -> Self {
+            self.user_attributes_for_findings = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateAssessmentTemplateInput`](crate::input::CreateAssessmentTemplateInput).
-        pub fn build(self) -> Result<crate::input::CreateAssessmentTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateAssessmentTemplateInput {
-                    assessment_target_arn: self.assessment_target_arn
-                    ,
-                    assessment_template_name: self.assessment_template_name
-                    ,
-                    duration_in_seconds: self.duration_in_seconds
-                        .unwrap_or_default()
-                    ,
-                    rules_package_arns: self.rules_package_arns
-                    ,
-                    user_attributes_for_findings: self.user_attributes_for_findings
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateAssessmentTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateAssessmentTemplateInput {
+                assessment_target_arn: self.assessment_target_arn,
+                assessment_template_name: self.assessment_template_name,
+                duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
+                rules_package_arns: self.rules_package_arns,
+                user_attributes_for_findings: self.user_attributes_for_findings,
+            })
         }
     }
-    
-    
 }
 impl CreateAssessmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssessmentTemplate`](crate::operation::CreateAssessmentTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAssessmentTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAssessmentTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateAssessmentTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateAssessmentTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateAssessmentTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAssessmentTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.CreateAssessmentTemplate"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.CreateAssessmentTemplate",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_assessment_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_assessment_template(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAssessmentTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAssessmentTemplate", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAssessmentTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAssessmentTemplate",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -400,9 +563,9 @@ impl CreateAssessmentTemplateInput {
 
 /// See [`CreateExclusionsPreviewInput`](crate::input::CreateExclusionsPreviewInput).
 pub mod create_exclusions_preview_input {
-    
+
     /// A builder for [`CreateExclusionsPreviewInput`](crate::input::CreateExclusionsPreviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
     }
@@ -413,82 +576,132 @@ pub mod create_exclusions_preview_input {
             self
         }
         /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-        pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_template_arn = input; self
+        pub fn set_assessment_template_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_template_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateExclusionsPreviewInput`](crate::input::CreateExclusionsPreviewInput).
-        pub fn build(self) -> Result<crate::input::CreateExclusionsPreviewInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateExclusionsPreviewInput {
-                    assessment_template_arn: self.assessment_template_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateExclusionsPreviewInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateExclusionsPreviewInput {
+                assessment_template_arn: self.assessment_template_arn,
+            })
         }
     }
-    
-    
 }
 impl CreateExclusionsPreviewInput {
     /// Consumes the builder and constructs an Operation<[`CreateExclusionsPreview`](crate::operation::CreateExclusionsPreview)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateExclusionsPreview, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateExclusionsPreview,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateExclusionsPreviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateExclusionsPreviewInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateExclusionsPreviewInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateExclusionsPreviewInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.CreateExclusionsPreview"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.CreateExclusionsPreview",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_exclusions_preview(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_exclusions_preview(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateExclusionsPreview::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateExclusionsPreview", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateExclusionsPreview::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateExclusionsPreview",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -500,103 +713,150 @@ impl CreateExclusionsPreviewInput {
 
 /// See [`CreateResourceGroupInput`](crate::input::CreateResourceGroupInput).
 pub mod create_resource_group_input {
-    
+
     /// A builder for [`CreateResourceGroupInput`](crate::input::CreateResourceGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
+        pub(crate) resource_group_tags:
+            std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
     }
     impl Builder {
         /// Appends an item to `resource_group_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_group_tags`](Self::set_resource_group_tags).
         ///
-        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p> 
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
         pub fn resource_group_tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
             let mut v = self.resource_group_tags.unwrap_or_default();
-                            v.push(input);
-                            self.resource_group_tags = Some(v);
-                            self
+            v.push(input);
+            self.resource_group_tags = Some(v);
+            self
         }
-        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p> 
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-        pub fn set_resource_group_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>) -> Self {
-            self.resource_group_tags = input; self
+        pub fn set_resource_group_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
+        ) -> Self {
+            self.resource_group_tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateResourceGroupInput`](crate::input::CreateResourceGroupInput).
-        pub fn build(self) -> Result<crate::input::CreateResourceGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateResourceGroupInput {
-                    resource_group_tags: self.resource_group_tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateResourceGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateResourceGroupInput {
+                resource_group_tags: self.resource_group_tags,
+            })
         }
     }
-    
-    
 }
 impl CreateResourceGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceGroup`](crate::operation::CreateResourceGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateResourceGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateResourceGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateResourceGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateResourceGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateResourceGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateResourceGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.CreateResourceGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.CreateResourceGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateResourceGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateResourceGroup", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateResourceGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateResourceGroup",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -608,9 +868,9 @@ impl CreateResourceGroupInput {
 
 /// See [`DeleteAssessmentRunInput`](crate::input::DeleteAssessmentRunInput).
 pub mod delete_assessment_run_input {
-    
+
     /// A builder for [`DeleteAssessmentRunInput`](crate::input::DeleteAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
     }
@@ -621,82 +881,128 @@ pub mod delete_assessment_run_input {
             self
         }
         /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteAssessmentRunInput`](crate::input::DeleteAssessmentRunInput).
-        pub fn build(self) -> Result<crate::input::DeleteAssessmentRunInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteAssessmentRunInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteAssessmentRunInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteAssessmentRunInput {
+                assessment_run_arn: self.assessment_run_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentRun`](crate::operation::DeleteAssessmentRun)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAssessmentRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAssessmentRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteAssessmentRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteAssessmentRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteAssessmentRunInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAssessmentRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DeleteAssessmentRun"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DeleteAssessmentRun",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_run(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_run(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAssessmentRun::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAssessmentRun", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAssessmentRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAssessmentRun",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -708,9 +1014,9 @@ impl DeleteAssessmentRunInput {
 
 /// See [`DeleteAssessmentTargetInput`](crate::input::DeleteAssessmentTargetInput).
 pub mod delete_assessment_target_input {
-    
+
     /// A builder for [`DeleteAssessmentTargetInput`](crate::input::DeleteAssessmentTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
     }
@@ -721,82 +1027,130 @@ pub mod delete_assessment_target_input {
             self
         }
         /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-        pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_target_arn = input; self
+        pub fn set_assessment_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_target_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteAssessmentTargetInput`](crate::input::DeleteAssessmentTargetInput).
-        pub fn build(self) -> Result<crate::input::DeleteAssessmentTargetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteAssessmentTargetInput {
-                    assessment_target_arn: self.assessment_target_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteAssessmentTargetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteAssessmentTargetInput {
+                assessment_target_arn: self.assessment_target_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentTarget`](crate::operation::DeleteAssessmentTarget)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAssessmentTarget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAssessmentTarget,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteAssessmentTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteAssessmentTargetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteAssessmentTargetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAssessmentTargetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DeleteAssessmentTarget"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DeleteAssessmentTarget",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_target(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_target(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAssessmentTarget::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAssessmentTarget", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAssessmentTarget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAssessmentTarget",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -808,9 +1162,9 @@ impl DeleteAssessmentTargetInput {
 
 /// See [`DeleteAssessmentTemplateInput`](crate::input::DeleteAssessmentTemplateInput).
 pub mod delete_assessment_template_input {
-    
+
     /// A builder for [`DeleteAssessmentTemplateInput`](crate::input::DeleteAssessmentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
     }
@@ -821,82 +1175,132 @@ pub mod delete_assessment_template_input {
             self
         }
         /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-        pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_template_arn = input; self
+        pub fn set_assessment_template_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_template_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteAssessmentTemplateInput`](crate::input::DeleteAssessmentTemplateInput).
-        pub fn build(self) -> Result<crate::input::DeleteAssessmentTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteAssessmentTemplateInput {
-                    assessment_template_arn: self.assessment_template_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteAssessmentTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteAssessmentTemplateInput {
+                assessment_template_arn: self.assessment_template_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteAssessmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentTemplate`](crate::operation::DeleteAssessmentTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAssessmentTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAssessmentTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteAssessmentTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteAssessmentTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteAssessmentTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAssessmentTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DeleteAssessmentTemplate"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DeleteAssessmentTemplate",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_assessment_template(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAssessmentTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAssessmentTemplate", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAssessmentTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAssessmentTemplate",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -908,9 +1312,9 @@ impl DeleteAssessmentTemplateInput {
 
 /// See [`DescribeAssessmentRunsInput`](crate::input::DescribeAssessmentRunsInput).
 pub mod describe_assessment_runs_input {
-    
+
     /// A builder for [`DescribeAssessmentRunsInput`](crate::input::DescribeAssessmentRunsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -922,87 +1326,135 @@ pub mod describe_assessment_runs_input {
         /// <p>The ARN that specifies the assessment run that you want to describe.</p>
         pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_run_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_run_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_run_arns = Some(v);
+            self
         }
         /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-        pub fn set_assessment_run_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_run_arns = input; self
+        pub fn set_assessment_run_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_run_arns = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::input::DescribeAssessmentRunsInput).
-        pub fn build(self) -> Result<crate::input::DescribeAssessmentRunsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeAssessmentRunsInput {
-                    assessment_run_arns: self.assessment_run_arns
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeAssessmentRunsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeAssessmentRunsInput {
+                assessment_run_arns: self.assessment_run_arns,
+            })
         }
     }
-    
-    
 }
 impl DescribeAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentRuns`](crate::operation::DescribeAssessmentRuns)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAssessmentRuns, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAssessmentRuns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeAssessmentRunsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeAssessmentRunsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeAssessmentRunsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAssessmentRunsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeAssessmentRuns"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeAssessmentRuns",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_runs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_runs(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAssessmentRuns::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAssessmentRuns", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAssessmentRuns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAssessmentRuns",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1014,9 +1466,9 @@ impl DescribeAssessmentRunsInput {
 
 /// See [`DescribeAssessmentTargetsInput`](crate::input::DescribeAssessmentTargetsInput).
 pub mod describe_assessment_targets_input {
-    
+
     /// A builder for [`DescribeAssessmentTargetsInput`](crate::input::DescribeAssessmentTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1028,87 +1480,137 @@ pub mod describe_assessment_targets_input {
         /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
         pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_target_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_target_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_target_arns = Some(v);
+            self
         }
         /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-        pub fn set_assessment_target_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_target_arns = input; self
+        pub fn set_assessment_target_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_target_arns = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeAssessmentTargetsInput`](crate::input::DescribeAssessmentTargetsInput).
-        pub fn build(self) -> Result<crate::input::DescribeAssessmentTargetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeAssessmentTargetsInput {
-                    assessment_target_arns: self.assessment_target_arns
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeAssessmentTargetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeAssessmentTargetsInput {
+                assessment_target_arns: self.assessment_target_arns,
+            })
         }
     }
-    
-    
 }
 impl DescribeAssessmentTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentTargets`](crate::operation::DescribeAssessmentTargets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAssessmentTargets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAssessmentTargets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeAssessmentTargetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeAssessmentTargetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeAssessmentTargetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAssessmentTargetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeAssessmentTargets"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeAssessmentTargets",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_targets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_assessment_targets(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAssessmentTargets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAssessmentTargets", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAssessmentTargets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAssessmentTargets",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1120,11 +1622,12 @@ impl DescribeAssessmentTargetsInput {
 
 /// See [`DescribeAssessmentTemplatesInput`](crate::input::DescribeAssessmentTemplatesInput).
 pub mod describe_assessment_templates_input {
-    
+
     /// A builder for [`DescribeAssessmentTemplatesInput`](crate::input::DescribeAssessmentTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) assessment_template_arns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `assessment_template_arns`.
@@ -1133,50 +1636,75 @@ pub mod describe_assessment_templates_input {
         ///
         pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_template_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_template_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_template_arns = Some(v);
+            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_assessment_template_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_template_arns = input; self
+        pub fn set_assessment_template_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_template_arns = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeAssessmentTemplatesInput`](crate::input::DescribeAssessmentTemplatesInput).
-        pub fn build(self) -> Result<crate::input::DescribeAssessmentTemplatesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeAssessmentTemplatesInput {
-                    assessment_template_arns: self.assessment_template_arns
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeAssessmentTemplatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeAssessmentTemplatesInput {
+                assessment_template_arns: self.assessment_template_arns,
+            })
         }
     }
-    
-    
 }
 impl DescribeAssessmentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentTemplates`](crate::operation::DescribeAssessmentTemplates)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAssessmentTemplates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAssessmentTemplates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeAssessmentTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeAssessmentTemplatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeAssessmentTemplatesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAssessmentTemplatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeAssessmentTemplates"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeAssessmentTemplates",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1184,36 +1712,58 @@ impl DescribeAssessmentTemplatesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_assessment_templates(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAssessmentTemplates::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAssessmentTemplates", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAssessmentTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAssessmentTemplates",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1225,46 +1775,66 @@ impl DescribeAssessmentTemplatesInput {
 
 /// See [`DescribeCrossAccountAccessRoleInput`](crate::input::DescribeCrossAccountAccessRoleInput).
 pub mod describe_cross_account_access_role_input {
-    
+
     /// A builder for [`DescribeCrossAccountAccessRoleInput`](crate::input::DescribeCrossAccountAccessRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
-    pub struct Builder {
-    }
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleInput`](crate::input::DescribeCrossAccountAccessRoleInput).
-        pub fn build(self) -> Result<crate::input::DescribeCrossAccountAccessRoleInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeCrossAccountAccessRoleInput {
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeCrossAccountAccessRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeCrossAccountAccessRoleInput {})
         }
     }
-    
-    
 }
 impl DescribeCrossAccountAccessRoleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCrossAccountAccessRole`](crate::operation::DescribeCrossAccountAccessRole)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeCrossAccountAccessRole, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeCrossAccountAccessRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeCrossAccountAccessRoleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeCrossAccountAccessRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeCrossAccountAccessRoleInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeCrossAccountAccessRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeCrossAccountAccessRole"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeCrossAccountAccessRole",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1273,32 +1843,50 @@ impl DescribeCrossAccountAccessRoleInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeCrossAccountAccessRole::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeCrossAccountAccessRole", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeCrossAccountAccessRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeCrossAccountAccessRole",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1310,9 +1898,9 @@ impl DescribeCrossAccountAccessRoleInput {
 
 /// See [`DescribeExclusionsInput`](crate::input::DescribeExclusionsInput).
 pub mod describe_exclusions_input {
-    
+
     /// A builder for [`DescribeExclusionsInput`](crate::input::DescribeExclusionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -1325,13 +1913,17 @@ pub mod describe_exclusions_input {
         /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
         pub fn exclusion_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.exclusion_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.exclusion_arns = Some(v);
+            self
         }
         /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-        pub fn set_exclusion_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.exclusion_arns = input; self
+        pub fn set_exclusion_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_arns = input;
+            self
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -1340,83 +1932,125 @@ pub mod describe_exclusions_input {
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input; self
+            self.locale = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeExclusionsInput`](crate::input::DescribeExclusionsInput).
-        pub fn build(self) -> Result<crate::input::DescribeExclusionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeExclusionsInput {
-                    exclusion_arns: self.exclusion_arns
-                    ,
-                    locale: self.locale
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeExclusionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeExclusionsInput {
+                exclusion_arns: self.exclusion_arns,
+                locale: self.locale,
+            })
         }
     }
-    
-    
 }
 impl DescribeExclusionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExclusions`](crate::operation::DescribeExclusions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeExclusions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeExclusions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeExclusionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeExclusionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeExclusionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeExclusionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeExclusions"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeExclusions",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_exclusions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_exclusions(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeExclusions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeExclusions", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeExclusions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeExclusions",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1428,9 +2062,9 @@ impl DescribeExclusionsInput {
 
 /// See [`DescribeFindingsInput`](crate::input::DescribeFindingsInput).
 pub mod describe_findings_input {
-    
+
     /// A builder for [`DescribeFindingsInput`](crate::input::DescribeFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -1443,13 +2077,17 @@ pub mod describe_findings_input {
         /// <p>The ARN that specifies the finding that you want to describe.</p>
         pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.finding_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.finding_arns = Some(v);
+            self
         }
         /// <p>The ARN that specifies the finding that you want to describe.</p>
-        pub fn set_finding_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.finding_arns = input; self
+        pub fn set_finding_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.finding_arns = input;
+            self
         }
         /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -1458,83 +2096,125 @@ pub mod describe_findings_input {
         }
         /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input; self
+            self.locale = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFindingsInput`](crate::input::DescribeFindingsInput).
-        pub fn build(self) -> Result<crate::input::DescribeFindingsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFindingsInput {
-                    finding_arns: self.finding_arns
-                    ,
-                    locale: self.locale
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFindingsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFindingsInput {
+                finding_arns: self.finding_arns,
+                locale: self.locale,
+            })
         }
     }
-    
-    
 }
 impl DescribeFindingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFindings`](crate::operation::DescribeFindings)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFindings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFindings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFindingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFindingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFindingsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFindingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeFindings"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeFindings",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_findings(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_findings(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFindings::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFindings", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFindings",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1546,9 +2226,9 @@ impl DescribeFindingsInput {
 
 /// See [`DescribeResourceGroupsInput`](crate::input::DescribeResourceGroupsInput).
 pub mod describe_resource_groups_input {
-    
+
     /// A builder for [`DescribeResourceGroupsInput`](crate::input::DescribeResourceGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1560,87 +2240,135 @@ pub mod describe_resource_groups_input {
         /// <p>The ARN that specifies the resource group that you want to describe.</p>
         pub fn resource_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_group_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.resource_group_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.resource_group_arns = Some(v);
+            self
         }
         /// <p>The ARN that specifies the resource group that you want to describe.</p>
-        pub fn set_resource_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.resource_group_arns = input; self
+        pub fn set_resource_group_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resource_group_arns = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeResourceGroupsInput`](crate::input::DescribeResourceGroupsInput).
-        pub fn build(self) -> Result<crate::input::DescribeResourceGroupsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeResourceGroupsInput {
-                    resource_group_arns: self.resource_group_arns
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeResourceGroupsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeResourceGroupsInput {
+                resource_group_arns: self.resource_group_arns,
+            })
         }
     }
-    
-    
 }
 impl DescribeResourceGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceGroups`](crate::operation::DescribeResourceGroups)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeResourceGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeResourceGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeResourceGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeResourceGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeResourceGroupsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeResourceGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeResourceGroups"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeResourceGroups",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_resource_groups(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource_groups(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeResourceGroups::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeResourceGroups", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeResourceGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeResourceGroups",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1652,9 +2380,9 @@ impl DescribeResourceGroupsInput {
 
 /// See [`DescribeRulesPackagesInput`](crate::input::DescribeRulesPackagesInput).
 pub mod describe_rules_packages_input {
-    
+
     /// A builder for [`DescribeRulesPackagesInput`](crate::input::DescribeRulesPackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -1667,13 +2395,17 @@ pub mod describe_rules_packages_input {
         /// <p>The ARN that specifies the rules package that you want to describe.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.rules_package_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.rules_package_arns = Some(v);
+            self
         }
         /// <p>The ARN that specifies the rules package that you want to describe.</p>
-        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.rules_package_arns = input; self
+        pub fn set_rules_package_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.rules_package_arns = input;
+            self
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -1682,83 +2414,127 @@ pub mod describe_rules_packages_input {
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input; self
+            self.locale = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRulesPackagesInput`](crate::input::DescribeRulesPackagesInput).
-        pub fn build(self) -> Result<crate::input::DescribeRulesPackagesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRulesPackagesInput {
-                    rules_package_arns: self.rules_package_arns
-                    ,
-                    locale: self.locale
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeRulesPackagesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeRulesPackagesInput {
+                rules_package_arns: self.rules_package_arns,
+                locale: self.locale,
+            })
         }
     }
-    
-    
 }
 impl DescribeRulesPackagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRulesPackages`](crate::operation::DescribeRulesPackages)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRulesPackages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRulesPackages,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRulesPackagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRulesPackagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRulesPackagesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRulesPackagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.DescribeRulesPackages"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.DescribeRulesPackages",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_rules_packages(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_rules_packages(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRulesPackages::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRulesPackages", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRulesPackages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRulesPackages",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1770,9 +2546,9 @@ impl DescribeRulesPackagesInput {
 
 /// See [`GetAssessmentReportInput`](crate::input::GetAssessmentReportInput).
 pub mod get_assessment_report_input {
-    
+
     /// A builder for [`GetAssessmentReportInput`](crate::input::GetAssessmentReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
         pub(crate) report_file_format: std::option::Option<crate::model::ReportFileFormat>,
@@ -1785,8 +2561,12 @@ pub mod get_assessment_report_input {
             self
         }
         /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
         /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
         pub fn report_file_format(mut self, input: crate::model::ReportFileFormat) -> Self {
@@ -1794,8 +2574,12 @@ pub mod get_assessment_report_input {
             self
         }
         /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-        pub fn set_report_file_format(mut self, input: std::option::Option<crate::model::ReportFileFormat>) -> Self {
-            self.report_file_format = input; self
+        pub fn set_report_file_format(
+            mut self,
+            input: std::option::Option<crate::model::ReportFileFormat>,
+        ) -> Self {
+            self.report_file_format = input;
+            self
         }
         /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
         pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
@@ -1803,86 +2587,130 @@ pub mod get_assessment_report_input {
             self
         }
         /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-        pub fn set_report_type(mut self, input: std::option::Option<crate::model::ReportType>) -> Self {
-            self.report_type = input; self
+        pub fn set_report_type(
+            mut self,
+            input: std::option::Option<crate::model::ReportType>,
+        ) -> Self {
+            self.report_type = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetAssessmentReportInput`](crate::input::GetAssessmentReportInput).
-        pub fn build(self) -> Result<crate::input::GetAssessmentReportInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetAssessmentReportInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                    report_file_format: self.report_file_format
-                    ,
-                    report_type: self.report_type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetAssessmentReportInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetAssessmentReportInput {
+                assessment_run_arn: self.assessment_run_arn,
+                report_file_format: self.report_file_format,
+                report_type: self.report_type,
+            })
         }
     }
-    
-    
 }
 impl GetAssessmentReportInput {
     /// Consumes the builder and constructs an Operation<[`GetAssessmentReport`](crate::operation::GetAssessmentReport)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAssessmentReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetAssessmentReport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetAssessmentReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetAssessmentReportInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetAssessmentReportInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetAssessmentReportInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.GetAssessmentReport"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.GetAssessmentReport",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_assessment_report(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_assessment_report(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAssessmentReport::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAssessmentReport", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAssessmentReport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAssessmentReport",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1894,9 +2722,9 @@ impl GetAssessmentReportInput {
 
 /// See [`GetExclusionsPreviewInput`](crate::input::GetExclusionsPreviewInput).
 pub mod get_exclusions_preview_input {
-    
+
     /// A builder for [`GetExclusionsPreviewInput`](crate::input::GetExclusionsPreviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
         pub(crate) preview_token: std::option::Option<std::string::String>,
@@ -1911,8 +2739,12 @@ pub mod get_exclusions_preview_input {
             self
         }
         /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-        pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_template_arn = input; self
+        pub fn set_assessment_template_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_template_arn = input;
+            self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
         pub fn preview_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1920,8 +2752,12 @@ pub mod get_exclusions_preview_input {
             self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
-        pub fn set_preview_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.preview_token = input; self
+        pub fn set_preview_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.preview_token = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1930,7 +2766,8 @@ pub mod get_exclusions_preview_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1939,7 +2776,8 @@ pub mod get_exclusions_preview_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
@@ -1948,89 +2786,130 @@ pub mod get_exclusions_preview_input {
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input; self
+            self.locale = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetExclusionsPreviewInput`](crate::input::GetExclusionsPreviewInput).
-        pub fn build(self) -> Result<crate::input::GetExclusionsPreviewInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetExclusionsPreviewInput {
-                    assessment_template_arn: self.assessment_template_arn
-                    ,
-                    preview_token: self.preview_token
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    locale: self.locale
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetExclusionsPreviewInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetExclusionsPreviewInput {
+                assessment_template_arn: self.assessment_template_arn,
+                preview_token: self.preview_token,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                locale: self.locale,
+            })
         }
     }
-    
-    
 }
 impl GetExclusionsPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetExclusionsPreview`](crate::operation::GetExclusionsPreview)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetExclusionsPreview, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetExclusionsPreview,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetExclusionsPreviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetExclusionsPreviewInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetExclusionsPreviewInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetExclusionsPreviewInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.GetExclusionsPreview"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.GetExclusionsPreview",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_exclusions_preview(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_exclusions_preview(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetExclusionsPreview::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetExclusionsPreview", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetExclusionsPreview::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetExclusionsPreview",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2042,9 +2921,9 @@ impl GetExclusionsPreviewInput {
 
 /// See [`GetTelemetryMetadataInput`](crate::input::GetTelemetryMetadataInput).
 pub mod get_telemetry_metadata_input {
-    
+
     /// A builder for [`GetTelemetryMetadataInput`](crate::input::GetTelemetryMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
     }
@@ -2055,82 +2934,130 @@ pub mod get_telemetry_metadata_input {
             self
         }
         /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::input::GetTelemetryMetadataInput).
-        pub fn build(self) -> Result<crate::input::GetTelemetryMetadataInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetTelemetryMetadataInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetTelemetryMetadataInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetTelemetryMetadataInput {
+                assessment_run_arn: self.assessment_run_arn,
+            })
         }
     }
-    
-    
 }
 impl GetTelemetryMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetTelemetryMetadata`](crate::operation::GetTelemetryMetadata)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetTelemetryMetadata, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTelemetryMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetTelemetryMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetTelemetryMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetTelemetryMetadataInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetTelemetryMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.GetTelemetryMetadata"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.GetTelemetryMetadata",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_telemetry_metadata(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_telemetry_metadata(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetTelemetryMetadata::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetTelemetryMetadata", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTelemetryMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTelemetryMetadata",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2142,9 +3069,9 @@ impl GetTelemetryMetadataInput {
 
 /// See [`ListAssessmentRunAgentsInput`](crate::input::ListAssessmentRunAgentsInput).
 pub mod list_assessment_run_agents_input {
-    
+
     /// A builder for [`ListAssessmentRunAgentsInput`](crate::input::ListAssessmentRunAgentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<crate::model::AgentFilter>,
@@ -2158,19 +3085,24 @@ pub mod list_assessment_run_agents_input {
             self
         }
         /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AgentFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::AgentFilter>) -> Self {
-            self.filter = input; self
+            self.filter = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,7 +3111,8 @@ pub mod list_assessment_run_agents_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2188,87 +3121,131 @@ pub mod list_assessment_run_agents_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListAssessmentRunAgentsInput`](crate::input::ListAssessmentRunAgentsInput).
-        pub fn build(self) -> Result<crate::input::ListAssessmentRunAgentsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListAssessmentRunAgentsInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                    filter: self.filter
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAssessmentRunAgentsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAssessmentRunAgentsInput {
+                assessment_run_arn: self.assessment_run_arn,
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListAssessmentRunAgentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentRunAgents`](crate::operation::ListAssessmentRunAgents)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAssessmentRunAgents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssessmentRunAgents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListAssessmentRunAgentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListAssessmentRunAgentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListAssessmentRunAgentsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssessmentRunAgentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListAssessmentRunAgents"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListAssessmentRunAgents",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_assessment_run_agents(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_assessment_run_agents(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAssessmentRunAgents::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAssessmentRunAgents", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssessmentRunAgents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssessmentRunAgents",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2280,11 +3257,12 @@ impl ListAssessmentRunAgentsInput {
 
 /// See [`ListAssessmentRunsInput`](crate::input::ListAssessmentRunsInput).
 pub mod list_assessment_runs_input {
-    
+
     /// A builder for [`ListAssessmentRunsInput`](crate::input::ListAssessmentRunsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) assessment_template_arns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filter: std::option::Option<crate::model::AssessmentRunFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2297,24 +3275,32 @@ pub mod list_assessment_runs_input {
         /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
         pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_template_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_template_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_template_arns = Some(v);
+            self
         }
         /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-        pub fn set_assessment_template_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_template_arns = input; self
+        pub fn set_assessment_template_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_template_arns = input;
+            self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentRunFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::AssessmentRunFilter>) -> Self {
-            self.filter = input; self
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::AssessmentRunFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2323,7 +3309,8 @@ pub mod list_assessment_runs_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2332,87 +3319,127 @@ pub mod list_assessment_runs_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListAssessmentRunsInput`](crate::input::ListAssessmentRunsInput).
-        pub fn build(self) -> Result<crate::input::ListAssessmentRunsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListAssessmentRunsInput {
-                    assessment_template_arns: self.assessment_template_arns
-                    ,
-                    filter: self.filter
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAssessmentRunsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListAssessmentRunsInput {
+                assessment_template_arns: self.assessment_template_arns,
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentRuns`](crate::operation::ListAssessmentRuns)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAssessmentRuns, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssessmentRuns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListAssessmentRunsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListAssessmentRunsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListAssessmentRunsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssessmentRunsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListAssessmentRuns"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListAssessmentRuns",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_assessment_runs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_assessment_runs(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAssessmentRuns::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAssessmentRuns", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssessmentRuns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssessmentRuns",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2424,25 +3451,29 @@ impl ListAssessmentRunsInput {
 
 /// See [`ListAssessmentTargetsInput`](crate::input::ListAssessmentTargetsInput).
 pub mod list_assessment_targets_input {
-    
+
     /// A builder for [`ListAssessmentTargetsInput`](crate::input::ListAssessmentTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::AssessmentTargetFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentTargetFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::AssessmentTargetFilter>) -> Self {
-            self.filter = input; self
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::AssessmentTargetFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2451,7 +3482,8 @@ pub mod list_assessment_targets_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2460,85 +3492,128 @@ pub mod list_assessment_targets_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListAssessmentTargetsInput`](crate::input::ListAssessmentTargetsInput).
-        pub fn build(self) -> Result<crate::input::ListAssessmentTargetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListAssessmentTargetsInput {
-                    filter: self.filter
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAssessmentTargetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListAssessmentTargetsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListAssessmentTargetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentTargets`](crate::operation::ListAssessmentTargets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAssessmentTargets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssessmentTargets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListAssessmentTargetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListAssessmentTargetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListAssessmentTargetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssessmentTargetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListAssessmentTargets"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListAssessmentTargets",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_assessment_targets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_assessment_targets(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAssessmentTargets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAssessmentTargets", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssessmentTargets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssessmentTargets",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2550,9 +3625,9 @@ impl ListAssessmentTargetsInput {
 
 /// See [`ListAssessmentTemplatesInput`](crate::input::ListAssessmentTemplatesInput).
 pub mod list_assessment_templates_input {
-    
+
     /// A builder for [`ListAssessmentTemplatesInput`](crate::input::ListAssessmentTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filter: std::option::Option<crate::model::AssessmentTemplateFilter>,
@@ -2567,24 +3642,32 @@ pub mod list_assessment_templates_input {
         /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
         pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_target_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_target_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_target_arns = Some(v);
+            self
         }
         /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-        pub fn set_assessment_target_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_target_arns = input; self
+        pub fn set_assessment_target_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_target_arns = input;
+            self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentTemplateFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::AssessmentTemplateFilter>) -> Self {
-            self.filter = input; self
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::AssessmentTemplateFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2593,7 +3676,8 @@ pub mod list_assessment_templates_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2602,87 +3686,131 @@ pub mod list_assessment_templates_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListAssessmentTemplatesInput`](crate::input::ListAssessmentTemplatesInput).
-        pub fn build(self) -> Result<crate::input::ListAssessmentTemplatesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListAssessmentTemplatesInput {
-                    assessment_target_arns: self.assessment_target_arns
-                    ,
-                    filter: self.filter
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListAssessmentTemplatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAssessmentTemplatesInput {
+                assessment_target_arns: self.assessment_target_arns,
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListAssessmentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentTemplates`](crate::operation::ListAssessmentTemplates)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAssessmentTemplates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAssessmentTemplates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListAssessmentTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListAssessmentTemplatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListAssessmentTemplatesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAssessmentTemplatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListAssessmentTemplates"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListAssessmentTemplates",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_assessment_templates(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_assessment_templates(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAssessmentTemplates::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAssessmentTemplates", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssessmentTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAssessmentTemplates",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2694,9 +3822,9 @@ impl ListAssessmentTemplatesInput {
 
 /// See [`ListEventSubscriptionsInput`](crate::input::ListEventSubscriptionsInput).
 pub mod list_event_subscriptions_input {
-    
+
     /// A builder for [`ListEventSubscriptionsInput`](crate::input::ListEventSubscriptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2710,7 +3838,8 @@ pub mod list_event_subscriptions_input {
         }
         /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2719,7 +3848,8 @@ pub mod list_event_subscriptions_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2728,85 +3858,128 @@ pub mod list_event_subscriptions_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListEventSubscriptionsInput`](crate::input::ListEventSubscriptionsInput).
-        pub fn build(self) -> Result<crate::input::ListEventSubscriptionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListEventSubscriptionsInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListEventSubscriptionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListEventSubscriptionsInput {
+                resource_arn: self.resource_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventSubscriptions`](crate::operation::ListEventSubscriptions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListEventSubscriptions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEventSubscriptions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListEventSubscriptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListEventSubscriptionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListEventSubscriptionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEventSubscriptionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListEventSubscriptions"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListEventSubscriptions",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_event_subscriptions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_event_subscriptions(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListEventSubscriptions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListEventSubscriptions", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEventSubscriptions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEventSubscriptions",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2818,9 +3991,9 @@ impl ListEventSubscriptionsInput {
 
 /// See [`ListExclusionsInput`](crate::input::ListExclusionsInput).
 pub mod list_exclusions_input {
-    
+
     /// A builder for [`ListExclusionsInput`](crate::input::ListExclusionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2833,8 +4006,12 @@ pub mod list_exclusions_input {
             self
         }
         /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2843,7 +4020,8 @@ pub mod list_exclusions_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2852,85 +4030,126 @@ pub mod list_exclusions_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListExclusionsInput`](crate::input::ListExclusionsInput).
-        pub fn build(self) -> Result<crate::input::ListExclusionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListExclusionsInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListExclusionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListExclusionsInput {
+                assessment_run_arn: self.assessment_run_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListExclusionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExclusions`](crate::operation::ListExclusions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListExclusions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListExclusions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListExclusionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListExclusionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListExclusionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListExclusionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListExclusions"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListExclusions",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_exclusions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_exclusions(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListExclusions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListExclusions", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListExclusions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListExclusions",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2942,9 +4161,9 @@ impl ListExclusionsInput {
 
 /// See [`ListFindingsInput`](crate::input::ListFindingsInput).
 pub mod list_findings_input {
-    
+
     /// A builder for [`ListFindingsInput`](crate::input::ListFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filter: std::option::Option<crate::model::FindingFilter>,
@@ -2959,24 +4178,32 @@ pub mod list_findings_input {
         /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
         pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_run_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.assessment_run_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.assessment_run_arns = Some(v);
+            self
         }
         /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-        pub fn set_assessment_run_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.assessment_run_arns = input; self
+        pub fn set_assessment_run_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.assessment_run_arns = input;
+            self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::FindingFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
         /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-        pub fn set_filter(mut self, input: std::option::Option<crate::model::FindingFilter>) -> Self {
-            self.filter = input; self
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::FindingFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2985,7 +4212,8 @@ pub mod list_findings_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2994,87 +4222,127 @@ pub mod list_findings_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFindingsInput`](crate::input::ListFindingsInput).
-        pub fn build(self) -> Result<crate::input::ListFindingsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFindingsInput {
-                    assessment_run_arns: self.assessment_run_arns
-                    ,
-                    filter: self.filter
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFindingsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListFindingsInput {
+                assessment_run_arns: self.assessment_run_arns,
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFindings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFindings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFindingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFindingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFindingsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFindingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListFindings"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListFindings",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFindings::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFindings", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFindings",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3086,9 +4354,9 @@ impl ListFindingsInput {
 
 /// See [`ListRulesPackagesInput`](crate::input::ListRulesPackagesInput).
 pub mod list_rules_packages_input {
-    
+
     /// A builder for [`ListRulesPackagesInput`](crate::input::ListRulesPackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3101,7 +4369,8 @@ pub mod list_rules_packages_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3110,83 +4379,125 @@ pub mod list_rules_packages_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRulesPackagesInput`](crate::input::ListRulesPackagesInput).
-        pub fn build(self) -> Result<crate::input::ListRulesPackagesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRulesPackagesInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRulesPackagesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRulesPackagesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListRulesPackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListRulesPackages`](crate::operation::ListRulesPackages)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRulesPackages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRulesPackages,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRulesPackagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRulesPackagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRulesPackagesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRulesPackagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListRulesPackages"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListRulesPackages",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_rules_packages(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_rules_packages(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRulesPackages::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRulesPackages", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRulesPackages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRulesPackages",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3198,9 +4509,9 @@ impl ListRulesPackagesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3212,81 +4523,126 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.ListTagsForResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.ListTagsForResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3298,9 +4654,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PreviewAgentsInput`](crate::input::PreviewAgentsInput).
 pub mod preview_agents_input {
-    
+
     /// A builder for [`PreviewAgentsInput`](crate::input::PreviewAgentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preview_agents_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3313,8 +4669,12 @@ pub mod preview_agents_input {
             self
         }
         /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-        pub fn set_preview_agents_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.preview_agents_arn = input; self
+        pub fn set_preview_agents_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.preview_agents_arn = input;
+            self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3323,7 +4683,8 @@ pub mod preview_agents_input {
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3332,85 +4693,126 @@ pub mod preview_agents_input {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`PreviewAgentsInput`](crate::input::PreviewAgentsInput).
-        pub fn build(self) -> Result<crate::input::PreviewAgentsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PreviewAgentsInput {
-                    preview_agents_arn: self.preview_agents_arn
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PreviewAgentsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PreviewAgentsInput {
+                preview_agents_arn: self.preview_agents_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl PreviewAgentsInput {
     /// Consumes the builder and constructs an Operation<[`PreviewAgents`](crate::operation::PreviewAgents)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PreviewAgents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PreviewAgents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PreviewAgentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PreviewAgentsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PreviewAgentsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PreviewAgentsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.PreviewAgents"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.PreviewAgents",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_preview_agents(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_preview_agents(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PreviewAgents::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PreviewAgents", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PreviewAgents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PreviewAgents",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3422,9 +4824,9 @@ impl PreviewAgentsInput {
 
 /// See [`RegisterCrossAccountAccessRoleInput`](crate::input::RegisterCrossAccountAccessRoleInput).
 pub mod register_cross_account_access_role_input {
-    
+
     /// A builder for [`RegisterCrossAccountAccessRoleInput`](crate::input::RegisterCrossAccountAccessRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
@@ -3436,44 +4838,66 @@ pub mod register_cross_account_access_role_input {
         }
         /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input; self
+            self.role_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleInput`](crate::input::RegisterCrossAccountAccessRoleInput).
-        pub fn build(self) -> Result<crate::input::RegisterCrossAccountAccessRoleInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RegisterCrossAccountAccessRoleInput {
-                    role_arn: self.role_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RegisterCrossAccountAccessRoleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RegisterCrossAccountAccessRoleInput {
+                role_arn: self.role_arn,
+            })
         }
     }
-    
-    
 }
 impl RegisterCrossAccountAccessRoleInput {
     /// Consumes the builder and constructs an Operation<[`RegisterCrossAccountAccessRole`](crate::operation::RegisterCrossAccountAccessRole)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterCrossAccountAccessRole, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterCrossAccountAccessRole,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RegisterCrossAccountAccessRoleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RegisterCrossAccountAccessRoleInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RegisterCrossAccountAccessRoleInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RegisterCrossAccountAccessRoleInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.RegisterCrossAccountAccessRole"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.RegisterCrossAccountAccessRole",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3481,36 +4905,58 @@ impl RegisterCrossAccountAccessRoleInput {
             crate::operation_ser::serialize_operation_crate_operation_register_cross_account_access_role(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterCrossAccountAccessRole::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterCrossAccountAccessRole", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterCrossAccountAccessRole::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterCrossAccountAccessRole",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3522,9 +4968,9 @@ impl RegisterCrossAccountAccessRoleInput {
 
 /// See [`RemoveAttributesFromFindingsInput`](crate::input::RemoveAttributesFromFindingsInput).
 pub mod remove_attributes_from_findings_input {
-    
+
     /// A builder for [`RemoveAttributesFromFindingsInput`](crate::input::RemoveAttributesFromFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3537,13 +4983,17 @@ pub mod remove_attributes_from_findings_input {
         /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
         pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_arns.unwrap_or_default();
-                            v.push(input.into());
-                            self.finding_arns = Some(v);
-                            self
+            v.push(input.into());
+            self.finding_arns = Some(v);
+            self
         }
         /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-        pub fn set_finding_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.finding_arns = input; self
+        pub fn set_finding_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.finding_arns = input;
+            self
         }
         /// Appends an item to `attribute_keys`.
         ///
@@ -3552,52 +5002,76 @@ pub mod remove_attributes_from_findings_input {
         /// <p>The array of attribute keys that you want to remove from specified findings.</p>
         pub fn attribute_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.attribute_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.attribute_keys = Some(v);
+            self
         }
         /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-        pub fn set_attribute_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.attribute_keys = input; self
+        pub fn set_attribute_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.attribute_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveAttributesFromFindingsInput`](crate::input::RemoveAttributesFromFindingsInput).
-        pub fn build(self) -> Result<crate::input::RemoveAttributesFromFindingsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveAttributesFromFindingsInput {
-                    finding_arns: self.finding_arns
-                    ,
-                    attribute_keys: self.attribute_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RemoveAttributesFromFindingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RemoveAttributesFromFindingsInput {
+                finding_arns: self.finding_arns,
+                attribute_keys: self.attribute_keys,
+            })
         }
     }
-    
-    
 }
 impl RemoveAttributesFromFindingsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAttributesFromFindings`](crate::operation::RemoveAttributesFromFindings)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveAttributesFromFindings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveAttributesFromFindings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveAttributesFromFindingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveAttributesFromFindingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveAttributesFromFindingsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveAttributesFromFindingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.RemoveAttributesFromFindings"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.RemoveAttributesFromFindings",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3605,36 +5079,58 @@ impl RemoveAttributesFromFindingsInput {
             crate::operation_ser::serialize_operation_crate_operation_remove_attributes_from_findings(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveAttributesFromFindings::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveAttributesFromFindings", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveAttributesFromFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveAttributesFromFindings",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3646,9 +5142,9 @@ impl RemoveAttributesFromFindingsInput {
 
 /// See [`SetTagsForResourceInput`](crate::input::SetTagsForResourceInput).
 pub mod set_tags_for_resource_input {
-    
+
     /// A builder for [`SetTagsForResourceInput`](crate::input::SetTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3661,7 +5157,8 @@ pub mod set_tags_for_resource_input {
         }
         /// <p>The ARN of the assessment template that you want to set tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -3670,89 +5167,134 @@ pub mod set_tags_for_resource_input {
         /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::input::SetTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::SetTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetTagsForResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl SetTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`SetTagsForResource`](crate::operation::SetTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.SetTagsForResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.SetTagsForResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_tags_for_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_tags_for_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetTagsForResource", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetTagsForResource",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3764,9 +5306,9 @@ impl SetTagsForResourceInput {
 
 /// See [`StartAssessmentRunInput`](crate::input::StartAssessmentRunInput).
 pub mod start_assessment_run_input {
-    
+
     /// A builder for [`StartAssessmentRunInput`](crate::input::StartAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
         pub(crate) assessment_run_name: std::option::Option<std::string::String>,
@@ -3778,8 +5320,12 @@ pub mod start_assessment_run_input {
             self
         }
         /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-        pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_template_arn = input; self
+        pub fn set_assessment_template_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_template_arn = input;
+            self
         }
         /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
         pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3787,84 +5333,129 @@ pub mod start_assessment_run_input {
             self
         }
         /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-        pub fn set_assessment_run_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_name = input; self
+        pub fn set_assessment_run_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::input::StartAssessmentRunInput).
-        pub fn build(self) -> Result<crate::input::StartAssessmentRunInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartAssessmentRunInput {
-                    assessment_template_arn: self.assessment_template_arn
-                    ,
-                    assessment_run_name: self.assessment_run_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartAssessmentRunInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartAssessmentRunInput {
+                assessment_template_arn: self.assessment_template_arn,
+                assessment_run_name: self.assessment_run_name,
+            })
         }
     }
-    
-    
 }
 impl StartAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StartAssessmentRun`](crate::operation::StartAssessmentRun)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartAssessmentRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartAssessmentRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartAssessmentRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartAssessmentRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartAssessmentRunInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartAssessmentRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.StartAssessmentRun"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.StartAssessmentRun",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_assessment_run(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_assessment_run(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartAssessmentRun::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartAssessmentRun", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartAssessmentRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartAssessmentRun",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3876,9 +5467,9 @@ impl StartAssessmentRunInput {
 
 /// See [`StopAssessmentRunInput`](crate::input::StopAssessmentRunInput).
 pub mod stop_assessment_run_input {
-    
+
     /// A builder for [`StopAssessmentRunInput`](crate::input::StopAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
         pub(crate) stop_action: std::option::Option<crate::model::StopAction>,
@@ -3890,8 +5481,12 @@ pub mod stop_assessment_run_input {
             self
         }
         /// <p>The ARN of the assessment run that you want to stop.</p>
-        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_run_arn = input; self
+        pub fn set_assessment_run_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_run_arn = input;
+            self
         }
         /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
         pub fn stop_action(mut self, input: crate::model::StopAction) -> Self {
@@ -3899,84 +5494,129 @@ pub mod stop_assessment_run_input {
             self
         }
         /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
-        pub fn set_stop_action(mut self, input: std::option::Option<crate::model::StopAction>) -> Self {
-            self.stop_action = input; self
+        pub fn set_stop_action(
+            mut self,
+            input: std::option::Option<crate::model::StopAction>,
+        ) -> Self {
+            self.stop_action = input;
+            self
         }
         /// Consumes the builder and constructs a [`StopAssessmentRunInput`](crate::input::StopAssessmentRunInput).
-        pub fn build(self) -> Result<crate::input::StopAssessmentRunInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StopAssessmentRunInput {
-                    assessment_run_arn: self.assessment_run_arn
-                    ,
-                    stop_action: self.stop_action
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopAssessmentRunInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StopAssessmentRunInput {
+                assessment_run_arn: self.assessment_run_arn,
+                stop_action: self.stop_action,
+            })
         }
     }
-    
-    
 }
 impl StopAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StopAssessmentRun`](crate::operation::StopAssessmentRun)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopAssessmentRun, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopAssessmentRun,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StopAssessmentRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StopAssessmentRunInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StopAssessmentRunInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopAssessmentRunInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.StopAssessmentRun"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.StopAssessmentRun",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_assessment_run(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_assessment_run(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopAssessmentRun::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopAssessmentRun", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopAssessmentRun::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopAssessmentRun",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3988,9 +5628,9 @@ impl StopAssessmentRunInput {
 
 /// See [`SubscribeToEventInput`](crate::input::SubscribeToEventInput).
 pub mod subscribe_to_event_input {
-    
+
     /// A builder for [`SubscribeToEventInput`](crate::input::SubscribeToEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) event: std::option::Option<crate::model::InspectorEvent>,
@@ -4004,7 +5644,8 @@ pub mod subscribe_to_event_input {
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
         pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
@@ -4012,8 +5653,12 @@ pub mod subscribe_to_event_input {
             self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
-        pub fn set_event(mut self, input: std::option::Option<crate::model::InspectorEvent>) -> Self {
-            self.event = input; self
+        pub fn set_event(
+            mut self,
+            input: std::option::Option<crate::model::InspectorEvent>,
+        ) -> Self {
+            self.event = input;
+            self
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4022,85 +5667,126 @@ pub mod subscribe_to_event_input {
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input; self
+            self.topic_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`SubscribeToEventInput`](crate::input::SubscribeToEventInput).
-        pub fn build(self) -> Result<crate::input::SubscribeToEventInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SubscribeToEventInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    event: self.event
-                    ,
-                    topic_arn: self.topic_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SubscribeToEventInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SubscribeToEventInput {
+                resource_arn: self.resource_arn,
+                event: self.event,
+                topic_arn: self.topic_arn,
+            })
         }
     }
-    
-    
 }
 impl SubscribeToEventInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToEvent`](crate::operation::SubscribeToEvent)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SubscribeToEvent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SubscribeToEvent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SubscribeToEventInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SubscribeToEventInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SubscribeToEventInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SubscribeToEventInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.SubscribeToEvent"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.SubscribeToEvent",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_subscribe_to_event(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_subscribe_to_event(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SubscribeToEvent::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SubscribeToEvent", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SubscribeToEvent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SubscribeToEvent",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4112,9 +5798,9 @@ impl SubscribeToEventInput {
 
 /// See [`UnsubscribeFromEventInput`](crate::input::UnsubscribeFromEventInput).
 pub mod unsubscribe_from_event_input {
-    
+
     /// A builder for [`UnsubscribeFromEventInput`](crate::input::UnsubscribeFromEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) event: std::option::Option<crate::model::InspectorEvent>,
@@ -4128,7 +5814,8 @@ pub mod unsubscribe_from_event_input {
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
         pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
@@ -4136,8 +5823,12 @@ pub mod unsubscribe_from_event_input {
             self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
-        pub fn set_event(mut self, input: std::option::Option<crate::model::InspectorEvent>) -> Self {
-            self.event = input; self
+        pub fn set_event(
+            mut self,
+            input: std::option::Option<crate::model::InspectorEvent>,
+        ) -> Self {
+            self.event = input;
+            self
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4146,85 +5837,128 @@ pub mod unsubscribe_from_event_input {
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input; self
+            self.topic_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`UnsubscribeFromEventInput`](crate::input::UnsubscribeFromEventInput).
-        pub fn build(self) -> Result<crate::input::UnsubscribeFromEventInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UnsubscribeFromEventInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    event: self.event
-                    ,
-                    topic_arn: self.topic_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UnsubscribeFromEventInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UnsubscribeFromEventInput {
+                resource_arn: self.resource_arn,
+                event: self.event,
+                topic_arn: self.topic_arn,
+            })
         }
     }
-    
-    
 }
 impl UnsubscribeFromEventInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromEvent`](crate::operation::UnsubscribeFromEvent)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UnsubscribeFromEvent, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UnsubscribeFromEvent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UnsubscribeFromEventInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UnsubscribeFromEventInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UnsubscribeFromEventInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UnsubscribeFromEventInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.UnsubscribeFromEvent"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.UnsubscribeFromEvent",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_unsubscribe_from_event(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_unsubscribe_from_event(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UnsubscribeFromEvent::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UnsubscribeFromEvent", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UnsubscribeFromEvent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UnsubscribeFromEvent",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4236,9 +5970,9 @@ impl UnsubscribeFromEventInput {
 
 /// See [`UpdateAssessmentTargetInput`](crate::input::UpdateAssessmentTargetInput).
 pub mod update_assessment_target_input {
-    
+
     /// A builder for [`UpdateAssessmentTargetInput`](crate::input::UpdateAssessmentTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
         pub(crate) assessment_target_name: std::option::Option<std::string::String>,
@@ -4251,8 +5985,12 @@ pub mod update_assessment_target_input {
             self
         }
         /// <p>The ARN of the assessment target that you want to update.</p>
-        pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_target_arn = input; self
+        pub fn set_assessment_target_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_target_arn = input;
+            self
         }
         /// <p>The name of the assessment target that you want to update.</p>
         pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4260,8 +5998,12 @@ pub mod update_assessment_target_input {
             self
         }
         /// <p>The name of the assessment target that you want to update.</p>
-        pub fn set_assessment_target_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.assessment_target_name = input; self
+        pub fn set_assessment_target_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assessment_target_name = input;
+            self
         }
         /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4269,86 +6011,132 @@ pub mod update_assessment_target_input {
             self
         }
         /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-        pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_group_arn = input; self
+        pub fn set_resource_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_group_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateAssessmentTargetInput`](crate::input::UpdateAssessmentTargetInput).
-        pub fn build(self) -> Result<crate::input::UpdateAssessmentTargetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateAssessmentTargetInput {
-                    assessment_target_arn: self.assessment_target_arn
-                    ,
-                    assessment_target_name: self.assessment_target_name
-                    ,
-                    resource_group_arn: self.resource_group_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateAssessmentTargetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateAssessmentTargetInput {
+                assessment_target_arn: self.assessment_target_arn,
+                assessment_target_name: self.assessment_target_name,
+                resource_group_arn: self.resource_group_arn,
+            })
         }
     }
-    
-    
 }
 impl UpdateAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAssessmentTarget`](crate::operation::UpdateAssessmentTarget)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateAssessmentTarget, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAssessmentTarget,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateAssessmentTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateAssessmentTargetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateAssessmentTargetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAssessmentTargetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "InspectorService.UpdateAssessmentTarget"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "InspectorService.UpdateAssessmentTarget",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_assessment_target(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_assessment_target(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateAssessmentTarget::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateAssessmentTarget", "inspector"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAssessmentTarget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAssessmentTarget",
+            "inspector",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4359,30 +6147,34 @@ impl UpdateAssessmentTargetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateAssessmentTargetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAssessmentTargetInput {
     /// <p>The ARN of the assessment target that you want to update.</p>
-    #[doc(hidden)]pub assessment_target_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assessment target that you want to update.</p>
-    #[doc(hidden)]pub assessment_target_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_target_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    #[doc(hidden)]pub resource_group_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAssessmentTargetInput {
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn assessment_target_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_name(&self) -> std::option::Option<&str> {
         self.assessment_target_name.as_deref()
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateAssessmentTargetInput  {
+impl std::fmt::Debug for UpdateAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentTargetInput");
         formatter.field("assessment_target_arn", &self.assessment_target_arn);
@@ -4393,30 +6185,34 @@ impl  std::fmt::Debug for UpdateAssessmentTargetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UnsubscribeFromEventInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsubscribeFromEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
-    #[doc(hidden)]pub event: std::option::Option<crate::model::InspectorEvent>,
+    #[doc(hidden)]
+    pub event: std::option::Option<crate::model::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
-    #[doc(hidden)]pub topic_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub topic_arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeFromEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
-    pub fn event(&self) -> std::option::Option<& crate::model::InspectorEvent> {
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for UnsubscribeFromEventInput  {
+impl std::fmt::Debug for UnsubscribeFromEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsubscribeFromEventInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4427,30 +6223,34 @@ impl  std::fmt::Debug for UnsubscribeFromEventInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SubscribeToEventInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to receive SNS notifications.</p>
-    #[doc(hidden)]pub event: std::option::Option<crate::model::InspectorEvent>,
+    #[doc(hidden)]
+    pub event: std::option::Option<crate::model::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-    #[doc(hidden)]pub topic_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The event for which you want to receive SNS notifications.</p>
-    pub fn event(&self) -> std::option::Option<& crate::model::InspectorEvent> {
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for SubscribeToEventInput  {
+impl std::fmt::Debug for SubscribeToEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeToEventInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4461,24 +6261,27 @@ impl  std::fmt::Debug for SubscribeToEventInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StopAssessmentRunInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopAssessmentRunInput {
     /// <p>The ARN of the assessment run that you want to stop.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
-    #[doc(hidden)]pub stop_action: std::option::Option<crate::model::StopAction>,
+    #[doc(hidden)]
+    pub stop_action: std::option::Option<crate::model::StopAction>,
 }
 impl StopAssessmentRunInput {
     /// <p>The ARN of the assessment run that you want to stop.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
-    pub fn stop_action(&self) -> std::option::Option<& crate::model::StopAction> {
+    pub fn stop_action(&self) -> std::option::Option<&crate::model::StopAction> {
         self.stop_action.as_ref()
     }
 }
-impl  std::fmt::Debug for StopAssessmentRunInput  {
+impl std::fmt::Debug for StopAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopAssessmentRunInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -4488,24 +6291,27 @@ impl  std::fmt::Debug for StopAssessmentRunInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartAssessmentRunInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    #[doc(hidden)]pub assessment_template_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_template_arn: std::option::Option<std::string::String>,
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    #[doc(hidden)]pub assessment_run_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_name: std::option::Option<std::string::String>,
 }
 impl StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn assessment_run_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_name(&self) -> std::option::Option<&str> {
         self.assessment_run_name.as_deref()
     }
 }
-impl  std::fmt::Debug for StartAssessmentRunInput  {
+impl std::fmt::Debug for StartAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAssessmentRunInput");
         formatter.field("assessment_template_arn", &self.assessment_template_arn);
@@ -4515,24 +6321,27 @@ impl  std::fmt::Debug for StartAssessmentRunInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for SetTagsForResourceInput  {
+impl std::fmt::Debug for SetTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4542,24 +6351,27 @@ impl  std::fmt::Debug for SetTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveAttributesFromFindingsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    #[doc(hidden)]pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    #[doc(hidden)]pub attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn finding_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn attribute_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn attribute_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveAttributesFromFindingsInput  {
+impl std::fmt::Debug for RemoveAttributesFromFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAttributesFromFindingsInput");
         formatter.field("finding_arns", &self.finding_arns);
@@ -4569,18 +6381,20 @@ impl  std::fmt::Debug for RemoveAttributesFromFindingsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RegisterCrossAccountAccessRoleInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
-    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for RegisterCrossAccountAccessRoleInput  {
+impl std::fmt::Debug for RegisterCrossAccountAccessRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterCrossAccountAccessRoleInput");
         formatter.field("role_arn", &self.role_arn);
@@ -4589,22 +6403,26 @@ impl  std::fmt::Debug for RegisterCrossAccountAccessRoleInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PreviewAgentsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    #[doc(hidden)]pub preview_agents_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub preview_agents_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn preview_agents_arn(&self) -> std::option::Option<& str> {
+    pub fn preview_agents_arn(&self) -> std::option::Option<&str> {
         self.preview_agents_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4612,7 +6430,7 @@ impl PreviewAgentsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for PreviewAgentsInput  {
+impl std::fmt::Debug for PreviewAgentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreviewAgentsInput");
         formatter.field("preview_agents_arn", &self.preview_agents_arn);
@@ -4623,18 +6441,20 @@ impl  std::fmt::Debug for PreviewAgentsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4643,16 +6463,19 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRulesPackagesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRulesPackagesInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListRulesPackagesInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4660,7 +6483,7 @@ impl ListRulesPackagesInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListRulesPackagesInput  {
+impl std::fmt::Debug for ListRulesPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRulesPackagesInput");
         formatter.field("next_token", &self.next_token);
@@ -4670,30 +6493,35 @@ impl  std::fmt::Debug for ListRulesPackagesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFindingsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    #[doc(hidden)]pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    #[doc(hidden)]
+    pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]pub filter: std::option::Option<crate::model::FindingFilter>,
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::FindingFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    pub fn assessment_run_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::model::FindingFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::model::FindingFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4701,7 +6529,7 @@ impl ListFindingsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListFindingsInput  {
+impl std::fmt::Debug for ListFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsInput");
         formatter.field("assessment_run_arns", &self.assessment_run_arns);
@@ -4713,22 +6541,26 @@ impl  std::fmt::Debug for ListFindingsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListExclusionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExclusionsInput {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListExclusionsInput {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
@@ -4736,7 +6568,7 @@ impl ListExclusionsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListExclusionsInput  {
+impl std::fmt::Debug for ListExclusionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExclusionsInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -4747,22 +6579,26 @@ impl  std::fmt::Debug for ListExclusionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListEventSubscriptionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4770,7 +6606,7 @@ impl ListEventSubscriptionsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListEventSubscriptionsInput  {
+impl std::fmt::Debug for ListEventSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSubscriptionsInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4781,30 +6617,35 @@ impl  std::fmt::Debug for ListEventSubscriptionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListAssessmentTemplatesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssessmentTemplatesInput {
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    #[doc(hidden)]pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    #[doc(hidden)]
+    pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]pub filter: std::option::Option<crate::model::AssessmentTemplateFilter>,
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::AssessmentTemplateFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTemplatesInput {
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn assessment_target_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_target_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::model::AssessmentTemplateFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTemplateFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4812,7 +6653,7 @@ impl ListAssessmentTemplatesInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListAssessmentTemplatesInput  {
+impl std::fmt::Debug for ListAssessmentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentTemplatesInput");
         formatter.field("assessment_target_arns", &self.assessment_target_arns);
@@ -4824,24 +6665,28 @@ impl  std::fmt::Debug for ListAssessmentTemplatesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListAssessmentTargetsInput  {
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssessmentTargetsInput {
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]pub filter: std::option::Option<crate::model::AssessmentTargetFilter>,
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::AssessmentTargetFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTargetsInput {
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::model::AssessmentTargetFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTargetFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4849,7 +6694,7 @@ impl ListAssessmentTargetsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListAssessmentTargetsInput  {
+impl std::fmt::Debug for ListAssessmentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentTargetsInput");
         formatter.field("filter", &self.filter);
@@ -4860,30 +6705,35 @@ impl  std::fmt::Debug for ListAssessmentTargetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListAssessmentRunsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    #[doc(hidden)]pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    #[doc(hidden)]
+    pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]pub filter: std::option::Option<crate::model::AssessmentRunFilter>,
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::AssessmentRunFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    pub fn assessment_template_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::model::AssessmentRunFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentRunFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4891,7 +6741,7 @@ impl ListAssessmentRunsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListAssessmentRunsInput  {
+impl std::fmt::Debug for ListAssessmentRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunsInput");
         formatter.field("assessment_template_arns", &self.assessment_template_arns);
@@ -4903,30 +6753,35 @@ impl  std::fmt::Debug for ListAssessmentRunsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListAssessmentRunAgentsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]pub filter: std::option::Option<crate::model::AgentFilter>,
+    #[doc(hidden)]
+    pub filter: std::option::Option<crate::model::AgentFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::model::AgentFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::model::AgentFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -4934,7 +6789,7 @@ impl ListAssessmentRunAgentsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListAssessmentRunAgentsInput  {
+impl std::fmt::Debug for ListAssessmentRunAgentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunAgentsInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -4946,18 +6801,20 @@ impl  std::fmt::Debug for ListAssessmentRunAgentsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetTelemetryMetadataInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for GetTelemetryMetadataInput  {
+impl std::fmt::Debug for GetTelemetryMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTelemetryMetadataInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -4966,30 +6823,36 @@ impl  std::fmt::Debug for GetTelemetryMetadataInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetExclusionsPreviewInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    #[doc(hidden)]pub assessment_template_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    #[doc(hidden)]pub preview_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub preview_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    #[doc(hidden)]pub locale: std::option::Option<crate::model::Locale>,
+    #[doc(hidden)]
+    pub locale: std::option::Option<crate::model::Locale>,
 }
 impl GetExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn preview_token(&self) -> std::option::Option<& str> {
+    pub fn preview_token(&self) -> std::option::Option<&str> {
         self.preview_token.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
@@ -4997,11 +6860,11 @@ impl GetExclusionsPreviewInput {
         self.max_results
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
 }
-impl  std::fmt::Debug for GetExclusionsPreviewInput  {
+impl std::fmt::Debug for GetExclusionsPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExclusionsPreviewInput");
         formatter.field("assessment_template_arn", &self.assessment_template_arn);
@@ -5014,30 +6877,34 @@ impl  std::fmt::Debug for GetExclusionsPreviewInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetAssessmentReportInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAssessmentReportInput {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    #[doc(hidden)]pub report_file_format: std::option::Option<crate::model::ReportFileFormat>,
+    #[doc(hidden)]
+    pub report_file_format: std::option::Option<crate::model::ReportFileFormat>,
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-    #[doc(hidden)]pub report_type: std::option::Option<crate::model::ReportType>,
+    #[doc(hidden)]
+    pub report_type: std::option::Option<crate::model::ReportType>,
 }
 impl GetAssessmentReportInput {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    pub fn report_file_format(&self) -> std::option::Option<& crate::model::ReportFileFormat> {
+    pub fn report_file_format(&self) -> std::option::Option<&crate::model::ReportFileFormat> {
         self.report_file_format.as_ref()
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-    pub fn report_type(&self) -> std::option::Option<& crate::model::ReportType> {
+    pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
         self.report_type.as_ref()
     }
 }
-impl  std::fmt::Debug for GetAssessmentReportInput  {
+impl std::fmt::Debug for GetAssessmentReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentReportInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -5048,24 +6915,27 @@ impl  std::fmt::Debug for GetAssessmentReportInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRulesPackagesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    #[doc(hidden)]pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale that you want to translate a rules package description into.</p>
-    #[doc(hidden)]pub locale: std::option::Option<crate::model::Locale>,
+    #[doc(hidden)]
+    pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The locale that you want to translate a rules package description into.</p>
-    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
 }
-impl  std::fmt::Debug for DescribeRulesPackagesInput  {
+impl std::fmt::Debug for DescribeRulesPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRulesPackagesInput");
         formatter.field("rules_package_arns", &self.rules_package_arns);
@@ -5075,18 +6945,20 @@ impl  std::fmt::Debug for DescribeRulesPackagesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeResourceGroupsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    #[doc(hidden)]pub resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn resource_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_group_arns.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeResourceGroupsInput  {
+impl std::fmt::Debug for DescribeResourceGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceGroupsInput");
         formatter.field("resource_group_arns", &self.resource_group_arns);
@@ -5095,24 +6967,27 @@ impl  std::fmt::Debug for DescribeResourceGroupsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFindingsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    #[doc(hidden)]pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
-    #[doc(hidden)]pub locale: std::option::Option<crate::model::Locale>,
+    #[doc(hidden)]
+    pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    pub fn finding_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
-    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
 }
-impl  std::fmt::Debug for DescribeFindingsInput  {
+impl std::fmt::Debug for DescribeFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFindingsInput");
         formatter.field("finding_arns", &self.finding_arns);
@@ -5122,24 +6997,27 @@ impl  std::fmt::Debug for DescribeFindingsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeExclusionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    #[doc(hidden)]pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    #[doc(hidden)]pub locale: std::option::Option<crate::model::Locale>,
+    #[doc(hidden)]
+    pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn exclusion_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn exclusion_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_arns.as_deref()
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
 }
-impl  std::fmt::Debug for DescribeExclusionsInput  {
+impl std::fmt::Debug for DescribeExclusionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExclusionsInput");
         formatter.field("exclusion_arns", &self.exclusion_arns);
@@ -5149,10 +7027,10 @@ impl  std::fmt::Debug for DescribeExclusionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeCrossAccountAccessRoleInput  {
-}
-impl  std::fmt::Debug for DescribeCrossAccountAccessRoleInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCrossAccountAccessRoleInput {}
+impl std::fmt::Debug for DescribeCrossAccountAccessRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCrossAccountAccessRoleInput");
         formatter.finish()
@@ -5160,18 +7038,20 @@ impl  std::fmt::Debug for DescribeCrossAccountAccessRoleInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeAssessmentTemplatesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn assessment_template_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeAssessmentTemplatesInput  {
+impl std::fmt::Debug for DescribeAssessmentTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentTemplatesInput");
         formatter.field("assessment_template_arns", &self.assessment_template_arns);
@@ -5180,18 +7060,20 @@ impl  std::fmt::Debug for DescribeAssessmentTemplatesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeAssessmentTargetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    #[doc(hidden)]pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn assessment_target_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_target_arns.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeAssessmentTargetsInput  {
+impl std::fmt::Debug for DescribeAssessmentTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentTargetsInput");
         formatter.field("assessment_target_arns", &self.assessment_target_arns);
@@ -5200,18 +7082,20 @@ impl  std::fmt::Debug for DescribeAssessmentTargetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeAssessmentRunsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    #[doc(hidden)]pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn assessment_run_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeAssessmentRunsInput  {
+impl std::fmt::Debug for DescribeAssessmentRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentRunsInput");
         formatter.field("assessment_run_arns", &self.assessment_run_arns);
@@ -5220,18 +7104,20 @@ impl  std::fmt::Debug for DescribeAssessmentRunsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteAssessmentTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    #[doc(hidden)]pub assessment_template_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteAssessmentTemplateInput  {
+impl std::fmt::Debug for DeleteAssessmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentTemplateInput");
         formatter.field("assessment_template_arn", &self.assessment_template_arn);
@@ -5240,18 +7126,20 @@ impl  std::fmt::Debug for DeleteAssessmentTemplateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteAssessmentTargetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    #[doc(hidden)]pub assessment_target_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_target_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentTargetInput {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
         self.assessment_target_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteAssessmentTargetInput  {
+impl std::fmt::Debug for DeleteAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentTargetInput");
         formatter.field("assessment_target_arn", &self.assessment_target_arn);
@@ -5260,18 +7148,20 @@ impl  std::fmt::Debug for DeleteAssessmentTargetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteAssessmentRunInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    #[doc(hidden)]pub assessment_run_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteAssessmentRunInput  {
+impl std::fmt::Debug for DeleteAssessmentRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentRunInput");
         formatter.field("assessment_run_arn", &self.assessment_run_arn);
@@ -5280,20 +7170,22 @@ impl  std::fmt::Debug for DeleteAssessmentRunInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateResourceGroupInput  {
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateResourceGroupInput {
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    #[doc(hidden)]pub resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
+    #[doc(hidden)]
+    pub resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
 }
 impl CreateResourceGroupInput {
-    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p> 
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    pub fn resource_group_tags(&self) -> std::option::Option<& [crate::model::ResourceGroupTag]> {
+    pub fn resource_group_tags(&self) -> std::option::Option<&[crate::model::ResourceGroupTag]> {
         self.resource_group_tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateResourceGroupInput  {
+impl std::fmt::Debug for CreateResourceGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceGroupInput");
         formatter.field("resource_group_tags", &self.resource_group_tags);
@@ -5302,18 +7194,20 @@ impl  std::fmt::Debug for CreateResourceGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateExclusionsPreviewInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    #[doc(hidden)]pub assessment_template_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateExclusionsPreviewInput  {
+impl std::fmt::Debug for CreateExclusionsPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExclusionsPreviewInput");
         formatter.field("assessment_template_arn", &self.assessment_template_arn);
@@ -5322,26 +7216,32 @@ impl  std::fmt::Debug for CreateExclusionsPreviewInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateAssessmentTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    #[doc(hidden)]pub assessment_target_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_target_arn: std::option::Option<std::string::String>,
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    #[doc(hidden)]pub assessment_template_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_template_name: std::option::Option<std::string::String>,
     /// <p>The duration of the assessment run in seconds.</p>
-    #[doc(hidden)]pub duration_in_seconds: i32,
+    #[doc(hidden)]
+    pub duration_in_seconds: i32,
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    #[doc(hidden)]pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    #[doc(hidden)]pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+    #[doc(hidden)]
+    pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl CreateAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    pub fn assessment_template_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_name(&self) -> std::option::Option<&str> {
         self.assessment_template_name.as_deref()
     }
     /// <p>The duration of the assessment run in seconds.</p>
@@ -5349,45 +7249,51 @@ impl CreateAssessmentTemplateInput {
         self.duration_in_seconds
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn user_attributes_for_findings(&self) -> std::option::Option<& [crate::model::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateAssessmentTemplateInput  {
+impl std::fmt::Debug for CreateAssessmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentTemplateInput");
         formatter.field("assessment_target_arn", &self.assessment_target_arn);
         formatter.field("assessment_template_name", &self.assessment_template_name);
         formatter.field("duration_in_seconds", &self.duration_in_seconds);
         formatter.field("rules_package_arns", &self.rules_package_arns);
-        formatter.field("user_attributes_for_findings", &self.user_attributes_for_findings);
+        formatter.field(
+            "user_attributes_for_findings",
+            &self.user_attributes_for_findings,
+        );
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateAssessmentTargetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAssessmentTargetInput {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    #[doc(hidden)]pub assessment_target_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub assessment_target_name: std::option::Option<std::string::String>,
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-    #[doc(hidden)]pub resource_group_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentTargetInput {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
-    pub fn assessment_target_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_name(&self) -> std::option::Option<&str> {
         self.assessment_target_name.as_deref()
     }
     /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateAssessmentTargetInput  {
+impl std::fmt::Debug for CreateAssessmentTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentTargetInput");
         formatter.field("assessment_target_name", &self.assessment_target_name);
@@ -5397,24 +7303,27 @@ impl  std::fmt::Debug for CreateAssessmentTargetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddAttributesToFindingsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    #[doc(hidden)]pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    #[doc(hidden)]pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+    #[doc(hidden)]
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn finding_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
     }
 }
-impl  std::fmt::Debug for AddAttributesToFindingsInput  {
+impl std::fmt::Debug for AddAttributesToFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddAttributesToFindingsInput");
         formatter.field("finding_arns", &self.finding_arns);
@@ -5422,4 +7331,3 @@ impl  std::fmt::Debug for AddAttributesToFindingsInput  {
         formatter.finish()
     }
 }
-

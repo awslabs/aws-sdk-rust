@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
 pub mod batch_execute_statement_input {
-    
+
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sqls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -24,13 +24,17 @@ pub mod batch_execute_statement_input {
         /// <p>One or more SQL statements to run. </p>
         pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sqls.unwrap_or_default();
-                            v.push(input.into());
-                            self.sqls = Some(v);
-                            self
+            v.push(input.into());
+            self.sqls = Some(v);
+            self
         }
         /// <p>One or more SQL statements to run. </p>
-        pub fn set_sqls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.sqls = input; self
+        pub fn set_sqls(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.sqls = input;
+            self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -38,8 +42,12 @@ pub mod batch_execute_statement_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,7 +56,8 @@ pub mod batch_execute_statement_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,7 +66,8 @@ pub mod batch_execute_statement_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +76,8 @@ pub mod batch_execute_statement_input {
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
         pub fn with_event(mut self, input: bool) -> Self {
@@ -75,7 +86,8 @@ pub mod batch_execute_statement_input {
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-            self.with_event = input; self
+            self.with_event = input;
+            self
         }
         /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
         pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +95,12 @@ pub mod batch_execute_statement_input {
             self
         }
         /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-        pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement_name = input; self
+        pub fn set_statement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.statement_name = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,96 +108,137 @@ pub mod batch_execute_statement_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
-        pub fn build(self) -> Result<crate::input::BatchExecuteStatementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchExecuteStatementInput {
-                    sqls: self.sqls
-                    ,
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    database: self.database
-                    ,
-                    with_event: self.with_event
-                    ,
-                    statement_name: self.statement_name
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchExecuteStatementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchExecuteStatementInput {
+                sqls: self.sqls,
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                with_event: self.with_event,
+                statement_name: self.statement_name,
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchExecuteStatement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchExecuteStatement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchExecuteStatementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchExecuteStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchExecuteStatementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchExecuteStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.BatchExecuteStatement"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.BatchExecuteStatement",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchExecuteStatement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchExecuteStatement", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchExecuteStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchExecuteStatement",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -193,9 +250,9 @@ impl BatchExecuteStatementInput {
 
 /// See [`CancelStatementInput`](crate::input::CancelStatementInput).
 pub mod cancel_statement_input {
-    
+
     /// A builder for [`CancelStatementInput`](crate::input::CancelStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -207,81 +264,122 @@ pub mod cancel_statement_input {
         }
         /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input; self
+            self.id = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelStatementInput`](crate::input::CancelStatementInput).
-        pub fn build(self) -> Result<crate::input::CancelStatementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelStatementInput {
-                    id: self.id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CancelStatementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelStatementInput { id: self.id })
         }
     }
-    
-    
 }
 impl CancelStatementInput {
     /// Consumes the builder and constructs an Operation<[`CancelStatement`](crate::operation::CancelStatement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelStatement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelStatement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelStatementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelStatementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.CancelStatement"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.CancelStatement",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelStatement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelStatement", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelStatement",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -293,9 +391,9 @@ impl CancelStatementInput {
 
 /// See [`DescribeStatementInput`](crate::input::DescribeStatementInput).
 pub mod describe_statement_input {
-    
+
     /// A builder for [`DescribeStatementInput`](crate::input::DescribeStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -307,81 +405,122 @@ pub mod describe_statement_input {
         }
         /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input; self
+            self.id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeStatementInput`](crate::input::DescribeStatementInput).
-        pub fn build(self) -> Result<crate::input::DescribeStatementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeStatementInput {
-                    id: self.id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeStatementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeStatementInput { id: self.id })
         }
     }
-    
-    
 }
 impl DescribeStatementInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStatement`](crate::operation::DescribeStatement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeStatement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeStatement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeStatementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeStatementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.DescribeStatement"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.DescribeStatement",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_statement(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_statement(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeStatement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeStatement", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeStatement",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -393,9 +532,9 @@ impl DescribeStatementInput {
 
 /// See [`DescribeTableInput`](crate::input::DescribeTableInput).
 pub mod describe_table_input {
-    
+
     /// A builder for [`DescribeTableInput`](crate::input::DescribeTableInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -415,8 +554,12 @@ pub mod describe_table_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -425,7 +568,8 @@ pub mod describe_table_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -434,7 +578,8 @@ pub mod describe_table_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -443,7 +588,8 @@ pub mod describe_table_input {
         }
         /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,8 +597,12 @@ pub mod describe_table_input {
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn set_connected_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connected_database = input; self
+        pub fn set_connected_database(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connected_database = input;
+            self
         }
         /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -461,7 +611,8 @@ pub mod describe_table_input {
         }
         /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input; self
+            self.schema = input;
+            self
         }
         /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
         pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -470,7 +621,8 @@ pub mod describe_table_input {
         }
         /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
         pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table = input; self
+            self.table = input;
+            self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -479,7 +631,8 @@ pub mod describe_table_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -488,7 +641,8 @@ pub mod describe_table_input {
         }
         /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -496,101 +650,137 @@ pub mod describe_table_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput).
-        pub fn build(self) -> Result<crate::input::DescribeTableInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeTableInput {
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    database: self.database
-                    ,
-                    connected_database: self.connected_database
-                    ,
-                    schema: self.schema
-                    ,
-                    table: self.table
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeTableInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeTableInput {
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                connected_database: self.connected_database,
+                schema: self.schema,
+                table: self.table,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTable`](crate::operation::DescribeTable)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTable,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeTableInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeTableInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeTableInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.DescribeTable"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.DescribeTable",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTable::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTable", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTable",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -602,9 +792,9 @@ impl DescribeTableInput {
 
 /// See [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
 pub mod execute_statement_input {
-    
+
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql: std::option::Option<std::string::String>,
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -624,7 +814,8 @@ pub mod execute_statement_input {
         }
         /// <p>The SQL statement text to run. </p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sql = input; self
+            self.sql = input;
+            self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -632,8 +823,12 @@ pub mod execute_statement_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -642,7 +837,8 @@ pub mod execute_statement_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,7 +847,8 @@ pub mod execute_statement_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -660,7 +857,8 @@ pub mod execute_statement_input {
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
         pub fn with_event(mut self, input: bool) -> Self {
@@ -669,7 +867,8 @@ pub mod execute_statement_input {
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-            self.with_event = input; self
+            self.with_event = input;
+            self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
         pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -677,8 +876,12 @@ pub mod execute_statement_input {
             self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-        pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement_name = input; self
+        pub fn set_statement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.statement_name = input;
+            self
         }
         /// Appends an item to `parameters`.
         ///
@@ -687,13 +890,17 @@ pub mod execute_statement_input {
         /// <p>The parameters for the SQL statement.</p>
         pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-                            v.push(input);
-                            self.parameters = Some(v);
-                            self
+            v.push(input);
+            self.parameters = Some(v);
+            self
         }
         /// <p>The parameters for the SQL statement.</p>
-        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>) -> Self {
-            self.parameters = input; self
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+        ) -> Self {
+            self.parameters = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -701,98 +908,136 @@ pub mod execute_statement_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
-        pub fn build(self) -> Result<crate::input::ExecuteStatementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ExecuteStatementInput {
-                    sql: self.sql
-                    ,
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    database: self.database
-                    ,
-                    with_event: self.with_event
-                    ,
-                    statement_name: self.statement_name
-                    ,
-                    parameters: self.parameters
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ExecuteStatementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ExecuteStatementInput {
+                sql: self.sql,
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                with_event: self.with_event,
+                statement_name: self.statement_name,
+                parameters: self.parameters,
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ExecuteStatement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ExecuteStatement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ExecuteStatementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ExecuteStatementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ExecuteStatementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ExecuteStatementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.ExecuteStatement"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.ExecuteStatement",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ExecuteStatement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ExecuteStatement", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExecuteStatement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExecuteStatement",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -804,9 +1049,9 @@ impl ExecuteStatementInput {
 
 /// See [`GetStatementResultInput`](crate::input::GetStatementResultInput).
 pub mod get_statement_result_input {
-    
+
     /// A builder for [`GetStatementResultInput`](crate::input::GetStatementResultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -819,7 +1064,8 @@ pub mod get_statement_result_input {
         }
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input; self
+            self.id = input;
+            self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -828,83 +1074,125 @@ pub mod get_statement_result_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetStatementResultInput`](crate::input::GetStatementResultInput).
-        pub fn build(self) -> Result<crate::input::GetStatementResultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetStatementResultInput {
-                    id: self.id
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetStatementResultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetStatementResultInput {
+                id: self.id,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl GetStatementResultInput {
     /// Consumes the builder and constructs an Operation<[`GetStatementResult`](crate::operation::GetStatementResult)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetStatementResult, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetStatementResult,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetStatementResultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetStatementResultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetStatementResultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetStatementResultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.GetStatementResult"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.GetStatementResult",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_statement_result(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_statement_result(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetStatementResult::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetStatementResult", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStatementResult::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetStatementResult",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -916,9 +1204,9 @@ impl GetStatementResultInput {
 
 /// See [`ListDatabasesInput`](crate::input::ListDatabasesInput).
 pub mod list_databases_input {
-    
+
     /// A builder for [`ListDatabasesInput`](crate::input::ListDatabasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) database: std::option::Option<std::string::String>,
@@ -935,8 +1223,12 @@ pub mod list_databases_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -945,7 +1237,8 @@ pub mod list_databases_input {
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -954,7 +1247,8 @@ pub mod list_databases_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -963,7 +1257,8 @@ pub mod list_databases_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -972,7 +1267,8 @@ pub mod list_databases_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -981,7 +1277,8 @@ pub mod list_databases_input {
         }
         /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -989,95 +1286,134 @@ pub mod list_databases_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::input::ListDatabasesInput).
-        pub fn build(self) -> Result<crate::input::ListDatabasesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListDatabasesInput {
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    database: self.database
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDatabasesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDatabasesInput {
+                cluster_identifier: self.cluster_identifier,
+                database: self.database,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl ListDatabasesInput {
     /// Consumes the builder and constructs an Operation<[`ListDatabases`](crate::operation::ListDatabases)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDatabases, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDatabases,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListDatabasesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListDatabasesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListDatabasesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDatabasesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.ListDatabases"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.ListDatabases",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDatabases::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDatabases", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatabases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatabases",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1089,9 +1425,9 @@ impl ListDatabasesInput {
 
 /// See [`ListSchemasInput`](crate::input::ListSchemasInput).
 pub mod list_schemas_input {
-    
+
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1110,8 +1446,12 @@ pub mod list_schemas_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1120,7 +1460,8 @@ pub mod list_schemas_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1129,7 +1470,8 @@ pub mod list_schemas_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1138,7 +1480,8 @@ pub mod list_schemas_input {
         }
         /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1146,8 +1489,12 @@ pub mod list_schemas_input {
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn set_connected_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connected_database = input; self
+        pub fn set_connected_database(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connected_database = input;
+            self
         }
         /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
         pub fn schema_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1155,8 +1502,12 @@ pub mod list_schemas_input {
             self
         }
         /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
-        pub fn set_schema_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_pattern = input; self
+        pub fn set_schema_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_pattern = input;
+            self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1165,7 +1516,8 @@ pub mod list_schemas_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1174,7 +1526,8 @@ pub mod list_schemas_input {
         }
         /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1182,99 +1535,136 @@ pub mod list_schemas_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListSchemasInput`](crate::input::ListSchemasInput).
-        pub fn build(self) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListSchemasInput {
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    database: self.database
-                    ,
-                    connected_database: self.connected_database
-                    ,
-                    schema_pattern: self.schema_pattern
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSchemasInput {
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                connected_database: self.connected_database,
+                schema_pattern: self.schema_pattern,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl ListSchemasInput {
     /// Consumes the builder and constructs an Operation<[`ListSchemas`](crate::operation::ListSchemas)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSchemas, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSchemas,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListSchemasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListSchemasInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListSchemasInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSchemasInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.ListSchemas"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.ListSchemas",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSchemas::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSchemas", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSchemas::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSchemas",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1286,9 +1676,9 @@ impl ListSchemasInput {
 
 /// See [`ListStatementsInput`](crate::input::ListStatementsInput).
 pub mod list_statements_input {
-    
+
     /// A builder for [`ListStatementsInput`](crate::input::ListStatementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1304,7 +1694,8 @@ pub mod list_statements_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1313,7 +1704,8 @@ pub mod list_statements_input {
         }
         /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
         pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1321,35 +1713,43 @@ pub mod list_statements_input {
             self
         }
         /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-        pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement_name = input; self
+        pub fn set_statement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.statement_name = input;
+            self
         }
-        /// <p>The status of the SQL statement to list. Status values are defined as follows: </p> 
-        /// <ul> 
-        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
-        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
-        /// <li> <p>FAILED - The query run failed. </p> </li> 
-        /// <li> <p>FINISHED - The query has finished running. </p> </li> 
-        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
-        /// <li> <p>STARTED - The query run has started. </p> </li> 
-        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
+        /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+        /// <ul>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StatusString) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the SQL statement to list. Status values are defined as follows: </p> 
-        /// <ul> 
-        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
-        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
-        /// <li> <p>FAILED - The query run failed. </p> </li> 
-        /// <li> <p>FINISHED - The query has finished running. </p> </li> 
-        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
-        /// <li> <p>STARTED - The query run has started. </p> </li> 
-        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
+        /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+        /// <ul>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusString>) -> Self {
-            self.status = input; self
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::StatusString>,
+        ) -> Self {
+            self.status = input;
+            self
         }
         /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
         pub fn role_level(mut self, input: bool) -> Self {
@@ -1358,90 +1758,128 @@ pub mod list_statements_input {
         }
         /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
         pub fn set_role_level(mut self, input: std::option::Option<bool>) -> Self {
-            self.role_level = input; self
+            self.role_level = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListStatementsInput`](crate::input::ListStatementsInput).
-        pub fn build(self) -> Result<crate::input::ListStatementsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListStatementsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    statement_name: self.statement_name
-                    ,
-                    status: self.status
-                    ,
-                    role_level: self.role_level
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListStatementsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListStatementsInput {
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                statement_name: self.statement_name,
+                status: self.status,
+                role_level: self.role_level,
+            })
         }
     }
-    
-    
 }
 impl ListStatementsInput {
     /// Consumes the builder and constructs an Operation<[`ListStatements`](crate::operation::ListStatements)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListStatements, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListStatements,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListStatementsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListStatementsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListStatementsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListStatementsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.ListStatements"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.ListStatements",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListStatements::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListStatements", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStatements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStatements",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1453,9 +1891,9 @@ impl ListStatementsInput {
 
 /// See [`ListTablesInput`](crate::input::ListTablesInput).
 pub mod list_tables_input {
-    
+
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1475,8 +1913,12 @@ pub mod list_tables_input {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_identifier = input; self
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1485,7 +1927,8 @@ pub mod list_tables_input {
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input; self
+            self.secret_arn = input;
+            self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1494,7 +1937,8 @@ pub mod list_tables_input {
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input; self
+            self.db_user = input;
+            self
         }
         /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1503,7 +1947,8 @@ pub mod list_tables_input {
         }
         /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input; self
+            self.database = input;
+            self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1511,8 +1956,12 @@ pub mod list_tables_input {
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn set_connected_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connected_database = input; self
+        pub fn set_connected_database(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connected_database = input;
+            self
         }
         /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn schema_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1520,8 +1969,12 @@ pub mod list_tables_input {
             self
         }
         /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-        pub fn set_schema_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_pattern = input; self
+        pub fn set_schema_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schema_pattern = input;
+            self
         }
         /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn table_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1529,8 +1982,12 @@ pub mod list_tables_input {
             self
         }
         /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-        pub fn set_table_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_pattern = input; self
+        pub fn set_table_pattern(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.table_pattern = input;
+            self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1539,7 +1996,8 @@ pub mod list_tables_input {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1548,7 +2006,8 @@ pub mod list_tables_input {
         }
         /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1556,101 +2015,136 @@ pub mod list_tables_input {
             self
         }
         /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_name = input; self
+        pub fn set_workgroup_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.workgroup_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput).
-        pub fn build(self) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTablesInput {
-                    cluster_identifier: self.cluster_identifier
-                    ,
-                    secret_arn: self.secret_arn
-                    ,
-                    db_user: self.db_user
-                    ,
-                    database: self.database
-                    ,
-                    connected_database: self.connected_database
-                    ,
-                    schema_pattern: self.schema_pattern
-                    ,
-                    table_pattern: self.table_pattern
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    workgroup_name: self.workgroup_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListTablesInput {
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                connected_database: self.connected_database,
+                schema_pattern: self.schema_pattern,
+                table_pattern: self.table_pattern,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                workgroup_name: self.workgroup_name,
+            })
         }
     }
-    
-    
 }
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTables, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTables,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTablesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTablesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTablesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTablesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "RedshiftData.ListTables"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RedshiftData.ListTables",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTables::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTables", "redshiftdata"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTables::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTables",
+            "redshiftdata",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1661,60 +2155,71 @@ impl ListTablesInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTablesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTablesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    #[doc(hidden)]pub connected_database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connected_database: std::option::Option<std::string::String>,
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-    #[doc(hidden)]pub schema_pattern: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub schema_pattern: std::option::Option<std::string::String>,
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-    #[doc(hidden)]pub table_pattern: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub table_pattern: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListTablesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(&self) -> std::option::Option<& str> {
+    pub fn connected_database(&self) -> std::option::Option<&str> {
         self.connected_database.as_deref()
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-    pub fn schema_pattern(&self) -> std::option::Option<& str> {
+    pub fn schema_pattern(&self) -> std::option::Option<&str> {
         self.schema_pattern.as_deref()
     }
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-    pub fn table_pattern(&self) -> std::option::Option<& str> {
+    pub fn table_pattern(&self) -> std::option::Option<&str> {
         self.table_pattern.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -1722,11 +2227,11 @@ impl ListTablesInput {
         self.max_results
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTablesInput  {
+impl std::fmt::Debug for ListTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTablesInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
@@ -1744,31 +2249,37 @@ impl  std::fmt::Debug for ListTablesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListStatementsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListStatementsInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-    #[doc(hidden)]pub statement_name: std::option::Option<std::string::String>,
-    /// <p>The status of the SQL statement to list. Status values are defined as follows: </p> 
-    /// <ul> 
-    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
-    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
-    /// <li> <p>FAILED - The query run failed. </p> </li> 
-    /// <li> <p>FINISHED - The query has finished running. </p> </li> 
-    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
-    /// <li> <p>STARTED - The query run has started. </p> </li> 
-    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
+    #[doc(hidden)]
+    pub statement_name: std::option::Option<std::string::String>,
+    /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+    /// <ul>
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+    /// <li> <p>FAILED - The query run failed. </p> </li>
+    /// <li> <p>FINISHED - The query has finished running. </p> </li>
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+    /// <li> <p>STARTED - The query run has started. </p> </li>
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub status: std::option::Option<crate::model::StatusString>,
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::StatusString>,
     /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
-    #[doc(hidden)]pub role_level: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub role_level: std::option::Option<bool>,
 }
 impl ListStatementsInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -1776,20 +2287,20 @@ impl ListStatementsInput {
         self.max_results
     }
     /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
-    /// <p>The status of the SQL statement to list. Status values are defined as follows: </p> 
-    /// <ul> 
-    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
-    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
-    /// <li> <p>FAILED - The query run failed. </p> </li> 
-    /// <li> <p>FINISHED - The query has finished running. </p> </li> 
-    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
-    /// <li> <p>STARTED - The query run has started. </p> </li> 
-    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
+    /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+    /// <ul>
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+    /// <li> <p>FAILED - The query run failed. </p> </li>
+    /// <li> <p>FINISHED - The query has finished running. </p> </li>
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+    /// <li> <p>STARTED - The query run has started. </p> </li>
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::model::StatusString> {
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
         self.status.as_ref()
     }
     /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
@@ -1797,7 +2308,7 @@ impl ListStatementsInput {
         self.role_level
     }
 }
-impl  std::fmt::Debug for ListStatementsInput  {
+impl std::fmt::Debug for ListStatementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStatementsInput");
         formatter.field("next_token", &self.next_token);
@@ -1810,54 +2321,64 @@ impl  std::fmt::Debug for ListStatementsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListSchemasInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSchemasInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    #[doc(hidden)]pub connected_database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connected_database: std::option::Option<std::string::String>,
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
-    #[doc(hidden)]pub schema_pattern: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub schema_pattern: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListSchemasInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(&self) -> std::option::Option<& str> {
+    pub fn connected_database(&self) -> std::option::Option<&str> {
         self.connected_database.as_deref()
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
-    pub fn schema_pattern(&self) -> std::option::Option<& str> {
+    pub fn schema_pattern(&self) -> std::option::Option<&str> {
         self.schema_pattern.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -1865,11 +2386,11 @@ impl ListSchemasInput {
         self.max_results
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ListSchemasInput  {
+impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
@@ -1886,42 +2407,50 @@ impl  std::fmt::Debug for ListSchemasInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListDatabasesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatabasesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ListDatabasesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -1929,11 +2458,11 @@ impl ListDatabasesInput {
         self.max_results
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ListDatabasesInput  {
+impl std::fmt::Debug for ListDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatabasesInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
@@ -1948,24 +2477,27 @@ impl  std::fmt::Debug for ListDatabasesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetStatementResultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetStatementResultInput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl GetStatementResultInput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for GetStatementResultInput  {
+impl std::fmt::Debug for GetStatementResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStatementResultInput");
         formatter.field("id", &self.id);
@@ -1975,46 +2507,56 @@ impl  std::fmt::Debug for GetStatementResultInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ExecuteStatementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
-    #[doc(hidden)]pub sql: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub sql: std::option::Option<std::string::String>,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
-    #[doc(hidden)]pub with_event: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub with_event: std::option::Option<bool>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-    #[doc(hidden)]pub statement_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub statement_name: std::option::Option<std::string::String>,
     /// <p>The parameters for the SQL statement.</p>
-    #[doc(hidden)]pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+    #[doc(hidden)]
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
-    pub fn sql(&self) -> std::option::Option<& str> {
+    pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
@@ -2022,19 +2564,19 @@ impl ExecuteStatementInput {
         self.with_event
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::model::SqlParameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
         self.parameters.as_deref()
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ExecuteStatementInput  {
+impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteStatementInput");
         formatter.field("sql", &self.sql);
@@ -2051,60 +2593,71 @@ impl  std::fmt::Debug for ExecuteStatementInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeTableInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTableInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    #[doc(hidden)]pub connected_database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connected_database: std::option::Option<std::string::String>,
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
-    #[doc(hidden)]pub schema: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub schema: std::option::Option<std::string::String>,
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
-    #[doc(hidden)]pub table: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub table: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl DescribeTableInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(&self) -> std::option::Option<& str> {
+    pub fn connected_database(&self) -> std::option::Option<&str> {
         self.connected_database.as_deref()
     }
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
-    pub fn schema(&self) -> std::option::Option<& str> {
+    pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
-    pub fn table(&self) -> std::option::Option<& str> {
+    pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -2112,11 +2665,11 @@ impl DescribeTableInput {
         self.max_results
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeTableInput  {
+impl std::fmt::Debug for DescribeTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableInput");
         formatter.field("cluster_identifier", &self.cluster_identifier);
@@ -2134,18 +2687,20 @@ impl  std::fmt::Debug for DescribeTableInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeStatementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStatementInput {
     /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
-    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
 }
 impl DescribeStatementInput {
     /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeStatementInput  {
+impl std::fmt::Debug for DescribeStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStatementInput");
         formatter.field("id", &self.id);
@@ -2154,18 +2709,20 @@ impl  std::fmt::Debug for DescribeStatementInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelStatementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelStatementInput {
     /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-    #[doc(hidden)]pub id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub id: std::option::Option<std::string::String>,
 }
 impl CancelStatementInput {
     /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelStatementInput  {
+impl std::fmt::Debug for CancelStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelStatementInput");
         formatter.field("id", &self.id);
@@ -2174,44 +2731,53 @@ impl  std::fmt::Debug for CancelStatementInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchExecuteStatementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. </p>
-    #[doc(hidden)]pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub cluster_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]pub secret_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    #[doc(hidden)]pub db_user: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]pub database: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub database: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
-    #[doc(hidden)]pub with_event: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub with_event: std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    #[doc(hidden)]pub statement_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub statement_name: std::option::Option<std::string::String>,
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]pub workgroup_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. </p>
-    pub fn sqls(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
         self.sqls.as_deref()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
@@ -2219,15 +2785,15 @@ impl BatchExecuteStatementInput {
         self.with_event
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchExecuteStatementInput  {
+impl std::fmt::Debug for BatchExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchExecuteStatementInput");
         formatter.field("sqls", &self.sqls);
@@ -2241,4 +2807,3 @@ impl  std::fmt::Debug for BatchExecuteStatementInput  {
         formatter.finish()
     }
 }
-

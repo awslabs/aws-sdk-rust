@@ -3,16 +3,17 @@ use std::fmt::Write;
 
 /// See [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput).
 pub mod create_connector_profile_input {
-    
+
     /// A builder for [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
         pub(crate) kms_arn: std::option::Option<std::string::String>,
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
         pub(crate) connector_label: std::option::Option<std::string::String>,
         pub(crate) connection_mode: std::option::Option<crate::model::ConnectionMode>,
-        pub(crate) connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
+        pub(crate) connector_profile_config:
+            std::option::Option<crate::model::ConnectorProfileConfig>,
     }
     impl Builder {
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
@@ -21,8 +22,12 @@ pub mod create_connector_profile_input {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-        pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_profile_name = input; self
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -31,7 +36,8 @@ pub mod create_connector_profile_input {
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_arn = input; self
+            self.kms_arn = input;
+            self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
         pub fn connector_type(mut self, input: crate::model::ConnectorType) -> Self {
@@ -39,8 +45,12 @@ pub mod create_connector_profile_input {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::ConnectorType>) -> Self {
-            self.connector_type = input; self
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.connector_type = input;
+            self
         }
         /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
         pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,8 +58,12 @@ pub mod create_connector_profile_input {
             self
         }
         /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-        pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_label = input; self
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_label = input;
+            self
         }
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
         pub fn connection_mode(mut self, input: crate::model::ConnectionMode) -> Self {
@@ -57,96 +71,146 @@ pub mod create_connector_profile_input {
             self
         }
         /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
-        pub fn set_connection_mode(mut self, input: std::option::Option<crate::model::ConnectionMode>) -> Self {
-            self.connection_mode = input; self
+        pub fn set_connection_mode(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionMode>,
+        ) -> Self {
+            self.connection_mode = input;
+            self
         }
         /// <p> Defines the connector-specific configuration and credentials. </p>
-        pub fn connector_profile_config(mut self, input: crate::model::ConnectorProfileConfig) -> Self {
+        pub fn connector_profile_config(
+            mut self,
+            input: crate::model::ConnectorProfileConfig,
+        ) -> Self {
             self.connector_profile_config = Some(input);
             self
         }
         /// <p> Defines the connector-specific configuration and credentials. </p>
-        pub fn set_connector_profile_config(mut self, input: std::option::Option<crate::model::ConnectorProfileConfig>) -> Self {
-            self.connector_profile_config = input; self
+        pub fn set_connector_profile_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProfileConfig>,
+        ) -> Self {
+            self.connector_profile_config = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput).
-        pub fn build(self) -> Result<crate::input::CreateConnectorProfileInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateConnectorProfileInput {
-                    connector_profile_name: self.connector_profile_name
-                    ,
-                    kms_arn: self.kms_arn
-                    ,
-                    connector_type: self.connector_type
-                    ,
-                    connector_label: self.connector_label
-                    ,
-                    connection_mode: self.connection_mode
-                    ,
-                    connector_profile_config: self.connector_profile_config
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateConnectorProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateConnectorProfileInput {
+                connector_profile_name: self.connector_profile_name,
+                kms_arn: self.kms_arn,
+                connector_type: self.connector_type,
+                connector_label: self.connector_label,
+                connection_mode: self.connection_mode,
+                connector_profile_config: self.connector_profile_config,
+            })
         }
     }
-    
-    
 }
 impl CreateConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectorProfile`](crate::operation::CreateConnectorProfile)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConnectorProfile, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateConnectorProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateConnectorProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateConnectorProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/create-connector-profile").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateConnectorProfileInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateConnectorProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_connector_profile(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_connector_profile(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConnectorProfile::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConnectorProfile", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateConnectorProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateConnectorProfile",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -158,18 +222,21 @@ impl CreateConnectorProfileInput {
 
 /// See [`CreateFlowInput`](crate::input::CreateFlowInput).
 pub mod create_flow_input {
-    
+
     /// A builder for [`CreateFlowInput`](crate::input::CreateFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_arn: std::option::Option<std::string::String>,
         pub(crate) trigger_config: std::option::Option<crate::model::TriggerConfig>,
         pub(crate) source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-        pub(crate) destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+        pub(crate) destination_flow_config_list:
+            std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
@@ -179,7 +246,8 @@ pub mod create_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// <p> A description of the flow you want to create. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,7 +256,8 @@ pub mod create_flow_input {
         }
         /// <p> A description of the flow you want to create. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,7 +266,8 @@ pub mod create_flow_input {
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_arn = input; self
+            self.kms_arn = input;
+            self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
         pub fn trigger_config(mut self, input: crate::model::TriggerConfig) -> Self {
@@ -205,8 +275,12 @@ pub mod create_flow_input {
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
-        pub fn set_trigger_config(mut self, input: std::option::Option<crate::model::TriggerConfig>) -> Self {
-            self.trigger_config = input; self
+        pub fn set_trigger_config(
+            mut self,
+            input: std::option::Option<crate::model::TriggerConfig>,
+        ) -> Self {
+            self.trigger_config = input;
+            self
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
@@ -214,23 +288,34 @@ pub mod create_flow_input {
             self
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-        pub fn set_source_flow_config(mut self, input: std::option::Option<crate::model::SourceFlowConfig>) -> Self {
-            self.source_flow_config = input; self
+        pub fn set_source_flow_config(
+            mut self,
+            input: std::option::Option<crate::model::SourceFlowConfig>,
+        ) -> Self {
+            self.source_flow_config = input;
+            self
         }
         /// Appends an item to `destination_flow_config_list`.
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
         /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-        pub fn destination_flow_config_list(mut self, input: crate::model::DestinationFlowConfig) -> Self {
+        pub fn destination_flow_config_list(
+            mut self,
+            input: crate::model::DestinationFlowConfig,
+        ) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-                            v.push(input);
-                            self.destination_flow_config_list = Some(v);
-                            self
+            v.push(input);
+            self.destination_flow_config_list = Some(v);
+            self
         }
         /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-        pub fn set_destination_flow_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>) -> Self {
-            self.destination_flow_config_list = input; self
+        pub fn set_destination_flow_config_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+        ) -> Self {
+            self.destination_flow_config_list = input;
+            self
         }
         /// Appends an item to `tasks`.
         ///
@@ -239,111 +324,159 @@ pub mod create_flow_input {
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-                            v.push(input);
-                            self.tasks = Some(v);
-                            self
+            v.push(input);
+            self.tasks = Some(v);
+            self
         }
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-        pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Task>>) -> Self {
-            self.tasks = input; self
+        pub fn set_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
+        ) -> Self {
+            self.tasks = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateFlowInput`](crate::input::CreateFlowInput).
-        pub fn build(self) -> Result<crate::input::CreateFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                    description: self.description
-                    ,
-                    kms_arn: self.kms_arn
-                    ,
-                    trigger_config: self.trigger_config
-                    ,
-                    source_flow_config: self.source_flow_config
-                    ,
-                    destination_flow_config_list: self.destination_flow_config_list
-                    ,
-                    tasks: self.tasks
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateFlowInput {
+                flow_name: self.flow_name,
+                description: self.description,
+                kms_arn: self.kms_arn,
+                trigger_config: self.trigger_config,
+                source_flow_config: self.source_flow_config,
+                destination_flow_config_list: self.destination_flow_config_list,
+                tasks: self.tasks,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlow`](crate::operation::CreateFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/create-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFlow",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -355,9 +488,9 @@ impl CreateFlowInput {
 
 /// See [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput).
 pub mod delete_connector_profile_input {
-    
+
     /// A builder for [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -369,8 +502,12 @@ pub mod delete_connector_profile_input {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-        pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_profile_name = input; self
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
         }
         /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
@@ -379,79 +516,122 @@ pub mod delete_connector_profile_input {
         }
         /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.force_delete = input; self
+            self.force_delete = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput).
-        pub fn build(self) -> Result<crate::input::DeleteConnectorProfileInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteConnectorProfileInput {
-                    connector_profile_name: self.connector_profile_name
-                    ,
-                    force_delete: self.force_delete
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteConnectorProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteConnectorProfileInput {
+                connector_profile_name: self.connector_profile_name,
+                force_delete: self.force_delete.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl DeleteConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectorProfile`](crate::operation::DeleteConnectorProfile)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConnectorProfile, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteConnectorProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteConnectorProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteConnectorProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/delete-connector-profile").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteConnectorProfileInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteConnectorProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_connector_profile(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_connector_profile(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConnectorProfile::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConnectorProfile", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteConnectorProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteConnectorProfile",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -463,9 +643,9 @@ impl DeleteConnectorProfileInput {
 
 /// See [`DeleteFlowInput`](crate::input::DeleteFlowInput).
 pub mod delete_flow_input {
-    
+
     /// A builder for [`DeleteFlowInput`](crate::input::DeleteFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -478,7 +658,8 @@ pub mod delete_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
@@ -487,79 +668,119 @@ pub mod delete_flow_input {
         }
         /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.force_delete = input; self
+            self.force_delete = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::input::DeleteFlowInput).
-        pub fn build(self) -> Result<crate::input::DeleteFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                    force_delete: self.force_delete
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteFlowInput {
+                flow_name: self.flow_name,
+                force_delete: self.force_delete.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl DeleteFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlow`](crate::operation::DeleteFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/delete-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFlow",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -571,9 +792,9 @@ impl DeleteFlowInput {
 
 /// See [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
 pub mod describe_connector_input {
-    
+
     /// A builder for [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
         pub(crate) connector_label: std::option::Option<std::string::String>,
@@ -585,8 +806,12 @@ pub mod describe_connector_input {
             self
         }
         /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
-        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::ConnectorType>) -> Self {
-            self.connector_type = input; self
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.connector_type = input;
+            self
         }
         /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
         pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -594,79 +819,124 @@ pub mod describe_connector_input {
             self
         }
         /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-        pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_label = input; self
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_label = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
-        pub fn build(self) -> Result<crate::input::DescribeConnectorInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeConnectorInput {
-                    connector_type: self.connector_type
-                    ,
-                    connector_label: self.connector_label
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeConnectorInput {
+                connector_type: self.connector_type,
+                connector_label: self.connector_label,
+            })
         }
     }
-    
-    
 }
 impl DescribeConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnector`](crate::operation::DescribeConnector)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeConnector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnector,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describe-connector").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeConnectorInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connector(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_connector(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeConnector::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeConnector", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnector",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -678,9 +948,9 @@ impl DescribeConnectorInput {
 
 /// See [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput).
 pub mod describe_connector_entity_input {
-    
+
     /// A builder for [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_entity_name: std::option::Option<std::string::String>,
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -694,8 +964,12 @@ pub mod describe_connector_entity_input {
             self
         }
         /// <p> The entity name for that connector. </p>
-        pub fn set_connector_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_entity_name = input; self
+        pub fn set_connector_entity_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_entity_name = input;
+            self
         }
         /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
         pub fn connector_type(mut self, input: crate::model::ConnectorType) -> Self {
@@ -703,8 +977,12 @@ pub mod describe_connector_entity_input {
             self
         }
         /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::ConnectorType>) -> Self {
-            self.connector_type = input; self
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.connector_type = input;
+            self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -712,8 +990,12 @@ pub mod describe_connector_entity_input {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-        pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_profile_name = input; self
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
         }
         /// <p>The version of the API that's used by the connector.</p>
         pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -722,82 +1004,126 @@ pub mod describe_connector_entity_input {
         }
         /// <p>The version of the API that's used by the connector.</p>
         pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.api_version = input; self
+            self.api_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput).
-        pub fn build(self) -> Result<crate::input::DescribeConnectorEntityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeConnectorEntityInput {
-                    connector_entity_name: self.connector_entity_name
-                    ,
-                    connector_type: self.connector_type
-                    ,
-                    connector_profile_name: self.connector_profile_name
-                    ,
-                    api_version: self.api_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeConnectorEntityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeConnectorEntityInput {
+                connector_entity_name: self.connector_entity_name,
+                connector_type: self.connector_type,
+                connector_profile_name: self.connector_profile_name,
+                api_version: self.api_version,
+            })
         }
     }
-    
-    
 }
 impl DescribeConnectorEntityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectorEntity`](crate::operation::DescribeConnectorEntity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeConnectorEntity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnectorEntity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeConnectorEntityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeConnectorEntityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describe-connector-entity").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeConnectorEntityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeConnectorEntityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connector_entity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_connector_entity(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeConnectorEntity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeConnectorEntity", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnectorEntity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnectorEntity",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -809,9 +1135,9 @@ impl DescribeConnectorEntityInput {
 
 /// See [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput).
 pub mod describe_connector_profiles_input {
-    
+
     /// A builder for [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -827,13 +1153,17 @@ pub mod describe_connector_profiles_input {
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.connector_profile_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.connector_profile_names = Some(v);
-                            self
+            v.push(input.into());
+            self.connector_profile_names = Some(v);
+            self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-        pub fn set_connector_profile_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.connector_profile_names = input; self
+        pub fn set_connector_profile_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.connector_profile_names = input;
+            self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
         pub fn connector_type(mut self, input: crate::model::ConnectorType) -> Self {
@@ -841,8 +1171,12 @@ pub mod describe_connector_profiles_input {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::ConnectorType>) -> Self {
-            self.connector_type = input; self
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.connector_type = input;
+            self
         }
         /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
         pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -850,8 +1184,12 @@ pub mod describe_connector_profiles_input {
             self
         }
         /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-        pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_label = input; self
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_label = input;
+            self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -860,7 +1198,8 @@ pub mod describe_connector_profiles_input {
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -869,84 +1208,127 @@ pub mod describe_connector_profiles_input {
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput).
-        pub fn build(self) -> Result<crate::input::DescribeConnectorProfilesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeConnectorProfilesInput {
-                    connector_profile_names: self.connector_profile_names
-                    ,
-                    connector_type: self.connector_type
-                    ,
-                    connector_label: self.connector_label
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeConnectorProfilesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeConnectorProfilesInput {
+                connector_profile_names: self.connector_profile_names,
+                connector_type: self.connector_type,
+                connector_label: self.connector_label,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl DescribeConnectorProfilesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectorProfiles`](crate::operation::DescribeConnectorProfiles)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeConnectorProfiles, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnectorProfiles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeConnectorProfilesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeConnectorProfilesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describe-connector-profiles").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeConnectorProfilesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeConnectorProfilesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connector_profiles(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_connector_profiles(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeConnectorProfiles::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeConnectorProfiles", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnectorProfiles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnectorProfiles",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -958,9 +1340,9 @@ impl DescribeConnectorProfilesInput {
 
 /// See [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput).
 pub mod describe_connectors_input {
-    
+
     /// A builder for [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -974,13 +1356,17 @@ pub mod describe_connectors_input {
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
         pub fn connector_types(mut self, input: crate::model::ConnectorType) -> Self {
             let mut v = self.connector_types.unwrap_or_default();
-                            v.push(input);
-                            self.connector_types = Some(v);
-                            self
+            v.push(input);
+            self.connector_types = Some(v);
+            self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn set_connector_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>) -> Self {
-            self.connector_types = input; self
+        pub fn set_connector_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
+        ) -> Self {
+            self.connector_types = input;
+            self
         }
         /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -989,7 +1375,8 @@ pub mod describe_connectors_input {
         }
         /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -998,80 +1385,121 @@ pub mod describe_connectors_input {
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput).
-        pub fn build(self) -> Result<crate::input::DescribeConnectorsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeConnectorsInput {
-                    connector_types: self.connector_types
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeConnectorsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeConnectorsInput {
+                connector_types: self.connector_types,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl DescribeConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectors`](crate::operation::DescribeConnectors)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeConnectors, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnectors,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeConnectorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeConnectorsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describe-connectors").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeConnectorsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeConnectorsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connectors(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_connectors(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeConnectors::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeConnectors", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnectors",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1083,9 +1511,9 @@ impl DescribeConnectorsInput {
 
 /// See [`DescribeFlowInput`](crate::input::DescribeFlowInput).
 pub mod describe_flow_input {
-    
+
     /// A builder for [`DescribeFlowInput`](crate::input::DescribeFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
@@ -1097,76 +1525,119 @@ pub mod describe_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::input::DescribeFlowInput).
-        pub fn build(self) -> Result<crate::input::DescribeFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFlowInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFlowInput {
+                flow_name: self.flow_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlow`](crate::operation::DescribeFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describe-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFlow",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1178,9 +1649,9 @@ impl DescribeFlowInput {
 
 /// See [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput).
 pub mod describe_flow_execution_records_input {
-    
+
     /// A builder for [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1194,7 +1665,8 @@ pub mod describe_flow_execution_records_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1203,7 +1675,8 @@ pub mod describe_flow_execution_records_input {
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1212,43 +1685,64 @@ pub mod describe_flow_execution_records_input {
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput).
-        pub fn build(self) -> Result<crate::input::DescribeFlowExecutionRecordsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFlowExecutionRecordsInput {
-                    flow_name: self.flow_name
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeFlowExecutionRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeFlowExecutionRecordsInput {
+                flow_name: self.flow_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl DescribeFlowExecutionRecordsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlowExecutionRecords`](crate::operation::DescribeFlowExecutionRecords)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFlowExecutionRecords, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFlowExecutionRecords,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFlowExecutionRecordsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/describe-flow-execution-records").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::DescribeFlowExecutionRecordsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/describe-flow-execution-records")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFlowExecutionRecordsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFlowExecutionRecordsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1256,36 +1750,58 @@ impl DescribeFlowExecutionRecordsInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_flow_execution_records(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFlowExecutionRecords::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFlowExecutionRecords", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFlowExecutionRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFlowExecutionRecords",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1297,9 +1813,9 @@ impl DescribeFlowExecutionRecordsInput {
 
 /// See [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput).
 pub mod list_connector_entities_input {
-    
+
     /// A builder for [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -1313,8 +1829,12 @@ pub mod list_connector_entities_input {
             self
         }
         /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-        pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_profile_name = input; self
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
         pub fn connector_type(mut self, input: crate::model::ConnectorType) -> Self {
@@ -1322,8 +1842,12 @@ pub mod list_connector_entities_input {
             self
         }
         /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-        pub fn set_connector_type(mut self, input: std::option::Option<crate::model::ConnectorType>) -> Self {
-            self.connector_type = input; self
+        pub fn set_connector_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorType>,
+        ) -> Self {
+            self.connector_type = input;
+            self
         }
         /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
         pub fn entities_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1331,8 +1855,12 @@ pub mod list_connector_entities_input {
             self
         }
         /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-        pub fn set_entities_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entities_path = input; self
+        pub fn set_entities_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entities_path = input;
+            self
         }
         /// <p>The version of the API that's used by the connector.</p>
         pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1341,82 +1869,124 @@ pub mod list_connector_entities_input {
         }
         /// <p>The version of the API that's used by the connector.</p>
         pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.api_version = input; self
+            self.api_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput).
-        pub fn build(self) -> Result<crate::input::ListConnectorEntitiesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListConnectorEntitiesInput {
-                    connector_profile_name: self.connector_profile_name
-                    ,
-                    connector_type: self.connector_type
-                    ,
-                    entities_path: self.entities_path
-                    ,
-                    api_version: self.api_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListConnectorEntitiesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListConnectorEntitiesInput {
+                connector_profile_name: self.connector_profile_name,
+                connector_type: self.connector_type,
+                entities_path: self.entities_path,
+                api_version: self.api_version,
+            })
         }
     }
-    
-    
 }
 impl ListConnectorEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectorEntities`](crate::operation::ListConnectorEntities)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConnectorEntities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListConnectorEntities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListConnectorEntitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListConnectorEntitiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/list-connector-entities").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListConnectorEntitiesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListConnectorEntitiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_connector_entities(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_connector_entities(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConnectorEntities::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConnectorEntities", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListConnectorEntities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListConnectorEntities",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1428,9 +1998,9 @@ impl ListConnectorEntitiesInput {
 
 /// See [`ListConnectorsInput`](crate::input::ListConnectorsInput).
 pub mod list_connectors_input {
-    
+
     /// A builder for [`ListConnectorsInput`](crate::input::ListConnectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1443,7 +2013,8 @@ pub mod list_connectors_input {
         }
         /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The pagination token for the next page of data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1452,78 +2023,120 @@ pub mod list_connectors_input {
         }
         /// <p>The pagination token for the next page of data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::input::ListConnectorsInput).
-        pub fn build(self) -> Result<crate::input::ListConnectorsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListConnectorsInput {
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListConnectorsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListConnectorsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectors`](crate::operation::ListConnectors)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConnectors, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListConnectors,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListConnectorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListConnectorsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/list-connectors").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListConnectorsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListConnectorsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_connectors(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_connectors(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConnectors::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConnectors", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListConnectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListConnectors",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1535,9 +2148,9 @@ impl ListConnectorsInput {
 
 /// See [`ListFlowsInput`](crate::input::ListFlowsInput).
 pub mod list_flows_input {
-    
+
     /// A builder for [`ListFlowsInput`](crate::input::ListFlowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1550,7 +2163,8 @@ pub mod list_flows_input {
         }
         /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The pagination token for next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1559,78 +2173,117 @@ pub mod list_flows_input {
         }
         /// <p> The pagination token for next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFlowsInput`](crate::input::ListFlowsInput).
-        pub fn build(self) -> Result<crate::input::ListFlowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFlowsInput {
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFlowsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListFlowsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListFlows`](crate::operation::ListFlows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFlows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFlows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFlowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFlowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/list-flows").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFlowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFlowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_flows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_flows(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFlows", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListFlows",
+                    "appflow",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1642,9 +2295,9 @@ impl ListFlowsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1656,39 +2309,67 @@ pub mod list_tags_for_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.resource_arn;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1697,37 +2378,54 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1739,14 +2437,16 @@ impl ListTagsForResourceInput {
 
 /// See [`RegisterConnectorInput`](crate::input::RegisterConnectorInput).
 pub mod register_connector_input {
-    
+
     /// A builder for [`RegisterConnectorInput`](crate::input::RegisterConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_label: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
-        pub(crate) connector_provisioning_config: std::option::Option<crate::model::ConnectorProvisioningConfig>,
+        pub(crate) connector_provisioning_type:
+            std::option::Option<crate::model::ConnectorProvisioningType>,
+        pub(crate) connector_provisioning_config:
+            std::option::Option<crate::model::ConnectorProvisioningConfig>,
     }
     impl Builder {
         /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
@@ -1755,8 +2455,12 @@ pub mod register_connector_input {
             self
         }
         /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-        pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_label = input; self
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_label = input;
+            self
         }
         /// <p>A description about the connector that's being registered.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1765,100 +2469,154 @@ pub mod register_connector_input {
         }
         /// <p>A description about the connector that's being registered.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-        pub fn connector_provisioning_type(mut self, input: crate::model::ConnectorProvisioningType) -> Self {
+        pub fn connector_provisioning_type(
+            mut self,
+            input: crate::model::ConnectorProvisioningType,
+        ) -> Self {
             self.connector_provisioning_type = Some(input);
             self
         }
         /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-        pub fn set_connector_provisioning_type(mut self, input: std::option::Option<crate::model::ConnectorProvisioningType>) -> Self {
-            self.connector_provisioning_type = input; self
+        pub fn set_connector_provisioning_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProvisioningType>,
+        ) -> Self {
+            self.connector_provisioning_type = input;
+            self
         }
         /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-        pub fn connector_provisioning_config(mut self, input: crate::model::ConnectorProvisioningConfig) -> Self {
+        pub fn connector_provisioning_config(
+            mut self,
+            input: crate::model::ConnectorProvisioningConfig,
+        ) -> Self {
             self.connector_provisioning_config = Some(input);
             self
         }
         /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-        pub fn set_connector_provisioning_config(mut self, input: std::option::Option<crate::model::ConnectorProvisioningConfig>) -> Self {
-            self.connector_provisioning_config = input; self
+        pub fn set_connector_provisioning_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProvisioningConfig>,
+        ) -> Self {
+            self.connector_provisioning_config = input;
+            self
         }
         /// Consumes the builder and constructs a [`RegisterConnectorInput`](crate::input::RegisterConnectorInput).
-        pub fn build(self) -> Result<crate::input::RegisterConnectorInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RegisterConnectorInput {
-                    connector_label: self.connector_label
-                    ,
-                    description: self.description
-                    ,
-                    connector_provisioning_type: self.connector_provisioning_type
-                    ,
-                    connector_provisioning_config: self.connector_provisioning_config
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RegisterConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RegisterConnectorInput {
+                connector_label: self.connector_label,
+                description: self.description,
+                connector_provisioning_type: self.connector_provisioning_type,
+                connector_provisioning_config: self.connector_provisioning_config,
+            })
         }
     }
-    
-    
 }
 impl RegisterConnectorInput {
     /// Consumes the builder and constructs an Operation<[`RegisterConnector`](crate::operation::RegisterConnector)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterConnector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterConnector,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RegisterConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RegisterConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/register-connector").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RegisterConnectorInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RegisterConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_connector(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_register_connector(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterConnector::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterConnector", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterConnector",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1870,9 +2628,9 @@ impl RegisterConnectorInput {
 
 /// See [`StartFlowInput`](crate::input::StartFlowInput).
 pub mod start_flow_input {
-    
+
     /// A builder for [`StartFlowInput`](crate::input::StartFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
@@ -1884,76 +2642,116 @@ pub mod start_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartFlowInput`](crate::input::StartFlowInput).
-        pub fn build(self) -> Result<crate::input::StartFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::StartFlowInput {
+                flow_name: self.flow_name,
+            })
         }
     }
-    
-    
 }
 impl StartFlowInput {
     /// Consumes the builder and constructs an Operation<[`StartFlow`](crate::operation::StartFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/start-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StartFlow",
+                    "appflow",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1965,9 +2763,9 @@ impl StartFlowInput {
 
 /// See [`StopFlowInput`](crate::input::StopFlowInput).
 pub mod stop_flow_input {
-    
+
     /// A builder for [`StopFlowInput`](crate::input::StopFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
@@ -1979,76 +2777,115 @@ pub mod stop_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`StopFlowInput`](crate::input::StopFlowInput).
-        pub fn build(self) -> Result<crate::input::StopFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StopFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::StopFlowInput {
+                flow_name: self.flow_name,
+            })
         }
     }
-    
-    
 }
 impl StopFlowInput {
     /// Consumes the builder and constructs an Operation<[`StopFlow`](crate::operation::StopFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StopFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StopFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/stop-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StopFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StopFlow", "appflow",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2060,12 +2897,14 @@ impl StopFlowInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
@@ -2075,99 +2914,163 @@ pub mod tag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.resource_arn;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2179,9 +3082,9 @@ impl TagResourceInput {
 
 /// See [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput).
 pub mod unregister_connector_input {
-    
+
     /// A builder for [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_label: std::option::Option<std::string::String>,
         pub(crate) force_delete: std::option::Option<bool>,
@@ -2193,8 +3096,12 @@ pub mod unregister_connector_input {
             self
         }
         /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-        pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_label = input; self
+        pub fn set_connector_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_label = input;
+            self
         }
         /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
@@ -2203,79 +3110,120 @@ pub mod unregister_connector_input {
         }
         /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.force_delete = input; self
+            self.force_delete = input;
+            self
         }
         /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput).
-        pub fn build(self) -> Result<crate::input::UnregisterConnectorInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UnregisterConnectorInput {
-                    connector_label: self.connector_label
-                    ,
-                    force_delete: self.force_delete
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UnregisterConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UnregisterConnectorInput {
+                connector_label: self.connector_label,
+                force_delete: self.force_delete.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UnregisterConnectorInput {
     /// Consumes the builder and constructs an Operation<[`UnregisterConnector`](crate::operation::UnregisterConnector)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UnregisterConnector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UnregisterConnector,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UnregisterConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UnregisterConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/unregister-connector").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UnregisterConnectorInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UnregisterConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_unregister_connector(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_unregister_connector(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UnregisterConnector::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UnregisterConnector", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UnregisterConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UnregisterConnector",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2287,9 +3235,9 @@ impl UnregisterConnectorInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2302,7 +3250,8 @@ pub mod untag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -2311,44 +3260,75 @@ pub mod untag_resource_input {
         /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.resource_arn;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.tag_keys {
                     for inner_5 in inner_4 {
@@ -2357,10 +3337,12 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2370,37 +3352,54 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2412,13 +3411,14 @@ impl UntagResourceInput {
 
 /// See [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput).
 pub mod update_connector_profile_input {
-    
+
     /// A builder for [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
         pub(crate) connection_mode: std::option::Option<crate::model::ConnectionMode>,
-        pub(crate) connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
+        pub(crate) connector_profile_config:
+            std::option::Option<crate::model::ConnectorProfileConfig>,
     }
     impl Builder {
         /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
@@ -2427,8 +3427,12 @@ pub mod update_connector_profile_input {
             self
         }
         /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-        pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.connector_profile_name = input; self
+        pub fn set_connector_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connector_profile_name = input;
+            self
         }
         /// <p> Indicates the connection mode and if it is public or private. </p>
         pub fn connection_mode(mut self, input: crate::model::ConnectionMode) -> Self {
@@ -2436,90 +3440,143 @@ pub mod update_connector_profile_input {
             self
         }
         /// <p> Indicates the connection mode and if it is public or private. </p>
-        pub fn set_connection_mode(mut self, input: std::option::Option<crate::model::ConnectionMode>) -> Self {
-            self.connection_mode = input; self
+        pub fn set_connection_mode(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionMode>,
+        ) -> Self {
+            self.connection_mode = input;
+            self
         }
         /// <p> Defines the connector-specific profile configuration and credentials. </p>
-        pub fn connector_profile_config(mut self, input: crate::model::ConnectorProfileConfig) -> Self {
+        pub fn connector_profile_config(
+            mut self,
+            input: crate::model::ConnectorProfileConfig,
+        ) -> Self {
             self.connector_profile_config = Some(input);
             self
         }
         /// <p> Defines the connector-specific profile configuration and credentials. </p>
-        pub fn set_connector_profile_config(mut self, input: std::option::Option<crate::model::ConnectorProfileConfig>) -> Self {
-            self.connector_profile_config = input; self
+        pub fn set_connector_profile_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorProfileConfig>,
+        ) -> Self {
+            self.connector_profile_config = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput).
-        pub fn build(self) -> Result<crate::input::UpdateConnectorProfileInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateConnectorProfileInput {
-                    connector_profile_name: self.connector_profile_name
-                    ,
-                    connection_mode: self.connection_mode
-                    ,
-                    connector_profile_config: self.connector_profile_config
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateConnectorProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateConnectorProfileInput {
+                connector_profile_name: self.connector_profile_name,
+                connection_mode: self.connection_mode,
+                connector_profile_config: self.connector_profile_config,
+            })
         }
     }
-    
-    
 }
 impl UpdateConnectorProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectorProfile`](crate::operation::UpdateConnectorProfile)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConnectorProfile, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateConnectorProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateConnectorProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateConnectorProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/update-connector-profile").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateConnectorProfileInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateConnectorProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_connector_profile(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_connector_profile(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConnectorProfile::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConnectorProfile", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateConnectorProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateConnectorProfile",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2531,15 +3588,16 @@ impl UpdateConnectorProfileInput {
 
 /// See [`UpdateFlowInput`](crate::input::UpdateFlowInput).
 pub mod update_flow_input {
-    
+
     /// A builder for [`UpdateFlowInput`](crate::input::UpdateFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) trigger_config: std::option::Option<crate::model::TriggerConfig>,
         pub(crate) source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-        pub(crate) destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+        pub(crate) destination_flow_config_list:
+            std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     }
     impl Builder {
@@ -2550,7 +3608,8 @@ pub mod update_flow_input {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input; self
+            self.flow_name = input;
+            self
         }
         /// <p> A description of the flow. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2559,7 +3618,8 @@ pub mod update_flow_input {
         }
         /// <p> A description of the flow. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
         pub fn trigger_config(mut self, input: crate::model::TriggerConfig) -> Self {
@@ -2567,8 +3627,12 @@ pub mod update_flow_input {
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
-        pub fn set_trigger_config(mut self, input: std::option::Option<crate::model::TriggerConfig>) -> Self {
-            self.trigger_config = input; self
+        pub fn set_trigger_config(
+            mut self,
+            input: std::option::Option<crate::model::TriggerConfig>,
+        ) -> Self {
+            self.trigger_config = input;
+            self
         }
         /// <p> Contains information about the configuration of the source connector used in the flow. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
@@ -2576,23 +3640,34 @@ pub mod update_flow_input {
             self
         }
         /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-        pub fn set_source_flow_config(mut self, input: std::option::Option<crate::model::SourceFlowConfig>) -> Self {
-            self.source_flow_config = input; self
+        pub fn set_source_flow_config(
+            mut self,
+            input: std::option::Option<crate::model::SourceFlowConfig>,
+        ) -> Self {
+            self.source_flow_config = input;
+            self
         }
         /// Appends an item to `destination_flow_config_list`.
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
         /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-        pub fn destination_flow_config_list(mut self, input: crate::model::DestinationFlowConfig) -> Self {
+        pub fn destination_flow_config_list(
+            mut self,
+            input: crate::model::DestinationFlowConfig,
+        ) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-                            v.push(input);
-                            self.destination_flow_config_list = Some(v);
-                            self
+            v.push(input);
+            self.destination_flow_config_list = Some(v);
+            self
         }
         /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-        pub fn set_destination_flow_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>) -> Self {
-            self.destination_flow_config_list = input; self
+        pub fn set_destination_flow_config_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+        ) -> Self {
+            self.destination_flow_config_list = input;
+            self
         }
         /// Appends an item to `tasks`.
         ///
@@ -2601,92 +3676,132 @@ pub mod update_flow_input {
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-                            v.push(input);
-                            self.tasks = Some(v);
-                            self
+            v.push(input);
+            self.tasks = Some(v);
+            self
         }
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-        pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Task>>) -> Self {
-            self.tasks = input; self
+        pub fn set_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
+        ) -> Self {
+            self.tasks = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::input::UpdateFlowInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowInput {
-                    flow_name: self.flow_name
-                    ,
-                    description: self.description
-                    ,
-                    trigger_config: self.trigger_config
-                    ,
-                    source_flow_config: self.source_flow_config
-                    ,
-                    destination_flow_config_list: self.destination_flow_config_list
-                    ,
-                    tasks: self.tasks
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateFlowInput {
+                flow_name: self.flow_name,
+                description: self.description,
+                trigger_config: self.trigger_config,
+                source_flow_config: self.source_flow_config,
+                destination_flow_config_list: self.destination_flow_config_list,
+                tasks: self.tasks,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlow`](crate::operation::UpdateFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/update-flow").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlow", "appflow"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlow",
+            "appflow",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2697,85 +3812,104 @@ impl UpdateFlowInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    #[doc(hidden)]pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
+    #[doc(hidden)]
+    pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    #[doc(hidden)]pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
+    #[doc(hidden)]
+    pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    #[doc(hidden)]pub destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+    #[doc(hidden)]
+    pub destination_flow_config_list:
+        std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    #[doc(hidden)]pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
+    #[doc(hidden)]
+    pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
 }
 impl UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> A description of the flow. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn trigger_config(&self) -> std::option::Option<& crate::model::TriggerConfig> {
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    pub fn source_flow_config(&self) -> std::option::Option<& crate::model::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> std::option::Option<& [crate::model::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> std::option::Option<& [crate::model::Task]> {
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowInput  {
+impl std::fmt::Debug for UpdateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowInput");
         formatter.field("flow_name", &self.flow_name);
         formatter.field("description", &self.description);
         formatter.field("trigger_config", &self.trigger_config);
         formatter.field("source_flow_config", &self.source_flow_config);
-        formatter.field("destination_flow_config_list", &self.destination_flow_config_list);
+        formatter.field(
+            "destination_flow_config_list",
+            &self.destination_flow_config_list,
+        );
         formatter.field("tasks", &self.tasks);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateConnectorProfileInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectorProfileInput {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    #[doc(hidden)]pub connector_profile_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    #[doc(hidden)]pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
+    #[doc(hidden)]
+    pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    #[doc(hidden)]pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
+    #[doc(hidden)]
+    pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl UpdateConnectorProfileInput {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    pub fn connection_mode(&self) -> std::option::Option<& crate::model::ConnectionMode> {
+    pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
         self.connection_mode.as_ref()
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn connector_profile_config(&self) -> std::option::Option<& crate::model::ConnectorProfileConfig> {
+    pub fn connector_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateConnectorProfileInput  {
+impl std::fmt::Debug for UpdateConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectorProfileInput");
         formatter.field("connector_profile_name", &self.connector_profile_name);
@@ -2786,24 +3920,27 @@ impl  std::fmt::Debug for UpdateConnectorProfileInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2813,16 +3950,19 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UnregisterConnectorInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnregisterConnectorInput {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    #[doc(hidden)]pub connector_label: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_label: std::option::Option<std::string::String>,
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
-    #[doc(hidden)]pub force_delete: bool,
+    #[doc(hidden)]
+    pub force_delete: bool,
 }
 impl UnregisterConnectorInput {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn connector_label(&self) -> std::option::Option<& str> {
+    pub fn connector_label(&self) -> std::option::Option<&str> {
         self.connector_label.as_deref()
     }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
@@ -2830,7 +3970,7 @@ impl UnregisterConnectorInput {
         self.force_delete
     }
 }
-impl  std::fmt::Debug for UnregisterConnectorInput  {
+impl std::fmt::Debug for UnregisterConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnregisterConnectorInput");
         formatter.field("connector_label", &self.connector_label);
@@ -2840,24 +3980,31 @@ impl  std::fmt::Debug for UnregisterConnectorInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2867,18 +4014,20 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StopFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
 }
-impl  std::fmt::Debug for StopFlowInput  {
+impl std::fmt::Debug for StopFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowInput");
         formatter.field("flow_name", &self.flow_name);
@@ -2887,18 +4036,20 @@ impl  std::fmt::Debug for StopFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
 }
-impl  std::fmt::Debug for StartFlowInput  {
+impl std::fmt::Debug for StartFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFlowInput");
         formatter.field("flow_name", &self.flow_name);
@@ -2907,59 +4058,77 @@ impl  std::fmt::Debug for StartFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RegisterConnectorInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterConnectorInput {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    #[doc(hidden)]pub connector_label: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_label: std::option::Option<std::string::String>,
     /// <p>A description about the connector that's being registered.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    #[doc(hidden)]pub connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
+    #[doc(hidden)]
+    pub connector_provisioning_type: std::option::Option<crate::model::ConnectorProvisioningType>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    #[doc(hidden)]pub connector_provisioning_config: std::option::Option<crate::model::ConnectorProvisioningConfig>,
+    #[doc(hidden)]
+    pub connector_provisioning_config:
+        std::option::Option<crate::model::ConnectorProvisioningConfig>,
 }
 impl RegisterConnectorInput {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn connector_label(&self) -> std::option::Option<& str> {
+    pub fn connector_label(&self) -> std::option::Option<&str> {
         self.connector_label.as_deref()
     }
     /// <p>A description about the connector that's being registered.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    pub fn connector_provisioning_type(&self) -> std::option::Option<& crate::model::ConnectorProvisioningType> {
+    pub fn connector_provisioning_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProvisioningType> {
         self.connector_provisioning_type.as_ref()
     }
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    pub fn connector_provisioning_config(&self) -> std::option::Option<& crate::model::ConnectorProvisioningConfig> {
+    pub fn connector_provisioning_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProvisioningConfig> {
         self.connector_provisioning_config.as_ref()
     }
 }
-impl  std::fmt::Debug for RegisterConnectorInput  {
+impl std::fmt::Debug for RegisterConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterConnectorInput");
         formatter.field("connector_label", &self.connector_label);
         formatter.field("description", &self.description);
-        formatter.field("connector_provisioning_type", &self.connector_provisioning_type);
-        formatter.field("connector_provisioning_config", &self.connector_provisioning_config);
+        formatter.field(
+            "connector_provisioning_type",
+            &self.connector_provisioning_type,
+        );
+        formatter.field(
+            "connector_provisioning_config",
+            &self.connector_provisioning_config,
+        );
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2968,12 +4137,15 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFlowsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFlowsInput {
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for next page of data. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsInput {
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
@@ -2981,11 +4153,11 @@ impl ListFlowsInput {
         self.max_results
     }
     /// <p> The pagination token for next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListFlowsInput  {
+impl std::fmt::Debug for ListFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFlowsInput");
         formatter.field("max_results", &self.max_results);
@@ -2995,12 +4167,15 @@ impl  std::fmt::Debug for ListFlowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListConnectorsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectorsInput {
     /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the next page of data.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorsInput {
     /// <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
@@ -3008,11 +4183,11 @@ impl ListConnectorsInput {
         self.max_results
     }
     /// <p>The pagination token for the next page of data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListConnectorsInput  {
+impl std::fmt::Debug for ListConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorsInput");
         formatter.field("max_results", &self.max_results);
@@ -3022,36 +4197,41 @@ impl  std::fmt::Debug for ListConnectorsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListConnectorEntitiesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    #[doc(hidden)]pub connector_profile_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]pub connector_type: std::option::Option<crate::model::ConnectorType>,
+    #[doc(hidden)]
+    pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    #[doc(hidden)]pub entities_path: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entities_path: std::option::Option<std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
-    #[doc(hidden)]pub api_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub api_version: std::option::Option<std::string::String>,
 }
 impl ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::model::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    pub fn entities_path(&self) -> std::option::Option<& str> {
+    pub fn entities_path(&self) -> std::option::Option<&str> {
         self.entities_path.as_deref()
     }
     /// <p>The version of the API that's used by the connector.</p>
-    pub fn api_version(&self) -> std::option::Option<& str> {
+    pub fn api_version(&self) -> std::option::Option<&str> {
         self.api_version.as_deref()
     }
 }
-impl  std::fmt::Debug for ListConnectorEntitiesInput  {
+impl std::fmt::Debug for ListConnectorEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorEntitiesInput");
         formatter.field("connector_profile_name", &self.connector_profile_name);
@@ -3063,18 +4243,22 @@ impl  std::fmt::Debug for ListConnectorEntitiesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFlowExecutionRecordsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFlowExecutionRecordsInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
@@ -3082,11 +4266,11 @@ impl DescribeFlowExecutionRecordsInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFlowExecutionRecordsInput  {
+impl std::fmt::Debug for DescribeFlowExecutionRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowExecutionRecordsInput");
         formatter.field("flow_name", &self.flow_name);
@@ -3097,18 +4281,20 @@ impl  std::fmt::Debug for DescribeFlowExecutionRecordsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
 }
 impl DescribeFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFlowInput  {
+impl std::fmt::Debug for DescribeFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowInput");
         formatter.field("flow_name", &self.flow_name);
@@ -3117,18 +4303,22 @@ impl  std::fmt::Debug for DescribeFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeConnectorsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]pub connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
+    #[doc(hidden)]
+    pub connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorsInput {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_types(&self) -> std::option::Option<& [crate::model::ConnectorType]> {
+    pub fn connector_types(&self) -> std::option::Option<&[crate::model::ConnectorType]> {
         self.connector_types.as_deref()
     }
     /// <p>The maximum number of items that should be returned in the result set. The default is 20.</p>
@@ -3136,11 +4326,11 @@ impl DescribeConnectorsInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeConnectorsInput  {
+impl std::fmt::Debug for DescribeConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorsInput");
         formatter.field("connector_types", &self.connector_types);
@@ -3151,30 +4341,36 @@ impl  std::fmt::Debug for DescribeConnectorsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeConnectorProfilesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    #[doc(hidden)]pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]pub connector_type: std::option::Option<crate::model::ConnectorType>,
+    #[doc(hidden)]
+    pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    #[doc(hidden)]pub connector_label: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_label: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn connector_profile_names(&self) -> std::option::Option<&[std::string::String]> {
         self.connector_profile_names.as_deref()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::model::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(&self) -> std::option::Option<& str> {
+    pub fn connector_label(&self) -> std::option::Option<&str> {
         self.connector_label.as_deref()
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
@@ -3182,11 +4378,11 @@ impl DescribeConnectorProfilesInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeConnectorProfilesInput  {
+impl std::fmt::Debug for DescribeConnectorProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorProfilesInput");
         formatter.field("connector_profile_names", &self.connector_profile_names);
@@ -3199,36 +4395,41 @@ impl  std::fmt::Debug for DescribeConnectorProfilesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeConnectorEntityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
-    #[doc(hidden)]pub connector_entity_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_entity_name: std::option::Option<std::string::String>,
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]pub connector_type: std::option::Option<crate::model::ConnectorType>,
+    #[doc(hidden)]
+    pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    #[doc(hidden)]pub connector_profile_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
-    #[doc(hidden)]pub api_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub api_version: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
-    pub fn connector_entity_name(&self) -> std::option::Option<& str> {
+    pub fn connector_entity_name(&self) -> std::option::Option<&str> {
         self.connector_entity_name.as_deref()
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::model::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p>The version of the API that's used by the connector.</p>
-    pub fn api_version(&self) -> std::option::Option<& str> {
+    pub fn api_version(&self) -> std::option::Option<&str> {
         self.api_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeConnectorEntityInput  {
+impl std::fmt::Debug for DescribeConnectorEntityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorEntityInput");
         formatter.field("connector_entity_name", &self.connector_entity_name);
@@ -3240,24 +4441,27 @@ impl  std::fmt::Debug for DescribeConnectorEntityInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeConnectorInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorInput {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
-    #[doc(hidden)]pub connector_type: std::option::Option<crate::model::ConnectorType>,
+    #[doc(hidden)]
+    pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    #[doc(hidden)]pub connector_label: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_label: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorInput {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::model::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(&self) -> std::option::Option<& str> {
+    pub fn connector_label(&self) -> std::option::Option<&str> {
         self.connector_label.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeConnectorInput  {
+impl std::fmt::Debug for DescribeConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorInput");
         formatter.field("connector_type", &self.connector_type);
@@ -3267,16 +4471,19 @@ impl  std::fmt::Debug for DescribeConnectorInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
-    #[doc(hidden)]pub force_delete: bool,
+    #[doc(hidden)]
+    pub force_delete: bool,
 }
 impl DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
@@ -3284,7 +4491,7 @@ impl DeleteFlowInput {
         self.force_delete
     }
 }
-impl  std::fmt::Debug for DeleteFlowInput  {
+impl std::fmt::Debug for DeleteFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFlowInput");
         formatter.field("flow_name", &self.flow_name);
@@ -3294,16 +4501,19 @@ impl  std::fmt::Debug for DeleteFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteConnectorProfileInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-    #[doc(hidden)]pub connector_profile_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
-    #[doc(hidden)]pub force_delete: bool,
+    #[doc(hidden)]
+    pub force_delete: bool,
 }
 impl DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
@@ -3311,7 +4521,7 @@ impl DeleteConnectorProfileInput {
         self.force_delete
     }
 }
-impl  std::fmt::Debug for DeleteConnectorProfileInput  {
+impl std::fmt::Debug for DeleteConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectorProfileInput");
         formatter.field("connector_profile_name", &self.connector_profile_name);
@@ -3321,60 +4531,76 @@ impl  std::fmt::Debug for DeleteConnectorProfileInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]pub flow_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow you want to create. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    #[doc(hidden)]pub kms_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    #[doc(hidden)]pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
+    #[doc(hidden)]
+    pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    #[doc(hidden)]pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
+    #[doc(hidden)]
+    pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    #[doc(hidden)]pub destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+    #[doc(hidden)]
+    pub destination_flow_config_list:
+        std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    #[doc(hidden)]pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
+    #[doc(hidden)]
+    pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p> A description of the flow you want to create. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn kms_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn trigger_config(&self) -> std::option::Option<& crate::model::TriggerConfig> {
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn source_flow_config(&self) -> std::option::Option<& crate::model::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> std::option::Option<& [crate::model::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> std::option::Option<& [crate::model::Task]> {
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateFlowInput  {
+impl std::fmt::Debug for CreateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowInput");
         formatter.field("flow_name", &self.flow_name);
@@ -3382,7 +4608,10 @@ impl  std::fmt::Debug for CreateFlowInput  {
         formatter.field("kms_arn", &self.kms_arn);
         formatter.field("trigger_config", &self.trigger_config);
         formatter.field("source_flow_config", &self.source_flow_config);
-        formatter.field("destination_flow_config_list", &self.destination_flow_config_list);
+        formatter.field(
+            "destination_flow_config_list",
+            &self.destination_flow_config_list,
+        );
         formatter.field("tasks", &self.tasks);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -3390,48 +4619,57 @@ impl  std::fmt::Debug for CreateFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateConnectorProfileInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-    #[doc(hidden)]pub connector_profile_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    #[doc(hidden)]pub kms_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]pub connector_type: std::option::Option<crate::model::ConnectorType>,
+    #[doc(hidden)]
+    pub connector_type: std::option::Option<crate::model::ConnectorType>,
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    #[doc(hidden)]pub connector_label: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub connector_label: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
-    #[doc(hidden)]pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
+    #[doc(hidden)]
+    pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    #[doc(hidden)]pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
+    #[doc(hidden)]
+    pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl CreateConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn kms_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::model::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(&self) -> std::option::Option<& str> {
+    pub fn connector_label(&self) -> std::option::Option<&str> {
         self.connector_label.as_deref()
     }
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
-    pub fn connection_mode(&self) -> std::option::Option<& crate::model::ConnectionMode> {
+    pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
         self.connection_mode.as_ref()
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    pub fn connector_profile_config(&self) -> std::option::Option<& crate::model::ConnectorProfileConfig> {
+    pub fn connector_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateConnectorProfileInput  {
+impl std::fmt::Debug for CreateConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectorProfileInput");
         formatter.field("connector_profile_name", &self.connector_profile_name);
@@ -3443,4 +4681,3 @@ impl  std::fmt::Debug for CreateConnectorProfileInput  {
         formatter.finish()
     }
 }
-

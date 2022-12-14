@@ -1,10 +1,20 @@
-#![allow(deprecated)]#![allow(clippy::module_inception)]#![allow(clippy::upper_case_acronyms)]#![allow(clippy::large_enum_variant)]#![allow(clippy::wrong_self_convention)]#![allow(clippy::should_implement_trait)]#![allow(clippy::blacklisted_name)]#![allow(clippy::vec_init_then_push)]#![allow(clippy::type_complexity)]#![allow(clippy::needless_return)]#![allow(rustdoc::bare_urls)]
+#![allow(deprecated)]
+#![allow(clippy::module_inception)]
+#![allow(clippy::upper_case_acronyms)]
+#![allow(clippy::large_enum_variant)]
+#![allow(clippy::wrong_self_convention)]
+#![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
+#![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
+#![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <fullname>AWS CodeCommit</fullname>
-//! <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for 
+//! <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for
 //! AWS CodeCommit API along with usage examples.</p>
 //! <p>You can use the AWS CodeCommit API to work with the following objects:</p>
-//! 
+//!
 //! <p>Repositories, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -39,7 +49,7 @@
 //! use.</p>
 //! </li>
 //! </ul>
-//! 
+//!
 //! <p>Branches, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -64,7 +74,7 @@
 //! <a>UpdateDefaultBranch</a>, which changes the default branch for a repository.</p>
 //! </li>
 //! </ul>
-//! 
+//!
 //! <p>Files, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -89,8 +99,8 @@
 //! <a>PutFile</a>, which adds or modifies a single file in a specified repository and branch.</p>
 //! </li>
 //! </ul>
-//! 
-//! 
+//!
+//!
 //! <p>Commits, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -103,7 +113,7 @@
 //! </li>
 //! <li>
 //! <p>
-//! <a>GetCommit</a>, which returns information about  a commit, including commit 
+//! <a>GetCommit</a>, which returns information about  a commit, including commit
 //! messages and author and committer information.</p>
 //! </li>
 //! <li>
@@ -113,8 +123,8 @@
 //! or other fully qualified reference).</p>
 //! </li>
 //! </ul>
-//! 
-//! 
+//!
+//!
 //! <p>Merges, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -134,7 +144,7 @@
 //! <li>
 //! <p>
 //! <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit. </p>
-//! 
+//!
 //! </li>
 //! <li>
 //! <p>
@@ -142,7 +152,7 @@
 //! between the source and destination branch in a pull request.</p>
 //! </li>
 //! <li>
-//! 
+//!
 //! <p>
 //! <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit specifiers.</p>
 //! </li>
@@ -159,8 +169,8 @@
 //! <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.</p>
 //! </li>
 //! </ul>
-//! 
-//! 
+//!
+//!
 //! <p>Pull requests, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -188,7 +198,7 @@
 //! <a>GetCommentsForPullRequest</a>, which returns information about comments on a specified pull request.</p>
 //! </li>
 //! <li>
-//! 
+//!
 //! <p>
 //! <a>GetPullRequest</a>, which returns information about a specified pull request.</p>
 //! </li>
@@ -198,10 +208,10 @@
 //! </li>
 //! <li>
 //! <p>
-//! <a>GetPullRequestOverrideState</a>, which returns information about whether approval rules have been set aside (overriden) for a 
+//! <a>GetPullRequestOverrideState</a>, which returns information about whether approval rules have been set aside (overriden) for a
 //! pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
 //! </li>
-//! <li> 
+//! <li>
 //! <p>
 //! <a>ListPullRequests</a>, which lists all pull requests for a repository.</p>
 //! </li>
@@ -249,7 +259,7 @@
 //! <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.</p>
 //! </li>
 //! </ul>
-//! 
+//!
 //! <p>Approval rule templates, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -320,7 +330,7 @@
 //! <a>UpdateApprovalRuleTemplateContent</a>, which updates the content of an approval rule template.</p>
 //! </li>
 //! </ul>
-//! 
+//!
 //! <p>Comments in a repository, by calling the following:</p>
 //! <ul>
 //! <li>
@@ -337,7 +347,7 @@
 //! </li>
 //! <li>
 //! <p>
-//! <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit specifiers 
+//! <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit specifiers
 //! in a repository.</p>
 //! </li>
 //! <li>
@@ -357,7 +367,7 @@
 //! <a>UpdateComment</a>, which updates the content of a comment on a commit in a repository.</p>
 //! </li>
 //! </ul>
-//! 
+//!
 //! <p>Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:</p>
 //! <ul>
 //! <li>
@@ -373,48 +383,48 @@
 //! <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.</p>
 //! </li>
 //! </ul>
-//! 
-//! <p>Triggers, by calling the following:</p> 
+//!
+//! <p>Triggers, by calling the following:</p>
 //! <ul>
 //! <li>
 //! <p>
-//! <a>GetRepositoryTriggers</a>, which returns information about triggers configured 
+//! <a>GetRepositoryTriggers</a>, which returns information about triggers configured
 //! for a repository.</p>
 //! </li>
 //! <li>
 //! <p>
-//! <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can 
+//! <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can
 //! be used to create or delete triggers.</p>
 //! </li>
 //! <li>
 //! <p>
-//! <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger 
+//! <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
 //! by sending data to the trigger target.</p>
 //! </li>
 //! </ul>
-//! 
-//! 
-//! 
-//! 
+//!
+//!
+//!
+//!
 //! <p>For information about how to use AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
-//! 
+//!
 //! # Crate Organization
-//! 
+//!
 //! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
 //! by the service.
-//! 
+//!
 //! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
-//! 
+//!
 //! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
 //! error encompassing all possible errors that can be returned by the service.
-//! 
+//!
 //! The other modules within this crate are not required for normal usage.
-
 
 // Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
 pub use error_meta::Error;
 
-#[doc(inline)]pub use config::Config;
+#[doc(inline)]
+pub use config::Config;
 
 mod aws_endpoint;
 /// Client and fluent builders for calling the service.
@@ -445,17 +455,18 @@ pub mod output;
 /// Paginators for the service
 pub mod paginator;
 /// Crate version number.
-                    pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
+pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 /// Re-exported types from supporting crates.
 pub mod types {
+    pub use aws_smithy_http::result::SdkError;
     pub use aws_smithy_types::Blob;
     pub use aws_smithy_types::DateTime;
-    pub use aws_smithy_http::result::SdkError;
 }
-static API_METADATA: aws_http::user_agent::ApiMetadata = aws_http::user_agent::ApiMetadata::new("codecommit", PKG_VERSION);
-pub use aws_types::app_name::AppName;
-#[doc(inline)]pub use client::Client;
+static API_METADATA: aws_http::user_agent::ApiMetadata =
+    aws_http::user_agent::ApiMetadata::new("codecommit", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
-
+#[doc(inline)]
+pub use client::Client;

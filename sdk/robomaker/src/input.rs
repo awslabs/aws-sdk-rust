@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`BatchDeleteWorldsInput`](crate::input::BatchDeleteWorldsInput).
 pub mod batch_delete_worlds_input {
-    
+
     /// A builder for [`BatchDeleteWorldsInput`](crate::input::BatchDeleteWorldsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -17,82 +17,128 @@ pub mod batch_delete_worlds_input {
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
         pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worlds.unwrap_or_default();
-                            v.push(input.into());
-                            self.worlds = Some(v);
-                            self
+            v.push(input.into());
+            self.worlds = Some(v);
+            self
         }
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-        pub fn set_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.worlds = input; self
+        pub fn set_worlds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.worlds = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchDeleteWorldsInput`](crate::input::BatchDeleteWorldsInput).
-        pub fn build(self) -> Result<crate::input::BatchDeleteWorldsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchDeleteWorldsInput {
-                    worlds: self.worlds
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchDeleteWorldsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchDeleteWorldsInput {
+                worlds: self.worlds,
+            })
         }
     }
-    
-    
 }
 impl BatchDeleteWorldsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteWorlds`](crate::operation::BatchDeleteWorlds)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDeleteWorlds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchDeleteWorlds,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchDeleteWorldsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchDeleteWorldsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/batchDeleteWorlds").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchDeleteWorldsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchDeleteWorldsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_worlds(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_worlds(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDeleteWorlds::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDeleteWorlds", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDeleteWorlds::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchDeleteWorlds",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -104,9 +150,9 @@ impl BatchDeleteWorldsInput {
 
 /// See [`BatchDescribeSimulationJobInput`](crate::input::BatchDescribeSimulationJobInput).
 pub mod batch_describe_simulation_job_input {
-    
+
     /// A builder for [`BatchDescribeSimulationJobInput`](crate::input::BatchDescribeSimulationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -118,45 +164,68 @@ pub mod batch_describe_simulation_job_input {
         /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
         pub fn jobs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-                            v.push(input.into());
-                            self.jobs = Some(v);
-                            self
+            v.push(input.into());
+            self.jobs = Some(v);
+            self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.jobs = input; self
+        pub fn set_jobs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.jobs = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchDescribeSimulationJobInput`](crate::input::BatchDescribeSimulationJobInput).
-        pub fn build(self) -> Result<crate::input::BatchDescribeSimulationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchDescribeSimulationJobInput {
-                    jobs: self.jobs
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchDescribeSimulationJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchDescribeSimulationJobInput { jobs: self.jobs })
         }
     }
-    
-    
 }
 impl BatchDescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`BatchDescribeSimulationJob`](crate::operation::BatchDescribeSimulationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDescribeSimulationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchDescribeSimulationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchDescribeSimulationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchDescribeSimulationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/batchDescribeSimulationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchDescribeSimulationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchDescribeSimulationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -164,36 +233,58 @@ impl BatchDescribeSimulationJobInput {
             crate::operation_ser::serialize_operation_crate_operation_batch_describe_simulation_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDescribeSimulationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDescribeSimulationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDescribeSimulationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchDescribeSimulationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -205,9 +296,9 @@ impl BatchDescribeSimulationJobInput {
 
 /// See [`CancelDeploymentJobInput`](crate::input::CancelDeploymentJobInput).
 pub mod cancel_deployment_job_input {
-    
+
     /// A builder for [`CancelDeploymentJobInput`](crate::input::CancelDeploymentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -219,76 +310,117 @@ pub mod cancel_deployment_job_input {
         }
         /// <p>The deployment job ARN to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelDeploymentJobInput`](crate::input::CancelDeploymentJobInput).
-        pub fn build(self) -> Result<crate::input::CancelDeploymentJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelDeploymentJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CancelDeploymentJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelDeploymentJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl CancelDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelDeploymentJob`](crate::operation::CancelDeploymentJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelDeploymentJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelDeploymentJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelDeploymentJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelDeploymentJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/cancelDeploymentJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelDeploymentJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelDeploymentJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_deployment_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_deployment_job(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelDeploymentJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelDeploymentJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelDeploymentJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelDeploymentJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -300,9 +432,9 @@ impl CancelDeploymentJobInput {
 
 /// See [`CancelSimulationJobInput`](crate::input::CancelSimulationJobInput).
 pub mod cancel_simulation_job_input {
-    
+
     /// A builder for [`CancelSimulationJobInput`](crate::input::CancelSimulationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -314,76 +446,117 @@ pub mod cancel_simulation_job_input {
         }
         /// <p>The simulation job ARN to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelSimulationJobInput`](crate::input::CancelSimulationJobInput).
-        pub fn build(self) -> Result<crate::input::CancelSimulationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelSimulationJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CancelSimulationJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelSimulationJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl CancelSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJob`](crate::operation::CancelSimulationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelSimulationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelSimulationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelSimulationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelSimulationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/cancelSimulationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelSimulationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelSimulationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelSimulationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelSimulationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelSimulationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelSimulationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -395,9 +568,9 @@ impl CancelSimulationJobInput {
 
 /// See [`CancelSimulationJobBatchInput`](crate::input::CancelSimulationJobBatchInput).
 pub mod cancel_simulation_job_batch_input {
-    
+
     /// A builder for [`CancelSimulationJobBatchInput`](crate::input::CancelSimulationJobBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch: std::option::Option<std::string::String>,
     }
@@ -409,76 +582,121 @@ pub mod cancel_simulation_job_batch_input {
         }
         /// <p>The id of the batch to cancel.</p>
         pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.batch = input; self
+            self.batch = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelSimulationJobBatchInput`](crate::input::CancelSimulationJobBatchInput).
-        pub fn build(self) -> Result<crate::input::CancelSimulationJobBatchInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelSimulationJobBatchInput {
-                    batch: self.batch
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CancelSimulationJobBatchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelSimulationJobBatchInput { batch: self.batch })
         }
     }
-    
-    
 }
 impl CancelSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJobBatch`](crate::operation::CancelSimulationJobBatch)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelSimulationJobBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelSimulationJobBatch,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelSimulationJobBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelSimulationJobBatchInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/cancelSimulationJobBatch").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelSimulationJobBatchInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelSimulationJobBatchInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job_batch(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job_batch(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelSimulationJobBatch::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelSimulationJobBatch", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelSimulationJobBatch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelSimulationJobBatch",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -490,9 +708,9 @@ impl CancelSimulationJobBatchInput {
 
 /// See [`CancelWorldExportJobInput`](crate::input::CancelWorldExportJobInput).
 pub mod cancel_world_export_job_input {
-    
+
     /// A builder for [`CancelWorldExportJobInput`](crate::input::CancelWorldExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -504,76 +722,119 @@ pub mod cancel_world_export_job_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelWorldExportJobInput`](crate::input::CancelWorldExportJobInput).
-        pub fn build(self) -> Result<crate::input::CancelWorldExportJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelWorldExportJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CancelWorldExportJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelWorldExportJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl CancelWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldExportJob`](crate::operation::CancelWorldExportJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelWorldExportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelWorldExportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelWorldExportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelWorldExportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/cancelWorldExportJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelWorldExportJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelWorldExportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_world_export_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_world_export_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelWorldExportJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelWorldExportJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelWorldExportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelWorldExportJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -585,9 +846,9 @@ impl CancelWorldExportJobInput {
 
 /// See [`CancelWorldGenerationJobInput`](crate::input::CancelWorldGenerationJobInput).
 pub mod cancel_world_generation_job_input {
-    
+
     /// A builder for [`CancelWorldGenerationJobInput`](crate::input::CancelWorldGenerationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -599,76 +860,121 @@ pub mod cancel_world_generation_job_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelWorldGenerationJobInput`](crate::input::CancelWorldGenerationJobInput).
-        pub fn build(self) -> Result<crate::input::CancelWorldGenerationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelWorldGenerationJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CancelWorldGenerationJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelWorldGenerationJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl CancelWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldGenerationJob`](crate::operation::CancelWorldGenerationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelWorldGenerationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelWorldGenerationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelWorldGenerationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelWorldGenerationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/cancelWorldGenerationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelWorldGenerationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelWorldGenerationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_world_generation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_cancel_world_generation_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelWorldGenerationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelWorldGenerationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelWorldGenerationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelWorldGenerationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -680,15 +986,18 @@ impl CancelWorldGenerationJobInput {
 
 /// See [`CreateDeploymentJobInput`](crate::input::CreateDeploymentJobInput).
 pub mod create_deployment_job_input {
-    
+
     /// A builder for [`CreateDeploymentJobInput`](crate::input::CreateDeploymentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config: std::option::Option<crate::model::DeploymentConfig>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
-        pub(crate) deployment_application_configs: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) deployment_application_configs:
+            std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The requested deployment configuration.</p>
@@ -697,8 +1006,12 @@ pub mod create_deployment_job_input {
             self
         }
         /// <p>The requested deployment configuration.</p>
-        pub fn set_deployment_config(mut self, input: std::option::Option<crate::model::DeploymentConfig>) -> Self {
-            self.deployment_config = input; self
+        pub fn set_deployment_config(
+            mut self,
+            input: std::option::Option<crate::model::DeploymentConfig>,
+        ) -> Self {
+            self.deployment_config = input;
+            self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -706,8 +1019,12 @@ pub mod create_deployment_job_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
         pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -716,117 +1033,173 @@ pub mod create_deployment_job_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// Appends an item to `deployment_application_configs`.
         ///
         /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
         ///
         /// <p>The deployment application configuration.</p>
-        pub fn deployment_application_configs(mut self, input: crate::model::DeploymentApplicationConfig) -> Self {
+        pub fn deployment_application_configs(
+            mut self,
+            input: crate::model::DeploymentApplicationConfig,
+        ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-                            v.push(input);
-                            self.deployment_application_configs = Some(v);
-                            self
+            v.push(input);
+            self.deployment_application_configs = Some(v);
+            self
         }
         /// <p>The deployment application configuration.</p>
-        pub fn set_deployment_application_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>) -> Self {
-            self.deployment_application_configs = input; self
+        pub fn set_deployment_application_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+        ) -> Self {
+            self.deployment_application_configs = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentJobInput`](crate::input::CreateDeploymentJobInput).
-        pub fn build(self) -> Result<crate::input::CreateDeploymentJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateDeploymentJobInput {
-                    deployment_config: self.deployment_config
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                    fleet: self.fleet
-                    ,
-                    deployment_application_configs: self.deployment_application_configs
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateDeploymentJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDeploymentJobInput {
+                deployment_config: self.deployment_config,
+                client_request_token: self.client_request_token,
+                fleet: self.fleet,
+                deployment_application_configs: self.deployment_application_configs,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeploymentJob`](crate::operation::CreateDeploymentJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDeploymentJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDeploymentJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateDeploymentJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateDeploymentJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createDeploymentJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateDeploymentJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateDeploymentJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment_job(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDeploymentJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDeploymentJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDeploymentJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDeploymentJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -838,12 +1211,14 @@ impl CreateDeploymentJobInput {
 
 /// See [`CreateFleetInput`](crate::input::CreateFleetInput).
 pub mod create_fleet_input {
-    
+
     /// A builder for [`CreateFleetInput`](crate::input::CreateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name of the fleet.</p>
@@ -853,93 +1228,145 @@ pub mod create_fleet_input {
         }
         /// <p>The name of the fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateFleetInput`](crate::input::CreateFleetInput).
-        pub fn build(self) -> Result<crate::input::CreateFleetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateFleetInput {
-                    name: self.name
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateFleetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateFleetInput {
+                name: self.name,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateFleet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFleet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateFleetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateFleetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createFleet").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateFleetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFleetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateFleet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateFleet", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -951,14 +1378,16 @@ impl CreateFleetInput {
 
 /// See [`CreateRobotInput`](crate::input::CreateRobotInput).
 pub mod create_robot_input {
-    
+
     /// A builder for [`CreateRobotInput`](crate::input::CreateRobotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) architecture: std::option::Option<crate::model::Architecture>,
         pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name for the robot.</p>
@@ -968,7 +1397,8 @@ pub mod create_robot_input {
         }
         /// <p>The name for the robot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// <p>The target architecture of the robot.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
@@ -976,8 +1406,12 @@ pub mod create_robot_input {
             self
         }
         /// <p>The target architecture of the robot.</p>
-        pub fn set_architecture(mut self, input: std::option::Option<crate::model::Architecture>) -> Self {
-            self.architecture = input; self
+        pub fn set_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.architecture = input;
+            self
         }
         /// <p>The Greengrass group id.</p>
         pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -985,98 +1419,151 @@ pub mod create_robot_input {
             self
         }
         /// <p>The Greengrass group id.</p>
-        pub fn set_greengrass_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.greengrass_group_id = input; self
+        pub fn set_greengrass_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.greengrass_group_id = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateRobotInput`](crate::input::CreateRobotInput).
-        pub fn build(self) -> Result<crate::input::CreateRobotInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateRobotInput {
-                    name: self.name
-                    ,
-                    architecture: self.architecture
-                    ,
-                    greengrass_group_id: self.greengrass_group_id
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateRobotInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateRobotInput {
+                name: self.name,
+                architecture: self.architecture,
+                greengrass_group_id: self.greengrass_group_id,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateRobotInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobot`](crate::operation::CreateRobot)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRobot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRobot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateRobotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateRobotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createRobot").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateRobotInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateRobotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_robot(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_robot(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRobot::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRobot", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1088,14 +1575,16 @@ impl CreateRobotInput {
 
 /// See [`CreateRobotApplicationInput`](crate::input::CreateRobotApplicationInput).
 pub mod create_robot_application_input {
-    
+
     /// A builder for [`CreateRobotApplicationInput`](crate::input::CreateRobotApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
@@ -1106,7 +1595,8 @@ pub mod create_robot_application_input {
         }
         /// <p>The name of the robot application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -1115,13 +1605,17 @@ pub mod create_robot_application_input {
         /// <p>The sources of the robot application.</p>
         pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         /// <p>The sources of the robot application.</p>
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -1129,23 +1623,37 @@ pub mod create_robot_application_input {
             self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
-            self.robot_software_suite = input; self
+        pub fn set_robot_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::RobotSoftwareSuite>,
+        ) -> Self {
+            self.robot_software_suite = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
@@ -1153,85 +1661,129 @@ pub mod create_robot_application_input {
             self
         }
         /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
-            self.environment = input; self
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateRobotApplicationInput`](crate::input::CreateRobotApplicationInput).
-        pub fn build(self) -> Result<crate::input::CreateRobotApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateRobotApplicationInput {
-                    name: self.name
-                    ,
-                    sources: self.sources
-                    ,
-                    robot_software_suite: self.robot_software_suite
-                    ,
-                    tags: self.tags
-                    ,
-                    environment: self.environment
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateRobotApplicationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateRobotApplicationInput {
+                name: self.name,
+                sources: self.sources,
+                robot_software_suite: self.robot_software_suite,
+                tags: self.tags,
+                environment: self.environment,
+            })
         }
     }
-    
-    
 }
 impl CreateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplication`](crate::operation::CreateRobotApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRobotApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRobotApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateRobotApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateRobotApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createRobotApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateRobotApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateRobotApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_robot_application(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_robot_application(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRobotApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRobotApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRobotApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRobotApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1243,9 +1795,9 @@ impl CreateRobotApplicationInput {
 
 /// See [`CreateRobotApplicationVersionInput`](crate::input::CreateRobotApplicationVersionInput).
 pub mod create_robot_application_version_input {
-    
+
     /// A builder for [`CreateRobotApplicationVersionInput`](crate::input::CreateRobotApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) current_revision_id: std::option::Option<std::string::String>,
@@ -1260,7 +1812,8 @@ pub mod create_robot_application_version_input {
         }
         /// <p>The application information for the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1268,8 +1821,12 @@ pub mod create_robot_application_version_input {
             self
         }
         /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-        pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.current_revision_id = input; self
+        pub fn set_current_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_revision_id = input;
+            self
         }
         /// Appends an item to `s3_etags`.
         ///
@@ -1278,13 +1835,17 @@ pub mod create_robot_application_version_input {
         /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
-                            v.push(input.into());
-                            self.s3_etags = Some(v);
-                            self
+            v.push(input.into());
+            self.s3_etags = Some(v);
+            self
         }
         /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-        pub fn set_s3_etags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.s3_etags = input; self
+        pub fn set_s3_etags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.s3_etags = input;
+            self
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1293,45 +1854,65 @@ pub mod create_robot_application_version_input {
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_digest = input; self
+            self.image_digest = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateRobotApplicationVersionInput`](crate::input::CreateRobotApplicationVersionInput).
-        pub fn build(self) -> Result<crate::input::CreateRobotApplicationVersionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateRobotApplicationVersionInput {
-                    application: self.application
-                    ,
-                    current_revision_id: self.current_revision_id
-                    ,
-                    s3_etags: self.s3_etags
-                    ,
-                    image_digest: self.image_digest
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateRobotApplicationVersionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateRobotApplicationVersionInput {
+                application: self.application,
+                current_revision_id: self.current_revision_id,
+                s3_etags: self.s3_etags,
+                image_digest: self.image_digest,
+            })
         }
     }
-    
-    
 }
 impl CreateRobotApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplicationVersion`](crate::operation::CreateRobotApplicationVersion)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRobotApplicationVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRobotApplicationVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateRobotApplicationVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/createRobotApplicationVersion").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::CreateRobotApplicationVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/createRobotApplicationVersion")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateRobotApplicationVersionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateRobotApplicationVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1339,36 +1920,58 @@ impl CreateRobotApplicationVersionInput {
             crate::operation_ser::serialize_operation_crate_operation_create_robot_application_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRobotApplicationVersion::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRobotApplicationVersion", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRobotApplicationVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRobotApplicationVersion",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1380,16 +1983,19 @@ impl CreateRobotApplicationVersionInput {
 
 /// See [`CreateSimulationApplicationInput`](crate::input::CreateSimulationApplicationInput).
 pub mod create_simulation_application_input {
-    
+
     /// A builder for [`CreateSimulationApplicationInput`](crate::input::CreateSimulationApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
-        pub(crate) simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
+        pub(crate) simulation_software_suite:
+            std::option::Option<crate::model::SimulationSoftwareSuite>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
@@ -1400,7 +2006,8 @@ pub mod create_simulation_application_input {
         }
         /// <p>The name of the simulation application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -1409,22 +2016,33 @@ pub mod create_simulation_application_input {
         /// <p>The sources of the simulation application.</p>
         pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         /// <p>The sources of the simulation application.</p>
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
-        pub fn simulation_software_suite(mut self, input: crate::model::SimulationSoftwareSuite) -> Self {
+        pub fn simulation_software_suite(
+            mut self,
+            input: crate::model::SimulationSoftwareSuite,
+        ) -> Self {
             self.simulation_software_suite = Some(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
-        pub fn set_simulation_software_suite(mut self, input: std::option::Option<crate::model::SimulationSoftwareSuite>) -> Self {
-            self.simulation_software_suite = input; self
+        pub fn set_simulation_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::SimulationSoftwareSuite>,
+        ) -> Self {
+            self.simulation_software_suite = input;
+            self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -1432,8 +2050,12 @@ pub mod create_simulation_application_input {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
-            self.robot_software_suite = input; self
+        pub fn set_robot_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::RobotSoftwareSuite>,
+        ) -> Self {
+            self.robot_software_suite = input;
+            self
         }
         /// <p>The rendering engine for the simulation application.</p>
         pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
@@ -1441,23 +2063,37 @@ pub mod create_simulation_application_input {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn set_rendering_engine(mut self, input: std::option::Option<crate::model::RenderingEngine>) -> Self {
-            self.rendering_engine = input; self
+        pub fn set_rendering_engine(
+            mut self,
+            input: std::option::Option<crate::model::RenderingEngine>,
+        ) -> Self {
+            self.rendering_engine = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
@@ -1465,52 +2101,71 @@ pub mod create_simulation_application_input {
             self
         }
         /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
-        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
-            self.environment = input; self
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateSimulationApplicationInput`](crate::input::CreateSimulationApplicationInput).
-        pub fn build(self) -> Result<crate::input::CreateSimulationApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateSimulationApplicationInput {
-                    name: self.name
-                    ,
-                    sources: self.sources
-                    ,
-                    simulation_software_suite: self.simulation_software_suite
-                    ,
-                    robot_software_suite: self.robot_software_suite
-                    ,
-                    rendering_engine: self.rendering_engine
-                    ,
-                    tags: self.tags
-                    ,
-                    environment: self.environment
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateSimulationApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSimulationApplicationInput {
+                name: self.name,
+                sources: self.sources,
+                simulation_software_suite: self.simulation_software_suite,
+                robot_software_suite: self.robot_software_suite,
+                rendering_engine: self.rendering_engine,
+                tags: self.tags,
+                environment: self.environment,
+            })
         }
     }
-    
-    
 }
 impl CreateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplication`](crate::operation::CreateSimulationApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSimulationApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSimulationApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateSimulationApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateSimulationApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createSimulationApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateSimulationApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSimulationApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1518,36 +2173,58 @@ impl CreateSimulationApplicationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_simulation_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSimulationApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSimulationApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSimulationApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSimulationApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1559,9 +2236,9 @@ impl CreateSimulationApplicationInput {
 
 /// See [`CreateSimulationApplicationVersionInput`](crate::input::CreateSimulationApplicationVersionInput).
 pub mod create_simulation_application_version_input {
-    
+
     /// A builder for [`CreateSimulationApplicationVersionInput`](crate::input::CreateSimulationApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) current_revision_id: std::option::Option<std::string::String>,
@@ -1576,7 +2253,8 @@ pub mod create_simulation_application_version_input {
         }
         /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1584,8 +2262,12 @@ pub mod create_simulation_application_version_input {
             self
         }
         /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-        pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.current_revision_id = input; self
+        pub fn set_current_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_revision_id = input;
+            self
         }
         /// Appends an item to `s3_etags`.
         ///
@@ -1594,13 +2276,17 @@ pub mod create_simulation_application_version_input {
         /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
-                            v.push(input.into());
-                            self.s3_etags = Some(v);
-                            self
+            v.push(input.into());
+            self.s3_etags = Some(v);
+            self
         }
         /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-        pub fn set_s3_etags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.s3_etags = input; self
+        pub fn set_s3_etags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.s3_etags = input;
+            self
         }
         /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1609,45 +2295,65 @@ pub mod create_simulation_application_version_input {
         }
         /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_digest = input; self
+            self.image_digest = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionInput`](crate::input::CreateSimulationApplicationVersionInput).
-        pub fn build(self) -> Result<crate::input::CreateSimulationApplicationVersionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateSimulationApplicationVersionInput {
-                    application: self.application
-                    ,
-                    current_revision_id: self.current_revision_id
-                    ,
-                    s3_etags: self.s3_etags
-                    ,
-                    image_digest: self.image_digest
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateSimulationApplicationVersionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateSimulationApplicationVersionInput {
+                application: self.application,
+                current_revision_id: self.current_revision_id,
+                s3_etags: self.s3_etags,
+                image_digest: self.image_digest,
+            })
         }
     }
-    
-    
 }
 impl CreateSimulationApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplicationVersion`](crate::operation::CreateSimulationApplicationVersion)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSimulationApplicationVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSimulationApplicationVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateSimulationApplicationVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/createSimulationApplicationVersion").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::CreateSimulationApplicationVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/createSimulationApplicationVersion")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateSimulationApplicationVersionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSimulationApplicationVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1655,36 +2361,58 @@ impl CreateSimulationApplicationVersionInput {
             crate::operation_ser::serialize_operation_crate_operation_create_simulation_application_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSimulationApplicationVersion::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSimulationApplicationVersion", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSimulationApplicationVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSimulationApplicationVersion",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1696,9 +2424,9 @@ impl CreateSimulationApplicationVersionInput {
 
 /// See [`CreateSimulationJobInput`](crate::input::CreateSimulationJobInput).
 pub mod create_simulation_job_input {
-    
+
     /// A builder for [`CreateSimulationJobInput`](crate::input::CreateSimulationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
@@ -1706,10 +2434,14 @@ pub mod create_simulation_job_input {
         pub(crate) max_job_duration_in_seconds: std::option::Option<i64>,
         pub(crate) iam_role: std::option::Option<std::string::String>,
         pub(crate) failure_behavior: std::option::Option<crate::model::FailureBehavior>,
-        pub(crate) robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
-        pub(crate) simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+        pub(crate) robot_applications:
+            std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+        pub(crate) simulation_applications:
+            std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
         pub(crate) data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) compute: std::option::Option<crate::model::Compute>,
     }
@@ -1720,8 +2452,12 @@ pub mod create_simulation_job_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>Location for output files generated by the simulation job.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -1729,8 +2465,12 @@ pub mod create_simulation_job_input {
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
-        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
-            self.output_location = input; self
+        pub fn set_output_location(
+            mut self,
+            input: std::option::Option<crate::model::OutputLocation>,
+        ) -> Self {
+            self.output_location = input;
+            self
         }
         /// <p>The logging configuration.</p>
         pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
@@ -1738,8 +2478,12 @@ pub mod create_simulation_job_input {
             self
         }
         /// <p>The logging configuration.</p>
-        pub fn set_logging_config(mut self, input: std::option::Option<crate::model::LoggingConfig>) -> Self {
-            self.logging_config = input; self
+        pub fn set_logging_config(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfig>,
+        ) -> Self {
+            self.logging_config = input;
+            self
         }
         /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
@@ -1748,7 +2492,8 @@ pub mod create_simulation_job_input {
         }
         /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_job_duration_in_seconds = input; self
+            self.max_job_duration_in_seconds = input;
+            self
         }
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1757,44 +2502,49 @@ pub mod create_simulation_job_input {
         }
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = input; self
+            self.iam_role = input;
+            self
         }
-        /// <p>The failure behavior the simulation job.</p> 
-        /// <dl> 
+        /// <p>The failure behavior the simulation job.</p>
+        /// <dl>
         /// <dt>
         /// Continue
-        /// </dt> 
-        /// <dd> 
-        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
-        /// </dd> 
+        /// </dt>
+        /// <dd>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// </dd>
         /// <dt>
         /// Fail
-        /// </dt> 
-        /// <dd> 
-        /// <p>Stop the simulation job and terminate the instance.</p> 
-        /// </dd> 
+        /// </dt>
+        /// <dd>
+        /// <p>Stop the simulation job and terminate the instance.</p>
+        /// </dd>
         /// </dl>
         pub fn failure_behavior(mut self, input: crate::model::FailureBehavior) -> Self {
             self.failure_behavior = Some(input);
             self
         }
-        /// <p>The failure behavior the simulation job.</p> 
-        /// <dl> 
+        /// <p>The failure behavior the simulation job.</p>
+        /// <dl>
         /// <dt>
         /// Continue
-        /// </dt> 
-        /// <dd> 
-        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
-        /// </dd> 
+        /// </dt>
+        /// <dd>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// </dd>
         /// <dt>
         /// Fail
-        /// </dt> 
-        /// <dd> 
-        /// <p>Stop the simulation job and terminate the instance.</p> 
-        /// </dd> 
+        /// </dt>
+        /// <dd>
+        /// <p>Stop the simulation job and terminate the instance.</p>
+        /// </dd>
         /// </dl>
-        pub fn set_failure_behavior(mut self, input: std::option::Option<crate::model::FailureBehavior>) -> Self {
-            self.failure_behavior = input; self
+        pub fn set_failure_behavior(
+            mut self,
+            input: std::option::Option<crate::model::FailureBehavior>,
+        ) -> Self {
+            self.failure_behavior = input;
+            self
         }
         /// Appends an item to `robot_applications`.
         ///
@@ -1803,62 +2553,87 @@ pub mod create_simulation_job_input {
         /// <p>The robot application to use in the simulation job.</p>
         pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-                            v.push(input);
-                            self.robot_applications = Some(v);
-                            self
+            v.push(input);
+            self.robot_applications = Some(v);
+            self
         }
         /// <p>The robot application to use in the simulation job.</p>
-        pub fn set_robot_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>) -> Self {
-            self.robot_applications = input; self
+        pub fn set_robot_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+        ) -> Self {
+            self.robot_applications = input;
+            self
         }
         /// Appends an item to `simulation_applications`.
         ///
         /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
         ///
         /// <p>The simulation application to use in the simulation job.</p>
-        pub fn simulation_applications(mut self, input: crate::model::SimulationApplicationConfig) -> Self {
+        pub fn simulation_applications(
+            mut self,
+            input: crate::model::SimulationApplicationConfig,
+        ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-                            v.push(input);
-                            self.simulation_applications = Some(v);
-                            self
+            v.push(input);
+            self.simulation_applications = Some(v);
+            self
         }
         /// <p>The simulation application to use in the simulation job.</p>
-        pub fn set_simulation_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>) -> Self {
-            self.simulation_applications = input; self
+        pub fn set_simulation_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+        ) -> Self {
+            self.simulation_applications = input;
+            self
         }
         /// Appends an item to `data_sources`.
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-                            v.push(input);
-                            self.data_sources = Some(v);
-                            self
+            v.push(input);
+            self.data_sources = Some(v);
+            self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>) -> Self {
-            self.data_sources = input; self
+        pub fn set_data_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
+        ) -> Self {
+            self.data_sources = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -1866,8 +2641,12 @@ pub mod create_simulation_job_input {
             self
         }
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
-        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfig>) -> Self {
-            self.vpc_config = input; self
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
         }
         /// <p>Compute information for the simulation job.</p>
         pub fn compute(mut self, input: crate::model::Compute) -> Self {
@@ -1876,102 +2655,133 @@ pub mod create_simulation_job_input {
         }
         /// <p>Compute information for the simulation job.</p>
         pub fn set_compute(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
-            self.compute = input; self
+            self.compute = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateSimulationJobInput`](crate::input::CreateSimulationJobInput).
-        pub fn build(self) -> Result<crate::input::CreateSimulationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateSimulationJobInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    output_location: self.output_location
-                    ,
-                    logging_config: self.logging_config
-                    ,
-                    max_job_duration_in_seconds: self.max_job_duration_in_seconds
-                        .unwrap_or_default()
-                    ,
-                    iam_role: self.iam_role
-                    ,
-                    failure_behavior: self.failure_behavior
-                    ,
-                    robot_applications: self.robot_applications
-                    ,
-                    simulation_applications: self.simulation_applications
-                    ,
-                    data_sources: self.data_sources
-                    ,
-                    tags: self.tags
-                    ,
-                    vpc_config: self.vpc_config
-                    ,
-                    compute: self.compute
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateSimulationJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateSimulationJobInput {
+                client_request_token: self.client_request_token,
+                output_location: self.output_location,
+                logging_config: self.logging_config,
+                max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
+                iam_role: self.iam_role,
+                failure_behavior: self.failure_behavior,
+                robot_applications: self.robot_applications,
+                simulation_applications: self.simulation_applications,
+                data_sources: self.data_sources,
+                tags: self.tags,
+                vpc_config: self.vpc_config,
+                compute: self.compute,
+            })
         }
     }
-    
-    
 }
 impl CreateSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationJob`](crate::operation::CreateSimulationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateSimulationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateSimulationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateSimulationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateSimulationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createSimulationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateSimulationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateSimulationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_job(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateSimulationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateSimulationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSimulationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSimulationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1983,15 +2793,17 @@ impl CreateSimulationJobInput {
 
 /// See [`CreateWorldExportJobInput`](crate::input::CreateWorldExportJobInput).
 pub mod create_world_export_job_input {
-    
+
     /// A builder for [`CreateWorldExportJobInput`](crate::input::CreateWorldExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) worlds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
         pub(crate) iam_role: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -2000,8 +2812,12 @@ pub mod create_world_export_job_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Appends an item to `worlds`.
         ///
@@ -2010,13 +2826,17 @@ pub mod create_world_export_job_input {
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
         pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worlds.unwrap_or_default();
-                            v.push(input.into());
-                            self.worlds = Some(v);
-                            self
+            v.push(input.into());
+            self.worlds = Some(v);
+            self
         }
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-        pub fn set_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.worlds = input; self
+        pub fn set_worlds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.worlds = input;
+            self
         }
         /// <p>The output location.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -2024,8 +2844,12 @@ pub mod create_world_export_job_input {
             self
         }
         /// <p>The output location.</p>
-        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
-            self.output_location = input; self
+        pub fn set_output_location(
+            mut self,
+            input: std::option::Option<crate::model::OutputLocation>,
+        ) -> Self {
+            self.output_location = input;
+            self
         }
         /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2034,102 +2858,153 @@ pub mod create_world_export_job_input {
         }
         /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = input; self
+            self.iam_role = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::input::CreateWorldExportJobInput).
-        pub fn build(self) -> Result<crate::input::CreateWorldExportJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateWorldExportJobInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    worlds: self.worlds
-                    ,
-                    output_location: self.output_location
-                    ,
-                    iam_role: self.iam_role
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateWorldExportJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateWorldExportJobInput {
+                client_request_token: self.client_request_token,
+                worlds: self.worlds,
+                output_location: self.output_location,
+                iam_role: self.iam_role,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldExportJob`](crate::operation::CreateWorldExportJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorldExportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWorldExportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateWorldExportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateWorldExportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createWorldExportJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateWorldExportJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorldExportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_world_export_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_world_export_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorldExportJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorldExportJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWorldExportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWorldExportJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2141,15 +3016,19 @@ impl CreateWorldExportJobInput {
 
 /// See [`CreateWorldGenerationJobInput`](crate::input::CreateWorldGenerationJobInput).
 pub mod create_world_generation_job_input {
-    
+
     /// A builder for [`CreateWorldGenerationJobInput`](crate::input::CreateWorldGenerationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) template: std::option::Option<std::string::String>,
         pub(crate) world_count: std::option::Option<crate::model::WorldCount>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-        pub(crate) world_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) world_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -2158,8 +3037,12 @@ pub mod create_world_generation_job_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2168,7 +3051,8 @@ pub mod create_world_generation_job_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input; self
+            self.template = input;
+            self
         }
         /// <p>Information about the world count.</p>
         pub fn world_count(mut self, input: crate::model::WorldCount) -> Self {
@@ -2176,118 +3060,184 @@ pub mod create_world_generation_job_input {
             self
         }
         /// <p>Information about the world count.</p>
-        pub fn set_world_count(mut self, input: std::option::Option<crate::model::WorldCount>) -> Self {
-            self.world_count = input; self
+        pub fn set_world_count(
+            mut self,
+            input: std::option::Option<crate::model::WorldCount>,
+        ) -> Self {
+            self.world_count = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Adds a key-value pair to `world_tags`.
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-        pub fn world_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn world_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.world_tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.world_tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.world_tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-        pub fn set_world_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.world_tags = input; self
+        pub fn set_world_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.world_tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateWorldGenerationJobInput`](crate::input::CreateWorldGenerationJobInput).
-        pub fn build(self) -> Result<crate::input::CreateWorldGenerationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateWorldGenerationJobInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    template: self.template
-                    ,
-                    world_count: self.world_count
-                    ,
-                    tags: self.tags
-                    ,
-                    world_tags: self.world_tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateWorldGenerationJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateWorldGenerationJobInput {
+                client_request_token: self.client_request_token,
+                template: self.template,
+                world_count: self.world_count,
+                tags: self.tags,
+                world_tags: self.world_tags,
+            })
         }
     }
-    
-    
 }
 impl CreateWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldGenerationJob`](crate::operation::CreateWorldGenerationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorldGenerationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWorldGenerationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateWorldGenerationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateWorldGenerationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createWorldGenerationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateWorldGenerationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorldGenerationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_world_generation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_world_generation_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorldGenerationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorldGenerationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWorldGenerationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWorldGenerationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2299,15 +3249,17 @@ impl CreateWorldGenerationJobInput {
 
 /// See [`CreateWorldTemplateInput`](crate::input::CreateWorldTemplateInput).
 pub mod create_world_template_input {
-    
+
     /// A builder for [`CreateWorldTemplateInput`](crate::input::CreateWorldTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) template_location: std::option::Option<crate::model::TemplateLocation>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -2316,8 +3268,12 @@ pub mod create_world_template_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>The name of the world template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2326,7 +3282,8 @@ pub mod create_world_template_input {
         }
         /// <p>The name of the world template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// <p>The world template body.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2334,8 +3291,12 @@ pub mod create_world_template_input {
             self
         }
         /// <p>The world template body.</p>
-        pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_body = input; self
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
+            self
         }
         /// <p>The location of the world template.</p>
         pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
@@ -2343,100 +3304,152 @@ pub mod create_world_template_input {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn set_template_location(mut self, input: std::option::Option<crate::model::TemplateLocation>) -> Self {
-            self.template_location = input; self
+        pub fn set_template_location(
+            mut self,
+            input: std::option::Option<crate::model::TemplateLocation>,
+        ) -> Self {
+            self.template_location = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateWorldTemplateInput`](crate::input::CreateWorldTemplateInput).
-        pub fn build(self) -> Result<crate::input::CreateWorldTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateWorldTemplateInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    name: self.name
-                    ,
-                    template_body: self.template_body
-                    ,
-                    template_location: self.template_location
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateWorldTemplateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateWorldTemplateInput {
+                client_request_token: self.client_request_token,
+                name: self.name,
+                template_body: self.template_body,
+                template_location: self.template_location,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldTemplate`](crate::operation::CreateWorldTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWorldTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWorldTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateWorldTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateWorldTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/createWorldTemplate").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateWorldTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorldTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_world_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_world_template(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWorldTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWorldTemplate", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWorldTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWorldTemplate",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2448,9 +3461,9 @@ impl CreateWorldTemplateInput {
 
 /// See [`DeleteFleetInput`](crate::input::DeleteFleetInput).
 pub mod delete_fleet_input {
-    
+
     /// A builder for [`DeleteFleetInput`](crate::input::DeleteFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
     }
@@ -2462,76 +3475,117 @@ pub mod delete_fleet_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::input::DeleteFleetInput).
-        pub fn build(self) -> Result<crate::input::DeleteFleetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteFleetInput {
-                    fleet: self.fleet
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteFleetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteFleetInput { fleet: self.fleet })
         }
     }
-    
-    
 }
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteFleet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFleet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteFleetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteFleetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deleteFleet").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteFleetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFleetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteFleet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteFleet", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2543,9 +3597,9 @@ impl DeleteFleetInput {
 
 /// See [`DeleteRobotInput`](crate::input::DeleteRobotInput).
 pub mod delete_robot_input {
-    
+
     /// A builder for [`DeleteRobotInput`](crate::input::DeleteRobotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robot: std::option::Option<std::string::String>,
     }
@@ -2557,76 +3611,117 @@ pub mod delete_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.robot = input; self
+            self.robot = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::input::DeleteRobotInput).
-        pub fn build(self) -> Result<crate::input::DeleteRobotInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteRobotInput {
-                    robot: self.robot
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteRobotInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteRobotInput { robot: self.robot })
         }
     }
-    
-    
 }
 impl DeleteRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobot`](crate::operation::DeleteRobot)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRobot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRobot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteRobotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteRobotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deleteRobot").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteRobotInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteRobotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_robot(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_robot(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRobot::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRobot", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2638,9 +3733,9 @@ impl DeleteRobotInput {
 
 /// See [`DeleteRobotApplicationInput`](crate::input::DeleteRobotApplicationInput).
 pub mod delete_robot_application_input {
-    
+
     /// A builder for [`DeleteRobotApplicationInput`](crate::input::DeleteRobotApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
@@ -2653,7 +3748,8 @@ pub mod delete_robot_application_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The version of the robot application to delete.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2661,79 +3757,126 @@ pub mod delete_robot_application_input {
             self
         }
         /// <p>The version of the robot application to delete.</p>
-        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application_version = input; self
+        pub fn set_application_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteRobotApplicationInput`](crate::input::DeleteRobotApplicationInput).
-        pub fn build(self) -> Result<crate::input::DeleteRobotApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteRobotApplicationInput {
-                    application: self.application
-                    ,
-                    application_version: self.application_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteRobotApplicationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteRobotApplicationInput {
+                application: self.application,
+                application_version: self.application_version,
+            })
         }
     }
-    
-    
 }
 impl DeleteRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobotApplication`](crate::operation::DeleteRobotApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRobotApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRobotApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteRobotApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteRobotApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deleteRobotApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteRobotApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteRobotApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_robot_application(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_robot_application(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRobotApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRobotApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRobotApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRobotApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2745,9 +3888,9 @@ impl DeleteRobotApplicationInput {
 
 /// See [`DeleteSimulationApplicationInput`](crate::input::DeleteSimulationApplicationInput).
 pub mod delete_simulation_application_input {
-    
+
     /// A builder for [`DeleteSimulationApplicationInput`](crate::input::DeleteSimulationApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
@@ -2760,7 +3903,8 @@ pub mod delete_simulation_application_input {
         }
         /// <p>The application information for the simulation application to delete.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The version of the simulation application to delete.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2768,42 +3912,66 @@ pub mod delete_simulation_application_input {
             self
         }
         /// <p>The version of the simulation application to delete.</p>
-        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application_version = input; self
+        pub fn set_application_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteSimulationApplicationInput`](crate::input::DeleteSimulationApplicationInput).
-        pub fn build(self) -> Result<crate::input::DeleteSimulationApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteSimulationApplicationInput {
-                    application: self.application
-                    ,
-                    application_version: self.application_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteSimulationApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteSimulationApplicationInput {
+                application: self.application,
+                application_version: self.application_version,
+            })
         }
     }
-    
-    
 }
 impl DeleteSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSimulationApplication`](crate::operation::DeleteSimulationApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteSimulationApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteSimulationApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteSimulationApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteSimulationApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deleteSimulationApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteSimulationApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteSimulationApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2811,36 +3979,58 @@ impl DeleteSimulationApplicationInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_simulation_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteSimulationApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteSimulationApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSimulationApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSimulationApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2852,9 +4042,9 @@ impl DeleteSimulationApplicationInput {
 
 /// See [`DeleteWorldTemplateInput`](crate::input::DeleteWorldTemplateInput).
 pub mod delete_world_template_input {
-    
+
     /// A builder for [`DeleteWorldTemplateInput`](crate::input::DeleteWorldTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<std::string::String>,
     }
@@ -2866,76 +4056,119 @@ pub mod delete_world_template_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input; self
+            self.template = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::input::DeleteWorldTemplateInput).
-        pub fn build(self) -> Result<crate::input::DeleteWorldTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteWorldTemplateInput {
-                    template: self.template
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteWorldTemplateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteWorldTemplateInput {
+                template: self.template,
+            })
         }
     }
-    
-    
 }
 impl DeleteWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorldTemplate`](crate::operation::DeleteWorldTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWorldTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteWorldTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteWorldTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteWorldTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deleteWorldTemplate").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteWorldTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteWorldTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_world_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_world_template(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWorldTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWorldTemplate", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWorldTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWorldTemplate",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2947,9 +4180,9 @@ impl DeleteWorldTemplateInput {
 
 /// See [`DeregisterRobotInput`](crate::input::DeregisterRobotInput).
 pub mod deregister_robot_input {
-    
+
     /// A builder for [`DeregisterRobotInput`](crate::input::DeregisterRobotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
         pub(crate) robot: std::option::Option<std::string::String>,
@@ -2962,7 +4195,8 @@ pub mod deregister_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2971,78 +4205,120 @@ pub mod deregister_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.robot = input; self
+            self.robot = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::input::DeregisterRobotInput).
-        pub fn build(self) -> Result<crate::input::DeregisterRobotInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeregisterRobotInput {
-                    fleet: self.fleet
-                    ,
-                    robot: self.robot
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeregisterRobotInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeregisterRobotInput {
+                fleet: self.fleet,
+                robot: self.robot,
+            })
         }
     }
-    
-    
 }
 impl DeregisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterRobot`](crate::operation::DeregisterRobot)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeregisterRobot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeregisterRobot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeregisterRobotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeregisterRobotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/deregisterRobot").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeregisterRobotInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeregisterRobotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deregister_robot(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_deregister_robot(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeregisterRobot::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeregisterRobot", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeregisterRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3054,9 +4330,9 @@ impl DeregisterRobotInput {
 
 /// See [`DescribeDeploymentJobInput`](crate::input::DescribeDeploymentJobInput).
 pub mod describe_deployment_job_input {
-    
+
     /// A builder for [`DescribeDeploymentJobInput`](crate::input::DescribeDeploymentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -3068,76 +4344,119 @@ pub mod describe_deployment_job_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeDeploymentJobInput`](crate::input::DescribeDeploymentJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeDeploymentJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeDeploymentJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeDeploymentJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeDeploymentJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl DescribeDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeploymentJob`](crate::operation::DescribeDeploymentJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDeploymentJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDeploymentJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeDeploymentJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeDeploymentJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeDeploymentJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeDeploymentJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeDeploymentJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_deployment_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_deployment_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDeploymentJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDeploymentJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDeploymentJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDeploymentJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3149,9 +4468,9 @@ impl DescribeDeploymentJobInput {
 
 /// See [`DescribeFleetInput`](crate::input::DescribeFleetInput).
 pub mod describe_fleet_input {
-    
+
     /// A builder for [`DescribeFleetInput`](crate::input::DescribeFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
     }
@@ -3163,76 +4482,117 @@ pub mod describe_fleet_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFleetInput`](crate::input::DescribeFleetInput).
-        pub fn build(self) -> Result<crate::input::DescribeFleetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFleetInput {
-                    fleet: self.fleet
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFleetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFleetInput { fleet: self.fleet })
         }
     }
-    
-    
 }
 impl DescribeFleetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleet`](crate::operation::DescribeFleet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFleet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFleet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFleetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFleetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeFleet").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFleetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFleetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_fleet(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFleet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFleet", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFleet",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3244,9 +4604,9 @@ impl DescribeFleetInput {
 
 /// See [`DescribeRobotInput`](crate::input::DescribeRobotInput).
 pub mod describe_robot_input {
-    
+
     /// A builder for [`DescribeRobotInput`](crate::input::DescribeRobotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robot: std::option::Option<std::string::String>,
     }
@@ -3258,76 +4618,117 @@ pub mod describe_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.robot = input; self
+            self.robot = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::input::DescribeRobotInput).
-        pub fn build(self) -> Result<crate::input::DescribeRobotInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRobotInput {
-                    robot: self.robot
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeRobotInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeRobotInput { robot: self.robot })
         }
     }
-    
-    
 }
 impl DescribeRobotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobot`](crate::operation::DescribeRobot)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRobot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRobot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRobotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRobotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeRobot").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRobotInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRobotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_robot(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_robot(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRobot::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRobot", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3339,9 +4740,9 @@ impl DescribeRobotInput {
 
 /// See [`DescribeRobotApplicationInput`](crate::input::DescribeRobotApplicationInput).
 pub mod describe_robot_application_input {
-    
+
     /// A builder for [`DescribeRobotApplicationInput`](crate::input::DescribeRobotApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
@@ -3354,7 +4755,8 @@ pub mod describe_robot_application_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The version of the robot application to describe.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3362,79 +4764,128 @@ pub mod describe_robot_application_input {
             self
         }
         /// <p>The version of the robot application to describe.</p>
-        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application_version = input; self
+        pub fn set_application_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRobotApplicationInput`](crate::input::DescribeRobotApplicationInput).
-        pub fn build(self) -> Result<crate::input::DescribeRobotApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRobotApplicationInput {
-                    application: self.application
-                    ,
-                    application_version: self.application_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeRobotApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeRobotApplicationInput {
+                application: self.application,
+                application_version: self.application_version,
+            })
         }
     }
-    
-    
 }
 impl DescribeRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobotApplication`](crate::operation::DescribeRobotApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRobotApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRobotApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRobotApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRobotApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeRobotApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRobotApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRobotApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_robot_application(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_robot_application(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRobotApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRobotApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRobotApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRobotApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3446,9 +4897,9 @@ impl DescribeRobotApplicationInput {
 
 /// See [`DescribeSimulationApplicationInput`](crate::input::DescribeSimulationApplicationInput).
 pub mod describe_simulation_application_input {
-    
+
     /// A builder for [`DescribeSimulationApplicationInput`](crate::input::DescribeSimulationApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<std::string::String>,
@@ -3461,7 +4912,8 @@ pub mod describe_simulation_application_input {
         }
         /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// <p>The version of the simulation application to describe.</p>
         pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3469,42 +4921,67 @@ pub mod describe_simulation_application_input {
             self
         }
         /// <p>The version of the simulation application to describe.</p>
-        pub fn set_application_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application_version = input; self
+        pub fn set_application_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeSimulationApplicationInput`](crate::input::DescribeSimulationApplicationInput).
-        pub fn build(self) -> Result<crate::input::DescribeSimulationApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeSimulationApplicationInput {
-                    application: self.application
-                    ,
-                    application_version: self.application_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeSimulationApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSimulationApplicationInput {
+                application: self.application,
+                application_version: self.application_version,
+            })
         }
     }
-    
-    
 }
 impl DescribeSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationApplication`](crate::operation::DescribeSimulationApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSimulationApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSimulationApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeSimulationApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/describeSimulationApplication").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::DescribeSimulationApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/describeSimulationApplication")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeSimulationApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeSimulationApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3512,36 +4989,58 @@ impl DescribeSimulationApplicationInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_simulation_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSimulationApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSimulationApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSimulationApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSimulationApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3553,9 +5052,9 @@ impl DescribeSimulationApplicationInput {
 
 /// See [`DescribeSimulationJobInput`](crate::input::DescribeSimulationJobInput).
 pub mod describe_simulation_job_input {
-    
+
     /// A builder for [`DescribeSimulationJobInput`](crate::input::DescribeSimulationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -3567,76 +5066,119 @@ pub mod describe_simulation_job_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeSimulationJobInput`](crate::input::DescribeSimulationJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeSimulationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeSimulationJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeSimulationJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeSimulationJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl DescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJob`](crate::operation::DescribeSimulationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSimulationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSimulationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeSimulationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeSimulationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeSimulationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeSimulationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeSimulationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSimulationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSimulationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSimulationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSimulationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3648,9 +5190,9 @@ impl DescribeSimulationJobInput {
 
 /// See [`DescribeSimulationJobBatchInput`](crate::input::DescribeSimulationJobBatchInput).
 pub mod describe_simulation_job_batch_input {
-    
+
     /// A builder for [`DescribeSimulationJobBatchInput`](crate::input::DescribeSimulationJobBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch: std::option::Option<std::string::String>,
     }
@@ -3662,39 +5204,59 @@ pub mod describe_simulation_job_batch_input {
         }
         /// <p>The id of the batch to describe.</p>
         pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.batch = input; self
+            self.batch = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeSimulationJobBatchInput`](crate::input::DescribeSimulationJobBatchInput).
-        pub fn build(self) -> Result<crate::input::DescribeSimulationJobBatchInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeSimulationJobBatchInput {
-                    batch: self.batch
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeSimulationJobBatchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSimulationJobBatchInput { batch: self.batch })
         }
     }
-    
-    
 }
 impl DescribeSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJobBatch`](crate::operation::DescribeSimulationJobBatch)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeSimulationJobBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSimulationJobBatch,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeSimulationJobBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeSimulationJobBatchInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeSimulationJobBatch").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeSimulationJobBatchInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeSimulationJobBatchInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3702,36 +5264,58 @@ impl DescribeSimulationJobBatchInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job_batch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeSimulationJobBatch::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeSimulationJobBatch", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSimulationJobBatch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSimulationJobBatch",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3743,9 +5327,9 @@ impl DescribeSimulationJobBatchInput {
 
 /// See [`DescribeWorldInput`](crate::input::DescribeWorldInput).
 pub mod describe_world_input {
-    
+
     /// A builder for [`DescribeWorldInput`](crate::input::DescribeWorldInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world: std::option::Option<std::string::String>,
     }
@@ -3757,76 +5341,117 @@ pub mod describe_world_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
         pub fn set_world(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.world = input; self
+            self.world = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::input::DescribeWorldInput).
-        pub fn build(self) -> Result<crate::input::DescribeWorldInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeWorldInput {
-                    world: self.world
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeWorldInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeWorldInput { world: self.world })
         }
     }
-    
-    
 }
 impl DescribeWorldInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorld`](crate::operation::DescribeWorld)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorld, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWorld,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeWorldInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeWorldInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeWorld").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeWorldInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorldInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_world(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_world(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorld::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorld", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorld::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorld",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3838,9 +5463,9 @@ impl DescribeWorldInput {
 
 /// See [`DescribeWorldExportJobInput`](crate::input::DescribeWorldExportJobInput).
 pub mod describe_world_export_job_input {
-    
+
     /// A builder for [`DescribeWorldExportJobInput`](crate::input::DescribeWorldExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -3852,76 +5477,119 @@ pub mod describe_world_export_job_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeWorldExportJobInput`](crate::input::DescribeWorldExportJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeWorldExportJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeWorldExportJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeWorldExportJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeWorldExportJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl DescribeWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldExportJob`](crate::operation::DescribeWorldExportJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorldExportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWorldExportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeWorldExportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeWorldExportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeWorldExportJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeWorldExportJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorldExportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_world_export_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_world_export_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorldExportJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorldExportJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorldExportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorldExportJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3933,9 +5601,9 @@ impl DescribeWorldExportJobInput {
 
 /// See [`DescribeWorldGenerationJobInput`](crate::input::DescribeWorldGenerationJobInput).
 pub mod describe_world_generation_job_input {
-    
+
     /// A builder for [`DescribeWorldGenerationJobInput`](crate::input::DescribeWorldGenerationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -3947,39 +5615,59 @@ pub mod describe_world_generation_job_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeWorldGenerationJobInput`](crate::input::DescribeWorldGenerationJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeWorldGenerationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeWorldGenerationJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeWorldGenerationJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeWorldGenerationJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl DescribeWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldGenerationJob`](crate::operation::DescribeWorldGenerationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorldGenerationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWorldGenerationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeWorldGenerationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeWorldGenerationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeWorldGenerationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeWorldGenerationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorldGenerationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3987,36 +5675,58 @@ impl DescribeWorldGenerationJobInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_world_generation_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorldGenerationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorldGenerationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorldGenerationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorldGenerationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4028,9 +5738,9 @@ impl DescribeWorldGenerationJobInput {
 
 /// See [`DescribeWorldTemplateInput`](crate::input::DescribeWorldTemplateInput).
 pub mod describe_world_template_input {
-    
+
     /// A builder for [`DescribeWorldTemplateInput`](crate::input::DescribeWorldTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<std::string::String>,
     }
@@ -4042,76 +5752,121 @@ pub mod describe_world_template_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input; self
+            self.template = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeWorldTemplateInput`](crate::input::DescribeWorldTemplateInput).
-        pub fn build(self) -> Result<crate::input::DescribeWorldTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeWorldTemplateInput {
-                    template: self.template
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeWorldTemplateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeWorldTemplateInput {
+                template: self.template,
+            })
         }
     }
-    
-    
 }
 impl DescribeWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldTemplate`](crate::operation::DescribeWorldTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorldTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeWorldTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeWorldTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeWorldTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/describeWorldTemplate").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeWorldTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeWorldTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_world_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_world_template(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorldTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorldTemplate", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeWorldTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeWorldTemplate",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4123,9 +5878,9 @@ impl DescribeWorldTemplateInput {
 
 /// See [`GetWorldTemplateBodyInput`](crate::input::GetWorldTemplateBodyInput).
 pub mod get_world_template_body_input {
-    
+
     /// A builder for [`GetWorldTemplateBodyInput`](crate::input::GetWorldTemplateBodyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<std::string::String>,
         pub(crate) generation_job: std::option::Option<std::string::String>,
@@ -4138,7 +5893,8 @@ pub mod get_world_template_body_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input; self
+            self.template = input;
+            self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
         pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4146,79 +5902,126 @@ pub mod get_world_template_body_input {
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-        pub fn set_generation_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.generation_job = input; self
+        pub fn set_generation_job(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.generation_job = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetWorldTemplateBodyInput`](crate::input::GetWorldTemplateBodyInput).
-        pub fn build(self) -> Result<crate::input::GetWorldTemplateBodyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetWorldTemplateBodyInput {
-                    template: self.template
-                    ,
-                    generation_job: self.generation_job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetWorldTemplateBodyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetWorldTemplateBodyInput {
+                template: self.template,
+                generation_job: self.generation_job,
+            })
         }
     }
-    
-    
 }
 impl GetWorldTemplateBodyInput {
     /// Consumes the builder and constructs an Operation<[`GetWorldTemplateBody`](crate::operation::GetWorldTemplateBody)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWorldTemplateBody, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetWorldTemplateBody,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetWorldTemplateBodyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetWorldTemplateBodyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/getWorldTemplateBody").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetWorldTemplateBodyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetWorldTemplateBodyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_world_template_body(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_world_template_body(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWorldTemplateBody::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWorldTemplateBody", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorldTemplateBody::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorldTemplateBody",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4230,9 +6033,9 @@ impl GetWorldTemplateBodyInput {
 
 /// See [`ListDeploymentJobsInput`](crate::input::ListDeploymentJobsInput).
 pub mod list_deployment_jobs_input {
-    
+
     /// A builder for [`ListDeploymentJobsInput`](crate::input::ListDeploymentJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4243,18 +6046,22 @@ pub mod list_deployment_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4263,7 +6070,8 @@ pub mod list_deployment_jobs_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4272,80 +6080,121 @@ pub mod list_deployment_jobs_input {
         }
         /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListDeploymentJobsInput`](crate::input::ListDeploymentJobsInput).
-        pub fn build(self) -> Result<crate::input::ListDeploymentJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListDeploymentJobsInput {
-                    filters: self.filters
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDeploymentJobsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDeploymentJobsInput {
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListDeploymentJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeploymentJobs`](crate::operation::ListDeploymentJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDeploymentJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDeploymentJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListDeploymentJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListDeploymentJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listDeploymentJobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListDeploymentJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDeploymentJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_deployment_jobs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_deployment_jobs(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDeploymentJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDeploymentJobs", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDeploymentJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDeploymentJobs",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4357,27 +6206,28 @@ impl ListDeploymentJobsInput {
 
 /// See [`ListFleetsInput`](crate::input::ListFleetsInput).
 pub mod list_fleets_input {
-    
+
     /// A builder for [`ListFleetsInput`](crate::input::ListFleetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> 
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4386,97 +6236,141 @@ pub mod list_fleets_input {
         }
         /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFleetsInput`](crate::input::ListFleetsInput).
-        pub fn build(self) -> Result<crate::input::ListFleetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFleetsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFleetsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListFleetsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFleets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFleets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFleetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFleetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listFleets").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFleetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFleetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFleets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFleets", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFleets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFleets",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4488,9 +6382,9 @@ impl ListFleetsInput {
 
 /// See [`ListRobotApplicationsInput`](crate::input::ListRobotApplicationsInput).
 pub mod list_robot_applications_input {
-    
+
     /// A builder for [`ListRobotApplicationsInput`](crate::input::ListRobotApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_qualifier: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4504,8 +6398,12 @@ pub mod list_robot_applications_input {
             self
         }
         /// <p>The version qualifier of the robot application.</p>
-        pub fn set_version_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_qualifier = input; self
+        pub fn set_version_qualifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_qualifier = input;
+            self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4514,7 +6412,8 @@ pub mod list_robot_applications_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4523,99 +6422,145 @@ pub mod list_robot_applications_input {
         }
         /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRobotApplicationsInput`](crate::input::ListRobotApplicationsInput).
-        pub fn build(self) -> Result<crate::input::ListRobotApplicationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRobotApplicationsInput {
-                    version_qualifier: self.version_qualifier
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRobotApplicationsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRobotApplicationsInput {
+                version_qualifier: self.version_qualifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListRobotApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobotApplications`](crate::operation::ListRobotApplications)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRobotApplications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRobotApplications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRobotApplicationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRobotApplicationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listRobotApplications").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRobotApplicationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRobotApplicationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_robot_applications(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_robot_applications(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRobotApplications::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRobotApplications", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRobotApplications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRobotApplications",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4627,9 +6572,9 @@ impl ListRobotApplicationsInput {
 
 /// See [`ListRobotsInput`](crate::input::ListRobotsInput).
 pub mod list_robots_input {
-    
+
     /// A builder for [`ListRobotsInput`](crate::input::ListRobotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4643,7 +6588,8 @@ pub mod list_robots_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4652,97 +6598,141 @@ pub mod list_robots_input {
         }
         /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRobotsInput`](crate::input::ListRobotsInput).
-        pub fn build(self) -> Result<crate::input::ListRobotsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRobotsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRobotsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListRobotsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListRobotsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobots`](crate::operation::ListRobots)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRobots, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRobots,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRobotsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRobotsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listRobots").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRobotsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRobotsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_robots(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_robots(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRobots::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRobots", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRobots::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRobots",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4754,9 +6744,9 @@ impl ListRobotsInput {
 
 /// See [`ListSimulationApplicationsInput`](crate::input::ListSimulationApplicationsInput).
 pub mod list_simulation_applications_input {
-    
+
     /// A builder for [`ListSimulationApplicationsInput`](crate::input::ListSimulationApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_qualifier: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4770,8 +6760,12 @@ pub mod list_simulation_applications_input {
             self
         }
         /// <p>The version qualifier of the simulation application.</p>
-        pub fn set_version_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_qualifier = input; self
+        pub fn set_version_qualifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_qualifier = input;
+            self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4780,7 +6774,8 @@ pub mod list_simulation_applications_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4789,99 +6784,147 @@ pub mod list_simulation_applications_input {
         }
         /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional list of filters to limit results.</p> 
+        /// <p>Optional list of filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional list of filters to limit results.</p> 
+        /// <p>Optional list of filters to limit results.</p>
         /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListSimulationApplicationsInput`](crate::input::ListSimulationApplicationsInput).
-        pub fn build(self) -> Result<crate::input::ListSimulationApplicationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListSimulationApplicationsInput {
-                    version_qualifier: self.version_qualifier
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListSimulationApplicationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSimulationApplicationsInput {
+                version_qualifier: self.version_qualifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListSimulationApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationApplications`](crate::operation::ListSimulationApplications)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSimulationApplications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSimulationApplications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListSimulationApplicationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListSimulationApplicationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listSimulationApplications").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListSimulationApplicationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSimulationApplicationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_simulation_applications(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_simulation_applications(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSimulationApplications::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSimulationApplications", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSimulationApplications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSimulationApplications",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4893,9 +6936,9 @@ impl ListSimulationApplicationsInput {
 
 /// See [`ListSimulationJobBatchesInput`](crate::input::ListSimulationJobBatchesInput).
 pub mod list_simulation_job_batches_input {
-    
+
     /// A builder for [`ListSimulationJobBatchesInput`](crate::input::ListSimulationJobBatchesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4909,7 +6952,8 @@ pub mod list_simulation_job_batches_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4918,7 +6962,8 @@ pub mod list_simulation_job_batches_input {
         }
         /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
@@ -4927,86 +6972,134 @@ pub mod list_simulation_job_batches_input {
         /// <p>Optional filters to limit results.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
         /// <p>Optional filters to limit results.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListSimulationJobBatchesInput`](crate::input::ListSimulationJobBatchesInput).
-        pub fn build(self) -> Result<crate::input::ListSimulationJobBatchesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListSimulationJobBatchesInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListSimulationJobBatchesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSimulationJobBatchesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListSimulationJobBatchesInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobBatches`](crate::operation::ListSimulationJobBatches)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSimulationJobBatches, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSimulationJobBatches,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListSimulationJobBatchesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListSimulationJobBatchesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listSimulationJobBatches").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListSimulationJobBatchesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSimulationJobBatchesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_simulation_job_batches(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_simulation_job_batches(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSimulationJobBatches::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSimulationJobBatches", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSimulationJobBatches::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSimulationJobBatches",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5018,9 +7111,9 @@ impl ListSimulationJobBatchesInput {
 
 /// See [`ListSimulationJobsInput`](crate::input::ListSimulationJobsInput).
 pub mod list_simulation_jobs_input {
-    
+
     /// A builder for [`ListSimulationJobsInput`](crate::input::ListSimulationJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5034,7 +7127,8 @@ pub mod list_simulation_jobs_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5043,97 +7137,142 @@ pub mod list_simulation_jobs_input {
         }
         /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
-        /// <p>Optional filters to limit results.</p> 
+        /// <p>Optional filters to limit results.</p>
         /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListSimulationJobsInput`](crate::input::ListSimulationJobsInput).
-        pub fn build(self) -> Result<crate::input::ListSimulationJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListSimulationJobsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSimulationJobsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSimulationJobsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListSimulationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobs`](crate::operation::ListSimulationJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSimulationJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSimulationJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListSimulationJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListSimulationJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listSimulationJobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListSimulationJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSimulationJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_simulation_jobs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_simulation_jobs(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSimulationJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSimulationJobs", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSimulationJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSimulationJobs",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5145,9 +7284,9 @@ impl ListSimulationJobsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5159,39 +7298,67 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.resource_arn;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5200,37 +7367,54 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5242,9 +7426,9 @@ impl ListTagsForResourceInput {
 
 /// See [`ListWorldExportJobsInput`](crate::input::ListWorldExportJobsInput).
 pub mod list_world_export_jobs_input {
-    
+
     /// A builder for [`ListWorldExportJobsInput`](crate::input::ListWorldExportJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5258,7 +7442,8 @@ pub mod list_world_export_jobs_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5267,7 +7452,8 @@ pub mod list_world_export_jobs_input {
         }
         /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
@@ -5276,86 +7462,132 @@ pub mod list_world_export_jobs_input {
         /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
         /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListWorldExportJobsInput`](crate::input::ListWorldExportJobsInput).
-        pub fn build(self) -> Result<crate::input::ListWorldExportJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListWorldExportJobsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListWorldExportJobsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListWorldExportJobsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListWorldExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldExportJobs`](crate::operation::ListWorldExportJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorldExportJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWorldExportJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListWorldExportJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListWorldExportJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listWorldExportJobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListWorldExportJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorldExportJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_world_export_jobs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_world_export_jobs(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorldExportJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorldExportJobs", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorldExportJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorldExportJobs",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5367,9 +7599,9 @@ impl ListWorldExportJobsInput {
 
 /// See [`ListWorldGenerationJobsInput`](crate::input::ListWorldGenerationJobsInput).
 pub mod list_world_generation_jobs_input {
-    
+
     /// A builder for [`ListWorldGenerationJobsInput`](crate::input::ListWorldGenerationJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5383,7 +7615,8 @@ pub mod list_world_generation_jobs_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5392,7 +7625,8 @@ pub mod list_world_generation_jobs_input {
         }
         /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
@@ -5401,86 +7635,134 @@ pub mod list_world_generation_jobs_input {
         /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
         /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListWorldGenerationJobsInput`](crate::input::ListWorldGenerationJobsInput).
-        pub fn build(self) -> Result<crate::input::ListWorldGenerationJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListWorldGenerationJobsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListWorldGenerationJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListWorldGenerationJobsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListWorldGenerationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldGenerationJobs`](crate::operation::ListWorldGenerationJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorldGenerationJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWorldGenerationJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListWorldGenerationJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListWorldGenerationJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listWorldGenerationJobs").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListWorldGenerationJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorldGenerationJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_world_generation_jobs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_world_generation_jobs(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorldGenerationJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorldGenerationJobs", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorldGenerationJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorldGenerationJobs",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5492,9 +7774,9 @@ impl ListWorldGenerationJobsInput {
 
 /// See [`ListWorldsInput`](crate::input::ListWorldsInput).
 pub mod list_worlds_input {
-    
+
     /// A builder for [`ListWorldsInput`](crate::input::ListWorldsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5508,7 +7790,8 @@ pub mod list_worlds_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5517,7 +7800,8 @@ pub mod list_worlds_input {
         }
         /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Appends an item to `filters`.
         ///
@@ -5526,86 +7810,129 @@ pub mod list_worlds_input {
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-                            v.push(input);
-                            self.filters = Some(v);
-                            self
+            v.push(input);
+            self.filters = Some(v);
+            self
         }
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListWorldsInput`](crate::input::ListWorldsInput).
-        pub fn build(self) -> Result<crate::input::ListWorldsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListWorldsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    filters: self.filters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListWorldsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListWorldsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            })
         }
     }
-    
-    
 }
 impl ListWorldsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorlds`](crate::operation::ListWorlds)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorlds, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWorlds,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListWorldsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListWorldsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listWorlds").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListWorldsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorldsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_worlds(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_worlds(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorlds::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorlds", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorlds::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorlds",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5617,9 +7944,9 @@ impl ListWorldsInput {
 
 /// See [`ListWorldTemplatesInput`](crate::input::ListWorldTemplatesInput).
 pub mod list_world_templates_input {
-    
+
     /// A builder for [`ListWorldTemplatesInput`](crate::input::ListWorldTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5632,7 +7959,8 @@ pub mod list_world_templates_input {
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5641,78 +7969,120 @@ pub mod list_world_templates_input {
         }
         /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListWorldTemplatesInput`](crate::input::ListWorldTemplatesInput).
-        pub fn build(self) -> Result<crate::input::ListWorldTemplatesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListWorldTemplatesInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListWorldTemplatesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListWorldTemplatesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListWorldTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldTemplates`](crate::operation::ListWorldTemplates)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorldTemplates, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListWorldTemplates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListWorldTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListWorldTemplatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/listWorldTemplates").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListWorldTemplatesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListWorldTemplatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_world_templates(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_world_templates(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorldTemplates::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorldTemplates", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorldTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorldTemplates",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5724,9 +8094,9 @@ impl ListWorldTemplatesInput {
 
 /// See [`RegisterRobotInput`](crate::input::RegisterRobotInput).
 pub mod register_robot_input {
-    
+
     /// A builder for [`RegisterRobotInput`](crate::input::RegisterRobotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
         pub(crate) robot: std::option::Option<std::string::String>,
@@ -5739,7 +8109,8 @@ pub mod register_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5748,78 +8119,120 @@ pub mod register_robot_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
         pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.robot = input; self
+            self.robot = input;
+            self
         }
         /// Consumes the builder and constructs a [`RegisterRobotInput`](crate::input::RegisterRobotInput).
-        pub fn build(self) -> Result<crate::input::RegisterRobotInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RegisterRobotInput {
-                    fleet: self.fleet
-                    ,
-                    robot: self.robot
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RegisterRobotInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RegisterRobotInput {
+                fleet: self.fleet,
+                robot: self.robot,
+            })
         }
     }
-    
-    
 }
 impl RegisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`RegisterRobot`](crate::operation::RegisterRobot)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterRobot, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterRobot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RegisterRobotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RegisterRobotInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/registerRobot").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RegisterRobotInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RegisterRobotInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_robot(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_register_robot(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterRobot::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterRobot", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterRobot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterRobot",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5831,9 +8244,9 @@ impl RegisterRobotInput {
 
 /// See [`RestartSimulationJobInput`](crate::input::RestartSimulationJobInput).
 pub mod restart_simulation_job_input {
-    
+
     /// A builder for [`RestartSimulationJobInput`](crate::input::RestartSimulationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<std::string::String>,
     }
@@ -5845,76 +8258,119 @@ pub mod restart_simulation_job_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
         pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job = input; self
+            self.job = input;
+            self
         }
         /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::input::RestartSimulationJobInput).
-        pub fn build(self) -> Result<crate::input::RestartSimulationJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RestartSimulationJobInput {
-                    job: self.job
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RestartSimulationJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RestartSimulationJobInput { job: self.job })
         }
     }
-    
-    
 }
 impl RestartSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`RestartSimulationJob`](crate::operation::RestartSimulationJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RestartSimulationJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RestartSimulationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RestartSimulationJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RestartSimulationJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/restartSimulationJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RestartSimulationJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RestartSimulationJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_restart_simulation_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_restart_simulation_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RestartSimulationJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RestartSimulationJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RestartSimulationJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RestartSimulationJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5926,14 +8382,17 @@ impl RestartSimulationJobInput {
 
 /// See [`StartSimulationJobBatchInput`](crate::input::StartSimulationJobBatchInput).
 pub mod start_simulation_job_batch_input {
-    
+
     /// A builder for [`StartSimulationJobBatchInput`](crate::input::StartSimulationJobBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) batch_policy: std::option::Option<crate::model::BatchPolicy>,
-        pub(crate) create_simulation_job_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) create_simulation_job_requests:
+            std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -5942,8 +8401,12 @@ pub mod start_simulation_job_batch_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>The batch policy.</p>
         pub fn batch_policy(mut self, input: crate::model::BatchPolicy) -> Self {
@@ -5951,116 +8414,180 @@ pub mod start_simulation_job_batch_input {
             self
         }
         /// <p>The batch policy.</p>
-        pub fn set_batch_policy(mut self, input: std::option::Option<crate::model::BatchPolicy>) -> Self {
-            self.batch_policy = input; self
+        pub fn set_batch_policy(
+            mut self,
+            input: std::option::Option<crate::model::BatchPolicy>,
+        ) -> Self {
+            self.batch_policy = input;
+            self
         }
         /// Appends an item to `create_simulation_job_requests`.
         ///
         /// To override the contents of this collection use [`set_create_simulation_job_requests`](Self::set_create_simulation_job_requests).
         ///
         /// <p>A list of simulation job requests to create in the batch.</p>
-        pub fn create_simulation_job_requests(mut self, input: crate::model::SimulationJobRequest) -> Self {
+        pub fn create_simulation_job_requests(
+            mut self,
+            input: crate::model::SimulationJobRequest,
+        ) -> Self {
             let mut v = self.create_simulation_job_requests.unwrap_or_default();
-                            v.push(input);
-                            self.create_simulation_job_requests = Some(v);
-                            self
+            v.push(input);
+            self.create_simulation_job_requests = Some(v);
+            self
         }
         /// <p>A list of simulation job requests to create in the batch.</p>
-        pub fn set_create_simulation_job_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>) -> Self {
-            self.create_simulation_job_requests = input; self
+        pub fn set_create_simulation_job_requests(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
+        ) -> Self {
+            self.create_simulation_job_requests = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartSimulationJobBatchInput`](crate::input::StartSimulationJobBatchInput).
-        pub fn build(self) -> Result<crate::input::StartSimulationJobBatchInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartSimulationJobBatchInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    batch_policy: self.batch_policy
-                    ,
-                    create_simulation_job_requests: self.create_simulation_job_requests
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartSimulationJobBatchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartSimulationJobBatchInput {
+                client_request_token: self.client_request_token,
+                batch_policy: self.batch_policy,
+                create_simulation_job_requests: self.create_simulation_job_requests,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl StartSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`StartSimulationJobBatch`](crate::operation::StartSimulationJobBatch)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartSimulationJobBatch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartSimulationJobBatch,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::StartSimulationJobBatchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartSimulationJobBatchInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/startSimulationJobBatch").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartSimulationJobBatchInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartSimulationJobBatchInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_simulation_job_batch(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_simulation_job_batch(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartSimulationJobBatch::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartSimulationJobBatch", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartSimulationJobBatch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartSimulationJobBatch",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6072,9 +8599,9 @@ impl StartSimulationJobBatchInput {
 
 /// See [`SyncDeploymentJobInput`](crate::input::SyncDeploymentJobInput).
 pub mod sync_deployment_job_input {
-    
+
     /// A builder for [`SyncDeploymentJobInput`](crate::input::SyncDeploymentJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -6086,8 +8613,12 @@ pub mod sync_deployment_job_input {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// <p>The target fleet for the synchronization.</p>
         pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6096,81 +8627,123 @@ pub mod sync_deployment_job_input {
         }
         /// <p>The target fleet for the synchronization.</p>
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input; self
+            self.fleet = input;
+            self
         }
         /// Consumes the builder and constructs a [`SyncDeploymentJobInput`](crate::input::SyncDeploymentJobInput).
-        pub fn build(self) -> Result<crate::input::SyncDeploymentJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SyncDeploymentJobInput {
-                    client_request_token: self.client_request_token
-                    ,
-                    fleet: self.fleet
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SyncDeploymentJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SyncDeploymentJobInput {
+                client_request_token: self.client_request_token,
+                fleet: self.fleet,
+            })
         }
     }
-    
-    
 }
 impl SyncDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`SyncDeploymentJob`](crate::operation::SyncDeploymentJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SyncDeploymentJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SyncDeploymentJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::SyncDeploymentJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SyncDeploymentJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/syncDeploymentJob").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SyncDeploymentJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SyncDeploymentJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_sync_deployment_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_sync_deployment_job(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SyncDeploymentJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SyncDeploymentJob", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SyncDeploymentJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SyncDeploymentJob",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6182,12 +8755,14 @@ impl SyncDeploymentJobInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
@@ -6197,99 +8772,163 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.resource_arn;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6301,9 +8940,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6316,7 +8955,8 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -6325,44 +8965,75 @@ pub mod untag_resource_input {
         /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.resource_arn;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.tag_keys {
                     for inner_5 in inner_4 {
@@ -6371,10 +9042,12 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6384,37 +9057,54 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6426,9 +9116,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateRobotApplicationInput`](crate::input::UpdateRobotApplicationInput).
 pub mod update_robot_application_input {
-    
+
     /// A builder for [`UpdateRobotApplicationInput`](crate::input::UpdateRobotApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
@@ -6444,7 +9134,8 @@ pub mod update_robot_application_input {
         }
         /// <p>The application information for the robot application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -6453,13 +9144,17 @@ pub mod update_robot_application_input {
         /// <p>The sources of the robot application.</p>
         pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         /// <p>The sources of the robot application.</p>
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -6467,8 +9162,12 @@ pub mod update_robot_application_input {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
-            self.robot_software_suite = input; self
+        pub fn set_robot_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::RobotSoftwareSuite>,
+        ) -> Self {
+            self.robot_software_suite = input;
+            self
         }
         /// <p>The revision id for the robot application.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6476,8 +9175,12 @@ pub mod update_robot_application_input {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.current_revision_id = input; self
+        pub fn set_current_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_revision_id = input;
+            self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
@@ -6485,85 +9188,129 @@ pub mod update_robot_application_input {
             self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
-        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
-            self.environment = input; self
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::input::UpdateRobotApplicationInput).
-        pub fn build(self) -> Result<crate::input::UpdateRobotApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateRobotApplicationInput {
-                    application: self.application
-                    ,
-                    sources: self.sources
-                    ,
-                    robot_software_suite: self.robot_software_suite
-                    ,
-                    current_revision_id: self.current_revision_id
-                    ,
-                    environment: self.environment
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateRobotApplicationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateRobotApplicationInput {
+                application: self.application,
+                sources: self.sources,
+                robot_software_suite: self.robot_software_suite,
+                current_revision_id: self.current_revision_id,
+                environment: self.environment,
+            })
         }
     }
-    
-    
 }
 impl UpdateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRobotApplication`](crate::operation::UpdateRobotApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRobotApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRobotApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateRobotApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateRobotApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/updateRobotApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateRobotApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRobotApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_robot_application(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_robot_application(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRobotApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRobotApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRobotApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRobotApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6575,13 +9322,14 @@ impl UpdateRobotApplicationInput {
 
 /// See [`UpdateSimulationApplicationInput`](crate::input::UpdateSimulationApplicationInput).
 pub mod update_simulation_application_input {
-    
+
     /// A builder for [`UpdateSimulationApplicationInput`](crate::input::UpdateSimulationApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
-        pub(crate) simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
+        pub(crate) simulation_software_suite:
+            std::option::Option<crate::model::SimulationSoftwareSuite>,
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
         pub(crate) current_revision_id: std::option::Option<std::string::String>,
@@ -6595,7 +9343,8 @@ pub mod update_simulation_application_input {
         }
         /// <p>The application information for the simulation application.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.application = input; self
+            self.application = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -6604,22 +9353,33 @@ pub mod update_simulation_application_input {
         /// <p>The sources of the simulation application.</p>
         pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         /// <p>The sources of the simulation application.</p>
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
-        pub fn simulation_software_suite(mut self, input: crate::model::SimulationSoftwareSuite) -> Self {
+        pub fn simulation_software_suite(
+            mut self,
+            input: crate::model::SimulationSoftwareSuite,
+        ) -> Self {
             self.simulation_software_suite = Some(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
-        pub fn set_simulation_software_suite(mut self, input: std::option::Option<crate::model::SimulationSoftwareSuite>) -> Self {
-            self.simulation_software_suite = input; self
+        pub fn set_simulation_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::SimulationSoftwareSuite>,
+        ) -> Self {
+            self.simulation_software_suite = input;
+            self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
         pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
@@ -6627,8 +9387,12 @@ pub mod update_simulation_application_input {
             self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
-        pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::model::RobotSoftwareSuite>) -> Self {
-            self.robot_software_suite = input; self
+        pub fn set_robot_software_suite(
+            mut self,
+            input: std::option::Option<crate::model::RobotSoftwareSuite>,
+        ) -> Self {
+            self.robot_software_suite = input;
+            self
         }
         /// <p>The rendering engine for the simulation application.</p>
         pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
@@ -6636,8 +9400,12 @@ pub mod update_simulation_application_input {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn set_rendering_engine(mut self, input: std::option::Option<crate::model::RenderingEngine>) -> Self {
-            self.rendering_engine = input; self
+        pub fn set_rendering_engine(
+            mut self,
+            input: std::option::Option<crate::model::RenderingEngine>,
+        ) -> Self {
+            self.rendering_engine = input;
+            self
         }
         /// <p>The revision id for the robot application.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6645,8 +9413,12 @@ pub mod update_simulation_application_input {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.current_revision_id = input; self
+        pub fn set_current_revision_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_revision_id = input;
+            self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
@@ -6654,52 +9426,71 @@ pub mod update_simulation_application_input {
             self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
-        pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
-            self.environment = input; self
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateSimulationApplicationInput`](crate::input::UpdateSimulationApplicationInput).
-        pub fn build(self) -> Result<crate::input::UpdateSimulationApplicationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateSimulationApplicationInput {
-                    application: self.application
-                    ,
-                    sources: self.sources
-                    ,
-                    simulation_software_suite: self.simulation_software_suite
-                    ,
-                    robot_software_suite: self.robot_software_suite
-                    ,
-                    rendering_engine: self.rendering_engine
-                    ,
-                    current_revision_id: self.current_revision_id
-                    ,
-                    environment: self.environment
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateSimulationApplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSimulationApplicationInput {
+                application: self.application,
+                sources: self.sources,
+                simulation_software_suite: self.simulation_software_suite,
+                robot_software_suite: self.robot_software_suite,
+                rendering_engine: self.rendering_engine,
+                current_revision_id: self.current_revision_id,
+                environment: self.environment,
+            })
         }
     }
-    
-    
 }
 impl UpdateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSimulationApplication`](crate::operation::UpdateSimulationApplication)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateSimulationApplication, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSimulationApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateSimulationApplicationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateSimulationApplicationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/updateSimulationApplication").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateSimulationApplicationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSimulationApplicationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6707,36 +9498,58 @@ impl UpdateSimulationApplicationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_simulation_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateSimulationApplication::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSimulationApplication", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSimulationApplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSimulationApplication",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6748,9 +9561,9 @@ impl UpdateSimulationApplicationInput {
 
 /// See [`UpdateWorldTemplateInput`](crate::input::UpdateWorldTemplateInput).
 pub mod update_world_template_input {
-    
+
     /// A builder for [`UpdateWorldTemplateInput`](crate::input::UpdateWorldTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6765,7 +9578,8 @@ pub mod update_world_template_input {
         }
         /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template = input; self
+            self.template = input;
+            self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6774,7 +9588,8 @@ pub mod update_world_template_input {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// <p>The world template body.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6782,8 +9597,12 @@ pub mod update_world_template_input {
             self
         }
         /// <p>The world template body.</p>
-        pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_body = input; self
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_body = input;
+            self
         }
         /// <p>The location of the world template.</p>
         pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
@@ -6791,83 +9610,126 @@ pub mod update_world_template_input {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn set_template_location(mut self, input: std::option::Option<crate::model::TemplateLocation>) -> Self {
-            self.template_location = input; self
+        pub fn set_template_location(
+            mut self,
+            input: std::option::Option<crate::model::TemplateLocation>,
+        ) -> Self {
+            self.template_location = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateWorldTemplateInput`](crate::input::UpdateWorldTemplateInput).
-        pub fn build(self) -> Result<crate::input::UpdateWorldTemplateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateWorldTemplateInput {
-                    template: self.template
-                    ,
-                    name: self.name
-                    ,
-                    template_body: self.template_body
-                    ,
-                    template_location: self.template_location
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateWorldTemplateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateWorldTemplateInput {
+                template: self.template,
+                name: self.name,
+                template_body: self.template_body,
+                template_location: self.template_location,
+            })
         }
     }
-    
-    
 }
 impl UpdateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorldTemplate`](crate::operation::UpdateWorldTemplate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWorldTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateWorldTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateWorldTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateWorldTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/updateWorldTemplate").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateWorldTemplateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateWorldTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_world_template(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_world_template(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWorldTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWorldTemplate", "robomaker"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateWorldTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateWorldTemplate",
+            "robomaker",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6878,36 +9740,41 @@ impl UpdateWorldTemplateInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateWorldTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-    #[doc(hidden)]pub template: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template: std::option::Option<std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The world template body.</p>
-    #[doc(hidden)]pub template_body: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the world template.</p>
-    #[doc(hidden)]pub template_location: std::option::Option<crate::model::TemplateLocation>,
+    #[doc(hidden)]
+    pub template_location: std::option::Option<crate::model::TemplateLocation>,
 }
 impl UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The world template body.</p>
-    pub fn template_body(&self) -> std::option::Option<& str> {
+    pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
     /// <p>The location of the world template.</p>
-    pub fn template_location(&self) -> std::option::Option<& crate::model::TemplateLocation> {
+    pub fn template_location(&self) -> std::option::Option<&crate::model::TemplateLocation> {
         self.template_location.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateWorldTemplateInput  {
+impl std::fmt::Debug for UpdateWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorldTemplateInput");
         formatter.field("template", &self.template);
@@ -6919,54 +9786,64 @@ impl  std::fmt::Debug for UpdateWorldTemplateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateSimulationApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
-    #[doc(hidden)]pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
+    #[doc(hidden)]
+    pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    #[doc(hidden)]pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
+    #[doc(hidden)]
+    pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
-    #[doc(hidden)]pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
+    #[doc(hidden)]
+    pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The revision id for the robot application.</p>
-    #[doc(hidden)]pub current_revision_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
-    #[doc(hidden)]pub environment: std::option::Option<crate::model::Environment>,
+    #[doc(hidden)]
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(&self) -> std::option::Option<& crate::model::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn rendering_engine(&self) -> std::option::Option<& crate::model::RenderingEngine> {
+    pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateSimulationApplicationInput  {
+impl std::fmt::Debug for UpdateSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSimulationApplicationInput");
         formatter.field("application", &self.application);
@@ -6981,42 +9858,48 @@ impl  std::fmt::Debug for UpdateSimulationApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateRobotApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    #[doc(hidden)]pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
+    #[doc(hidden)]
+    pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The revision id for the robot application.</p>
-    #[doc(hidden)]pub current_revision_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    #[doc(hidden)]pub environment: std::option::Option<crate::model::Environment>,
+    #[doc(hidden)]
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateRobotApplicationInput  {
+impl std::fmt::Debug for UpdateRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRobotApplicationInput");
         formatter.field("application", &self.application);
@@ -7029,24 +9912,27 @@ impl  std::fmt::Debug for UpdateRobotApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7056,24 +9942,31 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7083,24 +9976,30 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SyncDeploymentJobInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
 }
 impl SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The target fleet for the synchronization.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
 }
-impl  std::fmt::Debug for SyncDeploymentJobInput  {
+impl std::fmt::Debug for SyncDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SyncDeploymentJobInput");
         formatter.field("client_request_token", &self.client_request_token);
@@ -7110,59 +10009,76 @@ impl  std::fmt::Debug for SyncDeploymentJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartSimulationJobBatchInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartSimulationJobBatchInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
-    #[doc(hidden)]pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
+    #[doc(hidden)]
+    pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
     /// <p>A list of simulation job requests to create in the batch.</p>
-    #[doc(hidden)]pub create_simulation_job_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
+    #[doc(hidden)]
+    pub create_simulation_job_requests:
+        std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartSimulationJobBatchInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The batch policy.</p>
-    pub fn batch_policy(&self) -> std::option::Option<& crate::model::BatchPolicy> {
+    pub fn batch_policy(&self) -> std::option::Option<&crate::model::BatchPolicy> {
         self.batch_policy.as_ref()
     }
     /// <p>A list of simulation job requests to create in the batch.</p>
-    pub fn create_simulation_job_requests(&self) -> std::option::Option<& [crate::model::SimulationJobRequest]> {
+    pub fn create_simulation_job_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationJobRequest]> {
         self.create_simulation_job_requests.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for StartSimulationJobBatchInput  {
+impl std::fmt::Debug for StartSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSimulationJobBatchInput");
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("batch_policy", &self.batch_policy);
-        formatter.field("create_simulation_job_requests", &self.create_simulation_job_requests);
+        formatter.field(
+            "create_simulation_job_requests",
+            &self.create_simulation_job_requests,
+        );
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RestartSimulationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestartSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl RestartSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for RestartSimulationJobInput  {
+impl std::fmt::Debug for RestartSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestartSimulationJobInput");
         formatter.field("job", &self.job);
@@ -7171,24 +10087,30 @@ impl  std::fmt::Debug for RestartSimulationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RegisterRobotInput  {
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    #[doc(hidden)]pub robot: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub robot: std::option::Option<std::string::String>,
 }
 impl RegisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(&self) -> std::option::Option<& str> {
+    pub fn robot(&self) -> std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
-impl  std::fmt::Debug for RegisterRobotInput  {
+impl std::fmt::Debug for RegisterRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterRobotInput");
         formatter.field("fleet", &self.fleet);
@@ -7198,16 +10120,19 @@ impl  std::fmt::Debug for RegisterRobotInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListWorldTemplatesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorldTemplatesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListWorldTemplatesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
@@ -7215,7 +10140,7 @@ impl ListWorldTemplatesInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListWorldTemplatesInput  {
+impl std::fmt::Debug for ListWorldTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldTemplatesInput");
         formatter.field("next_token", &self.next_token);
@@ -7225,18 +10150,22 @@ impl  std::fmt::Debug for ListWorldTemplatesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListWorldsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorldsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
@@ -7244,11 +10173,11 @@ impl ListWorldsInput {
         self.max_results
     }
     /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListWorldsInput  {
+impl std::fmt::Debug for ListWorldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldsInput");
         formatter.field("next_token", &self.next_token);
@@ -7259,18 +10188,22 @@ impl  std::fmt::Debug for ListWorldsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListWorldGenerationJobsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorldGenerationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldGenerationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
@@ -7278,11 +10211,11 @@ impl ListWorldGenerationJobsInput {
         self.max_results
     }
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListWorldGenerationJobsInput  {
+impl std::fmt::Debug for ListWorldGenerationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldGenerationJobsInput");
         formatter.field("next_token", &self.next_token);
@@ -7293,18 +10226,22 @@ impl  std::fmt::Debug for ListWorldGenerationJobsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListWorldExportJobsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorldExportJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldExportJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
@@ -7312,11 +10249,11 @@ impl ListWorldExportJobsInput {
         self.max_results
     }
     /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListWorldExportJobsInput  {
+impl std::fmt::Debug for ListWorldExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldExportJobsInput");
         formatter.field("next_token", &self.next_token);
@@ -7327,18 +10264,20 @@ impl  std::fmt::Debug for ListWorldExportJobsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -7347,32 +10286,36 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListSimulationJobsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSimulationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results.</p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListSimulationJobsInput  {
+impl std::fmt::Debug for ListSimulationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSimulationJobsInput");
         formatter.field("next_token", &self.next_token);
@@ -7383,18 +10326,22 @@ impl  std::fmt::Debug for ListSimulationJobsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListSimulationJobBatchesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSimulationJobBatchesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobBatchesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
@@ -7402,11 +10349,11 @@ impl ListSimulationJobBatchesInput {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListSimulationJobBatchesInput  {
+impl std::fmt::Debug for ListSimulationJobBatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSimulationJobBatchesInput");
         formatter.field("next_token", &self.next_token);
@@ -7417,38 +10364,43 @@ impl  std::fmt::Debug for ListSimulationJobBatchesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListSimulationApplicationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSimulationApplicationsInput {
     /// <p>The version qualifier of the simulation application.</p>
-    #[doc(hidden)]pub version_qualifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub version_qualifier: std::option::Option<std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p>Optional list of filters to limit results.</p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationApplicationsInput {
     /// <p>The version qualifier of the simulation application.</p>
-    pub fn version_qualifier(&self) -> std::option::Option<& str> {
+    pub fn version_qualifier(&self) -> std::option::Option<&str> {
         self.version_qualifier.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional list of filters to limit results.</p> 
+    /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListSimulationApplicationsInput  {
+impl std::fmt::Debug for ListSimulationApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSimulationApplicationsInput");
         formatter.field("version_qualifier", &self.version_qualifier);
@@ -7460,32 +10412,39 @@ impl  std::fmt::Debug for ListSimulationApplicationsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRobotsInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRobotsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results.</p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListRobotsInput  {
+impl std::fmt::Debug for ListRobotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRobotsInput");
         formatter.field("next_token", &self.next_token);
@@ -7496,38 +10455,43 @@ impl  std::fmt::Debug for ListRobotsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRobotApplicationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
-    #[doc(hidden)]pub version_qualifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub version_qualifier: std::option::Option<std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results.</p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
-    pub fn version_qualifier(&self) -> std::option::Option<& str> {
+    pub fn version_qualifier(&self) -> std::option::Option<&str> {
         self.version_qualifier.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListRobotApplicationsInput  {
+impl std::fmt::Debug for ListRobotApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRobotApplicationsInput");
         formatter.field("version_qualifier", &self.version_qualifier);
@@ -7539,36 +10503,43 @@ impl  std::fmt::Debug for ListRobotApplicationsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFleetsInput  {
-    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFleetsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results.</p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListFleetsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
-impl  std::fmt::Debug for ListFleetsInput  {
+impl std::fmt::Debug for ListFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFleetsInput");
         formatter.field("next_token", &self.next_token);
@@ -7579,24 +10550,31 @@ impl  std::fmt::Debug for ListFleetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListDeploymentJobsInput  {
-    /// <p>Optional filters to limit results.</p> 
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDeploymentJobsInput {
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListDeploymentJobsInput {
-    /// <p>Optional filters to limit results.</p> 
+    /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
@@ -7604,7 +10582,7 @@ impl ListDeploymentJobsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListDeploymentJobsInput  {
+impl std::fmt::Debug for ListDeploymentJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentJobsInput");
         formatter.field("filters", &self.filters);
@@ -7615,24 +10593,27 @@ impl  std::fmt::Debug for ListDeploymentJobsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetWorldTemplateBodyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    #[doc(hidden)]pub template: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    #[doc(hidden)]pub generation_job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub generation_job: std::option::Option<std::string::String>,
 }
 impl GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn generation_job(&self) -> std::option::Option<& str> {
+    pub fn generation_job(&self) -> std::option::Option<&str> {
         self.generation_job.as_deref()
     }
 }
-impl  std::fmt::Debug for GetWorldTemplateBodyInput  {
+impl std::fmt::Debug for GetWorldTemplateBodyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorldTemplateBodyInput");
         formatter.field("template", &self.template);
@@ -7642,18 +10623,20 @@ impl  std::fmt::Debug for GetWorldTemplateBodyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeWorldTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
-    #[doc(hidden)]pub template: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template: std::option::Option<std::string::String>,
 }
 impl DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeWorldTemplateInput  {
+impl std::fmt::Debug for DescribeWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldTemplateInput");
         formatter.field("template", &self.template);
@@ -7662,18 +10645,20 @@ impl  std::fmt::Debug for DescribeWorldTemplateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeWorldGenerationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeWorldGenerationJobInput  {
+impl std::fmt::Debug for DescribeWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldGenerationJobInput");
         formatter.field("job", &self.job);
@@ -7682,18 +10667,20 @@ impl  std::fmt::Debug for DescribeWorldGenerationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeWorldExportJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeWorldExportJobInput  {
+impl std::fmt::Debug for DescribeWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldExportJobInput");
         formatter.field("job", &self.job);
@@ -7702,18 +10689,20 @@ impl  std::fmt::Debug for DescribeWorldExportJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeWorldInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-    #[doc(hidden)]pub world: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub world: std::option::Option<std::string::String>,
 }
 impl DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-    pub fn world(&self) -> std::option::Option<& str> {
+    pub fn world(&self) -> std::option::Option<&str> {
         self.world.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeWorldInput  {
+impl std::fmt::Debug for DescribeWorldInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldInput");
         formatter.field("world", &self.world);
@@ -7722,18 +10711,20 @@ impl  std::fmt::Debug for DescribeWorldInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeSimulationJobBatchInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
-    #[doc(hidden)]pub batch: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub batch: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
-    pub fn batch(&self) -> std::option::Option<& str> {
+    pub fn batch(&self) -> std::option::Option<&str> {
         self.batch.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeSimulationJobBatchInput  {
+impl std::fmt::Debug for DescribeSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSimulationJobBatchInput");
         formatter.field("batch", &self.batch);
@@ -7742,18 +10733,20 @@ impl  std::fmt::Debug for DescribeSimulationJobBatchInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeSimulationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeSimulationJobInput  {
+impl std::fmt::Debug for DescribeSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSimulationJobInput");
         formatter.field("job", &self.job);
@@ -7762,24 +10755,27 @@ impl  std::fmt::Debug for DescribeSimulationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeSimulationApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to describe.</p>
-    #[doc(hidden)]pub application_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application_version: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeSimulationApplicationInput  {
+impl std::fmt::Debug for DescribeSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSimulationApplicationInput");
         formatter.field("application", &self.application);
@@ -7789,24 +10785,27 @@ impl  std::fmt::Debug for DescribeSimulationApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRobotApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The version of the robot application to describe.</p>
-    #[doc(hidden)]pub application_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application_version: std::option::Option<std::string::String>,
 }
 impl DescribeRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeRobotApplicationInput  {
+impl std::fmt::Debug for DescribeRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRobotApplicationInput");
         formatter.field("application", &self.application);
@@ -7816,18 +10815,23 @@ impl  std::fmt::Debug for DescribeRobotApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRobotInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
-    #[doc(hidden)]pub robot: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub robot: std::option::Option<std::string::String>,
 }
 impl DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
-    pub fn robot(&self) -> std::option::Option<& str> {
+    pub fn robot(&self) -> std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeRobotInput  {
+impl std::fmt::Debug for DescribeRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRobotInput");
         formatter.field("robot", &self.robot);
@@ -7836,18 +10840,23 @@ impl  std::fmt::Debug for DescribeRobotInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFleetInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
 }
 impl DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFleetInput  {
+impl std::fmt::Debug for DescribeFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetInput");
         formatter.field("fleet", &self.fleet);
@@ -7856,18 +10865,23 @@ impl  std::fmt::Debug for DescribeFleetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeDeploymentJobInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDeploymentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl DescribeDeploymentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeDeploymentJobInput  {
+impl std::fmt::Debug for DescribeDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeploymentJobInput");
         formatter.field("job", &self.job);
@@ -7876,24 +10890,30 @@ impl  std::fmt::Debug for DescribeDeploymentJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeregisterRobotInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    #[doc(hidden)]pub robot: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub robot: std::option::Option<std::string::String>,
 }
 impl DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(&self) -> std::option::Option<& str> {
+    pub fn robot(&self) -> std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
-impl  std::fmt::Debug for DeregisterRobotInput  {
+impl std::fmt::Debug for DeregisterRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterRobotInput");
         formatter.field("fleet", &self.fleet);
@@ -7903,18 +10923,20 @@ impl  std::fmt::Debug for DeregisterRobotInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteWorldTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-    #[doc(hidden)]pub template: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template: std::option::Option<std::string::String>,
 }
 impl DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteWorldTemplateInput  {
+impl std::fmt::Debug for DeleteWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorldTemplateInput");
         formatter.field("template", &self.template);
@@ -7923,24 +10945,27 @@ impl  std::fmt::Debug for DeleteWorldTemplateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteSimulationApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to delete.</p>
-    #[doc(hidden)]pub application_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application_version: std::option::Option<std::string::String>,
 }
 impl DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application to delete.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteSimulationApplicationInput  {
+impl std::fmt::Debug for DeleteSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSimulationApplicationInput");
         formatter.field("application", &self.application);
@@ -7950,24 +10975,27 @@ impl  std::fmt::Debug for DeleteSimulationApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteRobotApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The version of the robot application to delete.</p>
-    #[doc(hidden)]pub application_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application_version: std::option::Option<std::string::String>,
 }
 impl DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The version of the robot application to delete.</p>
-    pub fn application_version(&self) -> std::option::Option<& str> {
+    pub fn application_version(&self) -> std::option::Option<&str> {
         self.application_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteRobotApplicationInput  {
+impl std::fmt::Debug for DeleteRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRobotApplicationInput");
         formatter.field("application", &self.application);
@@ -7977,18 +11005,23 @@ impl  std::fmt::Debug for DeleteRobotApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteRobotInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    #[doc(hidden)]pub robot: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub robot: std::option::Option<std::string::String>,
 }
 impl DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(&self) -> std::option::Option<& str> {
+    pub fn robot(&self) -> std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteRobotInput  {
+impl std::fmt::Debug for DeleteRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRobotInput");
         formatter.field("robot", &self.robot);
@@ -7997,18 +11030,23 @@ impl  std::fmt::Debug for DeleteRobotInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteFleetInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
 }
 impl DeleteFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteFleetInput  {
+impl std::fmt::Debug for DeleteFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFleetInput");
         formatter.field("fleet", &self.fleet);
@@ -8017,42 +11055,52 @@ impl  std::fmt::Debug for DeleteFleetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateWorldTemplateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorldTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The world template body.</p>
-    #[doc(hidden)]pub template_body: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the world template.</p>
-    #[doc(hidden)]pub template_location: std::option::Option<crate::model::TemplateLocation>,
+    #[doc(hidden)]
+    pub template_location: std::option::Option<crate::model::TemplateLocation>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the world template.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The world template body.</p>
-    pub fn template_body(&self) -> std::option::Option<& str> {
+    pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
     /// <p>The location of the world template.</p>
-    pub fn template_location(&self) -> std::option::Option<& crate::model::TemplateLocation> {
+    pub fn template_location(&self) -> std::option::Option<&crate::model::TemplateLocation> {
         self.template_location.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateWorldTemplateInput  {
+impl std::fmt::Debug for CreateWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorldTemplateInput");
         formatter.field("client_request_token", &self.client_request_token);
@@ -8065,42 +11113,56 @@ impl  std::fmt::Debug for CreateWorldTemplateInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateWorldGenerationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorldGenerationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
-    #[doc(hidden)]pub template: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count.</p>
-    #[doc(hidden)]pub world_count: std::option::Option<crate::model::WorldCount>,
+    #[doc(hidden)]
+    pub world_count: std::option::Option<crate::model::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    #[doc(hidden)]pub world_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub world_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldGenerationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
-    pub fn template(&self) -> std::option::Option<& str> {
+    pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
     /// <p>Information about the world count.</p>
-    pub fn world_count(&self) -> std::option::Option<& crate::model::WorldCount> {
+    pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
         self.world_count.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn world_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.world_tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateWorldGenerationJobInput  {
+impl std::fmt::Debug for CreateWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorldGenerationJobInput");
         formatter.field("client_request_token", &self.client_request_token);
@@ -8113,42 +11175,52 @@ impl  std::fmt::Debug for CreateWorldGenerationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateWorldExportJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorldExportJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    #[doc(hidden)]pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The output location.</p>
-    #[doc(hidden)]pub output_location: std::option::Option<crate::model::OutputLocation>,
+    #[doc(hidden)]
+    pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
-    #[doc(hidden)]pub iam_role: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub iam_role: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldExportJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub fn worlds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
         self.worlds.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
-    pub fn iam_role(&self) -> std::option::Option<& str> {
+    pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateWorldExportJobInput  {
+impl std::fmt::Debug for CreateWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorldExportJobInput");
         formatter.field("client_request_token", &self.client_request_token);
@@ -8161,60 +11233,76 @@ impl  std::fmt::Debug for CreateWorldExportJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateSimulationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSimulationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Location for output files generated by the simulation job.</p>
-    #[doc(hidden)]pub output_location: std::option::Option<crate::model::OutputLocation>,
+    #[doc(hidden)]
+    pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
-    #[doc(hidden)]pub logging_config: std::option::Option<crate::model::LoggingConfig>,
+    #[doc(hidden)]
+    pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
-    #[doc(hidden)]pub max_job_duration_in_seconds: i64,
+    #[doc(hidden)]
+    pub max_job_duration_in_seconds: i64,
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
-    #[doc(hidden)]pub iam_role: std::option::Option<std::string::String>,
-    /// <p>The failure behavior the simulation job.</p> 
-    /// <dl> 
+    #[doc(hidden)]
+    pub iam_role: std::option::Option<std::string::String>,
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
     /// <dt>
     /// Continue
-    /// </dt> 
-    /// <dd> 
-    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// </dd>
     /// <dt>
     /// Fail
-    /// </dt> 
-    /// <dd> 
-    /// <p>Stop the simulation job and terminate the instance.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
     /// </dl>
-    #[doc(hidden)]pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
+    #[doc(hidden)]
+    pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The robot application to use in the simulation job.</p>
-    #[doc(hidden)]pub robot_applications: std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
+    #[doc(hidden)]
+    pub robot_applications:
+        std::option::Option<std::vec::Vec<crate::model::RobotApplicationConfig>>,
     /// <p>The simulation application to use in the simulation job.</p>
-    #[doc(hidden)]pub simulation_applications: std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
+    #[doc(hidden)]
+    pub simulation_applications:
+        std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    #[doc(hidden)]pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
+    #[doc(hidden)]
+    pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
-    #[doc(hidden)]pub vpc_config: std::option::Option<crate::model::VpcConfig>,
+    #[doc(hidden)]
+    pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Compute information for the simulation job.</p>
-    #[doc(hidden)]pub compute: std::option::Option<crate::model::Compute>,
+    #[doc(hidden)]
+    pub compute: std::option::Option<crate::model::Compute>,
 }
 impl CreateSimulationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Location for output files generated by the simulation job.</p>
-    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The logging configuration.</p>
-    pub fn logging_config(&self) -> std::option::Option<& crate::model::LoggingConfig> {
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
@@ -8222,61 +11310,71 @@ impl CreateSimulationJobInput {
         self.max_job_duration_in_seconds
     }
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
-    pub fn iam_role(&self) -> std::option::Option<& str> {
+    pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>The failure behavior the simulation job.</p> 
-    /// <dl> 
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
     /// <dt>
     /// Continue
-    /// </dt> 
-    /// <dd> 
-    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// </dd>
     /// <dt>
     /// Fail
-    /// </dt> 
-    /// <dd> 
-    /// <p>Stop the simulation job and terminate the instance.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
     /// </dl>
-    pub fn failure_behavior(&self) -> std::option::Option<& crate::model::FailureBehavior> {
+    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
     /// <p>The robot application to use in the simulation job.</p>
-    pub fn robot_applications(&self) -> std::option::Option<& [crate::model::RobotApplicationConfig]> {
+    pub fn robot_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
         self.robot_applications.as_deref()
     }
     /// <p>The simulation application to use in the simulation job.</p>
-    pub fn simulation_applications(&self) -> std::option::Option<& [crate::model::SimulationApplicationConfig]> {
+    pub fn simulation_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> 
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> 
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
-    pub fn data_sources(&self) -> std::option::Option<& [crate::model::DataSourceConfig]> {
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
         self.data_sources.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Compute information for the simulation job.</p>
-    pub fn compute(&self) -> std::option::Option<& crate::model::Compute> {
+    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
         self.compute.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateSimulationJobInput  {
+impl std::fmt::Debug for CreateSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationJobInput");
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("output_location", &self.output_location);
         formatter.field("logging_config", &self.logging_config);
-        formatter.field("max_job_duration_in_seconds", &self.max_job_duration_in_seconds);
+        formatter.field(
+            "max_job_duration_in_seconds",
+            &self.max_job_duration_in_seconds,
+        );
         formatter.field("iam_role", &self.iam_role);
         formatter.field("failure_behavior", &self.failure_behavior);
         formatter.field("robot_applications", &self.robot_applications);
@@ -8290,36 +11388,41 @@ impl  std::fmt::Debug for CreateSimulationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateSimulationApplicationVersionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    #[doc(hidden)]pub current_revision_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    #[doc(hidden)]pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
-    #[doc(hidden)]pub image_digest: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub image_digest: std::option::Option<std::string::String>,
 }
 impl CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    pub fn s3_etags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_etags.as_deref()
     }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
-    pub fn image_digest(&self) -> std::option::Option<& str> {
+    pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateSimulationApplicationVersionInput  {
+impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationApplicationVersionInput");
         formatter.field("application", &self.application);
@@ -8331,54 +11434,68 @@ impl  std::fmt::Debug for CreateSimulationApplicationVersionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateSimulationApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSimulationApplicationInput {
     /// <p>The name of the simulation application.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The sources of the simulation application.</p>
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
-    #[doc(hidden)]pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
+    #[doc(hidden)]
+    pub simulation_software_suite: std::option::Option<crate::model::SimulationSoftwareSuite>,
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-    #[doc(hidden)]pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
+    #[doc(hidden)]
+    pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
-    #[doc(hidden)]pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
+    #[doc(hidden)]
+    pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
-    #[doc(hidden)]pub environment: std::option::Option<crate::model::Environment>,
+    #[doc(hidden)]
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationInput {
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(&self) -> std::option::Option<& crate::model::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn rendering_engine(&self) -> std::option::Option<& crate::model::RenderingEngine> {
+    pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateSimulationApplicationInput  {
+impl std::fmt::Debug for CreateSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationApplicationInput");
         formatter.field("name", &self.name);
@@ -8393,36 +11510,41 @@ impl  std::fmt::Debug for CreateSimulationApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateRobotApplicationVersionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
-    #[doc(hidden)]pub application: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub application: std::option::Option<std::string::String>,
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    #[doc(hidden)]pub current_revision_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub current_revision_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    #[doc(hidden)]pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    #[doc(hidden)]pub image_digest: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub image_digest: std::option::Option<std::string::String>,
 }
 impl CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn s3_etags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_etags.as_deref()
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    pub fn image_digest(&self) -> std::option::Option<& str> {
+    pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateRobotApplicationVersionInput  {
+impl std::fmt::Debug for CreateRobotApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRobotApplicationVersionInput");
         formatter.field("application", &self.application);
@@ -8434,42 +11556,52 @@ impl  std::fmt::Debug for CreateRobotApplicationVersionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateRobotApplicationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The sources of the robot application.</p>
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    #[doc(hidden)]pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
+    #[doc(hidden)]
+    pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    #[doc(hidden)]pub environment: std::option::Option<crate::model::Environment>,
+    #[doc(hidden)]
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::model::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::model::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateRobotApplicationInput  {
+impl std::fmt::Debug for CreateRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRobotApplicationInput");
         formatter.field("name", &self.name);
@@ -8482,36 +11614,48 @@ impl  std::fmt::Debug for CreateRobotApplicationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateRobotInput  {
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRobotInput {
     /// <p>The name for the robot.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>The target architecture of the robot.</p>
-    #[doc(hidden)]pub architecture: std::option::Option<crate::model::Architecture>,
+    #[doc(hidden)]
+    pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The Greengrass group id.</p>
-    #[doc(hidden)]pub greengrass_group_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRobotInput {
     /// <p>The name for the robot.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The target architecture of the robot.</p>
-    pub fn architecture(&self) -> std::option::Option<& crate::model::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The Greengrass group id.</p>
-    pub fn greengrass_group_id(&self) -> std::option::Option<& str> {
+    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
         self.greengrass_group_id.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateRobotInput  {
+impl std::fmt::Debug for CreateRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRobotInput");
         formatter.field("name", &self.name);
@@ -8523,24 +11667,34 @@ impl  std::fmt::Debug for CreateRobotInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateFleetInput  {
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFleetInput {
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFleetInput {
     /// <p>The name of the fleet.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateFleetInput  {
+impl std::fmt::Debug for CreateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetInput");
         formatter.field("name", &self.name);
@@ -8550,66 +11704,87 @@ impl  std::fmt::Debug for CreateFleetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateDeploymentJobInput  {
+#[deprecated(
+    note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
-    #[doc(hidden)]pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
+    #[doc(hidden)]
+    pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
-    #[doc(hidden)]pub fleet: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fleet: std::option::Option<std::string::String>,
     /// <p>The deployment application configuration.</p>
-    #[doc(hidden)]pub deployment_application_configs: std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+    #[doc(hidden)]
+    pub deployment_application_configs:
+        std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
-    pub fn deployment_config(&self) -> std::option::Option<& crate::model::DeploymentConfig> {
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
         self.deployment_config.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
-    pub fn fleet(&self) -> std::option::Option<& str> {
+    pub fn fleet(&self) -> std::option::Option<&str> {
         self.fleet.as_deref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(&self) -> std::option::Option<& [crate::model::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateDeploymentJobInput  {
+impl std::fmt::Debug for CreateDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentJobInput");
         formatter.field("deployment_config", &self.deployment_config);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("fleet", &self.fleet);
-        formatter.field("deployment_application_configs", &self.deployment_application_configs);
+        formatter.field(
+            "deployment_application_configs",
+            &self.deployment_application_configs,
+        );
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelWorldGenerationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelWorldGenerationJobInput  {
+impl std::fmt::Debug for CancelWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelWorldGenerationJobInput");
         formatter.field("job", &self.job);
@@ -8618,18 +11793,20 @@ impl  std::fmt::Debug for CancelWorldGenerationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelWorldExportJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelWorldExportJobInput  {
+impl std::fmt::Debug for CancelWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelWorldExportJobInput");
         formatter.field("job", &self.job);
@@ -8638,18 +11815,20 @@ impl  std::fmt::Debug for CancelWorldExportJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelSimulationJobBatchInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
-    #[doc(hidden)]pub batch: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub batch: std::option::Option<std::string::String>,
 }
 impl CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
-    pub fn batch(&self) -> std::option::Option<& str> {
+    pub fn batch(&self) -> std::option::Option<&str> {
         self.batch.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelSimulationJobBatchInput  {
+impl std::fmt::Debug for CancelSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelSimulationJobBatchInput");
         formatter.field("batch", &self.batch);
@@ -8658,18 +11837,20 @@ impl  std::fmt::Debug for CancelSimulationJobBatchInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelSimulationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelSimulationJobInput  {
+impl std::fmt::Debug for CancelSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelSimulationJobInput");
         formatter.field("job", &self.job);
@@ -8678,18 +11859,23 @@ impl  std::fmt::Debug for CancelSimulationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelDeploymentJobInput  {
+#[deprecated(
+    note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
+)]
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelDeploymentJobInput {
     /// <p>The deployment job ARN to cancel.</p>
-    #[doc(hidden)]pub job: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job: std::option::Option<std::string::String>,
 }
 impl CancelDeploymentJobInput {
     /// <p>The deployment job ARN to cancel.</p>
-    pub fn job(&self) -> std::option::Option<& str> {
+    pub fn job(&self) -> std::option::Option<&str> {
         self.job.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelDeploymentJobInput  {
+impl std::fmt::Debug for CancelDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelDeploymentJobInput");
         formatter.field("job", &self.job);
@@ -8698,18 +11884,20 @@ impl  std::fmt::Debug for CancelDeploymentJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchDescribeSimulationJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    #[doc(hidden)]pub jobs: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub jobs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn jobs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn jobs(&self) -> std::option::Option<&[std::string::String]> {
         self.jobs.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDescribeSimulationJobInput  {
+impl std::fmt::Debug for BatchDescribeSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDescribeSimulationJobInput");
         formatter.field("jobs", &self.jobs);
@@ -8718,22 +11906,23 @@ impl  std::fmt::Debug for BatchDescribeSimulationJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchDeleteWorldsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    #[doc(hidden)]pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    pub fn worlds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
         self.worlds.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDeleteWorldsInput  {
+impl std::fmt::Debug for BatchDeleteWorldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteWorldsInput");
         formatter.field("worlds", &self.worlds);
         formatter.finish()
     }
 }
-

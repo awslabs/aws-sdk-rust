@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
 pub mod create_configuration_set_input {
-    
+
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -16,77 +16,126 @@ pub mod create_configuration_set_input {
             self
         }
         /// The name that you want to give the configuration set.
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
-        pub fn build(self) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateConfigurationSetInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateConfigurationSetInput {
+                configuration_set_name: self.configuration_set_name,
+            })
         }
     }
-    
-    
 }
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateConfigurationSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/sms-voice/configuration-sets").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::CreateConfigurationSetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/sms-voice/configuration-sets")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateConfigurationSetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateConfigurationSetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfigurationSet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfigurationSet", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateConfigurationSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateConfigurationSet",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -98,9 +147,9 @@ impl CreateConfigurationSetInput {
 
 /// See [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
 pub mod create_configuration_set_event_destination_input {
-    
+
     /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
@@ -113,17 +162,28 @@ pub mod create_configuration_set_event_destination_input {
             self
         }
         /// ConfigurationSetName
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, input: crate::model::EventDestinationDefinition) -> Self {
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
             self.event_destination = Some(input);
             self
         }
         /// An object that defines a single event destination.
-        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestinationDefinition>) -> Self {
-            self.event_destination = input; self
+        pub fn set_event_destination(
+            mut self,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
+        ) -> Self {
+            self.event_destination = input;
+            self
         }
         /// A name that identifies the event destination.
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,50 +191,89 @@ pub mod create_configuration_set_event_destination_input {
             self
         }
         /// A name that identifies the event destination.
-        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_destination_name = input; self
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_destination_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
-        pub fn build(self) -> Result<crate::input::CreateConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateConfigurationSetEventDestinationInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                    event_destination: self.event_destination
-                    ,
-                    event_destination_name: self.event_destination_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateConfigurationSetEventDestinationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateConfigurationSetEventDestinationInput {
+                configuration_set_name: self.configuration_set_name,
+                event_destination: self.event_destination,
+                event_destination_name: self.event_destination_name,
+            })
         }
     }
-    
-    
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateConfigurationSetEventDestination,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateConfigurationSetEventDestinationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.configuration_set_name;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
-                let configuration_set_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let configuration_set_name = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_set_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+                    ConfigurationSetName = configuration_set_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateConfigurationSetEventDestinationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateConfigurationSetEventDestinationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -182,36 +281,58 @@ impl CreateConfigurationSetEventDestinationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfigurationSetEventDestination::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfigurationSetEventDestination", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateConfigurationSetEventDestination::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateConfigurationSetEventDestination",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -223,9 +344,9 @@ impl CreateConfigurationSetEventDestinationInput {
 
 /// See [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
 pub mod delete_configuration_set_input {
-    
+
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -236,40 +357,75 @@ pub mod delete_configuration_set_input {
             self
         }
         /// ConfigurationSetName
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
-        pub fn build(self) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteConfigurationSetInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteConfigurationSetInput {
+                configuration_set_name: self.configuration_set_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfigurationSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteConfigurationSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteConfigurationSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteConfigurationSetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.configuration_set_name;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
-                let configuration_set_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let configuration_set_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_set_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/sms-voice/configuration-sets/{ConfigurationSetName}",
+                    ConfigurationSetName = configuration_set_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteConfigurationSetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteConfigurationSetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -278,37 +434,54 @@ impl DeleteConfigurationSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfigurationSet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfigurationSet", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteConfigurationSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteConfigurationSet",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -320,9 +493,9 @@ impl DeleteConfigurationSetInput {
 
 /// See [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
 pub mod delete_configuration_set_event_destination_input {
-    
+
     /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
@@ -334,8 +507,12 @@ pub mod delete_configuration_set_event_destination_input {
             self
         }
         /// ConfigurationSetName
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// EventDestinationName
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -343,48 +520,90 @@ pub mod delete_configuration_set_event_destination_input {
             self
         }
         /// EventDestinationName
-        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_destination_name = input; self
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_destination_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
-        pub fn build(self) -> Result<crate::input::DeleteConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteConfigurationSetEventDestinationInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                    event_destination_name: self.event_destination_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteConfigurationSetEventDestinationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
+                configuration_set_name: self.configuration_set_name,
+                event_destination_name: self.event_destination_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteConfigurationSetEventDestination,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteConfigurationSetEventDestinationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.configuration_set_name;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
-                let configuration_set_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let configuration_set_name = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_set_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_4 = &_input.event_destination_name;
-                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })?;
-                let event_destination_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "event_destination_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let event_destination_name = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if event_destination_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "event_destination_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteConfigurationSetEventDestinationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteConfigurationSetEventDestinationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -393,37 +612,54 @@ impl DeleteConfigurationSetEventDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfigurationSetEventDestination::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfigurationSetEventDestination", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteConfigurationSetEventDestination::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteConfigurationSetEventDestination",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -435,9 +671,9 @@ impl DeleteConfigurationSetEventDestinationInput {
 
 /// See [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
 pub mod get_configuration_set_event_destinations_input {
-    
+
     /// A builder for [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
@@ -448,40 +684,77 @@ pub mod get_configuration_set_event_destinations_input {
             self
         }
         /// ConfigurationSetName
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
-        pub fn build(self) -> Result<crate::input::GetConfigurationSetEventDestinationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetConfigurationSetEventDestinationsInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetConfigurationSetEventDestinationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetConfigurationSetEventDestinationsInput {
+                configuration_set_name: self.configuration_set_name,
+            })
         }
     }
-    
-    
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`GetConfigurationSetEventDestinations`](crate::operation::GetConfigurationSetEventDestinations)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfigurationSetEventDestinations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetConfigurationSetEventDestinations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetConfigurationSetEventDestinationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetConfigurationSetEventDestinationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.configuration_set_name;
-                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
-                let configuration_set_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let configuration_set_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_set_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations", ConfigurationSetName = configuration_set_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+                    ConfigurationSetName = configuration_set_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetConfigurationSetEventDestinationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetConfigurationSetEventDestinationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -490,37 +763,54 @@ impl GetConfigurationSetEventDestinationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfigurationSetEventDestinations::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfigurationSetEventDestinations", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetConfigurationSetEventDestinations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetConfigurationSetEventDestinations",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -532,9 +822,9 @@ impl GetConfigurationSetEventDestinationsInput {
 
 /// See [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
 pub mod list_configuration_sets_input {
-    
+
     /// A builder for [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<std::string::String>,
@@ -547,7 +837,8 @@ pub mod list_configuration_sets_input {
         }
         /// A token returned from a previous call to the API that indicates the position in the list of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Used to specify the number of items that should be returned in the response.
         pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -556,32 +847,49 @@ pub mod list_configuration_sets_input {
         }
         /// Used to specify the number of items that should be returned in the response.
         pub fn set_page_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.page_size = input; self
+            self.page_size = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
-        pub fn build(self) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListConfigurationSetsInput {
-                    next_token: self.next_token
-                    ,
-                    page_size: self.page_size
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListConfigurationSetsInput {
+                next_token: self.next_token,
+                page_size: self.page_size,
+            })
         }
     }
-    
-    
 }
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConfigurationSets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListConfigurationSets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListConfigurationSetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/sms-voice/configuration-sets").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::ListConfigurationSetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/sms-voice/configuration-sets")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListConfigurationSetsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListConfigurationSetsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
@@ -591,10 +899,12 @@ impl ListConfigurationSetsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListConfigurationSetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListConfigurationSetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -604,37 +914,54 @@ impl ListConfigurationSetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConfigurationSets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConfigurationSets", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListConfigurationSets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListConfigurationSets",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -646,9 +973,9 @@ impl ListConfigurationSetsInput {
 
 /// See [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
 pub mod send_voice_message_input {
-    
+
     /// A builder for [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_id: std::option::Option<std::string::String>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -664,7 +991,8 @@ pub mod send_voice_message_input {
         }
         /// The phone number that appears on recipients' devices when they receive the message.
         pub fn set_caller_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.caller_id = input; self
+            self.caller_id = input;
+            self
         }
         /// The name of the configuration set that you want to use to send the message.
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -672,8 +1000,12 @@ pub mod send_voice_message_input {
             self
         }
         /// The name of the configuration set that you want to use to send the message.
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
         pub fn content(mut self, input: crate::model::VoiceMessageContent) -> Self {
@@ -681,8 +1013,12 @@ pub mod send_voice_message_input {
             self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
-        pub fn set_content(mut self, input: std::option::Option<crate::model::VoiceMessageContent>) -> Self {
-            self.content = input; self
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::VoiceMessageContent>,
+        ) -> Self {
+            self.content = input;
+            self
         }
         /// The phone number that you want to send the voice message to.
         pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -690,8 +1026,12 @@ pub mod send_voice_message_input {
             self
         }
         /// The phone number that you want to send the voice message to.
-        pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination_phone_number = input; self
+        pub fn set_destination_phone_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_phone_number = input;
+            self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
         pub fn origination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -699,85 +1039,127 @@ pub mod send_voice_message_input {
             self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-        pub fn set_origination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.origination_phone_number = input; self
+        pub fn set_origination_phone_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.origination_phone_number = input;
+            self
         }
         /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
-        pub fn build(self) -> Result<crate::input::SendVoiceMessageInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SendVoiceMessageInput {
-                    caller_id: self.caller_id
-                    ,
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                    content: self.content
-                    ,
-                    destination_phone_number: self.destination_phone_number
-                    ,
-                    origination_phone_number: self.origination_phone_number
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SendVoiceMessageInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SendVoiceMessageInput {
+                caller_id: self.caller_id,
+                configuration_set_name: self.configuration_set_name,
+                content: self.content,
+                destination_phone_number: self.destination_phone_number,
+                origination_phone_number: self.origination_phone_number,
+            })
         }
     }
-    
-    
 }
 impl SendVoiceMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendVoiceMessage`](crate::operation::SendVoiceMessage)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SendVoiceMessage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SendVoiceMessage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SendVoiceMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SendVoiceMessageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/sms-voice/voice/message").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SendVoiceMessageInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SendVoiceMessageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_send_voice_message(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SendVoiceMessage::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SendVoiceMessage", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendVoiceMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendVoiceMessage",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -789,9 +1171,9 @@ impl SendVoiceMessageInput {
 
 /// See [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
 pub mod update_configuration_set_event_destination_input {
-    
+
     /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
         pub(crate) event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
@@ -804,17 +1186,28 @@ pub mod update_configuration_set_event_destination_input {
             self
         }
         /// ConfigurationSetName
-        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.configuration_set_name = input; self
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
+            self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, input: crate::model::EventDestinationDefinition) -> Self {
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
             self.event_destination = Some(input);
             self
         }
         /// An object that defines a single event destination.
-        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestinationDefinition>) -> Self {
-            self.event_destination = input; self
+        pub fn set_event_destination(
+            mut self,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
+        ) -> Self {
+            self.event_destination = input;
+            self
         }
         /// EventDestinationName
         pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -822,56 +1215,101 @@ pub mod update_configuration_set_event_destination_input {
             self
         }
         /// EventDestinationName
-        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_destination_name = input; self
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_destination_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
-        pub fn build(self) -> Result<crate::input::UpdateConfigurationSetEventDestinationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateConfigurationSetEventDestinationInput {
-                    configuration_set_name: self.configuration_set_name
-                    ,
-                    event_destination: self.event_destination
-                    ,
-                    event_destination_name: self.event_destination_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateConfigurationSetEventDestinationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
+                configuration_set_name: self.configuration_set_name,
+                event_destination: self.event_destination,
+                event_destination_name: self.event_destination_name,
+            })
         }
     }
-    
-    
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConfigurationSetEventDestination, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateConfigurationSetEventDestination,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateConfigurationSetEventDestinationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateConfigurationSetEventDestinationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.configuration_set_name;
-                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })?;
-                let configuration_set_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let configuration_set_name = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if configuration_set_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "configuration_set_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "configuration_set_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_9 = &_input.event_destination_name;
-                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })?;
-                let event_destination_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_9 = input_9.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "event_destination_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let event_destination_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if event_destination_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "event_destination_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "event_destination_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateConfigurationSetEventDestinationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateConfigurationSetEventDestinationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -879,36 +1317,58 @@ impl UpdateConfigurationSetEventDestinationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConfigurationSetEventDestination::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConfigurationSetEventDestination", "pinpointsmsvoice"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateConfigurationSetEventDestination::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateConfigurationSetEventDestination",
+            "pinpointsmsvoice",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -919,30 +1379,36 @@ impl UpdateConfigurationSetEventDestinationInput {
 }
 
 /// UpdateConfigurationSetEventDestinationRequest
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateConfigurationSetEventDestinationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that defines a single event destination.
-    #[doc(hidden)]pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
+    #[doc(hidden)]
+    pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
     /// EventDestinationName
-    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// An object that defines a single event destination.
-    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestinationDefinition> {
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
     /// EventDestinationName
-    pub fn event_destination_name(&self) -> std::option::Option<& str> {
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateConfigurationSetEventDestinationInput  {
+impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -953,42 +1419,48 @@ impl  std::fmt::Debug for UpdateConfigurationSetEventDestinationInput  {
 }
 
 /// SendVoiceMessageRequest
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SendVoiceMessageInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendVoiceMessageInput {
     /// The phone number that appears on recipients' devices when they receive the message.
-    #[doc(hidden)]pub caller_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub caller_id: std::option::Option<std::string::String>,
     /// The name of the configuration set that you want to use to send the message.
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    #[doc(hidden)]pub content: std::option::Option<crate::model::VoiceMessageContent>,
+    #[doc(hidden)]
+    pub content: std::option::Option<crate::model::VoiceMessageContent>,
     /// The phone number that you want to send the voice message to.
-    #[doc(hidden)]pub destination_phone_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub destination_phone_number: std::option::Option<std::string::String>,
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    #[doc(hidden)]pub origination_phone_number: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub origination_phone_number: std::option::Option<std::string::String>,
 }
 impl SendVoiceMessageInput {
     /// The phone number that appears on recipients' devices when they receive the message.
-    pub fn caller_id(&self) -> std::option::Option<& str> {
+    pub fn caller_id(&self) -> std::option::Option<&str> {
         self.caller_id.as_deref()
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    pub fn content(&self) -> std::option::Option<& crate::model::VoiceMessageContent> {
+    pub fn content(&self) -> std::option::Option<&crate::model::VoiceMessageContent> {
         self.content.as_ref()
     }
     /// The phone number that you want to send the voice message to.
-    pub fn destination_phone_number(&self) -> std::option::Option<& str> {
+    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
         self.destination_phone_number.as_deref()
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn origination_phone_number(&self) -> std::option::Option<& str> {
+    pub fn origination_phone_number(&self) -> std::option::Option<&str> {
         self.origination_phone_number.as_deref()
     }
 }
-impl  std::fmt::Debug for SendVoiceMessageInput  {
+impl std::fmt::Debug for SendVoiceMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendVoiceMessageInput");
         formatter.field("caller_id", &self.caller_id);
@@ -1001,24 +1473,27 @@ impl  std::fmt::Debug for SendVoiceMessageInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListConfigurationSetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConfigurationSetsInput {
     /// A token returned from a previous call to the API that indicates the position in the list of results.
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// Used to specify the number of items that should be returned in the response.
-    #[doc(hidden)]pub page_size: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub page_size: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsInput {
     /// A token returned from a previous call to the API that indicates the position in the list of results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Used to specify the number of items that should be returned in the response.
-    pub fn page_size(&self) -> std::option::Option<& str> {
+    pub fn page_size(&self) -> std::option::Option<&str> {
         self.page_size.as_deref()
     }
 }
-impl  std::fmt::Debug for ListConfigurationSetsInput  {
+impl std::fmt::Debug for ListConfigurationSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsInput");
         formatter.field("next_token", &self.next_token);
@@ -1028,18 +1503,20 @@ impl  std::fmt::Debug for ListConfigurationSetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetConfigurationSetEventDestinationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConfigurationSetEventDestinationsInput {
     /// ConfigurationSetName
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl  std::fmt::Debug for GetConfigurationSetEventDestinationsInput  {
+impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -1048,24 +1525,27 @@ impl  std::fmt::Debug for GetConfigurationSetEventDestinationsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteConfigurationSetEventDestinationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// EventDestinationName
-    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// EventDestinationName
-    pub fn event_destination_name(&self) -> std::option::Option<& str> {
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteConfigurationSetEventDestinationInput  {
+impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -1075,18 +1555,20 @@ impl  std::fmt::Debug for DeleteConfigurationSetEventDestinationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteConfigurationSetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConfigurationSetInput {
     /// ConfigurationSetName
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteConfigurationSetInput  {
+impl std::fmt::Debug for DeleteConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -1095,30 +1577,36 @@ impl  std::fmt::Debug for DeleteConfigurationSetInput  {
 }
 
 /// Create a new event destination in a configuration set.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateConfigurationSetEventDestinationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// An object that defines a single event destination.
-    #[doc(hidden)]pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
+    #[doc(hidden)]
+    pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
     /// A name that identifies the event destination.
-    #[doc(hidden)]pub event_destination_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// An object that defines a single event destination.
-    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestinationDefinition> {
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
     /// A name that identifies the event destination.
-    pub fn event_destination_name(&self) -> std::option::Option<& str> {
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateConfigurationSetEventDestinationInput  {
+impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
@@ -1129,22 +1617,23 @@ impl  std::fmt::Debug for CreateConfigurationSetEventDestinationInput  {
 }
 
 /// A request to create a new configuration set.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateConfigurationSetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConfigurationSetInput {
     /// The name that you want to give the configuration set.
-    #[doc(hidden)]pub configuration_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationSetInput {
     /// The name that you want to give the configuration set.
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateConfigurationSetInput  {
+impl std::fmt::Debug for CreateConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetInput");
         formatter.field("configuration_set_name", &self.configuration_set_name);
         formatter.finish()
     }
 }
-

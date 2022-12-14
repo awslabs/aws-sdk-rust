@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AddTagsInput`](crate::input::AddTagsInput).
 pub mod add_tags_input {
-    
+
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -18,13 +18,17 @@ pub mod add_tags_input {
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.load_balancer_names = Some(v);
-                            self
+            v.push(input.into());
+            self.load_balancer_names = Some(v);
+            self
         }
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-        pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.load_balancer_names = input; self
+        pub fn set_load_balancer_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.load_balancer_names = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -33,84 +37,126 @@ pub mod add_tags_input {
         /// <p>The tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The tags.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
-        pub fn build(self) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddTagsInput {
-                    load_balancer_names: self.load_balancer_names
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::AddTagsInput {
+                load_balancer_names: self.load_balancer_names,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddTagsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "AddTags",
+                    "elasticloadbalancing",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -122,9 +168,9 @@ impl AddTagsInput {
 
 /// See [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput).
 pub mod apply_security_groups_to_load_balancer_input {
-    
+
     /// A builder for [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -136,8 +182,12 @@ pub mod apply_security_groups_to_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -146,47 +196,71 @@ pub mod apply_security_groups_to_load_balancer_input {
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-                            v.push(input.into());
-                            self.security_groups = Some(v);
-                            self
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
         }
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.security_groups = input; self
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
         }
         /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::ApplySecurityGroupsToLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ApplySecurityGroupsToLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    security_groups: self.security_groups
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ApplySecurityGroupsToLoadBalancerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ApplySecurityGroupsToLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                security_groups: self.security_groups,
+            })
         }
     }
-    
-    
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`ApplySecurityGroupsToLoadBalancer`](crate::operation::ApplySecurityGroupsToLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ApplySecurityGroupsToLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ApplySecurityGroupsToLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ApplySecurityGroupsToLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ApplySecurityGroupsToLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ApplySecurityGroupsToLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ApplySecurityGroupsToLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -194,36 +268,58 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             crate::operation_ser::serialize_operation_crate_operation_apply_security_groups_to_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ApplySecurityGroupsToLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ApplySecurityGroupsToLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ApplySecurityGroupsToLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ApplySecurityGroupsToLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -235,9 +331,9 @@ impl ApplySecurityGroupsToLoadBalancerInput {
 
 /// See [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput).
 pub mod attach_load_balancer_to_subnets_input {
-    
+
     /// A builder for [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -249,8 +345,12 @@ pub mod attach_load_balancer_to_subnets_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `subnets`.
         ///
@@ -259,47 +359,71 @@ pub mod attach_load_balancer_to_subnets_input {
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-                            v.push(input.into());
-                            self.subnets = Some(v);
-                            self
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
         }
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.subnets = input; self
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
         }
         /// Consumes the builder and constructs a [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput).
-        pub fn build(self) -> Result<crate::input::AttachLoadBalancerToSubnetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AttachLoadBalancerToSubnetsInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    subnets: self.subnets
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AttachLoadBalancerToSubnetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AttachLoadBalancerToSubnetsInput {
+                load_balancer_name: self.load_balancer_name,
+                subnets: self.subnets,
+            })
         }
     }
-    
-    
 }
 impl AttachLoadBalancerToSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`AttachLoadBalancerToSubnets`](crate::operation::AttachLoadBalancerToSubnets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AttachLoadBalancerToSubnets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AttachLoadBalancerToSubnets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AttachLoadBalancerToSubnetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AttachLoadBalancerToSubnetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AttachLoadBalancerToSubnetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AttachLoadBalancerToSubnetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -307,36 +431,58 @@ impl AttachLoadBalancerToSubnetsInput {
             crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_to_subnets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AttachLoadBalancerToSubnets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AttachLoadBalancerToSubnets", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AttachLoadBalancerToSubnets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AttachLoadBalancerToSubnets",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -348,9 +494,9 @@ impl AttachLoadBalancerToSubnetsInput {
 
 /// See [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
 pub mod configure_health_check_input {
-    
+
     /// A builder for [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
@@ -362,8 +508,12 @@ pub mod configure_health_check_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The configuration information.</p>
         pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
@@ -371,79 +521,126 @@ pub mod configure_health_check_input {
             self
         }
         /// <p>The configuration information.</p>
-        pub fn set_health_check(mut self, input: std::option::Option<crate::model::HealthCheck>) -> Self {
-            self.health_check = input; self
+        pub fn set_health_check(
+            mut self,
+            input: std::option::Option<crate::model::HealthCheck>,
+        ) -> Self {
+            self.health_check = input;
+            self
         }
         /// Consumes the builder and constructs a [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput).
-        pub fn build(self) -> Result<crate::input::ConfigureHealthCheckInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ConfigureHealthCheckInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    health_check: self.health_check
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ConfigureHealthCheckInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ConfigureHealthCheckInput {
+                load_balancer_name: self.load_balancer_name,
+                health_check: self.health_check,
+            })
         }
     }
-    
-    
 }
 impl ConfigureHealthCheckInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureHealthCheck`](crate::operation::ConfigureHealthCheck)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ConfigureHealthCheck, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ConfigureHealthCheck,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ConfigureHealthCheckInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ConfigureHealthCheckInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ConfigureHealthCheckInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ConfigureHealthCheckInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_configure_health_check(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_configure_health_check(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ConfigureHealthCheck::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ConfigureHealthCheck", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ConfigureHealthCheck::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ConfigureHealthCheck",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -455,9 +652,9 @@ impl ConfigureHealthCheckInput {
 
 /// See [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput).
 pub mod create_app_cookie_stickiness_policy_input {
-    
+
     /// A builder for [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -470,8 +667,12 @@ pub mod create_app_cookie_stickiness_policy_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -480,7 +681,8 @@ pub mod create_app_cookie_stickiness_policy_input {
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input; self
+            self.policy_name = input;
+            self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
         pub fn cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -489,43 +691,63 @@ pub mod create_app_cookie_stickiness_policy_input {
         }
         /// <p>The name of the application cookie used for stickiness.</p>
         pub fn set_cookie_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cookie_name = input; self
+            self.cookie_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput).
-        pub fn build(self) -> Result<crate::input::CreateAppCookieStickinessPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateAppCookieStickinessPolicyInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    policy_name: self.policy_name
-                    ,
-                    cookie_name: self.cookie_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateAppCookieStickinessPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateAppCookieStickinessPolicyInput {
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+                cookie_name: self.cookie_name,
+            })
         }
     }
-    
-    
 }
 impl CreateAppCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppCookieStickinessPolicy`](crate::operation::CreateAppCookieStickinessPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAppCookieStickinessPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAppCookieStickinessPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateAppCookieStickinessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateAppCookieStickinessPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateAppCookieStickinessPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAppCookieStickinessPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -533,36 +755,58 @@ impl CreateAppCookieStickinessPolicyInput {
             crate::operation_ser::serialize_operation_crate_operation_create_app_cookie_stickiness_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAppCookieStickinessPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAppCookieStickinessPolicy", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAppCookieStickinessPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAppCookieStickinessPolicy",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -574,9 +818,9 @@ impl CreateAppCookieStickinessPolicyInput {
 
 /// See [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput).
 pub mod create_lb_cookie_stickiness_policy_input {
-    
+
     /// A builder for [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -589,8 +833,12 @@ pub mod create_lb_cookie_stickiness_policy_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,7 +847,8 @@ pub mod create_lb_cookie_stickiness_policy_input {
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input; self
+            self.policy_name = input;
+            self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
         pub fn cookie_expiration_period(mut self, input: i64) -> Self {
@@ -608,43 +857,63 @@ pub mod create_lb_cookie_stickiness_policy_input {
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
         pub fn set_cookie_expiration_period(mut self, input: std::option::Option<i64>) -> Self {
-            self.cookie_expiration_period = input; self
+            self.cookie_expiration_period = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput).
-        pub fn build(self) -> Result<crate::input::CreateLbCookieStickinessPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLbCookieStickinessPolicyInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    policy_name: self.policy_name
-                    ,
-                    cookie_expiration_period: self.cookie_expiration_period
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateLbCookieStickinessPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLbCookieStickinessPolicyInput {
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+                cookie_expiration_period: self.cookie_expiration_period,
+            })
         }
     }
-    
-    
 }
 impl CreateLbCookieStickinessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLBCookieStickinessPolicy`](crate::operation::CreateLBCookieStickinessPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLBCookieStickinessPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLBCookieStickinessPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLbCookieStickinessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLbCookieStickinessPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLbCookieStickinessPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLbCookieStickinessPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -652,36 +921,58 @@ impl CreateLbCookieStickinessPolicyInput {
             crate::operation_ser::serialize_operation_crate_operation_create_lb_cookie_stickiness_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLBCookieStickinessPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLBCookieStickinessPolicy", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLBCookieStickinessPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLBCookieStickinessPolicy",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -693,9 +984,9 @@ impl CreateLbCookieStickinessPolicyInput {
 
 /// See [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
 pub mod create_load_balancer_input {
-    
+
     /// A builder for [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -706,52 +997,64 @@ pub mod create_load_balancer_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the load balancer.</p> 
+        /// <p>The name of the load balancer.</p>
         /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
         pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.load_balancer_name = Some(input.into());
             self
         }
-        /// <p>The name of the load balancer.</p> 
+        /// <p>The name of the load balancer.</p>
         /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `listeners`.
         ///
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
-        /// <p>The listeners.</p> 
+        /// <p>The listeners.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-                            v.push(input);
-                            self.listeners = Some(v);
-                            self
+            v.push(input);
+            self.listeners = Some(v);
+            self
         }
-        /// <p>The listeners.</p> 
+        /// <p>The listeners.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::Listener>>) -> Self {
-            self.listeners = input; self
+        pub fn set_listeners(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+        ) -> Self {
+            self.listeners = input;
+            self
         }
         /// Appends an item to `availability_zones`.
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>One or more Availability Zones from the same region as the load balancer.</p> 
-        /// <p>You must specify at least one Availability Zone.</p> 
+        /// <p>One or more Availability Zones from the same region as the load balancer.</p>
+        /// <p>You must specify at least one Availability Zone.</p>
         /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-                            v.push(input.into());
-                            self.availability_zones = Some(v);
-                            self
+            v.push(input.into());
+            self.availability_zones = Some(v);
+            self
         }
-        /// <p>One or more Availability Zones from the same region as the load balancer.</p> 
-        /// <p>You must specify at least one Availability Zone.</p> 
+        /// <p>One or more Availability Zones from the same region as the load balancer.</p>
+        /// <p>You must specify at least one Availability Zone.</p>
         /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.availability_zones = input; self
+        pub fn set_availability_zones(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zones = input;
+            self
         }
         /// Appends an item to `subnets`.
         ///
@@ -760,13 +1063,17 @@ pub mod create_load_balancer_input {
         /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-                            v.push(input.into());
-                            self.subnets = Some(v);
-                            self
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
         }
         /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.subnets = input; self
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -775,124 +1082,169 @@ pub mod create_load_balancer_input {
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-                            v.push(input.into());
-                            self.security_groups = Some(v);
-                            self
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
         }
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
-        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.security_groups = input; self
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> 
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> 
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
         pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheme = Some(input.into());
             self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> 
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> 
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
         pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.scheme = input; self
+            self.scheme = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to assign to the load balancer.</p> 
+        /// <p>A list of tags to assign to the load balancer.</p>
         /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
-        /// <p>A list of tags to assign to the load balancer.</p> 
+        /// <p>A list of tags to assign to the load balancer.</p>
         /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::CreateLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    listeners: self.listeners
-                    ,
-                    availability_zones: self.availability_zones
-                    ,
-                    subnets: self.subnets
-                    ,
-                    security_groups: self.security_groups
-                    ,
-                    scheme: self.scheme
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateLoadBalancerInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                listeners: self.listeners,
+                availability_zones: self.availability_zones,
+                subnets: self.subnets,
+                security_groups: self.security_groups,
+                scheme: self.scheme,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -904,9 +1256,9 @@ impl CreateLoadBalancerInput {
 
 /// See [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput).
 pub mod create_load_balancer_listeners_input {
-    
+
     /// A builder for [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -918,8 +1270,12 @@ pub mod create_load_balancer_listeners_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `listeners`.
         ///
@@ -928,47 +1284,71 @@ pub mod create_load_balancer_listeners_input {
         /// <p>The listeners.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-                            v.push(input);
-                            self.listeners = Some(v);
-                            self
+            v.push(input);
+            self.listeners = Some(v);
+            self
         }
         /// <p>The listeners.</p>
-        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::Listener>>) -> Self {
-            self.listeners = input; self
+        pub fn set_listeners(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+        ) -> Self {
+            self.listeners = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput).
-        pub fn build(self) -> Result<crate::input::CreateLoadBalancerListenersInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLoadBalancerListenersInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    listeners: self.listeners
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateLoadBalancerListenersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLoadBalancerListenersInput {
+                load_balancer_name: self.load_balancer_name,
+                listeners: self.listeners,
+            })
         }
     }
-    
-    
 }
 impl CreateLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerListeners`](crate::operation::CreateLoadBalancerListeners)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLoadBalancerListeners, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLoadBalancerListeners,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLoadBalancerListenersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLoadBalancerListenersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLoadBalancerListenersInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLoadBalancerListenersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -976,36 +1356,58 @@ impl CreateLoadBalancerListenersInput {
             crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLoadBalancerListeners::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLoadBalancerListeners", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLoadBalancerListeners::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLoadBalancerListeners",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1017,14 +1419,15 @@ impl CreateLoadBalancerListenersInput {
 
 /// See [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput).
 pub mod create_load_balancer_policy_input {
-    
+
     /// A builder for [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
-        pub(crate) policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
+        pub(crate) policy_attributes:
+            std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
     }
     impl Builder {
         /// <p>The name of the load balancer.</p>
@@ -1033,8 +1436,12 @@ pub mod create_load_balancer_policy_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1043,7 +1450,8 @@ pub mod create_load_balancer_policy_input {
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input; self
+            self.policy_name = input;
+            self
         }
         /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
         pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1051,8 +1459,12 @@ pub mod create_load_balancer_policy_input {
             self
         }
         /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-        pub fn set_policy_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_type_name = input; self
+        pub fn set_policy_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_type_name = input;
+            self
         }
         /// Appends an item to `policy_attributes`.
         ///
@@ -1061,88 +1473,135 @@ pub mod create_load_balancer_policy_input {
         /// <p>The policy attributes.</p>
         pub fn policy_attributes(mut self, input: crate::model::PolicyAttribute) -> Self {
             let mut v = self.policy_attributes.unwrap_or_default();
-                            v.push(input);
-                            self.policy_attributes = Some(v);
-                            self
+            v.push(input);
+            self.policy_attributes = Some(v);
+            self
         }
         /// <p>The policy attributes.</p>
-        pub fn set_policy_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>) -> Self {
-            self.policy_attributes = input; self
+        pub fn set_policy_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
+        ) -> Self {
+            self.policy_attributes = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput).
-        pub fn build(self) -> Result<crate::input::CreateLoadBalancerPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLoadBalancerPolicyInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    policy_name: self.policy_name
-                    ,
-                    policy_type_name: self.policy_type_name
-                    ,
-                    policy_attributes: self.policy_attributes
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateLoadBalancerPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateLoadBalancerPolicyInput {
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+                policy_type_name: self.policy_type_name,
+                policy_attributes: self.policy_attributes,
+            })
         }
     }
-    
-    
 }
 impl CreateLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancerPolicy`](crate::operation::CreateLoadBalancerPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLoadBalancerPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLoadBalancerPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLoadBalancerPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLoadBalancerPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLoadBalancerPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLoadBalancerPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLoadBalancerPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLoadBalancerPolicy", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLoadBalancerPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLoadBalancerPolicy",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1154,9 +1613,9 @@ impl CreateLoadBalancerPolicyInput {
 
 /// See [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
 pub mod delete_load_balancer_input {
-    
+
     /// A builder for [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
     }
@@ -1167,77 +1626,123 @@ pub mod delete_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::DeleteLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteLoadBalancerInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1249,9 +1754,9 @@ impl DeleteLoadBalancerInput {
 
 /// See [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput).
 pub mod delete_load_balancer_listeners_input {
-    
+
     /// A builder for [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
@@ -1263,8 +1768,12 @@ pub mod delete_load_balancer_listeners_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `load_balancer_ports`.
         ///
@@ -1273,47 +1782,71 @@ pub mod delete_load_balancer_listeners_input {
         /// <p>The client port numbers of the listeners.</p>
         pub fn load_balancer_ports(mut self, input: i32) -> Self {
             let mut v = self.load_balancer_ports.unwrap_or_default();
-                            v.push(input);
-                            self.load_balancer_ports = Some(v);
-                            self
+            v.push(input);
+            self.load_balancer_ports = Some(v);
+            self
         }
         /// <p>The client port numbers of the listeners.</p>
-        pub fn set_load_balancer_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.load_balancer_ports = input; self
+        pub fn set_load_balancer_ports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.load_balancer_ports = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput).
-        pub fn build(self) -> Result<crate::input::DeleteLoadBalancerListenersInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteLoadBalancerListenersInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    load_balancer_ports: self.load_balancer_ports
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteLoadBalancerListenersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteLoadBalancerListenersInput {
+                load_balancer_name: self.load_balancer_name,
+                load_balancer_ports: self.load_balancer_ports,
+            })
         }
     }
-    
-    
 }
 impl DeleteLoadBalancerListenersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerListeners`](crate::operation::DeleteLoadBalancerListeners)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLoadBalancerListeners, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLoadBalancerListeners,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteLoadBalancerListenersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteLoadBalancerListenersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteLoadBalancerListenersInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLoadBalancerListenersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1321,36 +1854,58 @@ impl DeleteLoadBalancerListenersInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLoadBalancerListeners::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLoadBalancerListeners", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLoadBalancerListeners::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLoadBalancerListeners",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1362,9 +1917,9 @@ impl DeleteLoadBalancerListenersInput {
 
 /// See [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput).
 pub mod delete_load_balancer_policy_input {
-    
+
     /// A builder for [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -1376,8 +1931,12 @@ pub mod delete_load_balancer_policy_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The name of the policy.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,78 +1945,124 @@ pub mod delete_load_balancer_policy_input {
         }
         /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input; self
+            self.policy_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteLoadBalancerPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteLoadBalancerPolicyInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    policy_name: self.policy_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteLoadBalancerPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteLoadBalancerPolicyInput {
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteLoadBalancerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancerPolicy`](crate::operation::DeleteLoadBalancerPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLoadBalancerPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLoadBalancerPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteLoadBalancerPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteLoadBalancerPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteLoadBalancerPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLoadBalancerPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLoadBalancerPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLoadBalancerPolicy", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLoadBalancerPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLoadBalancerPolicy",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1469,9 +2074,9 @@ impl DeleteLoadBalancerPolicyInput {
 
 /// See [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput).
 pub mod deregister_instances_from_load_balancer_input {
-    
+
     /// A builder for [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -1483,8 +2088,12 @@ pub mod deregister_instances_from_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `instances`.
         ///
@@ -1493,47 +2102,71 @@ pub mod deregister_instances_from_load_balancer_input {
         /// <p>The IDs of the instances.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-                            v.push(input);
-                            self.instances = Some(v);
-                            self
+            v.push(input);
+            self.instances = Some(v);
+            self
         }
         /// <p>The IDs of the instances.</p>
-        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
-            self.instances = input; self
+        pub fn set_instances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+        ) -> Self {
+            self.instances = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::DeregisterInstancesFromLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeregisterInstancesFromLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    instances: self.instances
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeregisterInstancesFromLoadBalancerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeregisterInstancesFromLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                instances: self.instances,
+            })
         }
     }
-    
-    
 }
 impl DeregisterInstancesFromLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstancesFromLoadBalancer`](crate::operation::DeregisterInstancesFromLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeregisterInstancesFromLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeregisterInstancesFromLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeregisterInstancesFromLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeregisterInstancesFromLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeregisterInstancesFromLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeregisterInstancesFromLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1541,36 +2174,58 @@ impl DeregisterInstancesFromLoadBalancerInput {
             crate::operation_ser::serialize_operation_crate_operation_deregister_instances_from_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeregisterInstancesFromLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeregisterInstancesFromLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterInstancesFromLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeregisterInstancesFromLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1582,9 +2237,9 @@ impl DeregisterInstancesFromLoadBalancerInput {
 
 /// See [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
 pub mod describe_account_limits_input {
-    
+
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -1597,7 +2252,8 @@ pub mod describe_account_limits_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -1606,78 +2262,122 @@ pub mod describe_account_limits_input {
         }
         /// <p>The maximum number of results to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input; self
+            self.page_size = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
-        pub fn build(self) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeAccountLimitsInput {
-                    marker: self.marker
-                    ,
-                    page_size: self.page_size
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeAccountLimitsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeAccountLimitsInput {
+                marker: self.marker,
+                page_size: self.page_size,
+            })
         }
     }
-    
-    
 }
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountLimits, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAccountLimits,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeAccountLimitsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeAccountLimitsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeAccountLimitsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAccountLimitsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountLimits::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountLimits", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAccountLimits::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAccountLimits",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1689,9 +2389,9 @@ impl DescribeAccountLimitsInput {
 
 /// See [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
 pub mod describe_instance_health_input {
-    
+
     /// A builder for [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -1703,8 +2403,12 @@ pub mod describe_instance_health_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `instances`.
         ///
@@ -1713,84 +2417,131 @@ pub mod describe_instance_health_input {
         /// <p>The IDs of the instances.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-                            v.push(input);
-                            self.instances = Some(v);
-                            self
+            v.push(input);
+            self.instances = Some(v);
+            self
         }
         /// <p>The IDs of the instances.</p>
-        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
-            self.instances = input; self
+        pub fn set_instances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+        ) -> Self {
+            self.instances = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput).
-        pub fn build(self) -> Result<crate::input::DescribeInstanceHealthInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeInstanceHealthInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    instances: self.instances
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeInstanceHealthInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeInstanceHealthInput {
+                load_balancer_name: self.load_balancer_name,
+                instances: self.instances,
+            })
         }
     }
-    
-    
 }
 impl DescribeInstanceHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceHealth`](crate::operation::DescribeInstanceHealth)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeInstanceHealth, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeInstanceHealth,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeInstanceHealthInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeInstanceHealthInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeInstanceHealthInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeInstanceHealthInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_health(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_health(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeInstanceHealth::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeInstanceHealth", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeInstanceHealth::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeInstanceHealth",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1802,9 +2553,9 @@ impl DescribeInstanceHealthInput {
 
 /// See [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
 pub mod describe_load_balancer_attributes_input {
-    
+
     /// A builder for [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
     }
@@ -1815,40 +2566,65 @@ pub mod describe_load_balancer_attributes_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput).
-        pub fn build(self) -> Result<crate::input::DescribeLoadBalancerAttributesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLoadBalancerAttributesInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeLoadBalancerAttributesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLoadBalancerAttributesInput {
+                load_balancer_name: self.load_balancer_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLoadBalancerAttributes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLoadBalancerAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLoadBalancerAttributesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLoadBalancerAttributesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLoadBalancerAttributesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1856,36 +2632,58 @@ impl DescribeLoadBalancerAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancerAttributes::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancerAttributes", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoadBalancerAttributes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLoadBalancerAttributes",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1897,9 +2695,9 @@ impl DescribeLoadBalancerAttributesInput {
 
 /// See [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput).
 pub mod describe_load_balancer_policies_input {
-    
+
     /// A builder for [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1911,8 +2709,12 @@ pub mod describe_load_balancer_policies_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `policy_names`.
         ///
@@ -1921,47 +2723,71 @@ pub mod describe_load_balancer_policies_input {
         /// <p>The names of the policies.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.policy_names = Some(v);
-                            self
+            v.push(input.into());
+            self.policy_names = Some(v);
+            self
         }
         /// <p>The names of the policies.</p>
-        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.policy_names = input; self
+        pub fn set_policy_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.policy_names = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput).
-        pub fn build(self) -> Result<crate::input::DescribeLoadBalancerPoliciesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLoadBalancerPoliciesInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    policy_names: self.policy_names
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeLoadBalancerPoliciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLoadBalancerPoliciesInput {
+                load_balancer_name: self.load_balancer_name,
+                policy_names: self.policy_names,
+            })
         }
     }
-    
-    
 }
 impl DescribeLoadBalancerPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicies`](crate::operation::DescribeLoadBalancerPolicies)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancerPolicies, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLoadBalancerPolicies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLoadBalancerPoliciesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLoadBalancerPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLoadBalancerPoliciesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLoadBalancerPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1969,36 +2795,58 @@ impl DescribeLoadBalancerPoliciesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policies(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancerPolicies::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancerPolicies", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoadBalancerPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLoadBalancerPolicies",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2010,9 +2858,9 @@ impl DescribeLoadBalancerPoliciesInput {
 
 /// See [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput).
 pub mod describe_load_balancer_policy_types_input {
-    
+
     /// A builder for [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2024,45 +2872,70 @@ pub mod describe_load_balancer_policy_types_input {
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
         pub fn policy_type_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_type_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.policy_type_names = Some(v);
-                            self
+            v.push(input.into());
+            self.policy_type_names = Some(v);
+            self
         }
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-        pub fn set_policy_type_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.policy_type_names = input; self
+        pub fn set_policy_type_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.policy_type_names = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput).
-        pub fn build(self) -> Result<crate::input::DescribeLoadBalancerPolicyTypesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLoadBalancerPolicyTypesInput {
-                    policy_type_names: self.policy_type_names
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeLoadBalancerPolicyTypesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLoadBalancerPolicyTypesInput {
+                policy_type_names: self.policy_type_names,
+            })
         }
     }
-    
-    
 }
 impl DescribeLoadBalancerPolicyTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerPolicyTypes`](crate::operation::DescribeLoadBalancerPolicyTypes)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancerPolicyTypes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLoadBalancerPolicyTypes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLoadBalancerPolicyTypesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLoadBalancerPolicyTypesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLoadBalancerPolicyTypesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLoadBalancerPolicyTypesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2070,36 +2943,58 @@ impl DescribeLoadBalancerPolicyTypesInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policy_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancerPolicyTypes::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancerPolicyTypes", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoadBalancerPolicyTypes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLoadBalancerPolicyTypes",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2111,9 +3006,9 @@ impl DescribeLoadBalancerPolicyTypesInput {
 
 /// See [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
 pub mod describe_load_balancers_input {
-    
+
     /// A builder for [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2127,13 +3022,17 @@ pub mod describe_load_balancers_input {
         /// <p>The names of the load balancers.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.load_balancer_names = Some(v);
-                            self
+            v.push(input.into());
+            self.load_balancer_names = Some(v);
+            self
         }
         /// <p>The names of the load balancers.</p>
-        pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.load_balancer_names = input; self
+        pub fn set_load_balancer_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.load_balancer_names = input;
+            self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2142,7 +3041,8 @@ pub mod describe_load_balancers_input {
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
         pub fn page_size(mut self, input: i32) -> Self {
@@ -2151,80 +3051,123 @@ pub mod describe_load_balancers_input {
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.page_size = input; self
+            self.page_size = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
-        pub fn build(self) -> Result<crate::input::DescribeLoadBalancersInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLoadBalancersInput {
-                    load_balancer_names: self.load_balancer_names
-                    ,
-                    marker: self.marker
-                    ,
-                    page_size: self.page_size
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeLoadBalancersInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeLoadBalancersInput {
+                load_balancer_names: self.load_balancer_names,
+                marker: self.marker,
+                page_size: self.page_size,
+            })
         }
     }
-    
-    
 }
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoadBalancers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLoadBalancers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLoadBalancersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLoadBalancersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLoadBalancersInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLoadBalancersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoadBalancers::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoadBalancers", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoadBalancers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLoadBalancers",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2236,9 +3179,9 @@ impl DescribeLoadBalancersInput {
 
 /// See [`DescribeTagsInput`](crate::input::DescribeTagsInput).
 pub mod describe_tags_input {
-    
+
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2250,82 +3193,128 @@ pub mod describe_tags_input {
         /// <p>The names of the load balancers.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.load_balancer_names = Some(v);
-                            self
+            v.push(input.into());
+            self.load_balancer_names = Some(v);
+            self
         }
         /// <p>The names of the load balancers.</p>
-        pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.load_balancer_names = input; self
+        pub fn set_load_balancer_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.load_balancer_names = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput).
-        pub fn build(self) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeTagsInput {
-                    load_balancer_names: self.load_balancer_names
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeTagsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeTagsInput {
+                load_balancer_names: self.load_balancer_names,
+            })
         }
     }
-    
-    
 }
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeTagsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTags::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTags", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTags",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2337,9 +3326,9 @@ impl DescribeTagsInput {
 
 /// See [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput).
 pub mod detach_load_balancer_from_subnets_input {
-    
+
     /// A builder for [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2351,8 +3340,12 @@ pub mod detach_load_balancer_from_subnets_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `subnets`.
         ///
@@ -2361,47 +3354,71 @@ pub mod detach_load_balancer_from_subnets_input {
         /// <p>The IDs of the subnets.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-                            v.push(input.into());
-                            self.subnets = Some(v);
-                            self
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
         }
         /// <p>The IDs of the subnets.</p>
-        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.subnets = input; self
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
         }
         /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput).
-        pub fn build(self) -> Result<crate::input::DetachLoadBalancerFromSubnetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DetachLoadBalancerFromSubnetsInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    subnets: self.subnets
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DetachLoadBalancerFromSubnetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DetachLoadBalancerFromSubnetsInput {
+                load_balancer_name: self.load_balancer_name,
+                subnets: self.subnets,
+            })
         }
     }
-    
-    
 }
 impl DetachLoadBalancerFromSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`DetachLoadBalancerFromSubnets`](crate::operation::DetachLoadBalancerFromSubnets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DetachLoadBalancerFromSubnets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DetachLoadBalancerFromSubnets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DetachLoadBalancerFromSubnetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DetachLoadBalancerFromSubnetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DetachLoadBalancerFromSubnetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DetachLoadBalancerFromSubnetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2409,36 +3426,58 @@ impl DetachLoadBalancerFromSubnetsInput {
             crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_from_subnets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DetachLoadBalancerFromSubnets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DetachLoadBalancerFromSubnets", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DetachLoadBalancerFromSubnets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DetachLoadBalancerFromSubnets",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2450,9 +3489,9 @@ impl DetachLoadBalancerFromSubnetsInput {
 
 /// See [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput).
 pub mod disable_availability_zones_for_load_balancer_input {
-    
+
     /// A builder for [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2464,8 +3503,12 @@ pub mod disable_availability_zones_for_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -2474,47 +3517,71 @@ pub mod disable_availability_zones_for_load_balancer_input {
         /// <p>The Availability Zones.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-                            v.push(input.into());
-                            self.availability_zones = Some(v);
-                            self
+            v.push(input.into());
+            self.availability_zones = Some(v);
+            self
         }
         /// <p>The Availability Zones.</p>
-        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.availability_zones = input; self
+        pub fn set_availability_zones(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zones = input;
+            self
         }
         /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::DisableAvailabilityZonesForLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DisableAvailabilityZonesForLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    availability_zones: self.availability_zones
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DisableAvailabilityZonesForLoadBalancerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisableAvailabilityZonesForLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                availability_zones: self.availability_zones,
+            })
         }
     }
-    
-    
 }
 impl DisableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DisableAvailabilityZonesForLoadBalancer`](crate::operation::DisableAvailabilityZonesForLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisableAvailabilityZonesForLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisableAvailabilityZonesForLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisableAvailabilityZonesForLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2522,36 +3589,58 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             crate::operation_ser::serialize_operation_crate_operation_disable_availability_zones_for_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisableAvailabilityZonesForLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisableAvailabilityZonesForLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisableAvailabilityZonesForLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisableAvailabilityZonesForLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2563,9 +3652,9 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
 
 /// See [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput).
 pub mod enable_availability_zones_for_load_balancer_input {
-    
+
     /// A builder for [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2577,8 +3666,12 @@ pub mod enable_availability_zones_for_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -2587,47 +3680,71 @@ pub mod enable_availability_zones_for_load_balancer_input {
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-                            v.push(input.into());
-                            self.availability_zones = Some(v);
-                            self
+            v.push(input.into());
+            self.availability_zones = Some(v);
+            self
         }
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.availability_zones = input; self
+        pub fn set_availability_zones(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.availability_zones = input;
+            self
         }
         /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::EnableAvailabilityZonesForLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::EnableAvailabilityZonesForLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    availability_zones: self.availability_zones
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::EnableAvailabilityZonesForLoadBalancerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::EnableAvailabilityZonesForLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                availability_zones: self.availability_zones,
+            })
         }
     }
-    
-    
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`EnableAvailabilityZonesForLoadBalancer`](crate::operation::EnableAvailabilityZonesForLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::EnableAvailabilityZonesForLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EnableAvailabilityZonesForLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::EnableAvailabilityZonesForLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2635,36 +3752,58 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             crate::operation_ser::serialize_operation_crate_operation_enable_availability_zones_for_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::EnableAvailabilityZonesForLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("EnableAvailabilityZonesForLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EnableAvailabilityZonesForLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnableAvailabilityZonesForLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2676,12 +3815,13 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
 
 /// See [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
 pub mod modify_load_balancer_attributes_input {
-    
+
     /// A builder for [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-        pub(crate) load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+        pub(crate) load_balancer_attributes:
+            std::option::Option<crate::model::LoadBalancerAttributes>,
     }
     impl Builder {
         /// <p>The name of the load balancer.</p>
@@ -2690,51 +3830,82 @@ pub mod modify_load_balancer_attributes_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The attributes for the load balancer.</p>
-        pub fn load_balancer_attributes(mut self, input: crate::model::LoadBalancerAttributes) -> Self {
+        pub fn load_balancer_attributes(
+            mut self,
+            input: crate::model::LoadBalancerAttributes,
+        ) -> Self {
             self.load_balancer_attributes = Some(input);
             self
         }
         /// <p>The attributes for the load balancer.</p>
-        pub fn set_load_balancer_attributes(mut self, input: std::option::Option<crate::model::LoadBalancerAttributes>) -> Self {
-            self.load_balancer_attributes = input; self
+        pub fn set_load_balancer_attributes(
+            mut self,
+            input: std::option::Option<crate::model::LoadBalancerAttributes>,
+        ) -> Self {
+            self.load_balancer_attributes = input;
+            self
         }
         /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput).
-        pub fn build(self) -> Result<crate::input::ModifyLoadBalancerAttributesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ModifyLoadBalancerAttributesInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    load_balancer_attributes: self.load_balancer_attributes
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ModifyLoadBalancerAttributesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ModifyLoadBalancerAttributesInput {
+                load_balancer_name: self.load_balancer_name,
+                load_balancer_attributes: self.load_balancer_attributes,
+            })
         }
     }
-    
-    
 }
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ModifyLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ModifyLoadBalancerAttributes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ModifyLoadBalancerAttributesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ModifyLoadBalancerAttributesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ModifyLoadBalancerAttributesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ModifyLoadBalancerAttributesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2742,36 +3913,58 @@ impl ModifyLoadBalancerAttributesInput {
             crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyLoadBalancerAttributes::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyLoadBalancerAttributes", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyLoadBalancerAttributes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyLoadBalancerAttributes",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2783,9 +3976,9 @@ impl ModifyLoadBalancerAttributesInput {
 
 /// See [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput).
 pub mod register_instances_with_load_balancer_input {
-    
+
     /// A builder for [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -2797,8 +3990,12 @@ pub mod register_instances_with_load_balancer_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// Appends an item to `instances`.
         ///
@@ -2807,47 +4004,71 @@ pub mod register_instances_with_load_balancer_input {
         /// <p>The IDs of the instances.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-                            v.push(input);
-                            self.instances = Some(v);
-                            self
+            v.push(input);
+            self.instances = Some(v);
+            self
         }
         /// <p>The IDs of the instances.</p>
-        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
-            self.instances = input; self
+        pub fn set_instances(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+        ) -> Self {
+            self.instances = input;
+            self
         }
         /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput).
-        pub fn build(self) -> Result<crate::input::RegisterInstancesWithLoadBalancerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RegisterInstancesWithLoadBalancerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    instances: self.instances
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::RegisterInstancesWithLoadBalancerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RegisterInstancesWithLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name,
+                instances: self.instances,
+            })
         }
     }
-    
-    
 }
 impl RegisterInstancesWithLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstancesWithLoadBalancer`](crate::operation::RegisterInstancesWithLoadBalancer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterInstancesWithLoadBalancer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterInstancesWithLoadBalancer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RegisterInstancesWithLoadBalancerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RegisterInstancesWithLoadBalancerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RegisterInstancesWithLoadBalancerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RegisterInstancesWithLoadBalancerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2855,36 +4076,58 @@ impl RegisterInstancesWithLoadBalancerInput {
             crate::operation_ser::serialize_operation_crate_operation_register_instances_with_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterInstancesWithLoadBalancer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterInstancesWithLoadBalancer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterInstancesWithLoadBalancer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterInstancesWithLoadBalancer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2896,9 +4139,9 @@ impl RegisterInstancesWithLoadBalancerInput {
 
 /// See [`RemoveTagsInput`](crate::input::RemoveTagsInput).
 pub mod remove_tags_input {
-    
+
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
@@ -2911,13 +4154,17 @@ pub mod remove_tags_input {
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.load_balancer_names = Some(v);
-                            self
+            v.push(input.into());
+            self.load_balancer_names = Some(v);
+            self
         }
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-        pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.load_balancer_names = input; self
+        pub fn set_load_balancer_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.load_balancer_names = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -2926,84 +4173,128 @@ pub mod remove_tags_input {
         /// <p>The list of tag keys to remove.</p>
         pub fn tags(mut self, input: crate::model::TagKeyOnly) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The list of tag keys to remove.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-        pub fn build(self) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveTagsInput {
-                    load_balancer_names: self.load_balancer_names
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::RemoveTagsInput {
+                load_balancer_names: self.load_balancer_names,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveTagsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveTags", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTags",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3015,9 +4306,9 @@ impl RemoveTagsInput {
 
 /// See [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput).
 pub mod set_load_balancer_listener_ssl_certificate_input {
-    
+
     /// A builder for [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -3030,8 +4321,12 @@ pub mod set_load_balancer_listener_ssl_certificate_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The port that uses the specified SSL certificate.</p>
         pub fn load_balancer_port(mut self, input: i32) -> Self {
@@ -3040,7 +4335,8 @@ pub mod set_load_balancer_listener_ssl_certificate_input {
         }
         /// <p>The port that uses the specified SSL certificate.</p>
         pub fn set_load_balancer_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.load_balancer_port = input; self
+            self.load_balancer_port = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
         pub fn ssl_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3048,45 +4344,67 @@ pub mod set_load_balancer_listener_ssl_certificate_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-        pub fn set_ssl_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssl_certificate_id = input; self
+        pub fn set_ssl_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssl_certificate_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput).
-        pub fn build(self) -> Result<crate::input::SetLoadBalancerListenerSslCertificateInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetLoadBalancerListenerSslCertificateInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    load_balancer_port: self.load_balancer_port
-                        .unwrap_or_default()
-                    ,
-                    ssl_certificate_id: self.ssl_certificate_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SetLoadBalancerListenerSslCertificateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SetLoadBalancerListenerSslCertificateInput {
+                load_balancer_name: self.load_balancer_name,
+                load_balancer_port: self.load_balancer_port.unwrap_or_default(),
+                ssl_certificate_id: self.ssl_certificate_id,
+            })
         }
     }
-    
-    
 }
 impl SetLoadBalancerListenerSslCertificateInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerListenerSSLCertificate`](crate::operation::SetLoadBalancerListenerSSLCertificate)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetLoadBalancerListenerSSLCertificate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetLoadBalancerListenerSSLCertificate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetLoadBalancerListenerSslCertificateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetLoadBalancerListenerSslCertificateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetLoadBalancerListenerSslCertificateInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetLoadBalancerListenerSslCertificateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3094,36 +4412,58 @@ impl SetLoadBalancerListenerSslCertificateInput {
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_listener_ssl_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetLoadBalancerListenerSSLCertificate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetLoadBalancerListenerSSLCertificate", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetLoadBalancerListenerSSLCertificate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetLoadBalancerListenerSSLCertificate",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3135,9 +4475,9 @@ impl SetLoadBalancerListenerSslCertificateInput {
 
 /// See [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput).
 pub mod set_load_balancer_policies_for_backend_server_input {
-    
+
     /// A builder for [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) instance_port: std::option::Option<i32>,
@@ -3150,8 +4490,12 @@ pub mod set_load_balancer_policies_for_backend_server_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The port number associated with the EC2 instance.</p>
         pub fn instance_port(mut self, input: i32) -> Self {
@@ -3160,7 +4504,8 @@ pub mod set_load_balancer_policies_for_backend_server_input {
         }
         /// <p>The port number associated with the EC2 instance.</p>
         pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.instance_port = input; self
+            self.instance_port = input;
+            self
         }
         /// Appends an item to `policy_names`.
         ///
@@ -3169,49 +4514,72 @@ pub mod set_load_balancer_policies_for_backend_server_input {
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.policy_names = Some(v);
-                            self
+            v.push(input.into());
+            self.policy_names = Some(v);
+            self
         }
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.policy_names = input; self
+        pub fn set_policy_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.policy_names = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput).
-        pub fn build(self) -> Result<crate::input::SetLoadBalancerPoliciesForBackendServerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetLoadBalancerPoliciesForBackendServerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    instance_port: self.instance_port
-                    ,
-                    policy_names: self.policy_names
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SetLoadBalancerPoliciesForBackendServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SetLoadBalancerPoliciesForBackendServerInput {
+                load_balancer_name: self.load_balancer_name,
+                instance_port: self.instance_port,
+                policy_names: self.policy_names,
+            })
         }
     }
-    
-    
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesForBackendServer`](crate::operation::SetLoadBalancerPoliciesForBackendServer)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetLoadBalancerPoliciesForBackendServer, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetLoadBalancerPoliciesForBackendServer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetLoadBalancerPoliciesForBackendServerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3219,36 +4587,58 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_for_backend_server(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetLoadBalancerPoliciesForBackendServer::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetLoadBalancerPoliciesForBackendServer", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetLoadBalancerPoliciesForBackendServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetLoadBalancerPoliciesForBackendServer",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3260,9 +4650,9 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
 
 /// See [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput).
 pub mod set_load_balancer_policies_of_listener_input {
-    
+
     /// A builder for [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -3275,8 +4665,12 @@ pub mod set_load_balancer_policies_of_listener_input {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.load_balancer_name = input; self
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
         }
         /// <p>The external port of the load balancer.</p>
         pub fn load_balancer_port(mut self, input: i32) -> Self {
@@ -3285,7 +4679,8 @@ pub mod set_load_balancer_policies_of_listener_input {
         }
         /// <p>The external port of the load balancer.</p>
         pub fn set_load_balancer_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.load_balancer_port = input; self
+            self.load_balancer_port = input;
+            self
         }
         /// Appends an item to `policy_names`.
         ///
@@ -3294,50 +4689,72 @@ pub mod set_load_balancer_policies_of_listener_input {
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-                            v.push(input.into());
-                            self.policy_names = Some(v);
-                            self
+            v.push(input.into());
+            self.policy_names = Some(v);
+            self
         }
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-        pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.policy_names = input; self
+        pub fn set_policy_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.policy_names = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput).
-        pub fn build(self) -> Result<crate::input::SetLoadBalancerPoliciesOfListenerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetLoadBalancerPoliciesOfListenerInput {
-                    load_balancer_name: self.load_balancer_name
-                    ,
-                    load_balancer_port: self.load_balancer_port
-                        .unwrap_or_default()
-                    ,
-                    policy_names: self.policy_names
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SetLoadBalancerPoliciesOfListenerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SetLoadBalancerPoliciesOfListenerInput {
+                load_balancer_name: self.load_balancer_name,
+                load_balancer_port: self.load_balancer_port.unwrap_or_default(),
+                policy_names: self.policy_names,
+            })
         }
     }
-    
-    
 }
 impl SetLoadBalancerPoliciesOfListenerInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBalancerPoliciesOfListener`](crate::operation::SetLoadBalancerPoliciesOfListener)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetLoadBalancerPoliciesOfListener, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetLoadBalancerPoliciesOfListener,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetLoadBalancerPoliciesOfListenerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetLoadBalancerPoliciesOfListenerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetLoadBalancerPoliciesOfListenerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetLoadBalancerPoliciesOfListenerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3345,36 +4762,58 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_of_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetLoadBalancerPoliciesOfListener::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetLoadBalancerPoliciesOfListener", "elasticloadbalancing"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetLoadBalancerPoliciesOfListener::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetLoadBalancerPoliciesOfListener",
+            "elasticloadbalancing",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3385,18 +4824,22 @@ impl SetLoadBalancerPoliciesOfListenerInput {
 }
 
 /// <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetLoadBalancerPoliciesOfListenerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The external port of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_port: i32,
+    #[doc(hidden)]
+    pub load_balancer_port: i32,
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    #[doc(hidden)]pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The external port of the load balancer.</p>
@@ -3404,11 +4847,11 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         self.load_balancer_port
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
 }
-impl  std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput  {
+impl std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBalancerPoliciesOfListenerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3419,18 +4862,22 @@ impl  std::fmt::Debug for SetLoadBalancerPoliciesOfListenerInput  {
 }
 
 /// <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetLoadBalancerPoliciesForBackendServerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetLoadBalancerPoliciesForBackendServerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The port number associated with the EC2 instance.</p>
-    #[doc(hidden)]pub instance_port: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub instance_port: std::option::Option<i32>,
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    #[doc(hidden)]pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port number associated with the EC2 instance.</p>
@@ -3438,11 +4885,11 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         self.instance_port
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
 }
-impl  std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput  {
+impl std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBalancerPoliciesForBackendServerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3453,18 +4900,22 @@ impl  std::fmt::Debug for SetLoadBalancerPoliciesForBackendServerInput  {
 }
 
 /// <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetLoadBalancerListenerSslCertificateInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The port that uses the specified SSL certificate.</p>
-    #[doc(hidden)]pub load_balancer_port: i32,
+    #[doc(hidden)]
+    pub load_balancer_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-    #[doc(hidden)]pub ssl_certificate_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub ssl_certificate_id: std::option::Option<std::string::String>,
 }
 impl SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port that uses the specified SSL certificate.</p>
@@ -3472,11 +4923,11 @@ impl SetLoadBalancerListenerSslCertificateInput {
         self.load_balancer_port
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-    pub fn ssl_certificate_id(&self) -> std::option::Option<& str> {
+    pub fn ssl_certificate_id(&self) -> std::option::Option<&str> {
         self.ssl_certificate_id.as_deref()
     }
 }
-impl  std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput  {
+impl std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBalancerListenerSslCertificateInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3487,24 +4938,27 @@ impl  std::fmt::Debug for SetLoadBalancerListenerSslCertificateInput  {
 }
 
 /// <p>Contains the parameters for RemoveTags.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveTagsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveTagsInput {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    #[doc(hidden)]pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of tag keys to remove.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagKeyOnly>>,
 }
 impl RemoveTagsInput {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The list of tag keys to remove.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::TagKeyOnly]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagKeyOnly]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveTagsInput  {
+impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
         formatter.field("load_balancer_names", &self.load_balancer_names);
@@ -3514,24 +4968,27 @@ impl  std::fmt::Debug for RemoveTagsInput  {
 }
 
 /// <p>Contains the parameters for RegisterInstancesWithLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RegisterInstancesWithLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterInstancesWithLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
-    #[doc(hidden)]pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+    #[doc(hidden)]
+    pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl RegisterInstancesWithLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
         self.instances.as_deref()
     }
 }
-impl  std::fmt::Debug for RegisterInstancesWithLoadBalancerInput  {
+impl std::fmt::Debug for RegisterInstancesWithLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstancesWithLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3541,24 +4998,29 @@ impl  std::fmt::Debug for RegisterInstancesWithLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ModifyLoadBalancerAttributesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The attributes for the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+    #[doc(hidden)]
+    pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The attributes for the load balancer.</p>
-    pub fn load_balancer_attributes(&self) -> std::option::Option<& crate::model::LoadBalancerAttributes> {
+    pub fn load_balancer_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
-impl  std::fmt::Debug for ModifyLoadBalancerAttributesInput  {
+impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyLoadBalancerAttributesInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3568,24 +5030,27 @@ impl  std::fmt::Debug for ModifyLoadBalancerAttributesInput  {
 }
 
 /// <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct EnableAvailabilityZonesForLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    #[doc(hidden)]pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
-impl  std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput  {
+impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableAvailabilityZonesForLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3595,24 +5060,27 @@ impl  std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for DisableAvailabilityZonesForLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DisableAvailabilityZonesForLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The Availability Zones.</p>
-    #[doc(hidden)]pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
-impl  std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput  {
+impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableAvailabilityZonesForLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3622,24 +5090,27 @@ impl  std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for DetachLoadBalancerFromSubnets.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DetachLoadBalancerFromSubnetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DetachLoadBalancerFromSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets.</p>
-    #[doc(hidden)]pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetachLoadBalancerFromSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
 }
-impl  std::fmt::Debug for DetachLoadBalancerFromSubnetsInput  {
+impl std::fmt::Debug for DetachLoadBalancerFromSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachLoadBalancerFromSubnetsInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3649,18 +5120,20 @@ impl  std::fmt::Debug for DetachLoadBalancerFromSubnetsInput  {
 }
 
 /// <p>Contains the parameters for DescribeTags.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeTagsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
-    #[doc(hidden)]pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeTagsInput  {
+impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsInput");
         formatter.field("load_balancer_names", &self.load_balancer_names);
@@ -3669,22 +5142,26 @@ impl  std::fmt::Debug for DescribeTagsInput  {
 }
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLoadBalancersInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    #[doc(hidden)]pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-    #[doc(hidden)]pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub page_size: std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
@@ -3692,7 +5169,7 @@ impl DescribeLoadBalancersInput {
         self.page_size
     }
 }
-impl  std::fmt::Debug for DescribeLoadBalancersInput  {
+impl std::fmt::Debug for DescribeLoadBalancersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancersInput");
         formatter.field("load_balancer_names", &self.load_balancer_names);
@@ -3703,18 +5180,20 @@ impl  std::fmt::Debug for DescribeLoadBalancersInput  {
 }
 
 /// <p>Contains the parameters for DescribeLoadBalancerPolicyTypes.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLoadBalancerPolicyTypesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    #[doc(hidden)]pub policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub policy_type_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoadBalancerPolicyTypesInput {
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn policy_type_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_type_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_type_names.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput  {
+impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerPolicyTypesInput");
         formatter.field("policy_type_names", &self.policy_type_names);
@@ -3723,24 +5202,27 @@ impl  std::fmt::Debug for DescribeLoadBalancerPolicyTypesInput  {
 }
 
 /// <p>Contains the parameters for DescribeLoadBalancerPolicies.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLoadBalancerPoliciesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoadBalancerPoliciesInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The names of the policies.</p>
-    #[doc(hidden)]pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLoadBalancerPoliciesInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The names of the policies.</p>
-    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLoadBalancerPoliciesInput  {
+impl std::fmt::Debug for DescribeLoadBalancerPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerPoliciesInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3750,18 +5232,20 @@ impl  std::fmt::Debug for DescribeLoadBalancerPoliciesInput  {
 }
 
 /// <p>Contains the parameters for DescribeLoadBalancerAttributes.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLoadBalancerAttributesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLoadBalancerAttributesInput  {
+impl std::fmt::Debug for DescribeLoadBalancerAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerAttributesInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3770,24 +5254,27 @@ impl  std::fmt::Debug for DescribeLoadBalancerAttributesInput  {
 }
 
 /// <p>Contains the parameters for DescribeInstanceHealth.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeInstanceHealthInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
-    #[doc(hidden)]pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+    #[doc(hidden)]
+    pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
         self.instances.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeInstanceHealthInput  {
+impl std::fmt::Debug for DescribeInstanceHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceHealthInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3797,16 +5284,19 @@ impl  std::fmt::Debug for DescribeInstanceHealthInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeAccountLimitsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
-    #[doc(hidden)]pub page_size: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub page_size: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -3814,7 +5304,7 @@ impl DescribeAccountLimitsInput {
         self.page_size
     }
 }
-impl  std::fmt::Debug for DescribeAccountLimitsInput  {
+impl std::fmt::Debug for DescribeAccountLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
         formatter.field("marker", &self.marker);
@@ -3824,24 +5314,27 @@ impl  std::fmt::Debug for DescribeAccountLimitsInput  {
 }
 
 /// <p>Contains the parameters for DeregisterInstancesFromLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeregisterInstancesFromLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterInstancesFromLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the instances.</p>
-    #[doc(hidden)]pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+    #[doc(hidden)]
+    pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DeregisterInstancesFromLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
         self.instances.as_deref()
     }
 }
-impl  std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput  {
+impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterInstancesFromLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3851,24 +5344,27 @@ impl  std::fmt::Debug for DeregisterInstancesFromLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for DeleteLoadBalancerPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteLoadBalancerPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]pub policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteLoadBalancerPolicyInput  {
+impl std::fmt::Debug for DeleteLoadBalancerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerPolicyInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3878,24 +5374,27 @@ impl  std::fmt::Debug for DeleteLoadBalancerPolicyInput  {
 }
 
 /// <p>Contains the parameters for DeleteLoadBalancerListeners.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteLoadBalancerListenersInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The client port numbers of the listeners.</p>
-    #[doc(hidden)]pub load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
+    #[doc(hidden)]
+    pub load_balancer_ports: std::option::Option<std::vec::Vec<i32>>,
 }
 impl DeleteLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The client port numbers of the listeners.</p>
-    pub fn load_balancer_ports(&self) -> std::option::Option<& [i32]> {
+    pub fn load_balancer_ports(&self) -> std::option::Option<&[i32]> {
         self.load_balancer_ports.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteLoadBalancerListenersInput  {
+impl std::fmt::Debug for DeleteLoadBalancerListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerListenersInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3905,18 +5404,20 @@ impl  std::fmt::Debug for DeleteLoadBalancerListenersInput  {
 }
 
 /// <p>Contains the parameters for DeleteLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteLoadBalancerInput  {
+impl std::fmt::Debug for DeleteLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3925,36 +5426,41 @@ impl  std::fmt::Debug for DeleteLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLoadBalancerPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    #[doc(hidden)]pub policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    #[doc(hidden)]pub policy_type_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>The policy attributes.</p>
-    #[doc(hidden)]pub policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
+    #[doc(hidden)]
+    pub policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn policy_type_name(&self) -> std::option::Option<& str> {
+    pub fn policy_type_name(&self) -> std::option::Option<&str> {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attributes(&self) -> std::option::Option<& [crate::model::PolicyAttribute]> {
+    pub fn policy_attributes(&self) -> std::option::Option<&[crate::model::PolicyAttribute]> {
         self.policy_attributes.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateLoadBalancerPolicyInput  {
+impl std::fmt::Debug for CreateLoadBalancerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerPolicyInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3966,24 +5472,27 @@ impl  std::fmt::Debug for CreateLoadBalancerPolicyInput  {
 }
 
 /// <p>Contains the parameters for CreateLoadBalancerListeners.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLoadBalancerListenersInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The listeners.</p>
-    #[doc(hidden)]pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+    #[doc(hidden)]
+    pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
 }
 impl CreateLoadBalancerListenersInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The listeners.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::model::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateLoadBalancerListenersInput  {
+impl std::fmt::Debug for CreateLoadBalancerListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerListenersInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -3993,68 +5502,76 @@ impl  std::fmt::Debug for CreateLoadBalancerListenersInput  {
 }
 
 /// <p>Contains the parameters for CreateLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLoadBalancerInput  {
-    /// <p>The name of the load balancer.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLoadBalancerInput {
+    /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
-    /// <p>The listeners.</p> 
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
+    /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    #[doc(hidden)]pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
-    /// <p>One or more Availability Zones from the same region as the load balancer.</p> 
-    /// <p>You must specify at least one Availability Zone.</p> 
+    #[doc(hidden)]
+    pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+    /// <p>One or more Availability Zones from the same region as the load balancer.</p>
+    /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    #[doc(hidden)]pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    #[doc(hidden)]pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    #[doc(hidden)]pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> 
-    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> 
+    #[doc(hidden)]
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
-    #[doc(hidden)]pub scheme: std::option::Option<std::string::String>,
-    /// <p>A list of tags to assign to the load balancer.</p> 
+    #[doc(hidden)]
+    pub scheme: std::option::Option<std::string::String>,
+    /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLoadBalancerInput {
-    /// <p>The name of the load balancer.</p> 
+    /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>The listeners.</p> 
+    /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::model::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
     }
-    /// <p>One or more Availability Zones from the same region as the load balancer.</p> 
-    /// <p>You must specify at least one Availability Zone.</p> 
+    /// <p>One or more Availability Zones from the same region as the load balancer.</p>
+    /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p> 
-    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p> 
+    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
-    pub fn scheme(&self) -> std::option::Option<& str> {
+    pub fn scheme(&self) -> std::option::Option<&str> {
         self.scheme.as_deref()
     }
-    /// <p>A list of tags to assign to the load balancer.</p> 
+    /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateLoadBalancerInput  {
+impl std::fmt::Debug for CreateLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4069,22 +5586,26 @@ impl  std::fmt::Debug for CreateLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLbCookieStickinessPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLbCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    #[doc(hidden)]pub policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
-    #[doc(hidden)]pub cookie_expiration_period: std::option::Option<i64>,
+    #[doc(hidden)]
+    pub cookie_expiration_period: std::option::Option<i64>,
 }
 impl CreateLbCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
@@ -4092,7 +5613,7 @@ impl CreateLbCookieStickinessPolicyInput {
         self.cookie_expiration_period
     }
 }
-impl  std::fmt::Debug for CreateLbCookieStickinessPolicyInput  {
+impl std::fmt::Debug for CreateLbCookieStickinessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLbCookieStickinessPolicyInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4103,30 +5624,34 @@ impl  std::fmt::Debug for CreateLbCookieStickinessPolicyInput  {
 }
 
 /// <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateAppCookieStickinessPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    #[doc(hidden)]pub policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_name: std::option::Option<std::string::String>,
     /// <p>The name of the application cookie used for stickiness.</p>
-    #[doc(hidden)]pub cookie_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub cookie_name: std::option::Option<std::string::String>,
 }
 impl CreateAppCookieStickinessPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the application cookie used for stickiness.</p>
-    pub fn cookie_name(&self) -> std::option::Option<& str> {
+    pub fn cookie_name(&self) -> std::option::Option<&str> {
         self.cookie_name.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateAppCookieStickinessPolicyInput  {
+impl std::fmt::Debug for CreateAppCookieStickinessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppCookieStickinessPolicyInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4137,24 +5662,27 @@ impl  std::fmt::Debug for CreateAppCookieStickinessPolicyInput  {
 }
 
 /// <p>Contains the parameters for ConfigureHealthCheck.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ConfigureHealthCheckInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The configuration information.</p>
-    #[doc(hidden)]pub health_check: std::option::Option<crate::model::HealthCheck>,
+    #[doc(hidden)]
+    pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The configuration information.</p>
-    pub fn health_check(&self) -> std::option::Option<& crate::model::HealthCheck> {
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
         self.health_check.as_ref()
     }
 }
-impl  std::fmt::Debug for ConfigureHealthCheckInput  {
+impl std::fmt::Debug for ConfigureHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigureHealthCheckInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4164,24 +5692,27 @@ impl  std::fmt::Debug for ConfigureHealthCheckInput  {
 }
 
 /// <p>Contains the parameters for AttachLoaBalancerToSubnets.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AttachLoadBalancerToSubnetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    #[doc(hidden)]pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
 }
-impl  std::fmt::Debug for AttachLoadBalancerToSubnetsInput  {
+impl std::fmt::Debug for AttachLoadBalancerToSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachLoadBalancerToSubnetsInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4191,24 +5722,27 @@ impl  std::fmt::Debug for AttachLoadBalancerToSubnetsInput  {
 }
 
 /// <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ApplySecurityGroupsToLoadBalancerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]pub load_balancer_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    #[doc(hidden)]pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
 }
-impl  std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput  {
+impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplySecurityGroupsToLoadBalancerInput");
         formatter.field("load_balancer_name", &self.load_balancer_name);
@@ -4218,24 +5752,27 @@ impl  std::fmt::Debug for ApplySecurityGroupsToLoadBalancerInput  {
 }
 
 /// <p>Contains the parameters for AddTags.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddTagsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-    #[doc(hidden)]pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for AddTagsInput  {
+impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
         formatter.field("load_balancer_names", &self.load_balancer_names);
@@ -4243,4 +5780,3 @@ impl  std::fmt::Debug for AddTagsInput  {
         formatter.finish()
     }
 }
-

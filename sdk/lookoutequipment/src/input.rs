@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`CreateDatasetInput`](crate::input::CreateDatasetInput).
 pub mod create_dataset_input {
-    
+
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_schema: std::option::Option<crate::model::DatasetSchema>,
@@ -21,7 +21,8 @@ pub mod create_dataset_input {
         }
         /// <p>The name of the dataset being created. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn dataset_schema(mut self, input: crate::model::DatasetSchema) -> Self {
@@ -29,8 +30,12 @@ pub mod create_dataset_input {
             self
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-        pub fn set_dataset_schema(mut self, input: std::option::Option<crate::model::DatasetSchema>) -> Self {
-            self.dataset_schema = input; self
+        pub fn set_dataset_schema(
+            mut self,
+            input: std::option::Option<crate::model::DatasetSchema>,
+        ) -> Self {
+            self.dataset_schema = input;
+            self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -38,8 +43,12 @@ pub mod create_dataset_input {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_side_kms_key_id = input; self
+        pub fn set_server_side_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.server_side_kms_key_id = input;
+            self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,7 +57,8 @@ pub mod create_dataset_input {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -57,98 +67,140 @@ pub mod create_dataset_input {
         /// <p>Any tags associated with the ingested data described in the dataset. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>Any tags associated with the ingested data described in the dataset. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-        pub fn build(self) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateDatasetInput {
-                    dataset_name: self.dataset_name
-                    ,
-                    dataset_schema: self.dataset_schema
-                    ,
-                    server_side_kms_key_id: self.server_side_kms_key_id
-                    ,
-                    client_token: self.client_token
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDatasetInput {
+                dataset_name: self.dataset_name,
+                dataset_schema: self.dataset_schema,
+                server_side_kms_key_id: self.server_side_kms_key_id,
+                client_token: self.client_token,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDataset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateDatasetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateDatasetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateDatasetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.CreateDataset"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateDataset",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDataset::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDataset", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDataset",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -160,16 +212,18 @@ impl CreateDatasetInput {
 
 /// See [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
 pub mod create_inference_scheduler_input {
-    
+
     /// A builder for [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
-        pub(crate) data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
-        pub(crate) data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
+        pub(crate) data_input_configuration:
+            std::option::Option<crate::model::InferenceInputConfiguration>,
+        pub(crate) data_output_configuration:
+            std::option::Option<crate::model::InferenceOutputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -183,7 +237,8 @@ pub mod create_inference_scheduler_input {
         }
         /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input; self
+            self.model_name = input;
+            self
         }
         /// <p>The name of the inference scheduler being created. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,48 +246,71 @@ pub mod create_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler being created. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
-        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p> 
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
             self.data_delay_offset_in_minutes = Some(input);
             self
         }
-        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p> 
+        /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_delay_offset_in_minutes = input; self
+            self.data_delay_offset_in_minutes = input;
+            self
         }
-        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p> 
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
             self.data_upload_frequency = Some(input);
             self
         }
-        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p> 
+        /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-        pub fn set_data_upload_frequency(mut self, input: std::option::Option<crate::model::DataUploadFrequency>) -> Self {
-            self.data_upload_frequency = input; self
+        pub fn set_data_upload_frequency(
+            mut self,
+            input: std::option::Option<crate::model::DataUploadFrequency>,
+        ) -> Self {
+            self.data_upload_frequency = input;
+            self
         }
         /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn data_input_configuration(mut self, input: crate::model::InferenceInputConfiguration) -> Self {
+        pub fn data_input_configuration(
+            mut self,
+            input: crate::model::InferenceInputConfiguration,
+        ) -> Self {
             self.data_input_configuration = Some(input);
             self
         }
         /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn set_data_input_configuration(mut self, input: std::option::Option<crate::model::InferenceInputConfiguration>) -> Self {
-            self.data_input_configuration = input; self
+        pub fn set_data_input_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InferenceInputConfiguration>,
+        ) -> Self {
+            self.data_input_configuration = input;
+            self
         }
         /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-        pub fn data_output_configuration(mut self, input: crate::model::InferenceOutputConfiguration) -> Self {
+        pub fn data_output_configuration(
+            mut self,
+            input: crate::model::InferenceOutputConfiguration,
+        ) -> Self {
             self.data_output_configuration = Some(input);
             self
         }
         /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-        pub fn set_data_output_configuration(mut self, input: std::option::Option<crate::model::InferenceOutputConfiguration>) -> Self {
-            self.data_output_configuration = input; self
+        pub fn set_data_output_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InferenceOutputConfiguration>,
+        ) -> Self {
+            self.data_output_configuration = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,7 +319,8 @@ pub mod create_inference_scheduler_input {
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input; self
+            self.role_arn = input;
+            self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -249,8 +328,12 @@ pub mod create_inference_scheduler_input {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_side_kms_key_id = input; self
+        pub fn set_server_side_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.server_side_kms_key_id = input;
+            self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,7 +342,8 @@ pub mod create_inference_scheduler_input {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -268,108 +352,149 @@ pub mod create_inference_scheduler_input {
         /// <p>Any tags associated with the inference scheduler. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>Any tags associated with the inference scheduler. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::CreateInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateInferenceSchedulerInput {
-                    model_name: self.model_name
-                    ,
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                    data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
-                    ,
-                    data_upload_frequency: self.data_upload_frequency
-                    ,
-                    data_input_configuration: self.data_input_configuration
-                    ,
-                    data_output_configuration: self.data_output_configuration
-                    ,
-                    role_arn: self.role_arn
-                    ,
-                    server_side_kms_key_id: self.server_side_kms_key_id
-                    ,
-                    client_token: self.client_token
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CreateInferenceSchedulerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateInferenceSchedulerInput {
+                model_name: self.model_name,
+                inference_scheduler_name: self.inference_scheduler_name,
+                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
+                data_upload_frequency: self.data_upload_frequency,
+                data_input_configuration: self.data_input_configuration,
+                data_output_configuration: self.data_output_configuration,
+                role_arn: self.role_arn,
+                server_side_kms_key_id: self.server_side_kms_key_id,
+                client_token: self.client_token,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`CreateInferenceScheduler`](crate::operation::CreateInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.CreateInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -381,9 +506,9 @@ impl CreateInferenceSchedulerInput {
 
 /// See [`CreateLabelInput`](crate::input::CreateLabelInput).
 pub mod create_label_input {
-    
+
     /// A builder for [`CreateLabelInput`](crate::input::CreateLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -395,16 +520,20 @@ pub mod create_label_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of a group of labels. </p> 
+        /// <p> The name of a group of labels. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
         pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_group_name = Some(input.into());
             self
         }
-        /// <p> The name of a group of labels. </p> 
+        /// <p> The name of a group of labels. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// <p> The start time of the labeled event. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -412,8 +541,12 @@ pub mod create_label_input {
             self
         }
         /// <p> The start time of the labeled event. </p>
-        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.start_time = input; self
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
         }
         /// <p> The end time of the labeled event. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -421,8 +554,12 @@ pub mod create_label_input {
             self
         }
         /// <p> The end time of the labeled event. </p>
-        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.end_time = input; self
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn rating(mut self, input: crate::model::LabelRating) -> Self {
@@ -431,40 +568,44 @@ pub mod create_label_input {
         }
         /// <p> Indicates whether a labeled event represents an anomaly. </p>
         pub fn set_rating(mut self, input: std::option::Option<crate::model::LabelRating>) -> Self {
-            self.rating = input; self
+            self.rating = input;
+            self
         }
-        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p> 
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
         pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.fault_code = Some(input.into());
             self
         }
-        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p> 
+        /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
         pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fault_code = input; self
+            self.fault_code = input;
+            self
         }
-        /// <p> Metadata providing additional information about the label. </p> 
+        /// <p> Metadata providing additional information about the label. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p> Metadata providing additional information about the label. </p> 
+        /// <p> Metadata providing additional information about the label. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.notes = input; self
+            self.notes = input;
+            self
         }
-        /// <p> Indicates that a label pertains to a particular piece of equipment. </p> 
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
             self.equipment = Some(input.into());
             self
         }
-        /// <p> Indicates that a label pertains to a particular piece of equipment. </p> 
+        /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.equipment = input; self
+            self.equipment = input;
+            self
         }
         /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -473,98 +614,134 @@ pub mod create_label_input {
         }
         /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLabelInput`](crate::input::CreateLabelInput).
-        pub fn build(self) -> Result<crate::input::CreateLabelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLabelInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    start_time: self.start_time
-                    ,
-                    end_time: self.end_time
-                    ,
-                    rating: self.rating
-                    ,
-                    fault_code: self.fault_code
-                    ,
-                    notes: self.notes
-                    ,
-                    equipment: self.equipment
-                    ,
-                    client_token: self.client_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateLabelInput {
+                label_group_name: self.label_group_name,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                rating: self.rating,
+                fault_code: self.fault_code,
+                notes: self.notes,
+                equipment: self.equipment,
+                client_token: self.client_token,
+            })
         }
     }
-    
-    
 }
 impl CreateLabelInput {
     /// Consumes the builder and constructs an Operation<[`CreateLabel`](crate::operation::CreateLabel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLabel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLabelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLabelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.CreateLabel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateLabel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_label(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_label(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLabel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLabel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLabel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -576,9 +753,9 @@ impl CreateLabelInput {
 
 /// See [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
 pub mod create_label_group_input {
-    
+
     /// A builder for [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -586,33 +763,41 @@ pub mod create_label_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p> Names a group of labels.</p> 
+        /// <p> Names a group of labels.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
         pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_group_name = Some(input.into());
             self
         }
-        /// <p> Names a group of labels.</p> 
+        /// <p> Names a group of labels.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// Appends an item to `fault_codes`.
         ///
         /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
         ///
-        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p> 
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fault_codes.unwrap_or_default();
-                            v.push(input.into());
-                            self.fault_codes = Some(v);
-                            self
+            v.push(input.into());
+            self.fault_codes = Some(v);
+            self
         }
-        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p> 
+        /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-        pub fn set_fault_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.fault_codes = input; self
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.fault_codes = input;
+            self
         }
         /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -621,107 +806,151 @@ pub mod create_label_group_input {
         }
         /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> Tags that provide metadata about the label group you are creating. </p> 
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
-        /// <p> Tags that provide metadata about the label group you are creating. </p> 
+        /// <p> Tags that provide metadata about the label group you are creating. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
-        pub fn build(self) -> Result<crate::input::CreateLabelGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateLabelGroupInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    fault_codes: self.fault_codes
-                    ,
-                    client_token: self.client_token
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateLabelGroupInput {
+                label_group_name: self.label_group_name,
+                fault_codes: self.fault_codes,
+                client_token: self.client_token,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateLabelGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateLabelGroup`](crate::operation::CreateLabelGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLabelGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateLabelGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateLabelGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.CreateLabelGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateLabelGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_label_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_label_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLabelGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLabelGroup", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLabelGroup",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -733,21 +962,23 @@ impl CreateLabelGroupInput {
 
 /// See [`CreateModelInput`](crate::input::CreateModelInput).
 pub mod create_model_input {
-    
+
     /// A builder for [`CreateModelInput`](crate::input::CreateModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_schema: std::option::Option<crate::model::DatasetSchema>,
-        pub(crate) labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
+        pub(crate) labels_input_configuration:
+            std::option::Option<crate::model::LabelsInputConfiguration>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) data_pre_processing_configuration: std::option::Option<crate::model::DataPreProcessingConfiguration>,
+        pub(crate) data_pre_processing_configuration:
+            std::option::Option<crate::model::DataPreProcessingConfiguration>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) off_condition: std::option::Option<std::string::String>,
@@ -760,7 +991,8 @@ pub mod create_model_input {
         }
         /// <p>The name for the ML model to be created.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input; self
+            self.model_name = input;
+            self
         }
         /// <p>The name of the dataset for the ML model being created. </p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -769,7 +1001,8 @@ pub mod create_model_input {
         }
         /// <p>The name of the dataset for the ML model being created. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// <p>The data schema for the ML model being created. </p>
         pub fn dataset_schema(mut self, input: crate::model::DatasetSchema) -> Self {
@@ -777,17 +1010,28 @@ pub mod create_model_input {
             self
         }
         /// <p>The data schema for the ML model being created. </p>
-        pub fn set_dataset_schema(mut self, input: std::option::Option<crate::model::DatasetSchema>) -> Self {
-            self.dataset_schema = input; self
+        pub fn set_dataset_schema(
+            mut self,
+            input: std::option::Option<crate::model::DatasetSchema>,
+        ) -> Self {
+            self.dataset_schema = input;
+            self
         }
         /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-        pub fn labels_input_configuration(mut self, input: crate::model::LabelsInputConfiguration) -> Self {
+        pub fn labels_input_configuration(
+            mut self,
+            input: crate::model::LabelsInputConfiguration,
+        ) -> Self {
             self.labels_input_configuration = Some(input);
             self
         }
         /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-        pub fn set_labels_input_configuration(mut self, input: std::option::Option<crate::model::LabelsInputConfiguration>) -> Self {
-            self.labels_input_configuration = input; self
+        pub fn set_labels_input_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LabelsInputConfiguration>,
+        ) -> Self {
+            self.labels_input_configuration = input;
+            self
         }
         /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,7 +1040,8 @@ pub mod create_model_input {
         }
         /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
         pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -804,8 +1049,12 @@ pub mod create_model_input {
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-        pub fn set_training_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.training_data_start_time = input; self
+        pub fn set_training_data_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.training_data_start_time = input;
+            self
         }
         /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
         pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -813,8 +1062,12 @@ pub mod create_model_input {
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-        pub fn set_training_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.training_data_end_time = input; self
+        pub fn set_training_data_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.training_data_end_time = input;
+            self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -822,8 +1075,12 @@ pub mod create_model_input {
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-        pub fn set_evaluation_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.evaluation_data_start_time = input; self
+        pub fn set_evaluation_data_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.evaluation_data_start_time = input;
+            self
         }
         /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -831,8 +1088,12 @@ pub mod create_model_input {
             self
         }
         /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-        pub fn set_evaluation_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.evaluation_data_end_time = input; self
+        pub fn set_evaluation_data_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.evaluation_data_end_time = input;
+            self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -841,18 +1102,26 @@ pub mod create_model_input {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input; self
+            self.role_arn = input;
+            self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-        pub fn data_pre_processing_configuration(mut self, input: crate::model::DataPreProcessingConfiguration) -> Self {
+        pub fn data_pre_processing_configuration(
+            mut self,
+            input: crate::model::DataPreProcessingConfiguration,
+        ) -> Self {
             self.data_pre_processing_configuration = Some(input);
             self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
         /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-        pub fn set_data_pre_processing_configuration(mut self, input: std::option::Option<crate::model::DataPreProcessingConfiguration>) -> Self {
-            self.data_pre_processing_configuration = input; self
+        pub fn set_data_pre_processing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataPreProcessingConfiguration>,
+        ) -> Self {
+            self.data_pre_processing_configuration = input;
+            self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -860,8 +1129,12 @@ pub mod create_model_input {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-        pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_side_kms_key_id = input; self
+        pub fn set_server_side_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.server_side_kms_key_id = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -870,13 +1143,17 @@ pub mod create_model_input {
         /// <p> Any tags associated with the ML model being created. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p> Any tags associated with the ML model being created. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
         pub fn off_condition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -884,111 +1161,144 @@ pub mod create_model_input {
             self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-        pub fn set_off_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.off_condition = input; self
+        pub fn set_off_condition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.off_condition = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateModelInput`](crate::input::CreateModelInput).
-        pub fn build(self) -> Result<crate::input::CreateModelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateModelInput {
-                    model_name: self.model_name
-                    ,
-                    dataset_name: self.dataset_name
-                    ,
-                    dataset_schema: self.dataset_schema
-                    ,
-                    labels_input_configuration: self.labels_input_configuration
-                    ,
-                    client_token: self.client_token
-                    ,
-                    training_data_start_time: self.training_data_start_time
-                    ,
-                    training_data_end_time: self.training_data_end_time
-                    ,
-                    evaluation_data_start_time: self.evaluation_data_start_time
-                    ,
-                    evaluation_data_end_time: self.evaluation_data_end_time
-                    ,
-                    role_arn: self.role_arn
-                    ,
-                    data_pre_processing_configuration: self.data_pre_processing_configuration
-                    ,
-                    server_side_kms_key_id: self.server_side_kms_key_id
-                    ,
-                    tags: self.tags
-                    ,
-                    off_condition: self.off_condition
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateModelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateModelInput {
+                model_name: self.model_name,
+                dataset_name: self.dataset_name,
+                dataset_schema: self.dataset_schema,
+                labels_input_configuration: self.labels_input_configuration,
+                client_token: self.client_token,
+                training_data_start_time: self.training_data_start_time,
+                training_data_end_time: self.training_data_end_time,
+                evaluation_data_start_time: self.evaluation_data_start_time,
+                evaluation_data_end_time: self.evaluation_data_end_time,
+                role_arn: self.role_arn,
+                data_pre_processing_configuration: self.data_pre_processing_configuration,
+                server_side_kms_key_id: self.server_side_kms_key_id,
+                tags: self.tags,
+                off_condition: self.off_condition,
+            })
         }
     }
-    
-    
 }
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateModel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateModelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateModelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateModelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.CreateModel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.CreateModel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateModel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateModel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateModel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1000,9 +1310,9 @@ impl CreateModelInput {
 
 /// See [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
 pub mod delete_dataset_input {
-    
+
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -1014,81 +1324,124 @@ pub mod delete_dataset_input {
         }
         /// <p>The name of the dataset to be deleted. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-        pub fn build(self) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteDatasetInput {
-                    dataset_name: self.dataset_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDatasetInput {
+                dataset_name: self.dataset_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDataset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteDatasetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteDatasetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDatasetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DeleteDataset"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteDataset",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDataset::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDataset", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataset",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1100,9 +1453,9 @@ impl DeleteDatasetInput {
 
 /// See [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput).
 pub mod delete_inference_scheduler_input {
-    
+
     /// A builder for [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -1113,82 +1466,132 @@ pub mod delete_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler to be deleted. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::DeleteInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteInferenceSchedulerInput {
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteInferenceSchedulerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInferenceScheduler`](crate::operation::DeleteInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DeleteInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1200,9 +1603,9 @@ impl DeleteInferenceSchedulerInput {
 
 /// See [`DeleteLabelInput`](crate::input::DeleteLabelInput).
 pub mod delete_label_input {
-    
+
     /// A builder for [`DeleteLabelInput`](crate::input::DeleteLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_id: std::option::Option<std::string::String>,
@@ -1214,8 +1617,12 @@ pub mod delete_label_input {
             self
         }
         /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// <p> The ID of the label that you want to delete. </p>
         pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1224,83 +1631,125 @@ pub mod delete_label_input {
         }
         /// <p> The ID of the label that you want to delete. </p>
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_id = input; self
+            self.label_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteLabelInput`](crate::input::DeleteLabelInput).
-        pub fn build(self) -> Result<crate::input::DeleteLabelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteLabelInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    label_id: self.label_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteLabelInput {
+                label_group_name: self.label_group_name,
+                label_id: self.label_id,
+            })
         }
     }
-    
-    
 }
 impl DeleteLabelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLabel`](crate::operation::DeleteLabel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLabel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteLabelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteLabelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DeleteLabel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteLabel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_label(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_label(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLabel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLabel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLabel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1312,9 +1761,9 @@ impl DeleteLabelInput {
 
 /// See [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
 pub mod delete_label_group_input {
-    
+
     /// A builder for [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
@@ -1325,82 +1774,128 @@ pub mod delete_label_group_input {
             self
         }
         /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
-        pub fn build(self) -> Result<crate::input::DeleteLabelGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteLabelGroupInput {
-                    label_group_name: self.label_group_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteLabelGroupInput {
+                label_group_name: self.label_group_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteLabelGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLabelGroup`](crate::operation::DeleteLabelGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLabelGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteLabelGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteLabelGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DeleteLabelGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteLabelGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_label_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_label_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLabelGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLabelGroup", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLabelGroup",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1412,9 +1907,9 @@ impl DeleteLabelGroupInput {
 
 /// See [`DeleteModelInput`](crate::input::DeleteModelInput).
 pub mod delete_model_input {
-    
+
     /// A builder for [`DeleteModelInput`](crate::input::DeleteModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
@@ -1426,81 +1921,124 @@ pub mod delete_model_input {
         }
         /// <p>The name of the ML model to be deleted. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input; self
+            self.model_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteModelInput`](crate::input::DeleteModelInput).
-        pub fn build(self) -> Result<crate::input::DeleteModelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteModelInput {
-                    model_name: self.model_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteModelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteModelInput {
+                model_name: self.model_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteModel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteModelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteModelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteModelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DeleteModel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DeleteModel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteModel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteModel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteModel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1512,9 +2050,9 @@ impl DeleteModelInput {
 
 /// See [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput).
 pub mod describe_data_ingestion_job_input {
-    
+
     /// A builder for [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -1526,81 +2064,128 @@ pub mod describe_data_ingestion_job_input {
         }
         /// <p>The job ID of the data ingestion job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input; self
+            self.job_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeDataIngestionJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeDataIngestionJobInput {
-                    job_id: self.job_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeDataIngestionJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDataIngestionJobInput {
+                job_id: self.job_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataIngestionJob`](crate::operation::DescribeDataIngestionJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDataIngestionJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDataIngestionJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeDataIngestionJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeDataIngestionJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeDataIngestionJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeDataIngestionJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeDataIngestionJob"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeDataIngestionJob",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_ingestion_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_ingestion_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDataIngestionJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDataIngestionJob", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDataIngestionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDataIngestionJob",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1612,9 +2197,9 @@ impl DescribeDataIngestionJobInput {
 
 /// See [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
 pub mod describe_dataset_input {
-    
+
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -1626,81 +2211,124 @@ pub mod describe_dataset_input {
         }
         /// <p>The name of the dataset to be described. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-        pub fn build(self) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeDatasetInput {
-                    dataset_name: self.dataset_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeDatasetInput {
+                dataset_name: self.dataset_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDataset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeDatasetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeDatasetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeDatasetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeDataset"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeDataset",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDataset::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDataset", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDataset",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1712,9 +2340,9 @@ impl DescribeDatasetInput {
 
 /// See [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput).
 pub mod describe_inference_scheduler_input {
-    
+
     /// A builder for [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -1725,82 +2353,132 @@ pub mod describe_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler being described. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::DescribeInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeInferenceSchedulerInput {
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeInferenceSchedulerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInferenceScheduler`](crate::operation::DescribeInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1812,9 +2490,9 @@ impl DescribeInferenceSchedulerInput {
 
 /// See [`DescribeLabelInput`](crate::input::DescribeLabelInput).
 pub mod describe_label_input {
-    
+
     /// A builder for [`DescribeLabelInput`](crate::input::DescribeLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_id: std::option::Option<std::string::String>,
@@ -1826,8 +2504,12 @@ pub mod describe_label_input {
             self
         }
         /// <p> Returns the name of the group containing the label. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// <p> Returns the ID of the label. </p>
         pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1836,83 +2518,125 @@ pub mod describe_label_input {
         }
         /// <p> Returns the ID of the label. </p>
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_id = input; self
+            self.label_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::input::DescribeLabelInput).
-        pub fn build(self) -> Result<crate::input::DescribeLabelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLabelInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    label_id: self.label_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeLabelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeLabelInput {
+                label_group_name: self.label_group_name,
+                label_id: self.label_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeLabelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLabel`](crate::operation::DescribeLabel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLabel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLabel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLabelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLabelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLabelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLabelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeLabel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeLabel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_label(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_label(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLabel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLabel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLabel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLabel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1924,9 +2648,9 @@ impl DescribeLabelInput {
 
 /// See [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
 pub mod describe_label_group_input {
-    
+
     /// A builder for [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
@@ -1937,82 +2661,128 @@ pub mod describe_label_group_input {
             self
         }
         /// <p> Returns the name of the label group. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
-        pub fn build(self) -> Result<crate::input::DescribeLabelGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLabelGroupInput {
-                    label_group_name: self.label_group_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeLabelGroupInput {
+                label_group_name: self.label_group_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeLabelGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLabelGroup`](crate::operation::DescribeLabelGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLabelGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLabelGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLabelGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeLabelGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeLabelGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_label_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_label_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLabelGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLabelGroup", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLabelGroup",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2024,9 +2794,9 @@ impl DescribeLabelGroupInput {
 
 /// See [`DescribeModelInput`](crate::input::DescribeModelInput).
 pub mod describe_model_input {
-    
+
     /// A builder for [`DescribeModelInput`](crate::input::DescribeModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
@@ -2038,81 +2808,124 @@ pub mod describe_model_input {
         }
         /// <p>The name of the ML model to be described. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input; self
+            self.model_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeModelInput`](crate::input::DescribeModelInput).
-        pub fn build(self) -> Result<crate::input::DescribeModelInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeModelInput {
-                    model_name: self.model_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeModelInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeModelInput {
+                model_name: self.model_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeModelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModel`](crate::operation::DescribeModel)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeModel, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeModel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeModelInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeModelInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeModelInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.DescribeModel"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.DescribeModel",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeModel::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeModel", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeModel",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2124,9 +2937,9 @@ impl DescribeModelInput {
 
 /// See [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput).
 pub mod list_data_ingestion_jobs_input {
-    
+
     /// A builder for [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2141,7 +2954,8 @@ pub mod list_data_ingestion_jobs_input {
         }
         /// <p>The name of the dataset being used for the data ingestion job. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2150,7 +2964,8 @@ pub mod list_data_ingestion_jobs_input {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2159,7 +2974,8 @@ pub mod list_data_ingestion_jobs_input {
         }
         /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
         pub fn status(mut self, input: crate::model::IngestionJobStatus) -> Self {
@@ -2167,88 +2983,133 @@ pub mod list_data_ingestion_jobs_input {
             self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionJobStatus>) -> Self {
-            self.status = input; self
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::IngestionJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput).
-        pub fn build(self) -> Result<crate::input::ListDataIngestionJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListDataIngestionJobsInput {
-                    dataset_name: self.dataset_name
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    status: self.status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDataIngestionJobsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDataIngestionJobsInput {
+                dataset_name: self.dataset_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                status: self.status,
+            })
         }
     }
-    
-    
 }
 impl ListDataIngestionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataIngestionJobs`](crate::operation::ListDataIngestionJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDataIngestionJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataIngestionJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListDataIngestionJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListDataIngestionJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListDataIngestionJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDataIngestionJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListDataIngestionJobs"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListDataIngestionJobs",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_data_ingestion_jobs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_data_ingestion_jobs(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDataIngestionJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDataIngestionJobs", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataIngestionJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataIngestionJobs",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2260,9 +3121,9 @@ impl ListDataIngestionJobsInput {
 
 /// See [`ListDatasetsInput`](crate::input::ListDatasetsInput).
 pub mod list_datasets_input {
-    
+
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2276,7 +3137,8 @@ pub mod list_datasets_input {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of datasets to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2285,7 +3147,8 @@ pub mod list_datasets_input {
         }
         /// <p> Specifies the maximum number of datasets to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The beginning of the name of the datasets to be listed. </p>
         pub fn dataset_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2293,86 +3156,130 @@ pub mod list_datasets_input {
             self
         }
         /// <p>The beginning of the name of the datasets to be listed. </p>
-        pub fn set_dataset_name_begins_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name_begins_with = input; self
+        pub fn set_dataset_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_name_begins_with = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-        pub fn build(self) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListDatasetsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    dataset_name_begins_with: self.dataset_name_begins_with
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDatasetsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                dataset_name_begins_with: self.dataset_name_begins_with,
+            })
         }
     }
-    
-    
 }
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDatasets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDatasets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListDatasetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListDatasetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListDatasetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDatasetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListDatasets"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListDatasets",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDatasets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDatasets", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasets",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2384,9 +3291,9 @@ impl ListDatasetsInput {
 
 /// See [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
 pub mod list_inference_events_input {
-    
+
     /// A builder for [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2402,7 +3309,8 @@ pub mod list_inference_events_input {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>Specifies the maximum number of inference events to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2411,7 +3319,8 @@ pub mod list_inference_events_input {
         }
         /// <p>Specifies the maximum number of inference events to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The name of the inference scheduler for the inference events listed. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2419,8 +3328,12 @@ pub mod list_inference_events_input {
             self
         }
         /// <p>The name of the inference scheduler for the inference events listed. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
         pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2428,8 +3341,12 @@ pub mod list_inference_events_input {
             self
         }
         /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
-        pub fn set_interval_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.interval_start_time = input; self
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_start_time = input;
+            self
         }
         /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
         pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2437,90 +3354,132 @@ pub mod list_inference_events_input {
             self
         }
         /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
-        pub fn set_interval_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.interval_end_time = input; self
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_end_time = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
-        pub fn build(self) -> Result<crate::input::ListInferenceEventsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListInferenceEventsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                    interval_start_time: self.interval_start_time
-                    ,
-                    interval_end_time: self.interval_end_time
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListInferenceEventsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListInferenceEventsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                inference_scheduler_name: self.inference_scheduler_name,
+                interval_start_time: self.interval_start_time,
+                interval_end_time: self.interval_end_time,
+            })
         }
     }
-    
-    
 }
 impl ListInferenceEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceEvents`](crate::operation::ListInferenceEvents)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListInferenceEvents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListInferenceEventsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListInferenceEventsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListInferenceEventsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceEventsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListInferenceEvents"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListInferenceEvents",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_inference_events(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_events(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListInferenceEvents::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListInferenceEvents", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceEvents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceEvents",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2532,9 +3491,9 @@ impl ListInferenceEventsInput {
 
 /// See [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
 pub mod list_inference_executions_input {
-    
+
     /// A builder for [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2551,7 +3510,8 @@ pub mod list_inference_executions_input {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>Specifies the maximum number of inference executions to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2560,7 +3520,8 @@ pub mod list_inference_executions_input {
         }
         /// <p>Specifies the maximum number of inference executions to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The name of the inference scheduler for the inference execution listed. </p>
         pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2568,8 +3529,12 @@ pub mod list_inference_executions_input {
             self
         }
         /// <p>The name of the inference scheduler for the inference execution listed. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
         pub fn data_start_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2577,8 +3542,12 @@ pub mod list_inference_executions_input {
             self
         }
         /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-        pub fn set_data_start_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.data_start_time_after = input; self
+        pub fn set_data_start_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.data_start_time_after = input;
+            self
         }
         /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
         pub fn data_end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2586,8 +3555,12 @@ pub mod list_inference_executions_input {
             self
         }
         /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-        pub fn set_data_end_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.data_end_time_before = input; self
+        pub fn set_data_end_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.data_end_time_before = input;
+            self
         }
         /// <p>The status of the inference execution. </p>
         pub fn status(mut self, input: crate::model::InferenceExecutionStatus) -> Self {
@@ -2595,92 +3568,137 @@ pub mod list_inference_executions_input {
             self
         }
         /// <p>The status of the inference execution. </p>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceExecutionStatus>) -> Self {
-            self.status = input; self
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::InferenceExecutionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
-        pub fn build(self) -> Result<crate::input::ListInferenceExecutionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListInferenceExecutionsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                    data_start_time_after: self.data_start_time_after
-                    ,
-                    data_end_time_before: self.data_end_time_before
-                    ,
-                    status: self.status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListInferenceExecutionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListInferenceExecutionsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                inference_scheduler_name: self.inference_scheduler_name,
+                data_start_time_after: self.data_start_time_after,
+                data_end_time_before: self.data_end_time_before,
+                status: self.status,
+            })
         }
     }
-    
-    
 }
 impl ListInferenceExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceExecutions`](crate::operation::ListInferenceExecutions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListInferenceExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceExecutions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListInferenceExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListInferenceExecutionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListInferenceExecutionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceExecutionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListInferenceExecutions"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListInferenceExecutions",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_inference_executions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_executions(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListInferenceExecutions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListInferenceExecutions", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceExecutions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceExecutions",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2692,9 +3710,9 @@ impl ListInferenceExecutionsInput {
 
 /// See [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
 pub mod list_inference_schedulers_input {
-    
+
     /// A builder for [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2709,7 +3727,8 @@ pub mod list_inference_schedulers_input {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of inference schedulers to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2718,16 +3737,24 @@ pub mod list_inference_schedulers_input {
         }
         /// <p> Specifies the maximum number of inference schedulers to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-        pub fn inference_scheduler_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn inference_scheduler_name_begins_with(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             self.inference_scheduler_name_begins_with = Some(input.into());
             self
         }
         /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-        pub fn set_inference_scheduler_name_begins_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name_begins_with = input; self
+        pub fn set_inference_scheduler_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name_begins_with = input;
+            self
         }
         /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2736,87 +3763,131 @@ pub mod list_inference_schedulers_input {
         }
         /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input; self
+            self.model_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
-        pub fn build(self) -> Result<crate::input::ListInferenceSchedulersInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListInferenceSchedulersInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with
-                    ,
-                    model_name: self.model_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListInferenceSchedulersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListInferenceSchedulersInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with,
+                model_name: self.model_name,
+            })
         }
     }
-    
-    
 }
 impl ListInferenceSchedulersInput {
     /// Consumes the builder and constructs an Operation<[`ListInferenceSchedulers`](crate::operation::ListInferenceSchedulers)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListInferenceSchedulers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceSchedulers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListInferenceSchedulersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListInferenceSchedulersInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListInferenceSchedulersInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListInferenceSchedulersInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListInferenceSchedulers"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListInferenceSchedulers",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_inference_schedulers(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_schedulers(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListInferenceSchedulers::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListInferenceSchedulers", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceSchedulers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceSchedulers",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2828,9 +3899,9 @@ impl ListInferenceSchedulersInput {
 
 /// See [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
 pub mod list_label_groups_input {
-    
+
     /// A builder for [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name_begins_with: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2838,13 +3909,20 @@ pub mod list_label_groups_input {
     }
     impl Builder {
         /// <p> The beginning of the name of the label groups to be listed. </p>
-        pub fn label_group_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn label_group_name_begins_with(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             self.label_group_name_begins_with = Some(input.into());
             self
         }
         /// <p> The beginning of the name of the label groups to be listed. </p>
-        pub fn set_label_group_name_begins_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name_begins_with = input; self
+        pub fn set_label_group_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name_begins_with = input;
+            self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2853,7 +3931,8 @@ pub mod list_label_groups_input {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of label groups to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2862,85 +3941,126 @@ pub mod list_label_groups_input {
         }
         /// <p> Specifies the maximum number of label groups to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
-        pub fn build(self) -> Result<crate::input::ListLabelGroupsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListLabelGroupsInput {
-                    label_group_name_begins_with: self.label_group_name_begins_with
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListLabelGroupsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListLabelGroupsInput {
+                label_group_name_begins_with: self.label_group_name_begins_with,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListLabelGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListLabelGroups`](crate::operation::ListLabelGroups)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLabelGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLabelGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListLabelGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListLabelGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListLabelGroupsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLabelGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListLabelGroups"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListLabelGroups",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_label_groups(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_label_groups(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLabelGroups::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLabelGroups", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLabelGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLabelGroups",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2952,9 +4072,9 @@ impl ListLabelGroupsInput {
 
 /// See [`ListLabelsInput`](crate::input::ListLabelsInput).
 pub mod list_labels_input {
-    
+
     /// A builder for [`ListLabelsInput`](crate::input::ListLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2971,8 +4091,12 @@ pub mod list_labels_input {
             self
         }
         /// <p> Retruns the name of the label group. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
         pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2980,8 +4104,12 @@ pub mod list_labels_input {
             self
         }
         /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-        pub fn set_interval_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.interval_start_time = input; self
+        pub fn set_interval_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_start_time = input;
+            self
         }
         /// <p> Returns all labels with a start time earlier than the end time given. </p>
         pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2989,8 +4117,12 @@ pub mod list_labels_input {
             self
         }
         /// <p> Returns all labels with a start time earlier than the end time given. </p>
-        pub fn set_interval_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.interval_end_time = input; self
+        pub fn set_interval_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.interval_end_time = input;
+            self
         }
         /// <p> Returns labels with a particular fault code. </p>
         pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2999,7 +4131,8 @@ pub mod list_labels_input {
         }
         /// <p> Returns labels with a particular fault code. </p>
         pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fault_code = input; self
+            self.fault_code = input;
+            self
         }
         /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
         pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3008,7 +4141,8 @@ pub mod list_labels_input {
         }
         /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
         pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.equipment = input; self
+            self.equipment = input;
+            self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3017,7 +4151,8 @@ pub mod list_labels_input {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of labels to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3026,93 +4161,129 @@ pub mod list_labels_input {
         }
         /// <p> Specifies the maximum number of labels to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListLabelsInput`](crate::input::ListLabelsInput).
-        pub fn build(self) -> Result<crate::input::ListLabelsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListLabelsInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    interval_start_time: self.interval_start_time
-                    ,
-                    interval_end_time: self.interval_end_time
-                    ,
-                    fault_code: self.fault_code
-                    ,
-                    equipment: self.equipment
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListLabelsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListLabelsInput {
+                label_group_name: self.label_group_name,
+                interval_start_time: self.interval_start_time,
+                interval_end_time: self.interval_end_time,
+                fault_code: self.fault_code,
+                equipment: self.equipment,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListLabelsInput {
     /// Consumes the builder and constructs an Operation<[`ListLabels`](crate::operation::ListLabels)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLabels, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLabels,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListLabelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListLabelsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListLabelsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListLabelsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListLabels"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListLabels",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_labels(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_labels(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLabels::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLabels", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLabels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLabels",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3124,9 +4295,9 @@ impl ListLabelsInput {
 
 /// See [`ListModelsInput`](crate::input::ListModelsInput).
 pub mod list_models_input {
-    
+
     /// A builder for [`ListModelsInput`](crate::input::ListModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3142,7 +4313,8 @@ pub mod list_models_input {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p> Specifies the maximum number of ML models to list. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3151,7 +4323,8 @@ pub mod list_models_input {
         }
         /// <p> Specifies the maximum number of ML models to list. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The status of the ML model. </p>
         pub fn status(mut self, input: crate::model::ModelStatus) -> Self {
@@ -3160,7 +4333,8 @@ pub mod list_models_input {
         }
         /// <p>The status of the ML model. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
-            self.status = input; self
+            self.status = input;
+            self
         }
         /// <p>The beginning of the name of the ML models being listed. </p>
         pub fn model_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3168,8 +4342,12 @@ pub mod list_models_input {
             self
         }
         /// <p>The beginning of the name of the ML models being listed. </p>
-        pub fn set_model_name_begins_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name_begins_with = input; self
+        pub fn set_model_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_name_begins_with = input;
+            self
         }
         /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
         pub fn dataset_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3177,90 +4355,131 @@ pub mod list_models_input {
             self
         }
         /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-        pub fn set_dataset_name_begins_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name_begins_with = input; self
+        pub fn set_dataset_name_begins_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dataset_name_begins_with = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListModelsInput`](crate::input::ListModelsInput).
-        pub fn build(self) -> Result<crate::input::ListModelsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListModelsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    status: self.status
-                    ,
-                    model_name_begins_with: self.model_name_begins_with
-                    ,
-                    dataset_name_begins_with: self.dataset_name_begins_with
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListModelsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListModelsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                status: self.status,
+                model_name_begins_with: self.model_name_begins_with,
+                dataset_name_begins_with: self.dataset_name_begins_with,
+            })
         }
     }
-    
-    
 }
 impl ListModelsInput {
     /// Consumes the builder and constructs an Operation<[`ListModels`](crate::operation::ListModels)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListModels, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListModels,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListModelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListModelsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListModelsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListModelsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListModels"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListModels",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_models(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_models(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListModels::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListModels", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListModels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListModels",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3272,9 +4491,9 @@ impl ListModelsInput {
 
 /// See [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput).
 pub mod list_sensor_statistics_input {
-    
+
     /// A builder for [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) ingestion_job_id: std::option::Option<std::string::String>,
@@ -3289,7 +4508,8 @@ pub mod list_sensor_statistics_input {
         }
         /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
         pub fn ingestion_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3297,8 +4517,12 @@ pub mod list_sensor_statistics_input {
             self
         }
         /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-        pub fn set_ingestion_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ingestion_job_id = input; self
+        pub fn set_ingestion_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ingestion_job_id = input;
+            self
         }
         /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3307,7 +4531,8 @@ pub mod list_sensor_statistics_input {
         }
         /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3316,87 +4541,129 @@ pub mod list_sensor_statistics_input {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput).
-        pub fn build(self) -> Result<crate::input::ListSensorStatisticsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListSensorStatisticsInput {
-                    dataset_name: self.dataset_name
-                    ,
-                    ingestion_job_id: self.ingestion_job_id
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListSensorStatisticsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListSensorStatisticsInput {
+                dataset_name: self.dataset_name,
+                ingestion_job_id: self.ingestion_job_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListSensorStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`ListSensorStatistics`](crate::operation::ListSensorStatistics)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSensorStatistics, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSensorStatistics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListSensorStatisticsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListSensorStatisticsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListSensorStatisticsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListSensorStatisticsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListSensorStatistics"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListSensorStatistics",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_sensor_statistics(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_sensor_statistics(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSensorStatistics::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSensorStatistics", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSensorStatistics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSensorStatistics",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3408,9 +4675,9 @@ impl ListSensorStatisticsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3422,81 +4689,126 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.ListTagsForResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.ListTagsForResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3508,12 +4820,13 @@ impl ListTagsForResourceInput {
 
 /// See [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput).
 pub mod start_data_ingestion_job_input {
-    
+
     /// A builder for [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
-        pub(crate) ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
+        pub(crate) ingestion_input_configuration:
+            std::option::Option<crate::model::IngestionInputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
@@ -3525,16 +4838,24 @@ pub mod start_data_ingestion_job_input {
         }
         /// <p>The name of the dataset being used by the data ingestion job. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input; self
+            self.dataset_name = input;
+            self
         }
         /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-        pub fn ingestion_input_configuration(mut self, input: crate::model::IngestionInputConfiguration) -> Self {
+        pub fn ingestion_input_configuration(
+            mut self,
+            input: crate::model::IngestionInputConfiguration,
+        ) -> Self {
             self.ingestion_input_configuration = Some(input);
             self
         }
         /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-        pub fn set_ingestion_input_configuration(mut self, input: std::option::Option<crate::model::IngestionInputConfiguration>) -> Self {
-            self.ingestion_input_configuration = input; self
+        pub fn set_ingestion_input_configuration(
+            mut self,
+            input: std::option::Option<crate::model::IngestionInputConfiguration>,
+        ) -> Self {
+            self.ingestion_input_configuration = input;
+            self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3543,7 +4864,8 @@ pub mod start_data_ingestion_job_input {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input; self
+            self.role_arn = input;
+            self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3552,90 +4874,132 @@ pub mod start_data_ingestion_job_input {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input; self
+            self.client_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput).
-        pub fn build(self) -> Result<crate::input::StartDataIngestionJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartDataIngestionJobInput {
-                    dataset_name: self.dataset_name
-                    ,
-                    ingestion_input_configuration: self.ingestion_input_configuration
-                    ,
-                    role_arn: self.role_arn
-                    ,
-                    client_token: self.client_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartDataIngestionJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartDataIngestionJobInput {
+                dataset_name: self.dataset_name,
+                ingestion_input_configuration: self.ingestion_input_configuration,
+                role_arn: self.role_arn,
+                client_token: self.client_token,
+            })
         }
     }
-    
-    
 }
 impl StartDataIngestionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartDataIngestionJob`](crate::operation::StartDataIngestionJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartDataIngestionJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartDataIngestionJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_token.is_none() {
-                                self.client_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::StartDataIngestionJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartDataIngestionJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartDataIngestionJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartDataIngestionJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.StartDataIngestionJob"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.StartDataIngestionJob",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_data_ingestion_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_data_ingestion_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartDataIngestionJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartDataIngestionJob", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartDataIngestionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartDataIngestionJob",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3647,9 +5011,9 @@ impl StartDataIngestionJobInput {
 
 /// See [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput).
 pub mod start_inference_scheduler_input {
-    
+
     /// A builder for [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -3660,82 +5024,132 @@ pub mod start_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler to be started. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::StartInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartInferenceSchedulerInput {
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartInferenceSchedulerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name,
+            })
         }
     }
-    
-    
 }
 impl StartInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StartInferenceScheduler`](crate::operation::StartInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.StartInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.StartInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3747,9 +5161,9 @@ impl StartInferenceSchedulerInput {
 
 /// See [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput).
 pub mod stop_inference_scheduler_input {
-    
+
     /// A builder for [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -3760,82 +5174,130 @@ pub mod stop_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler to be stopped. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::StopInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StopInferenceSchedulerInput {
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopInferenceSchedulerInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StopInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name,
+            })
         }
     }
-    
-    
 }
 impl StopInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`StopInferenceScheduler`](crate::operation::StopInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StopInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StopInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StopInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.StopInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.StopInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_stop_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3847,9 +5309,9 @@ impl StopInferenceSchedulerInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3862,7 +5324,8 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -3871,89 +5334,134 @@ pub mod tag_resource_input {
         /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.TagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.TagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3965,9 +5473,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3980,7 +5488,8 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -3989,89 +5498,134 @@ pub mod untag_resource_input {
         /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.UntagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.UntagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4083,15 +5637,17 @@ impl UntagResourceInput {
 
 /// See [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput).
 pub mod update_inference_scheduler_input {
-    
+
     /// A builder for [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
         pub(crate) data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
-        pub(crate) data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
-        pub(crate) data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
+        pub(crate) data_input_configuration:
+            std::option::Option<crate::model::InferenceInputConfiguration>,
+        pub(crate) data_output_configuration:
+            std::option::Option<crate::model::InferenceOutputConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4101,8 +5657,12 @@ pub mod update_inference_scheduler_input {
             self
         }
         /// <p>The name of the inference scheduler to be updated. </p>
-        pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inference_scheduler_name = input; self
+        pub fn set_inference_scheduler_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_scheduler_name = input;
+            self
         }
         /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
@@ -4111,7 +5671,8 @@ pub mod update_inference_scheduler_input {
         }
         /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_delay_offset_in_minutes = input; self
+            self.data_delay_offset_in_minutes = input;
+            self
         }
         /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
@@ -4119,26 +5680,44 @@ pub mod update_inference_scheduler_input {
             self
         }
         /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-        pub fn set_data_upload_frequency(mut self, input: std::option::Option<crate::model::DataUploadFrequency>) -> Self {
-            self.data_upload_frequency = input; self
+        pub fn set_data_upload_frequency(
+            mut self,
+            input: std::option::Option<crate::model::DataUploadFrequency>,
+        ) -> Self {
+            self.data_upload_frequency = input;
+            self
         }
         /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn data_input_configuration(mut self, input: crate::model::InferenceInputConfiguration) -> Self {
+        pub fn data_input_configuration(
+            mut self,
+            input: crate::model::InferenceInputConfiguration,
+        ) -> Self {
             self.data_input_configuration = Some(input);
             self
         }
         /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-        pub fn set_data_input_configuration(mut self, input: std::option::Option<crate::model::InferenceInputConfiguration>) -> Self {
-            self.data_input_configuration = input; self
+        pub fn set_data_input_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InferenceInputConfiguration>,
+        ) -> Self {
+            self.data_input_configuration = input;
+            self
         }
         /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-        pub fn data_output_configuration(mut self, input: crate::model::InferenceOutputConfiguration) -> Self {
+        pub fn data_output_configuration(
+            mut self,
+            input: crate::model::InferenceOutputConfiguration,
+        ) -> Self {
             self.data_output_configuration = Some(input);
             self
         }
         /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-        pub fn set_data_output_configuration(mut self, input: std::option::Option<crate::model::InferenceOutputConfiguration>) -> Self {
-            self.data_output_configuration = input; self
+        pub fn set_data_output_configuration(
+            mut self,
+            input: std::option::Option<crate::model::InferenceOutputConfiguration>,
+        ) -> Self {
+            self.data_output_configuration = input;
+            self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4147,91 +5726,133 @@ pub mod update_inference_scheduler_input {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input; self
+            self.role_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput).
-        pub fn build(self) -> Result<crate::input::UpdateInferenceSchedulerInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateInferenceSchedulerInput {
-                    inference_scheduler_name: self.inference_scheduler_name
-                    ,
-                    data_delay_offset_in_minutes: self.data_delay_offset_in_minutes
-                    ,
-                    data_upload_frequency: self.data_upload_frequency
-                    ,
-                    data_input_configuration: self.data_input_configuration
-                    ,
-                    data_output_configuration: self.data_output_configuration
-                    ,
-                    role_arn: self.role_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateInferenceSchedulerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateInferenceSchedulerInput {
+                inference_scheduler_name: self.inference_scheduler_name,
+                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
+                data_upload_frequency: self.data_upload_frequency,
+                data_input_configuration: self.data_input_configuration,
+                data_output_configuration: self.data_output_configuration,
+                role_arn: self.role_arn,
+            })
         }
     }
-    
-    
 }
 impl UpdateInferenceSchedulerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInferenceScheduler`](crate::operation::UpdateInferenceScheduler)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateInferenceScheduler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateInferenceSchedulerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateInferenceSchedulerInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateInferenceSchedulerInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateInferenceSchedulerInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.UpdateInferenceScheduler"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.UpdateInferenceScheduler",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_inference_scheduler(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_inference_scheduler(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateInferenceScheduler::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateInferenceScheduler", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateInferenceScheduler::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateInferenceScheduler",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4243,9 +5864,9 @@ impl UpdateInferenceSchedulerInput {
 
 /// See [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
 pub mod update_label_group_input {
-    
+
     /// A builder for [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4257,101 +5878,150 @@ pub mod update_label_group_input {
             self
         }
         /// <p> The name of the label group to be updated. </p>
-        pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label_group_name = input; self
+        pub fn set_label_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_group_name = input;
+            self
         }
         /// Appends an item to `fault_codes`.
         ///
         /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
         ///
-        /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
         pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fault_codes.unwrap_or_default();
-                            v.push(input.into());
-                            self.fault_codes = Some(v);
-                            self
+            v.push(input.into());
+            self.fault_codes = Some(v);
+            self
         }
-        /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
+        /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
         /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-        pub fn set_fault_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.fault_codes = input; self
+        pub fn set_fault_codes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.fault_codes = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
-        pub fn build(self) -> Result<crate::input::UpdateLabelGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateLabelGroupInput {
-                    label_group_name: self.label_group_name
-                    ,
-                    fault_codes: self.fault_codes
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateLabelGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateLabelGroupInput {
+                label_group_name: self.label_group_name,
+                fault_codes: self.fault_codes,
+            })
         }
     }
-    
-    
 }
 impl UpdateLabelGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLabelGroup`](crate::operation::UpdateLabelGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLabelGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLabelGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateLabelGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateLabelGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateLabelGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateLabelGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSLookoutEquipmentFrontendService.UpdateLabelGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLookoutEquipmentFrontendService.UpdateLabelGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_label_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_label_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLabelGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLabelGroup", "lookoutequipment"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLabelGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLabelGroup",
+            "lookoutequipment",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4362,26 +6032,29 @@ impl UpdateLabelGroupInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateLabelGroupInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLabelGroupInput {
     /// <p> The name of the label group to be updated. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLabelGroupInput {
     /// <p> The name of the label group to be updated. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_codes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.fault_codes.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateLabelGroupInput  {
+impl std::fmt::Debug for UpdateLabelGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLabelGroupInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -4391,24 +6064,31 @@ impl  std::fmt::Debug for UpdateLabelGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be updated. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
-    #[doc(hidden)]pub data_delay_offset_in_minutes: std::option::Option<i64>,
+    #[doc(hidden)]
+    pub data_delay_offset_in_minutes: std::option::Option<i64>,
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    #[doc(hidden)]pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
+    #[doc(hidden)]
+    pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    #[doc(hidden)]pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
+    #[doc(hidden)]
+    pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-    #[doc(hidden)]pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
+    #[doc(hidden)]
+    pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
-    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be updated. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
@@ -4416,27 +6096,34 @@ impl UpdateInferenceSchedulerInput {
         self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn data_upload_frequency(&self) -> std::option::Option<& crate::model::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(&self) -> std::option::Option<& crate::model::InferenceInputConfiguration> {
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-    pub fn data_output_configuration(&self) -> std::option::Option<& crate::model::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateInferenceSchedulerInput  {
+impl std::fmt::Debug for UpdateInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInferenceSchedulerInput");
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
-        formatter.field("data_delay_offset_in_minutes", &self.data_delay_offset_in_minutes);
+        formatter.field(
+            "data_delay_offset_in_minutes",
+            &self.data_delay_offset_in_minutes,
+        );
         formatter.field("data_upload_frequency", &self.data_upload_frequency);
         formatter.field("data_input_configuration", &self.data_input_configuration);
         formatter.field("data_output_configuration", &self.data_output_configuration);
@@ -4446,24 +6133,27 @@ impl  std::fmt::Debug for UpdateInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4473,24 +6163,27 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4500,18 +6193,20 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StopInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be stopped. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StopInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be stopped. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
 }
-impl  std::fmt::Debug for StopInferenceSchedulerInput  {
+impl std::fmt::Debug for StopInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInferenceSchedulerInput");
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
@@ -4520,18 +6215,20 @@ impl  std::fmt::Debug for StopInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
 }
-impl  std::fmt::Debug for StartInferenceSchedulerInput  {
+impl std::fmt::Debug for StartInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartInferenceSchedulerInput");
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
@@ -4540,40 +6237,51 @@ impl  std::fmt::Debug for StartInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartDataIngestionJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartDataIngestionJobInput {
     /// <p>The name of the dataset being used by the data ingestion job. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    #[doc(hidden)]pub ingestion_input_configuration: std::option::Option<crate::model::IngestionInputConfiguration>,
+    #[doc(hidden)]
+    pub ingestion_input_configuration:
+        std::option::Option<crate::model::IngestionInputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
-    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl StartDataIngestionJobInput {
     /// <p>The name of the dataset being used by the data ingestion job. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn ingestion_input_configuration(&self) -> std::option::Option<& crate::model::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
-impl  std::fmt::Debug for StartDataIngestionJobInput  {
+impl std::fmt::Debug for StartDataIngestionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDataIngestionJobInput");
         formatter.field("dataset_name", &self.dataset_name);
-        formatter.field("ingestion_input_configuration", &self.ingestion_input_configuration);
+        formatter.field(
+            "ingestion_input_configuration",
+            &self.ingestion_input_configuration,
+        );
         formatter.field("role_arn", &self.role_arn);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -4581,18 +6289,20 @@ impl  std::fmt::Debug for StartDataIngestionJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4601,24 +6311,29 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListSensorStatisticsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSensorStatisticsInput {
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    #[doc(hidden)]pub ingestion_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub ingestion_job_id: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSensorStatisticsInput {
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
-    pub fn ingestion_job_id(&self) -> std::option::Option<& str> {
+    pub fn ingestion_job_id(&self) -> std::option::Option<&str> {
         self.ingestion_job_id.as_deref()
     }
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
@@ -4626,11 +6341,11 @@ impl ListSensorStatisticsInput {
         self.max_results
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListSensorStatisticsInput  {
+impl std::fmt::Debug for ListSensorStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSensorStatisticsInput");
         formatter.field("dataset_name", &self.dataset_name);
@@ -4642,22 +6357,28 @@ impl  std::fmt::Debug for ListSensorStatisticsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListModelsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListModelsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of ML models to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The status of the ML model. </p>
-    #[doc(hidden)]pub status: std::option::Option<crate::model::ModelStatus>,
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The beginning of the name of the ML models being listed. </p>
-    #[doc(hidden)]pub model_name_begins_with: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    #[doc(hidden)]pub dataset_name_begins_with: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name_begins_with: std::option::Option<std::string::String>,
 }
 impl ListModelsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of ML models to list. </p>
@@ -4665,19 +6386,19 @@ impl ListModelsInput {
         self.max_results
     }
     /// <p>The status of the ML model. </p>
-    pub fn status(&self) -> std::option::Option<& crate::model::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
-    pub fn model_name_begins_with(&self) -> std::option::Option<& str> {
+    pub fn model_name_begins_with(&self) -> std::option::Option<&str> {
         self.model_name_begins_with.as_deref()
     }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    pub fn dataset_name_begins_with(&self) -> std::option::Option<& str> {
+    pub fn dataset_name_begins_with(&self) -> std::option::Option<&str> {
         self.dataset_name_begins_with.as_deref()
     }
 }
-impl  std::fmt::Debug for ListModelsInput  {
+impl std::fmt::Debug for ListModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelsInput");
         formatter.field("next_token", &self.next_token);
@@ -4690,46 +6411,54 @@ impl  std::fmt::Debug for ListModelsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListLabelsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLabelsInput {
     /// <p> Retruns the name of the label group. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-    #[doc(hidden)]pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
-    #[doc(hidden)]pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Returns labels with a particular fault code. </p>
-    #[doc(hidden)]pub fault_code: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub fault_code: std::option::Option<std::string::String>,
     /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
-    #[doc(hidden)]pub equipment: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub equipment: std::option::Option<std::string::String>,
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of labels to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListLabelsInput {
     /// <p> Retruns the name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-    pub fn interval_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn interval_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_start_time.as_ref()
     }
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
-    pub fn interval_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn interval_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_end_time.as_ref()
     }
     /// <p> Returns labels with a particular fault code. </p>
-    pub fn fault_code(&self) -> std::option::Option<& str> {
+    pub fn fault_code(&self) -> std::option::Option<&str> {
         self.fault_code.as_deref()
     }
     /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
-    pub fn equipment(&self) -> std::option::Option<& str> {
+    pub fn equipment(&self) -> std::option::Option<&str> {
         self.equipment.as_deref()
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of labels to list. </p>
@@ -4737,7 +6466,7 @@ impl ListLabelsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListLabelsInput  {
+impl std::fmt::Debug for ListLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLabelsInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -4752,22 +6481,26 @@ impl  std::fmt::Debug for ListLabelsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListLabelGroupsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLabelGroupsInput {
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    #[doc(hidden)]pub label_group_name_begins_with: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name_begins_with: std::option::Option<std::string::String>,
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of label groups to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListLabelGroupsInput {
     /// <p> The beginning of the name of the label groups to be listed. </p>
-    pub fn label_group_name_begins_with(&self) -> std::option::Option<& str> {
+    pub fn label_group_name_begins_with(&self) -> std::option::Option<&str> {
         self.label_group_name_begins_with.as_deref()
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of label groups to list. </p>
@@ -4775,10 +6508,13 @@ impl ListLabelGroupsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListLabelGroupsInput  {
+impl std::fmt::Debug for ListLabelGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLabelGroupsInput");
-        formatter.field("label_group_name_begins_with", &self.label_group_name_begins_with);
+        formatter.field(
+            "label_group_name_begins_with",
+            &self.label_group_name_begins_with,
+        );
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -4786,20 +6522,25 @@ impl  std::fmt::Debug for ListLabelGroupsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListInferenceSchedulersInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    #[doc(hidden)]pub inference_scheduler_name_begins_with: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
-    #[doc(hidden)]pub model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
@@ -4807,44 +6548,54 @@ impl ListInferenceSchedulersInput {
         self.max_results
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn inference_scheduler_name_begins_with(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name_begins_with(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name_begins_with.as_deref()
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ListInferenceSchedulersInput  {
+impl std::fmt::Debug for ListInferenceSchedulersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInferenceSchedulersInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
-        formatter.field("inference_scheduler_name_begins_with", &self.inference_scheduler_name_begins_with);
+        formatter.field(
+            "inference_scheduler_name_begins_with",
+            &self.inference_scheduler_name_begins_with,
+        );
         formatter.field("model_name", &self.model_name);
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListInferenceExecutionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceExecutionsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of inference executions to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    #[doc(hidden)]pub data_start_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub data_start_time_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-    #[doc(hidden)]pub data_end_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub data_end_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the inference execution. </p>
-    #[doc(hidden)]pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
 }
 impl ListInferenceExecutionsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of inference executions to list. </p>
@@ -4852,23 +6603,23 @@ impl ListInferenceExecutionsInput {
         self.max_results
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
-    pub fn data_start_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn data_start_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_start_time_after.as_ref()
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
-    pub fn data_end_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn data_end_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_end_time_before.as_ref()
     }
     /// <p>The status of the inference execution. </p>
-    pub fn status(&self) -> std::option::Option<& crate::model::InferenceExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceExecutionStatus> {
         self.status.as_ref()
     }
 }
-impl  std::fmt::Debug for ListInferenceExecutionsInput  {
+impl std::fmt::Debug for ListInferenceExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInferenceExecutionsInput");
         formatter.field("next_token", &self.next_token);
@@ -4882,22 +6633,28 @@ impl  std::fmt::Debug for ListInferenceExecutionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListInferenceEventsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceEventsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of inference events to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference events listed. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
-    #[doc(hidden)]pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
-    #[doc(hidden)]pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub interval_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListInferenceEventsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of inference events to list. </p>
@@ -4905,19 +6662,19 @@ impl ListInferenceEventsInput {
         self.max_results
     }
     /// <p>The name of the inference scheduler for the inference events listed. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
-    pub fn interval_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn interval_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_start_time.as_ref()
     }
     /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
-    pub fn interval_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn interval_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.interval_end_time.as_ref()
     }
 }
-impl  std::fmt::Debug for ListInferenceEventsInput  {
+impl std::fmt::Debug for ListInferenceEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInferenceEventsInput");
         formatter.field("next_token", &self.next_token);
@@ -4930,18 +6687,22 @@ impl  std::fmt::Debug for ListInferenceEventsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListDatasetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasetsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of datasets to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The beginning of the name of the datasets to be listed. </p>
-    #[doc(hidden)]pub dataset_name_begins_with: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name_begins_with: std::option::Option<std::string::String>,
 }
 impl ListDatasetsInput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of datasets to list. </p>
@@ -4949,11 +6710,11 @@ impl ListDatasetsInput {
         self.max_results
     }
     /// <p>The beginning of the name of the datasets to be listed. </p>
-    pub fn dataset_name_begins_with(&self) -> std::option::Option<& str> {
+    pub fn dataset_name_begins_with(&self) -> std::option::Option<&str> {
         self.dataset_name_begins_with.as_deref()
     }
 }
-impl  std::fmt::Debug for ListDatasetsInput  {
+impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsInput");
         formatter.field("next_token", &self.next_token);
@@ -4964,24 +6725,29 @@ impl  std::fmt::Debug for ListDatasetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListDataIngestionJobsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>Indicates the status of the data ingestion job. </p>
-    #[doc(hidden)]pub status: std::option::Option<crate::model::IngestionJobStatus>,
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
 impl ListDataIngestionJobsInput {
     /// <p>The name of the dataset being used for the data ingestion job. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
@@ -4989,11 +6755,11 @@ impl ListDataIngestionJobsInput {
         self.max_results
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn status(&self) -> std::option::Option<& crate::model::IngestionJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
-impl  std::fmt::Debug for ListDataIngestionJobsInput  {
+impl std::fmt::Debug for ListDataIngestionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataIngestionJobsInput");
         formatter.field("dataset_name", &self.dataset_name);
@@ -5005,18 +6771,20 @@ impl  std::fmt::Debug for ListDataIngestionJobsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeModelInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeModelInput {
     /// <p>The name of the ML model to be described. </p>
-    #[doc(hidden)]pub model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelInput {
     /// <p>The name of the ML model to be described. </p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeModelInput  {
+impl std::fmt::Debug for DescribeModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelInput");
         formatter.field("model_name", &self.model_name);
@@ -5025,18 +6793,20 @@ impl  std::fmt::Debug for DescribeModelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLabelGroupInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLabelGroupInput {
     /// <p> Returns the name of the label group. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeLabelGroupInput {
     /// <p> Returns the name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLabelGroupInput  {
+impl std::fmt::Debug for DescribeLabelGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLabelGroupInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5045,24 +6815,27 @@ impl  std::fmt::Debug for DescribeLabelGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLabelInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLabelInput {
     /// <p> Returns the name of the group containing the label. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
     /// <p> Returns the ID of the label. </p>
-    #[doc(hidden)]pub label_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_id: std::option::Option<std::string::String>,
 }
 impl DescribeLabelInput {
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> Returns the ID of the label. </p>
-    pub fn label_id(&self) -> std::option::Option<& str> {
+    pub fn label_id(&self) -> std::option::Option<&str> {
         self.label_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLabelInput  {
+impl std::fmt::Debug for DescribeLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLabelInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5072,18 +6845,20 @@ impl  std::fmt::Debug for DescribeLabelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being described. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl DescribeInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeInferenceSchedulerInput  {
+impl std::fmt::Debug for DescribeInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInferenceSchedulerInput");
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
@@ -5092,18 +6867,20 @@ impl  std::fmt::Debug for DescribeInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeDatasetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
     /// <p>The name of the dataset to be described. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeDatasetInput  {
+impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetInput");
         formatter.field("dataset_name", &self.dataset_name);
@@ -5112,18 +6889,20 @@ impl  std::fmt::Debug for DescribeDatasetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeDataIngestionJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataIngestionJobInput {
     /// <p>The job ID of the data ingestion job. </p>
-    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDataIngestionJobInput {
     /// <p>The job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeDataIngestionJobInput  {
+impl std::fmt::Debug for DescribeDataIngestionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataIngestionJobInput");
         formatter.field("job_id", &self.job_id);
@@ -5132,18 +6911,20 @@ impl  std::fmt::Debug for DescribeDataIngestionJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteModelInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteModelInput {
     /// <p>The name of the ML model to be deleted. </p>
-    #[doc(hidden)]pub model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelInput {
     /// <p>The name of the ML model to be deleted. </p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteModelInput  {
+impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelInput");
         formatter.field("model_name", &self.model_name);
@@ -5152,18 +6933,20 @@ impl  std::fmt::Debug for DeleteModelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteLabelGroupInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLabelGroupInput {
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteLabelGroupInput {
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteLabelGroupInput  {
+impl std::fmt::Debug for DeleteLabelGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLabelGroupInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5172,24 +6955,27 @@ impl  std::fmt::Debug for DeleteLabelGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteLabelInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLabelInput {
     /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
     /// <p> The ID of the label that you want to delete. </p>
-    #[doc(hidden)]pub label_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_id: std::option::Option<std::string::String>,
 }
 impl DeleteLabelInput {
     /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ID of the label that you want to delete. </p>
-    pub fn label_id(&self) -> std::option::Option<& str> {
+    pub fn label_id(&self) -> std::option::Option<&str> {
         self.label_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteLabelInput  {
+impl std::fmt::Debug for DeleteLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLabelInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5199,18 +6985,20 @@ impl  std::fmt::Debug for DeleteLabelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteInferenceSchedulerInput  {
+impl std::fmt::Debug for DeleteInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInferenceSchedulerInput");
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
@@ -5219,18 +7007,20 @@ impl  std::fmt::Debug for DeleteInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteDatasetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteDatasetInput  {
+impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
         formatter.field("dataset_name", &self.dataset_name);
@@ -5239,111 +7029,140 @@ impl  std::fmt::Debug for DeleteDatasetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateModelInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateModelInput {
     /// <p>The name for the ML model to be created.</p>
-    #[doc(hidden)]pub model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the dataset for the ML model being created. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The data schema for the ML model being created. </p>
-    #[doc(hidden)]pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
+    #[doc(hidden)]
+    pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    #[doc(hidden)]pub labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
+    #[doc(hidden)]
+    pub labels_input_configuration: std::option::Option<crate::model::LabelsInputConfiguration>,
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    #[doc(hidden)]pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub training_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    #[doc(hidden)]pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub training_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    #[doc(hidden)]pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub evaluation_data_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    #[doc(hidden)]pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub evaluation_data_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
-    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    #[doc(hidden)]pub data_pre_processing_configuration: std::option::Option<crate::model::DataPreProcessingConfiguration>,
+    #[doc(hidden)]
+    pub data_pre_processing_configuration:
+        std::option::Option<crate::model::DataPreProcessingConfiguration>,
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]pub server_side_kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> Any tags associated with the ML model being created. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    #[doc(hidden)]pub off_condition: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub off_condition: std::option::Option<std::string::String>,
 }
 impl CreateModelInput {
     /// <p>The name for the ML model to be created.</p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the dataset for the ML model being created. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The data schema for the ML model being created. </p>
-    pub fn dataset_schema(&self) -> std::option::Option<& crate::model::DatasetSchema> {
+    pub fn dataset_schema(&self) -> std::option::Option<&crate::model::DatasetSchema> {
         self.dataset_schema.as_ref()
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn labels_input_configuration(&self) -> std::option::Option<& crate::model::LabelsInputConfiguration> {
+    pub fn labels_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn training_data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn training_data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn evaluation_data_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(&self) -> std::option::Option<& crate::model::DataPreProcessingConfiguration> {
+    pub fn data_pre_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataPreProcessingConfiguration> {
         self.data_pre_processing_configuration.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> Any tags associated with the ML model being created. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(&self) -> std::option::Option<& str> {
+    pub fn off_condition(&self) -> std::option::Option<&str> {
         self.off_condition.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateModelInput  {
+impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelInput");
         formatter.field("model_name", &self.model_name);
         formatter.field("dataset_name", &self.dataset_name);
         formatter.field("dataset_schema", &self.dataset_schema);
-        formatter.field("labels_input_configuration", &self.labels_input_configuration);
+        formatter.field(
+            "labels_input_configuration",
+            &self.labels_input_configuration,
+        );
         formatter.field("client_token", &self.client_token);
         formatter.field("training_data_start_time", &self.training_data_start_time);
         formatter.field("training_data_end_time", &self.training_data_end_time);
-        formatter.field("evaluation_data_start_time", &self.evaluation_data_start_time);
+        formatter.field(
+            "evaluation_data_start_time",
+            &self.evaluation_data_start_time,
+        );
         formatter.field("evaluation_data_end_time", &self.evaluation_data_end_time);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("data_pre_processing_configuration", &self.data_pre_processing_configuration);
+        formatter.field(
+            "data_pre_processing_configuration",
+            &self.data_pre_processing_configuration,
+        );
         formatter.field("server_side_kms_key_id", &self.server_side_kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.field("off_condition", &self.off_condition);
@@ -5352,42 +7171,47 @@ impl  std::fmt::Debug for CreateModelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLabelGroupInput  {
-    /// <p> Names a group of labels.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLabelGroupInput {
+    /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
-    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p> 
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
-    /// <p> Tags that provide metadata about the label group you are creating. </p> 
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLabelGroupInput {
-    /// <p> Names a group of labels.</p> 
+    /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p> 
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_codes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.fault_codes.as_deref()
     }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p> Tags that provide metadata about the label group you are creating. </p> 
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateLabelGroupInput  {
+impl std::fmt::Debug for CreateLabelGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelGroupInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5399,68 +7223,77 @@ impl  std::fmt::Debug for CreateLabelGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateLabelInput  {
-    /// <p> The name of a group of labels. </p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLabelInput {
+    /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]pub label_group_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub label_group_name: std::option::Option<std::string::String>,
     /// <p> The start time of the labeled event. </p>
-    #[doc(hidden)]pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The end time of the labeled event. </p>
-    #[doc(hidden)]pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    #[doc(hidden)]pub rating: std::option::Option<crate::model::LabelRating>,
-    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p> 
+    #[doc(hidden)]
+    pub rating: std::option::Option<crate::model::LabelRating>,
+    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]pub fault_code: std::option::Option<std::string::String>,
-    /// <p> Metadata providing additional information about the label. </p> 
+    #[doc(hidden)]
+    pub fault_code: std::option::Option<std::string::String>,
+    /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]pub notes: std::option::Option<std::string::String>,
-    /// <p> Indicates that a label pertains to a particular piece of equipment. </p> 
+    #[doc(hidden)]
+    pub notes: std::option::Option<std::string::String>,
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]pub equipment: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub equipment: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateLabelInput {
-    /// <p> The name of a group of labels. </p> 
+    /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> The start time of the labeled event. </p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the labeled event. </p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn rating(&self) -> std::option::Option<& crate::model::LabelRating> {
+    pub fn rating(&self) -> std::option::Option<&crate::model::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p> 
+    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn fault_code(&self) -> std::option::Option<& str> {
+    pub fn fault_code(&self) -> std::option::Option<&str> {
         self.fault_code.as_deref()
     }
-    /// <p> Metadata providing additional information about the label. </p> 
+    /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn notes(&self) -> std::option::Option<& str> {
+    pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p> Indicates that a label pertains to a particular piece of equipment. </p> 
+    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn equipment(&self) -> std::option::Option<& str> {
+    pub fn equipment(&self) -> std::option::Option<&str> {
         self.equipment.as_deref()
     }
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateLabelInput  {
+impl std::fmt::Debug for CreateLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelInput");
         formatter.field("label_group_name", &self.label_group_name);
@@ -5476,81 +7309,99 @@ impl  std::fmt::Debug for CreateLabelInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateInferenceSchedulerInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateInferenceSchedulerInput {
     /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
-    #[doc(hidden)]pub model_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub model_name: std::option::Option<std::string::String>,
     /// <p>The name of the inference scheduler being created. </p>
-    #[doc(hidden)]pub inference_scheduler_name: std::option::Option<std::string::String>,
-    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p> 
+    #[doc(hidden)]
+    pub inference_scheduler_name: std::option::Option<std::string::String>,
+    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    #[doc(hidden)]pub data_delay_offset_in_minutes: std::option::Option<i64>,
-    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p> 
+    #[doc(hidden)]
+    pub data_delay_offset_in_minutes: std::option::Option<i64>,
+    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    #[doc(hidden)]pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
+    #[doc(hidden)]
+    pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    #[doc(hidden)]pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
+    #[doc(hidden)]
+    pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    #[doc(hidden)]pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
+    #[doc(hidden)]
+    pub data_output_configuration: std::option::Option<crate::model::InferenceOutputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
-    #[doc(hidden)]pub role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub role_arn: std::option::Option<std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]pub server_side_kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
     /// <p>Any tags associated with the inference scheduler. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateInferenceSchedulerInput {
     /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the inference scheduler being created. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
-    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p> 
+    /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
     pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
         self.data_delay_offset_in_minutes
     }
-    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p> 
+    /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn data_upload_frequency(&self) -> std::option::Option<& crate::model::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(&self) -> std::option::Option<& crate::model::InferenceInputConfiguration> {
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn data_output_configuration(&self) -> std::option::Option<& crate::model::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Any tags associated with the inference scheduler. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateInferenceSchedulerInput  {
+impl std::fmt::Debug for CreateInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInferenceSchedulerInput");
         formatter.field("model_name", &self.model_name);
         formatter.field("inference_scheduler_name", &self.inference_scheduler_name);
-        formatter.field("data_delay_offset_in_minutes", &self.data_delay_offset_in_minutes);
+        formatter.field(
+            "data_delay_offset_in_minutes",
+            &self.data_delay_offset_in_minutes,
+        );
         formatter.field("data_upload_frequency", &self.data_upload_frequency);
         formatter.field("data_input_configuration", &self.data_input_configuration);
         formatter.field("data_output_configuration", &self.data_output_configuration);
@@ -5563,42 +7414,48 @@ impl  std::fmt::Debug for CreateInferenceSchedulerInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateDatasetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
-    #[doc(hidden)]pub dataset_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    #[doc(hidden)]pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
+    #[doc(hidden)]
+    pub dataset_schema: std::option::Option<crate::model::DatasetSchema>,
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]pub server_side_kms_key_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]pub client_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_token: std::option::Option<std::string::String>,
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn dataset_schema(&self) -> std::option::Option<& crate::model::DatasetSchema> {
+    pub fn dataset_schema(&self) -> std::option::Option<&crate::model::DatasetSchema> {
         self.dataset_schema.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateDatasetInput  {
+impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetInput");
         formatter.field("dataset_name", &self.dataset_name);
@@ -5609,4 +7466,3 @@ impl  std::fmt::Debug for CreateDatasetInput  {
         formatter.finish()
     }
 }
-

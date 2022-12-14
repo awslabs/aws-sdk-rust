@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
 pub mod cancel_change_set_input {
-    
+
     /// A builder for [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -18,7 +18,8 @@ pub mod cancel_change_set_input {
         }
         /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -26,33 +27,52 @@ pub mod cancel_change_set_input {
             self
         }
         /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = input; self
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
-        pub fn build(self) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CancelChangeSetInput {
-                    catalog: self.catalog
-                    ,
-                    change_set_id: self.change_set_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CancelChangeSetInput {
+                catalog: self.catalog,
+                change_set_id: self.change_set_id,
+            })
         }
     }
-    
-    
 }
 impl CancelChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`CancelChangeSet`](crate::operation::CancelChangeSet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CancelChangeSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelChangeSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CancelChangeSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CancelChangeSetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/CancelChangeSet").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::CancelChangeSetInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::CancelChangeSetInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -62,10 +82,12 @@ impl CancelChangeSetInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CancelChangeSetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CancelChangeSetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -75,37 +97,54 @@ impl CancelChangeSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CancelChangeSet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CancelChangeSet", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelChangeSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelChangeSet",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -117,9 +156,9 @@ impl CancelChangeSetInput {
 
 /// See [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
 pub mod describe_change_set_input {
-    
+
     /// A builder for [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -132,7 +171,8 @@ pub mod describe_change_set_input {
         }
         /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,33 +180,52 @@ pub mod describe_change_set_input {
             self
         }
         /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_set_id = input; self
+        pub fn set_change_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
-        pub fn build(self) -> Result<crate::input::DescribeChangeSetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeChangeSetInput {
-                    catalog: self.catalog
-                    ,
-                    change_set_id: self.change_set_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeChangeSetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeChangeSetInput {
+                catalog: self.catalog,
+                change_set_id: self.change_set_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChangeSet`](crate::operation::DescribeChangeSet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeChangeSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeChangeSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeChangeSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeChangeSetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/DescribeChangeSet").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribeChangeSetInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribeChangeSetInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -176,10 +235,12 @@ impl DescribeChangeSetInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeChangeSetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeChangeSetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -189,37 +250,54 @@ impl DescribeChangeSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeChangeSet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeChangeSet", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChangeSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeChangeSet",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -231,9 +309,9 @@ impl DescribeChangeSetInput {
 
 /// See [`DescribeEntityInput`](crate::input::DescribeEntityInput).
 pub mod describe_entity_input {
-    
+
     /// A builder for [`DescribeEntityInput`](crate::input::DescribeEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -246,7 +324,8 @@ pub mod describe_entity_input {
         }
         /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -255,32 +334,48 @@ pub mod describe_entity_input {
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_id = input; self
+            self.entity_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::input::DescribeEntityInput).
-        pub fn build(self) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeEntityInput {
-                    catalog: self.catalog
-                    ,
-                    entity_id: self.entity_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeEntityInput {
+                catalog: self.catalog,
+                entity_id: self.entity_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeEntityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntity`](crate::operation::DescribeEntity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeEntity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEntity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeEntityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeEntityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/DescribeEntity").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribeEntityInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribeEntityInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
@@ -290,10 +385,12 @@ impl DescribeEntityInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeEntityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeEntityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -303,37 +400,54 @@ impl DescribeEntityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeEntity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeEntity", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEntity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEntity",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -345,9 +459,9 @@ impl DescribeEntityInput {
 
 /// See [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
 pub mod list_change_sets_input {
-    
+
     /// A builder for [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -363,7 +477,8 @@ pub mod list_change_sets_input {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// Appends an item to `filter_list`.
         ///
@@ -372,13 +487,17 @@ pub mod list_change_sets_input {
         /// <p>An array of filter objects.</p>
         pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
-                            v.push(input);
-                            self.filter_list = Some(v);
-                            self
+            v.push(input);
+            self.filter_list = Some(v);
+            self
         }
         /// <p>An array of filter objects.</p>
-        pub fn set_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filter_list = input; self
+        pub fn set_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filter_list = input;
+            self
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
@@ -387,7 +506,8 @@ pub mod list_change_sets_input {
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
-            self.sort = input; self
+            self.sort = input;
+            self
         }
         /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -396,7 +516,8 @@ pub mod list_change_sets_input {
         }
         /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -405,84 +526,123 @@ pub mod list_change_sets_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
-        pub fn build(self) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListChangeSetsInput {
-                    catalog: self.catalog
-                    ,
-                    filter_list: self.filter_list
-                    ,
-                    sort: self.sort
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListChangeSetsInput {
+                catalog: self.catalog,
+                filter_list: self.filter_list,
+                sort: self.sort,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListChangeSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangeSets`](crate::operation::ListChangeSets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListChangeSets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListChangeSets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListChangeSetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListChangeSetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/ListChangeSets").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListChangeSetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListChangeSetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListChangeSets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListChangeSets", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChangeSets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListChangeSets",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -494,9 +654,9 @@ impl ListChangeSetsInput {
 
 /// See [`ListEntitiesInput`](crate::input::ListEntitiesInput).
 pub mod list_entities_input {
-    
+
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -513,7 +673,8 @@ pub mod list_entities_input {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// <p>The type of entities to retrieve.</p>
         pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -522,7 +683,8 @@ pub mod list_entities_input {
         }
         /// <p>The type of entities to retrieve.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_type = input; self
+            self.entity_type = input;
+            self
         }
         /// Appends an item to `filter_list`.
         ///
@@ -531,13 +693,17 @@ pub mod list_entities_input {
         /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
-                            v.push(input);
-                            self.filter_list = Some(v);
-                            self
+            v.push(input);
+            self.filter_list = Some(v);
+            self
         }
         /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-        pub fn set_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
-            self.filter_list = input; self
+        pub fn set_filter_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filter_list = input;
+            self
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
@@ -546,7 +712,8 @@ pub mod list_entities_input {
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
-            self.sort = input; self
+            self.sort = input;
+            self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -555,7 +722,8 @@ pub mod list_entities_input {
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -564,86 +732,124 @@ pub mod list_entities_input {
         }
         /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-        pub fn build(self) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListEntitiesInput {
-                    catalog: self.catalog
-                    ,
-                    entity_type: self.entity_type
-                    ,
-                    filter_list: self.filter_list
-                    ,
-                    sort: self.sort
-                    ,
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListEntitiesInput {
+                catalog: self.catalog,
+                entity_type: self.entity_type,
+                filter_list: self.filter_list,
+                sort: self.sort,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListEntities`](crate::operation::ListEntities)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListEntities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEntities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListEntitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListEntitiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/ListEntities").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListEntitiesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEntitiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_entities(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_entities(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListEntities::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListEntities", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEntities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEntities",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -655,9 +861,9 @@ impl ListEntitiesInput {
 
 /// See [`StartChangeSetInput`](crate::input::StartChangeSetInput).
 pub mod start_change_set_input {
-    
+
     /// A builder for [`StartChangeSetInput`](crate::input::StartChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
@@ -672,7 +878,8 @@ pub mod start_change_set_input {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog = input; self
+            self.catalog = input;
+            self
         }
         /// Appends an item to `change_set`.
         ///
@@ -681,13 +888,17 @@ pub mod start_change_set_input {
         /// <p>Array of <code>change</code> object.</p>
         pub fn change_set(mut self, input: crate::model::Change) -> Self {
             let mut v = self.change_set.unwrap_or_default();
-                            v.push(input);
-                            self.change_set = Some(v);
-                            self
+            v.push(input);
+            self.change_set = Some(v);
+            self
         }
         /// <p>Array of <code>change</code> object.</p>
-        pub fn set_change_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::Change>>) -> Self {
-            self.change_set = input; self
+        pub fn set_change_set(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
+        ) -> Self {
+            self.change_set = input;
+            self
         }
         /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -695,8 +906,12 @@ pub mod start_change_set_input {
             self
         }
         /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-        pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_set_name = input; self
+        pub fn set_change_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.change_set_name = input;
+            self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -704,86 +919,129 @@ pub mod start_change_set_input {
             self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::input::StartChangeSetInput).
-        pub fn build(self) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartChangeSetInput {
-                    catalog: self.catalog
-                    ,
-                    change_set: self.change_set
-                    ,
-                    change_set_name: self.change_set_name
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartChangeSetInput {
+                catalog: self.catalog,
+                change_set: self.change_set,
+                change_set_name: self.change_set_name,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl StartChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`StartChangeSet`](crate::operation::StartChangeSet)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartChangeSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartChangeSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.client_request_token.is_none() {
-                                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-                            }
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::StartChangeSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartChangeSetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/StartChangeSet").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartChangeSetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartChangeSetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_change_set(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_change_set(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartChangeSet::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartChangeSet", "marketplacecatalog"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartChangeSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartChangeSet",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -794,36 +1052,41 @@ impl StartChangeSetInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartChangeSetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>Array of <code>change</code> object.</p>
-    #[doc(hidden)]pub change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
+    #[doc(hidden)]
+    pub change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    #[doc(hidden)]pub change_set_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub change_set_name: std::option::Option<std::string::String>,
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>Array of <code>change</code> object.</p>
-    pub fn change_set(&self) -> std::option::Option<& [crate::model::Change]> {
+    pub fn change_set(&self) -> std::option::Option<&[crate::model::Change]> {
         self.change_set.as_deref()
     }
     /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
-    pub fn change_set_name(&self) -> std::option::Option<& str> {
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>A unique token to identify the request to ensure idempotency.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for StartChangeSetInput  {
+impl std::fmt::Debug for StartChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChangeSetInput");
         formatter.field("catalog", &self.catalog);
@@ -835,40 +1098,47 @@ impl  std::fmt::Debug for StartChangeSetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListEntitiesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>The type of entities to retrieve.</p>
-    #[doc(hidden)]pub entity_type: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entity_type: std::option::Option<std::string::String>,
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    #[doc(hidden)]pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    #[doc(hidden)]pub sort: std::option::Option<crate::model::Sort>,
+    #[doc(hidden)]
+    pub sort: std::option::Option<crate::model::Sort>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>The type of entities to retrieve.</p>
-    pub fn entity_type(&self) -> std::option::Option<& str> {
+    pub fn entity_type(&self) -> std::option::Option<&str> {
         self.entity_type.as_deref()
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn filter_list(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filter_list.as_deref()
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    pub fn sort(&self) -> std::option::Option<& crate::model::Sort> {
+    pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
         self.sort.as_ref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
@@ -876,7 +1146,7 @@ impl ListEntitiesInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListEntitiesInput  {
+impl std::fmt::Debug for ListEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntitiesInput");
         formatter.field("catalog", &self.catalog);
@@ -890,30 +1160,36 @@ impl  std::fmt::Debug for ListEntitiesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListChangeSetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>An array of filter objects.</p>
-    #[doc(hidden)]pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    #[doc(hidden)]
+    pub filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    #[doc(hidden)]pub sort: std::option::Option<crate::model::Sort>,
+    #[doc(hidden)]
+    pub sort: std::option::Option<crate::model::Sort>,
     /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>An array of filter objects.</p>
-    pub fn filter_list(&self) -> std::option::Option<& [crate::model::Filter]> {
+    pub fn filter_list(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filter_list.as_deref()
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    pub fn sort(&self) -> std::option::Option<& crate::model::Sort> {
+    pub fn sort(&self) -> std::option::Option<&crate::model::Sort> {
         self.sort.as_ref()
     }
     /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
@@ -921,11 +1197,11 @@ impl ListChangeSetsInput {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListChangeSetsInput  {
+impl std::fmt::Debug for ListChangeSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChangeSetsInput");
         formatter.field("catalog", &self.catalog);
@@ -938,24 +1214,27 @@ impl  std::fmt::Debug for ListChangeSetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeEntityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique ID of the entity to describe.</p>
-    #[doc(hidden)]pub entity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entity_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>Required. The unique ID of the entity to describe.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeEntityInput  {
+impl std::fmt::Debug for DescribeEntityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEntityInput");
         formatter.field("catalog", &self.catalog);
@@ -965,24 +1244,27 @@ impl  std::fmt::Debug for DescribeEntityInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeChangeSetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-    #[doc(hidden)]pub change_set_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub change_set_id: std::option::Option<std::string::String>,
 }
 impl DescribeChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-    pub fn change_set_id(&self) -> std::option::Option<& str> {
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeChangeSetInput  {
+impl std::fmt::Debug for DescribeChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChangeSetInput");
         formatter.field("catalog", &self.catalog);
@@ -992,24 +1274,27 @@ impl  std::fmt::Debug for DescribeChangeSetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CancelChangeSetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    #[doc(hidden)]pub catalog: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub catalog: std::option::Option<std::string::String>,
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-    #[doc(hidden)]pub change_set_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub change_set_id: std::option::Option<std::string::String>,
 }
 impl CancelChangeSetInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    pub fn catalog(&self) -> std::option::Option<& str> {
+    pub fn catalog(&self) -> std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-    pub fn change_set_id(&self) -> std::option::Option<& str> {
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
 }
-impl  std::fmt::Debug for CancelChangeSetInput  {
+impl std::fmt::Debug for CancelChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelChangeSetInput");
         formatter.field("catalog", &self.catalog);
@@ -1017,4 +1302,3 @@ impl  std::fmt::Debug for CancelChangeSetInput  {
         formatter.finish()
     }
 }
-

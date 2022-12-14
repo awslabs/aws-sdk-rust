@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput).
 pub mod associate_external_connection_input {
-    
+
     /// A builder for [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -20,7 +20,8 @@ pub mod associate_external_connection_input {
         }
         /// <p>The name of the domain that contains the repository.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -29,7 +30,8 @@ pub mod associate_external_connection_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository to which the external connection is added. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -38,80 +40,109 @@ pub mod associate_external_connection_input {
         }
         /// <p> The name of the repository to which the external connection is added. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
-        /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
-        /// <ul> 
-        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
-        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
-        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
-        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
-        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
-        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+        /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
+        /// <ul>
+        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
         /// </ul>
         pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_connection = Some(input.into());
             self
         }
-        /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
-        /// <ul> 
-        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
-        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
-        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
-        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
-        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
-        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+        /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
+        /// <ul>
+        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
         /// </ul>
-        pub fn set_external_connection(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_connection = input; self
+        pub fn set_external_connection(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.external_connection = input;
+            self
         }
         /// Consumes the builder and constructs a [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput).
-        pub fn build(self) -> Result<crate::input::AssociateExternalConnectionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AssociateExternalConnectionInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    external_connection: self.external_connection
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssociateExternalConnectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateExternalConnectionInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                external_connection: self.external_connection,
+            })
         }
     }
-    
-    
 }
 impl AssociateExternalConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateExternalConnection`](crate::operation::AssociateExternalConnection)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociateExternalConnection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateExternalConnection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AssociateExternalConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/repository/external-connection").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::AssociateExternalConnectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/repository/external-connection")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::AssociateExternalConnectionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::AssociateExternalConnectionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
                 }
                 if let Some(inner_2) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_2));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_2),
+                    );
                 }
                 if let Some(inner_3) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_3));
                 }
                 if let Some(inner_4) = &_input.external_connection {
-                    query.push_kv("external-connection", &aws_smithy_http::query::fmt_string(&inner_4));
+                    query.push_kv(
+                        "external-connection",
+                        &aws_smithy_http::query::fmt_string(&inner_4),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AssociateExternalConnectionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateExternalConnectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -121,37 +152,54 @@ impl AssociateExternalConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociateExternalConnection::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociateExternalConnection", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateExternalConnection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateExternalConnection",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -163,9 +211,9 @@ impl AssociateExternalConnectionInput {
 
 /// See [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
 pub mod copy_package_versions_input {
-    
+
     /// A builder for [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -175,7 +223,9 @@ pub mod copy_package_versions_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) package: std::option::Option<std::string::String>,
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) version_revisions: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) allow_overwrite: std::option::Option<bool>,
         pub(crate) include_from_upstream: std::option::Option<bool>,
     }
@@ -187,7 +237,8 @@ pub mod copy_package_versions_input {
         }
         /// <p> The name of the domain that contains the source and destination repositories. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,7 +247,8 @@ pub mod copy_package_versions_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the package versions to be copied. </p>
         pub fn source_repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,8 +256,12 @@ pub mod copy_package_versions_input {
             self
         }
         /// <p> The name of the repository that contains the package versions to be copied. </p>
-        pub fn set_source_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_repository = input; self
+        pub fn set_source_repository(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_repository = input;
+            self
         }
         /// <p> The name of the repository into which package versions are copied. </p>
         pub fn destination_repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,8 +269,12 @@ pub mod copy_package_versions_input {
             self
         }
         /// <p> The name of the repository into which package versions are copied. </p>
-        pub fn set_destination_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination_repository = input; self
+        pub fn set_destination_repository(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_repository = input;
+            self
         }
         /// <p> The format of the package versions to be copied. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -222,27 +282,32 @@ pub mod copy_package_versions_input {
             self
         }
         /// <p> The format of the package versions to be copied. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,45 +316,60 @@ pub mod copy_package_versions_input {
         }
         /// <p> The name of the package that contains the versions to be copied. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// Appends an item to `versions`.
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p> The versions of the package to be copied. </p> <note> 
-        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+        /// <p> The versions of the package to be copied. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-                            v.push(input.into());
-                            self.versions = Some(v);
-                            self
+            v.push(input.into());
+            self.versions = Some(v);
+            self
         }
-        /// <p> The versions of the package to be copied. </p> <note> 
-        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+        /// <p> The versions of the package to be copied. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
-        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.versions = input; self
+        pub fn set_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.versions = input;
+            self
         }
         /// Adds a key-value pair to `version_revisions`.
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
-        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
-        pub fn version_revisions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn version_revisions(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.version_revisions.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.version_revisions = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.version_revisions = Some(hash_map);
+            self
         }
-        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
-        pub fn set_version_revisions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.version_revisions = input; self
+        pub fn set_version_revisions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.version_revisions = input;
+            self
         }
         /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
         pub fn allow_overwrite(mut self, input: bool) -> Self {
@@ -298,7 +378,8 @@ pub mod copy_package_versions_input {
         }
         /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
         pub fn set_allow_overwrite(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_overwrite = input; self
+            self.allow_overwrite = input;
+            self
         }
         /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn include_from_upstream(mut self, input: bool) -> Self {
@@ -307,62 +388,78 @@ pub mod copy_package_versions_input {
         }
         /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_include_from_upstream(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_from_upstream = input; self
+            self.include_from_upstream = input;
+            self
         }
         /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
-        pub fn build(self) -> Result<crate::input::CopyPackageVersionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CopyPackageVersionsInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    source_repository: self.source_repository
-                    ,
-                    destination_repository: self.destination_repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    versions: self.versions
-                    ,
-                    version_revisions: self.version_revisions
-                    ,
-                    allow_overwrite: self.allow_overwrite
-                    ,
-                    include_from_upstream: self.include_from_upstream
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CopyPackageVersionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CopyPackageVersionsInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                source_repository: self.source_repository,
+                destination_repository: self.destination_repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                versions: self.versions,
+                version_revisions: self.version_revisions,
+                allow_overwrite: self.allow_overwrite,
+                include_from_upstream: self.include_from_upstream,
+            })
         }
     }
-    
-    
 }
 impl CopyPackageVersionsInput {
     /// Consumes the builder and constructs an Operation<[`CopyPackageVersions`](crate::operation::CopyPackageVersions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CopyPackageVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CopyPackageVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CopyPackageVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CopyPackageVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/versions/copy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::CopyPackageVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::CopyPackageVersionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 if let Some(inner_6) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_6));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_6),
+                    );
                 }
                 if let Some(inner_7) = &_input.source_repository {
-                    query.push_kv("source-repository", &aws_smithy_http::query::fmt_string(&inner_7));
+                    query.push_kv(
+                        "source-repository",
+                        &aws_smithy_http::query::fmt_string(&inner_7),
+                    );
                 }
                 if let Some(inner_8) = &_input.destination_repository {
-                    query.push_kv("destination-repository", &aws_smithy_http::query::fmt_string(&inner_8));
+                    query.push_kv(
+                        "destination-repository",
+                        &aws_smithy_http::query::fmt_string(&inner_8),
+                    );
                 }
                 if let Some(inner_9) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
@@ -375,54 +472,83 @@ impl CopyPackageVersionsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CopyPackageVersionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CopyPackageVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_copy_package_versions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_copy_package_versions(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CopyPackageVersions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CopyPackageVersions", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CopyPackageVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CopyPackageVersions",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -434,9 +560,9 @@ impl CopyPackageVersionsInput {
 
 /// See [`CreateDomainInput`](crate::input::CreateDomainInput).
 pub mod create_domain_input {
-    
+
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
@@ -450,20 +576,25 @@ pub mod create_domain_input {
         }
         /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> 
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> 
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> 
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> 
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
         /// </important>
-        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.encryption_key = input; self
+        pub fn set_encryption_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.encryption_key = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -472,94 +603,141 @@ pub mod create_domain_input {
         /// <p>One or more tag key-value pairs for the domain.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>One or more tag key-value pairs for the domain.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateDomainInput`](crate::input::CreateDomainInput).
-        pub fn build(self) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateDomainInput {
-                    domain: self.domain
-                    ,
-                    encryption_key: self.encryption_key
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateDomainInput {
+                domain: self.domain,
+                encryption_key: self.encryption_key,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomain`](crate::operation::CreateDomain)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::CreateDomainInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::CreateDomainInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateDomainInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDomain::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDomain", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDomain",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -571,9 +749,9 @@ impl CreateDomainInput {
 
 /// See [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
 pub mod create_repository_input {
-    
+
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -590,7 +768,8 @@ pub mod create_repository_input {
         }
         /// <p> The name of the domain that contains the created repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,7 +778,8 @@ pub mod create_repository_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository to create. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -608,7 +788,8 @@ pub mod create_repository_input {
         }
         /// <p> The name of the repository to create. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A description of the created repository. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -617,7 +798,8 @@ pub mod create_repository_input {
         }
         /// <p> A description of the created repository. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Appends an item to `upstreams`.
         ///
@@ -626,13 +808,17 @@ pub mod create_repository_input {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-                            v.push(input);
-                            self.upstreams = Some(v);
-                            self
+            v.push(input);
+            self.upstreams = Some(v);
+            self
         }
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn set_upstreams(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>) -> Self {
-            self.upstreams = input; self
+        pub fn set_upstreams(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
+        ) -> Self {
+            self.upstreams = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -641,106 +827,153 @@ pub mod create_repository_input {
         /// <p>One or more tag key-value pairs for the repository.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>One or more tag key-value pairs for the repository.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
-        pub fn build(self) -> Result<crate::input::CreateRepositoryInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateRepositoryInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    description: self.description
-                    ,
-                    upstreams: self.upstreams
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateRepositoryInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateRepositoryInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                description: self.description,
+                upstreams: self.upstreams,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateRepository`](crate::operation::CreateRepository)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRepository, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRepository,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateRepositoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateRepositoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::CreateRepositoryInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::CreateRepositoryInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 if let Some(inner_14) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_14));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_14),
+                    );
                 }
                 if let Some(inner_15) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateRepositoryInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateRepositoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRepository::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRepository", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRepository::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRepository",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -752,9 +985,9 @@ impl CreateRepositoryInput {
 
 /// See [`DeleteDomainInput`](crate::input::DeleteDomainInput).
 pub mod delete_domain_input {
-    
+
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -767,7 +1000,8 @@ pub mod delete_domain_input {
         }
         /// <p> The name of the domain to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -776,45 +1010,66 @@ pub mod delete_domain_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-        pub fn build(self) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteDomainInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteDomainInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+            })
         }
     }
-    
-    
 }
 impl DeleteDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomain`](crate::operation::DeleteDomain)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DeleteDomainInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DeleteDomainInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
                 if let Some(inner_17) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_17));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_17),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteDomainInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -824,37 +1079,54 @@ impl DeleteDomainInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDomain::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDomain", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDomain",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -866,9 +1138,9 @@ impl DeleteDomainInput {
 
 /// See [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput).
 pub mod delete_domain_permissions_policy_input {
-    
+
     /// A builder for [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -882,7 +1154,8 @@ pub mod delete_domain_permissions_policy_input {
         }
         /// <p> The name of the domain associated with the resource policy to be deleted. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -891,7 +1164,8 @@ pub mod delete_domain_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
         pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,51 +1173,79 @@ pub mod delete_domain_permissions_policy_input {
             self
         }
         /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-        pub fn set_policy_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_revision = input; self
+        pub fn set_policy_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteDomainPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteDomainPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    policy_revision: self.policy_revision
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteDomainPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteDomainPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                policy_revision: self.policy_revision,
+            })
         }
     }
-    
-    
 }
 impl DeleteDomainPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainPermissionsPolicy`](crate::operation::DeleteDomainPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDomainPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDomainPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteDomainPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteDomainPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DeleteDomainPermissionsPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DeleteDomainPermissionsPolicyInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 if let Some(inner_19) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_19));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_19),
+                    );
                 }
                 if let Some(inner_20) = &_input.policy_revision {
-                    query.push_kv("policy-revision", &aws_smithy_http::query::fmt_string(&inner_20));
+                    query.push_kv(
+                        "policy-revision",
+                        &aws_smithy_http::query::fmt_string(&inner_20),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteDomainPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteDomainPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -953,37 +1255,54 @@ impl DeleteDomainPermissionsPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDomainPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDomainPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDomainPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDomainPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -995,9 +1314,9 @@ impl DeleteDomainPermissionsPolicyInput {
 
 /// See [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
 pub mod delete_package_versions_input {
-    
+
     /// A builder for [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1016,7 +1335,8 @@ pub mod delete_package_versions_input {
         }
         /// <p> The name of the domain that contains the package to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1025,7 +1345,8 @@ pub mod delete_package_versions_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the package versions to delete. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1034,7 +1355,8 @@ pub mod delete_package_versions_input {
         }
         /// <p> The name of the repository that contains the package versions to delete. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> The format of the package versions to delete. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -1042,27 +1364,32 @@ pub mod delete_package_versions_input {
             self
         }
         /// <p> The format of the package versions to delete. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package with the versions to delete. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1071,7 +1398,8 @@ pub mod delete_package_versions_input {
         }
         /// <p> The name of the package with the versions to delete. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// Appends an item to `versions`.
         ///
@@ -1080,13 +1408,17 @@ pub mod delete_package_versions_input {
         /// <p> An array of strings that specify the versions of the package to delete. </p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-                            v.push(input.into());
-                            self.versions = Some(v);
-                            self
+            v.push(input.into());
+            self.versions = Some(v);
+            self
         }
         /// <p> An array of strings that specify the versions of the package to delete. </p>
-        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.versions = input; self
+        pub fn set_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.versions = input;
+            self
         }
         /// <p> The expected status of the package version to delete. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -1094,51 +1426,67 @@ pub mod delete_package_versions_input {
             self
         }
         /// <p> The expected status of the package version to delete. </p>
-        pub fn set_expected_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
-            self.expected_status = input; self
+        pub fn set_expected_status(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionStatus>,
+        ) -> Self {
+            self.expected_status = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
-        pub fn build(self) -> Result<crate::input::DeletePackageVersionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeletePackageVersionsInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    versions: self.versions
-                    ,
-                    expected_status: self.expected_status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeletePackageVersionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeletePackageVersionsInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                versions: self.versions,
+                expected_status: self.expected_status,
+            })
         }
     }
-    
-    
 }
 impl DeletePackageVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackageVersions`](crate::operation::DeletePackageVersions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePackageVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeletePackageVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeletePackageVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeletePackageVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/versions/delete").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DeletePackageVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DeletePackageVersionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
                 }
                 if let Some(inner_22) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_22));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_22),
+                    );
                 }
                 if let Some(inner_23) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_23));
@@ -1154,54 +1502,85 @@ impl DeletePackageVersionsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeletePackageVersionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeletePackageVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_package_versions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_package_versions(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePackageVersions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePackageVersions", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePackageVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePackageVersions",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1213,9 +1592,9 @@ impl DeletePackageVersionsInput {
 
 /// See [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
 pub mod delete_repository_input {
-    
+
     /// A builder for [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1229,7 +1608,8 @@ pub mod delete_repository_input {
         }
         /// <p> The name of the domain that contains the repository to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1238,7 +1618,8 @@ pub mod delete_repository_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository to delete. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1247,50 +1628,70 @@ pub mod delete_repository_input {
         }
         /// <p> The name of the repository to delete. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
-        pub fn build(self) -> Result<crate::input::DeleteRepositoryInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteRepositoryInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteRepositoryInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteRepositoryInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+            })
         }
     }
-    
-    
 }
 impl DeleteRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepository`](crate::operation::DeleteRepository)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRepository, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRepository,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteRepositoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteRepositoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DeleteRepositoryInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DeleteRepositoryInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
                 }
                 if let Some(inner_28) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_28));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_28),
+                    );
                 }
                 if let Some(inner_29) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteRepositoryInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteRepositoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1300,37 +1701,54 @@ impl DeleteRepositoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRepository::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRepository", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRepository::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRepository",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1342,9 +1760,9 @@ impl DeleteRepositoryInput {
 
 /// See [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput).
 pub mod delete_repository_permissions_policy_input {
-    
+
     /// A builder for [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1359,7 +1777,8 @@ pub mod delete_repository_permissions_policy_input {
         }
         /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1368,7 +1787,8 @@ pub mod delete_repository_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1377,7 +1797,8 @@ pub mod delete_repository_permissions_policy_input {
         }
         /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
         pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1385,56 +1806,84 @@ pub mod delete_repository_permissions_policy_input {
             self
         }
         /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-        pub fn set_policy_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_revision = input; self
+        pub fn set_policy_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteRepositoryPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteRepositoryPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    policy_revision: self.policy_revision
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteRepositoryPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteRepositoryPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                policy_revision: self.policy_revision,
+            })
         }
     }
-    
-    
 }
 impl DeleteRepositoryPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepositoryPermissionsPolicy`](crate::operation::DeleteRepositoryPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRepositoryPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRepositoryPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteRepositoryPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/repository/permissions/policies").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/repository/permissions/policies")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DeleteRepositoryPermissionsPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
                 }
                 if let Some(inner_31) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_31));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_31),
+                    );
                 }
                 if let Some(inner_32) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
                 }
                 if let Some(inner_33) = &_input.policy_revision {
-                    query.push_kv("policy-revision", &aws_smithy_http::query::fmt_string(&inner_33));
+                    query.push_kv(
+                        "policy-revision",
+                        &aws_smithy_http::query::fmt_string(&inner_33),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1444,37 +1893,54 @@ impl DeleteRepositoryPermissionsPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRepositoryPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRepositoryPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRepositoryPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRepositoryPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1486,9 +1952,9 @@ impl DeleteRepositoryPermissionsPolicyInput {
 
 /// See [`DescribeDomainInput`](crate::input::DescribeDomainInput).
 pub mod describe_domain_input {
-    
+
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1501,7 +1967,8 @@ pub mod describe_domain_input {
         }
         /// <p> A string that specifies the name of the requested domain. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1510,45 +1977,66 @@ pub mod describe_domain_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-        pub fn build(self) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeDomainInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeDomainInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+            })
         }
     }
-    
-    
 }
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribeDomainInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribeDomainInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
                 }
                 if let Some(inner_35) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_35));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_35),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeDomainInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1558,37 +2046,54 @@ impl DescribeDomainInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDomain::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDomain", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDomain",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1600,9 +2105,9 @@ impl DescribeDomainInput {
 
 /// See [`DescribePackageInput`](crate::input::DescribePackageInput).
 pub mod describe_package_input {
-    
+
     /// A builder for [`DescribePackageInput`](crate::input::DescribePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1619,7 +2124,8 @@ pub mod describe_package_input {
         }
         /// <p>The name of the domain that contains the repository that contains the package.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1628,7 +2134,8 @@ pub mod describe_package_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p>The name of the repository that contains the requested package. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1637,7 +2144,8 @@ pub mod describe_package_input {
         }
         /// <p>The name of the repository that contains the requested package. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p>A format that specifies the type of the requested package.</p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -1645,27 +2153,32 @@ pub mod describe_package_input {
             self
         }
         /// <p>A format that specifies the type of the requested package.</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p>The name of the requested package.</p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1674,46 +2187,61 @@ pub mod describe_package_input {
         }
         /// <p>The name of the requested package.</p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribePackageInput`](crate::input::DescribePackageInput).
-        pub fn build(self) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribePackageInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribePackageInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+            })
         }
     }
-    
-    
 }
 impl DescribePackageInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackage`](crate::operation::DescribePackage)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePackage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePackage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribePackageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribePackageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribePackageInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribePackageInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
                 }
                 if let Some(inner_37) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_37));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_37),
+                    );
                 }
                 if let Some(inner_38) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_38));
@@ -1729,10 +2257,12 @@ impl DescribePackageInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribePackageInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribePackageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1742,37 +2272,54 @@ impl DescribePackageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePackage::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePackage", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePackage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePackage",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1784,9 +2331,9 @@ impl DescribePackageInput {
 
 /// See [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
 pub mod describe_package_version_input {
-    
+
     /// A builder for [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1804,7 +2351,8 @@ pub mod describe_package_version_input {
         }
         /// <p> The name of the domain that contains the repository that contains the package version. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1813,7 +2361,8 @@ pub mod describe_package_version_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the package version. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1822,7 +2371,8 @@ pub mod describe_package_version_input {
         }
         /// <p> The name of the repository that contains the package version. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A format that specifies the type of the requested package version. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -1830,27 +2380,32 @@ pub mod describe_package_version_input {
             self
         }
         /// <p> A format that specifies the type of the requested package version. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the requested package version. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1859,7 +2414,8 @@ pub mod describe_package_version_input {
         }
         /// <p> The name of the requested package version. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1867,49 +2423,66 @@ pub mod describe_package_version_input {
             self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version = input; self
+        pub fn set_package_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
-        pub fn build(self) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribePackageVersionInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    package_version: self.package_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribePackageVersionInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                package_version: self.package_version,
+            })
         }
     }
-    
-    
 }
 impl DescribePackageVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackageVersion`](crate::operation::DescribePackageVersion)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePackageVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePackageVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribePackageVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribePackageVersionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/version").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribePackageVersionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribePackageVersionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
                 if let Some(inner_43) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_43));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_43),
+                    );
                 }
                 if let Some(inner_44) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_44));
@@ -1928,10 +2501,12 @@ impl DescribePackageVersionInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribePackageVersionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribePackageVersionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1941,37 +2516,54 @@ impl DescribePackageVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePackageVersion::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePackageVersion", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePackageVersion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePackageVersion",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1983,9 +2575,9 @@ impl DescribePackageVersionInput {
 
 /// See [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
 pub mod describe_repository_input {
-    
+
     /// A builder for [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -1999,7 +2591,8 @@ pub mod describe_repository_input {
         }
         /// <p> The name of the domain that contains the repository to describe. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2008,7 +2601,8 @@ pub mod describe_repository_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> A string that specifies the name of the requested repository. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2017,50 +2611,70 @@ pub mod describe_repository_input {
         }
         /// <p> A string that specifies the name of the requested repository. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
-        pub fn build(self) -> Result<crate::input::DescribeRepositoryInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRepositoryInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeRepositoryInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeRepositoryInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+            })
         }
     }
-    
-    
 }
 impl DescribeRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRepository`](crate::operation::DescribeRepository)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRepository, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRepository,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRepositoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRepositoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DescribeRepositoryInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DescribeRepositoryInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
                 }
                 if let Some(inner_50) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_50));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_50),
+                    );
                 }
                 if let Some(inner_51) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_51));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRepositoryInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRepositoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2070,37 +2684,54 @@ impl DescribeRepositoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRepository::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRepository", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRepository::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRepository",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2112,9 +2743,9 @@ impl DescribeRepositoryInput {
 
 /// See [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput).
 pub mod disassociate_external_connection_input {
-    
+
     /// A builder for [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2129,7 +2760,8 @@ pub mod disassociate_external_connection_input {
         }
         /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2138,7 +2770,8 @@ pub mod disassociate_external_connection_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2147,7 +2780,8 @@ pub mod disassociate_external_connection_input {
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
         pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2155,56 +2789,84 @@ pub mod disassociate_external_connection_input {
             self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
-        pub fn set_external_connection(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.external_connection = input; self
+        pub fn set_external_connection(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.external_connection = input;
+            self
         }
         /// Consumes the builder and constructs a [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput).
-        pub fn build(self) -> Result<crate::input::DisassociateExternalConnectionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DisassociateExternalConnectionInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    external_connection: self.external_connection
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DisassociateExternalConnectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateExternalConnectionInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                external_connection: self.external_connection,
+            })
         }
     }
-    
-    
 }
 impl DisassociateExternalConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateExternalConnection`](crate::operation::DisassociateExternalConnection)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisassociateExternalConnection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateExternalConnection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DisassociateExternalConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/repository/external-connection").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::DisassociateExternalConnectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/repository/external-connection")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DisassociateExternalConnectionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DisassociateExternalConnectionInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_52) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
                 }
                 if let Some(inner_53) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_53));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_53),
+                    );
                 }
                 if let Some(inner_54) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_54));
                 }
                 if let Some(inner_55) = &_input.external_connection {
-                    query.push_kv("external-connection", &aws_smithy_http::query::fmt_string(&inner_55));
+                    query.push_kv(
+                        "external-connection",
+                        &aws_smithy_http::query::fmt_string(&inner_55),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DisassociateExternalConnectionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateExternalConnectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2214,37 +2876,54 @@ impl DisassociateExternalConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisassociateExternalConnection::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisassociateExternalConnection", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateExternalConnection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateExternalConnection",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2256,9 +2935,9 @@ impl DisassociateExternalConnectionInput {
 
 /// See [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
 pub mod dispose_package_versions_input {
-    
+
     /// A builder for [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2267,7 +2946,9 @@ pub mod dispose_package_versions_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) package: std::option::Option<std::string::String>,
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) version_revisions: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) expected_status: std::option::Option<crate::model::PackageVersionStatus>,
     }
     impl Builder {
@@ -2278,7 +2959,8 @@ pub mod dispose_package_versions_input {
         }
         /// <p> The name of the domain that contains the repository you want to dispose. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2287,7 +2969,8 @@ pub mod dispose_package_versions_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the package versions you want to dispose. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2296,7 +2979,8 @@ pub mod dispose_package_versions_input {
         }
         /// <p> The name of the repository that contains the package versions you want to dispose. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A format that specifies the type of package versions you want to dispose. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -2304,27 +2988,32 @@ pub mod dispose_package_versions_input {
             self
         }
         /// <p> A format that specifies the type of package versions you want to dispose. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package with the versions you want to dispose. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2333,7 +3022,8 @@ pub mod dispose_package_versions_input {
         }
         /// <p> The name of the package with the versions you want to dispose. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// Appends an item to `versions`.
         ///
@@ -2342,28 +3032,42 @@ pub mod dispose_package_versions_input {
         /// <p> The versions of the package you want to dispose. </p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-                            v.push(input.into());
-                            self.versions = Some(v);
-                            self
+            v.push(input.into());
+            self.versions = Some(v);
+            self
         }
         /// <p> The versions of the package you want to dispose. </p>
-        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.versions = input; self
+        pub fn set_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.versions = input;
+            self
         }
         /// Adds a key-value pair to `version_revisions`.
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
         /// <p> The revisions of the package versions you want to dispose. </p>
-        pub fn version_revisions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn version_revisions(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.version_revisions.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.version_revisions = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.version_revisions = Some(hash_map);
+            self
         }
         /// <p> The revisions of the package versions you want to dispose. </p>
-        pub fn set_version_revisions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.version_revisions = input; self
+        pub fn set_version_revisions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.version_revisions = input;
+            self
         }
         /// <p> The expected status of the package version to dispose. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -2371,53 +3075,68 @@ pub mod dispose_package_versions_input {
             self
         }
         /// <p> The expected status of the package version to dispose. </p>
-        pub fn set_expected_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
-            self.expected_status = input; self
+        pub fn set_expected_status(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionStatus>,
+        ) -> Self {
+            self.expected_status = input;
+            self
         }
         /// Consumes the builder and constructs a [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
-        pub fn build(self) -> Result<crate::input::DisposePackageVersionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DisposePackageVersionsInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    versions: self.versions
-                    ,
-                    version_revisions: self.version_revisions
-                    ,
-                    expected_status: self.expected_status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DisposePackageVersionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DisposePackageVersionsInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                versions: self.versions,
+                version_revisions: self.version_revisions,
+                expected_status: self.expected_status,
+            })
         }
     }
-    
-    
 }
 impl DisposePackageVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DisposePackageVersions`](crate::operation::DisposePackageVersions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisposePackageVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisposePackageVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DisposePackageVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DisposePackageVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/versions/dispose").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::DisposePackageVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::DisposePackageVersionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_56) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
                 if let Some(inner_57) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_57));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_57),
+                    );
                 }
                 if let Some(inner_58) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_58));
@@ -2433,54 +3152,85 @@ impl DisposePackageVersionsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DisposePackageVersionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisposePackageVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_dispose_package_versions(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_dispose_package_versions(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisposePackageVersions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisposePackageVersions", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisposePackageVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisposePackageVersions",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2492,9 +3242,9 @@ impl DisposePackageVersionsInput {
 
 /// See [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
 pub mod get_authorization_token_input {
-    
+
     /// A builder for [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2508,7 +3258,8 @@ pub mod get_authorization_token_input {
         }
         /// <p> The name of the domain that is in scope for the generated authorization token. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2517,7 +3268,8 @@ pub mod get_authorization_token_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
         pub fn duration_seconds(mut self, input: i64) -> Self {
@@ -2526,50 +3278,73 @@ pub mod get_authorization_token_input {
         }
         /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_seconds = input; self
+            self.duration_seconds = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
-        pub fn build(self) -> Result<crate::input::GetAuthorizationTokenInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetAuthorizationTokenInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    duration_seconds: self.duration_seconds
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetAuthorizationTokenInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetAuthorizationTokenInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                duration_seconds: self.duration_seconds,
+            })
         }
     }
-    
-    
 }
 impl GetAuthorizationTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAuthorizationToken`](crate::operation::GetAuthorizationToken)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAuthorizationToken, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetAuthorizationToken,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetAuthorizationTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetAuthorizationTokenInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/authorization-token").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetAuthorizationTokenInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetAuthorizationTokenInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_62) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
                 }
                 if let Some(inner_63) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_63));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_63),
+                    );
                 }
                 if let Some(inner_64) = &_input.duration_seconds {
-                    query.push_kv("duration", aws_smithy_types::primitive::Encoder::from(*inner_64).encode());
+                    query.push_kv(
+                        "duration",
+                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetAuthorizationTokenInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetAuthorizationTokenInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2579,37 +3354,54 @@ impl GetAuthorizationTokenInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAuthorizationToken::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAuthorizationToken", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAuthorizationToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAuthorizationToken",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2621,9 +3413,9 @@ impl GetAuthorizationTokenInput {
 
 /// See [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput).
 pub mod get_domain_permissions_policy_input {
-    
+
     /// A builder for [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2636,7 +3428,8 @@ pub mod get_domain_permissions_policy_input {
         }
         /// <p> The name of the domain to which the resource policy is attached. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2645,45 +3438,68 @@ pub mod get_domain_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::GetDomainPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetDomainPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetDomainPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetDomainPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+            })
         }
     }
-    
-    
 }
 impl GetDomainPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainPermissionsPolicy`](crate::operation::GetDomainPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDomainPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDomainPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetDomainPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetDomainPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetDomainPermissionsPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetDomainPermissionsPolicyInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
                 }
                 if let Some(inner_66) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_66));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_66),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetDomainPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDomainPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2693,37 +3509,54 @@ impl GetDomainPermissionsPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDomainPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDomainPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDomainPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDomainPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2735,9 +3568,9 @@ impl GetDomainPermissionsPolicyInput {
 
 /// See [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
 pub mod get_package_version_asset_input {
-    
+
     /// A builder for [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2757,7 +3590,8 @@ pub mod get_package_version_asset_input {
         }
         /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2766,7 +3600,8 @@ pub mod get_package_version_asset_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The repository that contains the package version with the requested asset. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2775,7 +3610,8 @@ pub mod get_package_version_asset_input {
         }
         /// <p> The repository that contains the package version with the requested asset. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A format that specifies the type of the package version with the requested asset file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -2783,27 +3619,32 @@ pub mod get_package_version_asset_input {
             self
         }
         /// <p> A format that specifies the type of the package version with the requested asset file. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package that contains the requested asset. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2812,7 +3653,8 @@ pub mod get_package_version_asset_input {
         }
         /// <p> The name of the package that contains the requested asset. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2820,8 +3662,12 @@ pub mod get_package_version_asset_input {
             self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version = input; self
+        pub fn set_package_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version = input;
+            self
         }
         /// <p> The name of the requested asset. </p>
         pub fn asset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2830,7 +3676,8 @@ pub mod get_package_version_asset_input {
         }
         /// <p> The name of the requested asset. </p>
         pub fn set_asset(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset = input; self
+            self.asset = input;
+            self
         }
         /// <p> The name of the package version revision that contains the requested asset. </p>
         pub fn package_version_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2838,53 +3685,68 @@ pub mod get_package_version_asset_input {
             self
         }
         /// <p> The name of the package version revision that contains the requested asset. </p>
-        pub fn set_package_version_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version_revision = input; self
+        pub fn set_package_version_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version_revision = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
-        pub fn build(self) -> Result<crate::input::GetPackageVersionAssetInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetPackageVersionAssetInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    package_version: self.package_version
-                    ,
-                    asset: self.asset
-                    ,
-                    package_version_revision: self.package_version_revision
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetPackageVersionAssetInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetPackageVersionAssetInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                package_version: self.package_version,
+                asset: self.asset,
+                package_version_revision: self.package_version_revision,
+            })
         }
     }
-    
-    
 }
 impl GetPackageVersionAssetInput {
     /// Consumes the builder and constructs an Operation<[`GetPackageVersionAsset`](crate::operation::GetPackageVersionAsset)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPackageVersionAsset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPackageVersionAsset,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetPackageVersionAssetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetPackageVersionAssetInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/version/asset").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetPackageVersionAssetInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetPackageVersionAssetInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
                 }
                 if let Some(inner_68) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_68));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_68),
+                    );
                 }
                 if let Some(inner_69) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_69));
@@ -2909,10 +3771,12 @@ impl GetPackageVersionAssetInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetPackageVersionAssetInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPackageVersionAssetInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2922,37 +3786,54 @@ impl GetPackageVersionAssetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPackageVersionAsset::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPackageVersionAsset", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPackageVersionAsset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPackageVersionAsset",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2964,9 +3845,9 @@ impl GetPackageVersionAssetInput {
 
 /// See [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput).
 pub mod get_package_version_readme_input {
-    
+
     /// A builder for [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -2984,7 +3865,8 @@ pub mod get_package_version_readme_input {
         }
         /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2993,7 +3875,8 @@ pub mod get_package_version_readme_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The repository that contains the package with the requested readme file. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3002,7 +3885,8 @@ pub mod get_package_version_readme_input {
         }
         /// <p> The repository that contains the package with the requested readme file. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A format that specifies the type of the package version with the requested readme file. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -3010,27 +3894,32 @@ pub mod get_package_version_readme_input {
             self
         }
         /// <p> A format that specifies the type of the package version with the requested readme file. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package version that contains the requested readme file. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3039,7 +3928,8 @@ pub mod get_package_version_readme_input {
         }
         /// <p> The name of the package version that contains the requested readme file. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3047,49 +3937,68 @@ pub mod get_package_version_readme_input {
             self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version = input; self
+        pub fn set_package_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput).
-        pub fn build(self) -> Result<crate::input::GetPackageVersionReadmeInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetPackageVersionReadmeInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    package_version: self.package_version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetPackageVersionReadmeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetPackageVersionReadmeInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                package_version: self.package_version,
+            })
         }
     }
-    
-    
 }
 impl GetPackageVersionReadmeInput {
     /// Consumes the builder and constructs an Operation<[`GetPackageVersionReadme`](crate::operation::GetPackageVersionReadme)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPackageVersionReadme, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPackageVersionReadme,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetPackageVersionReadmeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetPackageVersionReadmeInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/version/readme").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetPackageVersionReadmeInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetPackageVersionReadmeInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_76) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
                 }
                 if let Some(inner_77) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_77));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_77),
+                    );
                 }
                 if let Some(inner_78) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_78));
@@ -3108,10 +4017,12 @@ impl GetPackageVersionReadmeInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetPackageVersionReadmeInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPackageVersionReadmeInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3121,37 +4032,54 @@ impl GetPackageVersionReadmeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPackageVersionReadme::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPackageVersionReadme", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPackageVersionReadme::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPackageVersionReadme",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3163,9 +4091,9 @@ impl GetPackageVersionReadmeInput {
 
 /// See [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
 pub mod get_repository_endpoint_input {
-    
+
     /// A builder for [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3180,7 +4108,8 @@ pub mod get_repository_endpoint_input {
         }
         /// <p> The name of the domain that contains the repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3189,7 +4118,8 @@ pub mod get_repository_endpoint_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3198,7 +4128,8 @@ pub mod get_repository_endpoint_input {
         }
         /// <p> The name of the repository. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -3206,43 +4137,63 @@ pub mod get_repository_endpoint_input {
             self
         }
         /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
-        pub fn build(self) -> Result<crate::input::GetRepositoryEndpointInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetRepositoryEndpointInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetRepositoryEndpointInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetRepositoryEndpointInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+            })
         }
     }
-    
-    
 }
 impl GetRepositoryEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositoryEndpoint`](crate::operation::GetRepositoryEndpoint)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRepositoryEndpoint, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRepositoryEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetRepositoryEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetRepositoryEndpointInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repository/endpoint").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetRepositoryEndpointInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetRepositoryEndpointInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_83) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
                 }
                 if let Some(inner_84) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_84));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_84),
+                    );
                 }
                 if let Some(inner_85) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_85));
@@ -3252,10 +4203,12 @@ impl GetRepositoryEndpointInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetRepositoryEndpointInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRepositoryEndpointInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3265,37 +4218,54 @@ impl GetRepositoryEndpointInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRepositoryEndpoint::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRepositoryEndpoint", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRepositoryEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRepositoryEndpoint",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3307,9 +4277,9 @@ impl GetRepositoryEndpointInput {
 
 /// See [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput).
 pub mod get_repository_permissions_policy_input {
-    
+
     /// A builder for [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3323,7 +4293,8 @@ pub mod get_repository_permissions_policy_input {
         }
         /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3332,7 +4303,8 @@ pub mod get_repository_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3341,50 +4313,73 @@ pub mod get_repository_permissions_policy_input {
         }
         /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::GetRepositoryPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetRepositoryPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetRepositoryPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetRepositoryPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+            })
         }
     }
-    
-    
 }
 impl GetRepositoryPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositoryPermissionsPolicy`](crate::operation::GetRepositoryPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetRepositoryPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRepositoryPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetRepositoryPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/repository/permissions/policy").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::GetRepositoryPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/repository/permissions/policy")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::GetRepositoryPermissionsPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::GetRepositoryPermissionsPolicyInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_87) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
                 }
                 if let Some(inner_88) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_88));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_88),
+                    );
                 }
                 if let Some(inner_89) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_89));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetRepositoryPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRepositoryPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3394,37 +4389,54 @@ impl GetRepositoryPermissionsPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetRepositoryPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetRepositoryPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRepositoryPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRepositoryPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3436,9 +4448,9 @@ impl GetRepositoryPermissionsPolicyInput {
 
 /// See [`ListDomainsInput`](crate::input::ListDomainsInput).
 pub mod list_domains_input {
-    
+
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3451,7 +4463,8 @@ pub mod list_domains_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3460,78 +4473,120 @@ pub mod list_domains_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput).
-        pub fn build(self) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListDomainsInput {
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDomainsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDomains, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDomains,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListDomainsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListDomainsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domains").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListDomainsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDomainsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDomains::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDomains", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDomains::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDomains",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3543,9 +4598,9 @@ impl ListDomainsInput {
 
 /// See [`ListPackagesInput`](crate::input::ListPackagesInput).
 pub mod list_packages_input {
-    
+
     /// A builder for [`ListPackagesInput`](crate::input::ListPackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3566,7 +4621,8 @@ pub mod list_packages_input {
         }
         /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3575,7 +4631,8 @@ pub mod list_packages_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the requested packages. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3584,7 +4641,8 @@ pub mod list_packages_input {
         }
         /// <p> The name of the repository that contains the requested packages. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -3592,27 +4650,32 @@ pub mod list_packages_input {
             self
         }
         /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn package_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3620,8 +4683,12 @@ pub mod list_packages_input {
             self
         }
         /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-        pub fn set_package_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_prefix = input; self
+        pub fn set_package_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_prefix = input;
+            self
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3630,7 +4697,8 @@ pub mod list_packages_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3639,7 +4707,8 @@ pub mod list_packages_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
         pub fn publish(mut self, input: crate::model::AllowPublish) -> Self {
@@ -3647,8 +4716,12 @@ pub mod list_packages_input {
             self
         }
         /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-        pub fn set_publish(mut self, input: std::option::Option<crate::model::AllowPublish>) -> Self {
-            self.publish = input; self
+        pub fn set_publish(
+            mut self,
+            input: std::option::Option<crate::model::AllowPublish>,
+        ) -> Self {
+            self.publish = input;
+            self
         }
         /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
         pub fn upstream(mut self, input: crate::model::AllowUpstream) -> Self {
@@ -3656,55 +4729,69 @@ pub mod list_packages_input {
             self
         }
         /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-        pub fn set_upstream(mut self, input: std::option::Option<crate::model::AllowUpstream>) -> Self {
-            self.upstream = input; self
+        pub fn set_upstream(
+            mut self,
+            input: std::option::Option<crate::model::AllowUpstream>,
+        ) -> Self {
+            self.upstream = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPackagesInput`](crate::input::ListPackagesInput).
-        pub fn build(self) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPackagesInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package_prefix: self.package_prefix
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                    publish: self.publish
-                    ,
-                    upstream: self.upstream
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListPackagesInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package_prefix: self.package_prefix,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                publish: self.publish,
+                upstream: self.upstream,
+            })
         }
     }
-    
-    
 }
 impl ListPackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListPackages`](crate::operation::ListPackages)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackages, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPackages,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPackagesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListPackagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/packages").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListPackagesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListPackagesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_90) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
                 }
                 if let Some(inner_91) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_91));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_91),
+                    );
                 }
                 if let Some(inner_92) = &_input.repository {
                     query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
@@ -3716,10 +4803,16 @@ impl ListPackagesInput {
                     query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
                 }
                 if let Some(inner_95) = &_input.package_prefix {
-                    query.push_kv("package-prefix", &aws_smithy_http::query::fmt_string(&inner_95));
+                    query.push_kv(
+                        "package-prefix",
+                        &aws_smithy_http::query::fmt_string(&inner_95),
+                    );
                 }
                 if let Some(inner_96) = &_input.max_results {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_96).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                    );
                 }
                 if let Some(inner_97) = &_input.next_token {
                     query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
@@ -3732,10 +4825,12 @@ impl ListPackagesInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPackagesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPackagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3745,37 +4840,54 @@ impl ListPackagesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackages::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackages", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPackages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPackages",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3787,9 +4899,9 @@ impl ListPackagesInput {
 
 /// See [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput).
 pub mod list_package_version_assets_input {
-    
+
     /// A builder for [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -3809,7 +4921,8 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3818,7 +4931,8 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3827,7 +4941,8 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> The format of the package that contains the requested package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -3835,27 +4950,32 @@ pub mod list_package_version_assets_input {
             self
         }
         /// <p> The format of the package that contains the requested package version assets. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3864,7 +4984,8 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The name of the package that contains the requested package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3872,8 +4993,12 @@ pub mod list_package_version_assets_input {
             self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version = input; self
+        pub fn set_package_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version = input;
+            self
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3882,7 +5007,8 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3891,55 +5017,72 @@ pub mod list_package_version_assets_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput).
-        pub fn build(self) -> Result<crate::input::ListPackageVersionAssetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPackageVersionAssetsInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    package_version: self.package_version
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListPackageVersionAssetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListPackageVersionAssetsInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                package_version: self.package_version,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListPackageVersionAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackageVersionAssets`](crate::operation::ListPackageVersionAssets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackageVersionAssets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPackageVersionAssets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPackageVersionAssetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListPackageVersionAssetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/version/assets").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListPackageVersionAssetsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListPackageVersionAssetsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_100) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
                 }
                 if let Some(inner_101) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_101));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_101),
+                    );
                 }
                 if let Some(inner_102) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_102));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_102),
+                    );
                 }
                 if let Some(inner_103) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
@@ -3954,17 +5097,25 @@ impl ListPackageVersionAssetsInput {
                     query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
                 }
                 if let Some(inner_107) = &_input.max_results {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_107).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                    );
                 }
                 if let Some(inner_108) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_108));
+                    query.push_kv(
+                        "next-token",
+                        &aws_smithy_http::query::fmt_string(&inner_108),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPackageVersionAssetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPackageVersionAssetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3974,37 +5125,54 @@ impl ListPackageVersionAssetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackageVersionAssets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackageVersionAssets", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPackageVersionAssets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPackageVersionAssets",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4016,9 +5184,9 @@ impl ListPackageVersionAssetsInput {
 
 /// See [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput).
 pub mod list_package_version_dependencies_input {
-    
+
     /// A builder for [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4037,7 +5205,8 @@ pub mod list_package_version_dependencies_input {
         }
         /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4046,7 +5215,8 @@ pub mod list_package_version_dependencies_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the requested package version. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4055,7 +5225,8 @@ pub mod list_package_version_dependencies_input {
         }
         /// <p> The name of the repository that contains the requested package version. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> The format of the package with the requested dependencies. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -4063,27 +5234,32 @@ pub mod list_package_version_dependencies_input {
             self
         }
         /// <p> The format of the package with the requested dependencies. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package versions' package. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4092,7 +5268,8 @@ pub mod list_package_version_dependencies_input {
         }
         /// <p> The name of the package versions' package. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4100,8 +5277,12 @@ pub mod list_package_version_dependencies_input {
             self
         }
         /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-        pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_version = input; self
+        pub fn set_package_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_version = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4110,53 +5291,72 @@ pub mod list_package_version_dependencies_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput).
-        pub fn build(self) -> Result<crate::input::ListPackageVersionDependenciesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPackageVersionDependenciesInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    package_version: self.package_version
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListPackageVersionDependenciesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListPackageVersionDependenciesInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                package_version: self.package_version,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListPackageVersionDependenciesInput {
     /// Consumes the builder and constructs an Operation<[`ListPackageVersionDependencies`](crate::operation::ListPackageVersionDependencies)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackageVersionDependencies, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPackageVersionDependencies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPackageVersionDependenciesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/package/version/dependencies").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::ListPackageVersionDependenciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/package/version/dependencies")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListPackageVersionDependenciesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListPackageVersionDependenciesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_109) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
                 }
                 if let Some(inner_110) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_110));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_110),
+                    );
                 }
                 if let Some(inner_111) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_111));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_111),
+                    );
                 }
                 if let Some(inner_112) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
@@ -4171,14 +5371,19 @@ impl ListPackageVersionDependenciesInput {
                     query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
                 }
                 if let Some(inner_116) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_116));
+                    query.push_kv(
+                        "next-token",
+                        &aws_smithy_http::query::fmt_string(&inner_116),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPackageVersionDependenciesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPackageVersionDependenciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4188,37 +5393,54 @@ impl ListPackageVersionDependenciesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackageVersionDependencies::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackageVersionDependencies", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPackageVersionDependencies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPackageVersionDependencies",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4230,9 +5452,9 @@ impl ListPackageVersionDependenciesInput {
 
 /// See [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
 pub mod list_package_versions_input {
-    
+
     /// A builder for [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4254,7 +5476,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4263,7 +5486,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4272,7 +5496,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The name of the repository that contains the requested package versions. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> The format of the returned package versions. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -4280,27 +5505,32 @@ pub mod list_package_versions_input {
             self
         }
         /// <p> The format of the returned package versions. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package for which you want to request package versions. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4309,7 +5539,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The name of the package for which you want to request package versions. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// <p> A string that filters the requested package versions by status. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -4317,8 +5548,12 @@ pub mod list_package_versions_input {
             self
         }
         /// <p> A string that filters the requested package versions by status. </p>
-        pub fn set_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
-            self.status = input; self
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
         }
         /// <p> How to sort the requested list of package versions. </p>
         pub fn sort_by(mut self, input: crate::model::PackageVersionSortType) -> Self {
@@ -4326,8 +5561,12 @@ pub mod list_package_versions_input {
             self
         }
         /// <p> How to sort the requested list of package versions. </p>
-        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::PackageVersionSortType>) -> Self {
-            self.sort_by = input; self
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionSortType>,
+        ) -> Self {
+            self.sort_by = input;
+            self
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4336,7 +5575,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4345,7 +5585,8 @@ pub mod list_package_versions_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
         pub fn origin_type(mut self, input: crate::model::PackageVersionOriginType) -> Self {
@@ -4353,60 +5594,76 @@ pub mod list_package_versions_input {
             self
         }
         /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
-        pub fn set_origin_type(mut self, input: std::option::Option<crate::model::PackageVersionOriginType>) -> Self {
-            self.origin_type = input; self
+        pub fn set_origin_type(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionOriginType>,
+        ) -> Self {
+            self.origin_type = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
-        pub fn build(self) -> Result<crate::input::ListPackageVersionsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPackageVersionsInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    status: self.status
-                    ,
-                    sort_by: self.sort_by
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                    origin_type: self.origin_type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListPackageVersionsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListPackageVersionsInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                status: self.status,
+                sort_by: self.sort_by,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                origin_type: self.origin_type,
+            })
         }
     }
-    
-    
 }
 impl ListPackageVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackageVersions`](crate::operation::ListPackageVersions)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPackageVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPackageVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPackageVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListPackageVersionsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package/versions").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListPackageVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListPackageVersionsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_117) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
                 }
                 if let Some(inner_118) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_118));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_118),
+                    );
                 }
                 if let Some(inner_119) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_119));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_119),
+                    );
                 }
                 if let Some(inner_120) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
@@ -4424,20 +5681,31 @@ impl ListPackageVersionsInput {
                     query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
                 }
                 if let Some(inner_125) = &_input.max_results {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_125).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
+                    );
                 }
                 if let Some(inner_126) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_126));
+                    query.push_kv(
+                        "next-token",
+                        &aws_smithy_http::query::fmt_string(&inner_126),
+                    );
                 }
                 if let Some(inner_127) = &_input.origin_type {
-                    query.push_kv("originType", &aws_smithy_http::query::fmt_string(&inner_127));
+                    query.push_kv(
+                        "originType",
+                        &aws_smithy_http::query::fmt_string(&inner_127),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPackageVersionsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPackageVersionsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4447,37 +5715,54 @@ impl ListPackageVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPackageVersions::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPackageVersions", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPackageVersions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPackageVersions",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4489,9 +5774,9 @@ impl ListPackageVersionsInput {
 
 /// See [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
 pub mod list_repositories_input {
-    
+
     /// A builder for [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_prefix: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4504,8 +5789,12 @@ pub mod list_repositories_input {
             self
         }
         /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
-        pub fn set_repository_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository_prefix = input; self
+        pub fn set_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_prefix = input;
+            self
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4514,7 +5803,8 @@ pub mod list_repositories_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4523,50 +5813,76 @@ pub mod list_repositories_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
-        pub fn build(self) -> Result<crate::input::ListRepositoriesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRepositoriesInput {
-                    repository_prefix: self.repository_prefix
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRepositoriesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRepositoriesInput {
+                repository_prefix: self.repository_prefix,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListRepositoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListRepositories`](crate::operation::ListRepositories)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRepositories, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRepositories,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRepositoriesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRepositoriesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repositories").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListRepositoriesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListRepositoriesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_128) = &_input.repository_prefix {
-                    query.push_kv("repository-prefix", &aws_smithy_http::query::fmt_string(&inner_128));
+                    query.push_kv(
+                        "repository-prefix",
+                        &aws_smithy_http::query::fmt_string(&inner_128),
+                    );
                 }
                 if let Some(inner_129) = &_input.max_results {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_129).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
+                    );
                 }
                 if let Some(inner_130) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_130));
+                    query.push_kv(
+                        "next-token",
+                        &aws_smithy_http::query::fmt_string(&inner_130),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRepositoriesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRepositoriesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4576,37 +5892,54 @@ impl ListRepositoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRepositories::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRepositories", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRepositories::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRepositories",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4618,9 +5951,9 @@ impl ListRepositoriesInput {
 
 /// See [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput).
 pub mod list_repositories_in_domain_input {
-    
+
     /// A builder for [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4637,7 +5970,8 @@ pub mod list_repositories_in_domain_input {
         }
         /// <p> The name of the domain that contains the returned list of repositories. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4646,7 +5980,8 @@ pub mod list_repositories_in_domain_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
         pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4654,8 +5989,12 @@ pub mod list_repositories_in_domain_input {
             self
         }
         /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-        pub fn set_administrator_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.administrator_account = input; self
+        pub fn set_administrator_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.administrator_account = input;
+            self
         }
         /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
         pub fn repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4663,8 +6002,12 @@ pub mod list_repositories_in_domain_input {
             self
         }
         /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-        pub fn set_repository_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository_prefix = input; self
+        pub fn set_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_prefix = input;
+            self
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4673,7 +6016,8 @@ pub mod list_repositories_in_domain_input {
         }
         /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4682,65 +6026,96 @@ pub mod list_repositories_in_domain_input {
         }
         /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput).
-        pub fn build(self) -> Result<crate::input::ListRepositoriesInDomainInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRepositoriesInDomainInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    administrator_account: self.administrator_account
-                    ,
-                    repository_prefix: self.repository_prefix
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListRepositoriesInDomainInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListRepositoriesInDomainInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                administrator_account: self.administrator_account,
+                repository_prefix: self.repository_prefix,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListRepositoriesInDomainInput {
     /// Consumes the builder and constructs an Operation<[`ListRepositoriesInDomain`](crate::operation::ListRepositoriesInDomain)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRepositoriesInDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRepositoriesInDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRepositoriesInDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRepositoriesInDomainInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain/repositories").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListRepositoriesInDomainInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListRepositoriesInDomainInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_131) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
                 }
                 if let Some(inner_132) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_132));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_132),
+                    );
                 }
                 if let Some(inner_133) = &_input.administrator_account {
-                    query.push_kv("administrator-account", &aws_smithy_http::query::fmt_string(&inner_133));
+                    query.push_kv(
+                        "administrator-account",
+                        &aws_smithy_http::query::fmt_string(&inner_133),
+                    );
                 }
                 if let Some(inner_134) = &_input.repository_prefix {
-                    query.push_kv("repository-prefix", &aws_smithy_http::query::fmt_string(&inner_134));
+                    query.push_kv(
+                        "repository-prefix",
+                        &aws_smithy_http::query::fmt_string(&inner_134),
+                    );
                 }
                 if let Some(inner_135) = &_input.max_results {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(*inner_135).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                    );
                 }
                 if let Some(inner_136) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_136));
+                    query.push_kv(
+                        "next-token",
+                        &aws_smithy_http::query::fmt_string(&inner_136),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRepositoriesInDomainInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRepositoriesInDomainInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4750,37 +6125,54 @@ impl ListRepositoriesInDomainInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRepositoriesInDomain::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRepositoriesInDomain", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRepositoriesInDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRepositoriesInDomain",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4792,9 +6184,9 @@ impl ListRepositoriesInDomainInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4806,40 +6198,62 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/tags").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListTagsForResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_137) = &_input.resource_arn {
-                    query.push_kv("resourceArn", &aws_smithy_http::query::fmt_string(&inner_137));
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_137),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4849,37 +6263,54 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4891,9 +6322,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput).
 pub mod put_domain_permissions_policy_input {
-    
+
     /// A builder for [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -4908,7 +6339,8 @@ pub mod put_domain_permissions_policy_input {
         }
         /// <p> The name of the domain on which to set the resource policy. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4917,7 +6349,8 @@ pub mod put_domain_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
         pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4925,8 +6358,12 @@ pub mod put_domain_permissions_policy_input {
             self
         }
         /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-        pub fn set_policy_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_revision = input; self
+        pub fn set_policy_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision = input;
+            self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4934,46 +6371,68 @@ pub mod put_domain_permissions_policy_input {
             self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_document = input; self
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::PutDomainPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutDomainPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    policy_revision: self.policy_revision
-                    ,
-                    policy_document: self.policy_document
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutDomainPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutDomainPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                policy_revision: self.policy_revision,
+                policy_document: self.policy_document,
+            })
         }
     }
-    
-    
 }
 impl PutDomainPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutDomainPermissionsPolicy`](crate::operation::PutDomainPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutDomainPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutDomainPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutDomainPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutDomainPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutDomainPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutDomainPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4981,36 +6440,58 @@ impl PutDomainPermissionsPolicyInput {
             crate::operation_ser::serialize_operation_crate_operation_put_domain_permissions_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutDomainPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutDomainPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutDomainPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutDomainPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5022,9 +6503,9 @@ impl PutDomainPermissionsPolicyInput {
 
 /// See [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
 pub mod put_package_origin_configuration_input {
-    
+
     /// A builder for [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5042,7 +6523,8 @@ pub mod put_package_origin_configuration_input {
         }
         /// <p>The name of the domain that contains the repository that contains the package.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5051,7 +6533,8 @@ pub mod put_package_origin_configuration_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p>The name of the repository that contains the package.</p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5060,7 +6543,8 @@ pub mod put_package_origin_configuration_input {
         }
         /// <p>The name of the repository that contains the package.</p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p>A format that specifies the type of the package to be updated.</p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -5068,27 +6552,32 @@ pub mod put_package_origin_configuration_input {
             self
         }
         /// <p>A format that specifies the type of the package to be updated.</p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p>The name of the package to be updated.</p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5097,62 +6586,85 @@ pub mod put_package_origin_configuration_input {
         }
         /// <p>The name of the package to be updated.</p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p> 
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
         /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
         pub fn restrictions(mut self, input: crate::model::PackageOriginRestrictions) -> Self {
             self.restrictions = Some(input);
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p> 
+        /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
         /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-        pub fn set_restrictions(mut self, input: std::option::Option<crate::model::PackageOriginRestrictions>) -> Self {
-            self.restrictions = input; self
+        pub fn set_restrictions(
+            mut self,
+            input: std::option::Option<crate::model::PackageOriginRestrictions>,
+        ) -> Self {
+            self.restrictions = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutPackageOriginConfigurationInput`](crate::input::PutPackageOriginConfigurationInput).
-        pub fn build(self) -> Result<crate::input::PutPackageOriginConfigurationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutPackageOriginConfigurationInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    restrictions: self.restrictions
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutPackageOriginConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutPackageOriginConfigurationInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                restrictions: self.restrictions,
+            })
         }
     }
-    
-    
 }
 impl PutPackageOriginConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutPackageOriginConfiguration`](crate::operation::PutPackageOriginConfiguration)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutPackageOriginConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutPackageOriginConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutPackageOriginConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutPackageOriginConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::PutPackageOriginConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::PutPackageOriginConfigurationInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_138) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
                 }
                 if let Some(inner_139) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_139));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_139),
+                    );
                 }
                 if let Some(inner_140) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_140));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_140),
+                    );
                 }
                 if let Some(inner_141) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
@@ -5165,17 +6677,23 @@ impl PutPackageOriginConfigurationInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutPackageOriginConfigurationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutPackageOriginConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5183,36 +6701,58 @@ impl PutPackageOriginConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_put_package_origin_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutPackageOriginConfiguration::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutPackageOriginConfiguration", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutPackageOriginConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutPackageOriginConfiguration",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5224,9 +6764,9 @@ impl PutPackageOriginConfigurationInput {
 
 /// See [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
 pub mod put_repository_permissions_policy_input {
-    
+
     /// A builder for [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5242,7 +6782,8 @@ pub mod put_repository_permissions_policy_input {
         }
         /// <p> The name of the domain containing the repository to set the resource policy on. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5251,7 +6792,8 @@ pub mod put_repository_permissions_policy_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository to set the resource policy on. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5260,7 +6802,8 @@ pub mod put_repository_permissions_policy_input {
         }
         /// <p> The name of the repository to set the resource policy on. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
         pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5268,8 +6811,12 @@ pub mod put_repository_permissions_policy_input {
             self
         }
         /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-        pub fn set_policy_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_revision = input; self
+        pub fn set_policy_revision(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_revision = input;
+            self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5277,62 +6824,93 @@ pub mod put_repository_permissions_policy_input {
             self
         }
         /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_document = input; self
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
-        pub fn build(self) -> Result<crate::input::PutRepositoryPermissionsPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutRepositoryPermissionsPolicyInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    policy_revision: self.policy_revision
-                    ,
-                    policy_document: self.policy_document
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PutRepositoryPermissionsPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutRepositoryPermissionsPolicyInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                policy_revision: self.policy_revision,
+                policy_document: self.policy_document,
+            })
         }
     }
-    
-    
 }
 impl PutRepositoryPermissionsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutRepositoryPermissionsPolicy`](crate::operation::PutRepositoryPermissionsPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutRepositoryPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutRepositoryPermissionsPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutRepositoryPermissionsPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/repository/permissions/policy").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::PutRepositoryPermissionsPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/repository/permissions/policy")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::PutRepositoryPermissionsPolicyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::PutRepositoryPermissionsPolicyInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_144) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
                 }
                 if let Some(inner_145) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_145));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_145),
+                    );
                 }
                 if let Some(inner_146) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_146));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_146),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutRepositoryPermissionsPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutRepositoryPermissionsPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5340,36 +6918,58 @@ impl PutRepositoryPermissionsPolicyInput {
             crate::operation_ser::serialize_operation_crate_operation_put_repository_permissions_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutRepositoryPermissionsPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutRepositoryPermissionsPolicy", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutRepositoryPermissionsPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutRepositoryPermissionsPolicy",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5381,9 +6981,9 @@ impl PutRepositoryPermissionsPolicyInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5396,7 +6996,8 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -5405,92 +7006,143 @@ pub mod tag_resource_input {
         /// <p>The tags you want to modify or add to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/tag").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::TagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_147) = &_input.resource_arn {
-                    query.push_kv("resourceArn", &aws_smithy_http::query::fmt_string(&inner_147));
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_147),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5502,9 +7154,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5517,7 +7169,8 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -5526,92 +7179,143 @@ pub mod untag_resource_input {
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/untag").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_148) = &_input.resource_arn {
-                    query.push_kv("resourceArn", &aws_smithy_http::query::fmt_string(&inner_148));
+                    query.push_kv(
+                        "resourceArn",
+                        &aws_smithy_http::query::fmt_string(&inner_148),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5623,9 +7327,9 @@ impl UntagResourceInput {
 
 /// See [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput).
 pub mod update_package_versions_status_input {
-    
+
     /// A builder for [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5634,7 +7338,9 @@ pub mod update_package_versions_status_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) package: std::option::Option<std::string::String>,
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) version_revisions: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) expected_status: std::option::Option<crate::model::PackageVersionStatus>,
         pub(crate) target_status: std::option::Option<crate::model::PackageVersionStatus>,
     }
@@ -5646,7 +7352,8 @@ pub mod update_package_versions_status_input {
         }
         /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5655,7 +7362,8 @@ pub mod update_package_versions_status_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The repository that contains the package versions with the status you want to update. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5664,7 +7372,8 @@ pub mod update_package_versions_status_input {
         }
         /// <p> The repository that contains the package versions with the status you want to update. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> A format that specifies the type of the package with the statuses to update. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
@@ -5672,27 +7381,32 @@ pub mod update_package_versions_status_input {
             self
         }
         /// <p> A format that specifies the type of the package with the statuses to update. </p>
-        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
-            self.format = input; self
+        pub fn set_format(
+            mut self,
+            input: std::option::Option<crate::model::PackageFormat>,
+        ) -> Self {
+            self.format = input;
+            self
         }
-        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> 
-        /// <ul> 
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+        /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
+        /// <ul>
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input; self
+            self.namespace = input;
+            self
         }
         /// <p> The name of the package with the version statuses to update. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5701,7 +7415,8 @@ pub mod update_package_versions_status_input {
         }
         /// <p> The name of the package with the version statuses to update. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input; self
+            self.package = input;
+            self
         }
         /// Appends an item to `versions`.
         ///
@@ -5710,28 +7425,42 @@ pub mod update_package_versions_status_input {
         /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-                            v.push(input.into());
-                            self.versions = Some(v);
-                            self
+            v.push(input.into());
+            self.versions = Some(v);
+            self
         }
         /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.versions = input; self
+        pub fn set_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.versions = input;
+            self
         }
         /// Adds a key-value pair to `version_revisions`.
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
         /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-        pub fn version_revisions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn version_revisions(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.version_revisions.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.version_revisions = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.version_revisions = Some(hash_map);
+            self
         }
         /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-        pub fn set_version_revisions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.version_revisions = input; self
+        pub fn set_version_revisions(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.version_revisions = input;
+            self
         }
         /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
         pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -5739,8 +7468,12 @@ pub mod update_package_versions_status_input {
             self
         }
         /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-        pub fn set_expected_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
-            self.expected_status = input; self
+        pub fn set_expected_status(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionStatus>,
+        ) -> Self {
+            self.expected_status = input;
+            self
         }
         /// <p> The status you want to change the package version status to. </p>
         pub fn target_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -5748,58 +7481,78 @@ pub mod update_package_versions_status_input {
             self
         }
         /// <p> The status you want to change the package version status to. </p>
-        pub fn set_target_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
-            self.target_status = input; self
+        pub fn set_target_status(
+            mut self,
+            input: std::option::Option<crate::model::PackageVersionStatus>,
+        ) -> Self {
+            self.target_status = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput).
-        pub fn build(self) -> Result<crate::input::UpdatePackageVersionsStatusInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdatePackageVersionsStatusInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    format: self.format
-                    ,
-                    namespace: self.namespace
-                    ,
-                    package: self.package
-                    ,
-                    versions: self.versions
-                    ,
-                    version_revisions: self.version_revisions
-                    ,
-                    expected_status: self.expected_status
-                    ,
-                    target_status: self.target_status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdatePackageVersionsStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdatePackageVersionsStatusInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                versions: self.versions,
+                version_revisions: self.version_revisions,
+                expected_status: self.expected_status,
+                target_status: self.target_status,
+            })
         }
     }
-    
-    
 }
 impl UpdatePackageVersionsStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePackageVersionsStatus`](crate::operation::UpdatePackageVersionsStatus)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePackageVersionsStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdatePackageVersionsStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdatePackageVersionsStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
-                write!(output, "/v1/package/versions/update_status").expect("formatting should succeed");
+            fn uri_base(
+                _input: &crate::input::UpdatePackageVersionsStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/package/versions/update_status")
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UpdatePackageVersionsStatusInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UpdatePackageVersionsStatusInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_149) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
                 }
                 if let Some(inner_150) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_150));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_150),
+                    );
                 }
                 if let Some(inner_151) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_151));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_151),
+                    );
                 }
                 if let Some(inner_152) = &_input.format {
                     query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
@@ -5812,17 +7565,23 @@ impl UpdatePackageVersionsStatusInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdatePackageVersionsStatusInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdatePackageVersionsStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5830,36 +7589,58 @@ impl UpdatePackageVersionsStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_update_package_versions_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePackageVersionsStatus::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePackageVersionsStatus", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePackageVersionsStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdatePackageVersionsStatus",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5871,9 +7652,9 @@ impl UpdatePackageVersionsStatusInput {
 
 /// See [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
 pub mod update_repository_input {
-    
+
     /// A builder for [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_owner: std::option::Option<std::string::String>,
@@ -5889,7 +7670,8 @@ pub mod update_repository_input {
         }
         /// <p> The name of the domain associated with the repository to update. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input; self
+            self.domain = input;
+            self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5898,7 +7680,8 @@ pub mod update_repository_input {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input; self
+            self.domain_owner = input;
+            self
         }
         /// <p> The name of the repository to update. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5907,7 +7690,8 @@ pub mod update_repository_input {
         }
         /// <p> The name of the repository to update. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input; self
+            self.repository = input;
+            self
         }
         /// <p> An updated repository description. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5916,7 +7700,8 @@ pub mod update_repository_input {
         }
         /// <p> An updated repository description. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Appends an item to `upstreams`.
         ///
@@ -5925,104 +7710,155 @@ pub mod update_repository_input {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-                            v.push(input);
-                            self.upstreams = Some(v);
-                            self
+            v.push(input);
+            self.upstreams = Some(v);
+            self
         }
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn set_upstreams(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>) -> Self {
-            self.upstreams = input; self
+        pub fn set_upstreams(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
+        ) -> Self {
+            self.upstreams = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
-        pub fn build(self) -> Result<crate::input::UpdateRepositoryInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateRepositoryInput {
-                    domain: self.domain
-                    ,
-                    domain_owner: self.domain_owner
-                    ,
-                    repository: self.repository
-                    ,
-                    description: self.description
-                    ,
-                    upstreams: self.upstreams
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateRepositoryInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateRepositoryInput {
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                description: self.description,
+                upstreams: self.upstreams,
+            })
         }
     }
-    
-    
 }
 impl UpdateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRepository`](crate::operation::UpdateRepository)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRepository, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRepository,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateRepositoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateRepositoryInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UpdateRepositoryInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UpdateRepositoryInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_155) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
                 }
                 if let Some(inner_156) = &_input.domain_owner {
-                    query.push_kv("domain-owner", &aws_smithy_http::query::fmt_string(&inner_156));
+                    query.push_kv(
+                        "domain-owner",
+                        &aws_smithy_http::query::fmt_string(&inner_156),
+                    );
                 }
                 if let Some(inner_157) = &_input.repository {
-                    query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_157));
+                    query.push_kv(
+                        "repository",
+                        &aws_smithy_http::query::fmt_string(&inner_157),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateRepositoryInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRepositoryInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_repository(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_repository(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRepository::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRepository", "codeartifact"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRepository::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRepository",
+            "codeartifact",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6033,42 +7869,48 @@ impl UpdateRepositoryInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateRepositoryInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to update. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> An updated repository description. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    #[doc(hidden)]pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
+    #[doc(hidden)]
+    pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
 }
 impl UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to update. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> An updated repository description. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> std::option::Option<& [crate::model::UpstreamRepository]> {
+    pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepository]> {
         self.upstreams.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateRepositoryInput  {
+impl std::fmt::Debug for UpdateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRepositoryInput");
         formatter.field("domain", &self.domain);
@@ -6081,82 +7923,97 @@ impl  std::fmt::Debug for UpdateRepositoryInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdatePackageVersionsStatusInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package versions with the status you want to update. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the version statuses to update. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-    #[doc(hidden)]pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-    #[doc(hidden)]pub version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub version_revisions:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-    #[doc(hidden)]pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
+    #[doc(hidden)]
+    pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p> The status you want to change the package version status to. </p>
-    #[doc(hidden)]pub target_status: std::option::Option<crate::model::PackageVersionStatus>,
+    #[doc(hidden)]
+    pub target_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The repository that contains the package versions with the status you want to update. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A format that specifies the type of the package with the statuses to update. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package with the version statuses to update. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-    pub fn version_revisions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn version_revisions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.version_revisions.as_ref()
     }
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-    pub fn expected_status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
+    pub fn expected_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
     /// <p> The status you want to change the package version status to. </p>
-    pub fn target_status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
+    pub fn target_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.target_status.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdatePackageVersionsStatusInput  {
+impl std::fmt::Debug for UpdatePackageVersionsStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackageVersionsStatusInput");
         formatter.field("domain", &self.domain);
@@ -6174,24 +8031,27 @@ impl  std::fmt::Debug for UpdatePackageVersionsStatusInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6201,24 +8061,27 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags you want to modify or add to the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags you want to modify or add to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6228,42 +8091,48 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PutRepositoryPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to set the resource policy on. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    #[doc(hidden)]pub policy_revision: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_revision: std::option::Option<std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    #[doc(hidden)]pub policy_document: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
 }
 impl PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to set the resource policy on. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    pub fn policy_revision(&self) -> std::option::Option<& str> {
+    pub fn policy_revision(&self) -> std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
 }
-impl  std::fmt::Debug for PutRepositoryPermissionsPolicyInput  {
+impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRepositoryPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -6276,66 +8145,74 @@ impl  std::fmt::Debug for PutRepositoryPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PutPackageOriginConfigurationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the package.</p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p>A format that specifies the type of the package to be updated.</p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the package to be updated.</p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
-    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p> 
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    #[doc(hidden)]pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
+    #[doc(hidden)]
+    pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
 }
 impl PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package.</p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>A format that specifies the type of the package to be updated.</p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package to be updated.</p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p> 
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn restrictions(&self) -> std::option::Option<& crate::model::PackageOriginRestrictions> {
+    pub fn restrictions(&self) -> std::option::Option<&crate::model::PackageOriginRestrictions> {
         self.restrictions.as_ref()
     }
 }
-impl  std::fmt::Debug for PutPackageOriginConfigurationInput  {
+impl std::fmt::Debug for PutPackageOriginConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPackageOriginConfigurationInput");
         formatter.field("domain", &self.domain);
@@ -6350,36 +8227,41 @@ impl  std::fmt::Debug for PutPackageOriginConfigurationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PutDomainPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    #[doc(hidden)]pub policy_revision: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_revision: std::option::Option<std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-    #[doc(hidden)]pub policy_document: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_document: std::option::Option<std::string::String>,
 }
 impl PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    pub fn policy_revision(&self) -> std::option::Option<& str> {
+    pub fn policy_revision(&self) -> std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-    pub fn policy_document(&self) -> std::option::Option<& str> {
+    pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
 }
-impl  std::fmt::Debug for PutDomainPermissionsPolicyInput  {
+impl std::fmt::Debug for PutDomainPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDomainPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -6391,18 +8273,20 @@ impl  std::fmt::Debug for PutDomainPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -6411,36 +8295,43 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRepositoriesInDomainInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    #[doc(hidden)]pub administrator_account: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub administrator_account: std::option::Option<std::string::String>,
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    #[doc(hidden)]pub repository_prefix: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. </p>
-    pub fn administrator_account(&self) -> std::option::Option<& str> {
+    pub fn administrator_account(&self) -> std::option::Option<&str> {
         self.administrator_account.as_deref()
     }
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
-    pub fn repository_prefix(&self) -> std::option::Option<& str> {
+    pub fn repository_prefix(&self) -> std::option::Option<&str> {
         self.repository_prefix.as_deref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -6448,11 +8339,11 @@ impl ListRepositoriesInDomainInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListRepositoriesInDomainInput  {
+impl std::fmt::Debug for ListRepositoriesInDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRepositoriesInDomainInput");
         formatter.field("domain", &self.domain);
@@ -6466,18 +8357,22 @@ impl  std::fmt::Debug for ListRepositoriesInDomainInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRepositoriesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRepositoriesInput {
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
-    #[doc(hidden)]pub repository_prefix: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInput {
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
-    pub fn repository_prefix(&self) -> std::option::Option<& str> {
+    pub fn repository_prefix(&self) -> std::option::Option<&str> {
         self.repository_prefix.as_deref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -6485,11 +8380,11 @@ impl ListRepositoriesInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListRepositoriesInput  {
+impl std::fmt::Debug for ListRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRepositoriesInput");
         formatter.field("repository_prefix", &self.repository_prefix);
@@ -6500,72 +8395,84 @@ impl  std::fmt::Debug for ListRepositoriesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPackageVersionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested package versions. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the returned package versions. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package for which you want to request package versions. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that filters the requested package versions by status. </p>
-    #[doc(hidden)]pub status: std::option::Option<crate::model::PackageVersionStatus>,
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::model::PackageVersionStatus>,
     /// <p> How to sort the requested list of package versions. </p>
-    #[doc(hidden)]pub sort_by: std::option::Option<crate::model::PackageVersionSortType>,
+    #[doc(hidden)]
+    pub sort_by: std::option::Option<crate::model::PackageVersionSortType>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
-    #[doc(hidden)]pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
+    #[doc(hidden)]
+    pub origin_type: std::option::Option<crate::model::PackageVersionOriginType>,
 }
 impl ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The format of the returned package versions. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package for which you want to request package versions. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that filters the requested package versions by status. </p>
-    pub fn status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p> How to sort the requested list of package versions. </p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::model::PackageVersionSortType> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::PackageVersionSortType> {
         self.sort_by.as_ref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -6573,15 +8480,15 @@ impl ListPackageVersionsInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
-    pub fn origin_type(&self) -> std::option::Option<& crate::model::PackageVersionOriginType> {
+    pub fn origin_type(&self) -> std::option::Option<&crate::model::PackageVersionOriginType> {
         self.origin_type.as_ref()
     }
 }
-impl  std::fmt::Debug for ListPackageVersionsInput  {
+impl std::fmt::Debug for ListPackageVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageVersionsInput");
         formatter.field("domain", &self.domain);
@@ -6600,70 +8507,79 @@ impl  std::fmt::Debug for ListPackageVersionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPackageVersionDependenciesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested package version. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package with the requested dependencies. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package versions' package. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version: std::option::Option<std::string::String>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the requested package version. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The format of the package with the requested dependencies. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package versions' package. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListPackageVersionDependenciesInput  {
+impl std::fmt::Debug for ListPackageVersionDependenciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageVersionDependenciesInput");
         formatter.field("domain", &self.domain);
@@ -6679,64 +8595,74 @@ impl  std::fmt::Debug for ListPackageVersionDependenciesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPackageVersionAssetsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package that contains the requested package version assets. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested package version assets. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The format of the package that contains the requested package version assets. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that contains the requested package version assets. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -6744,11 +8670,11 @@ impl ListPackageVersionAssetsInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListPackageVersionAssetsInput  {
+impl std::fmt::Debug for ListPackageVersionAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackageVersionAssetsInput");
         formatter.field("domain", &self.domain);
@@ -6765,62 +8691,73 @@ impl  std::fmt::Debug for ListPackageVersionAssetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPackagesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the requested packages. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    #[doc(hidden)]pub package_prefix: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_prefix: std::option::Option<std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    #[doc(hidden)]pub publish: std::option::Option<crate::model::AllowPublish>,
+    #[doc(hidden)]
+    pub publish: std::option::Option<crate::model::AllowPublish>,
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    #[doc(hidden)]pub upstream: std::option::Option<crate::model::AllowUpstream>,
+    #[doc(hidden)]
+    pub upstream: std::option::Option<crate::model::AllowUpstream>,
 }
 impl ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the requested packages. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn package_prefix(&self) -> std::option::Option<& str> {
+    pub fn package_prefix(&self) -> std::option::Option<&str> {
         self.package_prefix.as_deref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -6828,19 +8765,19 @@ impl ListPackagesInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn publish(&self) -> std::option::Option<& crate::model::AllowPublish> {
+    pub fn publish(&self) -> std::option::Option<&crate::model::AllowPublish> {
         self.publish.as_ref()
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn upstream(&self) -> std::option::Option<& crate::model::AllowUpstream> {
+    pub fn upstream(&self) -> std::option::Option<&crate::model::AllowUpstream> {
         self.upstream.as_ref()
     }
 }
-impl  std::fmt::Debug for ListPackagesInput  {
+impl std::fmt::Debug for ListPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPackagesInput");
         formatter.field("domain", &self.domain);
@@ -6858,12 +8795,15 @@ impl  std::fmt::Debug for ListPackagesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListDomainsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDomainsInput {
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsInput {
     /// <p> The maximum number of results to return per page. </p>
@@ -6871,11 +8811,11 @@ impl ListDomainsInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListDomainsInput  {
+impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsInput");
         formatter.field("max_results", &self.max_results);
@@ -6885,30 +8825,34 @@ impl  std::fmt::Debug for ListDomainsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetRepositoryPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
 }
-impl  std::fmt::Debug for GetRepositoryPermissionsPolicyInput  {
+impl std::fmt::Debug for GetRepositoryPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -6919,36 +8863,41 @@ impl  std::fmt::Debug for GetRepositoryPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetRepositoryEndpointInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
 }
 impl GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
 }
-impl  std::fmt::Debug for GetRepositoryEndpointInput  {
+impl std::fmt::Debug for GetRepositoryEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryEndpointInput");
         formatter.field("domain", &self.domain);
@@ -6960,64 +8909,72 @@ impl  std::fmt::Debug for GetRepositoryEndpointInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetPackageVersionReadmeInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package with the requested readme file. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested readme file. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package version that contains the requested readme file. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The repository that contains the package with the requested readme file. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A format that specifies the type of the package version with the requested readme file. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package version that contains the requested readme file. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
 }
-impl  std::fmt::Debug for GetPackageVersionReadmeInput  {
+impl std::fmt::Debug for GetPackageVersionReadmeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionReadmeInput");
         formatter.field("domain", &self.domain);
@@ -7032,76 +8989,86 @@ impl  std::fmt::Debug for GetPackageVersionReadmeInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetPackageVersionAssetInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The repository that contains the package version with the requested asset. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested asset file. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the requested asset. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version: std::option::Option<std::string::String>,
     /// <p> The name of the requested asset. </p>
-    #[doc(hidden)]pub asset: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub asset: std::option::Option<std::string::String>,
     /// <p> The name of the package version revision that contains the requested asset. </p>
-    #[doc(hidden)]pub package_version_revision: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version_revision: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The repository that contains the package version with the requested asset. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A format that specifies the type of the package version with the requested asset file. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that contains the requested asset. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p> The name of the requested asset. </p>
-    pub fn asset(&self) -> std::option::Option<& str> {
+    pub fn asset(&self) -> std::option::Option<&str> {
         self.asset.as_deref()
     }
     /// <p> The name of the package version revision that contains the requested asset. </p>
-    pub fn package_version_revision(&self) -> std::option::Option<& str> {
+    pub fn package_version_revision(&self) -> std::option::Option<&str> {
         self.package_version_revision.as_deref()
     }
 }
-impl  std::fmt::Debug for GetPackageVersionAssetInput  {
+impl std::fmt::Debug for GetPackageVersionAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionAssetInput");
         formatter.field("domain", &self.domain);
@@ -7118,24 +9085,27 @@ impl  std::fmt::Debug for GetPackageVersionAssetInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetDomainPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
 }
 impl GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
 }
-impl  std::fmt::Debug for GetDomainPermissionsPolicyInput  {
+impl std::fmt::Debug for GetDomainPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -7145,22 +9115,26 @@ impl  std::fmt::Debug for GetDomainPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetAuthorizationTokenInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
-    #[doc(hidden)]pub duration_seconds: std::option::Option<i64>,
+    #[doc(hidden)]
+    pub duration_seconds: std::option::Option<i64>,
 }
 impl GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
@@ -7168,7 +9142,7 @@ impl GetAuthorizationTokenInput {
         self.duration_seconds
     }
 }
-impl  std::fmt::Debug for GetAuthorizationTokenInput  {
+impl std::fmt::Debug for GetAuthorizationTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAuthorizationTokenInput");
         formatter.field("domain", &self.domain);
@@ -7179,76 +9153,90 @@ impl  std::fmt::Debug for GetAuthorizationTokenInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DisposePackageVersionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions you want to dispose. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> The versions of the package you want to dispose. </p>
-    #[doc(hidden)]pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The revisions of the package versions you want to dispose. </p>
-    #[doc(hidden)]pub version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub version_revisions:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The expected status of the package version to dispose. </p>
-    #[doc(hidden)]pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
+    #[doc(hidden)]
+    pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package with the versions you want to dispose. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> The versions of the package you want to dispose. </p>
-    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
     /// <p> The revisions of the package versions you want to dispose. </p>
-    pub fn version_revisions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn version_revisions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.version_revisions.as_ref()
     }
     /// <p> The expected status of the package version to dispose. </p>
-    pub fn expected_status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
+    pub fn expected_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
 }
-impl  std::fmt::Debug for DisposePackageVersionsInput  {
+impl std::fmt::Debug for DisposePackageVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisposePackageVersionsInput");
         formatter.field("domain", &self.domain);
@@ -7265,36 +9253,41 @@ impl  std::fmt::Debug for DisposePackageVersionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DisassociateExternalConnectionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository from which the external connection will be removed. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p>The name of the external connection to be removed from the repository. </p>
-    #[doc(hidden)]pub external_connection: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub external_connection: std::option::Option<std::string::String>,
 }
 impl DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository from which the external connection will be removed. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
-    pub fn external_connection(&self) -> std::option::Option<& str> {
+    pub fn external_connection(&self) -> std::option::Option<&str> {
         self.external_connection.as_deref()
     }
 }
-impl  std::fmt::Debug for DisassociateExternalConnectionInput  {
+impl std::fmt::Debug for DisassociateExternalConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateExternalConnectionInput");
         formatter.field("domain", &self.domain);
@@ -7306,30 +9299,34 @@ impl  std::fmt::Debug for DisassociateExternalConnectionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRepositoryInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> A string that specifies the name of the requested repository. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> A string that specifies the name of the requested repository. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeRepositoryInput  {
+impl std::fmt::Debug for DescribeRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRepositoryInput");
         formatter.field("domain", &self.domain);
@@ -7340,64 +9337,72 @@ impl  std::fmt::Debug for DescribeRepositoryInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribePackageVersionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package version. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A format that specifies the type of the requested package version. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the requested package version. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]pub package_version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package_version: std::option::Option<std::string::String>,
 }
 impl DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the package version. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A format that specifies the type of the requested package version. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the requested package version. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribePackageVersionInput  {
+impl std::fmt::Debug for DescribePackageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageVersionInput");
         formatter.field("domain", &self.domain);
@@ -7412,58 +9417,65 @@ impl  std::fmt::Debug for DescribePackageVersionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribePackageInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePackageInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the requested package. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p>A format that specifies the type of the requested package.</p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the requested package.</p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
 }
 impl DescribePackageInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the requested package. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>A format that specifies the type of the requested package.</p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the requested package.</p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribePackageInput  {
+impl std::fmt::Debug for DescribePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackageInput");
         formatter.field("domain", &self.domain);
@@ -7477,24 +9489,27 @@ impl  std::fmt::Debug for DescribePackageInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeDomainInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeDomainInput  {
+impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainInput");
         formatter.field("domain", &self.domain);
@@ -7504,36 +9519,41 @@ impl  std::fmt::Debug for DescribeDomainInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteRepositoryPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-    #[doc(hidden)]pub policy_revision: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_revision: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-    pub fn policy_revision(&self) -> std::option::Option<& str> {
+    pub fn policy_revision(&self) -> std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput  {
+impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -7545,30 +9565,34 @@ impl  std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteRepositoryInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to delete. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to delete. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteRepositoryInput  {
+impl std::fmt::Debug for DeleteRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryInput");
         formatter.field("domain", &self.domain);
@@ -7579,70 +9603,79 @@ impl  std::fmt::Debug for DeleteRepositoryInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeletePackageVersionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to delete. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> The format of the package versions to delete. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package with the versions to delete. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
     /// <p> An array of strings that specify the versions of the package to delete. </p>
-    #[doc(hidden)]pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The expected status of the package version to delete. </p>
-    #[doc(hidden)]pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
+    #[doc(hidden)]
+    pub expected_status: std::option::Option<crate::model::PackageVersionStatus>,
 }
 impl DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the package versions to delete. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The format of the package versions to delete. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package with the versions to delete. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> An array of strings that specify the versions of the package to delete. </p>
-    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
     /// <p> The expected status of the package version to delete. </p>
-    pub fn expected_status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
+    pub fn expected_status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
 }
-impl  std::fmt::Debug for DeletePackageVersionsInput  {
+impl std::fmt::Debug for DeletePackageVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageVersionsInput");
         formatter.field("domain", &self.domain);
@@ -7658,30 +9691,34 @@ impl  std::fmt::Debug for DeletePackageVersionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteDomainPermissionsPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    #[doc(hidden)]pub policy_revision: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy_revision: std::option::Option<std::string::String>,
 }
 impl DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    pub fn policy_revision(&self) -> std::option::Option<& str> {
+    pub fn policy_revision(&self) -> std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteDomainPermissionsPolicyInput  {
+impl std::fmt::Debug for DeleteDomainPermissionsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainPermissionsPolicyInput");
         formatter.field("domain", &self.domain);
@@ -7692,24 +9729,27 @@ impl  std::fmt::Debug for DeleteDomainPermissionsPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteDomainInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
 }
 impl DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteDomainInput  {
+impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainInput");
         formatter.field("domain", &self.domain);
@@ -7719,48 +9759,55 @@ impl  std::fmt::Debug for DeleteDomainInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateRepositoryInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to create. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
     /// <p> A description of the created repository. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    #[doc(hidden)]pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
+    #[doc(hidden)]
+    pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
     /// <p>One or more tag key-value pairs for the repository.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to create. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> A description of the created repository. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> std::option::Option<& [crate::model::UpstreamRepository]> {
+    pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepository]> {
         self.upstreams.as_deref()
     }
     /// <p>One or more tag key-value pairs for the repository.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateRepositoryInput  {
+impl std::fmt::Debug for CreateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRepositoryInput");
         formatter.field("domain", &self.domain);
@@ -7774,34 +9821,38 @@ impl  std::fmt::Debug for CreateRepositoryInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateDomainInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDomainInput {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
-    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> 
-    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> 
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
+    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// </important>
-    #[doc(hidden)]pub encryption_key: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub encryption_key: std::option::Option<std::string::String>,
     /// <p>One or more tag key-value pairs for the domain.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDomainInput {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> 
-    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> 
+    /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important>
+    /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     /// </important>
-    pub fn encryption_key(&self) -> std::option::Option<& str> {
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
     /// <p>One or more tag key-value pairs for the domain.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateDomainInput  {
+impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainInput");
         formatter.field("domain", &self.domain);
@@ -7812,84 +9863,100 @@ impl  std::fmt::Debug for CreateDomainInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CopyPackageVersionsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    #[doc(hidden)]pub source_repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub source_repository: std::option::Option<std::string::String>,
     /// <p> The name of the repository into which package versions are copied. </p>
-    #[doc(hidden)]pub destination_repository: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub destination_repository: std::option::Option<std::string::String>,
     /// <p> The format of the package versions to be copied. </p>
-    #[doc(hidden)]pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    #[doc(hidden)]
+    pub format: std::option::Option<crate::model::PackageFormat>,
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub namespace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that contains the versions to be copied. </p>
-    #[doc(hidden)]pub package: std::option::Option<std::string::String>,
-    /// <p> The versions of the package to be copied. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    #[doc(hidden)]
+    pub package: std::option::Option<std::string::String>,
+    /// <p> The versions of the package to be copied. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    #[doc(hidden)]pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    #[doc(hidden)]
+    pub versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    #[doc(hidden)]pub version_revisions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub version_revisions:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
-    #[doc(hidden)]pub allow_overwrite: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub allow_overwrite: std::option::Option<bool>,
     /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    #[doc(hidden)]pub include_from_upstream: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub include_from_upstream: std::option::Option<bool>,
 }
 impl CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the package versions to be copied. </p>
-    pub fn source_repository(&self) -> std::option::Option<& str> {
+    pub fn source_repository(&self) -> std::option::Option<&str> {
         self.source_repository.as_deref()
     }
     /// <p> The name of the repository into which package versions are copied. </p>
-    pub fn destination_repository(&self) -> std::option::Option<& str> {
+    pub fn destination_repository(&self) -> std::option::Option<&str> {
         self.destination_repository.as_deref()
     }
     /// <p> The format of the package versions to be copied. </p>
-    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that contains the versions to be copied. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> The versions of the package to be copied. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> The versions of the package to be copied. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
-    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note> 
-    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p> 
+    /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    pub fn version_revisions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn version_revisions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.version_revisions.as_ref()
     }
     /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
@@ -7901,7 +9968,7 @@ impl CopyPackageVersionsInput {
         self.include_from_upstream
     }
 }
-impl  std::fmt::Debug for CopyPackageVersionsInput  {
+impl std::fmt::Debug for CopyPackageVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyPackageVersionsInput");
         formatter.field("domain", &self.domain);
@@ -7920,52 +9987,57 @@ impl  std::fmt::Debug for CopyPackageVersionsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AssociateExternalConnectionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
-    #[doc(hidden)]pub domain: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain: std::option::Option<std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]pub domain_owner: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub domain_owner: std::option::Option<std::string::String>,
     /// <p> The name of the repository to which the external connection is added. </p>
-    #[doc(hidden)]pub repository: std::option::Option<std::string::String>,
-    /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
-    /// <ul> 
-    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
-    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
-    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
-    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
-    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
-    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+    #[doc(hidden)]
+    pub repository: std::option::Option<std::string::String>,
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
+    /// <ul>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// </ul>
-    #[doc(hidden)]pub external_connection: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub external_connection: std::option::Option<std::string::String>,
 }
 impl AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository to which the external connection is added. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The name of the external connection to add to the repository. The following values are supported: </p> 
-    /// <ul> 
-    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> 
-    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> 
-    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> 
-    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> 
-    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> 
-    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> 
+    /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
+    /// <ul>
+    /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+    /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+    /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+    /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+    /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+    /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// </ul>
-    pub fn external_connection(&self) -> std::option::Option<& str> {
+    pub fn external_connection(&self) -> std::option::Option<&str> {
         self.external_connection.as_deref()
     }
 }
-impl  std::fmt::Debug for AssociateExternalConnectionInput  {
+impl std::fmt::Debug for AssociateExternalConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateExternalConnectionInput");
         formatter.field("domain", &self.domain);
@@ -7975,4 +10047,3 @@ impl  std::fmt::Debug for AssociateExternalConnectionInput  {
         formatter.finish()
     }
 }
-

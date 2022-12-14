@@ -3,14 +3,16 @@ use std::fmt::Write;
 
 /// See [`QueryForecastInput`](crate::input::QueryForecastInput).
 pub mod query_forecast_input {
-    
+
     /// A builder for [`QueryForecastInput`](crate::input::QueryForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
         pub(crate) end_date: std::option::Option<std::string::String>,
-        pub(crate) filters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -21,7 +23,8 @@ pub mod query_forecast_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
         pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.forecast_arn = input; self
+            self.forecast_arn = input;
+            self
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -30,7 +33,8 @@ pub mod query_forecast_input {
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input; self
+            self.start_date = input;
+            self
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -39,26 +43,37 @@ pub mod query_forecast_input {
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input; self
+            self.end_date = input;
+            self
         }
         /// Adds a key-value pair to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-        /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+        /// <p> <code>{"item_id" : "client_21"}</code> </p>
         /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-        pub fn filters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn filters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.filters = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.filters = Some(hash_map);
+            self
         }
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-        /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+        /// <p> <code>{"item_id" : "client_21"}</code> </p>
         /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,89 +82,128 @@ pub mod query_forecast_input {
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`QueryForecastInput`](crate::input::QueryForecastInput).
-        pub fn build(self) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::QueryForecastInput {
-                    forecast_arn: self.forecast_arn
-                    ,
-                    start_date: self.start_date
-                    ,
-                    end_date: self.end_date
-                    ,
-                    filters: self.filters
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::QueryForecastInput {
+                forecast_arn: self.forecast_arn,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                filters: self.filters,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl QueryForecastInput {
     /// Consumes the builder and constructs an Operation<[`QueryForecast`](crate::operation::QueryForecast)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::QueryForecast, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::QueryForecast,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::QueryForecastInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::QueryForecastInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::QueryForecastInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::QueryForecastInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AmazonForecastRuntime.QueryForecast"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecastRuntime.QueryForecast",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_query_forecast(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_query_forecast(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::QueryForecast::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("QueryForecast", "forecastquery"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryForecast::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryForecast",
+            "forecastquery",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -161,14 +215,16 @@ impl QueryForecastInput {
 
 /// See [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
 pub mod query_what_if_forecast_input {
-    
+
     /// A builder for [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
         pub(crate) end_date: std::option::Option<std::string::String>,
-        pub(crate) filters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -178,8 +234,12 @@ pub mod query_what_if_forecast_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-        pub fn set_what_if_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.what_if_forecast_arn = input; self
+        pub fn set_what_if_forecast_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.what_if_forecast_arn = input;
+            self
         }
         /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,7 +248,8 @@ pub mod query_what_if_forecast_input {
         }
         /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input; self
+            self.start_date = input;
+            self
         }
         /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,26 +258,37 @@ pub mod query_what_if_forecast_input {
         }
         /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input; self
+            self.end_date = input;
+            self
         }
         /// Adds a key-value pair to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-        /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+        /// <p> <code>{"item_id" : "client_21"}</code> </p>
         /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-        pub fn filters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn filters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.filters = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.filters = Some(hash_map);
+            self
         }
-        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-        /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+        /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+        /// <p> <code>{"item_id" : "client_21"}</code> </p>
         /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-        pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.filters = input; self
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.filters = input;
+            self
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,89 +297,130 @@ pub mod query_what_if_forecast_input {
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
-        pub fn build(self) -> Result<crate::input::QueryWhatIfForecastInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::QueryWhatIfForecastInput {
-                    what_if_forecast_arn: self.what_if_forecast_arn
-                    ,
-                    start_date: self.start_date
-                    ,
-                    end_date: self.end_date
-                    ,
-                    filters: self.filters
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::QueryWhatIfForecastInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::QueryWhatIfForecastInput {
+                what_if_forecast_arn: self.what_if_forecast_arn,
+                start_date: self.start_date,
+                end_date: self.end_date,
+                filters: self.filters,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl QueryWhatIfForecastInput {
     /// Consumes the builder and constructs an Operation<[`QueryWhatIfForecast`](crate::operation::QueryWhatIfForecast)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::QueryWhatIfForecast, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::QueryWhatIfForecast,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::QueryWhatIfForecastInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::QueryWhatIfForecastInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::QueryWhatIfForecastInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::QueryWhatIfForecastInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AmazonForecastRuntime.QueryWhatIfForecast"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonForecastRuntime.QueryWhatIfForecast",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_query_what_if_forecast(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_query_what_if_forecast(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::QueryWhatIfForecast::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("QueryWhatIfForecast", "forecastquery"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryWhatIfForecast::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryWhatIfForecast",
+            "forecastquery",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -318,46 +431,56 @@ impl QueryWhatIfForecastInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct QueryWhatIfForecastInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    #[doc(hidden)]pub what_if_forecast_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub what_if_forecast_arn: std::option::Option<std::string::String>,
     /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    #[doc(hidden)]pub start_date: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub start_date: std::option::Option<std::string::String>,
     /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    #[doc(hidden)]pub end_date: std::option::Option<std::string::String>,
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    #[doc(hidden)]
+    pub end_date: std::option::Option<std::string::String>,
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub filters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn what_if_forecast_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_arn(&self) -> std::option::Option<&str> {
         self.what_if_forecast_arn.as_deref()
     }
     /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    pub fn start_date(&self) -> std::option::Option<& str> {
+    pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    pub fn end_date(&self) -> std::option::Option<& str> {
+    pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.filters.as_ref()
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for QueryWhatIfForecastInput  {
+impl std::fmt::Debug for QueryWhatIfForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryWhatIfForecastInput");
         formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
@@ -370,46 +493,56 @@ impl  std::fmt::Debug for QueryWhatIfForecastInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct QueryForecastInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-    #[doc(hidden)]pub forecast_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub forecast_arn: std::option::Option<std::string::String>,
     /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    #[doc(hidden)]pub start_date: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub start_date: std::option::Option<std::string::String>,
     /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    #[doc(hidden)]pub end_date: std::option::Option<std::string::String>,
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    #[doc(hidden)]
+    pub end_date: std::option::Option<std::string::String>,
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-    #[doc(hidden)]pub filters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub filters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-    pub fn forecast_arn(&self) -> std::option::Option<& str> {
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
         self.forecast_arn.as_deref()
     }
     /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-    pub fn start_date(&self) -> std::option::Option<& str> {
+    pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-    pub fn end_date(&self) -> std::option::Option<& str> {
+    pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
-    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p> 
-    /// <p> <code>{"item_id" : "client_21"}</code> </p> 
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.filters.as_ref()
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for QueryForecastInput  {
+impl std::fmt::Debug for QueryForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryForecastInput");
         formatter.field("forecast_arn", &self.forecast_arn);
@@ -420,4 +553,3 @@ impl  std::fmt::Debug for QueryForecastInput  {
         formatter.finish()
     }
 }
-

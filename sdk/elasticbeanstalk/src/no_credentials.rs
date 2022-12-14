@@ -23,4 +23,3 @@ impl ProvideCredentials for NoCredentials {
         )))
     }
 }
-

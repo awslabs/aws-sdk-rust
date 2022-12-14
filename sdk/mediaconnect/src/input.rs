@@ -3,12 +3,13 @@ use std::fmt::Write;
 
 /// See [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput).
 pub mod add_flow_media_streams_input {
-    
+
     /// A builder for [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
-        pub(crate) media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+        pub(crate) media_streams:
+            std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) of the flow.
@@ -18,7 +19,8 @@ pub mod add_flow_media_streams_input {
         }
         /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Appends an item to `media_streams`.
         ///
@@ -27,90 +29,153 @@ pub mod add_flow_media_streams_input {
         /// The media streams that you want to add to the flow.
         pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-                            v.push(input);
-                            self.media_streams = Some(v);
-                            self
+            v.push(input);
+            self.media_streams = Some(v);
+            self
         }
         /// The media streams that you want to add to the flow.
-        pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>) -> Self {
-            self.media_streams = input; self
+        pub fn set_media_streams(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+        ) -> Self {
+            self.media_streams = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput).
-        pub fn build(self) -> Result<crate::input::AddFlowMediaStreamsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddFlowMediaStreamsInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    media_streams: self.media_streams
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddFlowMediaStreamsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AddFlowMediaStreamsInput {
+                flow_arn: self.flow_arn,
+                media_streams: self.media_streams,
+            })
         }
     }
-    
-    
 }
 impl AddFlowMediaStreamsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowMediaStreams`](crate::operation::AddFlowMediaStreams)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddFlowMediaStreams, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddFlowMediaStreams,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddFlowMediaStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddFlowMediaStreamsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.flow_arn;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/mediaStreams", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/mediaStreams",
+                    FlowArn = flow_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddFlowMediaStreamsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddFlowMediaStreamsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddFlowMediaStreams::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddFlowMediaStreams", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddFlowMediaStreams::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddFlowMediaStreams",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -122,9 +187,9 @@ impl AddFlowMediaStreamsInput {
 
 /// See [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput).
 pub mod add_flow_outputs_input {
-    
+
     /// A builder for [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
@@ -137,7 +202,8 @@ pub mod add_flow_outputs_input {
         }
         /// The flow that you want to add outputs to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Appends an item to `outputs`.
         ///
@@ -146,90 +212,147 @@ pub mod add_flow_outputs_input {
         /// A list of outputs that you want to add.
         pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-                            v.push(input);
-                            self.outputs = Some(v);
-                            self
+            v.push(input);
+            self.outputs = Some(v);
+            self
         }
         /// A list of outputs that you want to add.
-        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>) -> Self {
-            self.outputs = input; self
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
+        ) -> Self {
+            self.outputs = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput).
-        pub fn build(self) -> Result<crate::input::AddFlowOutputsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddFlowOutputsInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    outputs: self.outputs
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddFlowOutputsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AddFlowOutputsInput {
+                flow_arn: self.flow_arn,
+                outputs: self.outputs,
+            })
         }
     }
-    
-    
 }
 impl AddFlowOutputsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowOutputs`](crate::operation::AddFlowOutputs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddFlowOutputs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddFlowOutputs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddFlowOutputsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddFlowOutputsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.flow_arn;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/outputs", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/{FlowArn}/outputs", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddFlowOutputsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddFlowOutputsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddFlowOutputs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddFlowOutputs", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddFlowOutputs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddFlowOutputs",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -241,9 +364,9 @@ impl AddFlowOutputsInput {
 
 /// See [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput).
 pub mod add_flow_sources_input {
-    
+
     /// A builder for [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
@@ -256,7 +379,8 @@ pub mod add_flow_sources_input {
         }
         /// The flow that you want to mutate.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -265,90 +389,147 @@ pub mod add_flow_sources_input {
         /// A list of sources that you want to add.
         pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         /// A list of sources that you want to add.
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput).
-        pub fn build(self) -> Result<crate::input::AddFlowSourcesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddFlowSourcesInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    sources: self.sources
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddFlowSourcesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AddFlowSourcesInput {
+                flow_arn: self.flow_arn,
+                sources: self.sources,
+            })
         }
     }
-    
-    
 }
 impl AddFlowSourcesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowSources`](crate::operation::AddFlowSources)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddFlowSources, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddFlowSources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddFlowSourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddFlowSourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.flow_arn;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/source", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/{FlowArn}/source", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddFlowSourcesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddFlowSourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddFlowSources::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddFlowSources", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddFlowSources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddFlowSources",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -360,12 +541,13 @@ impl AddFlowSourcesInput {
 
 /// See [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput).
 pub mod add_flow_vpc_interfaces_input {
-    
+
     /// A builder for [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
-        pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+        pub(crate) vpc_interfaces:
+            std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
     }
     impl Builder {
         /// The flow that you want to mutate.
@@ -375,7 +557,8 @@ pub mod add_flow_vpc_interfaces_input {
         }
         /// The flow that you want to mutate.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Appends an item to `vpc_interfaces`.
         ///
@@ -384,90 +567,153 @@ pub mod add_flow_vpc_interfaces_input {
         /// A list of VPC interfaces that you want to add.
         pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-                            v.push(input);
-                            self.vpc_interfaces = Some(v);
-                            self
+            v.push(input);
+            self.vpc_interfaces = Some(v);
+            self
         }
         /// A list of VPC interfaces that you want to add.
-        pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>) -> Self {
-            self.vpc_interfaces = input; self
+        pub fn set_vpc_interfaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+        ) -> Self {
+            self.vpc_interfaces = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput).
-        pub fn build(self) -> Result<crate::input::AddFlowVpcInterfacesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddFlowVpcInterfacesInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    vpc_interfaces: self.vpc_interfaces
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddFlowVpcInterfacesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AddFlowVpcInterfacesInput {
+                flow_arn: self.flow_arn,
+                vpc_interfaces: self.vpc_interfaces,
+            })
         }
     }
-    
-    
 }
 impl AddFlowVpcInterfacesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowVpcInterfaces`](crate::operation::AddFlowVpcInterfaces)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddFlowVpcInterfaces, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddFlowVpcInterfaces,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddFlowVpcInterfacesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddFlowVpcInterfacesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.flow_arn;
-                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/vpcInterfaces", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/vpcInterfaces",
+                    FlowArn = flow_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddFlowVpcInterfacesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddFlowVpcInterfacesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_vpc_interfaces(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_vpc_interfaces(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddFlowVpcInterfaces::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddFlowVpcInterfaces", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddFlowVpcInterfaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddFlowVpcInterfaces",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -479,19 +725,22 @@ impl AddFlowVpcInterfacesInput {
 
 /// See [`CreateFlowInput`](crate::input::CreateFlowInput).
 pub mod create_flow_input {
-    
+
     /// A builder for [`CreateFlowInput`](crate::input::CreateFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
-        pub(crate) media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+        pub(crate) entitlements:
+            std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+        pub(crate) media_streams:
+            std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
         pub(crate) source: std::option::Option<crate::model::SetSourceRequest>,
         pub(crate) source_failover_config: std::option::Option<crate::model::FailoverConfig>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
-        pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+        pub(crate) vpc_interfaces:
+            std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
         pub(crate) maintenance: std::option::Option<crate::model::AddMaintenance>,
     }
     impl Builder {
@@ -501,8 +750,12 @@ pub mod create_flow_input {
             self
         }
         /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.availability_zone = input; self
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -511,13 +764,17 @@ pub mod create_flow_input {
         /// The entitlements that you want to grant on a flow.
         pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-                            v.push(input);
-                            self.entitlements = Some(v);
-                            self
+            v.push(input);
+            self.entitlements = Some(v);
+            self
         }
         /// The entitlements that you want to grant on a flow.
-        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>) -> Self {
-            self.entitlements = input; self
+        pub fn set_entitlements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+        ) -> Self {
+            self.entitlements = input;
+            self
         }
         /// Appends an item to `media_streams`.
         ///
@@ -526,13 +783,17 @@ pub mod create_flow_input {
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
         pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-                            v.push(input);
-                            self.media_streams = Some(v);
-                            self
+            v.push(input);
+            self.media_streams = Some(v);
+            self
         }
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-        pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>) -> Self {
-            self.media_streams = input; self
+        pub fn set_media_streams(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+        ) -> Self {
+            self.media_streams = input;
+            self
         }
         /// The name of the flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -541,7 +802,8 @@ pub mod create_flow_input {
         }
         /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// Appends an item to `outputs`.
         ///
@@ -550,13 +812,17 @@ pub mod create_flow_input {
         /// The outputs that you want to add to this flow.
         pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-                            v.push(input);
-                            self.outputs = Some(v);
-                            self
+            v.push(input);
+            self.outputs = Some(v);
+            self
         }
         /// The outputs that you want to add to this flow.
-        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>) -> Self {
-            self.outputs = input; self
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
+        ) -> Self {
+            self.outputs = input;
+            self
         }
         /// The settings for the source of the flow.
         pub fn source(mut self, input: crate::model::SetSourceRequest) -> Self {
@@ -564,8 +830,12 @@ pub mod create_flow_input {
             self
         }
         /// The settings for the source of the flow.
-        pub fn set_source(mut self, input: std::option::Option<crate::model::SetSourceRequest>) -> Self {
-            self.source = input; self
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::SetSourceRequest>,
+        ) -> Self {
+            self.source = input;
+            self
         }
         /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::FailoverConfig) -> Self {
@@ -573,8 +843,12 @@ pub mod create_flow_input {
             self
         }
         /// The settings for source failover.
-        pub fn set_source_failover_config(mut self, input: std::option::Option<crate::model::FailoverConfig>) -> Self {
-            self.source_failover_config = input; self
+        pub fn set_source_failover_config(
+            mut self,
+            input: std::option::Option<crate::model::FailoverConfig>,
+        ) -> Self {
+            self.source_failover_config = input;
+            self
         }
         /// Appends an item to `sources`.
         ///
@@ -582,13 +856,17 @@ pub mod create_flow_input {
         ///
         pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-                            v.push(input);
-                            self.sources = Some(v);
-                            self
+            v.push(input);
+            self.sources = Some(v);
+            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>) -> Self {
-            self.sources = input; self
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
+        ) -> Self {
+            self.sources = input;
+            self
         }
         /// Appends an item to `vpc_interfaces`.
         ///
@@ -597,13 +875,17 @@ pub mod create_flow_input {
         /// The VPC interfaces you want on the flow.
         pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-                            v.push(input);
-                            self.vpc_interfaces = Some(v);
-                            self
+            v.push(input);
+            self.vpc_interfaces = Some(v);
+            self
         }
         /// The VPC interfaces you want on the flow.
-        pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>) -> Self {
-            self.vpc_interfaces = input; self
+        pub fn set_vpc_interfaces(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+        ) -> Self {
+            self.vpc_interfaces = input;
+            self
         }
         /// Create maintenance setting for a flow
         pub fn maintenance(mut self, input: crate::model::AddMaintenance) -> Self {
@@ -611,95 +893,131 @@ pub mod create_flow_input {
             self
         }
         /// Create maintenance setting for a flow
-        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::AddMaintenance>) -> Self {
-            self.maintenance = input; self
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::AddMaintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateFlowInput`](crate::input::CreateFlowInput).
-        pub fn build(self) -> Result<crate::input::CreateFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateFlowInput {
-                    availability_zone: self.availability_zone
-                    ,
-                    entitlements: self.entitlements
-                    ,
-                    media_streams: self.media_streams
-                    ,
-                    name: self.name
-                    ,
-                    outputs: self.outputs
-                    ,
-                    source: self.source
-                    ,
-                    source_failover_config: self.source_failover_config
-                    ,
-                    sources: self.sources
-                    ,
-                    vpc_interfaces: self.vpc_interfaces
-                    ,
-                    maintenance: self.maintenance
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::CreateFlowInput {
+                availability_zone: self.availability_zone,
+                entitlements: self.entitlements,
+                media_streams: self.media_streams,
+                name: self.name,
+                outputs: self.outputs,
+                source: self.source,
+                source_failover_config: self.source_failover_config,
+                sources: self.sources,
+                vpc_interfaces: self.vpc_interfaces,
+                maintenance: self.maintenance,
+            })
         }
     }
-    
-    
 }
 impl CreateFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlow`](crate::operation::CreateFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/flows").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -711,9 +1029,9 @@ impl CreateFlowInput {
 
 /// See [`DeleteFlowInput`](crate::input::DeleteFlowInput).
 pub mod delete_flow_input {
-    
+
     /// A builder for [`DeleteFlowInput`](crate::input::DeleteFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
@@ -725,39 +1043,66 @@ pub mod delete_flow_input {
         }
         /// The ARN of the flow that you want to delete.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::input::DeleteFlowInput).
-        pub fn build(self) -> Result<crate::input::DeleteFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteFlowInput {
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::DeleteFlowInput {
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlow`](crate::operation::DeleteFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.flow_arn;
-                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -766,37 +1111,54 @@ impl DeleteFlowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -808,9 +1170,9 @@ impl DeleteFlowInput {
 
 /// See [`DescribeFlowInput`](crate::input::DescribeFlowInput).
 pub mod describe_flow_input {
-    
+
     /// A builder for [`DescribeFlowInput`](crate::input::DescribeFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
@@ -822,39 +1184,67 @@ pub mod describe_flow_input {
         }
         /// The ARN of the flow that you want to describe.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::input::DescribeFlowInput).
-        pub fn build(self) -> Result<crate::input::DescribeFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFlowInput {
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFlowInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFlowInput {
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlow`](crate::operation::DescribeFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.flow_arn;
-                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -863,37 +1253,54 @@ impl DescribeFlowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -905,9 +1312,9 @@ impl DescribeFlowInput {
 
 /// See [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
 pub mod describe_offering_input {
-    
+
     /// A builder for [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_arn: std::option::Option<std::string::String>,
     }
@@ -919,39 +1326,71 @@ pub mod describe_offering_input {
         }
         /// The Amazon Resource Name (ARN) of the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_arn = input; self
+            self.offering_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
-        pub fn build(self) -> Result<crate::input::DescribeOfferingInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeOfferingInput {
-                    offering_arn: self.offering_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeOfferingInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeOfferingInput {
+                offering_arn: self.offering_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOffering`](crate::operation::DescribeOffering)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeOffering, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeOffering,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeOfferingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeOfferingInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.offering_arn;
-                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })?;
-                let offering_arn = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "offering_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let offering_arn = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if offering_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/offerings/{OfferingArn}", OfferingArn = offering_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "offering_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/offerings/{OfferingArn}",
+                    OfferingArn = offering_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeOfferingInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeOfferingInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -960,37 +1399,54 @@ impl DescribeOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeOffering::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeOffering", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeOffering::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeOffering",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1002,9 +1458,9 @@ impl DescribeOfferingInput {
 
 /// See [`DescribeReservationInput`](crate::input::DescribeReservationInput).
 pub mod describe_reservation_input {
-    
+
     /// A builder for [`DescribeReservationInput`](crate::input::DescribeReservationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation_arn: std::option::Option<std::string::String>,
     }
@@ -1015,40 +1471,75 @@ pub mod describe_reservation_input {
             self
         }
         /// The Amazon Resource Name (ARN) of the reservation.
-        pub fn set_reservation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reservation_arn = input; self
+        pub fn set_reservation_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::input::DescribeReservationInput).
-        pub fn build(self) -> Result<crate::input::DescribeReservationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeReservationInput {
-                    reservation_arn: self.reservation_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeReservationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeReservationInput {
+                reservation_arn: self.reservation_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeReservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservation`](crate::operation::DescribeReservation)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeReservation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeReservation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeReservationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeReservationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.reservation_arn;
-                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "reservation_arn", details: "cannot be empty or unset" })?;
-                let reservation_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "reservation_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let reservation_arn = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if reservation_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "reservation_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/reservations/{ReservationArn}", ReservationArn = reservation_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "reservation_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/reservations/{ReservationArn}",
+                    ReservationArn = reservation_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeReservationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeReservationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1057,37 +1548,54 @@ impl DescribeReservationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeReservation::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeReservation", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeReservation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeReservation",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1099,11 +1607,12 @@ impl DescribeReservationInput {
 
 /// See [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput).
 pub mod grant_flow_entitlements_input {
-    
+
     /// A builder for [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+        pub(crate) entitlements:
+            std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1114,13 +1623,17 @@ pub mod grant_flow_entitlements_input {
         /// The list of entitlements that you want to grant.
         pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-                            v.push(input);
-                            self.entitlements = Some(v);
-                            self
+            v.push(input);
+            self.entitlements = Some(v);
+            self
         }
         /// The list of entitlements that you want to grant.
-        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>) -> Self {
-            self.entitlements = input; self
+        pub fn set_entitlements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+        ) -> Self {
+            self.entitlements = input;
+            self
         }
         /// The flow that you want to grant entitlements on.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1129,84 +1642,144 @@ pub mod grant_flow_entitlements_input {
         }
         /// The flow that you want to grant entitlements on.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput).
-        pub fn build(self) -> Result<crate::input::GrantFlowEntitlementsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GrantFlowEntitlementsInput {
-                    entitlements: self.entitlements
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GrantFlowEntitlementsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GrantFlowEntitlementsInput {
+                entitlements: self.entitlements,
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl GrantFlowEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GrantFlowEntitlements`](crate::operation::GrantFlowEntitlements)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GrantFlowEntitlements, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GrantFlowEntitlements,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GrantFlowEntitlementsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GrantFlowEntitlementsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.flow_arn;
-                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_9 = input_9.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/entitlements", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/entitlements",
+                    FlowArn = flow_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GrantFlowEntitlementsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GrantFlowEntitlementsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_grant_flow_entitlements(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_grant_flow_entitlements(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GrantFlowEntitlements::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GrantFlowEntitlements", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GrantFlowEntitlements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GrantFlowEntitlements",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1218,9 +1791,9 @@ impl GrantFlowEntitlementsInput {
 
 /// See [`ListEntitlementsInput`](crate::input::ListEntitlementsInput).
 pub mod list_entitlements_input {
-    
+
     /// A builder for [`ListEntitlementsInput`](crate::input::ListEntitlementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1233,7 +1806,8 @@ pub mod list_entitlements_input {
         }
         /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1242,46 +1816,66 @@ pub mod list_entitlements_input {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListEntitlementsInput`](crate::input::ListEntitlementsInput).
-        pub fn build(self) -> Result<crate::input::ListEntitlementsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListEntitlementsInput {
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListEntitlementsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListEntitlementsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitlements`](crate::operation::ListEntitlements)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListEntitlements, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEntitlements,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListEntitlementsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListEntitlementsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/entitlements").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListEntitlementsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListEntitlementsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_10) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListEntitlementsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListEntitlementsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1291,37 +1885,54 @@ impl ListEntitlementsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListEntitlements::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListEntitlements", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEntitlements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEntitlements",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1333,9 +1944,9 @@ impl ListEntitlementsInput {
 
 /// See [`ListFlowsInput`](crate::input::ListFlowsInput).
 pub mod list_flows_input {
-    
+
     /// A builder for [`ListFlowsInput`](crate::input::ListFlowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1348,7 +1959,8 @@ pub mod list_flows_input {
         }
         /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1357,46 +1969,65 @@ pub mod list_flows_input {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFlowsInput`](crate::input::ListFlowsInput).
-        pub fn build(self) -> Result<crate::input::ListFlowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFlowsInput {
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFlowsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListFlowsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListFlows`](crate::operation::ListFlows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFlows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFlows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFlowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFlowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/flows").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListFlowsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListFlowsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_11) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFlowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFlowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1406,37 +2037,52 @@ impl ListFlowsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFlows", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListFlows",
+                    "mediaconnect",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1448,9 +2094,9 @@ impl ListFlowsInput {
 
 /// See [`ListOfferingsInput`](crate::input::ListOfferingsInput).
 pub mod list_offerings_input {
-    
+
     /// A builder for [`ListOfferingsInput`](crate::input::ListOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1463,7 +2109,8 @@ pub mod list_offerings_input {
         }
         /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1472,46 +2119,66 @@ pub mod list_offerings_input {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::input::ListOfferingsInput).
-        pub fn build(self) -> Result<crate::input::ListOfferingsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListOfferingsInput {
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListOfferingsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListOfferingsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`ListOfferings`](crate::operation::ListOfferings)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListOfferings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListOfferings,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListOfferingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListOfferingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/offerings").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListOfferingsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListOfferingsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_12) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListOfferingsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListOfferingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1521,37 +2188,54 @@ impl ListOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListOfferings::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListOfferings", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListOfferings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListOfferings",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1563,9 +2247,9 @@ impl ListOfferingsInput {
 
 /// See [`ListReservationsInput`](crate::input::ListReservationsInput).
 pub mod list_reservations_input {
-    
+
     /// A builder for [`ListReservationsInput`](crate::input::ListReservationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1578,7 +2262,8 @@ pub mod list_reservations_input {
         }
         /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1587,46 +2272,66 @@ pub mod list_reservations_input {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListReservationsInput`](crate::input::ListReservationsInput).
-        pub fn build(self) -> Result<crate::input::ListReservationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListReservationsInput {
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListReservationsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListReservationsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListReservationsInput {
     /// Consumes the builder and constructs an Operation<[`ListReservations`](crate::operation::ListReservations)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReservations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListReservations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListReservationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListReservationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/v1/reservations").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListReservationsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListReservationsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_13) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListReservationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListReservationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1636,37 +2341,54 @@ impl ListReservationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReservations::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReservations", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListReservations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListReservations",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1678,9 +2400,9 @@ impl ListReservationsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1692,39 +2414,67 @@ pub mod list_tags_for_resource_input {
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.resource_arn;
-                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_14 = input_14.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1733,37 +2483,54 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1775,9 +2542,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
 pub mod purchase_offering_input {
-    
+
     /// A builder for [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_arn: std::option::Option<std::string::String>,
         pub(crate) reservation_name: std::option::Option<std::string::String>,
@@ -1791,7 +2558,8 @@ pub mod purchase_offering_input {
         }
         /// The Amazon Resource Name (ARN) of the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_arn = input; self
+            self.offering_arn = input;
+            self
         }
         /// The name that you want to use for the reservation.
         pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1799,8 +2567,12 @@ pub mod purchase_offering_input {
             self
         }
         /// The name that you want to use for the reservation.
-        pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reservation_name = input; self
+        pub fn set_reservation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_name = input;
+            self
         }
         /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
         pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1809,86 +2581,143 @@ pub mod purchase_offering_input {
         }
         /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input; self
+            self.start = input;
+            self
         }
         /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
-        pub fn build(self) -> Result<crate::input::PurchaseOfferingInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PurchaseOfferingInput {
-                    offering_arn: self.offering_arn
-                    ,
-                    reservation_name: self.reservation_name
-                    ,
-                    start: self.start
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PurchaseOfferingInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PurchaseOfferingInput {
+                offering_arn: self.offering_arn,
+                reservation_name: self.reservation_name,
+                start: self.start,
+            })
         }
     }
-    
-    
 }
 impl PurchaseOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseOffering`](crate::operation::PurchaseOffering)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PurchaseOffering, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PurchaseOffering,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PurchaseOfferingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PurchaseOfferingInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.offering_arn;
-                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })?;
-                let offering_arn = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_15 = input_15.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "offering_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let offering_arn = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if offering_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/offerings/{OfferingArn}", OfferingArn = offering_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "offering_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/offerings/{OfferingArn}",
+                    OfferingArn = offering_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PurchaseOfferingInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PurchaseOfferingInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PurchaseOffering::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PurchaseOffering", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PurchaseOffering::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PurchaseOffering",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1900,9 +2729,9 @@ impl PurchaseOfferingInput {
 
 /// See [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput).
 pub mod remove_flow_media_stream_input {
-    
+
     /// A builder for [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
@@ -1915,7 +2744,8 @@ pub mod remove_flow_media_stream_input {
         }
         /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The name of the media stream that you want to remove.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1923,48 +2753,94 @@ pub mod remove_flow_media_stream_input {
             self
         }
         /// The name of the media stream that you want to remove.
-        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.media_stream_name = input; self
+        pub fn set_media_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_stream_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput).
-        pub fn build(self) -> Result<crate::input::RemoveFlowMediaStreamInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveFlowMediaStreamInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    media_stream_name: self.media_stream_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveFlowMediaStreamInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RemoveFlowMediaStreamInput {
+                flow_arn: self.flow_arn,
+                media_stream_name: self.media_stream_name,
+            })
         }
     }
-    
-    
 }
 impl RemoveFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowMediaStream`](crate::operation::RemoveFlowMediaStream)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveFlowMediaStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveFlowMediaStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveFlowMediaStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveFlowMediaStreamInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.flow_arn;
-                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_16 = input_16.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_17 = &_input.media_stream_name;
-                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })?;
-                let media_stream_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_stream_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let media_stream_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_stream_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}", FlowArn = flow_arn, MediaStreamName = media_stream_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_stream_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}",
+                    FlowArn = flow_arn,
+                    MediaStreamName = media_stream_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveFlowMediaStreamInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveFlowMediaStreamInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1973,37 +2849,54 @@ impl RemoveFlowMediaStreamInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveFlowMediaStream::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveFlowMediaStream", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveFlowMediaStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveFlowMediaStream",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2015,9 +2908,9 @@ impl RemoveFlowMediaStreamInput {
 
 /// See [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput).
 pub mod remove_flow_output_input {
-    
+
     /// A builder for [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) output_arn: std::option::Option<std::string::String>,
@@ -2030,7 +2923,8 @@ pub mod remove_flow_output_input {
         }
         /// The flow that you want to remove an output from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The ARN of the output that you want to remove.
         pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2039,47 +2933,90 @@ pub mod remove_flow_output_input {
         }
         /// The ARN of the output that you want to remove.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_arn = input; self
+            self.output_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput).
-        pub fn build(self) -> Result<crate::input::RemoveFlowOutputInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveFlowOutputInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    output_arn: self.output_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveFlowOutputInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RemoveFlowOutputInput {
+                flow_arn: self.flow_arn,
+                output_arn: self.output_arn,
+            })
         }
     }
-    
-    
 }
 impl RemoveFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowOutput`](crate::operation::RemoveFlowOutput)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveFlowOutput, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveFlowOutput,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveFlowOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveFlowOutputInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.flow_arn;
-                let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_18 = input_18.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_19 = &_input.output_arn;
-                let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })?;
-                let output_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_19 = input_19.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "output_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let output_arn = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if output_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/outputs/{OutputArn}", FlowArn = flow_arn, OutputArn = output_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "output_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/outputs/{OutputArn}",
+                    FlowArn = flow_arn,
+                    OutputArn = output_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveFlowOutputInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveFlowOutputInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2088,37 +3025,54 @@ impl RemoveFlowOutputInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveFlowOutput::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveFlowOutput", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveFlowOutput::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveFlowOutput",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2130,9 +3084,9 @@ impl RemoveFlowOutputInput {
 
 /// See [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput).
 pub mod remove_flow_source_input {
-    
+
     /// A builder for [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -2145,7 +3099,8 @@ pub mod remove_flow_source_input {
         }
         /// The flow that you want to remove a source from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The ARN of the source that you want to remove.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2154,47 +3109,90 @@ pub mod remove_flow_source_input {
         }
         /// The ARN of the source that you want to remove.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input; self
+            self.source_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput).
-        pub fn build(self) -> Result<crate::input::RemoveFlowSourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveFlowSourceInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    source_arn: self.source_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveFlowSourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RemoveFlowSourceInput {
+                flow_arn: self.flow_arn,
+                source_arn: self.source_arn,
+            })
         }
     }
-    
-    
 }
 impl RemoveFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowSource`](crate::operation::RemoveFlowSource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveFlowSource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveFlowSource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveFlowSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveFlowSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.flow_arn;
-                let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_20 = input_20.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_21 = &_input.source_arn;
-                let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })?;
-                let source_arn = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_21 = input_21.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_arn = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if source_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/source/{SourceArn}", FlowArn = flow_arn, SourceArn = source_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/source/{SourceArn}",
+                    FlowArn = flow_arn,
+                    SourceArn = source_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveFlowSourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveFlowSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2203,37 +3201,54 @@ impl RemoveFlowSourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveFlowSource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveFlowSource", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveFlowSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveFlowSource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2245,9 +3260,9 @@ impl RemoveFlowSourceInput {
 
 /// See [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput).
 pub mod remove_flow_vpc_interface_input {
-    
+
     /// A builder for [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
@@ -2260,7 +3275,8 @@ pub mod remove_flow_vpc_interface_input {
         }
         /// The flow that you want to remove a VPC interface from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The name of the VPC interface that you want to remove.
         pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2268,48 +3284,94 @@ pub mod remove_flow_vpc_interface_input {
             self
         }
         /// The name of the VPC interface that you want to remove.
-        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_interface_name = input; self
+        pub fn set_vpc_interface_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_interface_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput).
-        pub fn build(self) -> Result<crate::input::RemoveFlowVpcInterfaceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveFlowVpcInterfaceInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    vpc_interface_name: self.vpc_interface_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveFlowVpcInterfaceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RemoveFlowVpcInterfaceInput {
+                flow_arn: self.flow_arn,
+                vpc_interface_name: self.vpc_interface_name,
+            })
         }
     }
-    
-    
 }
 impl RemoveFlowVpcInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowVpcInterface`](crate::operation::RemoveFlowVpcInterface)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveFlowVpcInterface, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveFlowVpcInterface,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveFlowVpcInterfaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveFlowVpcInterfaceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.flow_arn;
-                let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_22 = input_22.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_23 = &_input.vpc_interface_name;
-                let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vpc_interface_name", details: "cannot be empty or unset" })?;
-                let vpc_interface_name = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_23 = input_23.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vpc_interface_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vpc_interface_name = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vpc_interface_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vpc_interface_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/vpcInterfaces/{VpcInterfaceName}", FlowArn = flow_arn, VpcInterfaceName = vpc_interface_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vpc_interface_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/vpcInterfaces/{VpcInterfaceName}",
+                    FlowArn = flow_arn,
+                    VpcInterfaceName = vpc_interface_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveFlowVpcInterfaceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveFlowVpcInterfaceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2318,37 +3380,54 @@ impl RemoveFlowVpcInterfaceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveFlowVpcInterface::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveFlowVpcInterface", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveFlowVpcInterface::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveFlowVpcInterface",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2360,9 +3439,9 @@ impl RemoveFlowVpcInterfaceInput {
 
 /// See [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput).
 pub mod revoke_flow_entitlement_input {
-    
+
     /// A builder for [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -2374,8 +3453,12 @@ pub mod revoke_flow_entitlement_input {
             self
         }
         /// The ARN of the entitlement that you want to revoke.
-        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entitlement_arn = input; self
+        pub fn set_entitlement_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_arn = input;
+            self
         }
         /// The flow that you want to revoke an entitlement from.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2384,47 +3467,90 @@ pub mod revoke_flow_entitlement_input {
         }
         /// The flow that you want to revoke an entitlement from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput).
-        pub fn build(self) -> Result<crate::input::RevokeFlowEntitlementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RevokeFlowEntitlementInput {
-                    entitlement_arn: self.entitlement_arn
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RevokeFlowEntitlementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RevokeFlowEntitlementInput {
+                entitlement_arn: self.entitlement_arn,
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl RevokeFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`RevokeFlowEntitlement`](crate::operation::RevokeFlowEntitlement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RevokeFlowEntitlement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RevokeFlowEntitlement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RevokeFlowEntitlementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RevokeFlowEntitlementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.flow_arn;
-                let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_25 = &_input.entitlement_arn;
-                let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })?;
-                let entitlement_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_25 = input_25.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "entitlement_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let entitlement_arn = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if entitlement_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}", FlowArn = flow_arn, EntitlementArn = entitlement_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "entitlement_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}",
+                    FlowArn = flow_arn,
+                    EntitlementArn = entitlement_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RevokeFlowEntitlementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RevokeFlowEntitlementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2433,37 +3559,54 @@ impl RevokeFlowEntitlementInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RevokeFlowEntitlement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RevokeFlowEntitlement", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokeFlowEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RevokeFlowEntitlement",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2475,9 +3618,9 @@ impl RevokeFlowEntitlementInput {
 
 /// See [`StartFlowInput`](crate::input::StartFlowInput).
 pub mod start_flow_input {
-    
+
     /// A builder for [`StartFlowInput`](crate::input::StartFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
@@ -2489,39 +3632,66 @@ pub mod start_flow_input {
         }
         /// The ARN of the flow that you want to start.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartFlowInput`](crate::input::StartFlowInput).
-        pub fn build(self) -> Result<crate::input::StartFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartFlowInput {
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::StartFlowInput {
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl StartFlowInput {
     /// Consumes the builder and constructs an Operation<[`StartFlow`](crate::operation::StartFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.flow_arn;
-                let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_26 = input_26.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/start/{FlowArn}", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/start/{FlowArn}", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2530,37 +3700,52 @@ impl StartFlowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StartFlow",
+                    "mediaconnect",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2572,9 +3757,9 @@ impl StartFlowInput {
 
 /// See [`StopFlowInput`](crate::input::StopFlowInput).
 pub mod stop_flow_input {
-    
+
     /// A builder for [`StopFlowInput`](crate::input::StopFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
@@ -2586,39 +3771,66 @@ pub mod stop_flow_input {
         }
         /// The ARN of the flow that you want to stop.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`StopFlowInput`](crate::input::StopFlowInput).
-        pub fn build(self) -> Result<crate::input::StopFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StopFlowInput {
-                    flow_arn: self.flow_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StopFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::StopFlowInput {
+                flow_arn: self.flow_arn,
+            })
         }
     }
-    
-    
 }
 impl StopFlowInput {
     /// Consumes the builder and constructs an Operation<[`StopFlow`](crate::operation::StopFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StopFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StopFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.flow_arn;
-                let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_27 = input_27.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/stop/{FlowArn}", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/stop/{FlowArn}", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StopFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StopFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2627,37 +3839,52 @@ impl StopFlowInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StopFlow",
+                    "mediaconnect",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2669,12 +3896,14 @@ impl StopFlowInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
@@ -2684,99 +3913,163 @@ pub mod tag_resource_input {
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.resource_arn;
-                let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2788,9 +4081,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2803,7 +4096,8 @@ pub mod untag_resource_input {
         }
         /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -2812,44 +4106,75 @@ pub mod untag_resource_input {
         /// The keys of the tags to be removed.
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// The keys of the tags to be removed.
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
-                let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_29 = input_29.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.tag_keys {
                     for inner_31 in inner_30 {
@@ -2858,10 +4183,12 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2871,37 +4198,54 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2913,9 +4257,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateFlowInput`](crate::input::UpdateFlowInput).
 pub mod update_flow_input {
-    
+
     /// A builder for [`UpdateFlowInput`](crate::input::UpdateFlowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
@@ -2929,7 +4273,8 @@ pub mod update_flow_input {
         }
         /// The flow that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::UpdateFailoverConfig) -> Self {
@@ -2937,8 +4282,12 @@ pub mod update_flow_input {
             self
         }
         /// The settings for source failover.
-        pub fn set_source_failover_config(mut self, input: std::option::Option<crate::model::UpdateFailoverConfig>) -> Self {
-            self.source_failover_config = input; self
+        pub fn set_source_failover_config(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFailoverConfig>,
+        ) -> Self {
+            self.source_failover_config = input;
+            self
         }
         /// Update maintenance setting for a flow
         pub fn maintenance(mut self, input: crate::model::UpdateMaintenance) -> Self {
@@ -2946,87 +4295,142 @@ pub mod update_flow_input {
             self
         }
         /// Update maintenance setting for a flow
-        pub fn set_maintenance(mut self, input: std::option::Option<crate::model::UpdateMaintenance>) -> Self {
-            self.maintenance = input; self
+        pub fn set_maintenance(
+            mut self,
+            input: std::option::Option<crate::model::UpdateMaintenance>,
+        ) -> Self {
+            self.maintenance = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::input::UpdateFlowInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowInput {
-                    flow_arn: self.flow_arn
-                    ,
-                    source_failover_config: self.source_failover_config
-                    ,
-                    maintenance: self.maintenance
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::UpdateFlowInput {
+                flow_arn: self.flow_arn,
+                source_failover_config: self.source_failover_config,
+                maintenance: self.maintenance,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlow`](crate::operation::UpdateFlow)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlow, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlow,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.flow_arn;
-                let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_32 = input_32.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/v1/flows/{FlowArn}", FlowArn = flow_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlow::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlow", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3038,9 +4442,9 @@ impl UpdateFlowInput {
 
 /// See [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput).
 pub mod update_flow_entitlement_input {
-    
+
     /// A builder for [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) encryption: std::option::Option<crate::model::UpdateEncryption>,
@@ -3057,7 +4461,8 @@ pub mod update_flow_entitlement_input {
         }
         /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// The type of encryption that will be used on the output associated with this entitlement.
         pub fn encryption(mut self, input: crate::model::UpdateEncryption) -> Self {
@@ -3065,8 +4470,12 @@ pub mod update_flow_entitlement_input {
             self
         }
         /// The type of encryption that will be used on the output associated with this entitlement.
-        pub fn set_encryption(mut self, input: std::option::Option<crate::model::UpdateEncryption>) -> Self {
-            self.encryption = input; self
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::UpdateEncryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
         }
         /// The ARN of the entitlement that you want to update.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3074,8 +4483,12 @@ pub mod update_flow_entitlement_input {
             self
         }
         /// The ARN of the entitlement that you want to update.
-        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entitlement_arn = input; self
+        pub fn set_entitlement_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_arn = input;
+            self
         }
         /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
         pub fn entitlement_status(mut self, input: crate::model::EntitlementStatus) -> Self {
@@ -3083,8 +4496,12 @@ pub mod update_flow_entitlement_input {
             self
         }
         /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-        pub fn set_entitlement_status(mut self, input: std::option::Option<crate::model::EntitlementStatus>) -> Self {
-            self.entitlement_status = input; self
+        pub fn set_entitlement_status(
+            mut self,
+            input: std::option::Option<crate::model::EntitlementStatus>,
+        ) -> Self {
+            self.entitlement_status = input;
+            self
         }
         /// The flow that is associated with the entitlement that you want to update.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3093,7 +4510,8 @@ pub mod update_flow_entitlement_input {
         }
         /// The flow that is associated with the entitlement that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// Appends an item to `subscribers`.
         ///
@@ -3102,104 +4520,175 @@ pub mod update_flow_entitlement_input {
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-                            v.push(input.into());
-                            self.subscribers = Some(v);
-                            self
+            v.push(input.into());
+            self.subscribers = Some(v);
+            self
         }
         /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-        pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.subscribers = input; self
+        pub fn set_subscribers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subscribers = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowEntitlementInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowEntitlementInput {
-                    description: self.description
-                    ,
-                    encryption: self.encryption
-                    ,
-                    entitlement_arn: self.entitlement_arn
-                    ,
-                    entitlement_status: self.entitlement_status
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                    subscribers: self.subscribers
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowEntitlementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFlowEntitlementInput {
+                description: self.description,
+                encryption: self.encryption,
+                entitlement_arn: self.entitlement_arn,
+                entitlement_status: self.entitlement_status,
+                flow_arn: self.flow_arn,
+                subscribers: self.subscribers,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowEntitlement`](crate::operation::UpdateFlowEntitlement)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlowEntitlement, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlowEntitlement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowEntitlementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowEntitlementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.flow_arn;
-                let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_33 = input_33.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_34 = &_input.entitlement_arn;
-                let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })?;
-                let entitlement_arn = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_34 = input_34.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "entitlement_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let entitlement_arn = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if entitlement_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}", FlowArn = flow_arn, EntitlementArn = entitlement_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "entitlement_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}",
+                    FlowArn = flow_arn,
+                    EntitlementArn = entitlement_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowEntitlementInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowEntitlementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_entitlement(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_entitlement(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlowEntitlement::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlowEntitlement", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlowEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlowEntitlement",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3211,9 +4700,9 @@ impl UpdateFlowEntitlementInput {
 
 /// See [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput).
 pub mod update_flow_media_stream_input {
-    
+
     /// A builder for [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
         pub(crate) clock_rate: std::option::Option<i32>,
@@ -3230,8 +4719,12 @@ pub mod update_flow_media_stream_input {
             self
         }
         /// The attributes that you want to assign to the media stream.
-        pub fn set_attributes(mut self, input: std::option::Option<crate::model::MediaStreamAttributesRequest>) -> Self {
-            self.attributes = input; self
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<crate::model::MediaStreamAttributesRequest>,
+        ) -> Self {
+            self.attributes = input;
+            self
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn clock_rate(mut self, input: i32) -> Self {
@@ -3240,7 +4733,8 @@ pub mod update_flow_media_stream_input {
         }
         /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
-            self.clock_rate = input; self
+            self.clock_rate = input;
+            self
         }
         /// Description
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3249,7 +4743,8 @@ pub mod update_flow_media_stream_input {
         }
         /// Description
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// The Amazon Resource Name (ARN) of the flow.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3258,7 +4753,8 @@ pub mod update_flow_media_stream_input {
         }
         /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The name of the media stream that you want to update.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3266,8 +4762,12 @@ pub mod update_flow_media_stream_input {
             self
         }
         /// The name of the media stream that you want to update.
-        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.media_stream_name = input; self
+        pub fn set_media_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.media_stream_name = input;
+            self
         }
         /// The type of media stream.
         pub fn media_stream_type(mut self, input: crate::model::MediaStreamType) -> Self {
@@ -3275,8 +4775,12 @@ pub mod update_flow_media_stream_input {
             self
         }
         /// The type of media stream.
-        pub fn set_media_stream_type(mut self, input: std::option::Option<crate::model::MediaStreamType>) -> Self {
-            self.media_stream_type = input; self
+        pub fn set_media_stream_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaStreamType>,
+        ) -> Self {
+            self.media_stream_type = input;
+            self
         }
         /// The resolution of the video.
         pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3285,101 +4789,167 @@ pub mod update_flow_media_stream_input {
         }
         /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.video_format = input; self
+            self.video_format = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowMediaStreamInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowMediaStreamInput {
-                    attributes: self.attributes
-                    ,
-                    clock_rate: self.clock_rate
-                        .unwrap_or_default()
-                    ,
-                    description: self.description
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                    media_stream_name: self.media_stream_name
-                    ,
-                    media_stream_type: self.media_stream_type
-                    ,
-                    video_format: self.video_format
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowMediaStreamInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFlowMediaStreamInput {
+                attributes: self.attributes,
+                clock_rate: self.clock_rate.unwrap_or_default(),
+                description: self.description,
+                flow_arn: self.flow_arn,
+                media_stream_name: self.media_stream_name,
+                media_stream_type: self.media_stream_type,
+                video_format: self.video_format,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowMediaStream`](crate::operation::UpdateFlowMediaStream)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlowMediaStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlowMediaStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowMediaStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowMediaStreamInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.flow_arn;
-                let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_35 = input_35.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_36 = &_input.media_stream_name;
-                let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })?;
-                let media_stream_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_36 = input_36.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_stream_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let media_stream_name = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if media_stream_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}", FlowArn = flow_arn, MediaStreamName = media_stream_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "media_stream_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}",
+                    FlowArn = flow_arn,
+                    MediaStreamName = media_stream_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowMediaStreamInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowMediaStreamInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_media_stream(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_media_stream(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlowMediaStream::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlowMediaStream", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlowMediaStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlowMediaStream",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3391,9 +4961,9 @@ impl UpdateFlowMediaStreamInput {
 
 /// See [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput).
 pub mod update_flow_output_input {
-    
+
     /// A builder for [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3401,7 +4971,8 @@ pub mod update_flow_output_input {
         pub(crate) encryption: std::option::Option<crate::model::UpdateEncryption>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) max_latency: std::option::Option<i32>,
-        pub(crate) media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+        pub(crate) media_stream_output_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) output_arn: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -3411,7 +4982,8 @@ pub mod update_flow_output_input {
         pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
-        pub(crate) vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
+        pub(crate) vpc_interface_attachment:
+            std::option::Option<crate::model::VpcInterfaceAttachment>,
     }
     impl Builder {
         /// Appends an item to `cidr_allow_list`.
@@ -3421,13 +4993,17 @@ pub mod update_flow_output_input {
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
-                            v.push(input.into());
-                            self.cidr_allow_list = Some(v);
-                            self
+            v.push(input.into());
+            self.cidr_allow_list = Some(v);
+            self
         }
         /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_cidr_allow_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.cidr_allow_list = input; self
+        pub fn set_cidr_allow_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.cidr_allow_list = input;
+            self
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3436,7 +5012,8 @@ pub mod update_flow_output_input {
         }
         /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// The IP address where you want to send the output.
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3445,7 +5022,8 @@ pub mod update_flow_output_input {
         }
         /// The IP address where you want to send the output.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input; self
+            self.destination = input;
+            self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn encryption(mut self, input: crate::model::UpdateEncryption) -> Self {
@@ -3453,8 +5031,12 @@ pub mod update_flow_output_input {
             self
         }
         /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-        pub fn set_encryption(mut self, input: std::option::Option<crate::model::UpdateEncryption>) -> Self {
-            self.encryption = input; self
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::UpdateEncryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
         }
         /// The flow that is associated with the output that you want to update.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3463,7 +5045,8 @@ pub mod update_flow_output_input {
         }
         /// The flow that is associated with the output that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
@@ -3472,22 +5055,32 @@ pub mod update_flow_output_input {
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_latency = input; self
+            self.max_latency = input;
+            self
         }
         /// Appends an item to `media_stream_output_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
         ///
         /// The media streams that are associated with the output, and the parameters for those associations.
-        pub fn media_stream_output_configurations(mut self, input: crate::model::MediaStreamOutputConfigurationRequest) -> Self {
+        pub fn media_stream_output_configurations(
+            mut self,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
+        ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-                            v.push(input);
-                            self.media_stream_output_configurations = Some(v);
-                            self
+            v.push(input);
+            self.media_stream_output_configurations = Some(v);
+            self
         }
         /// The media streams that are associated with the output, and the parameters for those associations.
-        pub fn set_media_stream_output_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>) -> Self {
-            self.media_stream_output_configurations = input; self
+        pub fn set_media_stream_output_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>,
+            >,
+        ) -> Self {
+            self.media_stream_output_configurations = input;
+            self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn min_latency(mut self, input: i32) -> Self {
@@ -3496,7 +5089,8 @@ pub mod update_flow_output_input {
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_latency = input; self
+            self.min_latency = input;
+            self
         }
         /// The ARN of the output that you want to update.
         pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3505,7 +5099,8 @@ pub mod update_flow_output_input {
         }
         /// The ARN of the output that you want to update.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_arn = input; self
+            self.output_arn = input;
+            self
         }
         /// The port to use when content is distributed to this output.
         pub fn port(mut self, input: i32) -> Self {
@@ -3514,7 +5109,8 @@ pub mod update_flow_output_input {
         }
         /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input; self
+            self.port = input;
+            self
         }
         /// The protocol to use for the output.
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -3523,7 +5119,8 @@ pub mod update_flow_output_input {
         }
         /// The protocol to use for the output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input; self
+            self.protocol = input;
+            self
         }
         /// The remote ID for the Zixi-pull stream.
         pub fn remote_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3532,7 +5129,8 @@ pub mod update_flow_output_input {
         }
         /// The remote ID for the Zixi-pull stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.remote_id = input; self
+            self.remote_id = input;
+            self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -3541,7 +5139,8 @@ pub mod update_flow_output_input {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input; self
+            self.sender_control_port = input;
+            self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
         pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3549,8 +5148,12 @@ pub mod update_flow_output_input {
             self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
-        pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_ip_address = input; self
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
+            self
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
@@ -3559,7 +5162,8 @@ pub mod update_flow_output_input {
         }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.smoothing_latency = input; self
+            self.smoothing_latency = input;
+            self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3568,134 +5172,191 @@ pub mod update_flow_output_input {
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input; self
+            self.stream_id = input;
+            self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn vpc_interface_attachment(mut self, input: crate::model::VpcInterfaceAttachment) -> Self {
+        pub fn vpc_interface_attachment(
+            mut self,
+            input: crate::model::VpcInterfaceAttachment,
+        ) -> Self {
             self.vpc_interface_attachment = Some(input);
             self
         }
         /// The name of the VPC interface attachment to use for this output.
-        pub fn set_vpc_interface_attachment(mut self, input: std::option::Option<crate::model::VpcInterfaceAttachment>) -> Self {
-            self.vpc_interface_attachment = input; self
+        pub fn set_vpc_interface_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
+        ) -> Self {
+            self.vpc_interface_attachment = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowOutputInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowOutputInput {
-                    cidr_allow_list: self.cidr_allow_list
-                    ,
-                    description: self.description
-                    ,
-                    destination: self.destination
-                    ,
-                    encryption: self.encryption
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                    max_latency: self.max_latency
-                        .unwrap_or_default()
-                    ,
-                    media_stream_output_configurations: self.media_stream_output_configurations
-                    ,
-                    min_latency: self.min_latency
-                        .unwrap_or_default()
-                    ,
-                    output_arn: self.output_arn
-                    ,
-                    port: self.port
-                        .unwrap_or_default()
-                    ,
-                    protocol: self.protocol
-                    ,
-                    remote_id: self.remote_id
-                    ,
-                    sender_control_port: self.sender_control_port
-                        .unwrap_or_default()
-                    ,
-                    sender_ip_address: self.sender_ip_address
-                    ,
-                    smoothing_latency: self.smoothing_latency
-                        .unwrap_or_default()
-                    ,
-                    stream_id: self.stream_id
-                    ,
-                    vpc_interface_attachment: self.vpc_interface_attachment
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowOutputInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFlowOutputInput {
+                cidr_allow_list: self.cidr_allow_list,
+                description: self.description,
+                destination: self.destination,
+                encryption: self.encryption,
+                flow_arn: self.flow_arn,
+                max_latency: self.max_latency.unwrap_or_default(),
+                media_stream_output_configurations: self.media_stream_output_configurations,
+                min_latency: self.min_latency.unwrap_or_default(),
+                output_arn: self.output_arn,
+                port: self.port.unwrap_or_default(),
+                protocol: self.protocol,
+                remote_id: self.remote_id,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
+                smoothing_latency: self.smoothing_latency.unwrap_or_default(),
+                stream_id: self.stream_id,
+                vpc_interface_attachment: self.vpc_interface_attachment,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowOutput`](crate::operation::UpdateFlowOutput)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlowOutput, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlowOutput,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowOutputInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.flow_arn;
-                let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_37 = input_37.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_38 = &_input.output_arn;
-                let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })?;
-                let output_arn = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_38 = input_38.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "output_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let output_arn = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if output_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/outputs/{OutputArn}", FlowArn = flow_arn, OutputArn = output_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "output_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/outputs/{OutputArn}",
+                    FlowArn = flow_arn,
+                    OutputArn = output_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowOutputInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowOutputInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlowOutput::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlowOutput", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlowOutput::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlowOutput",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3707,9 +5368,9 @@ impl UpdateFlowOutputInput {
 
 /// See [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput).
 pub mod update_flow_source_input {
-    
+
     /// A builder for [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decryption: std::option::Option<crate::model::UpdateEncryption>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3719,7 +5380,8 @@ pub mod update_flow_source_input {
         pub(crate) max_bitrate: std::option::Option<i32>,
         pub(crate) max_latency: std::option::Option<i32>,
         pub(crate) max_sync_buffer: std::option::Option<i32>,
-        pub(crate) media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
+        pub(crate) media_stream_source_configurations:
+            std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) sender_control_port: std::option::Option<i32>,
@@ -3738,8 +5400,12 @@ pub mod update_flow_source_input {
             self
         }
         /// The type of encryption used on the content ingested from this source.
-        pub fn set_decryption(mut self, input: std::option::Option<crate::model::UpdateEncryption>) -> Self {
-            self.decryption = input; self
+        pub fn set_decryption(
+            mut self,
+            input: std::option::Option<crate::model::UpdateEncryption>,
+        ) -> Self {
+            self.decryption = input;
+            self
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3748,7 +5414,8 @@ pub mod update_flow_source_input {
         }
         /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
         pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3756,8 +5423,12 @@ pub mod update_flow_source_input {
             self
         }
         /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entitlement_arn = input; self
+        pub fn set_entitlement_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_arn = input;
+            self
         }
         /// The flow that is associated with the source that you want to update.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3766,7 +5437,8 @@ pub mod update_flow_source_input {
         }
         /// The flow that is associated with the source that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input; self
+            self.flow_arn = input;
+            self
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn ingest_port(mut self, input: i32) -> Self {
@@ -3775,7 +5447,8 @@ pub mod update_flow_source_input {
         }
         /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.ingest_port = input; self
+            self.ingest_port = input;
+            self
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -3784,7 +5457,8 @@ pub mod update_flow_source_input {
         }
         /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_bitrate = input; self
+            self.max_bitrate = input;
+            self
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
@@ -3793,7 +5467,8 @@ pub mod update_flow_source_input {
         }
         /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_latency = input; self
+            self.max_latency = input;
+            self
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn max_sync_buffer(mut self, input: i32) -> Self {
@@ -3802,22 +5477,32 @@ pub mod update_flow_source_input {
         }
         /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_sync_buffer = input; self
+            self.max_sync_buffer = input;
+            self
         }
         /// Appends an item to `media_stream_source_configurations`.
         ///
         /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
         ///
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn media_stream_source_configurations(mut self, input: crate::model::MediaStreamSourceConfigurationRequest) -> Self {
+        pub fn media_stream_source_configurations(
+            mut self,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
+        ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-                            v.push(input);
-                            self.media_stream_source_configurations = Some(v);
-                            self
+            v.push(input);
+            self.media_stream_source_configurations = Some(v);
+            self
         }
         /// The media streams that are associated with the source, and the parameters for those associations.
-        pub fn set_media_stream_source_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>) -> Self {
-            self.media_stream_source_configurations = input; self
+        pub fn set_media_stream_source_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>,
+            >,
+        ) -> Self {
+            self.media_stream_source_configurations = input;
+            self
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn min_latency(mut self, input: i32) -> Self {
@@ -3826,7 +5511,8 @@ pub mod update_flow_source_input {
         }
         /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_latency = input; self
+            self.min_latency = input;
+            self
         }
         /// The protocol that is used by the source.
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
@@ -3835,7 +5521,8 @@ pub mod update_flow_source_input {
         }
         /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = input; self
+            self.protocol = input;
+            self
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -3844,7 +5531,8 @@ pub mod update_flow_source_input {
         }
         /// The port that the flow uses to send outbound requests to initiate connection with the sender.
         pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.sender_control_port = input; self
+            self.sender_control_port = input;
+            self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
         pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3852,8 +5540,12 @@ pub mod update_flow_source_input {
             self
         }
         /// The IP address that the flow communicates with to initiate connection with the sender.
-        pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_ip_address = input; self
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
+            self
         }
         /// The ARN of the source that you want to update.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3862,7 +5554,8 @@ pub mod update_flow_source_input {
         }
         /// The ARN of the source that you want to update.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input; self
+            self.source_arn = input;
+            self
         }
         /// Source IP or domain name for SRT-caller protocol.
         pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3870,8 +5563,12 @@ pub mod update_flow_source_input {
             self
         }
         /// Source IP or domain name for SRT-caller protocol.
-        pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_listener_address = input; self
+        pub fn set_source_listener_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_listener_address = input;
+            self
         }
         /// Source port for SRT-caller protocol.
         pub fn source_listener_port(mut self, input: i32) -> Self {
@@ -3880,7 +5577,8 @@ pub mod update_flow_source_input {
         }
         /// Source port for SRT-caller protocol.
         pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.source_listener_port = input; self
+            self.source_listener_port = input;
+            self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3889,7 +5587,8 @@ pub mod update_flow_source_input {
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = input; self
+            self.stream_id = input;
+            self
         }
         /// The name of the VPC interface to use for this source.
         pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3897,8 +5596,12 @@ pub mod update_flow_source_input {
             self
         }
         /// The name of the VPC interface to use for this source.
-        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_interface_name = input; self
+        pub fn set_vpc_interface_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_interface_name = input;
+            self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn whitelist_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3906,132 +5609,181 @@ pub mod update_flow_source_input {
             self
         }
         /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-        pub fn set_whitelist_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.whitelist_cidr = input; self
+        pub fn set_whitelist_cidr(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.whitelist_cidr = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput).
-        pub fn build(self) -> Result<crate::input::UpdateFlowSourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFlowSourceInput {
-                    decryption: self.decryption
-                    ,
-                    description: self.description
-                    ,
-                    entitlement_arn: self.entitlement_arn
-                    ,
-                    flow_arn: self.flow_arn
-                    ,
-                    ingest_port: self.ingest_port
-                        .unwrap_or_default()
-                    ,
-                    max_bitrate: self.max_bitrate
-                        .unwrap_or_default()
-                    ,
-                    max_latency: self.max_latency
-                        .unwrap_or_default()
-                    ,
-                    max_sync_buffer: self.max_sync_buffer
-                        .unwrap_or_default()
-                    ,
-                    media_stream_source_configurations: self.media_stream_source_configurations
-                    ,
-                    min_latency: self.min_latency
-                        .unwrap_or_default()
-                    ,
-                    protocol: self.protocol
-                    ,
-                    sender_control_port: self.sender_control_port
-                        .unwrap_or_default()
-                    ,
-                    sender_ip_address: self.sender_ip_address
-                    ,
-                    source_arn: self.source_arn
-                    ,
-                    source_listener_address: self.source_listener_address
-                    ,
-                    source_listener_port: self.source_listener_port
-                        .unwrap_or_default()
-                    ,
-                    stream_id: self.stream_id
-                    ,
-                    vpc_interface_name: self.vpc_interface_name
-                    ,
-                    whitelist_cidr: self.whitelist_cidr
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFlowSourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFlowSourceInput {
+                decryption: self.decryption,
+                description: self.description,
+                entitlement_arn: self.entitlement_arn,
+                flow_arn: self.flow_arn,
+                ingest_port: self.ingest_port.unwrap_or_default(),
+                max_bitrate: self.max_bitrate.unwrap_or_default(),
+                max_latency: self.max_latency.unwrap_or_default(),
+                max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
+                media_stream_source_configurations: self.media_stream_source_configurations,
+                min_latency: self.min_latency.unwrap_or_default(),
+                protocol: self.protocol,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
+                source_arn: self.source_arn,
+                source_listener_address: self.source_listener_address,
+                source_listener_port: self.source_listener_port.unwrap_or_default(),
+                stream_id: self.stream_id,
+                vpc_interface_name: self.vpc_interface_name,
+                whitelist_cidr: self.whitelist_cidr,
+            })
         }
     }
-    
-    
 }
 impl UpdateFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowSource`](crate::operation::UpdateFlowSource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFlowSource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFlowSource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFlowSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFlowSourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.flow_arn;
-                let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_39 = input_39.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let flow_arn = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if flow_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "flow_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_40 = &_input.source_arn;
-                let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })?;
-                let source_arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_40 = input_40.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let source_arn = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if source_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/v1/flows/{FlowArn}/source/{SourceArn}", FlowArn = flow_arn, SourceArn = source_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/v1/flows/{FlowArn}/source/{SourceArn}",
+                    FlowArn = flow_arn,
+                    SourceArn = source_arn
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFlowSourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFlowSourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFlowSource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFlowSource", "mediaconnect"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlowSource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlowSource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4042,62 +5794,83 @@ impl UpdateFlowSourceInput {
 }
 
 /// A request to update the source of a flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowSourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowSourceInput {
     /// The type of encryption used on the content ingested from this source.
-    #[doc(hidden)]pub decryption: std::option::Option<crate::model::UpdateEncryption>,
+    #[doc(hidden)]
+    pub decryption: std::option::Option<crate::model::UpdateEncryption>,
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    #[doc(hidden)]pub entitlement_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entitlement_arn: std::option::Option<std::string::String>,
     /// The flow that is associated with the source that you want to update.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
-    #[doc(hidden)]pub ingest_port: i32,
+    #[doc(hidden)]
+    pub ingest_port: i32,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
-    #[doc(hidden)]pub max_bitrate: i32,
+    #[doc(hidden)]
+    pub max_bitrate: i32,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    #[doc(hidden)]pub max_latency: i32,
+    #[doc(hidden)]
+    pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
-    #[doc(hidden)]pub max_sync_buffer: i32,
+    #[doc(hidden)]
+    pub max_sync_buffer: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
-    #[doc(hidden)]pub media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
+    #[doc(hidden)]
+    pub media_stream_source_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    #[doc(hidden)]pub min_latency: i32,
+    #[doc(hidden)]
+    pub min_latency: i32,
     /// The protocol that is used by the source.
-    #[doc(hidden)]pub protocol: std::option::Option<crate::model::Protocol>,
+    #[doc(hidden)]
+    pub protocol: std::option::Option<crate::model::Protocol>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    #[doc(hidden)]pub sender_control_port: i32,
+    #[doc(hidden)]
+    pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    #[doc(hidden)]pub sender_ip_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to update.
-    #[doc(hidden)]pub source_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub source_arn: std::option::Option<std::string::String>,
     /// Source IP or domain name for SRT-caller protocol.
-    #[doc(hidden)]pub source_listener_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub source_listener_address: std::option::Option<std::string::String>,
     /// Source port for SRT-caller protocol.
-    #[doc(hidden)]pub source_listener_port: i32,
+    #[doc(hidden)]
+    pub source_listener_port: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    #[doc(hidden)]pub stream_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface to use for this source.
-    #[doc(hidden)]pub vpc_interface_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vpc_interface_name: std::option::Option<std::string::String>,
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]pub whitelist_cidr: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub whitelist_cidr: std::option::Option<std::string::String>,
 }
 impl UpdateFlowSourceInput {
     /// The type of encryption used on the content ingested from this source.
-    pub fn decryption(&self) -> std::option::Option<& crate::model::UpdateEncryption> {
+    pub fn decryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
         self.decryption.as_ref()
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// The flow that is associated with the source that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
@@ -4117,7 +5890,9 @@ impl UpdateFlowSourceInput {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamSourceConfigurationRequest]> {
+    pub fn media_stream_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfigurationRequest]> {
         self.media_stream_source_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -4125,7 +5900,7 @@ impl UpdateFlowSourceInput {
         self.min_latency
     }
     /// The protocol that is used by the source.
-    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -4133,15 +5908,15 @@ impl UpdateFlowSourceInput {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
     /// The ARN of the source that you want to update.
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(&self) -> std::option::Option<& str> {
+    pub fn source_listener_address(&self) -> std::option::Option<&str> {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
@@ -4149,19 +5924,19 @@ impl UpdateFlowSourceInput {
         self.source_listener_port
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface to use for this source.
-    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(&self) -> std::option::Option<& str> {
+    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
         self.whitelist_cidr.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowSourceInput  {
+impl std::fmt::Debug for UpdateFlowSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowSourceInput");
         formatter.field("decryption", &self.decryption);
@@ -4172,7 +5947,10 @@ impl  std::fmt::Debug for UpdateFlowSourceInput  {
         formatter.field("max_bitrate", &self.max_bitrate);
         formatter.field("max_latency", &self.max_latency);
         formatter.field("max_sync_buffer", &self.max_sync_buffer);
-        formatter.field("media_stream_source_configurations", &self.media_stream_source_configurations);
+        formatter.field(
+            "media_stream_source_configurations",
+            &self.media_stream_source_configurations,
+        );
         formatter.field("min_latency", &self.min_latency);
         formatter.field("protocol", &self.protocol);
         formatter.field("sender_control_port", &self.sender_control_port);
@@ -4188,62 +5966,81 @@ impl  std::fmt::Debug for UpdateFlowSourceInput  {
 }
 
 /// The fields that you want to update in the output.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowOutputInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// The IP address where you want to send the output.
-    #[doc(hidden)]pub destination: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub destination: std::option::Option<std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    #[doc(hidden)]pub encryption: std::option::Option<crate::model::UpdateEncryption>,
+    #[doc(hidden)]
+    pub encryption: std::option::Option<crate::model::UpdateEncryption>,
     /// The flow that is associated with the output that you want to update.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    #[doc(hidden)]pub max_latency: i32,
+    #[doc(hidden)]
+    pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
-    #[doc(hidden)]pub media_stream_output_configurations: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
+    #[doc(hidden)]
+    pub media_stream_output_configurations:
+        std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    #[doc(hidden)]pub min_latency: i32,
+    #[doc(hidden)]
+    pub min_latency: i32,
     /// The ARN of the output that you want to update.
-    #[doc(hidden)]pub output_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub output_arn: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
-    #[doc(hidden)]pub port: i32,
+    #[doc(hidden)]
+    pub port: i32,
     /// The protocol to use for the output.
-    #[doc(hidden)]pub protocol: std::option::Option<crate::model::Protocol>,
+    #[doc(hidden)]
+    pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull stream.
-    #[doc(hidden)]pub remote_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub remote_id: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    #[doc(hidden)]pub sender_control_port: i32,
+    #[doc(hidden)]
+    pub sender_control_port: i32,
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    #[doc(hidden)]pub sender_ip_address: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
-    #[doc(hidden)]pub smoothing_latency: i32,
+    #[doc(hidden)]
+    pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    #[doc(hidden)]pub stream_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface attachment to use for this output.
-    #[doc(hidden)]pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
+    #[doc(hidden)]
+    pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
 impl UpdateFlowOutputInput {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
         self.cidr_allow_list.as_deref()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The IP address where you want to send the output.
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn encryption(&self) -> std::option::Option<& crate::model::UpdateEncryption> {
+    pub fn encryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
         self.encryption.as_ref()
     }
     /// The flow that is associated with the output that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
@@ -4251,7 +6048,9 @@ impl UpdateFlowOutputInput {
         self.max_latency
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn media_stream_output_configurations(&self) -> std::option::Option<& [crate::model::MediaStreamOutputConfigurationRequest]> {
+    pub fn media_stream_output_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfigurationRequest]> {
         self.media_stream_output_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -4259,7 +6058,7 @@ impl UpdateFlowOutputInput {
         self.min_latency
     }
     /// The ARN of the output that you want to update.
-    pub fn output_arn(&self) -> std::option::Option<& str> {
+    pub fn output_arn(&self) -> std::option::Option<&str> {
         self.output_arn.as_deref()
     }
     /// The port to use when content is distributed to this output.
@@ -4267,11 +6066,11 @@ impl UpdateFlowOutputInput {
         self.port
     }
     /// The protocol to use for the output.
-    pub fn protocol(&self) -> std::option::Option<& crate::model::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
     /// The remote ID for the Zixi-pull stream.
-    pub fn remote_id(&self) -> std::option::Option<& str> {
+    pub fn remote_id(&self) -> std::option::Option<&str> {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -4279,7 +6078,7 @@ impl UpdateFlowOutputInput {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
@@ -4287,15 +6086,17 @@ impl UpdateFlowOutputInput {
         self.smoothing_latency
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn vpc_interface_attachment(&self) -> std::option::Option<& crate::model::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowOutputInput  {
+impl std::fmt::Debug for UpdateFlowOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowOutputInput");
         formatter.field("cidr_allow_list", &self.cidr_allow_list);
@@ -4304,7 +6105,10 @@ impl  std::fmt::Debug for UpdateFlowOutputInput  {
         formatter.field("encryption", &self.encryption);
         formatter.field("flow_arn", &self.flow_arn);
         formatter.field("max_latency", &self.max_latency);
-        formatter.field("media_stream_output_configurations", &self.media_stream_output_configurations);
+        formatter.field(
+            "media_stream_output_configurations",
+            &self.media_stream_output_configurations,
+        );
         formatter.field("min_latency", &self.min_latency);
         formatter.field("output_arn", &self.output_arn);
         formatter.field("port", &self.port);
@@ -4320,26 +6124,34 @@ impl  std::fmt::Debug for UpdateFlowOutputInput  {
 }
 
 /// The fields that you want to update in the media stream.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowMediaStreamInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowMediaStreamInput {
     /// The attributes that you want to assign to the media stream.
-    #[doc(hidden)]pub attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
+    #[doc(hidden)]
+    pub attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-    #[doc(hidden)]pub clock_rate: i32,
+    #[doc(hidden)]
+    pub clock_rate: i32,
     /// Description
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that you want to update.
-    #[doc(hidden)]pub media_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub media_stream_name: std::option::Option<std::string::String>,
     /// The type of media stream.
-    #[doc(hidden)]pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
+    #[doc(hidden)]
+    pub media_stream_type: std::option::Option<crate::model::MediaStreamType>,
     /// The resolution of the video.
-    #[doc(hidden)]pub video_format: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub video_format: std::option::Option<std::string::String>,
 }
 impl UpdateFlowMediaStreamInput {
     /// The attributes that you want to assign to the media stream.
-    pub fn attributes(&self) -> std::option::Option<& crate::model::MediaStreamAttributesRequest> {
+    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributesRequest> {
         self.attributes.as_ref()
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
@@ -4347,27 +6159,27 @@ impl UpdateFlowMediaStreamInput {
         self.clock_rate
     }
     /// Description
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the media stream that you want to update.
-    pub fn media_stream_name(&self) -> std::option::Option<& str> {
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
     }
     /// The type of media stream.
-    pub fn media_stream_type(&self) -> std::option::Option<& crate::model::MediaStreamType> {
+    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
         self.media_stream_type.as_ref()
     }
     /// The resolution of the video.
-    pub fn video_format(&self) -> std::option::Option<& str> {
+    pub fn video_format(&self) -> std::option::Option<&str> {
         self.video_format.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowMediaStreamInput  {
+impl std::fmt::Debug for UpdateFlowMediaStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowMediaStreamInput");
         formatter.field("attributes", &self.attributes);
@@ -4382,48 +6194,55 @@ impl  std::fmt::Debug for UpdateFlowMediaStreamInput  {
 }
 
 /// The entitlement fields that you want to update.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowEntitlementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// The type of encryption that will be used on the output associated with this entitlement.
-    #[doc(hidden)]pub encryption: std::option::Option<crate::model::UpdateEncryption>,
+    #[doc(hidden)]
+    pub encryption: std::option::Option<crate::model::UpdateEncryption>,
     /// The ARN of the entitlement that you want to update.
-    #[doc(hidden)]pub entitlement_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entitlement_arn: std::option::Option<std::string::String>,
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    #[doc(hidden)]pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
+    #[doc(hidden)]
+    pub entitlement_status: std::option::Option<crate::model::EntitlementStatus>,
     /// The flow that is associated with the entitlement that you want to update.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    #[doc(hidden)]pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<& crate::model::UpdateEncryption> {
+    pub fn encryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn entitlement_status(&self) -> std::option::Option<& crate::model::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
         self.subscribers.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowEntitlementInput  {
+impl std::fmt::Debug for UpdateFlowEntitlementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowEntitlementInput");
         formatter.field("description", &self.description);
@@ -4437,30 +6256,36 @@ impl  std::fmt::Debug for UpdateFlowEntitlementInput  {
 }
 
 /// A request to update flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowInput {
     /// The flow that you want to update.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The settings for source failover.
-    #[doc(hidden)]pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
+    #[doc(hidden)]
+    pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
     /// Update maintenance setting for a flow
-    #[doc(hidden)]pub maintenance: std::option::Option<crate::model::UpdateMaintenance>,
+    #[doc(hidden)]
+    pub maintenance: std::option::Option<crate::model::UpdateMaintenance>,
 }
 impl UpdateFlowInput {
     /// The flow that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> std::option::Option<& crate::model::UpdateFailoverConfig> {
+    pub fn source_failover_config(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateFailoverConfig> {
         self.source_failover_config.as_ref()
     }
     /// Update maintenance setting for a flow
-    pub fn maintenance(&self) -> std::option::Option<& crate::model::UpdateMaintenance> {
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::UpdateMaintenance> {
         self.maintenance.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateFlowInput  {
+impl std::fmt::Debug for UpdateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4471,24 +6296,27 @@ impl  std::fmt::Debug for UpdateFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// The keys of the tags to be removed.
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// The keys of the tags to be removed.
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4498,24 +6326,31 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 /// The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4525,18 +6360,20 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StopFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
     /// The ARN of the flow that you want to stop.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for StopFlowInput  {
+impl std::fmt::Debug for StopFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4545,18 +6382,20 @@ impl  std::fmt::Debug for StopFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFlowInput {
     /// The ARN of the flow that you want to start.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
     /// The ARN of the flow that you want to start.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for StartFlowInput  {
+impl std::fmt::Debug for StartFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4565,24 +6404,27 @@ impl  std::fmt::Debug for StartFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RevokeFlowEntitlementInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RevokeFlowEntitlementInput {
     /// The ARN of the entitlement that you want to revoke.
-    #[doc(hidden)]pub entitlement_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub entitlement_arn: std::option::Option<std::string::String>,
     /// The flow that you want to revoke an entitlement from.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl RevokeFlowEntitlementInput {
     /// The ARN of the entitlement that you want to revoke.
-    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// The flow that you want to revoke an entitlement from.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for RevokeFlowEntitlementInput  {
+impl std::fmt::Debug for RevokeFlowEntitlementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeFlowEntitlementInput");
         formatter.field("entitlement_arn", &self.entitlement_arn);
@@ -4592,24 +6434,27 @@ impl  std::fmt::Debug for RevokeFlowEntitlementInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveFlowVpcInterfaceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFlowVpcInterfaceInput {
     /// The flow that you want to remove a VPC interface from.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the VPC interface that you want to remove.
-    #[doc(hidden)]pub vpc_interface_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vpc_interface_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowVpcInterfaceInput {
     /// The flow that you want to remove a VPC interface from.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the VPC interface that you want to remove.
-    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveFlowVpcInterfaceInput  {
+impl std::fmt::Debug for RemoveFlowVpcInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowVpcInterfaceInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4619,24 +6464,27 @@ impl  std::fmt::Debug for RemoveFlowVpcInterfaceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveFlowSourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to remove.
-    #[doc(hidden)]pub source_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub source_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the source that you want to remove.
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveFlowSourceInput  {
+impl std::fmt::Debug for RemoveFlowSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowSourceInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4646,24 +6494,27 @@ impl  std::fmt::Debug for RemoveFlowSourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveFlowOutputInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFlowOutputInput {
     /// The flow that you want to remove an output from.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the output that you want to remove.
-    #[doc(hidden)]pub output_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub output_arn: std::option::Option<std::string::String>,
 }
 impl RemoveFlowOutputInput {
     /// The flow that you want to remove an output from.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the output that you want to remove.
-    pub fn output_arn(&self) -> std::option::Option<& str> {
+    pub fn output_arn(&self) -> std::option::Option<&str> {
         self.output_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveFlowOutputInput  {
+impl std::fmt::Debug for RemoveFlowOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowOutputInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4673,24 +6524,27 @@ impl  std::fmt::Debug for RemoveFlowOutputInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveFlowMediaStreamInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that you want to remove.
-    #[doc(hidden)]pub media_stream_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub media_stream_name: std::option::Option<std::string::String>,
 }
 impl RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the media stream that you want to remove.
-    pub fn media_stream_name(&self) -> std::option::Option<& str> {
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveFlowMediaStreamInput  {
+impl std::fmt::Debug for RemoveFlowMediaStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowMediaStreamInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4700,30 +6554,34 @@ impl  std::fmt::Debug for RemoveFlowMediaStreamInput  {
 }
 
 /// A request to purchase a offering.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PurchaseOfferingInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PurchaseOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    #[doc(hidden)]pub offering_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub offering_arn: std::option::Option<std::string::String>,
     /// The name that you want to use for the reservation.
-    #[doc(hidden)]pub reservation_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub reservation_name: std::option::Option<std::string::String>,
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
-    #[doc(hidden)]pub start: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub start: std::option::Option<std::string::String>,
 }
 impl PurchaseOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    pub fn offering_arn(&self) -> std::option::Option<& str> {
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
         self.offering_arn.as_deref()
     }
     /// The name that you want to use for the reservation.
-    pub fn reservation_name(&self) -> std::option::Option<& str> {
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
         self.reservation_name.as_deref()
     }
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
-    pub fn start(&self) -> std::option::Option<& str> {
+    pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
 }
-impl  std::fmt::Debug for PurchaseOfferingInput  {
+impl std::fmt::Debug for PurchaseOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingInput");
         formatter.field("offering_arn", &self.offering_arn);
@@ -4734,18 +6592,20 @@ impl  std::fmt::Debug for PurchaseOfferingInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4754,12 +6614,15 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListReservationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListReservationsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReservationsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -4767,11 +6630,11 @@ impl ListReservationsInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListReservationsInput  {
+impl std::fmt::Debug for ListReservationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReservationsInput");
         formatter.field("max_results", &self.max_results);
@@ -4781,12 +6644,15 @@ impl  std::fmt::Debug for ListReservationsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListOfferingsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOfferingsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -4794,11 +6660,11 @@ impl ListOfferingsInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListOfferingsInput  {
+impl std::fmt::Debug for ListOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsInput");
         formatter.field("max_results", &self.max_results);
@@ -4808,12 +6674,15 @@ impl  std::fmt::Debug for ListOfferingsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFlowsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFlowsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFlowsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -4821,11 +6690,11 @@ impl ListFlowsInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListFlowsInput  {
+impl std::fmt::Debug for ListFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFlowsInput");
         formatter.field("max_results", &self.max_results);
@@ -4835,12 +6704,15 @@ impl  std::fmt::Debug for ListFlowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListEntitlementsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntitlementsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitlementsInput {
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
@@ -4848,11 +6720,11 @@ impl ListEntitlementsInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListEntitlementsInput  {
+impl std::fmt::Debug for ListEntitlementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntitlementsInput");
         formatter.field("max_results", &self.max_results);
@@ -4862,24 +6734,27 @@ impl  std::fmt::Debug for ListEntitlementsInput  {
 }
 
 /// A request to grant entitlements on a flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GrantFlowEntitlementsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
-    #[doc(hidden)]pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+    #[doc(hidden)]
+    pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
     /// The flow that you want to grant entitlements on.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
-    pub fn entitlements(&self) -> std::option::Option<& [crate::model::GrantEntitlementRequest]> {
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::GrantEntitlementRequest]> {
         self.entitlements.as_deref()
     }
     /// The flow that you want to grant entitlements on.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for GrantFlowEntitlementsInput  {
+impl std::fmt::Debug for GrantFlowEntitlementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantFlowEntitlementsInput");
         formatter.field("entitlements", &self.entitlements);
@@ -4889,18 +6764,20 @@ impl  std::fmt::Debug for GrantFlowEntitlementsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeReservationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
-    #[doc(hidden)]pub reservation_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub reservation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn reservation_arn(&self) -> std::option::Option<& str> {
+    pub fn reservation_arn(&self) -> std::option::Option<&str> {
         self.reservation_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeReservationInput  {
+impl std::fmt::Debug for DescribeReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservationInput");
         formatter.field("reservation_arn", &self.reservation_arn);
@@ -4909,18 +6786,20 @@ impl  std::fmt::Debug for DescribeReservationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeOfferingInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    #[doc(hidden)]pub offering_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub offering_arn: std::option::Option<std::string::String>,
 }
 impl DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
-    pub fn offering_arn(&self) -> std::option::Option<& str> {
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
         self.offering_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeOfferingInput  {
+impl std::fmt::Debug for DescribeOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOfferingInput");
         formatter.field("offering_arn", &self.offering_arn);
@@ -4929,18 +6808,20 @@ impl  std::fmt::Debug for DescribeOfferingInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFlowInput {
     /// The ARN of the flow that you want to describe.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFlowInput {
     /// The ARN of the flow that you want to describe.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFlowInput  {
+impl std::fmt::Debug for DescribeFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4949,18 +6830,20 @@ impl  std::fmt::Debug for DescribeFlowInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFlowInput {
     /// The ARN of the flow that you want to delete.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFlowInput {
     /// The ARN of the flow that you want to delete.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteFlowInput  {
+impl std::fmt::Debug for DeleteFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFlowInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -4969,72 +6852,83 @@ impl  std::fmt::Debug for DeleteFlowInput  {
 }
 
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateFlowInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    #[doc(hidden)]pub availability_zone: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub availability_zone: std::option::Option<std::string::String>,
     /// The entitlements that you want to grant on a flow.
-    #[doc(hidden)]pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
+    #[doc(hidden)]
+    pub entitlements: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    #[doc(hidden)]pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+    #[doc(hidden)]
+    pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
     /// The name of the flow.
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// The outputs that you want to add to this flow.
-    #[doc(hidden)]pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
+    #[doc(hidden)]
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
     /// The settings for the source of the flow.
-    #[doc(hidden)]pub source: std::option::Option<crate::model::SetSourceRequest>,
+    #[doc(hidden)]
+    pub source: std::option::Option<crate::model::SetSourceRequest>,
     /// The settings for source failover.
-    #[doc(hidden)]pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
+    #[doc(hidden)]
+    pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
     /// The VPC interfaces you want on the flow.
-    #[doc(hidden)]pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+    #[doc(hidden)]
+    pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
     /// Create maintenance setting for a flow
-    #[doc(hidden)]pub maintenance: std::option::Option<crate::model::AddMaintenance>,
+    #[doc(hidden)]
+    pub maintenance: std::option::Option<crate::model::AddMaintenance>,
 }
 impl CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn entitlements(&self) -> std::option::Option<& [crate::model::GrantEntitlementRequest]> {
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::GrantEntitlementRequest]> {
         self.entitlements.as_deref()
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn media_streams(&self) -> std::option::Option<& [crate::model::AddMediaStreamRequest]> {
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::AddMediaStreamRequest]> {
         self.media_streams.as_deref()
     }
     /// The name of the flow.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The outputs that you want to add to this flow.
-    pub fn outputs(&self) -> std::option::Option<& [crate::model::AddOutputRequest]> {
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::AddOutputRequest]> {
         self.outputs.as_deref()
     }
     /// The settings for the source of the flow.
-    pub fn source(&self) -> std::option::Option<& crate::model::SetSourceRequest> {
+    pub fn source(&self) -> std::option::Option<&crate::model::SetSourceRequest> {
         self.source.as_ref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> std::option::Option<& crate::model::FailoverConfig> {
+    pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
         self.source_failover_config.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SetSourceRequest]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SetSourceRequest]> {
         self.sources.as_deref()
     }
     /// The VPC interfaces you want on the flow.
-    pub fn vpc_interfaces(&self) -> std::option::Option<& [crate::model::VpcInterfaceRequest]> {
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterfaceRequest]> {
         self.vpc_interfaces.as_deref()
     }
     /// Create maintenance setting for a flow
-    pub fn maintenance(&self) -> std::option::Option<& crate::model::AddMaintenance> {
+    pub fn maintenance(&self) -> std::option::Option<&crate::model::AddMaintenance> {
         self.maintenance.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateFlowInput  {
+impl std::fmt::Debug for CreateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowInput");
         formatter.field("availability_zone", &self.availability_zone);
@@ -5052,24 +6946,27 @@ impl  std::fmt::Debug for CreateFlowInput  {
 }
 
 /// A request to add VPC interfaces to the flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddFlowVpcInterfacesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddFlowVpcInterfacesInput {
     /// The flow that you want to mutate.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// A list of VPC interfaces that you want to add.
-    #[doc(hidden)]pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
+    #[doc(hidden)]
+    pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
 }
 impl AddFlowVpcInterfacesInput {
     /// The flow that you want to mutate.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn vpc_interfaces(&self) -> std::option::Option<& [crate::model::VpcInterfaceRequest]> {
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterfaceRequest]> {
         self.vpc_interfaces.as_deref()
     }
 }
-impl  std::fmt::Debug for AddFlowVpcInterfacesInput  {
+impl std::fmt::Debug for AddFlowVpcInterfacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowVpcInterfacesInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -5079,24 +6976,27 @@ impl  std::fmt::Debug for AddFlowVpcInterfacesInput  {
 }
 
 /// A request to add sources to the flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddFlowSourcesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddFlowSourcesInput {
     /// The flow that you want to mutate.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// A list of sources that you want to add.
-    #[doc(hidden)]pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
+    #[doc(hidden)]
+    pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
 }
 impl AddFlowSourcesInput {
     /// The flow that you want to mutate.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// A list of sources that you want to add.
-    pub fn sources(&self) -> std::option::Option<& [crate::model::SetSourceRequest]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SetSourceRequest]> {
         self.sources.as_deref()
     }
 }
-impl  std::fmt::Debug for AddFlowSourcesInput  {
+impl std::fmt::Debug for AddFlowSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowSourcesInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -5106,24 +7006,27 @@ impl  std::fmt::Debug for AddFlowSourcesInput  {
 }
 
 /// A request to add outputs to the specified flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddFlowOutputsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// A list of outputs that you want to add.
-    #[doc(hidden)]pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
+    #[doc(hidden)]
+    pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
 }
 impl AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// A list of outputs that you want to add.
-    pub fn outputs(&self) -> std::option::Option<& [crate::model::AddOutputRequest]> {
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::AddOutputRequest]> {
         self.outputs.as_deref()
     }
 }
-impl  std::fmt::Debug for AddFlowOutputsInput  {
+impl std::fmt::Debug for AddFlowOutputsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowOutputsInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -5133,24 +7036,27 @@ impl  std::fmt::Debug for AddFlowOutputsInput  {
 }
 
 /// A request to add media streams to the flow.
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddFlowMediaStreamsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    #[doc(hidden)]pub flow_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that you want to add to the flow.
-    #[doc(hidden)]pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+    #[doc(hidden)]
+    pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you want to add to the flow.
-    pub fn media_streams(&self) -> std::option::Option<& [crate::model::AddMediaStreamRequest]> {
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::AddMediaStreamRequest]> {
         self.media_streams.as_deref()
     }
 }
-impl  std::fmt::Debug for AddFlowMediaStreamsInput  {
+impl std::fmt::Debug for AddFlowMediaStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowMediaStreamsInput");
         formatter.field("flow_arn", &self.flow_arn);
@@ -5158,4 +7064,3 @@ impl  std::fmt::Debug for AddFlowMediaStreamsInput  {
         formatter.finish()
     }
 }
-

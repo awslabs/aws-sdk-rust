@@ -3,19 +3,25 @@ use std::fmt::Write;
 
 /// See [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput).
 pub mod create_identity_pool_input {
-    
+
     /// A builder for [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
         pub(crate) allow_unauthenticated_identities: std::option::Option<bool>,
         pub(crate) allow_classic_flow: std::option::Option<bool>,
-        pub(crate) supported_login_providers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) supported_login_providers: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) developer_provider_name: std::option::Option<std::string::String>,
-        pub(crate) open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) cognito_identity_providers: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+        pub(crate) open_id_connect_provider_ar_ns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) cognito_identity_providers:
+            std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
         pub(crate) saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) identity_pool_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) identity_pool_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>A string that you provide.</p>
@@ -24,8 +30,12 @@ pub mod create_identity_pool_input {
             self
         }
         /// <p>A string that you provide.</p>
-        pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_name = input; self
+        pub fn set_identity_pool_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_name = input;
+            self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
@@ -33,8 +43,12 @@ pub mod create_identity_pool_input {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn set_allow_unauthenticated_identities(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_unauthenticated_identities = input; self
+        pub fn set_allow_unauthenticated_identities(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_unauthenticated_identities = input;
+            self
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn allow_classic_flow(mut self, input: bool) -> Self {
@@ -43,63 +57,92 @@ pub mod create_identity_pool_input {
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_classic_flow = input; self
+            self.allow_classic_flow = input;
+            self
         }
         /// Adds a key-value pair to `supported_login_providers`.
         ///
         /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
         ///
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-        pub fn supported_login_providers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn supported_login_providers(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.supported_login_providers.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.supported_login_providers = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.supported_login_providers = Some(hash_map);
+            self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-        pub fn set_supported_login_providers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.supported_login_providers = input; self
+        pub fn set_supported_login_providers(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.supported_login_providers = input;
+            self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> 
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
         /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.developer_provider_name = Some(input.into());
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> 
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
         /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
-        pub fn set_developer_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_provider_name = input; self
+        pub fn set_developer_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_provider_name = input;
+            self
         }
         /// Appends an item to `open_id_connect_provider_ar_ns`.
         ///
         /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-        pub fn open_id_connect_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn open_id_connect_provider_ar_ns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             let mut v = self.open_id_connect_provider_ar_ns.unwrap_or_default();
-                            v.push(input.into());
-                            self.open_id_connect_provider_ar_ns = Some(v);
-                            self
+            v.push(input.into());
+            self.open_id_connect_provider_ar_ns = Some(v);
+            self
         }
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-        pub fn set_open_id_connect_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.open_id_connect_provider_ar_ns = input; self
+        pub fn set_open_id_connect_provider_ar_ns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.open_id_connect_provider_ar_ns = input;
+            self
         }
         /// Appends an item to `cognito_identity_providers`.
         ///
         /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
         ///
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
-        pub fn cognito_identity_providers(mut self, input: crate::model::CognitoIdentityProvider) -> Self {
+        pub fn cognito_identity_providers(
+            mut self,
+            input: crate::model::CognitoIdentityProvider,
+        ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-                            v.push(input);
-                            self.cognito_identity_providers = Some(v);
-                            self
+            v.push(input);
+            self.cognito_identity_providers = Some(v);
+            self
         }
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
-        pub fn set_cognito_identity_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>) -> Self {
-            self.cognito_identity_providers = input; self
+        pub fn set_cognito_identity_providers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+        ) -> Self {
+            self.cognito_identity_providers = input;
+            self
         }
         /// Appends an item to `saml_provider_ar_ns`.
         ///
@@ -108,119 +151,168 @@ pub mod create_identity_pool_input {
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
-                            v.push(input.into());
-                            self.saml_provider_ar_ns = Some(v);
-                            self
+            v.push(input.into());
+            self.saml_provider_ar_ns = Some(v);
+            self
         }
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-        pub fn set_saml_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.saml_provider_ar_ns = input; self
+        pub fn set_saml_provider_ar_ns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.saml_provider_ar_ns = input;
+            self
         }
         /// Adds a key-value pair to `identity_pool_tags`.
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
         /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-        pub fn identity_pool_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn identity_pool_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.identity_pool_tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.identity_pool_tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.identity_pool_tags = Some(hash_map);
+            self
         }
         /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-        pub fn set_identity_pool_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.identity_pool_tags = input; self
+        pub fn set_identity_pool_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.identity_pool_tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput).
-        pub fn build(self) -> Result<crate::input::CreateIdentityPoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateIdentityPoolInput {
-                    identity_pool_name: self.identity_pool_name
-                    ,
-                    allow_unauthenticated_identities: self.allow_unauthenticated_identities
-                        .unwrap_or_default()
-                    ,
-                    allow_classic_flow: self.allow_classic_flow
-                    ,
-                    supported_login_providers: self.supported_login_providers
-                    ,
-                    developer_provider_name: self.developer_provider_name
-                    ,
-                    open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns
-                    ,
-                    cognito_identity_providers: self.cognito_identity_providers
-                    ,
-                    saml_provider_ar_ns: self.saml_provider_ar_ns
-                    ,
-                    identity_pool_tags: self.identity_pool_tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateIdentityPoolInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateIdentityPoolInput {
+                identity_pool_name: self.identity_pool_name,
+                allow_unauthenticated_identities: self
+                    .allow_unauthenticated_identities
+                    .unwrap_or_default(),
+                allow_classic_flow: self.allow_classic_flow,
+                supported_login_providers: self.supported_login_providers,
+                developer_provider_name: self.developer_provider_name,
+                open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns,
+                cognito_identity_providers: self.cognito_identity_providers,
+                saml_provider_ar_ns: self.saml_provider_ar_ns,
+                identity_pool_tags: self.identity_pool_tags,
+            })
         }
     }
-    
-    
 }
 impl CreateIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityPool`](crate::operation::CreateIdentityPool)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateIdentityPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateIdentityPool,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateIdentityPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateIdentityPoolInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateIdentityPoolInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateIdentityPoolInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.CreateIdentityPool"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.CreateIdentityPool",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_identity_pool(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_identity_pool(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateIdentityPool::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateIdentityPool", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateIdentityPool::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateIdentityPool",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -232,9 +324,9 @@ impl CreateIdentityPoolInput {
 
 /// See [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput).
 pub mod delete_identities_input {
-    
+
     /// A builder for [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -246,87 +338,133 @@ pub mod delete_identities_input {
         /// <p>A list of 1-60 identities that you want to delete.</p>
         pub fn identity_ids_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_ids_to_delete.unwrap_or_default();
-                            v.push(input.into());
-                            self.identity_ids_to_delete = Some(v);
-                            self
+            v.push(input.into());
+            self.identity_ids_to_delete = Some(v);
+            self
         }
         /// <p>A list of 1-60 identities that you want to delete.</p>
-        pub fn set_identity_ids_to_delete(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.identity_ids_to_delete = input; self
+        pub fn set_identity_ids_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.identity_ids_to_delete = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput).
-        pub fn build(self) -> Result<crate::input::DeleteIdentitiesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteIdentitiesInput {
-                    identity_ids_to_delete: self.identity_ids_to_delete
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteIdentitiesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteIdentitiesInput {
+                identity_ids_to_delete: self.identity_ids_to_delete,
+            })
         }
     }
-    
-    
 }
 impl DeleteIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentities`](crate::operation::DeleteIdentities)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteIdentities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteIdentities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteIdentitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteIdentitiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteIdentitiesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteIdentitiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.DeleteIdentities"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.DeleteIdentities",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_identities(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_identities(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteIdentities::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteIdentities", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteIdentities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteIdentities",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -338,9 +476,9 @@ impl DeleteIdentitiesInput {
 
 /// See [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput).
 pub mod delete_identity_pool_input {
-    
+
     /// A builder for [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
@@ -351,82 +489,128 @@ pub mod delete_identity_pool_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput).
-        pub fn build(self) -> Result<crate::input::DeleteIdentityPoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteIdentityPoolInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteIdentityPoolInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteIdentityPoolInput {
+                identity_pool_id: self.identity_pool_id,
+            })
         }
     }
-    
-    
 }
 impl DeleteIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityPool`](crate::operation::DeleteIdentityPool)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteIdentityPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteIdentityPool,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteIdentityPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteIdentityPoolInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteIdentityPoolInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteIdentityPoolInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.DeleteIdentityPool"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.DeleteIdentityPool",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_identity_pool(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_identity_pool(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteIdentityPool::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteIdentityPool", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteIdentityPool::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteIdentityPool",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -438,9 +622,9 @@ impl DeleteIdentityPoolInput {
 
 /// See [`DescribeIdentityInput`](crate::input::DescribeIdentityInput).
 pub mod describe_identity_input {
-    
+
     /// A builder for [`DescribeIdentityInput`](crate::input::DescribeIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
     }
@@ -452,81 +636,124 @@ pub mod describe_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::input::DescribeIdentityInput).
-        pub fn build(self) -> Result<crate::input::DescribeIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeIdentityInput {
-                    identity_id: self.identity_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeIdentityInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeIdentityInput {
+                identity_id: self.identity_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentity`](crate::operation::DescribeIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.DescribeIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.DescribeIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -538,9 +765,9 @@ impl DescribeIdentityInput {
 
 /// See [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput).
 pub mod describe_identity_pool_input {
-    
+
     /// A builder for [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
@@ -551,82 +778,130 @@ pub mod describe_identity_pool_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput).
-        pub fn build(self) -> Result<crate::input::DescribeIdentityPoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeIdentityPoolInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeIdentityPoolInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeIdentityPoolInput {
+                identity_pool_id: self.identity_pool_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPool`](crate::operation::DescribeIdentityPool)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeIdentityPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeIdentityPool,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeIdentityPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeIdentityPoolInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeIdentityPoolInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeIdentityPoolInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.DescribeIdentityPool"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.DescribeIdentityPool",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity_pool(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity_pool(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeIdentityPool::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeIdentityPool", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeIdentityPool::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeIdentityPool",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -638,12 +913,14 @@ impl DescribeIdentityPoolInput {
 
 /// See [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput).
 pub mod get_credentials_for_identity_input {
-    
+
     /// A builder for [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
-        pub(crate) logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logins: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) custom_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -654,26 +931,37 @@ pub mod get_credentials_for_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// Adds a key-value pair to `logins`.
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p> 
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p> 
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
         /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
-        pub fn logins(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn logins(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.logins.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.logins = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.logins = Some(hash_map);
+            self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p> 
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p> 
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
         /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
-        pub fn set_logins(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.logins = input; self
+        pub fn set_logins(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.logins = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
         pub fn custom_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -681,87 +969,135 @@ pub mod get_credentials_for_identity_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
-        pub fn set_custom_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.custom_role_arn = input; self
+        pub fn set_custom_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_role_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput).
-        pub fn build(self) -> Result<crate::input::GetCredentialsForIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetCredentialsForIdentityInput {
-                    identity_id: self.identity_id
-                    ,
-                    logins: self.logins
-                    ,
-                    custom_role_arn: self.custom_role_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetCredentialsForIdentityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetCredentialsForIdentityInput {
+                identity_id: self.identity_id,
+                logins: self.logins,
+                custom_role_arn: self.custom_role_arn,
+            })
         }
     }
-    
-    
 }
 impl GetCredentialsForIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetCredentialsForIdentity`](crate::operation::GetCredentialsForIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetCredentialsForIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetCredentialsForIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetCredentialsForIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetCredentialsForIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetCredentialsForIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetCredentialsForIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetCredentialsForIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetCredentialsForIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_credentials_for_identity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_credentials_for_identity(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetCredentialsForIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetCredentialsForIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCredentialsForIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCredentialsForIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -773,13 +1109,15 @@ impl GetCredentialsForIdentityInput {
 
 /// See [`GetIdInput`](crate::input::GetIdInput).
 pub mod get_id_input {
-    
+
     /// A builder for [`GetIdInput`](crate::input::GetIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logins: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>A standard AWS account ID (9+ digits).</p>
@@ -789,7 +1127,8 @@ pub mod get_id_input {
         }
         /// <p>A standard AWS account ID (9+ digits).</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -797,126 +1136,177 @@ pub mod get_id_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Adds a key-value pair to `logins`.
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> 
-        /// <ul> 
-        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> 
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
+        /// <ul>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
         /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
         /// <region>
         /// .amazonaws.com/
         /// <your_user_pool_id></your_user_pool_id>
-        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li> 
-        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li> 
-        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> 
-        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> 
-        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li> 
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
-        pub fn logins(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn logins(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.logins.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.logins = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.logins = Some(hash_map);
+            self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> 
-        /// <ul> 
-        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> 
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
+        /// <ul>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
         /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
         /// <region>
         /// .amazonaws.com/
         /// <your_user_pool_id></your_user_pool_id>
-        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li> 
-        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li> 
-        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> 
-        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> 
-        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li> 
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
-        pub fn set_logins(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.logins = input; self
+        pub fn set_logins(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.logins = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetIdInput`](crate::input::GetIdInput).
-        pub fn build(self) -> Result<crate::input::GetIdInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetIdInput {
-                    account_id: self.account_id
-                    ,
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    logins: self.logins
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetIdInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetIdInput {
+                account_id: self.account_id,
+                identity_pool_id: self.identity_pool_id,
+                logins: self.logins,
+            })
         }
     }
-    
-    
 }
 impl GetIdInput {
     /// Consumes the builder and constructs an Operation<[`GetId`](crate::operation::GetId)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetId, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetId,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetIdInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetIdInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetIdInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetIdInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetId"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetId",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_id(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_id(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetId::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetId", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetId::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetId",
+                    "cognitoidentity",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -928,9 +1318,9 @@ impl GetIdInput {
 
 /// See [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput).
 pub mod get_identity_pool_roles_input {
-    
+
     /// A builder for [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
@@ -941,82 +1331,130 @@ pub mod get_identity_pool_roles_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput).
-        pub fn build(self) -> Result<crate::input::GetIdentityPoolRolesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetIdentityPoolRolesInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetIdentityPoolRolesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetIdentityPoolRolesInput {
+                identity_pool_id: self.identity_pool_id,
+            })
         }
     }
-    
-    
 }
 impl GetIdentityPoolRolesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolRoles`](crate::operation::GetIdentityPoolRoles)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetIdentityPoolRoles, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetIdentityPoolRoles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetIdentityPoolRolesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetIdentityPoolRolesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetIdentityPoolRolesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetIdentityPoolRolesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetIdentityPoolRoles"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetIdentityPoolRoles",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_pool_roles(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_pool_roles(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetIdentityPoolRoles::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetIdentityPoolRoles", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetIdentityPoolRoles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetIdentityPoolRoles",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1028,12 +1466,14 @@ impl GetIdentityPoolRolesInput {
 
 /// See [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput).
 pub mod get_open_id_token_input {
-    
+
     /// A builder for [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
-        pub(crate) logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logins: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1043,99 +1483,151 @@ pub mod get_open_id_token_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// Adds a key-value pair to `logins`.
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
-        pub fn logins(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn logins(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.logins.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.logins = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.logins = Some(hash_map);
+            self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
-        pub fn set_logins(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.logins = input; self
+        pub fn set_logins(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.logins = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput).
-        pub fn build(self) -> Result<crate::input::GetOpenIdTokenInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetOpenIdTokenInput {
-                    identity_id: self.identity_id
-                    ,
-                    logins: self.logins
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetOpenIdTokenInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetOpenIdTokenInput {
+                identity_id: self.identity_id,
+                logins: self.logins,
+            })
         }
     }
-    
-    
 }
 impl GetOpenIdTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetOpenIdToken`](crate::operation::GetOpenIdToken)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetOpenIdToken, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetOpenIdToken,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetOpenIdTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetOpenIdTokenInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetOpenIdTokenInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetOpenIdTokenInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetOpenIdToken"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetOpenIdToken",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetOpenIdToken::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetOpenIdToken", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetOpenIdToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetOpenIdToken",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1147,14 +1639,18 @@ impl GetOpenIdTokenInput {
 
 /// See [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput).
 pub mod get_open_id_token_for_developer_identity_input {
-    
+
     /// A builder for [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_id: std::option::Option<std::string::String>,
-        pub(crate) logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-        pub(crate) principal_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logins: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) principal_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) token_duration: std::option::Option<i64>,
     }
     impl Builder {
@@ -1164,8 +1660,12 @@ pub mod get_open_id_token_for_developer_identity_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1174,95 +1674,134 @@ pub mod get_open_id_token_for_developer_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// Adds a key-value pair to `logins`.
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-        pub fn logins(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn logins(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.logins.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.logins = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.logins = Some(hash_map);
+            self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-        pub fn set_logins(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.logins = input; self
+        pub fn set_logins(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.logins = input;
+            self
         }
         /// Adds a key-value pair to `principal_tags`.
         ///
         /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
         ///
         /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-        pub fn principal_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn principal_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.principal_tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.principal_tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.principal_tags = Some(hash_map);
+            self
         }
         /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-        pub fn set_principal_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.principal_tags = input; self
+        pub fn set_principal_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.principal_tags = input;
+            self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note> 
-        /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p> 
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
+        /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
         pub fn token_duration(mut self, input: i64) -> Self {
             self.token_duration = Some(input);
             self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note> 
-        /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p> 
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
+        /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
         pub fn set_token_duration(mut self, input: std::option::Option<i64>) -> Self {
-            self.token_duration = input; self
+            self.token_duration = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput).
-        pub fn build(self) -> Result<crate::input::GetOpenIdTokenForDeveloperIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetOpenIdTokenForDeveloperIdentityInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    identity_id: self.identity_id
-                    ,
-                    logins: self.logins
-                    ,
-                    principal_tags: self.principal_tags
-                    ,
-                    token_duration: self.token_duration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetOpenIdTokenForDeveloperIdentityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetOpenIdTokenForDeveloperIdentityInput {
+                identity_pool_id: self.identity_pool_id,
+                identity_id: self.identity_id,
+                logins: self.logins,
+                principal_tags: self.principal_tags,
+                token_duration: self.token_duration,
+            })
         }
     }
-    
-    
 }
 impl GetOpenIdTokenForDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetOpenIdTokenForDeveloperIdentity`](crate::operation::GetOpenIdTokenForDeveloperIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetOpenIdTokenForDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetOpenIdTokenForDeveloperIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1270,36 +1809,58 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
             crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetOpenIdTokenForDeveloperIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetOpenIdTokenForDeveloperIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetOpenIdTokenForDeveloperIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetOpenIdTokenForDeveloperIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1311,9 +1872,9 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
 
 /// See [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput).
 pub mod get_principal_tag_attribute_map_input {
-    
+
     /// A builder for [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1325,8 +1886,12 @@ pub mod get_principal_tag_attribute_map_input {
             self
         }
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>You can use this operation to get the provider name.</p>
         pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1334,47 +1899,71 @@ pub mod get_principal_tag_attribute_map_input {
             self
         }
         /// <p>You can use this operation to get the provider name.</p>
-        pub fn set_identity_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_provider_name = input; self
+        pub fn set_identity_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_provider_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput).
-        pub fn build(self) -> Result<crate::input::GetPrincipalTagAttributeMapInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetPrincipalTagAttributeMapInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    identity_provider_name: self.identity_provider_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetPrincipalTagAttributeMapInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetPrincipalTagAttributeMapInput {
+                identity_pool_id: self.identity_pool_id,
+                identity_provider_name: self.identity_provider_name,
+            })
         }
     }
-    
-    
 }
 impl GetPrincipalTagAttributeMapInput {
     /// Consumes the builder and constructs an Operation<[`GetPrincipalTagAttributeMap`](crate::operation::GetPrincipalTagAttributeMap)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPrincipalTagAttributeMap, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPrincipalTagAttributeMap,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetPrincipalTagAttributeMapInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetPrincipalTagAttributeMapInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetPrincipalTagAttributeMapInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPrincipalTagAttributeMapInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.GetPrincipalTagAttributeMap"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.GetPrincipalTagAttributeMap",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1382,36 +1971,58 @@ impl GetPrincipalTagAttributeMapInput {
             crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPrincipalTagAttributeMap::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPrincipalTagAttributeMap", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPrincipalTagAttributeMap::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPrincipalTagAttributeMap",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1423,9 +2034,9 @@ impl GetPrincipalTagAttributeMapInput {
 
 /// See [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
 pub mod list_identities_input {
-    
+
     /// A builder for [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1439,8 +2050,12 @@ pub mod list_identities_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>The maximum number of identities to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1449,7 +2064,8 @@ pub mod list_identities_input {
         }
         /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>A pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1458,7 +2074,8 @@ pub mod list_identities_input {
         }
         /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn hide_disabled(mut self, input: bool) -> Self {
@@ -1467,89 +2084,127 @@ pub mod list_identities_input {
         }
         /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn set_hide_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.hide_disabled = input; self
+            self.hide_disabled = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
-        pub fn build(self) -> Result<crate::input::ListIdentitiesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListIdentitiesInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                    hide_disabled: self.hide_disabled
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListIdentitiesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListIdentitiesInput {
+                identity_pool_id: self.identity_pool_id,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                hide_disabled: self.hide_disabled.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl ListIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentities`](crate::operation::ListIdentities)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListIdentities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListIdentities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListIdentitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListIdentitiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListIdentitiesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListIdentitiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.ListIdentities"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.ListIdentities",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListIdentities::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListIdentities", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIdentities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIdentities",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1561,9 +2216,9 @@ impl ListIdentitiesInput {
 
 /// See [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput).
 pub mod list_identity_pools_input {
-    
+
     /// A builder for [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1576,7 +2231,8 @@ pub mod list_identity_pools_input {
         }
         /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>A pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1585,84 +2241,125 @@ pub mod list_identity_pools_input {
         }
         /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput).
-        pub fn build(self) -> Result<crate::input::ListIdentityPoolsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListIdentityPoolsInput {
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListIdentityPoolsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListIdentityPoolsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListIdentityPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPools`](crate::operation::ListIdentityPools)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListIdentityPools, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListIdentityPools,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListIdentityPoolsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListIdentityPoolsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListIdentityPoolsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListIdentityPoolsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.ListIdentityPools"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.ListIdentityPools",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_identity_pools(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_identity_pools(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListIdentityPools::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListIdentityPools", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIdentityPools::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIdentityPools",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1674,9 +2371,9 @@ impl ListIdentityPoolsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1688,81 +2385,126 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.ListTagsForResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.ListTagsForResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1774,9 +2516,9 @@ impl ListTagsForResourceInput {
 
 /// See [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput).
 pub mod lookup_developer_identity_input {
-    
+
     /// A builder for [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -1791,8 +2533,12 @@ pub mod lookup_developer_identity_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1801,7 +2547,8 @@ pub mod lookup_developer_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
         pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1809,8 +2556,12 @@ pub mod lookup_developer_identity_input {
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-        pub fn set_developer_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_user_identifier = input; self
+        pub fn set_developer_user_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_user_identifier = input;
+            self
         }
         /// <p>The maximum number of identities to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1819,7 +2570,8 @@ pub mod lookup_developer_identity_input {
         }
         /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1828,90 +2580,132 @@ pub mod lookup_developer_identity_input {
         }
         /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput).
-        pub fn build(self) -> Result<crate::input::LookupDeveloperIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::LookupDeveloperIdentityInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    identity_id: self.identity_id
-                    ,
-                    developer_user_identifier: self.developer_user_identifier
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::LookupDeveloperIdentityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::LookupDeveloperIdentityInput {
+                identity_pool_id: self.identity_pool_id,
+                identity_id: self.identity_id,
+                developer_user_identifier: self.developer_user_identifier,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl LookupDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`LookupDeveloperIdentity`](crate::operation::LookupDeveloperIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::LookupDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::LookupDeveloperIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::LookupDeveloperIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::LookupDeveloperIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::LookupDeveloperIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::LookupDeveloperIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.LookupDeveloperIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.LookupDeveloperIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_lookup_developer_identity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_lookup_developer_identity(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::LookupDeveloperIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("LookupDeveloperIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::LookupDeveloperIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "LookupDeveloperIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1923,9 +2717,9 @@ impl LookupDeveloperIdentityInput {
 
 /// See [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput).
 pub mod merge_developer_identities_input {
-    
+
     /// A builder for [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_user_identifier: std::option::Option<std::string::String>,
         pub(crate) destination_user_identifier: std::option::Option<std::string::String>,
@@ -1939,17 +2733,28 @@ pub mod merge_developer_identities_input {
             self
         }
         /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-        pub fn set_source_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_user_identifier = input; self
+        pub fn set_source_user_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_user_identifier = input;
+            self
         }
         /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-        pub fn destination_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn destination_user_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             self.destination_user_identifier = Some(input.into());
             self
         }
         /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-        pub fn set_destination_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination_user_identifier = input; self
+        pub fn set_destination_user_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_user_identifier = input;
+            self
         }
         /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1957,8 +2762,12 @@ pub mod merge_developer_identities_input {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-        pub fn set_developer_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_provider_name = input; self
+        pub fn set_developer_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_provider_name = input;
+            self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1966,88 +2775,135 @@ pub mod merge_developer_identities_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput).
-        pub fn build(self) -> Result<crate::input::MergeDeveloperIdentitiesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::MergeDeveloperIdentitiesInput {
-                    source_user_identifier: self.source_user_identifier
-                    ,
-                    destination_user_identifier: self.destination_user_identifier
-                    ,
-                    developer_provider_name: self.developer_provider_name
-                    ,
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::MergeDeveloperIdentitiesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::MergeDeveloperIdentitiesInput {
+                source_user_identifier: self.source_user_identifier,
+                destination_user_identifier: self.destination_user_identifier,
+                developer_provider_name: self.developer_provider_name,
+                identity_pool_id: self.identity_pool_id,
+            })
         }
     }
-    
-    
 }
 impl MergeDeveloperIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`MergeDeveloperIdentities`](crate::operation::MergeDeveloperIdentities)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::MergeDeveloperIdentities, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::MergeDeveloperIdentities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::MergeDeveloperIdentitiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::MergeDeveloperIdentitiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::MergeDeveloperIdentitiesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::MergeDeveloperIdentitiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.MergeDeveloperIdentities"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.MergeDeveloperIdentities",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_merge_developer_identities(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_merge_developer_identities(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::MergeDeveloperIdentities::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("MergeDeveloperIdentities", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::MergeDeveloperIdentities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "MergeDeveloperIdentities",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2059,13 +2915,17 @@ impl MergeDeveloperIdentitiesInput {
 
 /// See [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput).
 pub mod set_identity_pool_roles_input {
-    
+
     /// A builder for [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) roles: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-        pub(crate) role_mappings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RoleMapping>>,
+        pub(crate) roles: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) role_mappings: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
+        >,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2074,118 +2934,184 @@ pub mod set_identity_pool_roles_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// Adds a key-value pair to `roles`.
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-        pub fn roles(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn roles(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.roles.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.roles = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.roles = Some(hash_map);
+            self
         }
         /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-        pub fn set_roles(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.roles = input; self
+        pub fn set_roles(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.roles = input;
+            self
         }
         /// Adds a key-value pair to `role_mappings`.
         ///
         /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
         ///
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> 
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
-        pub fn role_mappings(mut self, k: impl Into<std::string::String>, v: crate::model::RoleMapping) -> Self {
+        pub fn role_mappings(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::RoleMapping,
+        ) -> Self {
             let mut hash_map = self.role_mappings.unwrap_or_default();
-                            hash_map.insert(k.into(), v);
-                            self.role_mappings = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v);
+            self.role_mappings = Some(hash_map);
+            self
         }
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> 
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
-        pub fn set_role_mappings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RoleMapping>>) -> Self {
-            self.role_mappings = input; self
+        pub fn set_role_mappings(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
+            >,
+        ) -> Self {
+            self.role_mappings = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput).
-        pub fn build(self) -> Result<crate::input::SetIdentityPoolRolesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetIdentityPoolRolesInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    roles: self.roles
-                    ,
-                    role_mappings: self.role_mappings
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetIdentityPoolRolesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetIdentityPoolRolesInput {
+                identity_pool_id: self.identity_pool_id,
+                roles: self.roles,
+                role_mappings: self.role_mappings,
+            })
         }
     }
-    
-    
 }
 impl SetIdentityPoolRolesInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolRoles`](crate::operation::SetIdentityPoolRoles)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetIdentityPoolRoles, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetIdentityPoolRoles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetIdentityPoolRolesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetIdentityPoolRolesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetIdentityPoolRolesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetIdentityPoolRolesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.SetIdentityPoolRoles"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.SetIdentityPoolRoles",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_roles(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_roles(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetIdentityPoolRoles::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetIdentityPoolRoles", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetIdentityPoolRoles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetIdentityPoolRoles",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2197,14 +3123,16 @@ impl SetIdentityPoolRolesInput {
 
 /// See [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput).
 pub mod set_principal_tag_attribute_map_input {
-    
+
     /// A builder for [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
         pub(crate) use_defaults: std::option::Option<bool>,
-        pub(crate) principal_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) principal_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
@@ -2213,8 +3141,12 @@ pub mod set_principal_tag_attribute_map_input {
             self
         }
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
         pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2222,8 +3154,12 @@ pub mod set_principal_tag_attribute_map_input {
             self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
-        pub fn set_identity_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_provider_name = input; self
+        pub fn set_identity_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_provider_name = input;
+            self
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
         pub fn use_defaults(mut self, input: bool) -> Self {
@@ -2232,65 +3168,94 @@ pub mod set_principal_tag_attribute_map_input {
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
         pub fn set_use_defaults(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_defaults = input; self
+            self.use_defaults = input;
+            self
         }
         /// Adds a key-value pair to `principal_tags`.
         ///
         /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
         ///
         /// <p>You can use this operation to add principal tags.</p>
-        pub fn principal_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn principal_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.principal_tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.principal_tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.principal_tags = Some(hash_map);
+            self
         }
         /// <p>You can use this operation to add principal tags.</p>
-        pub fn set_principal_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.principal_tags = input; self
+        pub fn set_principal_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.principal_tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput).
-        pub fn build(self) -> Result<crate::input::SetPrincipalTagAttributeMapInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetPrincipalTagAttributeMapInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    identity_provider_name: self.identity_provider_name
-                    ,
-                    use_defaults: self.use_defaults
-                    ,
-                    principal_tags: self.principal_tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::SetPrincipalTagAttributeMapInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SetPrincipalTagAttributeMapInput {
+                identity_pool_id: self.identity_pool_id,
+                identity_provider_name: self.identity_provider_name,
+                use_defaults: self.use_defaults,
+                principal_tags: self.principal_tags,
+            })
         }
     }
-    
-    
 }
 impl SetPrincipalTagAttributeMapInput {
     /// Consumes the builder and constructs an Operation<[`SetPrincipalTagAttributeMap`](crate::operation::SetPrincipalTagAttributeMap)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetPrincipalTagAttributeMap, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetPrincipalTagAttributeMap,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetPrincipalTagAttributeMapInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetPrincipalTagAttributeMapInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetPrincipalTagAttributeMapInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetPrincipalTagAttributeMapInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.SetPrincipalTagAttributeMap"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.SetPrincipalTagAttributeMap",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2298,36 +3263,58 @@ impl SetPrincipalTagAttributeMapInput {
             crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetPrincipalTagAttributeMap::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetPrincipalTagAttributeMap", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetPrincipalTagAttributeMap::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetPrincipalTagAttributeMap",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2339,12 +3326,14 @@ impl SetPrincipalTagAttributeMapInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
@@ -2354,98 +3343,150 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the identity pool.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>The tags to assign to the identity pool.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.TagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.TagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2457,9 +3498,9 @@ impl TagResourceInput {
 
 /// See [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput).
 pub mod unlink_developer_identity_input {
-    
+
     /// A builder for [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2474,7 +3515,8 @@ pub mod unlink_developer_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2482,8 +3524,12 @@ pub mod unlink_developer_identity_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2491,8 +3537,12 @@ pub mod unlink_developer_identity_input {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn set_developer_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_provider_name = input; self
+        pub fn set_developer_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_provider_name = input;
+            self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
         pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2500,88 +3550,135 @@ pub mod unlink_developer_identity_input {
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-        pub fn set_developer_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_user_identifier = input; self
+        pub fn set_developer_user_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_user_identifier = input;
+            self
         }
         /// Consumes the builder and constructs a [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput).
-        pub fn build(self) -> Result<crate::input::UnlinkDeveloperIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UnlinkDeveloperIdentityInput {
-                    identity_id: self.identity_id
-                    ,
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    developer_provider_name: self.developer_provider_name
-                    ,
-                    developer_user_identifier: self.developer_user_identifier
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UnlinkDeveloperIdentityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UnlinkDeveloperIdentityInput {
+                identity_id: self.identity_id,
+                identity_pool_id: self.identity_pool_id,
+                developer_provider_name: self.developer_provider_name,
+                developer_user_identifier: self.developer_user_identifier,
+            })
         }
     }
-    
-    
 }
 impl UnlinkDeveloperIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UnlinkDeveloperIdentity`](crate::operation::UnlinkDeveloperIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UnlinkDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UnlinkDeveloperIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UnlinkDeveloperIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UnlinkDeveloperIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UnlinkDeveloperIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UnlinkDeveloperIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.UnlinkDeveloperIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.UnlinkDeveloperIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_unlink_developer_identity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_unlink_developer_identity(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UnlinkDeveloperIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UnlinkDeveloperIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UnlinkDeveloperIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UnlinkDeveloperIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2593,12 +3690,14 @@ impl UnlinkDeveloperIdentityInput {
 
 /// See [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput).
 pub mod unlink_identity_input {
-    
+
     /// A builder for [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
-        pub(crate) logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) logins: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) logins_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -2609,22 +3708,33 @@ pub mod unlink_identity_input {
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input; self
+            self.identity_id = input;
+            self
         }
         /// Adds a key-value pair to `logins`.
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
         /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-        pub fn logins(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn logins(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.logins.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.logins = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.logins = Some(hash_map);
+            self
         }
         /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-        pub fn set_logins(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.logins = input; self
+        pub fn set_logins(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.logins = input;
+            self
         }
         /// Appends an item to `logins_to_remove`.
         ///
@@ -2633,92 +3743,136 @@ pub mod unlink_identity_input {
         /// <p>Provider names to unlink from this identity.</p>
         pub fn logins_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logins_to_remove.unwrap_or_default();
-                            v.push(input.into());
-                            self.logins_to_remove = Some(v);
-                            self
+            v.push(input.into());
+            self.logins_to_remove = Some(v);
+            self
         }
         /// <p>Provider names to unlink from this identity.</p>
-        pub fn set_logins_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.logins_to_remove = input; self
+        pub fn set_logins_to_remove(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.logins_to_remove = input;
+            self
         }
         /// Consumes the builder and constructs a [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput).
-        pub fn build(self) -> Result<crate::input::UnlinkIdentityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UnlinkIdentityInput {
-                    identity_id: self.identity_id
-                    ,
-                    logins: self.logins
-                    ,
-                    logins_to_remove: self.logins_to_remove
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UnlinkIdentityInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UnlinkIdentityInput {
+                identity_id: self.identity_id,
+                logins: self.logins,
+                logins_to_remove: self.logins_to_remove,
+            })
         }
     }
-    
-    
 }
 impl UnlinkIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UnlinkIdentity`](crate::operation::UnlinkIdentity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UnlinkIdentity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UnlinkIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UnlinkIdentityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UnlinkIdentityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UnlinkIdentityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UnlinkIdentityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.UnlinkIdentity"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.UnlinkIdentity",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_unlink_identity(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_unlink_identity(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_requirements = aws_sig_auth::signer::SigningRequirements::Disabled;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UnlinkIdentity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UnlinkIdentity", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UnlinkIdentity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UnlinkIdentity",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2730,9 +3884,9 @@ impl UnlinkIdentityInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2745,7 +3899,8 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -2754,89 +3909,134 @@ pub mod untag_resource_input {
         /// <p>The keys of the tags to remove from the user pool.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>The keys of the tags to remove from the user pool.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.UntagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.UntagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2848,20 +4048,26 @@ impl UntagResourceInput {
 
 /// See [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput).
 pub mod update_identity_pool_input {
-    
+
     /// A builder for [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_name: std::option::Option<std::string::String>,
         pub(crate) allow_unauthenticated_identities: std::option::Option<bool>,
         pub(crate) allow_classic_flow: std::option::Option<bool>,
-        pub(crate) supported_login_providers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) supported_login_providers: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
         pub(crate) developer_provider_name: std::option::Option<std::string::String>,
-        pub(crate) open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) cognito_identity_providers: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+        pub(crate) open_id_connect_provider_ar_ns:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) cognito_identity_providers:
+            std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
         pub(crate) saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) identity_pool_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) identity_pool_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2870,8 +4076,12 @@ pub mod update_identity_pool_input {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_id = input; self
+        pub fn set_identity_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_id = input;
+            self
         }
         /// <p>A string that you provide.</p>
         pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2879,8 +4089,12 @@ pub mod update_identity_pool_input {
             self
         }
         /// <p>A string that you provide.</p>
-        pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_pool_name = input; self
+        pub fn set_identity_pool_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_pool_name = input;
+            self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
@@ -2888,8 +4102,12 @@ pub mod update_identity_pool_input {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn set_allow_unauthenticated_identities(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_unauthenticated_identities = input; self
+        pub fn set_allow_unauthenticated_identities(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_unauthenticated_identities = input;
+            self
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn allow_classic_flow(mut self, input: bool) -> Self {
@@ -2898,22 +4116,33 @@ pub mod update_identity_pool_input {
         }
         /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_classic_flow = input; self
+            self.allow_classic_flow = input;
+            self
         }
         /// Adds a key-value pair to `supported_login_providers`.
         ///
         /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
         ///
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-        pub fn supported_login_providers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn supported_login_providers(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.supported_login_providers.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.supported_login_providers = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.supported_login_providers = Some(hash_map);
+            self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-        pub fn set_supported_login_providers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.supported_login_providers = input; self
+        pub fn set_supported_login_providers(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.supported_login_providers = input;
+            self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2921,38 +4150,56 @@ pub mod update_identity_pool_input {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn set_developer_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.developer_provider_name = input; self
+        pub fn set_developer_provider_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.developer_provider_name = input;
+            self
         }
         /// Appends an item to `open_id_connect_provider_ar_ns`.
         ///
         /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
         ///
         /// <p>The ARNs of the OpenID Connect providers.</p>
-        pub fn open_id_connect_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn open_id_connect_provider_ar_ns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             let mut v = self.open_id_connect_provider_ar_ns.unwrap_or_default();
-                            v.push(input.into());
-                            self.open_id_connect_provider_ar_ns = Some(v);
-                            self
+            v.push(input.into());
+            self.open_id_connect_provider_ar_ns = Some(v);
+            self
         }
         /// <p>The ARNs of the OpenID Connect providers.</p>
-        pub fn set_open_id_connect_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.open_id_connect_provider_ar_ns = input; self
+        pub fn set_open_id_connect_provider_ar_ns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.open_id_connect_provider_ar_ns = input;
+            self
         }
         /// Appends an item to `cognito_identity_providers`.
         ///
         /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
         ///
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-        pub fn cognito_identity_providers(mut self, input: crate::model::CognitoIdentityProvider) -> Self {
+        pub fn cognito_identity_providers(
+            mut self,
+            input: crate::model::CognitoIdentityProvider,
+        ) -> Self {
             let mut v = self.cognito_identity_providers.unwrap_or_default();
-                            v.push(input);
-                            self.cognito_identity_providers = Some(v);
-                            self
+            v.push(input);
+            self.cognito_identity_providers = Some(v);
+            self
         }
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-        pub fn set_cognito_identity_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>) -> Self {
-            self.cognito_identity_providers = input; self
+        pub fn set_cognito_identity_providers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+        ) -> Self {
+            self.cognito_identity_providers = input;
+            self
         }
         /// Appends an item to `saml_provider_ar_ns`.
         ///
@@ -2961,121 +4208,169 @@ pub mod update_identity_pool_input {
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
-                            v.push(input.into());
-                            self.saml_provider_ar_ns = Some(v);
-                            self
+            v.push(input.into());
+            self.saml_provider_ar_ns = Some(v);
+            self
         }
         /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-        pub fn set_saml_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.saml_provider_ar_ns = input; self
+        pub fn set_saml_provider_ar_ns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.saml_provider_ar_ns = input;
+            self
         }
         /// Adds a key-value pair to `identity_pool_tags`.
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
         /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-        pub fn identity_pool_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn identity_pool_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.identity_pool_tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.identity_pool_tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.identity_pool_tags = Some(hash_map);
+            self
         }
         /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-        pub fn set_identity_pool_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.identity_pool_tags = input; self
+        pub fn set_identity_pool_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.identity_pool_tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput).
-        pub fn build(self) -> Result<crate::input::UpdateIdentityPoolInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateIdentityPoolInput {
-                    identity_pool_id: self.identity_pool_id
-                    ,
-                    identity_pool_name: self.identity_pool_name
-                    ,
-                    allow_unauthenticated_identities: self.allow_unauthenticated_identities
-                        .unwrap_or_default()
-                    ,
-                    allow_classic_flow: self.allow_classic_flow
-                    ,
-                    supported_login_providers: self.supported_login_providers
-                    ,
-                    developer_provider_name: self.developer_provider_name
-                    ,
-                    open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns
-                    ,
-                    cognito_identity_providers: self.cognito_identity_providers
-                    ,
-                    saml_provider_ar_ns: self.saml_provider_ar_ns
-                    ,
-                    identity_pool_tags: self.identity_pool_tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateIdentityPoolInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateIdentityPoolInput {
+                identity_pool_id: self.identity_pool_id,
+                identity_pool_name: self.identity_pool_name,
+                allow_unauthenticated_identities: self
+                    .allow_unauthenticated_identities
+                    .unwrap_or_default(),
+                allow_classic_flow: self.allow_classic_flow,
+                supported_login_providers: self.supported_login_providers,
+                developer_provider_name: self.developer_provider_name,
+                open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns,
+                cognito_identity_providers: self.cognito_identity_providers,
+                saml_provider_ar_ns: self.saml_provider_ar_ns,
+                identity_pool_tags: self.identity_pool_tags,
+            })
         }
     }
-    
-    
 }
 impl UpdateIdentityPoolInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityPool`](crate::operation::UpdateIdentityPool)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateIdentityPool, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateIdentityPool,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateIdentityPoolInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateIdentityPoolInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateIdentityPoolInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateIdentityPoolInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "AWSCognitoIdentityService.UpdateIdentityPool"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSCognitoIdentityService.UpdateIdentityPool",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_identity_pool(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_identity_pool(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateIdentityPool::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateIdentityPool", "cognitoidentity"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateIdentityPool::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateIdentityPool",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3086,36 +4381,50 @@ impl UpdateIdentityPoolInput {
 }
 
 /// <p>An object representing an Amazon Cognito identity pool.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateIdentityPoolInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A string that you provide.</p>
-    #[doc(hidden)]pub identity_pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    #[doc(hidden)]pub allow_unauthenticated_identities: bool,
+    #[doc(hidden)]
+    pub allow_unauthenticated_identities: bool,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    #[doc(hidden)]pub allow_classic_flow: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    #[doc(hidden)]pub supported_login_providers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub supported_login_providers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    #[doc(hidden)]pub developer_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    #[doc(hidden)]pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    #[doc(hidden)]pub cognito_identity_providers: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+    #[doc(hidden)]
+    pub cognito_identity_providers:
+        std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    #[doc(hidden)]pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    #[doc(hidden)]pub identity_pool_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub identity_pool_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
         self.identity_pool_name.as_deref()
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -3127,41 +4436,58 @@ impl UpdateIdentityPoolInput {
         self.allow_classic_flow
     }
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn supported_login_providers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn supported_login_providers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.supported_login_providers.as_ref()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(&self) -> std::option::Option<& str> {
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.open_id_connect_provider_ar_ns.as_deref()
     }
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn cognito_identity_providers(&self) -> std::option::Option<& [crate::model::CognitoIdentityProvider]> {
+    pub fn cognito_identity_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
         self.cognito_identity_providers.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.saml_provider_ar_ns.as_deref()
     }
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn identity_pool_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn identity_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.identity_pool_tags.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateIdentityPoolInput  {
+impl std::fmt::Debug for UpdateIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIdentityPoolInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
         formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field("allow_unauthenticated_identities", &self.allow_unauthenticated_identities);
+        formatter.field(
+            "allow_unauthenticated_identities",
+            &self.allow_unauthenticated_identities,
+        );
         formatter.field("allow_classic_flow", &self.allow_classic_flow);
         formatter.field("supported_login_providers", &self.supported_login_providers);
         formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field("open_id_connect_provider_ar_ns", &self.open_id_connect_provider_ar_ns);
-        formatter.field("cognito_identity_providers", &self.cognito_identity_providers);
+        formatter.field(
+            "open_id_connect_provider_ar_ns",
+            &self.open_id_connect_provider_ar_ns,
+        );
+        formatter.field(
+            "cognito_identity_providers",
+            &self.cognito_identity_providers,
+        );
         formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
         formatter.field("identity_pool_tags", &self.identity_pool_tags);
         formatter.finish()
@@ -3169,24 +4495,27 @@ impl  std::fmt::Debug for UpdateIdentityPoolInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove from the user pool.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The keys of the tags to remove from the user pool.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3196,30 +4525,38 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 /// <p>Input to the UnlinkIdentity action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UnlinkIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    #[doc(hidden)]pub logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub logins:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
-    #[doc(hidden)]pub logins_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub logins_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn logins(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.logins.as_ref()
     }
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn logins_to_remove(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn logins_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.logins_to_remove.as_deref()
     }
 }
-impl  std::fmt::Debug for UnlinkIdentityInput  {
+impl std::fmt::Debug for UnlinkIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnlinkIdentityInput");
         formatter.field("identity_id", &self.identity_id);
@@ -3230,36 +4567,41 @@ impl  std::fmt::Debug for UnlinkIdentityInput  {
 }
 
 /// <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UnlinkDeveloperIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    #[doc(hidden)]pub developer_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    #[doc(hidden)]pub developer_user_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_user_identifier: std::option::Option<std::string::String>,
 }
 impl UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(&self) -> std::option::Option<& str> {
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn developer_user_identifier(&self) -> std::option::Option<& str> {
+    pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
         self.developer_user_identifier.as_deref()
     }
 }
-impl  std::fmt::Debug for UnlinkDeveloperIdentityInput  {
+impl std::fmt::Debug for UnlinkDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnlinkDeveloperIdentityInput");
         formatter.field("identity_id", &self.identity_id);
@@ -3271,24 +4613,31 @@ impl  std::fmt::Debug for UnlinkDeveloperIdentityInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the identity pool.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to assign to the identity pool.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3298,24 +4647,30 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetPrincipalTagAttributeMapInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetPrincipalTagAttributeMapInput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The provider name you want to use for attribute mappings.</p>
-    #[doc(hidden)]pub identity_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
-    #[doc(hidden)]pub use_defaults: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub use_defaults: std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags.</p>
-    #[doc(hidden)]pub principal_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub principal_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SetPrincipalTagAttributeMapInput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
-    pub fn identity_provider_name(&self) -> std::option::Option<& str> {
+    pub fn identity_provider_name(&self) -> std::option::Option<&str> {
         self.identity_provider_name.as_deref()
     }
     /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
@@ -3323,11 +4678,14 @@ impl SetPrincipalTagAttributeMapInput {
         self.use_defaults
     }
     /// <p>You can use this operation to add principal tags.</p>
-    pub fn principal_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn principal_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.principal_tags.as_ref()
     }
 }
-impl  std::fmt::Debug for SetPrincipalTagAttributeMapInput  {
+impl std::fmt::Debug for SetPrincipalTagAttributeMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetPrincipalTagAttributeMapInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3339,32 +4697,46 @@ impl  std::fmt::Debug for SetPrincipalTagAttributeMapInput  {
 }
 
 /// <p>Input to the <code>SetIdentityPoolRoles</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetIdentityPoolRolesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    #[doc(hidden)]pub roles: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> 
+    #[doc(hidden)]
+    pub roles:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
-    #[doc(hidden)]pub role_mappings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RoleMapping>>,
+    #[doc(hidden)]
+    pub role_mappings: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
+    >,
 }
 impl SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    pub fn roles(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn roles(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.roles.as_ref()
     }
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> 
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
-    pub fn role_mappings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::RoleMapping>> {
+    pub fn role_mappings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
+    > {
         self.role_mappings.as_ref()
     }
 }
-impl  std::fmt::Debug for SetIdentityPoolRolesInput  {
+impl std::fmt::Debug for SetIdentityPoolRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityPoolRolesInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3375,40 +4747,48 @@ impl  std::fmt::Debug for SetIdentityPoolRolesInput  {
 }
 
 /// <p>Input to the <code>MergeDeveloperIdentities</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct MergeDeveloperIdentitiesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MergeDeveloperIdentitiesInput {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    #[doc(hidden)]pub source_user_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub source_user_identifier: std::option::Option<std::string::String>,
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    #[doc(hidden)]pub destination_user_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub destination_user_identifier: std::option::Option<std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    #[doc(hidden)]pub developer_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl MergeDeveloperIdentitiesInput {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn source_user_identifier(&self) -> std::option::Option<& str> {
+    pub fn source_user_identifier(&self) -> std::option::Option<&str> {
         self.source_user_identifier.as_deref()
     }
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    pub fn destination_user_identifier(&self) -> std::option::Option<& str> {
+    pub fn destination_user_identifier(&self) -> std::option::Option<&str> {
         self.destination_user_identifier.as_deref()
     }
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    pub fn developer_provider_name(&self) -> std::option::Option<& str> {
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
 }
-impl  std::fmt::Debug for MergeDeveloperIdentitiesInput  {
+impl std::fmt::Debug for MergeDeveloperIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeDeveloperIdentitiesInput");
         formatter.field("source_user_identifier", &self.source_user_identifier);
-        formatter.field("destination_user_identifier", &self.destination_user_identifier);
+        formatter.field(
+            "destination_user_identifier",
+            &self.destination_user_identifier,
+        );
         formatter.field("developer_provider_name", &self.developer_provider_name);
         formatter.field("identity_pool_id", &self.identity_pool_id);
         formatter.finish()
@@ -3416,30 +4796,36 @@ impl  std::fmt::Debug for MergeDeveloperIdentitiesInput  {
 }
 
 /// <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct LookupDeveloperIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LookupDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    #[doc(hidden)]pub developer_user_identifier: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_user_identifier: std::option::Option<std::string::String>,
     /// <p>The maximum number of identities to return.</p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn developer_user_identifier(&self) -> std::option::Option<& str> {
+    pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
         self.developer_user_identifier.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
@@ -3447,11 +4833,11 @@ impl LookupDeveloperIdentityInput {
         self.max_results
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for LookupDeveloperIdentityInput  {
+impl std::fmt::Debug for LookupDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LookupDeveloperIdentityInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3464,18 +4850,20 @@ impl  std::fmt::Debug for LookupDeveloperIdentityInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -3484,12 +4872,15 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 /// <p>Input to the ListIdentityPools action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListIdentityPoolsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>A pagination token.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
@@ -3497,11 +4888,11 @@ impl ListIdentityPoolsInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListIdentityPoolsInput  {
+impl std::fmt::Debug for ListIdentityPoolsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentityPoolsInput");
         formatter.field("max_results", &self.max_results);
@@ -3511,20 +4902,25 @@ impl  std::fmt::Debug for ListIdentityPoolsInput  {
 }
 
 /// <p>Input to the ListIdentities action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListIdentitiesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of identities to return.</p>
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// <p>A pagination token.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
-    #[doc(hidden)]pub hide_disabled: bool,
+    #[doc(hidden)]
+    pub hide_disabled: bool,
 }
 impl ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
@@ -3532,7 +4928,7 @@ impl ListIdentitiesInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
@@ -3540,7 +4936,7 @@ impl ListIdentitiesInput {
         self.hide_disabled
     }
 }
-impl  std::fmt::Debug for ListIdentitiesInput  {
+impl std::fmt::Debug for ListIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentitiesInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3552,24 +4948,27 @@ impl  std::fmt::Debug for ListIdentitiesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetPrincipalTagAttributeMapInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>You can use this operation to get the provider name.</p>
-    #[doc(hidden)]pub identity_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_provider_name: std::option::Option<std::string::String>,
 }
 impl GetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>You can use this operation to get the provider name.</p>
-    pub fn identity_provider_name(&self) -> std::option::Option<& str> {
+    pub fn identity_provider_name(&self) -> std::option::Option<&str> {
         self.identity_provider_name.as_deref()
     }
 }
-impl  std::fmt::Debug for GetPrincipalTagAttributeMapInput  {
+impl std::fmt::Debug for GetPrincipalTagAttributeMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPrincipalTagAttributeMapInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3579,46 +4978,60 @@ impl  std::fmt::Debug for GetPrincipalTagAttributeMapInput  {
 }
 
 /// <p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetOpenIdTokenForDeveloperIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOpenIdTokenForDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    #[doc(hidden)]pub logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub logins:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-    #[doc(hidden)]pub principal_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note> 
-    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p> 
+    #[doc(hidden)]
+    pub principal_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
+    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
-    #[doc(hidden)]pub token_duration: std::option::Option<i64>,
+    #[doc(hidden)]
+    pub token_duration: std::option::Option<i64>,
 }
 impl GetOpenIdTokenForDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn logins(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.logins.as_ref()
     }
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-    pub fn principal_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn principal_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.principal_tags.as_ref()
     }
-    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note> 
-    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p> 
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
+    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
     pub fn token_duration(&self) -> std::option::Option<i64> {
         self.token_duration
     }
 }
-impl  std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput  {
+impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3631,24 +5044,31 @@ impl  std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput  {
 }
 
 /// <p>Input to the GetOpenIdToken action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetOpenIdTokenInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
-    #[doc(hidden)]pub logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub logins:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
-    pub fn logins(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.logins.as_ref()
     }
 }
-impl  std::fmt::Debug for GetOpenIdTokenInput  {
+impl std::fmt::Debug for GetOpenIdTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpenIdTokenInput");
         formatter.field("identity_id", &self.identity_id);
@@ -3658,18 +5078,20 @@ impl  std::fmt::Debug for GetOpenIdTokenInput  {
 }
 
 /// <p>Input to the <code>GetIdentityPoolRoles</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetIdentityPoolRolesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
 }
-impl  std::fmt::Debug for GetIdentityPoolRolesInput  {
+impl std::fmt::Debug for GetIdentityPoolRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityPoolRolesInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3678,54 +5100,62 @@ impl  std::fmt::Debug for GetIdentityPoolRolesInput  {
 }
 
 /// <p>Input to the GetId action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetIdInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> 
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
+    /// <ul>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
     /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li> 
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li> 
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> 
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> 
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li> 
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]pub logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub logins:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> 
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
+    /// <ul>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
     /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li> 
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li> 
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> 
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> 
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li> 
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    pub fn logins(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.logins.as_ref()
     }
 }
-impl  std::fmt::Debug for GetIdInput  {
+impl std::fmt::Debug for GetIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdInput");
         formatter.field("account_id", &self.account_id);
@@ -3736,34 +5166,42 @@ impl  std::fmt::Debug for GetIdInput  {
 }
 
 /// <p>Input to the <code>GetCredentialsForIdentity</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetCredentialsForIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p> 
-    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p> 
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
     /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
-    #[doc(hidden)]pub logins: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub logins:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
-    #[doc(hidden)]pub custom_role_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub custom_role_arn: std::option::Option<std::string::String>,
 }
 impl GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p> 
-    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p> 
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
     /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
-    pub fn logins(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.logins.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
-    pub fn custom_role_arn(&self) -> std::option::Option<& str> {
+    pub fn custom_role_arn(&self) -> std::option::Option<&str> {
         self.custom_role_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for GetCredentialsForIdentityInput  {
+impl std::fmt::Debug for GetCredentialsForIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCredentialsForIdentityInput");
         formatter.field("identity_id", &self.identity_id);
@@ -3774,18 +5212,20 @@ impl  std::fmt::Debug for GetCredentialsForIdentityInput  {
 }
 
 /// <p>Input to the DescribeIdentityPool action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeIdentityPoolInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeIdentityPoolInput  {
+impl std::fmt::Debug for DescribeIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityPoolInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3794,18 +5234,20 @@ impl  std::fmt::Debug for DescribeIdentityPoolInput  {
 }
 
 /// <p>Input to the <code>DescribeIdentity</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeIdentityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeIdentityInput  {
+impl std::fmt::Debug for DescribeIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityInput");
         formatter.field("identity_id", &self.identity_id);
@@ -3814,18 +5256,20 @@ impl  std::fmt::Debug for DescribeIdentityInput  {
 }
 
 /// <p>Input to the DeleteIdentityPool action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteIdentityPoolInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]pub identity_pool_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteIdentityPoolInput  {
+impl std::fmt::Debug for DeleteIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentityPoolInput");
         formatter.field("identity_pool_id", &self.identity_pool_id);
@@ -3834,18 +5278,20 @@ impl  std::fmt::Debug for DeleteIdentityPoolInput  {
 }
 
 /// <p>Input to the <code>DeleteIdentities</code> action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteIdentitiesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    #[doc(hidden)]pub identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn identity_ids_to_delete(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn identity_ids_to_delete(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_ids_to_delete.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteIdentitiesInput  {
+impl std::fmt::Debug for DeleteIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentitiesInput");
         formatter.field("identity_ids_to_delete", &self.identity_ids_to_delete);
@@ -3854,31 +5300,44 @@ impl  std::fmt::Debug for DeleteIdentitiesInput  {
 }
 
 /// <p>Input to the CreateIdentityPool action.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateIdentityPoolInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIdentityPoolInput {
     /// <p>A string that you provide.</p>
-    #[doc(hidden)]pub identity_pool_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    #[doc(hidden)]pub allow_unauthenticated_identities: bool,
+    #[doc(hidden)]
+    pub allow_unauthenticated_identities: bool,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    #[doc(hidden)]pub allow_classic_flow: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub allow_classic_flow: std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    #[doc(hidden)]pub supported_login_providers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> 
+    #[doc(hidden)]
+    pub supported_login_providers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
     /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
-    #[doc(hidden)]pub developer_provider_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    #[doc(hidden)]pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub open_id_connect_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
-    #[doc(hidden)]pub cognito_identity_providers: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+    #[doc(hidden)]
+    pub cognito_identity_providers:
+        std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    #[doc(hidden)]pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub saml_provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    #[doc(hidden)]pub identity_pool_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub identity_pool_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateIdentityPoolInput {
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<& str> {
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
         self.identity_pool_name.as_deref()
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -3890,44 +5349,60 @@ impl CreateIdentityPoolInput {
         self.allow_classic_flow
     }
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn supported_login_providers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn supported_login_providers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.supported_login_providers.as_ref()
     }
-    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> 
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
     /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
-    pub fn developer_provider_name(&self) -> std::option::Option<& str> {
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.open_id_connect_provider_ar_ns.as_deref()
     }
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
-    pub fn cognito_identity_providers(&self) -> std::option::Option<& [crate::model::CognitoIdentityProvider]> {
+    pub fn cognito_identity_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
         self.cognito_identity_providers.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.saml_provider_ar_ns.as_deref()
     }
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn identity_pool_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn identity_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.identity_pool_tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateIdentityPoolInput  {
+impl std::fmt::Debug for CreateIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIdentityPoolInput");
         formatter.field("identity_pool_name", &self.identity_pool_name);
-        formatter.field("allow_unauthenticated_identities", &self.allow_unauthenticated_identities);
+        formatter.field(
+            "allow_unauthenticated_identities",
+            &self.allow_unauthenticated_identities,
+        );
         formatter.field("allow_classic_flow", &self.allow_classic_flow);
         formatter.field("supported_login_providers", &self.supported_login_providers);
         formatter.field("developer_provider_name", &self.developer_provider_name);
-        formatter.field("open_id_connect_provider_ar_ns", &self.open_id_connect_provider_ar_ns);
-        formatter.field("cognito_identity_providers", &self.cognito_identity_providers);
+        formatter.field(
+            "open_id_connect_provider_ar_ns",
+            &self.open_id_connect_provider_ar_ns,
+        );
+        formatter.field(
+            "cognito_identity_providers",
+            &self.cognito_identity_providers,
+        );
         formatter.field("saml_provider_ar_ns", &self.saml_provider_ar_ns);
         formatter.field("identity_pool_tags", &self.identity_pool_tags);
         formatter.finish()
     }
 }
-

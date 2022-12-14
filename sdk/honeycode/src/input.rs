@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
 pub mod batch_create_table_rows_input {
-    
+
     /// A builder for [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -13,142 +13,221 @@ pub mod batch_create_table_rows_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook where the new rows are being added.</p> 
+        /// <p>The ID of the workbook where the new rows are being added.</p>
         /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook where the new rows are being added.</p> 
+        /// <p>The ID of the workbook where the new rows are being added.</p>
         /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table where the new rows are being added.</p> 
+        /// <p>The ID of the table where the new rows are being added.</p>
         /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table where the new rows are being added.</p> 
+        /// <p>The ID of the table where the new rows are being added.</p>
         /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// Appends an item to `rows_to_create`.
         ///
         /// To override the contents of this collection use [`set_rows_to_create`](Self::set_rows_to_create).
         ///
-        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p> 
+        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
         /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn rows_to_create(mut self, input: crate::model::CreateRowData) -> Self {
             let mut v = self.rows_to_create.unwrap_or_default();
-                            v.push(input);
-                            self.rows_to_create = Some(v);
-                            self
+            v.push(input);
+            self.rows_to_create = Some(v);
+            self
         }
-        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p> 
+        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
         /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-        pub fn set_rows_to_create(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>) -> Self {
-            self.rows_to_create = input; self
+        pub fn set_rows_to_create(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>,
+        ) -> Self {
+            self.rows_to_create = input;
+            self
         }
-        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> 
+        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> 
+        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
-        pub fn build(self) -> Result<crate::input::BatchCreateTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchCreateTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    rows_to_create: self.rows_to_create
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchCreateTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchCreateTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                rows_to_create: self.rows_to_create,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl BatchCreateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateTableRows`](crate::operation::BatchCreateTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchCreateTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchCreateTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchCreateTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchCreateTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.workbook_id;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_2 = &_input.table_id;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/batchcreate", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/batchcreate",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchCreateTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchCreateTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_table_rows(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchCreateTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchCreateTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchCreateTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchCreateTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -160,9 +239,9 @@ impl BatchCreateTableRowsInput {
 
 /// See [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
 pub mod batch_delete_table_rows_input {
-    
+
     /// A builder for [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -170,142 +249,221 @@ pub mod batch_delete_table_rows_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook where the rows are being deleted.</p> 
+        /// <p>The ID of the workbook where the rows are being deleted.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook where the rows are being deleted.</p> 
+        /// <p>The ID of the workbook where the rows are being deleted.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table where the rows are being deleted.</p> 
+        /// <p>The ID of the table where the rows are being deleted.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table where the rows are being deleted.</p> 
+        /// <p>The ID of the table where the rows are being deleted.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// Appends an item to `row_ids`.
         ///
         /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).
         ///
-        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p> 
+        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
         /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
         pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.row_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.row_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.row_ids = Some(v);
+            self
         }
-        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p> 
+        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
         /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-        pub fn set_row_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.row_ids = input; self
+        pub fn set_row_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.row_ids = input;
+            self
         }
-        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
-        pub fn build(self) -> Result<crate::input::BatchDeleteTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchDeleteTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    row_ids: self.row_ids
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchDeleteTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchDeleteTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                row_ids: self.row_ids,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl BatchDeleteTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTableRows`](crate::operation::BatchDeleteTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchDeleteTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchDeleteTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchDeleteTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchDeleteTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.workbook_id;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_4 = &_input.table_id;
-                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/batchdelete", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/batchdelete",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchDeleteTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchDeleteTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_table_rows(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchDeleteTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchDeleteTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDeleteTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchDeleteTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -317,9 +475,9 @@ impl BatchDeleteTableRowsInput {
 
 /// See [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
 pub mod batch_update_table_rows_input {
-    
+
     /// A builder for [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -327,142 +485,221 @@ pub mod batch_update_table_rows_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook where the rows are being updated.</p> 
+        /// <p>The ID of the workbook where the rows are being updated.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook where the rows are being updated.</p> 
+        /// <p>The ID of the workbook where the rows are being updated.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table where the rows are being updated.</p> 
+        /// <p>The ID of the table where the rows are being updated.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table where the rows are being updated.</p> 
+        /// <p>The ID of the table where the rows are being updated.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// Appends an item to `rows_to_update`.
         ///
         /// To override the contents of this collection use [`set_rows_to_update`](Self::set_rows_to_update).
         ///
-        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p> 
+        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
         /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn rows_to_update(mut self, input: crate::model::UpdateRowData) -> Self {
             let mut v = self.rows_to_update.unwrap_or_default();
-                            v.push(input);
-                            self.rows_to_update = Some(v);
-                            self
+            v.push(input);
+            self.rows_to_update = Some(v);
+            self
         }
-        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p> 
+        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
         /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-        pub fn set_rows_to_update(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>) -> Self {
-            self.rows_to_update = input; self
+        pub fn set_rows_to_update(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>,
+        ) -> Self {
+            self.rows_to_update = input;
+            self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
-        pub fn build(self) -> Result<crate::input::BatchUpdateTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchUpdateTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    rows_to_update: self.rows_to_update
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchUpdateTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchUpdateTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                rows_to_update: self.rows_to_update,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl BatchUpdateTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateTableRows`](crate::operation::BatchUpdateTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchUpdateTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchUpdateTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchUpdateTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchUpdateTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.workbook_id;
-                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_6 = &_input.table_id;
-                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/batchupdate", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/batchupdate",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchUpdateTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchUpdateTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_update_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_update_table_rows(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchUpdateTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchUpdateTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchUpdateTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchUpdateTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -474,9 +711,9 @@ impl BatchUpdateTableRowsInput {
 
 /// See [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
 pub mod batch_upsert_table_rows_input {
-    
+
     /// A builder for [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -484,142 +721,221 @@ pub mod batch_upsert_table_rows_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook where the rows are being upserted.</p> 
+        /// <p>The ID of the workbook where the rows are being upserted.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook where the rows are being upserted.</p> 
+        /// <p>The ID of the workbook where the rows are being upserted.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table where the rows are being upserted.</p> 
+        /// <p>The ID of the table where the rows are being upserted.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table where the rows are being upserted.</p> 
+        /// <p>The ID of the table where the rows are being upserted.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// Appends an item to `rows_to_upsert`.
         ///
         /// To override the contents of this collection use [`set_rows_to_upsert`](Self::set_rows_to_upsert).
         ///
-        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p> 
+        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
         /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn rows_to_upsert(mut self, input: crate::model::UpsertRowData) -> Self {
             let mut v = self.rows_to_upsert.unwrap_or_default();
-                            v.push(input);
-                            self.rows_to_upsert = Some(v);
-                            self
+            v.push(input);
+            self.rows_to_upsert = Some(v);
+            self
         }
-        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p> 
+        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
         /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-        pub fn set_rows_to_upsert(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>) -> Self {
-            self.rows_to_upsert = input; self
+        pub fn set_rows_to_upsert(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>,
+        ) -> Self {
+            self.rows_to_upsert = input;
+            self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
-        pub fn build(self) -> Result<crate::input::BatchUpsertTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::BatchUpsertTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    rows_to_upsert: self.rows_to_upsert
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::BatchUpsertTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::BatchUpsertTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                rows_to_upsert: self.rows_to_upsert,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl BatchUpsertTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpsertTableRows`](crate::operation::BatchUpsertTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchUpsertTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchUpsertTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::BatchUpsertTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::BatchUpsertTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.workbook_id;
-                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_8 = &_input.table_id;
-                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/batchupsert", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/batchupsert",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::BatchUpsertTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchUpsertTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_upsert_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_upsert_table_rows(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchUpsertTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchUpsertTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchUpsertTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchUpsertTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -631,95 +947,153 @@ impl BatchUpsertTableRowsInput {
 
 /// See [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
 pub mod describe_table_data_import_job_input {
-    
+
     /// A builder for [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook into which data was imported.</p> 
+        /// <p>The ID of the workbook into which data was imported.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook into which data was imported.</p> 
+        /// <p>The ID of the workbook into which data was imported.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table into which data was imported.</p> 
+        /// <p>The ID of the table into which data was imported.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table into which data was imported.</p> 
+        /// <p>The ID of the table into which data was imported.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
-        /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p> 
+        /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
         /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p> 
+        /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
         /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input; self
+            self.job_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeTableDataImportJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeTableDataImportJobInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    job_id: self.job_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeTableDataImportJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeTableDataImportJobInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                job_id: self.job_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableDataImportJob`](crate::operation::DescribeTableDataImportJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeTableDataImportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTableDataImportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeTableDataImportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeTableDataImportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.workbook_id;
-                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_9 = input_9.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_10 = &_input.table_id;
-                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_10 = input_10.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_11 = &_input.job_id;
-                let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_11 = input_11.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/import/{jobId}", workbookId = workbook_id, tableId = table_id, jobId = job_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/import/{jobId}",
+                    workbookId = workbook_id,
+                    tableId = table_id,
+                    jobId = job_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeTableDataImportJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeTableDataImportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -728,37 +1102,54 @@ impl DescribeTableDataImportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeTableDataImportJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeTableDataImportJob", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTableDataImportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTableDataImportJob",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -770,14 +1161,16 @@ impl DescribeTableDataImportJobInput {
 
 /// See [`GetScreenDataInput`](crate::input::GetScreenDataInput).
 pub mod get_screen_data_input {
-    
+
     /// A builder for [`GetScreenDataInput`](crate::input::GetScreenDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) screen_id: std::option::Option<std::string::String>,
-        pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>,
+        pub(crate) variables: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+        >,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -789,7 +1182,8 @@ pub mod get_screen_data_input {
         }
         /// <p>The ID of the workbook that contains the screen.</p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
         /// <p>The ID of the app that contains the screen.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -798,7 +1192,8 @@ pub mod get_screen_data_input {
         }
         /// <p>The ID of the app that contains the screen.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input; self
+            self.app_id = input;
+            self
         }
         /// <p>The ID of the screen.</p>
         pub fn screen_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -807,123 +1202,173 @@ pub mod get_screen_data_input {
         }
         /// <p>The ID of the screen.</p>
         pub fn set_screen_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.screen_id = input; self
+            self.screen_id = input;
+            self
         }
         /// Adds a key-value pair to `variables`.
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-        pub fn variables(mut self, k: impl Into<std::string::String>, v: crate::model::VariableValue) -> Self {
+        pub fn variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::VariableValue,
+        ) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-                            hash_map.insert(k.into(), v);
-                            self.variables = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v);
+            self.variables = Some(hash_map);
+            self
         }
         /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-        pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>) -> Self {
-            self.variables = input; self
+        pub fn set_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+            >,
+        ) -> Self {
+            self.variables = input;
+            self
         }
-        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p> 
+        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
         /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p> 
+        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
         /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetScreenDataInput`](crate::input::GetScreenDataInput).
-        pub fn build(self) -> Result<crate::input::GetScreenDataInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetScreenDataInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    app_id: self.app_id
-                    ,
-                    screen_id: self.screen_id
-                    ,
-                    variables: self.variables
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetScreenDataInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetScreenDataInput {
+                workbook_id: self.workbook_id,
+                app_id: self.app_id,
+                screen_id: self.screen_id,
+                variables: self.variables,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl GetScreenDataInput {
     /// Consumes the builder and constructs an Operation<[`GetScreenData`](crate::operation::GetScreenData)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetScreenData, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetScreenData,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetScreenDataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetScreenDataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/screendata").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetScreenDataInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetScreenDataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_screen_data(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_screen_data(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetScreenData::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetScreenData", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetScreenData::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetScreenData",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -935,15 +1380,17 @@ impl GetScreenDataInput {
 
 /// See [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
 pub mod invoke_screen_automation_input {
-    
+
     /// A builder for [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) screen_id: std::option::Option<std::string::String>,
         pub(crate) screen_automation_id: std::option::Option<std::string::String>,
-        pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>,
+        pub(crate) variables: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+        >,
         pub(crate) row_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
@@ -955,7 +1402,8 @@ pub mod invoke_screen_automation_input {
         }
         /// <p>The ID of the workbook that contains the screen automation.</p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
         /// <p>The ID of the app that contains the screen automation.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -964,7 +1412,8 @@ pub mod invoke_screen_automation_input {
         }
         /// <p>The ID of the app that contains the screen automation.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input; self
+            self.app_id = input;
+            self
         }
         /// <p>The ID of the screen that contains the screen automation.</p>
         pub fn screen_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -973,7 +1422,8 @@ pub mod invoke_screen_automation_input {
         }
         /// <p>The ID of the screen that contains the screen automation.</p>
         pub fn set_screen_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.screen_id = input; self
+            self.screen_id = input;
+            self
         }
         /// <p>The ID of the automation action to be performed.</p>
         pub fn screen_automation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -981,23 +1431,37 @@ pub mod invoke_screen_automation_input {
             self
         }
         /// <p>The ID of the automation action to be performed.</p>
-        pub fn set_screen_automation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.screen_automation_id = input; self
+        pub fn set_screen_automation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.screen_automation_id = input;
+            self
         }
         /// Adds a key-value pair to `variables`.
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-        pub fn variables(mut self, k: impl Into<std::string::String>, v: crate::model::VariableValue) -> Self {
+        pub fn variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::VariableValue,
+        ) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-                            hash_map.insert(k.into(), v);
-                            self.variables = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v);
+            self.variables = Some(hash_map);
+            self
         }
         /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-        pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>) -> Self {
-            self.variables = input; self
+        pub fn set_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+            >,
+        ) -> Self {
+            self.variables = input;
+            self
         }
         /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
         pub fn row_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1006,123 +1470,210 @@ pub mod invoke_screen_automation_input {
         }
         /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.row_id = input; self
+            self.row_id = input;
+            self
         }
-        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
-        pub fn build(self) -> Result<crate::input::InvokeScreenAutomationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::InvokeScreenAutomationInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    app_id: self.app_id
-                    ,
-                    screen_id: self.screen_id
-                    ,
-                    screen_automation_id: self.screen_automation_id
-                    ,
-                    variables: self.variables
-                    ,
-                    row_id: self.row_id
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::InvokeScreenAutomationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::InvokeScreenAutomationInput {
+                workbook_id: self.workbook_id,
+                app_id: self.app_id,
+                screen_id: self.screen_id,
+                screen_automation_id: self.screen_automation_id,
+                variables: self.variables,
+                row_id: self.row_id,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl InvokeScreenAutomationInput {
     /// Consumes the builder and constructs an Operation<[`InvokeScreenAutomation`](crate::operation::InvokeScreenAutomation)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::InvokeScreenAutomation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::InvokeScreenAutomation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::InvokeScreenAutomationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::InvokeScreenAutomationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.workbook_id;
-                let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_12 = input_12.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_13 = &_input.app_id;
-                let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_13 = input_13.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let app_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if app_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_14 = &_input.screen_id;
-                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "screen_id", details: "cannot be empty or unset" })?;
-                let screen_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_14 = input_14.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "screen_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let screen_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if screen_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "screen_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "screen_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_15 = &_input.screen_automation_id;
-                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "screen_automation_id", details: "cannot be empty or unset" })?;
-                let screen_automation_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_15 = input_15.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "screen_automation_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let screen_automation_id = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if screen_automation_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "screen_automation_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "screen_automation_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 write!(output, "/workbooks/{workbookId}/apps/{appId}/screens/{screenId}/automations/{screenAutomationId}", workbookId = workbook_id, appId = app_id, screenId = screen_id, screenAutomationId = screen_automation_id).expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::InvokeScreenAutomationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::InvokeScreenAutomationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_invoke_screen_automation(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_invoke_screen_automation(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::InvokeScreenAutomation::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("InvokeScreenAutomation", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InvokeScreenAutomation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InvokeScreenAutomation",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1134,96 +1685,143 @@ impl InvokeScreenAutomationInput {
 
 /// See [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
 pub mod list_table_columns_input {
-    
+
     /// A builder for [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> 
+        /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> 
+        /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table whose columns are being retrieved.</p> 
+        /// <p>The ID of the table whose columns are being retrieved.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table whose columns are being retrieved.</p> 
+        /// <p>The ID of the table whose columns are being retrieved.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
-        pub fn build(self) -> Result<crate::input::ListTableColumnsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTableColumnsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTableColumnsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTableColumnsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListTableColumnsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableColumns`](crate::operation::ListTableColumns)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTableColumns, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTableColumns,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTableColumnsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTableColumnsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.workbook_id;
-                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_16 = input_16.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_17 = &_input.table_id;
-                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/columns", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/columns",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListTableColumnsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListTableColumnsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTableColumnsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTableColumnsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1233,37 +1831,54 @@ impl ListTableColumnsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTableColumns::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTableColumns", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTableColumns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTableColumns",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1275,9 +1890,9 @@ impl ListTableColumnsInput {
 
 /// See [`ListTableRowsInput`](crate::input::ListTableRowsInput).
 pub mod list_table_rows_input {
-    
+
     /// A builder for [`ListTableRowsInput`](crate::input::ListTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -1286,27 +1901,29 @@ pub mod list_table_rows_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p> 
+        /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p> 
+        /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table whose rows are being retrieved.</p> 
+        /// <p>The ID of the table whose rows are being retrieved.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table whose rows are being retrieved.</p> 
+        /// <p>The ID of the table whose rows are being retrieved.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// Appends an item to `row_ids`.
         ///
@@ -1315,13 +1932,17 @@ pub mod list_table_rows_input {
         /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
         pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.row_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.row_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.row_ids = Some(v);
+            self
         }
         /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-        pub fn set_row_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.row_ids = input; self
+        pub fn set_row_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.row_ids = input;
+            self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1330,107 +1951,175 @@ pub mod list_table_rows_input {
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTableRowsInput`](crate::input::ListTableRowsInput).
-        pub fn build(self) -> Result<crate::input::ListTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    row_ids: self.row_ids
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                row_ids: self.row_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`ListTableRows`](crate::operation::ListTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.workbook_id;
-                let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_19 = input_19.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_20 = &_input.table_id;
-                let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_20 = input_20.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/list", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/list",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_table_rows(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1442,25 +2131,26 @@ impl ListTableRowsInput {
 
 /// See [`ListTablesInput`](crate::input::ListTablesInput).
 pub mod list_tables_input {
-    
+
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook whose tables are being retrieved.</p> 
+        /// <p>The ID of the workbook whose tables are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook whose tables are being retrieved.</p> 
+        /// <p>The ID of the workbook whose tables are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
         /// <p>The maximum number of tables to return in each page of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1469,64 +2159,100 @@ pub mod list_tables_input {
         }
         /// <p>The maximum number of tables to return in each page of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput).
-        pub fn build(self) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTablesInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListTablesInput {
+                workbook_id: self.workbook_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTables, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTables,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTablesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTablesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.workbook_id;
-                let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_21 = input_21.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables", workbookId = workbook_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables",
+                    workbookId = workbook_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListTablesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListTablesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_22) = &_input.max_results {
-                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_22).encode());
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    );
                 }
                 if let Some(inner_23) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTablesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTablesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1536,37 +2262,54 @@ impl ListTablesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTables::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTables", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTables::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTables",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1578,9 +2321,9 @@ impl ListTablesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1592,39 +2335,67 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.resource_arn;
-                let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1633,37 +2404,54 @@ impl ListTagsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1675,9 +2463,9 @@ impl ListTagsForResourceInput {
 
 /// See [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
 pub mod query_table_rows_input {
-    
+
     /// A builder for [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -1686,27 +2474,29 @@ pub mod query_table_rows_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook whose table rows are being queried.</p> 
+        /// <p>The ID of the workbook whose table rows are being queried.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook whose table rows are being queried.</p> 
+        /// <p>The ID of the workbook whose table rows are being queried.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
-        /// <p>The ID of the table whose rows are being queried.</p> 
+        /// <p>The ID of the table whose rows are being queried.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table whose rows are being queried.</p> 
+        /// <p>The ID of the table whose rows are being queried.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_id = input; self
+            self.table_id = input;
+            self
         }
         /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
         pub fn filter_formula(mut self, input: crate::model::Filter) -> Self {
@@ -1714,8 +2504,12 @@ pub mod query_table_rows_input {
             self
         }
         /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-        pub fn set_filter_formula(mut self, input: std::option::Option<crate::model::Filter>) -> Self {
-            self.filter_formula = input; self
+        pub fn set_filter_formula(
+            mut self,
+            input: std::option::Option<crate::model::Filter>,
+        ) -> Self {
+            self.filter_formula = input;
+            self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1724,107 +2518,175 @@ pub mod query_table_rows_input {
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
         /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
-        pub fn build(self) -> Result<crate::input::QueryTableRowsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::QueryTableRowsInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    table_id: self.table_id
-                    ,
-                    filter_formula: self.filter_formula
-                    ,
-                    max_results: self.max_results
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::QueryTableRowsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::QueryTableRowsInput {
+                workbook_id: self.workbook_id,
+                table_id: self.table_id,
+                filter_formula: self.filter_formula,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl QueryTableRowsInput {
     /// Consumes the builder and constructs an Operation<[`QueryTableRows`](crate::operation::QueryTableRows)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::QueryTableRows, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::QueryTableRows,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::QueryTableRowsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::QueryTableRowsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.workbook_id;
-                let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_25 = input_25.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_26 = &_input.table_id;
-                let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })?;
-                let table_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_26 = input_26.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let table_id = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{tableId}/rows/query", workbookId = workbook_id, tableId = table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{tableId}/rows/query",
+                    workbookId = workbook_id,
+                    tableId = table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::QueryTableRowsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::QueryTableRowsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_query_table_rows(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_query_table_rows(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::QueryTableRows::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("QueryTableRows", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryTableRows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryTableRows",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1836,9 +2698,9 @@ impl QueryTableRowsInput {
 
 /// See [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
 pub mod start_table_data_import_job_input {
-    
+
     /// A builder for [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<crate::model::ImportDataSource>,
@@ -1848,16 +2710,17 @@ pub mod start_table_data_import_job_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the workbook where the rows are being imported.</p> 
+        /// <p>The ID of the workbook where the rows are being imported.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workbook_id = Some(input.into());
             self
         }
-        /// <p>The ID of the workbook where the rows are being imported.</p> 
+        /// <p>The ID of the workbook where the rows are being imported.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workbook_id = input; self
+            self.workbook_id = input;
+            self
         }
         /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
         pub fn data_source(mut self, input: crate::model::ImportDataSource) -> Self {
@@ -1865,8 +2728,12 @@ pub mod start_table_data_import_job_input {
             self
         }
         /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-        pub fn set_data_source(mut self, input: std::option::Option<crate::model::ImportDataSource>) -> Self {
-            self.data_source = input; self
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::ImportDataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
         }
         /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
         pub fn data_format(mut self, input: crate::model::ImportSourceDataFormat) -> Self {
@@ -1874,19 +2741,27 @@ pub mod start_table_data_import_job_input {
             self
         }
         /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-        pub fn set_data_format(mut self, input: std::option::Option<crate::model::ImportSourceDataFormat>) -> Self {
-            self.data_format = input; self
+        pub fn set_data_format(
+            mut self,
+            input: std::option::Option<crate::model::ImportSourceDataFormat>,
+        ) -> Self {
+            self.data_format = input;
+            self
         }
-        /// <p>The ID of the table where the rows are being imported.</p> 
+        /// <p>The ID of the table where the rows are being imported.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn destination_table_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_table_id = Some(input.into());
             self
         }
-        /// <p>The ID of the table where the rows are being imported.</p> 
+        /// <p>The ID of the table where the rows are being imported.</p>
         /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-        pub fn set_destination_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination_table_id = input; self
+        pub fn set_destination_table_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_table_id = input;
+            self
         }
         /// <p> The options for customizing this import request. </p>
         pub fn import_options(mut self, input: crate::model::ImportOptions) -> Self {
@@ -1894,110 +2769,187 @@ pub mod start_table_data_import_job_input {
             self
         }
         /// <p> The options for customizing this import request. </p>
-        pub fn set_import_options(mut self, input: std::option::Option<crate::model::ImportOptions>) -> Self {
-            self.import_options = input; self
+        pub fn set_import_options(
+            mut self,
+            input: std::option::Option<crate::model::ImportOptions>,
+        ) -> Self {
+            self.import_options = input;
+            self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
         /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-        pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_request_token = input; self
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
-        pub fn build(self) -> Result<crate::input::StartTableDataImportJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartTableDataImportJobInput {
-                    workbook_id: self.workbook_id
-                    ,
-                    data_source: self.data_source
-                    ,
-                    data_format: self.data_format
-                    ,
-                    destination_table_id: self.destination_table_id
-                    ,
-                    import_options: self.import_options
-                    ,
-                    client_request_token: self.client_request_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartTableDataImportJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartTableDataImportJobInput {
+                workbook_id: self.workbook_id,
+                data_source: self.data_source,
+                data_format: self.data_format,
+                destination_table_id: self.destination_table_id,
+                import_options: self.import_options,
+                client_request_token: self.client_request_token,
+            })
         }
     }
-    
-    
 }
 impl StartTableDataImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTableDataImportJob`](crate::operation::StartTableDataImportJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartTableDataImportJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartTableDataImportJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartTableDataImportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartTableDataImportJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.workbook_id;
-                let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })?;
-                let workbook_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_27 = input_27.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let workbook_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if workbook_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workbook_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "workbook_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_28 = &_input.destination_table_id;
-                let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "destination_table_id", details: "cannot be empty or unset" })?;
-                let destination_table_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "destination_table_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let destination_table_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if destination_table_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "destination_table_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/workbooks/{workbookId}/tables/{destinationTableId}/import", workbookId = workbook_id, destinationTableId = destination_table_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "destination_table_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/workbooks/{workbookId}/tables/{destinationTableId}/import",
+                    workbookId = workbook_id,
+                    destinationTableId = destination_table_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartTableDataImportJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartTableDataImportJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_table_data_import_job(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_table_data_import_job(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartTableDataImportJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartTableDataImportJob", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartTableDataImportJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartTableDataImportJob",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2009,12 +2961,14 @@ impl StartTableDataImportJobInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2024,99 +2978,163 @@ pub mod tag_resource_input {
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to apply to the resource.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>A list of tags to apply to the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
-                let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_29 = input_29.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2128,9 +3146,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2143,7 +3161,8 @@ pub mod untag_resource_input {
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -2152,44 +3171,75 @@ pub mod untag_resource_input {
         /// <p>A list of tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>A list of tag keys to remove from the resource.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.resource_arn;
-                let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_30 = input_30.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let resource_arn = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if resource_arn.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_31) = &_input.tag_keys {
                     for inner_32 in inner_31 {
@@ -2198,10 +3248,12 @@ impl UntagResourceInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2211,37 +3263,54 @@ impl UntagResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "honeycode"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "honeycode",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2252,24 +3321,27 @@ impl UntagResourceInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of tag keys to remove from the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2279,24 +3351,31 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of tags to apply to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2306,54 +3385,61 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartTableDataImportJobInput  {
-    /// <p>The ID of the workbook where the rows are being imported.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartTableDataImportJobInput {
+    /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-    #[doc(hidden)]pub data_source: std::option::Option<crate::model::ImportDataSource>,
+    #[doc(hidden)]
+    pub data_source: std::option::Option<crate::model::ImportDataSource>,
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-    #[doc(hidden)]pub data_format: std::option::Option<crate::model::ImportSourceDataFormat>,
-    /// <p>The ID of the table where the rows are being imported.</p> 
+    #[doc(hidden)]
+    pub data_format: std::option::Option<crate::model::ImportSourceDataFormat>,
+    /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub destination_table_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub destination_table_id: std::option::Option<std::string::String>,
     /// <p> The options for customizing this import request. </p>
-    #[doc(hidden)]pub import_options: std::option::Option<crate::model::ImportOptions>,
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    #[doc(hidden)]
+    pub import_options: std::option::Option<crate::model::ImportOptions>,
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartTableDataImportJobInput {
-    /// <p>The ID of the workbook where the rows are being imported.</p> 
+    /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-    pub fn data_source(&self) -> std::option::Option<& crate::model::ImportDataSource> {
+    pub fn data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
         self.data_source.as_ref()
     }
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-    pub fn data_format(&self) -> std::option::Option<& crate::model::ImportSourceDataFormat> {
+    pub fn data_format(&self) -> std::option::Option<&crate::model::ImportSourceDataFormat> {
         self.data_format.as_ref()
     }
-    /// <p>The ID of the table where the rows are being imported.</p> 
+    /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn destination_table_id(&self) -> std::option::Option<& str> {
+    pub fn destination_table_id(&self) -> std::option::Option<&str> {
         self.destination_table_id.as_deref()
     }
     /// <p> The options for customizing this import request. </p>
-    pub fn import_options(&self) -> std::option::Option<& crate::model::ImportOptions> {
+    pub fn import_options(&self) -> std::option::Option<&crate::model::ImportOptions> {
         self.import_options.as_ref()
     }
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for StartTableDataImportJobInput  {
+impl std::fmt::Debug for StartTableDataImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTableDataImportJobInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2367,48 +3453,54 @@ impl  std::fmt::Debug for StartTableDataImportJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct QueryTableRowsInput  {
-    /// <p>The ID of the workbook whose table rows are being queried.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryTableRowsInput {
+    /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table whose rows are being queried.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-    #[doc(hidden)]pub filter_formula: std::option::Option<crate::model::Filter>,
+    #[doc(hidden)]
+    pub filter_formula: std::option::Option<crate::model::Filter>,
     /// <p>The maximum number of rows to return in each page of the results.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl QueryTableRowsInput {
-    /// <p>The ID of the workbook whose table rows are being queried.</p> 
+    /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table whose rows are being queried.</p> 
+    /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-    pub fn filter_formula(&self) -> std::option::Option<& crate::model::Filter> {
+    pub fn filter_formula(&self) -> std::option::Option<&crate::model::Filter> {
         self.filter_formula.as_ref()
     }
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for QueryTableRowsInput  {
+impl std::fmt::Debug for QueryTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2421,18 +3513,20 @@ impl  std::fmt::Debug for QueryTableRowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -2441,34 +3535,38 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTablesInput  {
-    /// <p>The ID of the workbook whose tables are being retrieved.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTablesInput {
+    /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in each page of the results.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTablesInput {
-    /// <p>The ID of the workbook whose tables are being retrieved.</p> 
+    /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
     /// <p>The maximum number of tables to return in each page of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTablesInput  {
+impl std::fmt::Debug for ListTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTablesInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2479,48 +3577,54 @@ impl  std::fmt::Debug for ListTablesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTableRowsInput  {
-    /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTableRowsInput {
+    /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table whose rows are being retrieved.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table whose rows are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    #[doc(hidden)]pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of rows to return in each page of the results.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableRowsInput {
-    /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p> 
+    /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table whose rows are being retrieved.</p> 
+    /// <p>The ID of the table whose rows are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    pub fn row_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.row_ids.as_deref()
     }
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTableRowsInput  {
+impl std::fmt::Debug for ListTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2533,36 +3637,40 @@ impl  std::fmt::Debug for ListTableRowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTableColumnsInput  {
-    /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTableColumnsInput {
+    /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table whose columns are being retrieved.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table whose columns are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTableColumnsInput {
-    /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> 
+    /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table whose columns are being retrieved.</p> 
+    /// <p>The ID of the table whose columns are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTableColumnsInput  {
+impl std::fmt::Debug for ListTableColumnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTableColumnsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2573,56 +3681,70 @@ impl  std::fmt::Debug for ListTableColumnsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct InvokeScreenAutomationInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvokeScreenAutomationInput {
     /// <p>The ID of the workbook that contains the screen automation.</p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the app that contains the screen automation.</p>
-    #[doc(hidden)]pub app_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub app_id: std::option::Option<std::string::String>,
     /// <p>The ID of the screen that contains the screen automation.</p>
-    #[doc(hidden)]pub screen_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub screen_id: std::option::Option<std::string::String>,
     /// <p>The ID of the automation action to be performed.</p>
-    #[doc(hidden)]pub screen_automation_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub screen_automation_id: std::option::Option<std::string::String>,
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    #[doc(hidden)]pub variables: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>,
+    #[doc(hidden)]
+    pub variables: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    >,
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
-    #[doc(hidden)]pub row_id: std::option::Option<std::string::String>,
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+    #[doc(hidden)]
+    pub row_id: std::option::Option<std::string::String>,
+    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl InvokeScreenAutomationInput {
     /// <p>The ID of the workbook that contains the screen automation.</p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the app that contains the screen automation.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The ID of the screen that contains the screen automation.</p>
-    pub fn screen_id(&self) -> std::option::Option<& str> {
+    pub fn screen_id(&self) -> std::option::Option<&str> {
         self.screen_id.as_deref()
     }
     /// <p>The ID of the automation action to be performed.</p>
-    pub fn screen_automation_id(&self) -> std::option::Option<& str> {
+    pub fn screen_automation_id(&self) -> std::option::Option<&str> {
         self.screen_automation_id.as_deref()
     }
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::VariableValue>> {
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    > {
         self.variables.as_ref()
     }
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
-    pub fn row_id(&self) -> std::option::Option<& str> {
+    pub fn row_id(&self) -> std::option::Option<&str> {
         self.row_id.as_deref()
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> 
+    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for InvokeScreenAutomationInput  {
+impl std::fmt::Debug for InvokeScreenAutomationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeScreenAutomationInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2637,52 +3759,65 @@ impl  std::fmt::Debug for InvokeScreenAutomationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetScreenDataInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetScreenDataInput {
     /// <p>The ID of the workbook that contains the screen.</p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
     /// <p>The ID of the app that contains the screen.</p>
-    #[doc(hidden)]pub app_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub app_id: std::option::Option<std::string::String>,
     /// <p>The ID of the screen.</p>
-    #[doc(hidden)]pub screen_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub screen_id: std::option::Option<std::string::String>,
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    #[doc(hidden)]pub variables: std::option::Option<std::collections::HashMap<std::string::String, crate::model::VariableValue>>,
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p> 
+    #[doc(hidden)]
+    pub variables: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    >,
+    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl GetScreenDataInput {
     /// <p>The ID of the workbook that contains the screen.</p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the app that contains the screen.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The ID of the screen.</p>
-    pub fn screen_id(&self) -> std::option::Option<& str> {
+    pub fn screen_id(&self) -> std::option::Option<&str> {
         self.screen_id.as_deref()
     }
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::VariableValue>> {
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::VariableValue>,
+    > {
         self.variables.as_ref()
     }
-    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p> 
+    /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> 
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for GetScreenDataInput  {
+impl std::fmt::Debug for GetScreenDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetScreenDataInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2696,36 +3831,40 @@ impl  std::fmt::Debug for GetScreenDataInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeTableDataImportJobInput  {
-    /// <p>The ID of the workbook into which data was imported.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTableDataImportJobInput {
+    /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table into which data was imported.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeTableDataImportJobInput {
-    /// <p>The ID of the workbook into which data was imported.</p> 
+    /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table into which data was imported.</p> 
+    /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p> 
+    /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeTableDataImportJobInput  {
+impl std::fmt::Debug for DescribeTableDataImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableDataImportJobInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2736,44 +3875,49 @@ impl  std::fmt::Debug for DescribeTableDataImportJobInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchUpsertTableRowsInput  {
-    /// <p>The ID of the workbook where the rows are being upserted.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchUpsertTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being upserted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table where the rows are being upserted.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table where the rows are being upserted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    #[doc(hidden)]pub rows_to_upsert: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>,
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    #[doc(hidden)]
+    pub rows_to_upsert: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>,
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchUpsertTableRowsInput {
-    /// <p>The ID of the workbook where the rows are being upserted.</p> 
+    /// <p>The ID of the workbook where the rows are being upserted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table where the rows are being upserted.</p> 
+    /// <p>The ID of the table where the rows are being upserted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p> 
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn rows_to_upsert(&self) -> std::option::Option<& [crate::model::UpsertRowData]> {
+    pub fn rows_to_upsert(&self) -> std::option::Option<&[crate::model::UpsertRowData]> {
         self.rows_to_upsert.as_deref()
     }
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchUpsertTableRowsInput  {
+impl std::fmt::Debug for BatchUpsertTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpsertTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2785,44 +3929,49 @@ impl  std::fmt::Debug for BatchUpsertTableRowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchUpdateTableRowsInput  {
-    /// <p>The ID of the workbook where the rows are being updated.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchUpdateTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table where the rows are being updated.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table where the rows are being updated.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
     /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    #[doc(hidden)]pub rows_to_update: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>,
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    #[doc(hidden)]
+    pub rows_to_update: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>,
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchUpdateTableRowsInput {
-    /// <p>The ID of the workbook where the rows are being updated.</p> 
+    /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table where the rows are being updated.</p> 
+    /// <p>The ID of the table where the rows are being updated.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p> 
+    /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
     /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn rows_to_update(&self) -> std::option::Option<& [crate::model::UpdateRowData]> {
+    pub fn rows_to_update(&self) -> std::option::Option<&[crate::model::UpdateRowData]> {
         self.rows_to_update.as_deref()
     }
-    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchUpdateTableRowsInput  {
+impl std::fmt::Debug for BatchUpdateTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2834,44 +3983,49 @@ impl  std::fmt::Debug for BatchUpdateTableRowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchDeleteTableRowsInput  {
-    /// <p>The ID of the workbook where the rows are being deleted.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDeleteTableRowsInput {
+    /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table where the rows are being deleted.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
     /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-    #[doc(hidden)]pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    #[doc(hidden)]
+    pub row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchDeleteTableRowsInput {
-    /// <p>The ID of the workbook where the rows are being deleted.</p> 
+    /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table where the rows are being deleted.</p> 
+    /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p> 
+    /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
     /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-    pub fn row_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.row_ids.as_deref()
     }
-    /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> 
+    /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDeleteTableRowsInput  {
+impl std::fmt::Debug for BatchDeleteTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2883,44 +4037,49 @@ impl  std::fmt::Debug for BatchDeleteTableRowsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct BatchCreateTableRowsInput  {
-    /// <p>The ID of the workbook where the new rows are being added.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchCreateTableRowsInput {
+    /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub workbook_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the table where the new rows are being added.</p> 
+    #[doc(hidden)]
+    pub workbook_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the table where the new rows are being added.</p>
     /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]pub table_id: std::option::Option<std::string::String>,
-    /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p> 
+    #[doc(hidden)]
+    pub table_id: std::option::Option<std::string::String>,
+    /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    #[doc(hidden)]pub rows_to_create: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>,
-    /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> 
+    #[doc(hidden)]
+    pub rows_to_create: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>,
+    /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]pub client_request_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub client_request_token: std::option::Option<std::string::String>,
 }
 impl BatchCreateTableRowsInput {
-    /// <p>The ID of the workbook where the new rows are being added.</p> 
+    /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn workbook_id(&self) -> std::option::Option<& str> {
+    pub fn workbook_id(&self) -> std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
-    /// <p>The ID of the table where the new rows are being added.</p> 
+    /// <p>The ID of the table where the new rows are being added.</p>
     /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn table_id(&self) -> std::option::Option<& str> {
+    pub fn table_id(&self) -> std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p> 
+    /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn rows_to_create(&self) -> std::option::Option<& [crate::model::CreateRowData]> {
+    pub fn rows_to_create(&self) -> std::option::Option<&[crate::model::CreateRowData]> {
         self.rows_to_create.as_deref()
     }
-    /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> 
+    /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchCreateTableRowsInput  {
+impl std::fmt::Debug for BatchCreateTableRowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateTableRowsInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -2930,4 +4089,3 @@ impl  std::fmt::Debug for BatchCreateTableRowsInput  {
         formatter.finish()
     }
 }
-

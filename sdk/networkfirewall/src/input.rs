@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
 pub mod associate_firewall_policy_input {
-    
+
     /// A builder for [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -13,40 +13,46 @@ pub mod associate_firewall_policy_input {
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,88 +60,135 @@ pub mod associate_firewall_policy_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-        pub fn set_firewall_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_arn = input; self
+        pub fn set_firewall_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
-        pub fn build(self) -> Result<crate::input::AssociateFirewallPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AssociateFirewallPolicyInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    firewall_policy_arn: self.firewall_policy_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::AssociateFirewallPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateFirewallPolicyInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                firewall_policy_arn: self.firewall_policy_arn,
+            })
         }
     }
-    
-    
 }
 impl AssociateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFirewallPolicy`](crate::operation::AssociateFirewallPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociateFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateFirewallPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AssociateFirewallPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AssociateFirewallPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AssociateFirewallPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateFirewallPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.AssociateFirewallPolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.AssociateFirewallPolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_firewall_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_firewall_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociateFirewallPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociateFirewallPolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateFirewallPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateFirewallPolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -147,9 +200,9 @@ impl AssociateFirewallPolicyInput {
 
 /// See [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
 pub mod associate_subnets_input {
-    
+
     /// A builder for [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -157,40 +210,46 @@ pub mod associate_subnets_input {
         pub(crate) subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// Appends an item to `subnet_mappings`.
         ///
@@ -199,93 +258,136 @@ pub mod associate_subnets_input {
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
         pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-                            v.push(input);
-                            self.subnet_mappings = Some(v);
-                            self
+            v.push(input);
+            self.subnet_mappings = Some(v);
+            self
         }
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-        pub fn set_subnet_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>) -> Self {
-            self.subnet_mappings = input; self
+        pub fn set_subnet_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
+        ) -> Self {
+            self.subnet_mappings = input;
+            self
         }
         /// Consumes the builder and constructs a [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
-        pub fn build(self) -> Result<crate::input::AssociateSubnetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AssociateSubnetsInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    subnet_mappings: self.subnet_mappings
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AssociateSubnetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AssociateSubnetsInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                subnet_mappings: self.subnet_mappings,
+            })
         }
     }
-    
-    
 }
 impl AssociateSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSubnets`](crate::operation::AssociateSubnets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AssociateSubnets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateSubnets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AssociateSubnetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AssociateSubnetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AssociateSubnetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AssociateSubnetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.AssociateSubnets"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.AssociateSubnets",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AssociateSubnets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AssociateSubnets", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateSubnets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateSubnets",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -297,9 +399,9 @@ impl AssociateSubnetsInput {
 
 /// See [`CreateFirewallInput`](crate::input::CreateFirewallInput).
 pub mod create_firewall_input {
-    
+
     /// A builder for [`CreateFirewallInput`](crate::input::CreateFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -310,7 +412,8 @@ pub mod create_firewall_input {
         pub(crate) firewall_policy_change_protection: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -319,8 +422,12 @@ pub mod create_firewall_input {
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -328,19 +435,24 @@ pub mod create_firewall_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
-        pub fn set_firewall_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_arn = input; self
+        pub fn set_firewall_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_arn = input;
+            self
         }
-        /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p> 
+        /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
         /// <p>You can't change this setting after you create the firewall. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p> 
+        /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
         /// <p>You can't change this setting after you create the firewall. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input; self
+            self.vpc_id = input;
+            self
         }
         /// Appends an item to `subnet_mappings`.
         ///
@@ -349,13 +461,17 @@ pub mod create_firewall_input {
         /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
         pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-                            v.push(input);
-                            self.subnet_mappings = Some(v);
-                            self
+            v.push(input);
+            self.subnet_mappings = Some(v);
+            self
         }
         /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
-        pub fn set_subnet_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>) -> Self {
-            self.subnet_mappings = input; self
+        pub fn set_subnet_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
+        ) -> Self {
+            self.subnet_mappings = input;
+            self
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn delete_protection(mut self, input: bool) -> Self {
@@ -364,7 +480,8 @@ pub mod create_firewall_input {
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_protection = input; self
+            self.delete_protection = input;
+            self
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn subnet_change_protection(mut self, input: bool) -> Self {
@@ -373,7 +490,8 @@ pub mod create_firewall_input {
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.subnet_change_protection = input; self
+            self.subnet_change_protection = input;
+            self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
@@ -381,8 +499,12 @@ pub mod create_firewall_input {
             self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn set_firewall_policy_change_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.firewall_policy_change_protection = input; self
+        pub fn set_firewall_policy_change_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.firewall_policy_change_protection = input;
+            self
         }
         /// <p>A description of the firewall.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -391,7 +513,8 @@ pub mod create_firewall_input {
         }
         /// <p>A description of the firewall.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -400,117 +523,160 @@ pub mod create_firewall_input {
         /// <p>The key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateFirewallInput`](crate::input::CreateFirewallInput).
-        pub fn build(self) -> Result<crate::input::CreateFirewallInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateFirewallInput {
-                    firewall_name: self.firewall_name
-                    ,
-                    firewall_policy_arn: self.firewall_policy_arn
-                    ,
-                    vpc_id: self.vpc_id
-                    ,
-                    subnet_mappings: self.subnet_mappings
-                    ,
-                    delete_protection: self.delete_protection
-                        .unwrap_or_default()
-                    ,
-                    subnet_change_protection: self.subnet_change_protection
-                        .unwrap_or_default()
-                    ,
-                    firewall_policy_change_protection: self.firewall_policy_change_protection
-                        .unwrap_or_default()
-                    ,
-                    description: self.description
-                    ,
-                    tags: self.tags
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateFirewallInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateFirewallInput {
+                firewall_name: self.firewall_name,
+                firewall_policy_arn: self.firewall_policy_arn,
+                vpc_id: self.vpc_id,
+                subnet_mappings: self.subnet_mappings,
+                delete_protection: self.delete_protection.unwrap_or_default(),
+                subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
+                firewall_policy_change_protection: self
+                    .firewall_policy_change_protection
+                    .unwrap_or_default(),
+                description: self.description,
+                tags: self.tags,
+                encryption_configuration: self.encryption_configuration,
+            })
         }
     }
-    
-    
 }
 impl CreateFirewallInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewall`](crate::operation::CreateFirewall)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateFirewall, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFirewall,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateFirewallInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateFirewallInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateFirewallInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFirewallInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.CreateFirewall"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.CreateFirewall",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateFirewall::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateFirewall", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFirewall::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFirewall",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -522,16 +688,17 @@ impl CreateFirewallInput {
 
 /// See [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
 pub mod create_firewall_policy_input {
-    
+
     /// A builder for [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) dry_run: std::option::Option<bool>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -540,8 +707,12 @@ pub mod create_firewall_policy_input {
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-        pub fn set_firewall_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_name = input; self
+        pub fn set_firewall_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_name = input;
+            self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
         pub fn firewall_policy(mut self, input: crate::model::FirewallPolicy) -> Self {
@@ -549,8 +720,12 @@ pub mod create_firewall_policy_input {
             self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-        pub fn set_firewall_policy(mut self, input: std::option::Option<crate::model::FirewallPolicy>) -> Self {
-            self.firewall_policy = input; self
+        pub fn set_firewall_policy(
+            mut self,
+            input: std::option::Option<crate::model::FirewallPolicy>,
+        ) -> Self {
+            self.firewall_policy = input;
+            self
         }
         /// <p>A description of the firewall policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -559,7 +734,8 @@ pub mod create_firewall_policy_input {
         }
         /// <p>A description of the firewall policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -568,120 +744,170 @@ pub mod create_firewall_policy_input {
         /// <p>The key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input; self
+            self.dry_run = input;
+            self
         }
         /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
-        pub fn build(self) -> Result<crate::input::CreateFirewallPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateFirewallPolicyInput {
-                    firewall_policy_name: self.firewall_policy_name
-                    ,
-                    firewall_policy: self.firewall_policy
-                    ,
-                    description: self.description
-                    ,
-                    tags: self.tags
-                    ,
-                    dry_run: self.dry_run
-                        .unwrap_or_default()
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateFirewallPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateFirewallPolicyInput {
+                firewall_policy_name: self.firewall_policy_name,
+                firewall_policy: self.firewall_policy,
+                description: self.description,
+                tags: self.tags,
+                dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+            })
         }
     }
-    
-    
 }
 impl CreateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateFirewallPolicy`](crate::operation::CreateFirewallPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateFirewallPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateFirewallPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateFirewallPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateFirewallPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateFirewallPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.CreateFirewallPolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.CreateFirewallPolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_firewall_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateFirewallPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateFirewallPolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFirewallPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFirewallPolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -693,9 +919,9 @@ impl CreateFirewallPolicyInput {
 
 /// See [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
 pub mod create_rule_group_input {
-    
+
     /// A builder for [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -705,7 +931,8 @@ pub mod create_rule_group_input {
         pub(crate) capacity: std::option::Option<i32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) dry_run: std::option::Option<bool>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
         pub(crate) source_metadata: std::option::Option<crate::model::SourceMetadata>,
     }
     impl Builder {
@@ -715,36 +942,45 @@ pub mod create_rule_group_input {
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-        pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_name = input; self
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
         }
-        /// <p>An object that defines the rule group rules. </p> <note> 
-        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+        /// <p>An object that defines the rule group rules. </p> <note>
+        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
             self.rule_group = Some(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p> <note> 
-        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+        /// <p>An object that defines the rule group rules. </p> <note>
+        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
-            self.rule_group = input; self
+        pub fn set_rule_group(
+            mut self,
+            input: std::option::Option<crate::model::RuleGroup>,
+        ) -> Self {
+            self.rule_group = input;
+            self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-        /// </note> 
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+        /// </note>
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.rules = Some(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-        /// </note> 
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+        /// </note>
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rules = input; self
+            self.rules = input;
+            self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
@@ -753,7 +989,8 @@ pub mod create_rule_group_input {
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// <p>A description of the rule group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -762,44 +999,46 @@ pub mod create_rule_group_input {
         }
         /// <p>A description of the rule group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note> 
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p> 
-        /// </note> 
-        /// <p> <b>Capacity for a stateless rule group</b> </p> 
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p> 
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p> 
-        /// <ul> 
-        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li> 
-        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li> 
-        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li> 
-        /// </ul> 
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p> 
-        /// <p> <b>Capacity for a stateful rule group</b> </p> 
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
+        /// </note>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
+        /// <ul>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
+        /// </ul>
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
         /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
         pub fn capacity(mut self, input: i32) -> Self {
             self.capacity = Some(input);
             self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note> 
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p> 
-        /// </note> 
-        /// <p> <b>Capacity for a stateless rule group</b> </p> 
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p> 
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p> 
-        /// <ul> 
-        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li> 
-        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li> 
-        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li> 
-        /// </ul> 
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p> 
-        /// <p> <b>Capacity for a stateful rule group</b> </p> 
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
+        /// </note>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
+        /// <ul>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
+        /// </ul>
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
         /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.capacity = input; self
+            self.capacity = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -808,35 +1047,47 @@ pub mod create_rule_group_input {
         /// <p>The key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input; self
+            self.dry_run = input;
+            self
         }
         /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
         pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
@@ -844,101 +1095,137 @@ pub mod create_rule_group_input {
             self
         }
         /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-        pub fn set_source_metadata(mut self, input: std::option::Option<crate::model::SourceMetadata>) -> Self {
-            self.source_metadata = input; self
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
-        pub fn build(self) -> Result<crate::input::CreateRuleGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateRuleGroupInput {
-                    rule_group_name: self.rule_group_name
-                    ,
-                    rule_group: self.rule_group
-                    ,
-                    rules: self.rules
-                    ,
-                    r#type: self.r#type
-                    ,
-                    description: self.description
-                    ,
-                    capacity: self.capacity
-                    ,
-                    tags: self.tags
-                    ,
-                    dry_run: self.dry_run
-                        .unwrap_or_default()
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                    source_metadata: self.source_metadata
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateRuleGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateRuleGroupInput {
+                rule_group_name: self.rule_group_name,
+                rule_group: self.rule_group,
+                rules: self.rules,
+                r#type: self.r#type,
+                description: self.description,
+                capacity: self.capacity,
+                tags: self.tags,
+                dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+                source_metadata: self.source_metadata,
+            })
         }
     }
-    
-    
 }
 impl CreateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroup`](crate::operation::CreateRuleGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateRuleGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateRuleGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateRuleGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateRuleGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateRuleGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateRuleGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.CreateRuleGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.CreateRuleGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateRuleGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateRuleGroup", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRuleGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRuleGroup",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -950,111 +1237,157 @@ impl CreateRuleGroupInput {
 
 /// See [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
 pub mod delete_firewall_input {
-    
+
     /// A builder for [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
-        pub fn build(self) -> Result<crate::input::DeleteFirewallInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteFirewallInput {
-                    firewall_name: self.firewall_name
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteFirewallInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteFirewallInput {
+                firewall_name: self.firewall_name,
+                firewall_arn: self.firewall_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteFirewallInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewall`](crate::operation::DeleteFirewall)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteFirewall, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFirewall,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteFirewallInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteFirewallInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteFirewallInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFirewallInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DeleteFirewall"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DeleteFirewall",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteFirewall::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteFirewall", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFirewall::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFirewall",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1066,111 +1399,162 @@ impl DeleteFirewallInput {
 
 /// See [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
 pub mod delete_firewall_policy_input {
-    
+
     /// A builder for [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_name = input; self
+        pub fn set_firewall_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_arn = input; self
+        pub fn set_firewall_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteFirewallPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteFirewallPolicyInput {
-                    firewall_policy_name: self.firewall_policy_name
-                    ,
-                    firewall_policy_arn: self.firewall_policy_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteFirewallPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteFirewallPolicyInput {
+                firewall_policy_name: self.firewall_policy_name,
+                firewall_policy_arn: self.firewall_policy_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFirewallPolicy`](crate::operation::DeleteFirewallPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteFirewallPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteFirewallPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteFirewallPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteFirewallPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteFirewallPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DeleteFirewallPolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DeleteFirewallPolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteFirewallPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteFirewallPolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFirewallPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFirewallPolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1182,9 +1566,9 @@ impl DeleteFirewallPolicyInput {
 
 /// See [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
 pub mod delete_resource_policy_input {
-    
+
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1196,81 +1580,126 @@ pub mod delete_resource_policy_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteResourcePolicyInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteResourcePolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteResourcePolicyInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteResourcePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteResourcePolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteResourcePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DeleteResourcePolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DeleteResourcePolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteResourcePolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteResourcePolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteResourcePolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1282,127 +1711,176 @@ impl DeleteResourcePolicyInput {
 
 /// See [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
 pub mod delete_rule_group_input {
-    
+
     /// A builder for [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
     }
     impl Builder {
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_name = input; self
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_arn = input; self
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_arn = input;
+            self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
-        pub fn build(self) -> Result<crate::input::DeleteRuleGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteRuleGroupInput {
-                    rule_group_name: self.rule_group_name
-                    ,
-                    rule_group_arn: self.rule_group_arn
-                    ,
-                    r#type: self.r#type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteRuleGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteRuleGroupInput {
+                rule_group_name: self.rule_group_name,
+                rule_group_arn: self.rule_group_arn,
+                r#type: self.r#type,
+            })
         }
     }
-    
-    
 }
 impl DeleteRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroup`](crate::operation::DeleteRuleGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteRuleGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteRuleGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteRuleGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteRuleGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteRuleGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteRuleGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DeleteRuleGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DeleteRuleGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteRuleGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteRuleGroup", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRuleGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRuleGroup",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1414,111 +1892,157 @@ impl DeleteRuleGroupInput {
 
 /// See [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
 pub mod describe_firewall_input {
-    
+
     /// A builder for [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
-        pub fn build(self) -> Result<crate::input::DescribeFirewallInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFirewallInput {
-                    firewall_name: self.firewall_name
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFirewallInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFirewallInput {
+                firewall_name: self.firewall_name,
+                firewall_arn: self.firewall_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeFirewallInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFirewall`](crate::operation::DescribeFirewall)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFirewall, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFirewall,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFirewallInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFirewallInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFirewallInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFirewallInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeFirewall"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeFirewall",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFirewall::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFirewall", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFirewall::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFirewall",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1530,111 +2054,162 @@ impl DescribeFirewallInput {
 
 /// See [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
 pub mod describe_firewall_policy_input {
-    
+
     /// A builder for [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_name = input; self
+        pub fn set_firewall_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_arn = input; self
+        pub fn set_firewall_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
-        pub fn build(self) -> Result<crate::input::DescribeFirewallPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeFirewallPolicyInput {
-                    firewall_policy_name: self.firewall_policy_name
-                    ,
-                    firewall_policy_arn: self.firewall_policy_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeFirewallPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeFirewallPolicyInput {
+                firewall_policy_name: self.firewall_policy_name,
+                firewall_policy_arn: self.firewall_policy_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFirewallPolicy`](crate::operation::DescribeFirewallPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeFirewallPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeFirewallPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeFirewallPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeFirewallPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeFirewallPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeFirewallPolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeFirewallPolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_firewall_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_firewall_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeFirewallPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeFirewallPolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFirewallPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFirewallPolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1646,74 +2221,99 @@ impl DescribeFirewallPolicyInput {
 
 /// See [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
 pub mod describe_logging_configuration_input {
-    
+
     /// A builder for [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
-        pub fn build(self) -> Result<crate::input::DescribeLoggingConfigurationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeLoggingConfigurationInput {
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeLoggingConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLoggingConfigurationInput {
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingConfiguration`](crate::operation::DescribeLoggingConfiguration)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLoggingConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeLoggingConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeLoggingConfigurationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeLoggingConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeLoggingConfiguration"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeLoggingConfiguration",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1721,36 +2321,58 @@ impl DescribeLoggingConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_logging_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeLoggingConfiguration::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeLoggingConfiguration", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoggingConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLoggingConfiguration",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1762,9 +2384,9 @@ impl DescribeLoggingConfigurationInput {
 
 /// See [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
 pub mod describe_resource_policy_input {
-    
+
     /// A builder for [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1776,81 +2398,126 @@ pub mod describe_resource_policy_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
-        pub fn build(self) -> Result<crate::input::DescribeResourcePolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeResourcePolicyInput {
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeResourcePolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeResourcePolicyInput {
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl DescribeResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeResourcePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeResourcePolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeResourcePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeResourcePolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeResourcePolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_resource_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeResourcePolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeResourcePolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeResourcePolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1862,127 +2529,176 @@ impl DescribeResourcePolicyInput {
 
 /// See [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
 pub mod describe_rule_group_input {
-    
+
     /// A builder for [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
     }
     impl Builder {
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_name = input; self
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_arn = input; self
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_arn = input;
+            self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
-        pub fn build(self) -> Result<crate::input::DescribeRuleGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRuleGroupInput {
-                    rule_group_name: self.rule_group_name
-                    ,
-                    rule_group_arn: self.rule_group_arn
-                    ,
-                    r#type: self.r#type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeRuleGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeRuleGroupInput {
+                rule_group_name: self.rule_group_name,
+                rule_group_arn: self.rule_group_arn,
+                r#type: self.r#type,
+            })
         }
     }
-    
-    
 }
 impl DescribeRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroup`](crate::operation::DescribeRuleGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRuleGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRuleGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRuleGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRuleGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRuleGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRuleGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeRuleGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeRuleGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRuleGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRuleGroup", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRuleGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRuleGroup",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1994,127 +2710,180 @@ impl DescribeRuleGroupInput {
 
 /// See [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
 pub mod describe_rule_group_metadata_input {
-    
+
     /// A builder for [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
     }
     impl Builder {
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_name = input; self
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_arn = input; self
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_arn = input;
+            self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
-        pub fn build(self) -> Result<crate::input::DescribeRuleGroupMetadataInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeRuleGroupMetadataInput {
-                    rule_group_name: self.rule_group_name
-                    ,
-                    rule_group_arn: self.rule_group_arn
-                    ,
-                    r#type: self.r#type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DescribeRuleGroupMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeRuleGroupMetadataInput {
+                rule_group_name: self.rule_group_name,
+                rule_group_arn: self.rule_group_arn,
+                r#type: self.r#type,
+            })
         }
     }
-    
-    
 }
 impl DescribeRuleGroupMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroupMetadata`](crate::operation::DescribeRuleGroupMetadata)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeRuleGroupMetadata, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeRuleGroupMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeRuleGroupMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeRuleGroupMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeRuleGroupMetadataInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeRuleGroupMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DescribeRuleGroupMetadata"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DescribeRuleGroupMetadata",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group_metadata(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group_metadata(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeRuleGroupMetadata::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeRuleGroupMetadata", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRuleGroupMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRuleGroupMetadata",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2126,9 +2895,9 @@ impl DescribeRuleGroupMetadataInput {
 
 /// See [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
 pub mod disassociate_subnets_input {
-    
+
     /// A builder for [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2136,40 +2905,46 @@ pub mod disassociate_subnets_input {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -2178,93 +2953,136 @@ pub mod disassociate_subnets_input {
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.subnet_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
         }
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.subnet_ids = input; self
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
         }
         /// Consumes the builder and constructs a [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
-        pub fn build(self) -> Result<crate::input::DisassociateSubnetsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DisassociateSubnetsInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    subnet_ids: self.subnet_ids
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DisassociateSubnetsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DisassociateSubnetsInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                subnet_ids: self.subnet_ids,
+            })
         }
     }
-    
-    
 }
 impl DisassociateSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSubnets`](crate::operation::DisassociateSubnets)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisassociateSubnets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateSubnets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DisassociateSubnetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DisassociateSubnetsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DisassociateSubnetsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DisassociateSubnetsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.DisassociateSubnets"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.DisassociateSubnets",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisassociateSubnets::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisassociateSubnets", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateSubnets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateSubnets",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2276,9 +3094,9 @@ impl DisassociateSubnetsInput {
 
 /// See [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
 pub mod list_firewall_policies_input {
-    
+
     /// A builder for [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2291,7 +3109,8 @@ pub mod list_firewall_policies_input {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2300,83 +3119,127 @@ pub mod list_firewall_policies_input {
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
-        pub fn build(self) -> Result<crate::input::ListFirewallPoliciesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFirewallPoliciesInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFirewallPoliciesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListFirewallPoliciesInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListFirewallPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewallPolicies`](crate::operation::ListFirewallPolicies)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFirewallPolicies, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFirewallPolicies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFirewallPoliciesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFirewallPoliciesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFirewallPoliciesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFirewallPoliciesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.ListFirewallPolicies"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.ListFirewallPolicies",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_policies(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_policies(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFirewallPolicies::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFirewallPolicies", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallPolicies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFirewallPolicies",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2388,9 +3251,9 @@ impl ListFirewallPoliciesInput {
 
 /// See [`ListFirewallsInput`](crate::input::ListFirewallsInput).
 pub mod list_firewalls_input {
-    
+
     /// A builder for [`ListFirewallsInput`](crate::input::ListFirewallsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2404,7 +3267,8 @@ pub mod list_firewalls_input {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Appends an item to `vpc_ids`.
         ///
@@ -2413,13 +3277,17 @@ pub mod list_firewalls_input {
         /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
         pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.vpc_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.vpc_ids = Some(v);
+            self
         }
         /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-        pub fn set_vpc_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.vpc_ids = input; self
+        pub fn set_vpc_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.vpc_ids = input;
+            self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2428,85 +3296,126 @@ pub mod list_firewalls_input {
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::input::ListFirewallsInput).
-        pub fn build(self) -> Result<crate::input::ListFirewallsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListFirewallsInput {
-                    next_token: self.next_token
-                    ,
-                    vpc_ids: self.vpc_ids
-                    ,
-                    max_results: self.max_results
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListFirewallsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListFirewallsInput {
+                next_token: self.next_token,
+                vpc_ids: self.vpc_ids,
+                max_results: self.max_results,
+            })
         }
     }
-    
-    
 }
 impl ListFirewallsInput {
     /// Consumes the builder and constructs an Operation<[`ListFirewalls`](crate::operation::ListFirewalls)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFirewalls, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListFirewalls,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListFirewallsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListFirewallsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListFirewallsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListFirewallsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.ListFirewalls"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.ListFirewalls",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFirewalls::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFirewalls", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewalls::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFirewalls",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2518,9 +3427,9 @@ impl ListFirewallsInput {
 
 /// See [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
 pub mod list_rule_groups_input {
-    
+
     /// A builder for [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2536,7 +3445,8 @@ pub mod list_rule_groups_input {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2545,7 +3455,8 @@ pub mod list_rule_groups_input {
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
         pub fn scope(mut self, input: crate::model::ResourceManagedStatus) -> Self {
@@ -2553,8 +3464,12 @@ pub mod list_rule_groups_input {
             self
         }
         /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-        pub fn set_scope(mut self, input: std::option::Option<crate::model::ResourceManagedStatus>) -> Self {
-            self.scope = input; self
+        pub fn set_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceManagedStatus>,
+        ) -> Self {
+            self.scope = input;
+            self
         }
         /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
         pub fn managed_type(mut self, input: crate::model::ResourceManagedType) -> Self {
@@ -2562,8 +3477,12 @@ pub mod list_rule_groups_input {
             self
         }
         /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-        pub fn set_managed_type(mut self, input: std::option::Option<crate::model::ResourceManagedType>) -> Self {
-            self.managed_type = input; self
+        pub fn set_managed_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceManagedType>,
+        ) -> Self {
+            self.managed_type = input;
+            self
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
@@ -2572,89 +3491,128 @@ pub mod list_rule_groups_input {
         }
         /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
-        pub fn build(self) -> Result<crate::input::ListRuleGroupsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListRuleGroupsInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    scope: self.scope
-                    ,
-                    managed_type: self.managed_type
-                    ,
-                    r#type: self.r#type
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListRuleGroupsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListRuleGroupsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                scope: self.scope,
+                managed_type: self.managed_type,
+                r#type: self.r#type,
+            })
         }
     }
-    
-    
 }
 impl ListRuleGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroups`](crate::operation::ListRuleGroups)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRuleGroups, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRuleGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListRuleGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListRuleGroupsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListRuleGroupsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListRuleGroupsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.ListRuleGroups"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.ListRuleGroups",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRuleGroups::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRuleGroups", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRuleGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRuleGroups",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2666,9 +3624,9 @@ impl ListRuleGroupsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-    
+
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2682,7 +3640,8 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2691,7 +3650,8 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2700,85 +3660,128 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    next_token: self.next_token
-                    ,
-                    max_results: self.max_results
-                    ,
-                    resource_arn: self.resource_arn
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+                resource_arn: self.resource_arn,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.ListTagsForResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.ListTagsForResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2790,9 +3793,9 @@ impl ListTagsForResourceInput {
 
 /// See [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
 pub mod put_resource_policy_input {
-    
+
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2805,120 +3808,163 @@ pub mod put_resource_policy_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
-        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p> 
-        /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p> 
-        /// <ul> 
-        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:ListRuleGroups</p> </li> 
-        /// </ul> 
-        /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p> 
-        /// <ul> 
-        /// <li> <p>network-firewall:CreateFirewall</p> </li> 
-        /// <li> <p>network-firewall:UpdateFirewall</p> </li> 
-        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li> 
-        /// </ul> 
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+        /// <ul>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
+        /// </ul>
+        /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+        /// <ul>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
+        /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p> 
-        /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p> 
-        /// <ul> 
-        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:ListRuleGroups</p> </li> 
-        /// </ul> 
-        /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p> 
-        /// <ul> 
-        /// <li> <p>network-firewall:CreateFirewall</p> </li> 
-        /// <li> <p>network-firewall:UpdateFirewall</p> </li> 
-        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li> 
-        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li> 
-        /// </ul> 
+        /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+        /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+        /// <ul>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
+        /// </ul>
+        /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+        /// <ul>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
+        /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input; self
+            self.policy = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-        pub fn build(self) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutResourcePolicyInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    policy: self.policy
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutResourcePolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutResourcePolicyInput {
+                resource_arn: self.resource_arn,
+                policy: self.policy,
+            })
         }
     }
-    
-    
 }
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutResourcePolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutResourcePolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutResourcePolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutResourcePolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.PutResourcePolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.PutResourcePolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutResourcePolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutResourcePolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutResourcePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutResourcePolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2930,9 +3976,9 @@ impl PutResourcePolicyInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-    
+
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2945,7 +3991,8 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -2954,89 +4001,134 @@ pub mod tag_resource_input {
         /// <p></p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p></p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::TagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::TagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.TagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.TagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3048,9 +4140,9 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-    
+
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3063,7 +4155,8 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input; self
+            self.resource_arn = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -3072,89 +4165,134 @@ pub mod untag_resource_input {
         /// <p></p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p></p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UntagResourceInput {
-                    resource_arn: self.resource_arn
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UntagResourceInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UntagResource"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UntagResource",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3166,9 +4304,9 @@ impl UntagResourceInput {
 
 /// See [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
 pub mod update_firewall_delete_protection_input {
-    
+
     /// A builder for [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -3176,40 +4314,46 @@ pub mod update_firewall_delete_protection_input {
         pub(crate) delete_protection: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn delete_protection(mut self, input: bool) -> Self {
@@ -3218,51 +4362,69 @@ pub mod update_firewall_delete_protection_input {
         }
         /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_protection = input; self
+            self.delete_protection = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
-        pub fn build(self) -> Result<crate::input::UpdateFirewallDeleteProtectionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFirewallDeleteProtectionInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    delete_protection: self.delete_protection
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateFirewallDeleteProtectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFirewallDeleteProtectionInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                delete_protection: self.delete_protection.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UpdateFirewallDeleteProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallDeleteProtection`](crate::operation::UpdateFirewallDeleteProtection)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFirewallDeleteProtection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallDeleteProtection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFirewallDeleteProtectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallDeleteProtectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFirewallDeleteProtectionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallDeleteProtectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateFirewallDeleteProtection"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallDeleteProtection",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3270,36 +4432,58 @@ impl UpdateFirewallDeleteProtectionInput {
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_delete_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFirewallDeleteProtection::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFirewallDeleteProtection", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallDeleteProtection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallDeleteProtection",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3311,9 +4495,9 @@ impl UpdateFirewallDeleteProtectionInput {
 
 /// See [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
 pub mod update_firewall_description_input {
-    
+
     /// A builder for [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -3321,40 +4505,46 @@ pub mod update_firewall_description_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3363,87 +4553,131 @@ pub mod update_firewall_description_input {
         }
         /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
-        pub fn build(self) -> Result<crate::input::UpdateFirewallDescriptionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFirewallDescriptionInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    description: self.description
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateFirewallDescriptionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFirewallDescriptionInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                description: self.description,
+            })
         }
     }
-    
-    
 }
 impl UpdateFirewallDescriptionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallDescription`](crate::operation::UpdateFirewallDescription)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFirewallDescription, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallDescription,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFirewallDescriptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallDescriptionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFirewallDescriptionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallDescriptionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateFirewallDescription"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallDescription",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_description(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_description(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFirewallDescription::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFirewallDescription", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallDescription::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallDescription",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3455,28 +4689,30 @@ impl UpdateFirewallDescriptionInput {
 
 /// See [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
 pub mod update_firewall_encryption_configuration_input {
-    
+
     /// A builder for [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3485,7 +4721,8 @@ pub mod update_firewall_encryption_configuration_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3493,60 +4730,89 @@ pub mod update_firewall_encryption_configuration_input {
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
-        pub fn build(self) -> Result<crate::input::UpdateFirewallEncryptionConfigurationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFirewallEncryptionConfigurationInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateFirewallEncryptionConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFirewallEncryptionConfigurationInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                encryption_configuration: self.encryption_configuration,
+            })
         }
     }
-    
-    
 }
 impl UpdateFirewallEncryptionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallEncryptionConfiguration`](crate::operation::UpdateFirewallEncryptionConfiguration)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFirewallEncryptionConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallEncryptionConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFirewallEncryptionConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallEncryptionConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3554,36 +4820,58 @@ impl UpdateFirewallEncryptionConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_encryption_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFirewallEncryptionConfiguration::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFirewallEncryptionConfiguration", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallEncryptionConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallEncryptionConfiguration",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3595,9 +4883,9 @@ impl UpdateFirewallEncryptionConfigurationInput {
 
 /// See [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
 pub mod update_firewall_policy_input {
-    
+
     /// A builder for [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -3605,41 +4893,51 @@ pub mod update_firewall_policy_input {
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
+        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
         /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
+        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
         /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_arn = input; self
+        pub fn set_firewall_policy_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_policy_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_policy_name = input; self
+        pub fn set_firewall_policy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_policy_name = input;
+            self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
         pub fn firewall_policy(mut self, input: crate::model::FirewallPolicy) -> Self {
@@ -3647,8 +4945,12 @@ pub mod update_firewall_policy_input {
             self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
-        pub fn set_firewall_policy(mut self, input: std::option::Option<crate::model::FirewallPolicy>) -> Self {
-            self.firewall_policy = input; self
+        pub fn set_firewall_policy(
+            mut self,
+            input: std::option::Option<crate::model::FirewallPolicy>,
+        ) -> Self {
+            self.firewall_policy = input;
+            self
         }
         /// <p>A description of the firewall policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3657,116 +4959,162 @@ pub mod update_firewall_policy_input {
         }
         /// <p>A description of the firewall policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input; self
+            self.dry_run = input;
+            self
         }
         /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
-        pub fn build(self) -> Result<crate::input::UpdateFirewallPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFirewallPolicyInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_policy_arn: self.firewall_policy_arn
-                    ,
-                    firewall_policy_name: self.firewall_policy_name
-                    ,
-                    firewall_policy: self.firewall_policy
-                    ,
-                    description: self.description
-                    ,
-                    dry_run: self.dry_run
-                        .unwrap_or_default()
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateFirewallPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateFirewallPolicyInput {
+                update_token: self.update_token,
+                firewall_policy_arn: self.firewall_policy_arn,
+                firewall_policy_name: self.firewall_policy_name,
+                firewall_policy: self.firewall_policy,
+                description: self.description,
+                dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+            })
         }
     }
-    
-    
 }
 impl UpdateFirewallPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallPolicy`](crate::operation::UpdateFirewallPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFirewallPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFirewallPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateFirewallPolicy"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallPolicy",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFirewallPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFirewallPolicy", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallPolicy",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3778,9 +5126,9 @@ impl UpdateFirewallPolicyInput {
 
 /// See [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
 pub mod update_firewall_policy_change_protection_input {
-    
+
     /// A builder for [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -3788,40 +5136,46 @@ pub mod update_firewall_policy_change_protection_input {
         pub(crate) firewall_policy_change_protection: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
@@ -3829,52 +5183,75 @@ pub mod update_firewall_policy_change_protection_input {
             self
         }
         /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn set_firewall_policy_change_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.firewall_policy_change_protection = input; self
+        pub fn set_firewall_policy_change_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.firewall_policy_change_protection = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
-        pub fn build(self) -> Result<crate::input::UpdateFirewallPolicyChangeProtectionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateFirewallPolicyChangeProtectionInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    firewall_policy_change_protection: self.firewall_policy_change_protection
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateFirewallPolicyChangeProtectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateFirewallPolicyChangeProtectionInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                firewall_policy_change_protection: self
+                    .firewall_policy_change_protection
+                    .unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UpdateFirewallPolicyChangeProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFirewallPolicyChangeProtection`](crate::operation::UpdateFirewallPolicyChangeProtection)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateFirewallPolicyChangeProtection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateFirewallPolicyChangeProtection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateFirewallPolicyChangeProtectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateFirewallPolicyChangeProtectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateFirewallPolicyChangeProtectionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateFirewallPolicyChangeProtectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateFirewallPolicyChangeProtection"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateFirewallPolicyChangeProtection",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3882,36 +5259,58 @@ impl UpdateFirewallPolicyChangeProtectionInput {
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy_change_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateFirewallPolicyChangeProtection::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateFirewallPolicyChangeProtection", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallPolicyChangeProtection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFirewallPolicyChangeProtection",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3923,36 +5322,41 @@ impl UpdateFirewallPolicyChangeProtectionInput {
 
 /// See [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
 pub mod update_logging_configuration_input {
-    
+
     /// A builder for [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
@@ -3960,86 +5364,134 @@ pub mod update_logging_configuration_input {
             self
         }
         /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
-        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
-            self.logging_configuration = input; self
+        pub fn set_logging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfiguration>,
+        ) -> Self {
+            self.logging_configuration = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
-        pub fn build(self) -> Result<crate::input::UpdateLoggingConfigurationInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateLoggingConfigurationInput {
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    logging_configuration: self.logging_configuration
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateLoggingConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateLoggingConfigurationInput {
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                logging_configuration: self.logging_configuration,
+            })
         }
     }
-    
-    
 }
 impl UpdateLoggingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLoggingConfiguration`](crate::operation::UpdateLoggingConfiguration)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateLoggingConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateLoggingConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateLoggingConfigurationInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateLoggingConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateLoggingConfiguration"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateLoggingConfiguration",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_logging_configuration(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_logging_configuration(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLoggingConfiguration::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLoggingConfiguration", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLoggingConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLoggingConfiguration",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4051,9 +5503,9 @@ impl UpdateLoggingConfigurationInput {
 
 /// See [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
 pub mod update_rule_group_input {
-    
+
     /// A builder for [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -4063,83 +5515,99 @@ pub mod update_rule_group_input {
         pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) dry_run: std::option::Option<bool>,
-        pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        pub(crate) encryption_configuration:
+            std::option::Option<crate::model::EncryptionConfiguration>,
         pub(crate) source_metadata: std::option::Option<crate::model::SourceMetadata>,
     }
     impl Builder {
-        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
+        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
         /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
+        /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
         /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_arn = input; self
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_arn = input;
+            self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_group_name = input; self
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
         }
-        /// <p>An object that defines the rule group rules. </p> <note> 
-        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+        /// <p>An object that defines the rule group rules. </p> <note>
+        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
             self.rule_group = Some(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p> <note> 
-        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+        /// <p>An object that defines the rule group rules. </p> <note>
+        /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
-            self.rule_group = input; self
+        pub fn set_rule_group(
+            mut self,
+            input: std::option::Option<crate::model::RuleGroup>,
+        ) -> Self {
+            self.rule_group = input;
+            self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-        /// </note> 
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+        /// </note>
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
             self.rules = Some(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-        /// </note> 
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+        /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+        /// </note>
         /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rules = input; self
+            self.rules = input;
+            self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
-            self.r#type = input; self
+            self.r#type = input;
+            self
         }
         /// <p>A description of the rule group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4148,29 +5616,38 @@ pub mod update_rule_group_input {
         }
         /// <p>A description of the rule group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+        /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input; self
+            self.dry_run = input;
+            self
         }
         /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-        pub fn encryption_configuration(mut self, input: crate::model::EncryptionConfiguration) -> Self {
+        pub fn encryption_configuration(
+            mut self,
+            input: crate::model::EncryptionConfiguration,
+        ) -> Self {
             self.encryption_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-        pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
-            self.encryption_configuration = input; self
+        pub fn set_encryption_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
+        ) -> Self {
+            self.encryption_configuration = input;
+            self
         }
         /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
         pub fn source_metadata(mut self, input: crate::model::SourceMetadata) -> Self {
@@ -4178,101 +5655,137 @@ pub mod update_rule_group_input {
             self
         }
         /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-        pub fn set_source_metadata(mut self, input: std::option::Option<crate::model::SourceMetadata>) -> Self {
-            self.source_metadata = input; self
+        pub fn set_source_metadata(
+            mut self,
+            input: std::option::Option<crate::model::SourceMetadata>,
+        ) -> Self {
+            self.source_metadata = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
-        pub fn build(self) -> Result<crate::input::UpdateRuleGroupInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateRuleGroupInput {
-                    update_token: self.update_token
-                    ,
-                    rule_group_arn: self.rule_group_arn
-                    ,
-                    rule_group_name: self.rule_group_name
-                    ,
-                    rule_group: self.rule_group
-                    ,
-                    rules: self.rules
-                    ,
-                    r#type: self.r#type
-                    ,
-                    description: self.description
-                    ,
-                    dry_run: self.dry_run
-                        .unwrap_or_default()
-                    ,
-                    encryption_configuration: self.encryption_configuration
-                    ,
-                    source_metadata: self.source_metadata
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateRuleGroupInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateRuleGroupInput {
+                update_token: self.update_token,
+                rule_group_arn: self.rule_group_arn,
+                rule_group_name: self.rule_group_name,
+                rule_group: self.rule_group,
+                rules: self.rules,
+                r#type: self.r#type,
+                description: self.description,
+                dry_run: self.dry_run.unwrap_or_default(),
+                encryption_configuration: self.encryption_configuration,
+                source_metadata: self.source_metadata,
+            })
         }
     }
-    
-    
 }
 impl UpdateRuleGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleGroup`](crate::operation::UpdateRuleGroup)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRuleGroup, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRuleGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateRuleGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateRuleGroupInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateRuleGroupInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRuleGroupInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateRuleGroup"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateRuleGroup",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRuleGroup::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRuleGroup", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRuleGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRuleGroup",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4284,9 +5797,9 @@ impl UpdateRuleGroupInput {
 
 /// See [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
 pub mod update_subnet_change_protection_input {
-    
+
     /// A builder for [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4294,40 +5807,46 @@ pub mod update_subnet_change_protection_input {
         pub(crate) subnet_change_protection: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_token = Some(input.into());
             self
         }
-        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+        /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+        /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.update_token = input; self
+            self.update_token = input;
+            self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_arn = input; self
+            self.firewall_arn = input;
+            self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
         pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_name = Some(input.into());
             self
         }
-        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firewall_name = input; self
+        pub fn set_firewall_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.firewall_name = input;
+            self
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn subnet_change_protection(mut self, input: bool) -> Self {
@@ -4336,51 +5855,69 @@ pub mod update_subnet_change_protection_input {
         }
         /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
-            self.subnet_change_protection = input; self
+            self.subnet_change_protection = input;
+            self
         }
         /// Consumes the builder and constructs a [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
-        pub fn build(self) -> Result<crate::input::UpdateSubnetChangeProtectionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UpdateSubnetChangeProtectionInput {
-                    update_token: self.update_token
-                    ,
-                    firewall_arn: self.firewall_arn
-                    ,
-                    firewall_name: self.firewall_name
-                    ,
-                    subnet_change_protection: self.subnet_change_protection
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateSubnetChangeProtectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSubnetChangeProtectionInput {
+                update_token: self.update_token,
+                firewall_arn: self.firewall_arn,
+                firewall_name: self.firewall_name,
+                subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UpdateSubnetChangeProtectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubnetChangeProtection`](crate::operation::UpdateSubnetChangeProtection)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateSubnetChangeProtection, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSubnetChangeProtection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::UpdateSubnetChangeProtectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UpdateSubnetChangeProtectionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UpdateSubnetChangeProtectionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateSubnetChangeProtectionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "NetworkFirewall_20201112.UpdateSubnetChangeProtection"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.0",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "NetworkFirewall_20201112.UpdateSubnetChangeProtection",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4388,36 +5925,58 @@ impl UpdateSubnetChangeProtectionInput {
             crate::operation_ser::serialize_operation_crate_operation_update_subnet_change_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateSubnetChangeProtection::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSubnetChangeProtection", "networkfirewall"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSubnetChangeProtection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSubnetChangeProtection",
+            "networkfirewall",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4428,36 +5987,41 @@ impl UpdateSubnetChangeProtectionInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateSubnetChangeProtectionInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSubnetChangeProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub subnet_change_protection: bool,
+    #[doc(hidden)]
+    pub subnet_change_protection: bool,
 }
 impl UpdateSubnetChangeProtectionInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
@@ -4465,7 +6029,7 @@ impl UpdateSubnetChangeProtectionInput {
         self.subnet_change_protection
     }
 }
-impl  std::fmt::Debug for UpdateSubnetChangeProtectionInput  {
+impl std::fmt::Debug for UpdateSubnetChangeProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubnetChangeProtectionInput");
         formatter.field("update_token", &self.update_token);
@@ -4477,96 +6041,109 @@ impl  std::fmt::Debug for UpdateSubnetChangeProtectionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateRuleGroupInput  {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRuleGroupInput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    #[doc(hidden)]
+    pub rule_group_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the rule group rules. </p> <note> 
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+    #[doc(hidden)]
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>An object that defines the rule group rules. </p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
-    #[doc(hidden)]pub rule_group: std::option::Option<crate::model::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-    /// </note> 
+    #[doc(hidden)]
+    pub rule_group: std::option::Option<crate::model::RuleGroup>,
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    #[doc(hidden)]pub rules: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    #[doc(hidden)]
+    pub rules: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
     /// <p>A description of the rule group. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]pub dry_run: bool,
+    #[doc(hidden)]
+    pub dry_run: bool,
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    #[doc(hidden)]pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
+    #[doc(hidden)]
+    pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
 }
 impl UpdateRuleGroupInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules. </p> <note> 
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+    /// <p>An object that defines the rule group rules. </p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
-    pub fn rule_group(&self) -> std::option::Option<& crate::model::RuleGroup> {
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-    /// </note> 
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    pub fn rules(&self) -> std::option::Option<& str> {
+    pub fn rules(&self) -> std::option::Option<&str> {
         self.rules.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the rule group. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    pub fn source_metadata(&self) -> std::option::Option<& crate::model::SourceMetadata> {
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::SourceMetadata> {
         self.source_metadata.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateRuleGroupInput  {
+impl std::fmt::Debug for UpdateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleGroupInput");
         formatter.field("update_token", &self.update_token);
@@ -4584,34 +6161,40 @@ impl  std::fmt::Debug for UpdateRuleGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateLoggingConfigurationInput  {
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
-    #[doc(hidden)]pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    #[doc(hidden)]
+    pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl UpdateLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
-    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateLoggingConfigurationInput  {
+impl std::fmt::Debug for UpdateLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoggingConfigurationInput");
         formatter.field("firewall_arn", &self.firewall_arn);
@@ -4622,36 +6205,41 @@ impl  std::fmt::Debug for UpdateLoggingConfigurationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFirewallPolicyChangeProtectionInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallPolicyChangeProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub firewall_policy_change_protection: bool,
+    #[doc(hidden)]
+    pub firewall_policy_change_protection: bool,
 }
 impl UpdateFirewallPolicyChangeProtectionInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
@@ -4659,76 +6247,89 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         self.firewall_policy_change_protection
     }
 }
-impl  std::fmt::Debug for UpdateFirewallPolicyChangeProtectionInput  {
+impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallPolicyChangeProtectionInput");
         formatter.field("update_token", &self.update_token);
         formatter.field("firewall_arn", &self.firewall_arn);
         formatter.field("firewall_name", &self.firewall_name);
-        formatter.field("firewall_policy_change_protection", &self.firewall_policy_change_protection);
+        formatter.field(
+            "firewall_policy_change_protection",
+            &self.firewall_policy_change_protection,
+        );
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFirewallPolicyInput  {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallPolicyInput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_policy_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_policy_name: std::option::Option<std::string::String>,
     /// <p>The updated firewall policy to use for the firewall. </p>
-    #[doc(hidden)]pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
+    #[doc(hidden)]
+    pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]pub dry_run: bool,
+    #[doc(hidden)]
+    pub dry_run: bool,
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInput {
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The updated firewall policy to use for the firewall. </p>
-    pub fn firewall_policy(&self) -> std::option::Option<& crate::model::FirewallPolicy> {
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::model::FirewallPolicy> {
         self.firewall_policy.as_ref()
     }
     /// <p>A description of the firewall policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateFirewallPolicyInput  {
+impl std::fmt::Debug for UpdateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallPolicyInput");
         formatter.field("update_token", &self.update_token);
@@ -4743,40 +6344,47 @@ impl  std::fmt::Debug for UpdateFirewallPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFirewallEncryptionConfigurationInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallEncryptionConfigurationInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl UpdateFirewallEncryptionConfigurationInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput  {
+impl std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallEncryptionConfigurationInput");
         formatter.field("update_token", &self.update_token);
@@ -4788,44 +6396,49 @@ impl  std::fmt::Debug for UpdateFirewallEncryptionConfigurationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFirewallDescriptionInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallDescriptionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
 }
 impl UpdateFirewallDescriptionInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateFirewallDescriptionInput  {
+impl std::fmt::Debug for UpdateFirewallDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallDescriptionInput");
         formatter.field("update_token", &self.update_token);
@@ -4837,36 +6450,41 @@ impl  std::fmt::Debug for UpdateFirewallDescriptionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UpdateFirewallDeleteProtectionInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFirewallDeleteProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub delete_protection: bool,
+    #[doc(hidden)]
+    pub delete_protection: bool,
 }
 impl UpdateFirewallDeleteProtectionInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
@@ -4874,7 +6492,7 @@ impl UpdateFirewallDeleteProtectionInput {
         self.delete_protection
     }
 }
-impl  std::fmt::Debug for UpdateFirewallDeleteProtectionInput  {
+impl std::fmt::Debug for UpdateFirewallDeleteProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallDeleteProtectionInput");
         formatter.field("update_token", &self.update_token);
@@ -4886,24 +6504,27 @@ impl  std::fmt::Debug for UpdateFirewallDeleteProtectionInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct UntagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for UntagResourceInput  {
+impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4913,24 +6534,27 @@ impl  std::fmt::Debug for UntagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct TagResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4940,52 +6564,55 @@ impl  std::fmt::Debug for TagResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PutResourcePolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p> 
-    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p> 
-    /// <ul> 
-    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:ListRuleGroups</p> </li> 
-    /// </ul> 
-    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p> 
-    /// <ul> 
-    /// <li> <p>network-firewall:CreateFirewall</p> </li> 
-    /// <li> <p>network-firewall:UpdateFirewall</p> </li> 
-    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li> 
-    /// </ul> 
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListRuleGroups</p> </li>
+    /// </ul>
+    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:CreateFirewall</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
+    /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-    #[doc(hidden)]pub policy: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p> 
-    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p> 
-    /// <ul> 
-    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:ListRuleGroups</p> </li> 
-    /// </ul> 
-    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p> 
-    /// <ul> 
-    /// <li> <p>network-firewall:CreateFirewall</p> </li> 
-    /// <li> <p>network-firewall:UpdateFirewall</p> </li> 
-    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li> 
-    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li> 
-    /// </ul> 
+    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListRuleGroups</p> </li>
+    /// </ul>
+    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:CreateFirewall</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
+    /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
-impl  std::fmt::Debug for PutResourcePolicyInput  {
+impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -4995,18 +6622,22 @@ impl  std::fmt::Debug for PutResourcePolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForResourceInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -5014,11 +6645,11 @@ impl ListTagsForResourceInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForResourceInput  {
+impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
         formatter.field("next_token", &self.next_token);
@@ -5029,22 +6660,28 @@ impl  std::fmt::Debug for ListTagsForResourceInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListRuleGroupsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    #[doc(hidden)]pub scope: std::option::Option<crate::model::ResourceManagedStatus>,
+    #[doc(hidden)]
+    pub scope: std::option::Option<crate::model::ResourceManagedStatus>,
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    #[doc(hidden)]pub managed_type: std::option::Option<crate::model::ResourceManagedType>,
+    #[doc(hidden)]
+    pub managed_type: std::option::Option<crate::model::ResourceManagedType>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
 impl ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -5052,19 +6689,19 @@ impl ListRuleGroupsInput {
         self.max_results
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    pub fn scope(&self) -> std::option::Option<& crate::model::ResourceManagedStatus> {
+    pub fn scope(&self) -> std::option::Option<&crate::model::ResourceManagedStatus> {
         self.scope.as_ref()
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    pub fn managed_type(&self) -> std::option::Option<& crate::model::ResourceManagedType> {
+    pub fn managed_type(&self) -> std::option::Option<&crate::model::ResourceManagedType> {
         self.managed_type.as_ref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
-impl  std::fmt::Debug for ListRuleGroupsInput  {
+impl std::fmt::Debug for ListRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRuleGroupsInput");
         formatter.field("next_token", &self.next_token);
@@ -5077,22 +6714,26 @@ impl  std::fmt::Debug for ListRuleGroupsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFirewallsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFirewallsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-    #[doc(hidden)]pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListFirewallsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-    pub fn vpc_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_ids.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -5100,7 +6741,7 @@ impl ListFirewallsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListFirewallsInput  {
+impl std::fmt::Debug for ListFirewallsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallsInput");
         formatter.field("next_token", &self.next_token);
@@ -5111,16 +6752,19 @@ impl  std::fmt::Debug for ListFirewallsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListFirewallPoliciesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFirewallPoliciesInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    #[doc(hidden)]pub max_results: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub max_results: std::option::Option<i32>,
 }
 impl ListFirewallPoliciesInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -5128,7 +6772,7 @@ impl ListFirewallPoliciesInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListFirewallPoliciesInput  {
+impl std::fmt::Debug for ListFirewallPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallPoliciesInput");
         formatter.field("next_token", &self.next_token);
@@ -5138,44 +6782,49 @@ impl  std::fmt::Debug for ListFirewallPoliciesInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DisassociateSubnetsInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateSubnetsInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-    #[doc(hidden)]pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateSubnetsInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
-impl  std::fmt::Debug for DisassociateSubnetsInput  {
+impl std::fmt::Debug for DisassociateSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateSubnetsInput");
         formatter.field("update_token", &self.update_token);
@@ -5187,38 +6836,42 @@ impl  std::fmt::Debug for DisassociateSubnetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRuleGroupMetadataInput  {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRuleGroupMetadataInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    #[doc(hidden)]
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    #[doc(hidden)]
+    pub rule_group_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
 impl DescribeRuleGroupMetadataInput {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
-impl  std::fmt::Debug for DescribeRuleGroupMetadataInput  {
+impl std::fmt::Debug for DescribeRuleGroupMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleGroupMetadataInput");
         formatter.field("rule_group_name", &self.rule_group_name);
@@ -5229,38 +6882,42 @@ impl  std::fmt::Debug for DescribeRuleGroupMetadataInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeRuleGroupInput  {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRuleGroupInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    #[doc(hidden)]
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    #[doc(hidden)]
+    pub rule_group_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
 impl DescribeRuleGroupInput {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
-impl  std::fmt::Debug for DescribeRuleGroupInput  {
+impl std::fmt::Debug for DescribeRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleGroupInput");
         formatter.field("rule_group_name", &self.rule_group_name);
@@ -5271,18 +6928,20 @@ impl  std::fmt::Debug for DescribeRuleGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeResourcePolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeResourcePolicyInput  {
+impl std::fmt::Debug for DescribeResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -5291,28 +6950,31 @@ impl  std::fmt::Debug for DescribeResourcePolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeLoggingConfigurationInput  {
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeLoggingConfigurationInput  {
+impl std::fmt::Debug for DescribeLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoggingConfigurationInput");
         formatter.field("firewall_arn", &self.firewall_arn);
@@ -5322,28 +6984,31 @@ impl  std::fmt::Debug for DescribeLoggingConfigurationInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFirewallPolicyInput  {
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFirewallPolicyInput {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    #[doc(hidden)]
+    pub firewall_policy_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_policy_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFirewallPolicyInput {
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFirewallPolicyInput  {
+impl std::fmt::Debug for DescribeFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFirewallPolicyInput");
         formatter.field("firewall_policy_name", &self.firewall_policy_name);
@@ -5353,28 +7018,31 @@ impl  std::fmt::Debug for DescribeFirewallPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeFirewallInput  {
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFirewallInput {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFirewallInput {
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeFirewallInput  {
+impl std::fmt::Debug for DescribeFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFirewallInput");
         formatter.field("firewall_name", &self.firewall_name);
@@ -5384,38 +7052,42 @@ impl  std::fmt::Debug for DescribeFirewallInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteRuleGroupInput  {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRuleGroupInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    #[doc(hidden)]
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    #[doc(hidden)]
+    pub rule_group_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
 impl DeleteRuleGroupInput {
-    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note> 
-    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p> 
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
-impl  std::fmt::Debug for DeleteRuleGroupInput  {
+impl std::fmt::Debug for DeleteRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRuleGroupInput");
         formatter.field("rule_group_name", &self.rule_group_name);
@@ -5426,18 +7098,20 @@ impl  std::fmt::Debug for DeleteRuleGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteResourcePolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
-    #[doc(hidden)]pub resource_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteResourcePolicyInput  {
+impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -5446,28 +7120,31 @@ impl  std::fmt::Debug for DeleteResourcePolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteFirewallPolicyInput  {
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFirewallPolicyInput {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    #[doc(hidden)]
+    pub firewall_policy_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_policy_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_policy_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallPolicyInput {
-    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p> 
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteFirewallPolicyInput  {
+impl std::fmt::Debug for DeleteFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallPolicyInput");
         formatter.field("firewall_policy_name", &self.firewall_policy_name);
@@ -5477,28 +7154,31 @@ impl  std::fmt::Debug for DeleteFirewallPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteFirewallInput  {
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFirewallInput {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallInput {
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteFirewallInput  {
+impl std::fmt::Debug for DeleteFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallInput");
         formatter.field("firewall_name", &self.firewall_name);
@@ -5508,114 +7188,127 @@ impl  std::fmt::Debug for DeleteFirewallInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateRuleGroupInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    #[doc(hidden)]pub rule_group_name: std::option::Option<std::string::String>,
-    /// <p>An object that defines the rule group rules. </p> <note> 
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+    #[doc(hidden)]
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>An object that defines the rule group rules. </p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
-    #[doc(hidden)]pub rule_group: std::option::Option<crate::model::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-    /// </note> 
+    #[doc(hidden)]
+    pub rule_group: std::option::Option<crate::model::RuleGroup>,
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    #[doc(hidden)]pub rules: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub rules: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
-    #[doc(hidden)]pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    #[doc(hidden)]
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
     /// <p>A description of the rule group. </p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note> 
-    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p> 
-    /// </note> 
-    /// <p> <b>Capacity for a stateless rule group</b> </p> 
-    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p> 
-    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p> 
-    /// <ul> 
-    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li> 
-    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li> 
-    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li> 
-    /// </ul> 
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p> 
-    /// <p> <b>Capacity for a stateful rule group</b> </p> 
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
+    /// </note>
+    /// <p> <b>Capacity for a stateless rule group</b> </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
+    /// <ul>
+    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
+    /// </ul>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p> <b>Capacity for a stateful rule group</b> </p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
-    #[doc(hidden)]pub capacity: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub capacity: std::option::Option<i32>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]pub dry_run: bool,
+    #[doc(hidden)]
+    pub dry_run: bool,
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    #[doc(hidden)]pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
+    #[doc(hidden)]
+    pub source_metadata: std::option::Option<crate::model::SourceMetadata>,
 }
 impl CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(&self) -> std::option::Option<& str> {
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules. </p> <note> 
-    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p> 
+    /// <p>An object that defines the rule group rules. </p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
-    pub fn rule_group(&self) -> std::option::Option<& crate::model::RuleGroup> {
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note> 
-    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p> 
-    /// </note> 
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    pub fn rules(&self) -> std::option::Option<& str> {
+    pub fn rules(&self) -> std::option::Option<&str> {
         self.rules.as_deref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
-    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the rule group. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p> 
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note> 
-    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p> 
-    /// </note> 
-    /// <p> <b>Capacity for a stateless rule group</b> </p> 
-    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p> 
-    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p> 
-    /// <ul> 
-    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li> 
-    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li> 
-    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li> 
-    /// </ul> 
-    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p> 
-    /// <p> <b>Capacity for a stateful rule group</b> </p> 
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
+    /// </note>
+    /// <p> <b>Capacity for a stateless rule group</b> </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
+    /// <ul>
+    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
+    /// </ul>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p> <b>Capacity for a stateful rule group</b> </p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
     pub fn capacity(&self) -> std::option::Option<i32> {
         self.capacity
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    pub fn source_metadata(&self) -> std::option::Option<& crate::model::SourceMetadata> {
+    pub fn source_metadata(&self) -> std::option::Option<&crate::model::SourceMetadata> {
         self.source_metadata.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateRuleGroupInput  {
+impl std::fmt::Debug for CreateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleGroupInput");
         formatter.field("rule_group_name", &self.rule_group_name);
@@ -5633,52 +7326,61 @@ impl  std::fmt::Debug for CreateRuleGroupInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateFirewallPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    #[doc(hidden)]pub firewall_policy_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_policy_name: std::option::Option<std::string::String>,
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    #[doc(hidden)]pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
+    #[doc(hidden)]
+    pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]pub dry_run: bool,
+    #[doc(hidden)]
+    pub dry_run: bool,
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    pub fn firewall_policy(&self) -> std::option::Option<& crate::model::FirewallPolicy> {
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::model::FirewallPolicy> {
         self.firewall_policy.as_ref()
     }
     /// <p>A description of the firewall policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p> 
-    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p> 
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateFirewallPolicyInput  {
+impl std::fmt::Debug for CreateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallPolicyInput");
         formatter.field("firewall_policy_name", &self.firewall_policy_name);
@@ -5692,46 +7394,57 @@ impl  std::fmt::Debug for CreateFirewallPolicyInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateFirewallInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
-    #[doc(hidden)]pub firewall_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p> 
+    #[doc(hidden)]
+    pub firewall_policy_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
-    #[doc(hidden)]pub vpc_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
-    #[doc(hidden)]pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
+    #[doc(hidden)]
+    pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub delete_protection: bool,
+    #[doc(hidden)]
+    pub delete_protection: bool,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub subnet_change_protection: bool,
+    #[doc(hidden)]
+    pub subnet_change_protection: bool,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]pub firewall_policy_change_protection: bool,
+    #[doc(hidden)]
+    pub firewall_policy_change_protection: bool,
     /// <p>A description of the firewall.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
-    #[doc(hidden)]pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    #[doc(hidden)]
+    pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
-    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p> 
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
-    pub fn subnet_mappings(&self) -> std::option::Option<& [crate::model::SubnetMapping]> {
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
@@ -5747,19 +7460,21 @@ impl CreateFirewallInput {
         self.firewall_policy_change_protection
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::model::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateFirewallInput  {
+impl std::fmt::Debug for CreateFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallInput");
         formatter.field("firewall_name", &self.firewall_name);
@@ -5768,7 +7483,10 @@ impl  std::fmt::Debug for CreateFirewallInput  {
         formatter.field("subnet_mappings", &self.subnet_mappings);
         formatter.field("delete_protection", &self.delete_protection);
         formatter.field("subnet_change_protection", &self.subnet_change_protection);
-        formatter.field("firewall_policy_change_protection", &self.firewall_policy_change_protection);
+        formatter.field(
+            "firewall_policy_change_protection",
+            &self.firewall_policy_change_protection,
+        );
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
         formatter.field("encryption_configuration", &self.encryption_configuration);
@@ -5777,44 +7495,49 @@ impl  std::fmt::Debug for CreateFirewallInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AssociateSubnetsInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateSubnetsInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-    #[doc(hidden)]pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
+    #[doc(hidden)]
+    pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
 }
 impl AssociateSubnetsInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-    pub fn subnet_mappings(&self) -> std::option::Option<& [crate::model::SubnetMapping]> {
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
 }
-impl  std::fmt::Debug for AssociateSubnetsInput  {
+impl std::fmt::Debug for AssociateSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSubnetsInput");
         formatter.field("update_token", &self.update_token);
@@ -5826,44 +7549,49 @@ impl  std::fmt::Debug for AssociateSubnetsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AssociateFirewallPolicyInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateFirewallPolicyInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]pub update_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    #[doc(hidden)]
+    pub update_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    #[doc(hidden)]
+    pub firewall_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]pub firewall_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    #[doc(hidden)]pub firewall_policy_arn: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub firewall_policy_arn: std::option::Option<std::string::String>,
 }
 impl AssociateFirewallPolicyInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p> 
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for AssociateFirewallPolicyInput  {
+impl std::fmt::Debug for AssociateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateFirewallPolicyInput");
         formatter.field("update_token", &self.update_token);
@@ -5873,4 +7601,3 @@ impl  std::fmt::Debug for AssociateFirewallPolicyInput  {
         formatter.finish()
     }
 }
-

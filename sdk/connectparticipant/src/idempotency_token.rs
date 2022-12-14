@@ -95,4 +95,3 @@ impl Clone for IdempotencyTokenProvider {
         }
     }
 }
-

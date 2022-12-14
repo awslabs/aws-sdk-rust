@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`DeleteObjectInput`](crate::input::DeleteObjectInput).
 pub mod delete_object_input {
-    
+
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) object_name: std::option::Option<std::string::String>,
@@ -17,8 +17,12 @@ pub mod delete_object_input {
             self
         }
         /// Backup job Id for the in-progress backup.
-        pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_job_id = input; self
+        pub fn set_backup_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_job_id = input;
+            self
         }
         /// The name of the Object.
         pub fn object_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -27,47 +31,90 @@ pub mod delete_object_input {
         }
         /// The name of the Object.
         pub fn set_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_name = input; self
+            self.object_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-        pub fn build(self) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteObjectInput {
-                    backup_job_id: self.backup_job_id
-                    ,
-                    object_name: self.object_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteObjectInput {
+                backup_job_id: self.backup_job_id,
+                object_name: self.object_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObject`](crate::operation::DeleteObject)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteObjectInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.backup_job_id;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let backup_job_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if backup_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_2 = &_input.object_name;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let object_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if object_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/backup-jobs/{BackupJobId}/object/{ObjectName}", BackupJobId = backup_job_id, ObjectName = object_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/backup-jobs/{BackupJobId}/object/{ObjectName}",
+                    BackupJobId = backup_job_id,
+                    ObjectName = object_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteObjectInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteObjectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -76,37 +123,54 @@ impl DeleteObjectInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteObject::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteObject", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteObject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteObject",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -118,9 +182,9 @@ impl DeleteObjectInput {
 
 /// See [`GetChunkInput`](crate::input::GetChunkInput).
 pub mod get_chunk_input {
-    
+
     /// A builder for [`GetChunkInput`](crate::input::GetChunkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) chunk_token: std::option::Option<std::string::String>,
@@ -132,8 +196,12 @@ pub mod get_chunk_input {
             self
         }
         /// Storage job id
-        pub fn set_storage_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.storage_job_id = input; self
+        pub fn set_storage_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_job_id = input;
+            self
         }
         /// Chunk token
         pub fn chunk_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,47 +210,89 @@ pub mod get_chunk_input {
         }
         /// Chunk token
         pub fn set_chunk_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.chunk_token = input; self
+            self.chunk_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetChunkInput`](crate::input::GetChunkInput).
-        pub fn build(self) -> Result<crate::input::GetChunkInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetChunkInput {
-                    storage_job_id: self.storage_job_id
-                    ,
-                    chunk_token: self.chunk_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetChunkInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::GetChunkInput {
+                storage_job_id: self.storage_job_id,
+                chunk_token: self.chunk_token,
+            })
         }
     }
-    
-    
 }
 impl GetChunkInput {
     /// Consumes the builder and constructs an Operation<[`GetChunk`](crate::operation::GetChunk)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetChunk, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetChunk,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetChunkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetChunkInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.storage_job_id;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let storage_job_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if storage_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_4 = &_input.chunk_token;
-                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "chunk_token", details: "cannot be empty or unset" })?;
-                let chunk_token = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "chunk_token",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let chunk_token = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if chunk_token.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "chunk_token", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/restore-jobs/{StorageJobId}/chunk/{ChunkToken}", StorageJobId = storage_job_id, ChunkToken = chunk_token).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "chunk_token",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/restore-jobs/{StorageJobId}/chunk/{ChunkToken}",
+                    StorageJobId = storage_job_id,
+                    ChunkToken = chunk_token
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetChunkInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetChunkInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -191,37 +301,52 @@ impl GetChunkInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetChunk::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetChunk", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetChunk::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetChunk",
+                    "backupstorage",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -233,9 +358,9 @@ impl GetChunkInput {
 
 /// See [`GetObjectMetadataInput`](crate::input::GetObjectMetadataInput).
 pub mod get_object_metadata_input {
-    
+
     /// A builder for [`GetObjectMetadataInput`](crate::input::GetObjectMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) object_token: std::option::Option<std::string::String>,
@@ -247,8 +372,12 @@ pub mod get_object_metadata_input {
             self
         }
         /// Backup job id for the in-progress backup.
-        pub fn set_storage_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.storage_job_id = input; self
+        pub fn set_storage_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_job_id = input;
+            self
         }
         /// Object token.
         pub fn object_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -257,47 +386,90 @@ pub mod get_object_metadata_input {
         }
         /// Object token.
         pub fn set_object_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_token = input; self
+            self.object_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetObjectMetadataInput`](crate::input::GetObjectMetadataInput).
-        pub fn build(self) -> Result<crate::input::GetObjectMetadataInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetObjectMetadataInput {
-                    storage_job_id: self.storage_job_id
-                    ,
-                    object_token: self.object_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetObjectMetadataInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetObjectMetadataInput {
+                storage_job_id: self.storage_job_id,
+                object_token: self.object_token,
+            })
         }
     }
-    
-    
 }
 impl GetObjectMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetObjectMetadata`](crate::operation::GetObjectMetadata)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetObjectMetadata, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetObjectMetadata,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetObjectMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetObjectMetadataInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.storage_job_id;
-                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let storage_job_id = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if storage_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_6 = &_input.object_token;
-                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })?;
-                let object_token = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_token",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let object_token = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if object_token.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/restore-jobs/{StorageJobId}/object/{ObjectToken}/metadata", StorageJobId = storage_job_id, ObjectToken = object_token).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_token",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/restore-jobs/{StorageJobId}/object/{ObjectToken}/metadata",
+                    StorageJobId = storage_job_id,
+                    ObjectToken = object_token
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetObjectMetadataInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetObjectMetadataInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -306,37 +478,54 @@ impl GetObjectMetadataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetObjectMetadata::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetObjectMetadata", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetObjectMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetObjectMetadata",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -348,9 +537,9 @@ impl GetObjectMetadataInput {
 
 /// See [`ListChunksInput`](crate::input::ListChunksInput).
 pub mod list_chunks_input {
-    
+
     /// A builder for [`ListChunksInput`](crate::input::ListChunksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) object_token: std::option::Option<std::string::String>,
@@ -364,8 +553,12 @@ pub mod list_chunks_input {
             self
         }
         /// Storage job id
-        pub fn set_storage_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.storage_job_id = input; self
+        pub fn set_storage_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_job_id = input;
+            self
         }
         /// Object token
         pub fn object_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,7 +567,8 @@ pub mod list_chunks_input {
         }
         /// Object token
         pub fn set_object_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_token = input; self
+            self.object_token = input;
+            self
         }
         /// Maximum number of chunks
         pub fn max_results(mut self, input: i32) -> Self {
@@ -383,7 +577,8 @@ pub mod list_chunks_input {
         }
         /// Maximum number of chunks
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Pagination token
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -392,62 +587,107 @@ pub mod list_chunks_input {
         }
         /// Pagination token
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListChunksInput`](crate::input::ListChunksInput).
-        pub fn build(self) -> Result<crate::input::ListChunksInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListChunksInput {
-                    storage_job_id: self.storage_job_id
-                    ,
-                    object_token: self.object_token
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListChunksInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListChunksInput {
+                storage_job_id: self.storage_job_id,
+                object_token: self.object_token,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
         }
     }
-    
-    
 }
 impl ListChunksInput {
     /// Consumes the builder and constructs an Operation<[`ListChunks`](crate::operation::ListChunks)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListChunks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListChunks,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListChunksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListChunksInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.storage_job_id;
-                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let storage_job_id = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if storage_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_8 = &_input.object_token;
-                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })?;
-                let object_token = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_token",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let object_token = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if object_token.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/restore-jobs/{StorageJobId}/chunks/{ObjectToken}/list", StorageJobId = storage_job_id, ObjectToken = object_token).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_token",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/restore-jobs/{StorageJobId}/chunks/{ObjectToken}/list",
+                    StorageJobId = storage_job_id,
+                    ObjectToken = object_token
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListChunksInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListChunksInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_9) = &_input.next_token {
                     query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_9));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListChunksInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListChunksInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -457,37 +697,54 @@ impl ListChunksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListChunks::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListChunks", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChunks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListChunks",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -499,9 +756,9 @@ impl ListChunksInput {
 
 /// See [`ListObjectsInput`](crate::input::ListObjectsInput).
 pub mod list_objects_input {
-    
+
     /// A builder for [`ListObjectsInput`](crate::input::ListObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) starting_object_name: std::option::Option<std::string::String>,
@@ -518,8 +775,12 @@ pub mod list_objects_input {
             self
         }
         /// Storage job id
-        pub fn set_storage_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.storage_job_id = input; self
+        pub fn set_storage_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.storage_job_id = input;
+            self
         }
         /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
         pub fn starting_object_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,8 +788,12 @@ pub mod list_objects_input {
             self
         }
         /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-        pub fn set_starting_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.starting_object_name = input; self
+        pub fn set_starting_object_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.starting_object_name = input;
+            self
         }
         /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
         pub fn starting_object_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -536,8 +801,12 @@ pub mod list_objects_input {
             self
         }
         /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-        pub fn set_starting_object_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.starting_object_prefix = input; self
+        pub fn set_starting_object_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.starting_object_prefix = input;
+            self
         }
         /// Maximum objects count
         pub fn max_results(mut self, input: i32) -> Self {
@@ -546,7 +815,8 @@ pub mod list_objects_input {
         }
         /// Maximum objects count
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input; self
+            self.max_results = input;
+            self
         }
         /// Pagination token
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -555,7 +825,8 @@ pub mod list_objects_input {
         }
         /// Pagination token
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input; self
+            self.next_token = input;
+            self
         }
         /// (Optional) Created before filter
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -563,8 +834,12 @@ pub mod list_objects_input {
             self
         }
         /// (Optional) Created before filter
-        pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.created_before = input; self
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_before = input;
+            self
         }
         /// (Optional) Created after filter
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -572,75 +847,127 @@ pub mod list_objects_input {
             self
         }
         /// (Optional) Created after filter
-        pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.created_after = input; self
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_after = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListObjectsInput`](crate::input::ListObjectsInput).
-        pub fn build(self) -> Result<crate::input::ListObjectsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListObjectsInput {
-                    storage_job_id: self.storage_job_id
-                    ,
-                    starting_object_name: self.starting_object_name
-                    ,
-                    starting_object_prefix: self.starting_object_prefix
-                    ,
-                    max_results: self.max_results
-                        .unwrap_or_default()
-                    ,
-                    next_token: self.next_token
-                    ,
-                    created_before: self.created_before
-                    ,
-                    created_after: self.created_after
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListObjectsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListObjectsInput {
+                storage_job_id: self.storage_job_id,
+                starting_object_name: self.starting_object_name,
+                starting_object_prefix: self.starting_object_prefix,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                created_before: self.created_before,
+                created_after: self.created_after,
+            })
         }
     }
-    
-    
 }
 impl ListObjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListObjects`](crate::operation::ListObjects)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListObjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListObjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListObjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListObjectsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.storage_job_id;
-                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_10 = input_10.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let storage_job_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if storage_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/restore-jobs/{StorageJobId}/objects/list", StorageJobId = storage_job_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "storage_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/restore-jobs/{StorageJobId}/objects/list",
+                    StorageJobId = storage_job_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListObjectsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListObjectsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.starting_object_name {
-                    query.push_kv("starting-object-name", &aws_smithy_http::query::fmt_string(&inner_11));
+                    query.push_kv(
+                        "starting-object-name",
+                        &aws_smithy_http::query::fmt_string(&inner_11),
+                    );
                 }
                 if let Some(inner_12) = &_input.starting_object_prefix {
-                    query.push_kv("starting-object-prefix", &aws_smithy_http::query::fmt_string(&inner_12));
+                    query.push_kv(
+                        "starting-object-prefix",
+                        &aws_smithy_http::query::fmt_string(&inner_12),
+                    );
                 }
                 if _input.max_results != 0 {
-                    query.push_kv("max-results", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                    query.push_kv(
+                        "max-results",
+                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    );
                 }
                 if let Some(inner_13) = &_input.next_token {
                     query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 if let Some(inner_14) = &_input.created_before {
-                    query.push_kv("created-before", &aws_smithy_http::query::fmt_timestamp(inner_14, aws_smithy_types::date_time::Format::DateTime)?);
+                    query.push_kv(
+                        "created-before",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_14,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
                 }
                 if let Some(inner_15) = &_input.created_after {
-                    query.push_kv("created-after", &aws_smithy_http::query::fmt_timestamp(inner_15, aws_smithy_types::date_time::Format::DateTime)?);
+                    query.push_kv(
+                        "created-after",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_15,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListObjectsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListObjectsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -650,37 +977,54 @@ impl ListObjectsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListObjects::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListObjects", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListObjects",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -692,19 +1036,21 @@ impl ListObjectsInput {
 
 /// See [`NotifyObjectCompleteInput`](crate::input::NotifyObjectCompleteInput).
 pub mod notify_object_complete_input {
-    
+
     /// A builder for [`NotifyObjectCompleteInput`](crate::input::NotifyObjectCompleteInput).
-    #[derive(std::default::Default, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) upload_id: std::option::Option<std::string::String>,
         pub(crate) object_checksum: std::option::Option<std::string::String>,
-        pub(crate) object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        pub(crate) object_checksum_algorithm:
+            std::option::Option<crate::model::SummaryChecksumAlgorithm>,
         pub(crate) metadata_string: std::option::Option<std::string::String>,
         pub(crate) metadata_blob: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) metadata_blob_length: std::option::Option<i64>,
         pub(crate) metadata_blob_checksum: std::option::Option<std::string::String>,
-        pub(crate) metadata_blob_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        pub(crate) metadata_blob_checksum_algorithm:
+            std::option::Option<crate::model::DataChecksumAlgorithm>,
     }
     impl Builder {
         /// Backup job Id for the in-progress backup
@@ -713,8 +1059,12 @@ pub mod notify_object_complete_input {
             self
         }
         /// Backup job Id for the in-progress backup
-        pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_job_id = input; self
+        pub fn set_backup_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_job_id = input;
+            self
         }
         /// Upload Id for the in-progress upload
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -723,7 +1073,8 @@ pub mod notify_object_complete_input {
         }
         /// Upload Id for the in-progress upload
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// Object checksum
         pub fn object_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -731,17 +1082,28 @@ pub mod notify_object_complete_input {
             self
         }
         /// Object checksum
-        pub fn set_object_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_checksum = input; self
+        pub fn set_object_checksum(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_checksum = input;
+            self
         }
         /// Checksum algorithm
-        pub fn object_checksum_algorithm(mut self, input: crate::model::SummaryChecksumAlgorithm) -> Self {
+        pub fn object_checksum_algorithm(
+            mut self,
+            input: crate::model::SummaryChecksumAlgorithm,
+        ) -> Self {
             self.object_checksum_algorithm = Some(input);
             self
         }
         /// Checksum algorithm
-        pub fn set_object_checksum_algorithm(mut self, input: std::option::Option<crate::model::SummaryChecksumAlgorithm>) -> Self {
-            self.object_checksum_algorithm = input; self
+        pub fn set_object_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        ) -> Self {
+            self.object_checksum_algorithm = input;
+            self
         }
         /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
         pub fn metadata_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -749,8 +1111,12 @@ pub mod notify_object_complete_input {
             self
         }
         /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-        pub fn set_metadata_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata_string = input; self
+        pub fn set_metadata_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metadata_string = input;
+            self
         }
         /// Optional metadata associated with an Object. Maximum length is 4MB.
         pub fn metadata_blob(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -758,8 +1124,12 @@ pub mod notify_object_complete_input {
             self
         }
         /// Optional metadata associated with an Object. Maximum length is 4MB.
-        pub fn set_metadata_blob(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-            self.metadata_blob = input; self
+        pub fn set_metadata_blob(
+            mut self,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.metadata_blob = input;
+            self
         }
         /// The size of MetadataBlob.
         pub fn metadata_blob_length(mut self, input: i64) -> Self {
@@ -768,7 +1138,8 @@ pub mod notify_object_complete_input {
         }
         /// The size of MetadataBlob.
         pub fn set_metadata_blob_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.metadata_blob_length = input; self
+            self.metadata_blob_length = input;
+            self
         }
         /// Checksum of MetadataBlob.
         pub fn metadata_blob_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -776,142 +1147,236 @@ pub mod notify_object_complete_input {
             self
         }
         /// Checksum of MetadataBlob.
-        pub fn set_metadata_blob_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata_blob_checksum = input; self
+        pub fn set_metadata_blob_checksum(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metadata_blob_checksum = input;
+            self
         }
         /// Checksum algorithm.
-        pub fn metadata_blob_checksum_algorithm(mut self, input: crate::model::DataChecksumAlgorithm) -> Self {
+        pub fn metadata_blob_checksum_algorithm(
+            mut self,
+            input: crate::model::DataChecksumAlgorithm,
+        ) -> Self {
             self.metadata_blob_checksum_algorithm = Some(input);
             self
         }
         /// Checksum algorithm.
-        pub fn set_metadata_blob_checksum_algorithm(mut self, input: std::option::Option<crate::model::DataChecksumAlgorithm>) -> Self {
-            self.metadata_blob_checksum_algorithm = input; self
+        pub fn set_metadata_blob_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        ) -> Self {
+            self.metadata_blob_checksum_algorithm = input;
+            self
         }
         /// Consumes the builder and constructs a [`NotifyObjectCompleteInput`](crate::input::NotifyObjectCompleteInput).
-        pub fn build(self) -> Result<crate::input::NotifyObjectCompleteInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::NotifyObjectCompleteInput {
-                    backup_job_id: self.backup_job_id
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                    object_checksum: self.object_checksum
-                    ,
-                    object_checksum_algorithm: self.object_checksum_algorithm
-                    ,
-                    metadata_string: self.metadata_string
-                    ,
-                    metadata_blob: self.metadata_blob
-                        .unwrap_or_default()
-                    ,
-                    metadata_blob_length: self.metadata_blob_length
-                        .unwrap_or_default()
-                    ,
-                    metadata_blob_checksum: self.metadata_blob_checksum
-                    ,
-                    metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::NotifyObjectCompleteInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::NotifyObjectCompleteInput {
+                backup_job_id: self.backup_job_id,
+                upload_id: self.upload_id,
+                object_checksum: self.object_checksum,
+                object_checksum_algorithm: self.object_checksum_algorithm,
+                metadata_string: self.metadata_string,
+                metadata_blob: self.metadata_blob.unwrap_or_default(),
+                metadata_blob_length: self.metadata_blob_length.unwrap_or_default(),
+                metadata_blob_checksum: self.metadata_blob_checksum,
+                metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm,
+            })
         }
     }
-    
-    
 }
 impl NotifyObjectCompleteInput {
     /// Consumes the builder and constructs an Operation<[`NotifyObjectComplete`](crate::operation::NotifyObjectComplete)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::NotifyObjectComplete, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::NotifyObjectComplete,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::NotifyObjectCompleteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::NotifyObjectCompleteInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.backup_job_id;
-                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_16 = input_16.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let backup_job_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if backup_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_17 = &_input.upload_id;
-                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/backup-jobs/{BackupJobId}/object/{UploadId}/complete", BackupJobId = backup_job_id, UploadId = upload_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/backup-jobs/{BackupJobId}/object/{UploadId}/complete",
+                    BackupJobId = backup_job_id,
+                    UploadId = upload_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::NotifyObjectCompleteInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::NotifyObjectCompleteInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.object_checksum {
                     query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
                 if let Some(inner_19) = &_input.object_checksum_algorithm {
-                    query.push_kv("checksum-algorithm", &aws_smithy_http::query::fmt_string(&inner_19));
+                    query.push_kv(
+                        "checksum-algorithm",
+                        &aws_smithy_http::query::fmt_string(&inner_19),
+                    );
                 }
                 if let Some(inner_20) = &_input.metadata_string {
-                    query.push_kv("metadata-string", &aws_smithy_http::query::fmt_string(&inner_20));
+                    query.push_kv(
+                        "metadata-string",
+                        &aws_smithy_http::query::fmt_string(&inner_20),
+                    );
                 }
                 if _input.metadata_blob_length != 0 {
-                    query.push_kv("metadata-blob-length", aws_smithy_types::primitive::Encoder::from(_input.metadata_blob_length).encode());
+                    query.push_kv(
+                        "metadata-blob-length",
+                        aws_smithy_types::primitive::Encoder::from(_input.metadata_blob_length)
+                            .encode(),
+                    );
                 }
                 if let Some(inner_21) = &_input.metadata_blob_checksum {
-                    query.push_kv("metadata-checksum", &aws_smithy_http::query::fmt_string(&inner_21));
+                    query.push_kv(
+                        "metadata-checksum",
+                        &aws_smithy_http::query::fmt_string(&inner_21),
+                    );
                 }
                 if let Some(inner_22) = &_input.metadata_blob_checksum_algorithm {
-                    query.push_kv("metadata-checksum-algorithm", &aws_smithy_http::query::fmt_string(&inner_22));
+                    query.push_kv(
+                        "metadata-checksum-algorithm",
+                        &aws_smithy_http::query::fmt_string(&inner_22),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::NotifyObjectCompleteInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::NotifyObjectCompleteInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_notify_object_complete_input( self.metadata_blob)?
-            .into_inner()
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_notify_object_complete_input(
+                self.metadata_blob,
+            )?
+            .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
-        request.properties_mut().insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request
+            .properties_mut()
+            .insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::NotifyObjectComplete::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("NotifyObjectComplete", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::NotifyObjectComplete::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "NotifyObjectComplete",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -923,9 +1388,9 @@ impl NotifyObjectCompleteInput {
 
 /// See [`PutChunkInput`](crate::input::PutChunkInput).
 pub mod put_chunk_input {
-    
+
     /// A builder for [`PutChunkInput`](crate::input::PutChunkInput).
-    #[derive(std::default::Default, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -942,8 +1407,12 @@ pub mod put_chunk_input {
             self
         }
         /// Backup job Id for the in-progress backup.
-        pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_job_id = input; self
+        pub fn set_backup_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_job_id = input;
+            self
         }
         /// Upload Id for the in-progress upload.
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -952,7 +1421,8 @@ pub mod put_chunk_input {
         }
         /// Upload Id for the in-progress upload.
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// Describes this chunk's position relative to the other chunks
         pub fn chunk_index(mut self, input: i64) -> Self {
@@ -961,7 +1431,8 @@ pub mod put_chunk_input {
         }
         /// Describes this chunk's position relative to the other chunks
         pub fn set_chunk_index(mut self, input: std::option::Option<i64>) -> Self {
-            self.chunk_index = input; self
+            self.chunk_index = input;
+            self
         }
         /// Data to be uploaded
         pub fn data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -969,8 +1440,12 @@ pub mod put_chunk_input {
             self
         }
         /// Data to be uploaded
-        pub fn set_data(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-            self.data = input; self
+        pub fn set_data(
+            mut self,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.data = input;
+            self
         }
         /// Data length
         pub fn length(mut self, input: i64) -> Self {
@@ -979,7 +1454,8 @@ pub mod put_chunk_input {
         }
         /// Data length
         pub fn set_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.length = input; self
+            self.length = input;
+            self
         }
         /// Data checksum
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -988,7 +1464,8 @@ pub mod put_chunk_input {
         }
         /// Data checksum
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input; self
+            self.checksum = input;
+            self
         }
         /// Checksum algorithm
         pub fn checksum_algorithm(mut self, input: crate::model::DataChecksumAlgorithm) -> Self {
@@ -996,126 +1473,203 @@ pub mod put_chunk_input {
             self
         }
         /// Checksum algorithm
-        pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::DataChecksumAlgorithm>) -> Self {
-            self.checksum_algorithm = input; self
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutChunkInput`](crate::input::PutChunkInput).
-        pub fn build(self) -> Result<crate::input::PutChunkInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutChunkInput {
-                    backup_job_id: self.backup_job_id
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                    chunk_index: self.chunk_index
-                        .unwrap_or_default()
-                    ,
-                    data: self.data
-                        .unwrap_or_default()
-                    ,
-                    length: self.length
-                        .unwrap_or_default()
-                    ,
-                    checksum: self.checksum
-                    ,
-                    checksum_algorithm: self.checksum_algorithm
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutChunkInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::PutChunkInput {
+                backup_job_id: self.backup_job_id,
+                upload_id: self.upload_id,
+                chunk_index: self.chunk_index.unwrap_or_default(),
+                data: self.data.unwrap_or_default(),
+                length: self.length.unwrap_or_default(),
+                checksum: self.checksum,
+                checksum_algorithm: self.checksum_algorithm,
+            })
         }
     }
-    
-    
 }
 impl PutChunkInput {
     /// Consumes the builder and constructs an Operation<[`PutChunk`](crate::operation::PutChunk)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutChunk, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutChunk,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutChunkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutChunkInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.backup_job_id;
-                let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_23 = input_23.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let backup_job_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if backup_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_24 = &_input.upload_id;
-                let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_25 = &_input.chunk_index;
-                let mut chunk_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_25); let chunk_index = chunk_index_encoder.encode();
+                let mut chunk_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_25);
+                let chunk_index = chunk_index_encoder.encode();
                 if chunk_index.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "chunk_index", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/backup-jobs/{BackupJobId}/chunk/{UploadId}/{ChunkIndex}", BackupJobId = backup_job_id, UploadId = upload_id, ChunkIndex = chunk_index).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "chunk_index",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/backup-jobs/{BackupJobId}/chunk/{UploadId}/{ChunkIndex}",
+                    BackupJobId = backup_job_id,
+                    UploadId = upload_id,
+                    ChunkIndex = chunk_index
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::PutChunkInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::PutChunkInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.length != 0 {
-                    query.push_kv("length", aws_smithy_types::primitive::Encoder::from(_input.length).encode());
+                    query.push_kv(
+                        "length",
+                        aws_smithy_types::primitive::Encoder::from(_input.length).encode(),
+                    );
                 }
                 if let Some(inner_26) = &_input.checksum {
                     query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_26));
                 }
                 if let Some(inner_27) = &_input.checksum_algorithm {
-                    query.push_kv("checksum-algorithm", &aws_smithy_http::query::fmt_string(&inner_27));
+                    query.push_kv(
+                        "checksum-algorithm",
+                        &aws_smithy_http::query::fmt_string(&inner_27),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutChunkInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutChunkInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_chunk_input( self.data)?
-            .into_inner()
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_put_chunk_input(self.data)?.into_inner(),
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
-        request.properties_mut().insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request
+            .properties_mut()
+            .insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutChunk::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutChunk", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PutChunk::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "PutChunk",
+                    "backupstorage",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1127,9 +1681,9 @@ impl PutChunkInput {
 
 /// See [`PutObjectInput`](crate::input::PutObjectInput).
 pub mod put_object_input {
-    
+
     /// A builder for [`PutObjectInput`](crate::input::PutObjectInput).
-    #[derive(std::default::Default, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) object_name: std::option::Option<std::string::String>,
@@ -1139,7 +1693,8 @@ pub mod put_object_input {
         pub(crate) inline_chunk_checksum: std::option::Option<std::string::String>,
         pub(crate) inline_chunk_checksum_algorithm: std::option::Option<std::string::String>,
         pub(crate) object_checksum: std::option::Option<std::string::String>,
-        pub(crate) object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        pub(crate) object_checksum_algorithm:
+            std::option::Option<crate::model::SummaryChecksumAlgorithm>,
         pub(crate) throw_on_duplicate: std::option::Option<bool>,
     }
     impl Builder {
@@ -1149,8 +1704,12 @@ pub mod put_object_input {
             self
         }
         /// Backup job Id for the in-progress backup.
-        pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_job_id = input; self
+        pub fn set_backup_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_job_id = input;
+            self
         }
         /// The name of the Object to be uploaded.
         pub fn object_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1159,7 +1718,8 @@ pub mod put_object_input {
         }
         /// The name of the Object to be uploaded.
         pub fn set_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_name = input; self
+            self.object_name = input;
+            self
         }
         /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
         pub fn metadata_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1167,8 +1727,12 @@ pub mod put_object_input {
             self
         }
         /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-        pub fn set_metadata_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata_string = input; self
+        pub fn set_metadata_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.metadata_string = input;
+            self
         }
         /// Inline chunk data to be uploaded.
         pub fn inline_chunk(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -1176,8 +1740,12 @@ pub mod put_object_input {
             self
         }
         /// Inline chunk data to be uploaded.
-        pub fn set_inline_chunk(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-            self.inline_chunk = input; self
+        pub fn set_inline_chunk(
+            mut self,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.inline_chunk = input;
+            self
         }
         /// Length of the inline chunk data.
         pub fn inline_chunk_length(mut self, input: i64) -> Self {
@@ -1186,7 +1754,8 @@ pub mod put_object_input {
         }
         /// Length of the inline chunk data.
         pub fn set_inline_chunk_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.inline_chunk_length = input; self
+            self.inline_chunk_length = input;
+            self
         }
         /// Inline chunk checksum
         pub fn inline_chunk_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1194,17 +1763,28 @@ pub mod put_object_input {
             self
         }
         /// Inline chunk checksum
-        pub fn set_inline_chunk_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inline_chunk_checksum = input; self
+        pub fn set_inline_chunk_checksum(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inline_chunk_checksum = input;
+            self
         }
         /// Inline chunk checksum algorithm
-        pub fn inline_chunk_checksum_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+        pub fn inline_chunk_checksum_algorithm(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
             self.inline_chunk_checksum_algorithm = Some(input.into());
             self
         }
         /// Inline chunk checksum algorithm
-        pub fn set_inline_chunk_checksum_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inline_chunk_checksum_algorithm = input; self
+        pub fn set_inline_chunk_checksum_algorithm(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inline_chunk_checksum_algorithm = input;
+            self
         }
         /// object checksum
         pub fn object_checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1212,17 +1792,28 @@ pub mod put_object_input {
             self
         }
         /// object checksum
-        pub fn set_object_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_checksum = input; self
+        pub fn set_object_checksum(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.object_checksum = input;
+            self
         }
         /// object checksum algorithm
-        pub fn object_checksum_algorithm(mut self, input: crate::model::SummaryChecksumAlgorithm) -> Self {
+        pub fn object_checksum_algorithm(
+            mut self,
+            input: crate::model::SummaryChecksumAlgorithm,
+        ) -> Self {
             self.object_checksum_algorithm = Some(input);
             self
         }
         /// object checksum algorithm
-        pub fn set_object_checksum_algorithm(mut self, input: std::option::Option<crate::model::SummaryChecksumAlgorithm>) -> Self {
-            self.object_checksum_algorithm = input; self
+        pub fn set_object_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        ) -> Self {
+            self.object_checksum_algorithm = input;
+            self
         }
         /// Throw an exception if Object name is already exist.
         pub fn throw_on_duplicate(mut self, input: bool) -> Self {
@@ -1231,138 +1822,219 @@ pub mod put_object_input {
         }
         /// Throw an exception if Object name is already exist.
         pub fn set_throw_on_duplicate(mut self, input: std::option::Option<bool>) -> Self {
-            self.throw_on_duplicate = input; self
+            self.throw_on_duplicate = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutObjectInput`](crate::input::PutObjectInput).
-        pub fn build(self) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutObjectInput {
-                    backup_job_id: self.backup_job_id
-                    ,
-                    object_name: self.object_name
-                    ,
-                    metadata_string: self.metadata_string
-                    ,
-                    inline_chunk: self.inline_chunk
-                        .unwrap_or_default()
-                    ,
-                    inline_chunk_length: self.inline_chunk_length
-                        .unwrap_or_default()
-                    ,
-                    inline_chunk_checksum: self.inline_chunk_checksum
-                    ,
-                    inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm
-                    ,
-                    object_checksum: self.object_checksum
-                    ,
-                    object_checksum_algorithm: self.object_checksum_algorithm
-                    ,
-                    throw_on_duplicate: self.throw_on_duplicate
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutObjectInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::PutObjectInput {
+                backup_job_id: self.backup_job_id,
+                object_name: self.object_name,
+                metadata_string: self.metadata_string,
+                inline_chunk: self.inline_chunk.unwrap_or_default(),
+                inline_chunk_length: self.inline_chunk_length.unwrap_or_default(),
+                inline_chunk_checksum: self.inline_chunk_checksum,
+                inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm,
+                object_checksum: self.object_checksum,
+                object_checksum_algorithm: self.object_checksum_algorithm,
+                throw_on_duplicate: self.throw_on_duplicate.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl PutObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutObject`](crate::operation::PutObject)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutObjectInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.backup_job_id;
-                let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let backup_job_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if backup_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_29 = &_input.object_name;
-                let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_29 = input_29.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let object_name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if object_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/backup-jobs/{BackupJobId}/object/{ObjectName}/put-object", BackupJobId = backup_job_id, ObjectName = object_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/backup-jobs/{BackupJobId}/object/{ObjectName}/put-object",
+                    BackupJobId = backup_job_id,
+                    ObjectName = object_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::PutObjectInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::PutObjectInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.metadata_string {
-                    query.push_kv("metadata-string", &aws_smithy_http::query::fmt_string(&inner_30));
+                    query.push_kv(
+                        "metadata-string",
+                        &aws_smithy_http::query::fmt_string(&inner_30),
+                    );
                 }
                 if _input.inline_chunk_length != 0 {
-                    query.push_kv("length", aws_smithy_types::primitive::Encoder::from(_input.inline_chunk_length).encode());
+                    query.push_kv(
+                        "length",
+                        aws_smithy_types::primitive::Encoder::from(_input.inline_chunk_length)
+                            .encode(),
+                    );
                 }
                 if let Some(inner_31) = &_input.inline_chunk_checksum {
                     query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
                 if let Some(inner_32) = &_input.inline_chunk_checksum_algorithm {
-                    query.push_kv("checksum-algorithm", &aws_smithy_http::query::fmt_string(&inner_32));
+                    query.push_kv(
+                        "checksum-algorithm",
+                        &aws_smithy_http::query::fmt_string(&inner_32),
+                    );
                 }
                 if let Some(inner_33) = &_input.object_checksum {
-                    query.push_kv("object-checksum", &aws_smithy_http::query::fmt_string(&inner_33));
+                    query.push_kv(
+                        "object-checksum",
+                        &aws_smithy_http::query::fmt_string(&inner_33),
+                    );
                 }
                 if let Some(inner_34) = &_input.object_checksum_algorithm {
-                    query.push_kv("object-checksum-algorithm", &aws_smithy_http::query::fmt_string(&inner_34));
+                    query.push_kv(
+                        "object-checksum-algorithm",
+                        &aws_smithy_http::query::fmt_string(&inner_34),
+                    );
                 }
                 if _input.throw_on_duplicate {
-                    query.push_kv("throwOnDuplicate", aws_smithy_types::primitive::Encoder::from(_input.throw_on_duplicate).encode());
+                    query.push_kv(
+                        "throwOnDuplicate",
+                        aws_smithy_types::primitive::Encoder::from(_input.throw_on_duplicate)
+                            .encode(),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutObjectInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutObjectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_input( self.inline_chunk)?
-            .into_inner()
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_put_object_input(self.inline_chunk)?
+                .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
-        request.properties_mut().insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request
+            .properties_mut()
+            .insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutObject::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutObject", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PutObject::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "PutObject",
+                    "backupstorage",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1374,9 +2046,9 @@ impl PutObjectInput {
 
 /// See [`StartObjectInput`](crate::input::StartObjectInput).
 pub mod start_object_input {
-    
+
     /// A builder for [`StartObjectInput`](crate::input::StartObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) object_name: std::option::Option<std::string::String>,
@@ -1389,8 +2061,12 @@ pub mod start_object_input {
             self
         }
         /// Backup job Id for the in-progress backup
-        pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_job_id = input; self
+        pub fn set_backup_job_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_job_id = input;
+            self
         }
         /// Name for the object.
         pub fn object_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1399,7 +2075,8 @@ pub mod start_object_input {
         }
         /// Name for the object.
         pub fn set_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_name = input; self
+            self.object_name = input;
+            self
         }
         /// Throw an exception if Object name is already exist.
         pub fn throw_on_duplicate(mut self, input: bool) -> Self {
@@ -1408,93 +2085,161 @@ pub mod start_object_input {
         }
         /// Throw an exception if Object name is already exist.
         pub fn set_throw_on_duplicate(mut self, input: std::option::Option<bool>) -> Self {
-            self.throw_on_duplicate = input; self
+            self.throw_on_duplicate = input;
+            self
         }
         /// Consumes the builder and constructs a [`StartObjectInput`](crate::input::StartObjectInput).
-        pub fn build(self) -> Result<crate::input::StartObjectInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::StartObjectInput {
-                    backup_job_id: self.backup_job_id
-                    ,
-                    object_name: self.object_name
-                    ,
-                    throw_on_duplicate: self.throw_on_duplicate
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartObjectInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartObjectInput {
+                backup_job_id: self.backup_job_id,
+                object_name: self.object_name,
+                throw_on_duplicate: self.throw_on_duplicate.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl StartObjectInput {
     /// Consumes the builder and constructs an Operation<[`StartObject`](crate::operation::StartObject)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::StartObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::StartObjectInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.backup_job_id;
-                let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_35 = input_35.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let backup_job_id = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if backup_job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "backup_job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_36 = &_input.object_name;
-                let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_36 = input_36.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let object_name = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if object_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/backup-jobs/{BackupJobId}/object/{ObjectName}", BackupJobId = backup_job_id, ObjectName = object_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "object_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/backup-jobs/{BackupJobId}/object/{ObjectName}",
+                    BackupJobId = backup_job_id,
+                    ObjectName = object_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::StartObjectInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartObjectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_object(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_object(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartObject::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartObject", "backupstorage"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartObject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartObject",
+            "backupstorage",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1505,22 +2250,26 @@ impl StartObjectInput {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct StartObjectInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartObjectInput {
     /// Backup job Id for the in-progress backup
-    #[doc(hidden)]pub backup_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub backup_job_id: std::option::Option<std::string::String>,
     /// Name for the object.
-    #[doc(hidden)]pub object_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_name: std::option::Option<std::string::String>,
     /// Throw an exception if Object name is already exist.
-    #[doc(hidden)]pub throw_on_duplicate: bool,
+    #[doc(hidden)]
+    pub throw_on_duplicate: bool,
 }
 impl StartObjectInput {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
     /// Name for the object.
-    pub fn object_name(&self) -> std::option::Option<& str> {
+    pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
     }
     /// Throw an exception if Object name is already exist.
@@ -1528,7 +2277,7 @@ impl StartObjectInput {
         self.throw_on_duplicate
     }
 }
-impl  std::fmt::Debug for StartObjectInput  {
+impl std::fmt::Debug for StartObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartObjectInput");
         formatter.field("backup_job_id", &self.backup_job_id);
@@ -1539,43 +2288,53 @@ impl  std::fmt::Debug for StartObjectInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]pub struct PutObjectInput  {
+#[non_exhaustive]
+pub struct PutObjectInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]pub backup_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub backup_job_id: std::option::Option<std::string::String>,
     /// The name of the Object to be uploaded.
-    #[doc(hidden)]pub object_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_name: std::option::Option<std::string::String>,
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    #[doc(hidden)]pub metadata_string: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub metadata_string: std::option::Option<std::string::String>,
     /// Inline chunk data to be uploaded.
     pub inline_chunk: aws_smithy_http::byte_stream::ByteStream,
     /// Length of the inline chunk data.
-    #[doc(hidden)]pub inline_chunk_length: i64,
+    #[doc(hidden)]
+    pub inline_chunk_length: i64,
     /// Inline chunk checksum
-    #[doc(hidden)]pub inline_chunk_checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inline_chunk_checksum: std::option::Option<std::string::String>,
     /// Inline chunk checksum algorithm
-    #[doc(hidden)]pub inline_chunk_checksum_algorithm: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub inline_chunk_checksum_algorithm: std::option::Option<std::string::String>,
     /// object checksum
-    #[doc(hidden)]pub object_checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_checksum: std::option::Option<std::string::String>,
     /// object checksum algorithm
-    #[doc(hidden)]pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+    #[doc(hidden)]
+    pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
     /// Throw an exception if Object name is already exist.
-    #[doc(hidden)]pub throw_on_duplicate: bool,
+    #[doc(hidden)]
+    pub throw_on_duplicate: bool,
 }
 impl PutObjectInput {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
     /// The name of the Object to be uploaded.
-    pub fn object_name(&self) -> std::option::Option<& str> {
+    pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
     }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    pub fn metadata_string(&self) -> std::option::Option<& str> {
+    pub fn metadata_string(&self) -> std::option::Option<&str> {
         self.metadata_string.as_deref()
     }
     /// Inline chunk data to be uploaded.
-    pub fn inline_chunk(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn inline_chunk(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.inline_chunk
     }
     /// Length of the inline chunk data.
@@ -1583,19 +2342,21 @@ impl PutObjectInput {
         self.inline_chunk_length
     }
     /// Inline chunk checksum
-    pub fn inline_chunk_checksum(&self) -> std::option::Option<& str> {
+    pub fn inline_chunk_checksum(&self) -> std::option::Option<&str> {
         self.inline_chunk_checksum.as_deref()
     }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(&self) -> std::option::Option<& str> {
+    pub fn inline_chunk_checksum_algorithm(&self) -> std::option::Option<&str> {
         self.inline_chunk_checksum_algorithm.as_deref()
     }
     /// object checksum
-    pub fn object_checksum(&self) -> std::option::Option<& str> {
+    pub fn object_checksum(&self) -> std::option::Option<&str> {
         self.object_checksum.as_deref()
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> std::option::Option<& crate::model::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Throw an exception if Object name is already exist.
@@ -1603,7 +2364,7 @@ impl PutObjectInput {
         self.throw_on_duplicate
     }
 }
-impl  std::fmt::Debug for PutObjectInput  {
+impl std::fmt::Debug for PutObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutObjectInput");
         formatter.field("backup_job_id", &self.backup_job_id);
@@ -1612,7 +2373,10 @@ impl  std::fmt::Debug for PutObjectInput  {
         formatter.field("inline_chunk", &self.inline_chunk);
         formatter.field("inline_chunk_length", &self.inline_chunk_length);
         formatter.field("inline_chunk_checksum", &self.inline_chunk_checksum);
-        formatter.field("inline_chunk_checksum_algorithm", &self.inline_chunk_checksum_algorithm);
+        formatter.field(
+            "inline_chunk_checksum_algorithm",
+            &self.inline_chunk_checksum_algorithm,
+        );
         formatter.field("object_checksum", &self.object_checksum);
         formatter.field("object_checksum_algorithm", &self.object_checksum_algorithm);
         formatter.field("throw_on_duplicate", &self.throw_on_duplicate);
@@ -1621,29 +2385,36 @@ impl  std::fmt::Debug for PutObjectInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]pub struct PutChunkInput  {
+#[non_exhaustive]
+pub struct PutChunkInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]pub backup_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub backup_job_id: std::option::Option<std::string::String>,
     /// Upload Id for the in-progress upload.
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
     /// Describes this chunk's position relative to the other chunks
-    #[doc(hidden)]pub chunk_index: i64,
+    #[doc(hidden)]
+    pub chunk_index: i64,
     /// Data to be uploaded
     pub data: aws_smithy_http::byte_stream::ByteStream,
     /// Data length
-    #[doc(hidden)]pub length: i64,
+    #[doc(hidden)]
+    pub length: i64,
     /// Data checksum
-    #[doc(hidden)]pub checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub checksum: std::option::Option<std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]pub checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+    #[doc(hidden)]
+    pub checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
 }
 impl PutChunkInput {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
     /// Upload Id for the in-progress upload.
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// Describes this chunk's position relative to the other chunks
@@ -1651,7 +2422,7 @@ impl PutChunkInput {
         self.chunk_index
     }
     /// Data to be uploaded
-    pub fn data(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.data
     }
     /// Data length
@@ -1659,15 +2430,15 @@ impl PutChunkInput {
         self.length
     }
     /// Data checksum
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::model::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
-impl  std::fmt::Debug for PutChunkInput  {
+impl std::fmt::Debug for PutChunkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutChunkInput");
         formatter.field("backup_job_id", &self.backup_job_id);
@@ -1682,49 +2453,60 @@ impl  std::fmt::Debug for PutChunkInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]pub struct NotifyObjectCompleteInput  {
+#[non_exhaustive]
+pub struct NotifyObjectCompleteInput {
     /// Backup job Id for the in-progress backup
-    #[doc(hidden)]pub backup_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub backup_job_id: std::option::Option<std::string::String>,
     /// Upload Id for the in-progress upload
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
     /// Object checksum
-    #[doc(hidden)]pub object_checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_checksum: std::option::Option<std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+    #[doc(hidden)]
+    pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    #[doc(hidden)]pub metadata_string: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub metadata_string: std::option::Option<std::string::String>,
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub metadata_blob: aws_smithy_http::byte_stream::ByteStream,
     /// The size of MetadataBlob.
-    #[doc(hidden)]pub metadata_blob_length: i64,
+    #[doc(hidden)]
+    pub metadata_blob_length: i64,
     /// Checksum of MetadataBlob.
-    #[doc(hidden)]pub metadata_blob_checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub metadata_blob_checksum: std::option::Option<std::string::String>,
     /// Checksum algorithm.
-    #[doc(hidden)]pub metadata_blob_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+    #[doc(hidden)]
+    pub metadata_blob_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
 }
 impl NotifyObjectCompleteInput {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
     /// Upload Id for the in-progress upload
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// Object checksum
-    pub fn object_checksum(&self) -> std::option::Option<& str> {
+    pub fn object_checksum(&self) -> std::option::Option<&str> {
         self.object_checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> std::option::Option<& crate::model::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    pub fn metadata_string(&self) -> std::option::Option<& str> {
+    pub fn metadata_string(&self) -> std::option::Option<&str> {
         self.metadata_string.as_deref()
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn metadata_blob(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -1732,15 +2514,17 @@ impl NotifyObjectCompleteInput {
         self.metadata_blob_length
     }
     /// Checksum of MetadataBlob.
-    pub fn metadata_blob_checksum(&self) -> std::option::Option<& str> {
+    pub fn metadata_blob_checksum(&self) -> std::option::Option<&str> {
         self.metadata_blob_checksum.as_deref()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(&self) -> std::option::Option<& crate::model::DataChecksumAlgorithm> {
+    pub fn metadata_blob_checksum_algorithm(
+        &self,
+    ) -> std::option::Option<&crate::model::DataChecksumAlgorithm> {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
-impl  std::fmt::Debug for NotifyObjectCompleteInput  {
+impl std::fmt::Debug for NotifyObjectCompleteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyObjectCompleteInput");
         formatter.field("backup_job_id", &self.backup_job_id);
@@ -1751,40 +2535,51 @@ impl  std::fmt::Debug for NotifyObjectCompleteInput  {
         formatter.field("metadata_blob", &self.metadata_blob);
         formatter.field("metadata_blob_length", &self.metadata_blob_length);
         formatter.field("metadata_blob_checksum", &self.metadata_blob_checksum);
-        formatter.field("metadata_blob_checksum_algorithm", &self.metadata_blob_checksum_algorithm);
+        formatter.field(
+            "metadata_blob_checksum_algorithm",
+            &self.metadata_blob_checksum_algorithm,
+        );
         formatter.finish()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListObjectsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListObjectsInput {
     /// Storage job id
-    #[doc(hidden)]pub storage_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub storage_job_id: std::option::Option<std::string::String>,
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    #[doc(hidden)]pub starting_object_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub starting_object_name: std::option::Option<std::string::String>,
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    #[doc(hidden)]pub starting_object_prefix: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub starting_object_prefix: std::option::Option<std::string::String>,
     /// Maximum objects count
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// Pagination token
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
     /// (Optional) Created before filter
-    #[doc(hidden)]pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
     /// (Optional) Created after filter
-    #[doc(hidden)]pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListObjectsInput {
     /// Storage job id
-    pub fn storage_job_id(&self) -> std::option::Option<& str> {
+    pub fn storage_job_id(&self) -> std::option::Option<&str> {
         self.storage_job_id.as_deref()
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_name(&self) -> std::option::Option<& str> {
+    pub fn starting_object_name(&self) -> std::option::Option<&str> {
         self.starting_object_name.as_deref()
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_prefix(&self) -> std::option::Option<& str> {
+    pub fn starting_object_prefix(&self) -> std::option::Option<&str> {
         self.starting_object_prefix.as_deref()
     }
     /// Maximum objects count
@@ -1792,19 +2587,19 @@ impl ListObjectsInput {
         self.max_results
     }
     /// Pagination token
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// (Optional) Created before filter
-    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// (Optional) Created after filter
-    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
 }
-impl  std::fmt::Debug for ListObjectsInput  {
+impl std::fmt::Debug for ListObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectsInput");
         formatter.field("storage_job_id", &self.storage_job_id);
@@ -1819,24 +2614,29 @@ impl  std::fmt::Debug for ListObjectsInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListChunksInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListChunksInput {
     /// Storage job id
-    #[doc(hidden)]pub storage_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub storage_job_id: std::option::Option<std::string::String>,
     /// Object token
-    #[doc(hidden)]pub object_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_token: std::option::Option<std::string::String>,
     /// Maximum number of chunks
-    #[doc(hidden)]pub max_results: i32,
+    #[doc(hidden)]
+    pub max_results: i32,
     /// Pagination token
-    #[doc(hidden)]pub next_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChunksInput {
     /// Storage job id
-    pub fn storage_job_id(&self) -> std::option::Option<& str> {
+    pub fn storage_job_id(&self) -> std::option::Option<&str> {
         self.storage_job_id.as_deref()
     }
     /// Object token
-    pub fn object_token(&self) -> std::option::Option<& str> {
+    pub fn object_token(&self) -> std::option::Option<&str> {
         self.object_token.as_deref()
     }
     /// Maximum number of chunks
@@ -1844,11 +2644,11 @@ impl ListChunksInput {
         self.max_results
     }
     /// Pagination token
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListChunksInput  {
+impl std::fmt::Debug for ListChunksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChunksInput");
         formatter.field("storage_job_id", &self.storage_job_id);
@@ -1860,24 +2660,27 @@ impl  std::fmt::Debug for ListChunksInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetObjectMetadataInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetObjectMetadataInput {
     /// Backup job id for the in-progress backup.
-    #[doc(hidden)]pub storage_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub storage_job_id: std::option::Option<std::string::String>,
     /// Object token.
-    #[doc(hidden)]pub object_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_token: std::option::Option<std::string::String>,
 }
 impl GetObjectMetadataInput {
     /// Backup job id for the in-progress backup.
-    pub fn storage_job_id(&self) -> std::option::Option<& str> {
+    pub fn storage_job_id(&self) -> std::option::Option<&str> {
         self.storage_job_id.as_deref()
     }
     /// Object token.
-    pub fn object_token(&self) -> std::option::Option<& str> {
+    pub fn object_token(&self) -> std::option::Option<&str> {
         self.object_token.as_deref()
     }
 }
-impl  std::fmt::Debug for GetObjectMetadataInput  {
+impl std::fmt::Debug for GetObjectMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetObjectMetadataInput");
         formatter.field("storage_job_id", &self.storage_job_id);
@@ -1887,24 +2690,27 @@ impl  std::fmt::Debug for GetObjectMetadataInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetChunkInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetChunkInput {
     /// Storage job id
-    #[doc(hidden)]pub storage_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub storage_job_id: std::option::Option<std::string::String>,
     /// Chunk token
-    #[doc(hidden)]pub chunk_token: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub chunk_token: std::option::Option<std::string::String>,
 }
 impl GetChunkInput {
     /// Storage job id
-    pub fn storage_job_id(&self) -> std::option::Option<& str> {
+    pub fn storage_job_id(&self) -> std::option::Option<&str> {
         self.storage_job_id.as_deref()
     }
     /// Chunk token
-    pub fn chunk_token(&self) -> std::option::Option<& str> {
+    pub fn chunk_token(&self) -> std::option::Option<&str> {
         self.chunk_token.as_deref()
     }
 }
-impl  std::fmt::Debug for GetChunkInput  {
+impl std::fmt::Debug for GetChunkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChunkInput");
         formatter.field("storage_job_id", &self.storage_job_id);
@@ -1914,24 +2720,27 @@ impl  std::fmt::Debug for GetChunkInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteObjectInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteObjectInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]pub backup_job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub backup_job_id: std::option::Option<std::string::String>,
     /// The name of the Object.
-    #[doc(hidden)]pub object_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_name: std::option::Option<std::string::String>,
 }
 impl DeleteObjectInput {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
     /// The name of the Object.
-    pub fn object_name(&self) -> std::option::Option<& str> {
+    pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteObjectInput  {
+impl std::fmt::Debug for DeleteObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteObjectInput");
         formatter.field("backup_job_id", &self.backup_job_id);
@@ -1939,4 +2748,3 @@ impl  std::fmt::Debug for DeleteObjectInput  {
         formatter.finish()
     }
 }
-

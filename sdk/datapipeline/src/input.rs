@@ -3,12 +3,13 @@ use std::fmt::Write;
 
 /// See [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
 pub mod activate_pipeline_input {
-    
+
     /// A builder for [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
-        pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        pub(crate) parameter_values:
+            std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
         pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -19,7 +20,8 @@ pub mod activate_pipeline_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `parameter_values`.
         ///
@@ -28,13 +30,17 @@ pub mod activate_pipeline_input {
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
         pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-                            v.push(input);
-                            self.parameter_values = Some(v);
-                            self
+            v.push(input);
+            self.parameter_values = Some(v);
+            self
         }
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-        pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>) -> Self {
-            self.parameter_values = input; self
+        pub fn set_parameter_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        ) -> Self {
+            self.parameter_values = input;
+            self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
         pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -42,86 +48,130 @@ pub mod activate_pipeline_input {
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-        pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.start_timestamp = input; self
+        pub fn set_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_timestamp = input;
+            self
         }
         /// Consumes the builder and constructs a [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
-        pub fn build(self) -> Result<crate::input::ActivatePipelineInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ActivatePipelineInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    parameter_values: self.parameter_values
-                    ,
-                    start_timestamp: self.start_timestamp
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ActivatePipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ActivatePipelineInput {
+                pipeline_id: self.pipeline_id,
+                parameter_values: self.parameter_values,
+                start_timestamp: self.start_timestamp,
+            })
         }
     }
-    
-    
 }
 impl ActivatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`ActivatePipeline`](crate::operation::ActivatePipeline)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ActivatePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ActivatePipeline,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ActivatePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ActivatePipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ActivatePipelineInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ActivatePipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.ActivatePipeline"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.ActivatePipeline",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_activate_pipeline(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_activate_pipeline(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ActivatePipeline::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ActivatePipeline", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ActivatePipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ActivatePipeline",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -133,9 +183,9 @@ impl ActivatePipelineInput {
 
 /// See [`AddTagsInput`](crate::input::AddTagsInput).
 pub mod add_tags_input {
-    
+
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -148,7 +198,8 @@ pub mod add_tags_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -157,89 +208,131 @@ pub mod add_tags_input {
         /// <p>The tags to add, as key/value pairs.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>The tags to add, as key/value pairs.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput).
-        pub fn build(self) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddTagsInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::AddTagsInput {
+                pipeline_id: self.pipeline_id,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::AddTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddTagsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.AddTags"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.AddTags",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "AddTags",
+                    "datapipeline",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -251,9 +344,9 @@ impl AddTagsInput {
 
 /// See [`CreatePipelineInput`](crate::input::CreatePipelineInput).
 pub mod create_pipeline_input {
-    
+
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) unique_id: std::option::Option<std::string::String>,
@@ -268,7 +361,8 @@ pub mod create_pipeline_input {
         }
         /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input; self
+            self.name = input;
+            self
         }
         /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -277,7 +371,8 @@ pub mod create_pipeline_input {
         }
         /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unique_id = input; self
+            self.unique_id = input;
+            self
         }
         /// <p>The description for the pipeline.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -286,7 +381,8 @@ pub mod create_pipeline_input {
         }
         /// <p>The description for the pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input; self
+            self.description = input;
+            self
         }
         /// Appends an item to `tags`.
         ///
@@ -295,93 +391,136 @@ pub mod create_pipeline_input {
         /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-                            v.push(input);
-                            self.tags = Some(v);
-                            self
+            v.push(input);
+            self.tags = Some(v);
+            self
         }
         /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-        pub fn build(self) -> Result<crate::input::CreatePipelineInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreatePipelineInput {
-                    name: self.name
-                    ,
-                    unique_id: self.unique_id
-                    ,
-                    description: self.description
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreatePipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreatePipelineInput {
+                name: self.name,
+                unique_id: self.unique_id,
+                description: self.description,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreatePipeline,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::CreatePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreatePipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreatePipelineInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreatePipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.CreatePipeline"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.CreatePipeline",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePipeline::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePipeline", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePipeline",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -393,9 +532,9 @@ impl CreatePipelineInput {
 
 /// See [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
 pub mod deactivate_pipeline_input {
-    
+
     /// A builder for [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) cancel_active: std::option::Option<bool>,
@@ -408,7 +547,8 @@ pub mod deactivate_pipeline_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
         pub fn cancel_active(mut self, input: bool) -> Self {
@@ -417,83 +557,125 @@ pub mod deactivate_pipeline_input {
         }
         /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
         pub fn set_cancel_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.cancel_active = input; self
+            self.cancel_active = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
-        pub fn build(self) -> Result<crate::input::DeactivatePipelineInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeactivatePipelineInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    cancel_active: self.cancel_active
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeactivatePipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeactivatePipelineInput {
+                pipeline_id: self.pipeline_id,
+                cancel_active: self.cancel_active,
+            })
         }
     }
-    
-    
 }
 impl DeactivatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeactivatePipeline`](crate::operation::DeactivatePipeline)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeactivatePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeactivatePipeline,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeactivatePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeactivatePipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeactivatePipelineInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeactivatePipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.DeactivatePipeline"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.DeactivatePipeline",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deactivate_pipeline(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_deactivate_pipeline(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeactivatePipeline::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeactivatePipeline", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeactivatePipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeactivatePipeline",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -505,9 +687,9 @@ impl DeactivatePipelineInput {
 
 /// See [`DeletePipelineInput`](crate::input::DeletePipelineInput).
 pub mod delete_pipeline_input {
-    
+
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
     }
@@ -519,81 +701,124 @@ pub mod delete_pipeline_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-        pub fn build(self) -> Result<crate::input::DeletePipelineInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeletePipelineInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeletePipelineInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeletePipelineInput {
+                pipeline_id: self.pipeline_id,
+            })
         }
     }
-    
-    
 }
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePipeline, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeletePipeline,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DeletePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeletePipelineInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeletePipelineInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeletePipelineInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.DeletePipeline"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.DeletePipeline",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePipeline::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePipeline", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePipeline",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -605,9 +830,9 @@ impl DeletePipelineInput {
 
 /// See [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
 pub mod describe_objects_input {
-    
+
     /// A builder for [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -622,7 +847,8 @@ pub mod describe_objects_input {
         }
         /// <p>The ID of the pipeline that contains the object definitions.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `object_ids`.
         ///
@@ -631,13 +857,17 @@ pub mod describe_objects_input {
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
         pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.object_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.object_ids = Some(v);
+            self
         }
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-        pub fn set_object_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.object_ids = input; self
+        pub fn set_object_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.object_ids = input;
+            self
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
         pub fn evaluate_expressions(mut self, input: bool) -> Self {
@@ -646,7 +876,8 @@ pub mod describe_objects_input {
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
         pub fn set_evaluate_expressions(mut self, input: std::option::Option<bool>) -> Self {
-            self.evaluate_expressions = input; self
+            self.evaluate_expressions = input;
+            self
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -655,88 +886,127 @@ pub mod describe_objects_input {
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
-        pub fn build(self) -> Result<crate::input::DescribeObjectsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeObjectsInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    object_ids: self.object_ids
-                    ,
-                    evaluate_expressions: self.evaluate_expressions
-                        .unwrap_or_default()
-                    ,
-                    marker: self.marker
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeObjectsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeObjectsInput {
+                pipeline_id: self.pipeline_id,
+                object_ids: self.object_ids,
+                evaluate_expressions: self.evaluate_expressions.unwrap_or_default(),
+                marker: self.marker,
+            })
         }
     }
-    
-    
 }
 impl DescribeObjectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeObjects`](crate::operation::DescribeObjects)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeObjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeObjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeObjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeObjectsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeObjectsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeObjectsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.DescribeObjects"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.DescribeObjects",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_objects(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_objects(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeObjects::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeObjects", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeObjects",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -748,9 +1018,9 @@ impl DescribeObjectsInput {
 
 /// See [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
 pub mod describe_pipelines_input {
-    
+
     /// A builder for [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -762,87 +1032,133 @@ pub mod describe_pipelines_input {
         /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
         pub fn pipeline_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pipeline_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.pipeline_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.pipeline_ids = Some(v);
+            self
         }
         /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-        pub fn set_pipeline_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.pipeline_ids = input; self
+        pub fn set_pipeline_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.pipeline_ids = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
-        pub fn build(self) -> Result<crate::input::DescribePipelinesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribePipelinesInput {
-                    pipeline_ids: self.pipeline_ids
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribePipelinesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribePipelinesInput {
+                pipeline_ids: self.pipeline_ids,
+            })
         }
     }
-    
-    
 }
 impl DescribePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`DescribePipelines`](crate::operation::DescribePipelines)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePipelines, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePipelines,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribePipelinesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribePipelinesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribePipelinesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribePipelinesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.DescribePipelines"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.DescribePipelines",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_pipelines(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_pipelines(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePipelines::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePipelines", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePipelines::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePipelines",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -854,9 +1170,9 @@ impl DescribePipelinesInput {
 
 /// See [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
 pub mod evaluate_expression_input {
-    
+
     /// A builder for [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_id: std::option::Option<std::string::String>,
@@ -870,7 +1186,8 @@ pub mod evaluate_expression_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// <p>The ID of the object.</p>
         pub fn object_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -879,7 +1196,8 @@ pub mod evaluate_expression_input {
         }
         /// <p>The ID of the object.</p>
         pub fn set_object_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_id = input; self
+            self.object_id = input;
+            self
         }
         /// <p>The expression to evaluate.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -888,85 +1206,126 @@ pub mod evaluate_expression_input {
         }
         /// <p>The expression to evaluate.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input; self
+            self.expression = input;
+            self
         }
         /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
-        pub fn build(self) -> Result<crate::input::EvaluateExpressionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::EvaluateExpressionInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    object_id: self.object_id
-                    ,
-                    expression: self.expression
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::EvaluateExpressionInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::EvaluateExpressionInput {
+                pipeline_id: self.pipeline_id,
+                object_id: self.object_id,
+                expression: self.expression,
+            })
         }
     }
-    
-    
 }
 impl EvaluateExpressionInput {
     /// Consumes the builder and constructs an Operation<[`EvaluateExpression`](crate::operation::EvaluateExpression)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::EvaluateExpression, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EvaluateExpression,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::EvaluateExpressionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::EvaluateExpressionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::EvaluateExpressionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::EvaluateExpressionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.EvaluateExpression"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.EvaluateExpression",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_evaluate_expression(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_expression(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::EvaluateExpression::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("EvaluateExpression", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EvaluateExpression::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EvaluateExpression",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -978,9 +1337,9 @@ impl EvaluateExpressionInput {
 
 /// See [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
 pub mod get_pipeline_definition_input {
-    
+
     /// A builder for [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -993,7 +1352,8 @@ pub mod get_pipeline_definition_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1002,83 +1362,127 @@ pub mod get_pipeline_definition_input {
         }
         /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input; self
+            self.version = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
-        pub fn build(self) -> Result<crate::input::GetPipelineDefinitionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetPipelineDefinitionInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    version: self.version
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetPipelineDefinitionInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetPipelineDefinitionInput {
+                pipeline_id: self.pipeline_id,
+                version: self.version,
+            })
         }
     }
-    
-    
 }
 impl GetPipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineDefinition`](crate::operation::GetPipelineDefinition)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPipelineDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetPipelineDefinition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::GetPipelineDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetPipelineDefinitionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetPipelineDefinitionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetPipelineDefinitionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.GetPipelineDefinition"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.GetPipelineDefinition",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_definition(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_get_pipeline_definition(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPipelineDefinition::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPipelineDefinition", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPipelineDefinition::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPipelineDefinition",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1090,9 +1494,9 @@ impl GetPipelineDefinitionInput {
 
 /// See [`ListPipelinesInput`](crate::input::ListPipelinesInput).
 pub mod list_pipelines_input {
-    
+
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1104,81 +1508,124 @@ pub mod list_pipelines_input {
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-        pub fn build(self) -> Result<crate::input::ListPipelinesInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPipelinesInput {
-                    marker: self.marker
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListPipelinesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListPipelinesInput {
+                marker: self.marker,
+            })
         }
     }
-    
-    
 }
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPipelines, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListPipelines,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPipelinesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListPipelinesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPipelinesInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPipelinesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.ListPipelines"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.ListPipelines",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPipelines::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPipelines", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPipelines::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPipelines",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1190,9 +1637,9 @@ impl ListPipelinesInput {
 
 /// See [`PollForTaskInput`](crate::input::PollForTaskInput).
 pub mod poll_for_task_input {
-    
+
     /// A builder for [`PollForTaskInput`](crate::input::PollForTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_group: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -1206,7 +1653,8 @@ pub mod poll_for_task_input {
         }
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.worker_group = input; self
+            self.worker_group = input;
+            self
         }
         /// <p>The public DNS name of the calling task runner.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,7 +1663,8 @@ pub mod poll_for_task_input {
         }
         /// <p>The public DNS name of the calling task runner.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input; self
+            self.hostname = input;
+            self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
         pub fn instance_identity(mut self, input: crate::model::InstanceIdentity) -> Self {
@@ -1223,86 +1672,130 @@ pub mod poll_for_task_input {
             self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-        pub fn set_instance_identity(mut self, input: std::option::Option<crate::model::InstanceIdentity>) -> Self {
-            self.instance_identity = input; self
+        pub fn set_instance_identity(
+            mut self,
+            input: std::option::Option<crate::model::InstanceIdentity>,
+        ) -> Self {
+            self.instance_identity = input;
+            self
         }
         /// Consumes the builder and constructs a [`PollForTaskInput`](crate::input::PollForTaskInput).
-        pub fn build(self) -> Result<crate::input::PollForTaskInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PollForTaskInput {
-                    worker_group: self.worker_group
-                    ,
-                    hostname: self.hostname
-                    ,
-                    instance_identity: self.instance_identity
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PollForTaskInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PollForTaskInput {
+                worker_group: self.worker_group,
+                hostname: self.hostname,
+                instance_identity: self.instance_identity,
+            })
         }
     }
-    
-    
 }
 impl PollForTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForTask`](crate::operation::PollForTask)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PollForTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PollForTask,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PollForTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PollForTaskInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PollForTaskInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PollForTaskInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.PollForTask"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.PollForTask",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_poll_for_task(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_poll_for_task(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PollForTask::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PollForTask", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PollForTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PollForTask",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1314,14 +1807,17 @@ impl PollForTaskInput {
 
 /// See [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
 pub mod put_pipeline_definition_input {
-    
+
     /// A builder for [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
-        pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-        pub(crate) parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
-        pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        pub(crate) pipeline_objects:
+            std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        pub(crate) parameter_objects:
+            std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+        pub(crate) parameter_values:
+            std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     }
     impl Builder {
         /// <p>The ID of the pipeline.</p>
@@ -1331,7 +1827,8 @@ pub mod put_pipeline_definition_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `pipeline_objects`.
         ///
@@ -1340,13 +1837,17 @@ pub mod put_pipeline_definition_input {
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
         pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-                            v.push(input);
-                            self.pipeline_objects = Some(v);
-                            self
+            v.push(input);
+            self.pipeline_objects = Some(v);
+            self
         }
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-        pub fn set_pipeline_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>) -> Self {
-            self.pipeline_objects = input; self
+        pub fn set_pipeline_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        ) -> Self {
+            self.pipeline_objects = input;
+            self
         }
         /// Appends an item to `parameter_objects`.
         ///
@@ -1355,13 +1856,17 @@ pub mod put_pipeline_definition_input {
         /// <p>The parameter objects used with the pipeline.</p>
         pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-                            v.push(input);
-                            self.parameter_objects = Some(v);
-                            self
+            v.push(input);
+            self.parameter_objects = Some(v);
+            self
         }
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn set_parameter_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>) -> Self {
-            self.parameter_objects = input; self
+        pub fn set_parameter_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+        ) -> Self {
+            self.parameter_objects = input;
+            self
         }
         /// Appends an item to `parameter_values`.
         ///
@@ -1370,93 +1875,138 @@ pub mod put_pipeline_definition_input {
         /// <p>The parameter values used with the pipeline.</p>
         pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-                            v.push(input);
-                            self.parameter_values = Some(v);
-                            self
+            v.push(input);
+            self.parameter_values = Some(v);
+            self
         }
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>) -> Self {
-            self.parameter_values = input; self
+        pub fn set_parameter_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        ) -> Self {
+            self.parameter_values = input;
+            self
         }
         /// Consumes the builder and constructs a [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
-        pub fn build(self) -> Result<crate::input::PutPipelineDefinitionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PutPipelineDefinitionInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    pipeline_objects: self.pipeline_objects
-                    ,
-                    parameter_objects: self.parameter_objects
-                    ,
-                    parameter_values: self.parameter_values
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::PutPipelineDefinitionInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::PutPipelineDefinitionInput {
+                pipeline_id: self.pipeline_id,
+                pipeline_objects: self.pipeline_objects,
+                parameter_objects: self.parameter_objects,
+                parameter_values: self.parameter_values,
+            })
         }
     }
-    
-    
 }
 impl PutPipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutPipelineDefinition`](crate::operation::PutPipelineDefinition)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutPipelineDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutPipelineDefinition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::PutPipelineDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PutPipelineDefinitionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PutPipelineDefinitionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PutPipelineDefinitionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.PutPipelineDefinition"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.PutPipelineDefinition",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_pipeline_definition(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_put_pipeline_definition(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutPipelineDefinition::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutPipelineDefinition", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutPipelineDefinition::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutPipelineDefinition",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1468,9 +2018,9 @@ impl PutPipelineDefinitionInput {
 
 /// See [`QueryObjectsInput`](crate::input::QueryObjectsInput).
 pub mod query_objects_input {
-    
+
     /// A builder for [`QueryObjectsInput`](crate::input::QueryObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) query: std::option::Option<crate::model::Query>,
@@ -1486,7 +2036,8 @@ pub mod query_objects_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
         pub fn query(mut self, input: crate::model::Query) -> Self {
@@ -1495,7 +2046,8 @@ pub mod query_objects_input {
         }
         /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
         pub fn set_query(mut self, input: std::option::Option<crate::model::Query>) -> Self {
-            self.query = input; self
+            self.query = input;
+            self
         }
         /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn sphere(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1504,7 +2056,8 @@ pub mod query_objects_input {
         }
         /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn set_sphere(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sphere = input; self
+            self.sphere = input;
+            self
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1513,7 +2066,8 @@ pub mod query_objects_input {
         }
         /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -1522,89 +2076,128 @@ pub mod query_objects_input {
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input; self
+            self.limit = input;
+            self
         }
         /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::input::QueryObjectsInput).
-        pub fn build(self) -> Result<crate::input::QueryObjectsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::QueryObjectsInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    query: self.query
-                    ,
-                    sphere: self.sphere
-                    ,
-                    marker: self.marker
-                    ,
-                    limit: self.limit
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::QueryObjectsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::QueryObjectsInput {
+                pipeline_id: self.pipeline_id,
+                query: self.query,
+                sphere: self.sphere,
+                marker: self.marker,
+                limit: self.limit,
+            })
         }
     }
-    
-    
 }
 impl QueryObjectsInput {
     /// Consumes the builder and constructs an Operation<[`QueryObjects`](crate::operation::QueryObjects)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::QueryObjects, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::QueryObjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::QueryObjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::QueryObjectsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::QueryObjectsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::QueryObjectsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.QueryObjects"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.QueryObjects",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_query_objects(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_query_objects(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::QueryObjects::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("QueryObjects", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryObjects",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1616,9 +2209,9 @@ impl QueryObjectsInput {
 
 /// See [`RemoveTagsInput`](crate::input::RemoveTagsInput).
 pub mod remove_tags_input {
-    
+
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1631,7 +2224,8 @@ pub mod remove_tags_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -1640,89 +2234,133 @@ pub mod remove_tags_input {
         /// <p>The keys of the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>The keys of the tags to remove.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-        pub fn build(self) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveTagsInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveTagsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::RemoveTagsInput {
+                pipeline_id: self.pipeline_id,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveTagsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveTagsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveTagsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.RemoveTags"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.RemoveTags",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveTags", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTags",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1734,9 +2372,9 @@ impl RemoveTagsInput {
 
 /// See [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
 pub mod report_task_progress_input {
-    
+
     /// A builder for [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -1749,7 +2387,8 @@ pub mod report_task_progress_input {
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input; self
+            self.task_id = input;
+            self
         }
         /// Appends an item to `fields`.
         ///
@@ -1758,89 +2397,134 @@ pub mod report_task_progress_input {
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
         pub fn fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.fields.unwrap_or_default();
-                            v.push(input);
-                            self.fields = Some(v);
-                            self
+            v.push(input);
+            self.fields = Some(v);
+            self
         }
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::Field>>) -> Self {
-            self.fields = input; self
+        pub fn set_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
+        ) -> Self {
+            self.fields = input;
+            self
         }
         /// Consumes the builder and constructs a [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
-        pub fn build(self) -> Result<crate::input::ReportTaskProgressInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ReportTaskProgressInput {
-                    task_id: self.task_id
-                    ,
-                    fields: self.fields
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ReportTaskProgressInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ReportTaskProgressInput {
+                task_id: self.task_id,
+                fields: self.fields,
+            })
         }
     }
-    
-    
 }
 impl ReportTaskProgressInput {
     /// Consumes the builder and constructs an Operation<[`ReportTaskProgress`](crate::operation::ReportTaskProgress)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ReportTaskProgress, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ReportTaskProgress,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ReportTaskProgressInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ReportTaskProgressInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ReportTaskProgressInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ReportTaskProgressInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.ReportTaskProgress"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.ReportTaskProgress",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_report_task_progress(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_report_task_progress(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ReportTaskProgress::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ReportTaskProgress", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReportTaskProgress::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReportTaskProgress",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1852,9 +2536,9 @@ impl ReportTaskProgressInput {
 
 /// See [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
 pub mod report_task_runner_heartbeat_input {
-    
+
     /// A builder for [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) taskrunner_id: std::option::Option<std::string::String>,
         pub(crate) worker_group: std::option::Option<std::string::String>,
@@ -1867,8 +2551,12 @@ pub mod report_task_runner_heartbeat_input {
             self
         }
         /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-        pub fn set_taskrunner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.taskrunner_id = input; self
+        pub fn set_taskrunner_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.taskrunner_id = input;
+            self
         }
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1877,7 +2565,8 @@ pub mod report_task_runner_heartbeat_input {
         }
         /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.worker_group = input; self
+            self.worker_group = input;
+            self
         }
         /// <p>The public DNS name of the task runner.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1886,85 +2575,130 @@ pub mod report_task_runner_heartbeat_input {
         }
         /// <p>The public DNS name of the task runner.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input; self
+            self.hostname = input;
+            self
         }
         /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
-        pub fn build(self) -> Result<crate::input::ReportTaskRunnerHeartbeatInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ReportTaskRunnerHeartbeatInput {
-                    taskrunner_id: self.taskrunner_id
-                    ,
-                    worker_group: self.worker_group
-                    ,
-                    hostname: self.hostname
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ReportTaskRunnerHeartbeatInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ReportTaskRunnerHeartbeatInput {
+                taskrunner_id: self.taskrunner_id,
+                worker_group: self.worker_group,
+                hostname: self.hostname,
+            })
         }
     }
-    
-    
 }
 impl ReportTaskRunnerHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`ReportTaskRunnerHeartbeat`](crate::operation::ReportTaskRunnerHeartbeat)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ReportTaskRunnerHeartbeat, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ReportTaskRunnerHeartbeat,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ReportTaskRunnerHeartbeatInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ReportTaskRunnerHeartbeatInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ReportTaskRunnerHeartbeatInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ReportTaskRunnerHeartbeatInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.ReportTaskRunnerHeartbeat"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.ReportTaskRunnerHeartbeat",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_report_task_runner_heartbeat(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_report_task_runner_heartbeat(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ReportTaskRunnerHeartbeat::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ReportTaskRunnerHeartbeat", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReportTaskRunnerHeartbeat::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReportTaskRunnerHeartbeat",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1976,9 +2710,9 @@ impl ReportTaskRunnerHeartbeatInput {
 
 /// See [`SetStatusInput`](crate::input::SetStatusInput).
 pub mod set_status_input {
-    
+
     /// A builder for [`SetStatusInput`](crate::input::SetStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1992,7 +2726,8 @@ pub mod set_status_input {
         }
         /// <p>The ID of the pipeline that contains the objects.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `object_ids`.
         ///
@@ -2001,13 +2736,17 @@ pub mod set_status_input {
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
         pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_ids.unwrap_or_default();
-                            v.push(input.into());
-                            self.object_ids = Some(v);
-                            self
+            v.push(input.into());
+            self.object_ids = Some(v);
+            self
         }
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-        pub fn set_object_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.object_ids = input; self
+        pub fn set_object_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.object_ids = input;
+            self
         }
         /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2016,85 +2755,123 @@ pub mod set_status_input {
         }
         /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input; self
+            self.status = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetStatusInput`](crate::input::SetStatusInput).
-        pub fn build(self) -> Result<crate::input::SetStatusInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetStatusInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    object_ids: self.object_ids
-                    ,
-                    status: self.status
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetStatusInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::SetStatusInput {
+                pipeline_id: self.pipeline_id,
+                object_ids: self.object_ids,
+                status: self.status,
+            })
         }
     }
-    
-    
 }
 impl SetStatusInput {
     /// Consumes the builder and constructs an Operation<[`SetStatus`](crate::operation::SetStatus)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetStatusInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.SetStatus"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.SetStatus",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_status(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_status(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetStatus::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetStatus", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SetStatus::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "SetStatus",
+                    "datapipeline",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2106,9 +2883,9 @@ impl SetStatusInput {
 
 /// See [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
 pub mod set_task_status_input {
-    
+
     /// A builder for [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_status: std::option::Option<crate::model::TaskStatus>,
@@ -2124,7 +2901,8 @@ pub mod set_task_status_input {
         }
         /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input; self
+            self.task_id = input;
+            self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
         pub fn task_status(mut self, input: crate::model::TaskStatus) -> Self {
@@ -2132,8 +2910,12 @@ pub mod set_task_status_input {
             self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-        pub fn set_task_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
-            self.task_status = input; self
+        pub fn set_task_status(
+            mut self,
+            input: std::option::Option<crate::model::TaskStatus>,
+        ) -> Self {
+            self.task_status = input;
+            self
         }
         /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn error_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2142,7 +2924,8 @@ pub mod set_task_status_input {
         }
         /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn set_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_id = input; self
+            self.error_id = input;
+            self
         }
         /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2150,8 +2933,12 @@ pub mod set_task_status_input {
             self
         }
         /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_message = input; self
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
         }
         /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn error_stack_trace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2159,90 +2946,132 @@ pub mod set_task_status_input {
             self
         }
         /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn set_error_stack_trace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_stack_trace = input; self
+        pub fn set_error_stack_trace(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_stack_trace = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
-        pub fn build(self) -> Result<crate::input::SetTaskStatusInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetTaskStatusInput {
-                    task_id: self.task_id
-                    ,
-                    task_status: self.task_status
-                    ,
-                    error_id: self.error_id
-                    ,
-                    error_message: self.error_message
-                    ,
-                    error_stack_trace: self.error_stack_trace
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetTaskStatusInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetTaskStatusInput {
+                task_id: self.task_id,
+                task_status: self.task_status,
+                error_id: self.error_id,
+                error_message: self.error_message,
+                error_stack_trace: self.error_stack_trace,
+            })
         }
     }
-    
-    
 }
 impl SetTaskStatusInput {
     /// Consumes the builder and constructs an Operation<[`SetTaskStatus`](crate::operation::SetTaskStatus)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetTaskStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetTaskStatus,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::SetTaskStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetTaskStatusInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetTaskStatusInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetTaskStatusInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.SetTaskStatus"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.SetTaskStatus",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_task_status(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_task_status(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetTaskStatus::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetTaskStatus", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetTaskStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetTaskStatus",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2254,14 +3083,17 @@ impl SetTaskStatusInput {
 
 /// See [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
 pub mod validate_pipeline_definition_input {
-    
+
     /// A builder for [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
-        pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-        pub(crate) parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
-        pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        pub(crate) pipeline_objects:
+            std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        pub(crate) parameter_objects:
+            std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+        pub(crate) parameter_values:
+            std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     }
     impl Builder {
         /// <p>The ID of the pipeline.</p>
@@ -2271,7 +3103,8 @@ pub mod validate_pipeline_definition_input {
         }
         /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input; self
+            self.pipeline_id = input;
+            self
         }
         /// Appends an item to `pipeline_objects`.
         ///
@@ -2280,13 +3113,17 @@ pub mod validate_pipeline_definition_input {
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
         pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-                            v.push(input);
-                            self.pipeline_objects = Some(v);
-                            self
+            v.push(input);
+            self.pipeline_objects = Some(v);
+            self
         }
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-        pub fn set_pipeline_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>) -> Self {
-            self.pipeline_objects = input; self
+        pub fn set_pipeline_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        ) -> Self {
+            self.pipeline_objects = input;
+            self
         }
         /// Appends an item to `parameter_objects`.
         ///
@@ -2295,13 +3132,17 @@ pub mod validate_pipeline_definition_input {
         /// <p>The parameter objects used with the pipeline.</p>
         pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-                            v.push(input);
-                            self.parameter_objects = Some(v);
-                            self
+            v.push(input);
+            self.parameter_objects = Some(v);
+            self
         }
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn set_parameter_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>) -> Self {
-            self.parameter_objects = input; self
+        pub fn set_parameter_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+        ) -> Self {
+            self.parameter_objects = input;
+            self
         }
         /// Appends an item to `parameter_values`.
         ///
@@ -2310,93 +3151,140 @@ pub mod validate_pipeline_definition_input {
         /// <p>The parameter values used with the pipeline.</p>
         pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-                            v.push(input);
-                            self.parameter_values = Some(v);
-                            self
+            v.push(input);
+            self.parameter_values = Some(v);
+            self
         }
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>) -> Self {
-            self.parameter_values = input; self
+        pub fn set_parameter_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        ) -> Self {
+            self.parameter_values = input;
+            self
         }
         /// Consumes the builder and constructs a [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
-        pub fn build(self) -> Result<crate::input::ValidatePipelineDefinitionInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ValidatePipelineDefinitionInput {
-                    pipeline_id: self.pipeline_id
-                    ,
-                    pipeline_objects: self.pipeline_objects
-                    ,
-                    parameter_objects: self.parameter_objects
-                    ,
-                    parameter_values: self.parameter_values
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ValidatePipelineDefinitionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ValidatePipelineDefinitionInput {
+                pipeline_id: self.pipeline_id,
+                pipeline_objects: self.pipeline_objects,
+                parameter_objects: self.parameter_objects,
+                parameter_values: self.parameter_values,
+            })
         }
     }
-    
-    
 }
 impl ValidatePipelineDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`ValidatePipelineDefinition`](crate::operation::ValidatePipelineDefinition)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ValidatePipelineDefinition, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ValidatePipelineDefinition,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         let mut request = {
-            fn uri_base(_input: &crate::input::ValidatePipelineDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ValidatePipelineDefinitionInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ValidatePipelineDefinitionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ValidatePipelineDefinitionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                                builder,
-                                http::header::HeaderName::from_static("x-amz-target"),
-                                "DataPipeline.ValidatePipelineDefinition"
-                            );
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "DataPipeline.ValidatePipelineDefinition",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_validate_pipeline_definition(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_validate_pipeline_definition(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ValidatePipelineDefinition::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ValidatePipelineDefinition", "datapipeline"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ValidatePipelineDefinition::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ValidatePipelineDefinition",
+            "datapipeline",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2407,36 +3295,41 @@ impl ValidatePipelineDefinitionInput {
 }
 
 /// <p>Contains the parameters for ValidatePipelineDefinition.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ValidatePipelineDefinitionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    #[doc(hidden)]pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+    #[doc(hidden)]
+    pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
-    #[doc(hidden)]pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+    #[doc(hidden)]
+    pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
-    #[doc(hidden)]pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+    #[doc(hidden)]
+    pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
 impl ValidatePipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<& [crate::model::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn parameter_objects(&self) -> std::option::Option<& [crate::model::ParameterObject]> {
+    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
         self.parameter_objects.as_deref()
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn parameter_values(&self) -> std::option::Option<& [crate::model::ParameterValue]> {
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
         self.parameter_values.as_deref()
     }
 }
-impl  std::fmt::Debug for ValidatePipelineDefinitionInput  {
+impl std::fmt::Debug for ValidatePipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidatePipelineDefinitionInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2448,42 +3341,48 @@ impl  std::fmt::Debug for ValidatePipelineDefinitionInput  {
 }
 
 /// <p>Contains the parameters for SetTaskStatus.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetTaskStatusInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    #[doc(hidden)]pub task_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub task_id: std::option::Option<std::string::String>,
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    #[doc(hidden)]pub task_status: std::option::Option<crate::model::TaskStatus>,
+    #[doc(hidden)]
+    pub task_status: std::option::Option<crate::model::TaskStatus>,
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    #[doc(hidden)]pub error_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub error_id: std::option::Option<std::string::String>,
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    #[doc(hidden)]pub error_message: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub error_message: std::option::Option<std::string::String>,
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    #[doc(hidden)]pub error_stack_trace: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub error_stack_trace: std::option::Option<std::string::String>,
 }
 impl SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    pub fn task_id(&self) -> std::option::Option<& str> {
+    pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    pub fn task_status(&self) -> std::option::Option<& crate::model::TaskStatus> {
+    pub fn task_status(&self) -> std::option::Option<&crate::model::TaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    pub fn error_id(&self) -> std::option::Option<& str> {
+    pub fn error_id(&self) -> std::option::Option<&str> {
         self.error_id.as_deref()
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_stack_trace(&self) -> std::option::Option<& str> {
+    pub fn error_stack_trace(&self) -> std::option::Option<&str> {
         self.error_stack_trace.as_deref()
     }
 }
-impl  std::fmt::Debug for SetTaskStatusInput  {
+impl std::fmt::Debug for SetTaskStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTaskStatusInput");
         formatter.field("task_id", &self.task_id);
@@ -2496,30 +3395,34 @@ impl  std::fmt::Debug for SetTaskStatusInput  {
 }
 
 /// <p>Contains the parameters for SetStatus.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetStatusInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    #[doc(hidden)]pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-    #[doc(hidden)]pub status: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub status: std::option::Option<std::string::String>,
 }
 impl SetStatusInput {
     /// <p>The ID of the pipeline that contains the objects.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub fn object_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn object_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.object_ids.as_deref()
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
-impl  std::fmt::Debug for SetStatusInput  {
+impl std::fmt::Debug for SetStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetStatusInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2530,30 +3433,34 @@ impl  std::fmt::Debug for SetStatusInput  {
 }
 
 /// <p>Contains the parameters for ReportTaskRunnerHeartbeat.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ReportTaskRunnerHeartbeatInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    #[doc(hidden)]pub taskrunner_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub taskrunner_id: std::option::Option<std::string::String>,
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    #[doc(hidden)]pub worker_group: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the task runner.</p>
-    #[doc(hidden)]pub hostname: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub hostname: std::option::Option<std::string::String>,
 }
 impl ReportTaskRunnerHeartbeatInput {
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    pub fn taskrunner_id(&self) -> std::option::Option<& str> {
+    pub fn taskrunner_id(&self) -> std::option::Option<&str> {
         self.taskrunner_id.as_deref()
     }
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    pub fn worker_group(&self) -> std::option::Option<& str> {
+    pub fn worker_group(&self) -> std::option::Option<&str> {
         self.worker_group.as_deref()
     }
     /// <p>The public DNS name of the task runner.</p>
-    pub fn hostname(&self) -> std::option::Option<& str> {
+    pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
 }
-impl  std::fmt::Debug for ReportTaskRunnerHeartbeatInput  {
+impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatInput");
         formatter.field("taskrunner_id", &self.taskrunner_id);
@@ -2564,24 +3471,27 @@ impl  std::fmt::Debug for ReportTaskRunnerHeartbeatInput  {
 }
 
 /// <p>Contains the parameters for ReportTaskProgress.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ReportTaskProgressInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    #[doc(hidden)]pub task_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub task_id: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    #[doc(hidden)]pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+    #[doc(hidden)]
+    pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    pub fn task_id(&self) -> std::option::Option<& str> {
+    pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn fields(&self) -> std::option::Option<& [crate::model::Field]> {
+    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.fields.as_deref()
     }
 }
-impl  std::fmt::Debug for ReportTaskProgressInput  {
+impl std::fmt::Debug for ReportTaskProgressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportTaskProgressInput");
         formatter.field("task_id", &self.task_id);
@@ -2591,24 +3501,27 @@ impl  std::fmt::Debug for ReportTaskProgressInput  {
 }
 
 /// <p>Contains the parameters for RemoveTags.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveTagsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The keys of the tags to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveTagsInput  {
+impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2618,34 +3531,40 @@ impl  std::fmt::Debug for RemoveTagsInput  {
 }
 
 /// <p>Contains the parameters for QueryObjects.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct QueryObjectsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
-    #[doc(hidden)]pub query: std::option::Option<crate::model::Query>,
+    #[doc(hidden)]
+    pub query: std::option::Option<crate::model::Query>,
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-    #[doc(hidden)]pub sphere: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub sphere: std::option::Option<std::string::String>,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
-    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub limit: std::option::Option<i32>,
 }
 impl QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
-    pub fn query(&self) -> std::option::Option<& crate::model::Query> {
+    pub fn query(&self) -> std::option::Option<&crate::model::Query> {
         self.query.as_ref()
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-    pub fn sphere(&self) -> std::option::Option<& str> {
+    pub fn sphere(&self) -> std::option::Option<&str> {
         self.sphere.as_deref()
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
@@ -2653,7 +3572,7 @@ impl QueryObjectsInput {
         self.limit
     }
 }
-impl  std::fmt::Debug for QueryObjectsInput  {
+impl std::fmt::Debug for QueryObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryObjectsInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2666,36 +3585,41 @@ impl  std::fmt::Debug for QueryObjectsInput  {
 }
 
 /// <p>Contains the parameters for PutPipelineDefinition.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PutPipelineDefinitionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    #[doc(hidden)]pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+    #[doc(hidden)]
+    pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
     /// <p>The parameter objects used with the pipeline.</p>
-    #[doc(hidden)]pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+    #[doc(hidden)]
+    pub parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
     /// <p>The parameter values used with the pipeline.</p>
-    #[doc(hidden)]pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+    #[doc(hidden)]
+    pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
 impl PutPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<& [crate::model::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn parameter_objects(&self) -> std::option::Option<& [crate::model::ParameterObject]> {
+    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
         self.parameter_objects.as_deref()
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn parameter_values(&self) -> std::option::Option<& [crate::model::ParameterValue]> {
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
         self.parameter_values.as_deref()
     }
 }
-impl  std::fmt::Debug for PutPipelineDefinitionInput  {
+impl std::fmt::Debug for PutPipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPipelineDefinitionInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2707,30 +3631,34 @@ impl  std::fmt::Debug for PutPipelineDefinitionInput  {
 }
 
 /// <p>Contains the parameters for PollForTask.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PollForTaskInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PollForTaskInput {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    #[doc(hidden)]pub worker_group: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub worker_group: std::option::Option<std::string::String>,
     /// <p>The public DNS name of the calling task runner.</p>
-    #[doc(hidden)]pub hostname: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub hostname: std::option::Option<std::string::String>,
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-    #[doc(hidden)]pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
+    #[doc(hidden)]
+    pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
 impl PollForTaskInput {
     /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-    pub fn worker_group(&self) -> std::option::Option<& str> {
+    pub fn worker_group(&self) -> std::option::Option<&str> {
         self.worker_group.as_deref()
     }
     /// <p>The public DNS name of the calling task runner.</p>
-    pub fn hostname(&self) -> std::option::Option<& str> {
+    pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-    pub fn instance_identity(&self) -> std::option::Option<& crate::model::InstanceIdentity> {
+    pub fn instance_identity(&self) -> std::option::Option<&crate::model::InstanceIdentity> {
         self.instance_identity.as_ref()
     }
 }
-impl  std::fmt::Debug for PollForTaskInput  {
+impl std::fmt::Debug for PollForTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForTaskInput");
         formatter.field("worker_group", &self.worker_group);
@@ -2741,18 +3669,20 @@ impl  std::fmt::Debug for PollForTaskInput  {
 }
 
 /// <p>Contains the parameters for ListPipelines.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPipelinesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPipelinesInput {
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
 }
 impl ListPipelinesInput {
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for ListPipelinesInput  {
+impl std::fmt::Debug for ListPipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelinesInput");
         formatter.field("marker", &self.marker);
@@ -2761,24 +3691,27 @@ impl  std::fmt::Debug for ListPipelinesInput  {
 }
 
 /// <p>Contains the parameters for GetPipelineDefinition.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetPipelineDefinitionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
-    #[doc(hidden)]pub version: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub version: std::option::Option<std::string::String>,
 }
 impl GetPipelineDefinitionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
-impl  std::fmt::Debug for GetPipelineDefinitionInput  {
+impl std::fmt::Debug for GetPipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPipelineDefinitionInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2788,30 +3721,34 @@ impl  std::fmt::Debug for GetPipelineDefinitionInput  {
 }
 
 /// <p>Contains the parameters for EvaluateExpression.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct EvaluateExpressionInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The ID of the object.</p>
-    #[doc(hidden)]pub object_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub object_id: std::option::Option<std::string::String>,
     /// <p>The expression to evaluate.</p>
-    #[doc(hidden)]pub expression: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub expression: std::option::Option<std::string::String>,
 }
 impl EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The ID of the object.</p>
-    pub fn object_id(&self) -> std::option::Option<& str> {
+    pub fn object_id(&self) -> std::option::Option<&str> {
         self.object_id.as_deref()
     }
     /// <p>The expression to evaluate.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
-impl  std::fmt::Debug for EvaluateExpressionInput  {
+impl std::fmt::Debug for EvaluateExpressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluateExpressionInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2822,18 +3759,20 @@ impl  std::fmt::Debug for EvaluateExpressionInput  {
 }
 
 /// <p>Contains the parameters for DescribePipelines.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribePipelinesInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    #[doc(hidden)]pub pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub fn pipeline_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn pipeline_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.pipeline_ids.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribePipelinesInput  {
+impl std::fmt::Debug for DescribePipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelinesInput");
         formatter.field("pipeline_ids", &self.pipeline_ids);
@@ -2842,24 +3781,29 @@ impl  std::fmt::Debug for DescribePipelinesInput  {
 }
 
 /// <p>Contains the parameters for DescribeObjects.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeObjectsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    #[doc(hidden)]pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-    #[doc(hidden)]pub evaluate_expressions: bool,
+    #[doc(hidden)]
+    pub evaluate_expressions: bool,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeObjectsInput {
     /// <p>The ID of the pipeline that contains the object definitions.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn object_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn object_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.object_ids.as_deref()
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
@@ -2867,11 +3811,11 @@ impl DescribeObjectsInput {
         self.evaluate_expressions
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeObjectsInput  {
+impl std::fmt::Debug for DescribeObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeObjectsInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2883,18 +3827,20 @@ impl  std::fmt::Debug for DescribeObjectsInput  {
 }
 
 /// <p>Contains the parameters for DeletePipeline.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeletePipelineInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DeletePipelineInput  {
+impl std::fmt::Debug for DeletePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePipelineInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2903,16 +3849,19 @@ impl  std::fmt::Debug for DeletePipelineInput  {
 }
 
 /// <p>Contains the parameters for DeactivatePipeline.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeactivatePipelineInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
-    #[doc(hidden)]pub cancel_active: std::option::Option<bool>,
+    #[doc(hidden)]
+    pub cancel_active: std::option::Option<bool>,
 }
 impl DeactivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
@@ -2920,7 +3869,7 @@ impl DeactivatePipelineInput {
         self.cancel_active
     }
 }
-impl  std::fmt::Debug for DeactivatePipelineInput  {
+impl std::fmt::Debug for DeactivatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeactivatePipelineInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2930,36 +3879,41 @@ impl  std::fmt::Debug for DeactivatePipelineInput  {
 }
 
 /// <p>Contains the parameters for CreatePipeline.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreatePipelineInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePipelineInput {
     /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
-    #[doc(hidden)]pub name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
-    #[doc(hidden)]pub unique_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub unique_id: std::option::Option<std::string::String>,
     /// <p>The description for the pipeline.</p>
-    #[doc(hidden)]pub description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
     /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
-    pub fn unique_id(&self) -> std::option::Option<& str> {
+    pub fn unique_id(&self) -> std::option::Option<&str> {
         self.unique_id.as_deref()
     }
     /// <p>The description for the pipeline.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreatePipelineInput  {
+impl std::fmt::Debug for CreatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineInput");
         formatter.field("name", &self.name);
@@ -2971,24 +3925,27 @@ impl  std::fmt::Debug for CreatePipelineInput  {
 }
 
 /// <p>Contains the parameters for AddTags.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddTagsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddTagsInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The tags to add, as key/value pairs.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The tags to add, as key/value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for AddTagsInput  {
+impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -2998,30 +3955,34 @@ impl  std::fmt::Debug for AddTagsInput  {
 }
 
 /// <p>Contains the parameters for ActivatePipeline.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ActivatePipelineInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]pub pipeline_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    #[doc(hidden)]pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+    #[doc(hidden)]
+    pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    #[doc(hidden)]pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    #[doc(hidden)]
+    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ActivatePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn parameter_values(&self) -> std::option::Option<& [crate::model::ParameterValue]> {
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
         self.parameter_values.as_deref()
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
 }
-impl  std::fmt::Debug for ActivatePipelineInput  {
+impl std::fmt::Debug for ActivatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivatePipelineInput");
         formatter.field("pipeline_id", &self.pipeline_id);
@@ -3030,4 +3991,3 @@ impl  std::fmt::Debug for ActivatePipelineInput  {
         formatter.finish()
     }
 }
-

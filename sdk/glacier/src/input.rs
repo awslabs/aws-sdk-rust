@@ -3,9 +3,9 @@ use std::fmt::Write;
 
 /// See [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
 pub mod abort_multipart_upload_input {
-    
+
     /// A builder for [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -19,7 +19,8 @@ pub mod abort_multipart_upload_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -28,7 +29,8 @@ pub mod abort_multipart_upload_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The upload ID of the multipart upload to delete.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -37,58 +39,112 @@ pub mod abort_multipart_upload_input {
         }
         /// <p>The upload ID of the multipart upload to delete.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
-        pub fn build(self) -> Result<crate::input::AbortMultipartUploadInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AbortMultipartUploadInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AbortMultipartUploadInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AbortMultipartUploadInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                upload_id: self.upload_id,
+            })
         }
     }
-    
-    
 }
 impl AbortMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`AbortMultipartUpload`](crate::operation::AbortMultipartUpload)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AbortMultipartUpload, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AbortMultipartUpload,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::AbortMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AbortMultipartUploadInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.account_id;
-                let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_2 = &_input.vault_name;
-                let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_2 = input_2.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_2,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_3 = &_input.upload_id;
-                let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_3 = input_3.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_3,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}", accountId = account_id, vaultName = vault_name, uploadId = upload_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    uploadId = upload_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AbortMultipartUploadInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AbortMultipartUploadInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -97,41 +153,58 @@ impl AbortMultipartUploadInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AbortMultipartUpload::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AbortMultipartUpload", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AbortMultipartUpload::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AbortMultipartUpload",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -143,9 +216,9 @@ impl AbortMultipartUploadInput {
 
 /// See [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
 pub mod abort_vault_lock_input {
-    
+
     /// A builder for [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -158,7 +231,8 @@ pub mod abort_vault_lock_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,50 +241,93 @@ pub mod abort_vault_lock_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
-        pub fn build(self) -> Result<crate::input::AbortVaultLockInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AbortVaultLockInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AbortVaultLockInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AbortVaultLockInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl AbortVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`AbortVaultLock`](crate::operation::AbortVaultLock)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AbortVaultLock, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AbortVaultLock,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::AbortVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AbortVaultLockInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.account_id;
-                let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_4 = input_4.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_4,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_5 = &_input.vault_name;
-                let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_5 = input_5.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_5,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/lock-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/lock-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AbortVaultLockInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AbortVaultLockInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -219,41 +336,58 @@ impl AbortVaultLockInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AbortVaultLock::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AbortVaultLock", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AbortVaultLock::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AbortVaultLock",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -265,13 +399,15 @@ impl AbortVaultLockInput {
 
 /// See [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
 pub mod add_tags_to_vault_input {
-    
+
     /// A builder for [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -281,7 +417,8 @@ pub mod add_tags_to_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -290,120 +427,202 @@ pub mod add_tags_to_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
-        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-                            hash_map.insert(k.into(), v.into());
-                            self.tags = Some(hash_map);
-                            self
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
         }
         /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
-        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-            self.tags = input; self
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
         }
         /// Consumes the builder and constructs a [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
-        pub fn build(self) -> Result<crate::input::AddTagsToVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::AddTagsToVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    tags: self.tags
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::AddTagsToVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AddTagsToVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                tags: self.tags,
+            })
         }
     }
-    
-    
 }
 impl AddTagsToVaultInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToVault`](crate::operation::AddTagsToVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AddTagsToVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTagsToVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::AddTagsToVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::AddTagsToVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.account_id;
-                let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_6 = input_6.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_6,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_7 = &_input.vault_name;
-                let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_7 = input_7.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_7,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/tags", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/tags",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::AddTagsToVaultInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::AddTagsToVaultInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "add");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::AddTagsToVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::AddTagsToVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_vault(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_vault(&self)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AddTagsToVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("AddTagsToVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddTagsToVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddTagsToVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -415,9 +634,9 @@ impl AddTagsToVaultInput {
 
 /// See [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
 pub mod complete_multipart_upload_input {
-    
+
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -433,7 +652,8 @@ pub mod complete_multipart_upload_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -442,7 +662,8 @@ pub mod complete_multipart_upload_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,7 +672,8 @@ pub mod complete_multipart_upload_input {
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
         pub fn archive_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -460,7 +682,8 @@ pub mod complete_multipart_upload_input {
         }
         /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
         pub fn set_archive_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_size = input; self
+            self.archive_size = input;
+            self
         }
         /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -469,106 +692,178 @@ pub mod complete_multipart_upload_input {
         }
         /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input; self
+            self.checksum = input;
+            self
         }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-        pub fn build(self) -> Result<crate::input::CompleteMultipartUploadInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CompleteMultipartUploadInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                    archive_size: self.archive_size
-                    ,
-                    checksum: self.checksum
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::CompleteMultipartUploadInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CompleteMultipartUploadInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                upload_id: self.upload_id,
+                archive_size: self.archive_size,
+                checksum: self.checksum,
+            })
         }
     }
-    
-    
 }
 impl CompleteMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteMultipartUpload`](crate::operation::CompleteMultipartUpload)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CompleteMultipartUpload, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CompleteMultipartUpload,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CompleteMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CompleteMultipartUploadInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.account_id;
-                let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_8 = input_8.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_8,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_9 = &_input.vault_name;
-                let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_9 = input_9.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_9,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_10 = &_input.upload_id;
-                let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_10 = input_10.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}", accountId = account_id, vaultName = vault_name, uploadId = upload_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    uploadId = upload_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CompleteMultipartUploadInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CompleteMultipartUploadInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_complete_multipart_upload(input, builder)?;
+                let builder =
+                    crate::http_serde::add_headers_complete_multipart_upload(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CompleteMultipartUpload::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CompleteMultipartUpload", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CompleteMultipartUpload::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CompleteMultipartUpload",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -580,9 +875,9 @@ impl CompleteMultipartUploadInput {
 
 /// See [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
 pub mod complete_vault_lock_input {
-    
+
     /// A builder for [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -596,7 +891,8 @@ pub mod complete_vault_lock_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -605,7 +901,8 @@ pub mod complete_vault_lock_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
         pub fn lock_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -614,58 +911,112 @@ pub mod complete_vault_lock_input {
         }
         /// <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
         pub fn set_lock_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_id = input; self
+            self.lock_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
-        pub fn build(self) -> Result<crate::input::CompleteVaultLockInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CompleteVaultLockInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    lock_id: self.lock_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CompleteVaultLockInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CompleteVaultLockInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                lock_id: self.lock_id,
+            })
         }
     }
-    
-    
 }
 impl CompleteVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`CompleteVaultLock`](crate::operation::CompleteVaultLock)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CompleteVaultLock, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CompleteVaultLock,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CompleteVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CompleteVaultLockInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.account_id;
-                let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_11 = input_11.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_11,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_12 = &_input.vault_name;
-                let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_12 = input_12.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_12,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_13 = &_input.lock_id;
-                let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lock_id", details: "cannot be empty or unset" })?;
-                let lock_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_13 = input_13.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "lock_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let lock_id = aws_smithy_http::label::fmt_string(
+                    input_13,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if lock_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lock_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/lock-policy/{lockId}", accountId = account_id, vaultName = vault_name, lockId = lock_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "lock_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/lock-policy/{lockId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    lockId = lock_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CompleteVaultLockInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CompleteVaultLockInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -674,41 +1025,58 @@ impl CompleteVaultLockInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CompleteVaultLock::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CompleteVaultLock", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CompleteVaultLock::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CompleteVaultLock",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -720,9 +1088,9 @@ impl CompleteVaultLockInput {
 
 /// See [`CreateVaultInput`](crate::input::CreateVaultInput).
 pub mod create_vault_input {
-    
+
     /// A builder for [`CreateVaultInput`](crate::input::CreateVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -735,7 +1103,8 @@ pub mod create_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -744,50 +1113,93 @@ pub mod create_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`CreateVaultInput`](crate::input::CreateVaultInput).
-        pub fn build(self) -> Result<crate::input::CreateVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::CreateVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl CreateVaultInput {
     /// Consumes the builder and constructs an Operation<[`CreateVault`](crate::operation::CreateVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::CreateVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::CreateVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.account_id;
-                let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_14 = input_14.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_14,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_15 = &_input.vault_name;
-                let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_15 = input_15.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_15,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::CreateVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -796,41 +1208,58 @@ impl CreateVaultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -842,9 +1271,9 @@ impl CreateVaultInput {
 
 /// See [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
 pub mod delete_archive_input {
-    
+
     /// A builder for [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -858,7 +1287,8 @@ pub mod delete_archive_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -867,7 +1297,8 @@ pub mod delete_archive_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The ID of the archive to delete.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,58 +1307,112 @@ pub mod delete_archive_input {
         }
         /// <p>The ID of the archive to delete.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input; self
+            self.archive_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
-        pub fn build(self) -> Result<crate::input::DeleteArchiveInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteArchiveInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    archive_id: self.archive_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteArchiveInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteArchiveInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                archive_id: self.archive_id,
+            })
         }
     }
-    
-    
 }
 impl DeleteArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchive`](crate::operation::DeleteArchive)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteArchive, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteArchive,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteArchiveInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteArchiveInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.account_id;
-                let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_16 = input_16.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_16,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_17 = &_input.vault_name;
-                let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_17 = input_17.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_17,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_18 = &_input.archive_id;
-                let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "archive_id", details: "cannot be empty or unset" })?;
-                let archive_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_18 = input_18.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "archive_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let archive_id = aws_smithy_http::label::fmt_string(
+                    input_18,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if archive_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "archive_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/archives/{archiveId}", accountId = account_id, vaultName = vault_name, archiveId = archive_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "archive_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/archives/{archiveId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    archiveId = archive_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteArchiveInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteArchiveInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -936,41 +1421,58 @@ impl DeleteArchiveInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteArchive::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteArchive", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteArchive::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteArchive",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -982,9 +1484,9 @@ impl DeleteArchiveInput {
 
 /// See [`DeleteVaultInput`](crate::input::DeleteVaultInput).
 pub mod delete_vault_input {
-    
+
     /// A builder for [`DeleteVaultInput`](crate::input::DeleteVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -997,7 +1499,8 @@ pub mod delete_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1006,50 +1509,93 @@ pub mod delete_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteVaultInput`](crate::input::DeleteVaultInput).
-        pub fn build(self) -> Result<crate::input::DeleteVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteVaultInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVault`](crate::operation::DeleteVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.account_id;
-                let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_19 = input_19.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_19,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_20 = &_input.vault_name;
-                let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_20 = input_20.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_20,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1058,41 +1604,58 @@ impl DeleteVaultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1104,9 +1667,9 @@ impl DeleteVaultInput {
 
 /// See [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
 pub mod delete_vault_access_policy_input {
-    
+
     /// A builder for [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1119,7 +1682,8 @@ pub mod delete_vault_access_policy_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1128,50 +1692,95 @@ pub mod delete_vault_access_policy_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
-        pub fn build(self) -> Result<crate::input::DeleteVaultAccessPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteVaultAccessPolicyInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteVaultAccessPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteVaultAccessPolicyInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultAccessPolicy`](crate::operation::DeleteVaultAccessPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteVaultAccessPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVaultAccessPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteVaultAccessPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.account_id;
-                let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_21 = input_21.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_21,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_22 = &_input.vault_name;
-                let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_22 = input_22.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_22,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/access-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/access-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteVaultAccessPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteVaultAccessPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1180,41 +1789,58 @@ impl DeleteVaultAccessPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteVaultAccessPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteVaultAccessPolicy", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVaultAccessPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVaultAccessPolicy",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1226,9 +1852,9 @@ impl DeleteVaultAccessPolicyInput {
 
 /// See [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
 pub mod delete_vault_notifications_input {
-    
+
     /// A builder for [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1241,7 +1867,8 @@ pub mod delete_vault_notifications_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1250,50 +1877,95 @@ pub mod delete_vault_notifications_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
-        pub fn build(self) -> Result<crate::input::DeleteVaultNotificationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DeleteVaultNotificationsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::DeleteVaultNotificationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteVaultNotificationsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl DeleteVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVaultNotifications`](crate::operation::DeleteVaultNotifications)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteVaultNotifications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVaultNotifications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DeleteVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DeleteVaultNotificationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.account_id;
-                let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_23 = input_23.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_23,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_24 = &_input.vault_name;
-                let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_24 = input_24.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_24,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/notification-configuration", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/notification-configuration",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DeleteVaultNotificationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteVaultNotificationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1302,41 +1974,58 @@ impl DeleteVaultNotificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteVaultNotifications::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteVaultNotifications", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVaultNotifications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVaultNotifications",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1348,9 +2037,9 @@ impl DeleteVaultNotificationsInput {
 
 /// See [`DescribeJobInput`](crate::input::DescribeJobInput).
 pub mod describe_job_input {
-    
+
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1364,7 +2053,8 @@ pub mod describe_job_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1373,7 +2063,8 @@ pub mod describe_job_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The ID of the job to describe.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1382,58 +2073,112 @@ pub mod describe_job_input {
         }
         /// <p>The ID of the job to describe.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input; self
+            self.job_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput).
-        pub fn build(self) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeJobInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    job_id: self.job_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeJobInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                job_id: self.job_id,
+            })
         }
     }
-    
-    
 }
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.account_id;
-                let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_25 = input_25.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_25,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_26 = &_input.vault_name;
-                let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_26 = input_26.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_26,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_27 = &_input.job_id;
-                let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_27 = input_27.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_27,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/jobs/{jobId}", accountId = account_id, vaultName = vault_name, jobId = job_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/jobs/{jobId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    jobId = job_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1442,41 +2187,58 @@ impl DescribeJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeJob", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeJob",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1488,9 +2250,9 @@ impl DescribeJobInput {
 
 /// See [`DescribeVaultInput`](crate::input::DescribeVaultInput).
 pub mod describe_vault_input {
-    
+
     /// A builder for [`DescribeVaultInput`](crate::input::DescribeVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1503,7 +2265,8 @@ pub mod describe_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1512,50 +2275,93 @@ pub mod describe_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`DescribeVaultInput`](crate::input::DescribeVaultInput).
-        pub fn build(self) -> Result<crate::input::DescribeVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::DescribeVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl DescribeVaultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVault`](crate::operation::DescribeVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::DescribeVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::DescribeVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.account_id;
-                let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_28 = input_28.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_28,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_29 = &_input.vault_name;
-                let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_29 = input_29.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_29,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::DescribeVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1564,41 +2370,58 @@ impl DescribeVaultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1610,9 +2433,9 @@ impl DescribeVaultInput {
 
 /// See [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
 pub mod get_data_retrieval_policy_input {
-    
+
     /// A builder for [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -1624,42 +2447,74 @@ pub mod get_data_retrieval_policy_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
-        pub fn build(self) -> Result<crate::input::GetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetDataRetrievalPolicyInput {
-                    account_id: self.account_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetDataRetrievalPolicyInput {
+                account_id: self.account_id,
+            })
         }
     }
-    
-    
 }
 impl GetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetDataRetrievalPolicy`](crate::operation::GetDataRetrievalPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDataRetrievalPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetDataRetrievalPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::GetDataRetrievalPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetDataRetrievalPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.account_id;
-                let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_30 = input_30.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_30,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/policies/data-retrieval", accountId = account_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/policies/data-retrieval",
+                    accountId = account_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetDataRetrievalPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetDataRetrievalPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1668,41 +2523,58 @@ impl GetDataRetrievalPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDataRetrievalPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDataRetrievalPolicy", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataRetrievalPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDataRetrievalPolicy",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1714,9 +2586,9 @@ impl GetDataRetrievalPolicyInput {
 
 /// See [`GetJobOutputInput`](crate::input::GetJobOutputInput).
 pub mod get_job_output_input {
-    
+
     /// A builder for [`GetJobOutputInput`](crate::input::GetJobOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1731,7 +2603,8 @@ pub mod get_job_output_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1740,7 +2613,8 @@ pub mod get_job_output_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The job ID whose data is downloaded.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1749,83 +2623,137 @@ pub mod get_job_output_input {
         }
         /// <p>The job ID whose data is downloaded.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input; self
+            self.job_id = input;
+            self
         }
-        /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p> 
-        /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p> 
-        /// <ol> 
-        /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li> 
-        /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li> 
-        /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li> 
-        /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li> 
+        /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>
+        /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
+        /// <ol>
+        /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>
+        /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>
+        /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>
+        /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>
         /// </ol>
         pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
             self.range = Some(input.into());
             self
         }
-        /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p> 
-        /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p> 
-        /// <ol> 
-        /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li> 
-        /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li> 
-        /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li> 
-        /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li> 
+        /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>
+        /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
+        /// <ol>
+        /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>
+        /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>
+        /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>
+        /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>
         /// </ol>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.range = input; self
+            self.range = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetJobOutputInput`](crate::input::GetJobOutputInput).
-        pub fn build(self) -> Result<crate::input::GetJobOutputInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetJobOutputInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    job_id: self.job_id
-                    ,
-                    range: self.range
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetJobOutputInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetJobOutputInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                job_id: self.job_id,
+                range: self.range,
+            })
         }
     }
-    
-    
 }
 impl GetJobOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetJobOutput`](crate::operation::GetJobOutput)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetJobOutput, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetJobOutput,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::GetJobOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetJobOutputInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.account_id;
-                let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_31 = input_31.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_31,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_32 = &_input.vault_name;
-                let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_32 = input_32.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_32,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_33 = &_input.job_id;
-                let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_33 = input_33.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let job_id = aws_smithy_http::label::fmt_string(
+                    input_33,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if job_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output", accountId = account_id, vaultName = vault_name, jobId = job_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    jobId = job_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetJobOutputInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetJobOutputInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_job_output(input, builder)?;
@@ -1835,41 +2763,58 @@ impl GetJobOutputInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetJobOutput::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetJobOutput", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetJobOutput::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetJobOutput",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1881,9 +2826,9 @@ impl GetJobOutputInput {
 
 /// See [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
 pub mod get_vault_access_policy_input {
-    
+
     /// A builder for [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1896,7 +2841,8 @@ pub mod get_vault_access_policy_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1905,50 +2851,93 @@ pub mod get_vault_access_policy_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
-        pub fn build(self) -> Result<crate::input::GetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetVaultAccessPolicyInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetVaultAccessPolicyInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl GetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultAccessPolicy`](crate::operation::GetVaultAccessPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetVaultAccessPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetVaultAccessPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::GetVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetVaultAccessPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.account_id;
-                let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_34 = input_34.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_34,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_35 = &_input.vault_name;
-                let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_35 = input_35.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_35,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/access-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/access-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetVaultAccessPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetVaultAccessPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1957,41 +2946,58 @@ impl GetVaultAccessPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetVaultAccessPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetVaultAccessPolicy", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVaultAccessPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVaultAccessPolicy",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2003,9 +3009,9 @@ impl GetVaultAccessPolicyInput {
 
 /// See [`GetVaultLockInput`](crate::input::GetVaultLockInput).
 pub mod get_vault_lock_input {
-    
+
     /// A builder for [`GetVaultLockInput`](crate::input::GetVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2018,7 +3024,8 @@ pub mod get_vault_lock_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2027,50 +3034,93 @@ pub mod get_vault_lock_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetVaultLockInput`](crate::input::GetVaultLockInput).
-        pub fn build(self) -> Result<crate::input::GetVaultLockInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetVaultLockInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetVaultLockInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetVaultLockInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl GetVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultLock`](crate::operation::GetVaultLock)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetVaultLock, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetVaultLock,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::GetVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetVaultLockInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.account_id;
-                let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_36 = input_36.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_36,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_37 = &_input.vault_name;
-                let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_37 = input_37.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_37,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/lock-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/lock-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetVaultLockInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetVaultLockInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2079,41 +3129,58 @@ impl GetVaultLockInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetVaultLock::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetVaultLock", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVaultLock::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVaultLock",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2125,9 +3192,9 @@ impl GetVaultLockInput {
 
 /// See [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
 pub mod get_vault_notifications_input {
-    
+
     /// A builder for [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2140,7 +3207,8 @@ pub mod get_vault_notifications_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2149,50 +3217,93 @@ pub mod get_vault_notifications_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
-        pub fn build(self) -> Result<crate::input::GetVaultNotificationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::GetVaultNotificationsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetVaultNotificationsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetVaultNotificationsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl GetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`GetVaultNotifications`](crate::operation::GetVaultNotifications)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetVaultNotifications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetVaultNotifications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::GetVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::GetVaultNotificationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.account_id;
-                let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_38 = input_38.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_38,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_39 = &_input.vault_name;
-                let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_39 = input_39.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_39,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/notification-configuration", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/notification-configuration",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::GetVaultNotificationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetVaultNotificationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2201,41 +3312,58 @@ impl GetVaultNotificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetVaultNotifications::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetVaultNotifications", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVaultNotifications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVaultNotifications",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2247,9 +3375,9 @@ impl GetVaultNotificationsInput {
 
 /// See [`InitiateJobInput`](crate::input::InitiateJobInput).
 pub mod initiate_job_input {
-    
+
     /// A builder for [`InitiateJobInput`](crate::input::InitiateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2263,7 +3391,8 @@ pub mod initiate_job_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2272,7 +3401,8 @@ pub mod initiate_job_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>Provides options for specifying job information.</p>
         pub fn job_parameters(mut self, input: crate::model::JobParameters) -> Self {
@@ -2280,100 +3410,172 @@ pub mod initiate_job_input {
             self
         }
         /// <p>Provides options for specifying job information.</p>
-        pub fn set_job_parameters(mut self, input: std::option::Option<crate::model::JobParameters>) -> Self {
-            self.job_parameters = input; self
+        pub fn set_job_parameters(
+            mut self,
+            input: std::option::Option<crate::model::JobParameters>,
+        ) -> Self {
+            self.job_parameters = input;
+            self
         }
         /// Consumes the builder and constructs a [`InitiateJobInput`](crate::input::InitiateJobInput).
-        pub fn build(self) -> Result<crate::input::InitiateJobInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::InitiateJobInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    job_parameters: self.job_parameters
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::InitiateJobInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::InitiateJobInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                job_parameters: self.job_parameters,
+            })
         }
     }
-    
-    
 }
 impl InitiateJobInput {
     /// Consumes the builder and constructs an Operation<[`InitiateJob`](crate::operation::InitiateJob)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::InitiateJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::InitiateJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::InitiateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::InitiateJobInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.account_id;
-                let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_40 = input_40.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_40,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_41 = &_input.vault_name;
-                let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_41 = input_41.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_41,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/jobs", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/jobs",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::InitiateJobInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::InitiateJobInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_initiate_job_input(& self.job_parameters)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_initiate_job_input(&self.job_parameters)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::InitiateJob::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("InitiateJob", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InitiateJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InitiateJob",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2385,9 +3587,9 @@ impl InitiateJobInput {
 
 /// See [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
 pub mod initiate_multipart_upload_input {
-    
+
     /// A builder for [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2402,7 +3604,8 @@ pub mod initiate_multipart_upload_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2411,18 +3614,23 @@ pub mod initiate_multipart_upload_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
-        /// <p>The archive description that you are uploading in parts.</p> 
+        /// <p>The archive description that you are uploading in parts.</p>
         /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.archive_description = Some(input.into());
             self
         }
-        /// <p>The archive description that you are uploading in parts.</p> 
+        /// <p>The archive description that you are uploading in parts.</p>
         /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-        pub fn set_archive_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_description = input; self
+        pub fn set_archive_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.archive_description = input;
+            self
         }
         /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
         pub fn part_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2431,98 +3639,159 @@ pub mod initiate_multipart_upload_input {
         }
         /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
         pub fn set_part_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.part_size = input; self
+            self.part_size = input;
+            self
         }
         /// Consumes the builder and constructs a [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
-        pub fn build(self) -> Result<crate::input::InitiateMultipartUploadInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::InitiateMultipartUploadInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    archive_description: self.archive_description
-                    ,
-                    part_size: self.part_size
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::InitiateMultipartUploadInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::InitiateMultipartUploadInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                archive_description: self.archive_description,
+                part_size: self.part_size,
+            })
         }
     }
-    
-    
 }
 impl InitiateMultipartUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateMultipartUpload`](crate::operation::InitiateMultipartUpload)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::InitiateMultipartUpload, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::InitiateMultipartUpload,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::InitiateMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::InitiateMultipartUploadInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.account_id;
-                let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_42 = input_42.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_42,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_43 = &_input.vault_name;
-                let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_43 = input_43.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_43,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::InitiateMultipartUploadInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::InitiateMultipartUploadInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_initiate_multipart_upload(input, builder)?;
+                let builder =
+                    crate::http_serde::add_headers_initiate_multipart_upload(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::InitiateMultipartUpload::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("InitiateMultipartUpload", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InitiateMultipartUpload::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InitiateMultipartUpload",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2534,9 +3803,9 @@ impl InitiateMultipartUploadInput {
 
 /// See [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
 pub mod initiate_vault_lock_input {
-    
+
     /// A builder for [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2550,7 +3819,8 @@ pub mod initiate_vault_lock_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2559,7 +3829,8 @@ pub mod initiate_vault_lock_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
         pub fn policy(mut self, input: crate::model::VaultLockPolicy) -> Self {
@@ -2567,100 +3838,172 @@ pub mod initiate_vault_lock_input {
             self
         }
         /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-        pub fn set_policy(mut self, input: std::option::Option<crate::model::VaultLockPolicy>) -> Self {
-            self.policy = input; self
+        pub fn set_policy(
+            mut self,
+            input: std::option::Option<crate::model::VaultLockPolicy>,
+        ) -> Self {
+            self.policy = input;
+            self
         }
         /// Consumes the builder and constructs a [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
-        pub fn build(self) -> Result<crate::input::InitiateVaultLockInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::InitiateVaultLockInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    policy: self.policy
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::InitiateVaultLockInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::InitiateVaultLockInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                policy: self.policy,
+            })
         }
     }
-    
-    
 }
 impl InitiateVaultLockInput {
     /// Consumes the builder and constructs an Operation<[`InitiateVaultLock`](crate::operation::InitiateVaultLock)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::InitiateVaultLock, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::InitiateVaultLock,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::InitiateVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::InitiateVaultLockInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.account_id;
-                let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_44 = input_44.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_44,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_45 = &_input.vault_name;
-                let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_45 = input_45.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_45,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/lock-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/lock-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::InitiateVaultLockInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::InitiateVaultLockInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_initiate_vault_lock_input(& self.policy)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_initiate_vault_lock_input(&self.policy)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::InitiateVaultLock::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("InitiateVaultLock", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InitiateVaultLock::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InitiateVaultLock",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2672,9 +4015,9 @@ impl InitiateVaultLockInput {
 
 /// See [`ListJobsInput`](crate::input::ListJobsInput).
 pub mod list_jobs_input {
-    
+
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2691,7 +4034,8 @@ pub mod list_jobs_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2700,7 +4044,8 @@ pub mod list_jobs_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -2709,7 +4054,8 @@ pub mod list_jobs_input {
         }
         /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input; self
+            self.limit = input;
+            self
         }
         /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2718,7 +4064,8 @@ pub mod list_jobs_input {
         }
         /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
         pub fn statuscode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2727,7 +4074,8 @@ pub mod list_jobs_input {
         }
         /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
         pub fn set_statuscode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statuscode = input; self
+            self.statuscode = input;
+            self
         }
         /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
         pub fn completed(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2736,58 +4084,100 @@ pub mod list_jobs_input {
         }
         /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
         pub fn set_completed(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.completed = input; self
+            self.completed = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
-        pub fn build(self) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListJobsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    limit: self.limit
-                    ,
-                    marker: self.marker
-                    ,
-                    statuscode: self.statuscode
-                    ,
-                    completed: self.completed
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListJobsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                limit: self.limit,
+                marker: self.marker,
+                statuscode: self.statuscode,
+                completed: self.completed,
+            })
         }
     }
-    
-    
 }
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListJobsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.account_id;
-                let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_46 = input_46.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_46,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_47 = &_input.vault_name;
-                let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_47 = input_47.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_47,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/jobs", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/jobs",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListJobsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.limit {
-                    query.push_kv("limit", aws_smithy_types::primitive::Encoder::from(*inner_48).encode());
+                    query.push_kv(
+                        "limit",
+                        aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                    );
                 }
                 if let Some(inner_49) = &_input.marker {
                     query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
@@ -2800,10 +4190,12 @@ impl ListJobsInput {
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListJobsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListJobsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2813,41 +4205,55 @@ impl ListJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobs", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListJobs", "glacier",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2859,9 +4265,9 @@ impl ListJobsInput {
 
 /// See [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
 pub mod list_multipart_uploads_input {
-    
+
     /// A builder for [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2876,7 +4282,8 @@ pub mod list_multipart_uploads_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2885,7 +4292,8 @@ pub mod list_multipart_uploads_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -2894,7 +4302,8 @@ pub mod list_multipart_uploads_input {
         }
         /// <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input; self
+            self.limit = input;
+            self
         }
         /// <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2903,64 +4312,111 @@ pub mod list_multipart_uploads_input {
         }
         /// <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
-        pub fn build(self) -> Result<crate::input::ListMultipartUploadsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListMultipartUploadsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    limit: self.limit
-                    ,
-                    marker: self.marker
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListMultipartUploadsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListMultipartUploadsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                limit: self.limit,
+                marker: self.marker,
+            })
         }
     }
-    
-    
 }
 impl ListMultipartUploadsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultipartUploads`](crate::operation::ListMultipartUploads)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListMultipartUploads, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListMultipartUploads,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListMultipartUploadsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListMultipartUploadsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.account_id;
-                let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_52 = input_52.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_52,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_53 = &_input.vault_name;
-                let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_53 = input_53.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_53,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListMultipartUploadsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListMultipartUploadsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_54) = &_input.limit {
-                    query.push_kv("limit", aws_smithy_types::primitive::Encoder::from(*inner_54).encode());
+                    query.push_kv(
+                        "limit",
+                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                    );
                 }
                 if let Some(inner_55) = &_input.marker {
                     query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_55));
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListMultipartUploadsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListMultipartUploadsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2970,41 +4426,58 @@ impl ListMultipartUploadsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListMultipartUploads::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListMultipartUploads", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMultipartUploads::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMultipartUploads",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3016,9 +4489,9 @@ impl ListMultipartUploadsInput {
 
 /// See [`ListPartsInput`](crate::input::ListPartsInput).
 pub mod list_parts_input {
-    
+
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3034,7 +4507,8 @@ pub mod list_parts_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3043,7 +4517,8 @@ pub mod list_parts_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3052,7 +4527,8 @@ pub mod list_parts_input {
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3061,7 +4537,8 @@ pub mod list_parts_input {
         }
         /// <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -3070,72 +4547,129 @@ pub mod list_parts_input {
         }
         /// <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input; self
+            self.limit = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListPartsInput`](crate::input::ListPartsInput).
-        pub fn build(self) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListPartsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                    marker: self.marker
-                    ,
-                    limit: self.limit
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListPartsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListPartsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                upload_id: self.upload_id,
+                marker: self.marker,
+                limit: self.limit,
+            })
         }
     }
-    
-    
 }
 impl ListPartsInput {
     /// Consumes the builder and constructs an Operation<[`ListParts`](crate::operation::ListParts)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListParts, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListParts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListPartsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListPartsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_56 = &_input.account_id;
-                let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_56 = input_56.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_56,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_57 = &_input.vault_name;
-                let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_57 = input_57.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_57,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_58 = &_input.upload_id;
-                let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_58 = input_58.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_58,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}", accountId = account_id, vaultName = vault_name, uploadId = upload_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    uploadId = upload_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListPartsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListPartsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_59) = &_input.marker {
                     query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
                 if let Some(inner_60) = &_input.limit {
-                    query.push_kv("limit", aws_smithy_types::primitive::Encoder::from(*inner_60).encode());
+                    query.push_kv(
+                        "limit",
+                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListPartsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListPartsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3145,41 +4679,56 @@ impl ListPartsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListParts::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListParts", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListParts::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListParts",
+                    "glacier",
+                ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3191,9 +4740,9 @@ impl ListPartsInput {
 
 /// See [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
 pub mod list_provisioned_capacity_input {
-    
+
     /// A builder for [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -3205,42 +4754,76 @@ pub mod list_provisioned_capacity_input {
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
-        pub fn build(self) -> Result<crate::input::ListProvisionedCapacityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListProvisionedCapacityInput {
-                    account_id: self.account_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListProvisionedCapacityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListProvisionedCapacityInput {
+                account_id: self.account_id,
+            })
         }
     }
-    
-    
 }
 impl ListProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisionedCapacity`](crate::operation::ListProvisionedCapacity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListProvisionedCapacity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListProvisionedCapacity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListProvisionedCapacityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListProvisionedCapacityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_61 = &_input.account_id;
-                let input_61 = input_61.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_61 = input_61.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_61,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/provisioned-capacity", accountId = account_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/provisioned-capacity",
+                    accountId = account_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListProvisionedCapacityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListProvisionedCapacityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3249,41 +4832,58 @@ impl ListProvisionedCapacityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListProvisionedCapacity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListProvisionedCapacity", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListProvisionedCapacity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListProvisionedCapacity",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3295,9 +4895,9 @@ impl ListProvisionedCapacityInput {
 
 /// See [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
 pub mod list_tags_for_vault_input {
-    
+
     /// A builder for [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3310,7 +4910,8 @@ pub mod list_tags_for_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3319,50 +4920,93 @@ pub mod list_tags_for_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
-        pub fn build(self) -> Result<crate::input::ListTagsForVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListTagsForVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+            })
         }
     }
-    
-    
 }
 impl ListTagsForVaultInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForVault`](crate::operation::ListTagsForVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListTagsForVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListTagsForVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_62 = &_input.account_id;
-                let input_62 = input_62.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_62, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_62 = input_62.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_62,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_63 = &_input.vault_name;
-                let input_63 = input_63.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_63 = input_63.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_63,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/tags", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/tags",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListTagsForVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3371,41 +5015,58 @@ impl ListTagsForVaultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3417,9 +5078,9 @@ impl ListTagsForVaultInput {
 
 /// See [`ListVaultsInput`](crate::input::ListVaultsInput).
 pub mod list_vaults_input {
-    
+
     /// A builder for [`ListVaultsInput`](crate::input::ListVaultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3433,7 +5094,8 @@ pub mod list_vaults_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3442,7 +5104,8 @@ pub mod list_vaults_input {
         }
         /// <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input; self
+            self.marker = input;
+            self
         }
         /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
         pub fn limit(mut self, input: i32) -> Self {
@@ -3451,56 +5114,87 @@ pub mod list_vaults_input {
         }
         /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.limit = input; self
+            self.limit = input;
+            self
         }
         /// Consumes the builder and constructs a [`ListVaultsInput`](crate::input::ListVaultsInput).
-        pub fn build(self) -> Result<crate::input::ListVaultsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::ListVaultsInput {
-                    account_id: self.account_id
-                    ,
-                    marker: self.marker
-                    ,
-                    limit: self.limit
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListVaultsInput, aws_smithy_http::operation::BuildError> {
+            Ok(crate::input::ListVaultsInput {
+                account_id: self.account_id,
+                marker: self.marker,
+                limit: self.limit,
+            })
         }
     }
-    
-    
 }
 impl ListVaultsInput {
     /// Consumes the builder and constructs an Operation<[`ListVaults`](crate::operation::ListVaults)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListVaults, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListVaults,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::ListVaultsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::ListVaultsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_64 = &_input.account_id;
-                let input_64 = input_64.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_64, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_64 = input_64.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_64,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults", accountId = account_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/{accountId}/vaults", accountId = account_id)
+                    .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::ListVaultsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::ListVaultsInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.marker {
                     query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_65));
                 }
                 if let Some(inner_66) = &_input.limit {
-                    query.push_kv("limit", aws_smithy_types::primitive::Encoder::from(*inner_66).encode());
+                    query.push_kv(
+                        "limit",
+                        aws_smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                    );
                 }
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::ListVaultsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListVaultsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3510,41 +5204,58 @@ impl ListVaultsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListVaults::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListVaults", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListVaults::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListVaults",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3556,9 +5267,9 @@ impl ListVaultsInput {
 
 /// See [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
 pub mod purchase_provisioned_capacity_input {
-    
+
     /// A builder for [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -3570,42 +5281,76 @@ pub mod purchase_provisioned_capacity_input {
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
-        pub fn build(self) -> Result<crate::input::PurchaseProvisionedCapacityInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::PurchaseProvisionedCapacityInput {
-                    account_id: self.account_id
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::PurchaseProvisionedCapacityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PurchaseProvisionedCapacityInput {
+                account_id: self.account_id,
+            })
         }
     }
-    
-    
 }
 impl PurchaseProvisionedCapacityInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseProvisionedCapacity`](crate::operation::PurchaseProvisionedCapacity)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PurchaseProvisionedCapacity, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PurchaseProvisionedCapacity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::PurchaseProvisionedCapacityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::PurchaseProvisionedCapacityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_67 = &_input.account_id;
-                let input_67 = input_67.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_67, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_67 = input_67.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_67,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/provisioned-capacity", accountId = account_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/provisioned-capacity",
+                    accountId = account_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::PurchaseProvisionedCapacityInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::PurchaseProvisionedCapacityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3614,41 +5359,58 @@ impl PurchaseProvisionedCapacityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PurchaseProvisionedCapacity::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("PurchaseProvisionedCapacity", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PurchaseProvisionedCapacity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PurchaseProvisionedCapacity",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3660,9 +5422,9 @@ impl PurchaseProvisionedCapacityInput {
 
 /// See [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
 pub mod remove_tags_from_vault_input {
-    
+
     /// A builder for [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3676,7 +5438,8 @@ pub mod remove_tags_from_vault_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3685,7 +5448,8 @@ pub mod remove_tags_from_vault_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -3694,111 +5458,188 @@ pub mod remove_tags_from_vault_input {
         /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-                            v.push(input.into());
-                            self.tag_keys = Some(v);
-                            self
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
         }
         /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-            self.tag_keys = input; self
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
         }
         /// Consumes the builder and constructs a [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
-        pub fn build(self) -> Result<crate::input::RemoveTagsFromVaultInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::RemoveTagsFromVaultInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    tag_keys: self.tag_keys
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RemoveTagsFromVaultInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RemoveTagsFromVaultInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                tag_keys: self.tag_keys,
+            })
         }
     }
-    
-    
 }
 impl RemoveTagsFromVaultInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromVault`](crate::operation::RemoveTagsFromVault)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RemoveTagsFromVault, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RemoveTagsFromVault,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::RemoveTagsFromVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::RemoveTagsFromVaultInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_68 = &_input.account_id;
-                let input_68 = input_68.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_68, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_68 = input_68.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_68,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_69 = &_input.vault_name;
-                let input_69 = input_69.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_69, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_69 = input_69.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_69,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/tags", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/tags",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::input::RemoveTagsFromVaultInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_query(
+                _input: &crate::input::RemoveTagsFromVaultInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "remove");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::RemoveTagsFromVaultInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RemoveTagsFromVaultInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_vault(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_vault(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RemoveTagsFromVault::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("RemoveTagsFromVault", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTagsFromVault::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTagsFromVault",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3810,9 +5651,9 @@ impl RemoveTagsFromVaultInput {
 
 /// See [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
 pub mod set_data_retrieval_policy_input {
-    
+
     /// A builder for [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<crate::model::DataRetrievalPolicy>,
@@ -3825,7 +5666,8 @@ pub mod set_data_retrieval_policy_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The data retrieval policy in JSON format.</p>
         pub fn policy(mut self, input: crate::model::DataRetrievalPolicy) -> Self {
@@ -3833,92 +5675,155 @@ pub mod set_data_retrieval_policy_input {
             self
         }
         /// <p>The data retrieval policy in JSON format.</p>
-        pub fn set_policy(mut self, input: std::option::Option<crate::model::DataRetrievalPolicy>) -> Self {
-            self.policy = input; self
+        pub fn set_policy(
+            mut self,
+            input: std::option::Option<crate::model::DataRetrievalPolicy>,
+        ) -> Self {
+            self.policy = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
-        pub fn build(self) -> Result<crate::input::SetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetDataRetrievalPolicyInput {
-                    account_id: self.account_id
-                    ,
-                    policy: self.policy
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetDataRetrievalPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetDataRetrievalPolicyInput {
+                account_id: self.account_id,
+                policy: self.policy,
+            })
         }
     }
-    
-    
 }
 impl SetDataRetrievalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetDataRetrievalPolicy`](crate::operation::SetDataRetrievalPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetDataRetrievalPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetDataRetrievalPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::SetDataRetrievalPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetDataRetrievalPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_70 = &_input.account_id;
-                let input_70 = input_70.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_70, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_70 = input_70.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_70,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/policies/data-retrieval", accountId = account_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/policies/data-retrieval",
+                    accountId = account_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetDataRetrievalPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetDataRetrievalPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_data_retrieval_policy(&self)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_set_data_retrieval_policy(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetDataRetrievalPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetDataRetrievalPolicy", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetDataRetrievalPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetDataRetrievalPolicy",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3930,9 +5835,9 @@ impl SetDataRetrievalPolicyInput {
 
 /// See [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
 pub mod set_vault_access_policy_input {
-    
+
     /// A builder for [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3946,7 +5851,8 @@ pub mod set_vault_access_policy_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3955,7 +5861,8 @@ pub mod set_vault_access_policy_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The vault access policy as a JSON string.</p>
         pub fn policy(mut self, input: crate::model::VaultAccessPolicy) -> Self {
@@ -3963,100 +5870,172 @@ pub mod set_vault_access_policy_input {
             self
         }
         /// <p>The vault access policy as a JSON string.</p>
-        pub fn set_policy(mut self, input: std::option::Option<crate::model::VaultAccessPolicy>) -> Self {
-            self.policy = input; self
+        pub fn set_policy(
+            mut self,
+            input: std::option::Option<crate::model::VaultAccessPolicy>,
+        ) -> Self {
+            self.policy = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
-        pub fn build(self) -> Result<crate::input::SetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetVaultAccessPolicyInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    policy: self.policy
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetVaultAccessPolicyInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetVaultAccessPolicyInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                policy: self.policy,
+            })
         }
     }
-    
-    
 }
 impl SetVaultAccessPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultAccessPolicy`](crate::operation::SetVaultAccessPolicy)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetVaultAccessPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetVaultAccessPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::SetVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetVaultAccessPolicyInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_71 = &_input.account_id;
-                let input_71 = input_71.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_71, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_71 = input_71.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_71,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_72 = &_input.vault_name;
-                let input_72 = input_72.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_72, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_72 = input_72.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_72,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/access-policy", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/access-policy",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetVaultAccessPolicyInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetVaultAccessPolicyInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_set_vault_access_policy_input(& self.policy)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_set_vault_access_policy_input(&self.policy)?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetVaultAccessPolicy::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetVaultAccessPolicy", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetVaultAccessPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetVaultAccessPolicy",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4068,13 +6047,14 @@ impl SetVaultAccessPolicyInput {
 
 /// See [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
 pub mod set_vault_notifications_input {
-    
+
     /// A builder for [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
-        pub(crate) vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
+        pub(crate) vault_notification_config:
+            std::option::Option<crate::model::VaultNotificationConfig>,
     }
     impl Builder {
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -4084,7 +6064,8 @@ pub mod set_vault_notifications_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4093,108 +6074,186 @@ pub mod set_vault_notifications_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>Provides options for specifying notification configuration.</p>
-        pub fn vault_notification_config(mut self, input: crate::model::VaultNotificationConfig) -> Self {
+        pub fn vault_notification_config(
+            mut self,
+            input: crate::model::VaultNotificationConfig,
+        ) -> Self {
             self.vault_notification_config = Some(input);
             self
         }
         /// <p>Provides options for specifying notification configuration.</p>
-        pub fn set_vault_notification_config(mut self, input: std::option::Option<crate::model::VaultNotificationConfig>) -> Self {
-            self.vault_notification_config = input; self
+        pub fn set_vault_notification_config(
+            mut self,
+            input: std::option::Option<crate::model::VaultNotificationConfig>,
+        ) -> Self {
+            self.vault_notification_config = input;
+            self
         }
         /// Consumes the builder and constructs a [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
-        pub fn build(self) -> Result<crate::input::SetVaultNotificationsInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::SetVaultNotificationsInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    vault_notification_config: self.vault_notification_config
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::SetVaultNotificationsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SetVaultNotificationsInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                vault_notification_config: self.vault_notification_config,
+            })
         }
     }
-    
-    
 }
 impl SetVaultNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`SetVaultNotifications`](crate::operation::SetVaultNotifications)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(&mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetVaultNotifications, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SetVaultNotifications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::SetVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::SetVaultNotificationsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_73 = &_input.account_id;
-                let input_73 = input_73.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_73 = input_73.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_73,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_74 = &_input.vault_name;
-                let input_74 = input_74.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_74, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_74 = input_74.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_74,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/notification-configuration", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/notification-configuration",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::SetVaultNotificationsInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::SetVaultNotificationsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_set_vault_notifications_input(& self.vault_notification_config)?
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_set_vault_notifications_input(
+                &self.vault_notification_config,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetVaultNotifications::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetVaultNotifications", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetVaultNotifications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetVaultNotifications",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4206,9 +6265,9 @@ impl SetVaultNotificationsInput {
 
 /// See [`UploadArchiveInput`](crate::input::UploadArchiveInput).
 pub mod upload_archive_input {
-    
+
     /// A builder for [`UploadArchiveInput`](crate::input::UploadArchiveInput).
-    #[derive(std::default::Default, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4224,7 +6283,8 @@ pub mod upload_archive_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4233,7 +6293,8 @@ pub mod upload_archive_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The optional description of the archive you are uploading.</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4241,8 +6302,12 @@ pub mod upload_archive_input {
             self
         }
         /// <p>The optional description of the archive you are uploading.</p>
-        pub fn set_archive_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_description = input; self
+        pub fn set_archive_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.archive_description = input;
+            self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4251,7 +6316,8 @@ pub mod upload_archive_input {
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input; self
+            self.checksum = input;
+            self
         }
         /// <p>The data to upload.</p>
         pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -4259,110 +6325,178 @@ pub mod upload_archive_input {
             self
         }
         /// <p>The data to upload.</p>
-        pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-            self.body = input; self
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
+            self
         }
         /// Consumes the builder and constructs a [`UploadArchiveInput`](crate::input::UploadArchiveInput).
-        pub fn build(self) -> Result<crate::input::UploadArchiveInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UploadArchiveInput {
-                    vault_name: self.vault_name
-                    ,
-                    account_id: self.account_id
-                    ,
-                    archive_description: self.archive_description
-                    ,
-                    checksum: self.checksum
-                    ,
-                    body: self.body
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UploadArchiveInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UploadArchiveInput {
+                vault_name: self.vault_name,
+                account_id: self.account_id,
+                archive_description: self.archive_description,
+                checksum: self.checksum,
+                body: self.body.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UploadArchiveInput {
     /// Consumes the builder and constructs an Operation<[`UploadArchive`](crate::operation::UploadArchive)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UploadArchive, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UploadArchive,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::UploadArchiveInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UploadArchiveInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_75 = &_input.account_id;
-                let input_75 = input_75.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_75 = input_75.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_75,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_76 = &_input.vault_name;
-                let input_76 = input_76.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_76, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_76 = input_76.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_76,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/archives", accountId = account_id, vaultName = vault_name).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/archives",
+                    accountId = account_id,
+                    vaultName = vault_name
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UploadArchiveInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UploadArchiveInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_upload_archive(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_archive_input( self.body)?
-            .into_inner()
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_upload_archive_input(self.body)?.into_inner(),
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
-        crate::glacier_checksums::add_checksum_treehash(
-                                &mut request
-                            ).await.map_err(|e|aws_smithy_http::operation::BuildError::Other(e.into()))?;
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
+        crate::glacier_checksums::add_checksum_treehash(&mut request)
+            .await
+            .map_err(|e| aws_smithy_http::operation::BuildError::Other(e.into()))?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UploadArchive::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UploadArchive", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UploadArchive::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UploadArchive",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4374,9 +6508,9 @@ impl UploadArchiveInput {
 
 /// See [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput).
 pub mod upload_multipart_part_input {
-    
+
     /// A builder for [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput).
-    #[derive(std::default::Default, std::fmt::Debug, )]
+    #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4393,7 +6527,8 @@ pub mod upload_multipart_part_input {
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input; self
+            self.account_id = input;
+            self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4402,7 +6537,8 @@ pub mod upload_multipart_part_input {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input; self
+            self.vault_name = input;
+            self
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4411,7 +6547,8 @@ pub mod upload_multipart_part_input {
         }
         /// <p>The upload ID of the multipart upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input; self
+            self.upload_id = input;
+            self
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4420,7 +6557,8 @@ pub mod upload_multipart_part_input {
         }
         /// <p>The SHA256 tree hash of the data being uploaded.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input; self
+            self.checksum = input;
+            self
         }
         /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
         pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4429,7 +6567,8 @@ pub mod upload_multipart_part_input {
         }
         /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.range = input; self
+            self.range = input;
+            self
         }
         /// <p>The data to upload.</p>
         pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -4437,118 +6576,198 @@ pub mod upload_multipart_part_input {
             self
         }
         /// <p>The data to upload.</p>
-        pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-            self.body = input; self
+        pub fn set_body(
+            mut self,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.body = input;
+            self
         }
         /// Consumes the builder and constructs a [`UploadMultipartPartInput`](crate::input::UploadMultipartPartInput).
-        pub fn build(self) -> Result<crate::input::UploadMultipartPartInput, aws_smithy_http::operation::BuildError> {
-            Ok(
-                crate::input::UploadMultipartPartInput {
-                    account_id: self.account_id
-                    ,
-                    vault_name: self.vault_name
-                    ,
-                    upload_id: self.upload_id
-                    ,
-                    checksum: self.checksum
-                    ,
-                    range: self.range
-                    ,
-                    body: self.body
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UploadMultipartPartInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UploadMultipartPartInput {
+                account_id: self.account_id,
+                vault_name: self.vault_name,
+                upload_id: self.upload_id,
+                checksum: self.checksum,
+                range: self.range,
+                body: self.body.unwrap_or_default(),
+            })
         }
     }
-    
-    
 }
 impl UploadMultipartPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadMultipartPart`](crate::operation::UploadMultipartPart)>
-    #[allow(unused_mut)]#[allow(clippy::let_and_return)]#[allow(clippy::needless_borrow)]pub async fn make_operation(mut self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UploadMultipartPart, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::BuildError> {
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UploadMultipartPart,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
         if self.account_id.as_deref().unwrap_or_default().is_empty() {
-                                self.account_id = Some("-".to_owned());
-                            }
+            self.account_id = Some("-".to_owned());
+        }
         let mut request = {
-            fn uri_base(_input: &crate::input::UploadMultipartPartInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
+            fn uri_base(
+                _input: &crate::input::UploadMultipartPartInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_77 = &_input.account_id;
-                let input_77 = input_77.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_77, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_77 = input_77.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let account_id = aws_smithy_http::label::fmt_string(
+                    input_77,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if account_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "account_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_78 = &_input.vault_name;
-                let input_78 = input_78.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_78, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_78 = input_78.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let vault_name = aws_smithy_http::label::fmt_string(
+                    input_78,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if vault_name.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
-                            }
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "vault_name",
+                        details: "cannot be empty or unset",
+                    });
+                }
                 let input_79 = &_input.upload_id;
-                let input_79 = input_79.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_79, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_79 = input_79.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let upload_id = aws_smithy_http::label::fmt_string(
+                    input_79,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if upload_id.is_empty() {
-                                return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
-                            }
-                write!(output, "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}", accountId = account_id, vaultName = vault_name, uploadId = upload_id).expect("formatting should succeed");
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "upload_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}",
+                    accountId = account_id,
+                    vaultName = vault_name,
+                    uploadId = upload_id
+                )
+                .expect("formatting should succeed");
                 Ok(())
             }
-            #[allow(clippy::unnecessary_wraps)]fn update_http_builder(
-                            input: &crate::input::UploadMultipartPartInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UploadMultipartPartInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_upload_multipart_part(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/octet-stream");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/octet-stream",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_multipart_part_input( self.body)?
-            .into_inner()
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_payload_upload_multipart_part_input(self.body)?
+                .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                            aws_types::os_shim_internal::Env::real(),
-                            crate::API_METADATA.clone(),
-                        );
-                        if let Some(app_name) = _config.app_name() {
-                            user_agent = user_agent.with_app_name(app_name.clone());
-                        }
-                        request.properties_mut().insert(user_agent);
         request
-                        .http_mut()
-                        .headers_mut()
-                        .insert("x-amz-glacier-version", http::HeaderValue::from_static("2012-06-01"));
-        crate::glacier_checksums::add_checksum_treehash(
-                                &mut request
-                            ).await.map_err(|e|aws_smithy_http::operation::BuildError::Other(e.into()))?;
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        request.http_mut().headers_mut().insert(
+            "x-amz-glacier-version",
+            http::HeaderValue::from_static("2012-06-01"),
+        );
+        crate::glacier_checksums::add_checksum_treehash(&mut request)
+            .await
+            .map_err(|e| aws_smithy_http::operation::BuildError::Other(e.into()))?;
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-                            request.properties_mut()
-                                .insert::<aws_smithy_http::endpoint::Result>(_config
-                                    .endpoint_resolver
-                                    .resolve_endpoint(&endpoint_params));
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_provider(&mut request.properties_mut(), _config.credentials_provider.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UploadMultipartPart::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UploadMultipartPart", "glacier"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
+        request
+            .properties_mut()
+            .insert::<aws_smithy_http::endpoint::Result>(
+                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
+            );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UploadMultipartPart::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UploadMultipartPart",
+            "glacier",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4559,47 +6778,53 @@ impl UploadMultipartPartInput {
 }
 
 /// <p>Provides options to upload a part of an archive in a multipart upload operation.</p>
-#[non_exhaustive]pub struct UploadMultipartPartInput  {
+#[non_exhaustive]
+pub struct UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    #[doc(hidden)]pub checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub checksum: std::option::Option<std::string::String>,
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
-    #[doc(hidden)]pub range: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub range: std::option::Option<std::string::String>,
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
 }
 impl UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
-    pub fn range(&self) -> std::option::Option<& str> {
+    pub fn range(&self) -> std::option::Option<&str> {
         self.range.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
 }
-impl  std::fmt::Debug for UploadMultipartPartInput  {
+impl std::fmt::Debug for UploadMultipartPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMultipartPartInput");
         formatter.field("account_id", &self.account_id);
@@ -4613,41 +6838,46 @@ impl  std::fmt::Debug for UploadMultipartPartInput  {
 }
 
 /// <p>Provides options to add an archive to a vault.</p>
-#[non_exhaustive]pub struct UploadArchiveInput  {
+#[non_exhaustive]
+pub struct UploadArchiveInput {
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The optional description of the archive you are uploading.</p>
-    #[doc(hidden)]pub archive_description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub archive_description: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    #[doc(hidden)]pub checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub checksum: std::option::Option<std::string::String>,
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
 }
 impl UploadArchiveInput {
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn archive_description(&self) -> std::option::Option<& str> {
+    pub fn archive_description(&self) -> std::option::Option<&str> {
         self.archive_description.as_deref()
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
 }
-impl  std::fmt::Debug for UploadArchiveInput  {
+impl std::fmt::Debug for UploadArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadArchiveInput");
         formatter.field("vault_name", &self.vault_name);
@@ -4660,30 +6890,36 @@ impl  std::fmt::Debug for UploadArchiveInput  {
 }
 
 /// <p>Provides options to configure notifications that will be sent when specific events happen to a vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetVaultNotificationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>Provides options for specifying notification configuration.</p>
-    #[doc(hidden)]pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
+    #[doc(hidden)]
+    pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
 impl SetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn vault_notification_config(&self) -> std::option::Option<& crate::model::VaultNotificationConfig> {
+    pub fn vault_notification_config(
+        &self,
+    ) -> std::option::Option<&crate::model::VaultNotificationConfig> {
         self.vault_notification_config.as_ref()
     }
 }
-impl  std::fmt::Debug for SetVaultNotificationsInput  {
+impl std::fmt::Debug for SetVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVaultNotificationsInput");
         formatter.field("account_id", &self.account_id);
@@ -4694,30 +6930,34 @@ impl  std::fmt::Debug for SetVaultNotificationsInput  {
 }
 
 /// <p>SetVaultAccessPolicy input.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetVaultAccessPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The vault access policy as a JSON string.</p>
-    #[doc(hidden)]pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
+    #[doc(hidden)]
+    pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
 impl SetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The vault access policy as a JSON string.</p>
-    pub fn policy(&self) -> std::option::Option<& crate::model::VaultAccessPolicy> {
+    pub fn policy(&self) -> std::option::Option<&crate::model::VaultAccessPolicy> {
         self.policy.as_ref()
     }
 }
-impl  std::fmt::Debug for SetVaultAccessPolicyInput  {
+impl std::fmt::Debug for SetVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVaultAccessPolicyInput");
         formatter.field("account_id", &self.account_id);
@@ -4728,24 +6968,27 @@ impl  std::fmt::Debug for SetVaultAccessPolicyInput  {
 }
 
 /// <p>SetDataRetrievalPolicy input.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct SetDataRetrievalPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The data retrieval policy in JSON format.</p>
-    #[doc(hidden)]pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
+    #[doc(hidden)]
+    pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
 }
 impl SetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The data retrieval policy in JSON format.</p>
-    pub fn policy(&self) -> std::option::Option<& crate::model::DataRetrievalPolicy> {
+    pub fn policy(&self) -> std::option::Option<&crate::model::DataRetrievalPolicy> {
         self.policy.as_ref()
     }
 }
-impl  std::fmt::Debug for SetDataRetrievalPolicyInput  {
+impl std::fmt::Debug for SetDataRetrievalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetDataRetrievalPolicyInput");
         formatter.field("account_id", &self.account_id);
@@ -4755,30 +6998,34 @@ impl  std::fmt::Debug for SetDataRetrievalPolicyInput  {
 }
 
 /// <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct RemoveTagsFromVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveTagsFromVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    #[doc(hidden)]pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[doc(hidden)]
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
-impl  std::fmt::Debug for RemoveTagsFromVaultInput  {
+impl std::fmt::Debug for RemoveTagsFromVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -4789,18 +7036,20 @@ impl  std::fmt::Debug for RemoveTagsFromVaultInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct PurchaseProvisionedCapacityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl PurchaseProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
-impl  std::fmt::Debug for PurchaseProvisionedCapacityInput  {
+impl std::fmt::Debug for PurchaseProvisionedCapacityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseProvisionedCapacityInput");
         formatter.field("account_id", &self.account_id);
@@ -4809,22 +7058,26 @@ impl  std::fmt::Debug for PurchaseProvisionedCapacityInput  {
 }
 
 /// <p>Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListVaultsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListVaultsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
-    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub limit: std::option::Option<i32>,
 }
 impl ListVaultsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</p>
@@ -4832,7 +7085,7 @@ impl ListVaultsInput {
         self.limit
     }
 }
-impl  std::fmt::Debug for ListVaultsInput  {
+impl std::fmt::Debug for ListVaultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVaultsInput");
         formatter.field("account_id", &self.account_id);
@@ -4843,24 +7096,27 @@ impl  std::fmt::Debug for ListVaultsInput  {
 }
 
 /// <p>The input value for <code>ListTagsForVaultInput</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListTagsForVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl ListTagsForVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for ListTagsForVaultInput  {
+impl std::fmt::Debug for ListTagsForVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -4870,18 +7126,20 @@ impl  std::fmt::Debug for ListTagsForVaultInput  {
 }
 
 #[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListProvisionedCapacityInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl ListProvisionedCapacityInput {
     /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
-impl  std::fmt::Debug for ListProvisionedCapacityInput  {
+impl std::fmt::Debug for ListProvisionedCapacityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisionedCapacityInput");
         formatter.field("account_id", &self.account_id);
@@ -4890,34 +7148,40 @@ impl  std::fmt::Debug for ListProvisionedCapacityInput  {
 }
 
 /// <p>Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListPartsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPartsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
     /// <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
-    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub limit: std::option::Option<i32>,
 }
 impl ListPartsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>An opaque string used for pagination. This value specifies the part at which the listing of parts should begin. Get the marker value from the response of a previous List Parts response. You need only include the marker if you are continuing the pagination of results started in a previous List Parts request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.</p>
@@ -4925,7 +7189,7 @@ impl ListPartsInput {
         self.limit
     }
 }
-impl  std::fmt::Debug for ListPartsInput  {
+impl std::fmt::Debug for ListPartsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPartsInput");
         formatter.field("account_id", &self.account_id);
@@ -4938,24 +7202,29 @@ impl  std::fmt::Debug for ListPartsInput  {
 }
 
 /// <p>Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListMultipartUploadsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMultipartUploadsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
-    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub limit: std::option::Option<i32>,
     /// <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
 }
 impl ListMultipartUploadsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.</p>
@@ -4963,11 +7232,11 @@ impl ListMultipartUploadsInput {
         self.limit
     }
     /// <p>An opaque string used for pagination. This value specifies the upload at which the listing of uploads should begin. Get the marker value from a previous List Uploads response. You need only include the marker if you are continuing the pagination of results started in a previous List Uploads request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for ListMultipartUploadsInput  {
+impl std::fmt::Debug for ListMultipartUploadsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMultipartUploadsInput");
         formatter.field("account_id", &self.account_id);
@@ -4979,28 +7248,35 @@ impl  std::fmt::Debug for ListMultipartUploadsInput  {
 }
 
 /// <p>Provides options for retrieving a job list for an Amazon S3 Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct ListJobsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
-    #[doc(hidden)]pub limit: std::option::Option<i32>,
+    #[doc(hidden)]
+    pub limit: std::option::Option<i32>,
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    #[doc(hidden)]pub marker: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub marker: std::option::Option<std::string::String>,
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    #[doc(hidden)]pub statuscode: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub statuscode: std::option::Option<std::string::String>,
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
-    #[doc(hidden)]pub completed: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub completed: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
@@ -5008,19 +7284,19 @@ impl ListJobsInput {
         self.limit
     }
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    pub fn statuscode(&self) -> std::option::Option<& str> {
+    pub fn statuscode(&self) -> std::option::Option<&str> {
         self.statuscode.as_deref()
     }
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
-    pub fn completed(&self) -> std::option::Option<& str> {
+    pub fn completed(&self) -> std::option::Option<&str> {
         self.completed.as_deref()
     }
 }
-impl  std::fmt::Debug for ListJobsInput  {
+impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
         formatter.field("account_id", &self.account_id);
@@ -5034,30 +7310,34 @@ impl  std::fmt::Debug for ListJobsInput  {
 }
 
 /// <p>The input values for <code>InitiateVaultLock</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct InitiateVaultLockInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InitiateVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    #[doc(hidden)]pub policy: std::option::Option<crate::model::VaultLockPolicy>,
+    #[doc(hidden)]
+    pub policy: std::option::Option<crate::model::VaultLockPolicy>,
 }
 impl InitiateVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn policy(&self) -> std::option::Option<& crate::model::VaultLockPolicy> {
+    pub fn policy(&self) -> std::option::Option<&crate::model::VaultLockPolicy> {
         self.policy.as_ref()
     }
 }
-impl  std::fmt::Debug for InitiateVaultLockInput  {
+impl std::fmt::Debug for InitiateVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateVaultLockInput");
         formatter.field("account_id", &self.account_id);
@@ -5068,38 +7348,43 @@ impl  std::fmt::Debug for InitiateVaultLockInput  {
 }
 
 /// <p>Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct InitiateMultipartUploadInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
-    /// <p>The archive description that you are uploading in parts.</p> 
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
+    /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    #[doc(hidden)]pub archive_description: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub archive_description: std::option::Option<std::string::String>,
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
-    #[doc(hidden)]pub part_size: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub part_size: std::option::Option<std::string::String>,
 }
 impl InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
-    /// <p>The archive description that you are uploading in parts.</p> 
+    /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn archive_description(&self) -> std::option::Option<& str> {
+    pub fn archive_description(&self) -> std::option::Option<&str> {
         self.archive_description.as_deref()
     }
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
-    pub fn part_size(&self) -> std::option::Option<& str> {
+    pub fn part_size(&self) -> std::option::Option<&str> {
         self.part_size.as_deref()
     }
 }
-impl  std::fmt::Debug for InitiateMultipartUploadInput  {
+impl std::fmt::Debug for InitiateMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateMultipartUploadInput");
         formatter.field("account_id", &self.account_id);
@@ -5111,30 +7396,34 @@ impl  std::fmt::Debug for InitiateMultipartUploadInput  {
 }
 
 /// <p>Provides options for initiating an Amazon S3 Glacier job.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct InitiateJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InitiateJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>Provides options for specifying job information.</p>
-    #[doc(hidden)]pub job_parameters: std::option::Option<crate::model::JobParameters>,
+    #[doc(hidden)]
+    pub job_parameters: std::option::Option<crate::model::JobParameters>,
 }
 impl InitiateJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>Provides options for specifying job information.</p>
-    pub fn job_parameters(&self) -> std::option::Option<& crate::model::JobParameters> {
+    pub fn job_parameters(&self) -> std::option::Option<&crate::model::JobParameters> {
         self.job_parameters.as_ref()
     }
 }
-impl  std::fmt::Debug for InitiateJobInput  {
+impl std::fmt::Debug for InitiateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateJobInput");
         formatter.field("account_id", &self.account_id);
@@ -5145,24 +7434,27 @@ impl  std::fmt::Debug for InitiateJobInput  {
 }
 
 /// <p>Provides options for retrieving the notification configuration set on an Amazon Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetVaultNotificationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for GetVaultNotificationsInput  {
+impl std::fmt::Debug for GetVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultNotificationsInput");
         formatter.field("account_id", &self.account_id);
@@ -5172,24 +7464,27 @@ impl  std::fmt::Debug for GetVaultNotificationsInput  {
 }
 
 /// <p>The input values for <code>GetVaultLock</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetVaultLockInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for GetVaultLockInput  {
+impl std::fmt::Debug for GetVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultLockInput");
         formatter.field("account_id", &self.account_id);
@@ -5199,24 +7494,27 @@ impl  std::fmt::Debug for GetVaultLockInput  {
 }
 
 /// <p>Input for GetVaultAccessPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetVaultAccessPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl GetVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for GetVaultAccessPolicyInput  {
+impl std::fmt::Debug for GetVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultAccessPolicyInput");
         formatter.field("account_id", &self.account_id);
@@ -5226,50 +7524,55 @@ impl  std::fmt::Debug for GetVaultAccessPolicyInput  {
 }
 
 /// <p>Provides options for downloading output of an Amazon S3 Glacier job.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetJobOutputInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetJobOutputInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The job ID whose data is downloaded.</p>
-    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
-    /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p> 
-    /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p> 
-    /// <ol> 
-    /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li> 
-    /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li> 
-    /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li> 
-    /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li> 
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>
+    /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
+    /// <ol>
+    /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>
+    /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>
+    /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>
+    /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>
     /// </ol>
-    #[doc(hidden)]pub range: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub range: std::option::Option<std::string::String>,
 }
 impl GetJobOutputInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The job ID whose data is downloaded.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p> 
-    /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p> 
-    /// <ol> 
-    /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li> 
-    /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li> 
-    /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li> 
-    /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li> 
+    /// <p>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.</p>
+    /// <p>If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
+    /// <ol>
+    /// <li> <p>Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was received.</p> </li>
+    /// <li> <p>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</p> </li>
+    /// <li> <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</p> </li>
+    /// <li> <p>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the <code>DescribeJob</code> API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</p> <p></p> </li>
     /// </ol>
-    pub fn range(&self) -> std::option::Option<& str> {
+    pub fn range(&self) -> std::option::Option<&str> {
         self.range.as_deref()
     }
 }
-impl  std::fmt::Debug for GetJobOutputInput  {
+impl std::fmt::Debug for GetJobOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutputInput");
         formatter.field("account_id", &self.account_id);
@@ -5281,18 +7584,20 @@ impl  std::fmt::Debug for GetJobOutputInput  {
 }
 
 /// <p>Input for GetDataRetrievalPolicy.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct GetDataRetrievalPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
 }
 impl GetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
-impl  std::fmt::Debug for GetDataRetrievalPolicyInput  {
+impl std::fmt::Debug for GetDataRetrievalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataRetrievalPolicyInput");
         formatter.field("account_id", &self.account_id);
@@ -5301,24 +7606,27 @@ impl  std::fmt::Debug for GetDataRetrievalPolicyInput  {
 }
 
 /// <p>Provides options for retrieving metadata for a specific vault in Amazon Glacier.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl DescribeVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeVaultInput  {
+impl std::fmt::Debug for DescribeVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -5328,30 +7636,34 @@ impl  std::fmt::Debug for DescribeVaultInput  {
 }
 
 /// <p>Provides options for retrieving a job description.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DescribeJobInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The ID of the job to describe.</p>
-    #[doc(hidden)]pub job_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The ID of the job to describe.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeJobInput  {
+impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobInput");
         formatter.field("account_id", &self.account_id);
@@ -5362,24 +7674,27 @@ impl  std::fmt::Debug for DescribeJobInput  {
 }
 
 /// <p>Provides options for deleting a vault notification configuration from an Amazon Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteVaultNotificationsInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultNotificationsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteVaultNotificationsInput  {
+impl std::fmt::Debug for DeleteVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVaultNotificationsInput");
         formatter.field("account_id", &self.account_id);
@@ -5389,24 +7704,27 @@ impl  std::fmt::Debug for DeleteVaultNotificationsInput  {
 }
 
 /// <p>DeleteVaultAccessPolicy input.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteVaultAccessPolicyInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultAccessPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteVaultAccessPolicyInput  {
+impl std::fmt::Debug for DeleteVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVaultAccessPolicyInput");
         formatter.field("account_id", &self.account_id);
@@ -5416,24 +7734,27 @@ impl  std::fmt::Debug for DeleteVaultAccessPolicyInput  {
 }
 
 /// <p>Provides options for deleting a vault from Amazon S3 Glacier.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteVaultInput  {
+impl std::fmt::Debug for DeleteVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -5443,30 +7764,34 @@ impl  std::fmt::Debug for DeleteVaultInput  {
 }
 
 /// <p>Provides options for deleting an archive from an Amazon S3 Glacier vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct DeleteArchiveInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteArchiveInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The ID of the archive to delete.</p>
-    #[doc(hidden)]pub archive_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub archive_id: std::option::Option<std::string::String>,
 }
 impl DeleteArchiveInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The ID of the archive to delete.</p>
-    pub fn archive_id(&self) -> std::option::Option<& str> {
+    pub fn archive_id(&self) -> std::option::Option<&str> {
         self.archive_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteArchiveInput  {
+impl std::fmt::Debug for DeleteArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteArchiveInput");
         formatter.field("account_id", &self.account_id);
@@ -5477,24 +7802,27 @@ impl  std::fmt::Debug for DeleteArchiveInput  {
 }
 
 /// <p>Provides options to create a vault.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CreateVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateVaultInput  {
+impl std::fmt::Debug for CreateVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -5504,30 +7832,34 @@ impl  std::fmt::Debug for CreateVaultInput  {
 }
 
 /// <p>The input values for <code>CompleteVaultLock</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CompleteVaultLockInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CompleteVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
-    #[doc(hidden)]pub lock_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub lock_id: std::option::Option<std::string::String>,
 }
 impl CompleteVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
-    pub fn lock_id(&self) -> std::option::Option<& str> {
+    pub fn lock_id(&self) -> std::option::Option<&str> {
         self.lock_id.as_deref()
     }
 }
-impl  std::fmt::Debug for CompleteVaultLockInput  {
+impl std::fmt::Debug for CompleteVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteVaultLockInput");
         formatter.field("account_id", &self.account_id);
@@ -5538,42 +7870,48 @@ impl  std::fmt::Debug for CompleteVaultLockInput  {
 }
 
 /// <p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct CompleteMultipartUploadInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CompleteMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
-    #[doc(hidden)]pub archive_size: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub archive_size: std::option::Option<std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
-    #[doc(hidden)]pub checksum: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub checksum: std::option::Option<std::string::String>,
 }
 impl CompleteMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
-    pub fn archive_size(&self) -> std::option::Option<& str> {
+    pub fn archive_size(&self) -> std::option::Option<&str> {
         self.archive_size.as_deref()
     }
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
 }
-impl  std::fmt::Debug for CompleteMultipartUploadInput  {
+impl std::fmt::Debug for CompleteMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteMultipartUploadInput");
         formatter.field("account_id", &self.account_id);
@@ -5586,30 +7924,38 @@ impl  std::fmt::Debug for CompleteMultipartUploadInput  {
 }
 
 /// <p>The input values for <code>AddTagsToVault</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AddTagsToVaultInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AddTagsToVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
-    #[doc(hidden)]pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AddTagsToVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for AddTagsToVaultInput  {
+impl std::fmt::Debug for AddTagsToVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsToVaultInput");
         formatter.field("account_id", &self.account_id);
@@ -5620,24 +7966,27 @@ impl  std::fmt::Debug for AddTagsToVaultInput  {
 }
 
 /// <p>The input values for <code>AbortVaultLock</code>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AbortVaultLockInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AbortVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
 }
 impl AbortVaultLockInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
-impl  std::fmt::Debug for AbortVaultLockInput  {
+impl std::fmt::Debug for AbortVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortVaultLockInput");
         formatter.field("account_id", &self.account_id);
@@ -5646,32 +7995,36 @@ impl  std::fmt::Debug for AbortVaultLockInput  {
     }
 }
 
-/// <p>Provides options to abort a multipart upload identified by the upload ID.</p> 
+/// <p>Provides options to abort a multipart upload identified by the upload ID.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
-#[non_exhaustive]#[derive(std::clone::Clone, std::cmp::PartialEq, )]
-pub struct AbortMultipartUploadInput  {
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AbortMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    #[doc(hidden)]pub account_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]pub vault_name: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload to delete.</p>
-    #[doc(hidden)]pub upload_id: std::option::Option<std::string::String>,
+    #[doc(hidden)]
+    pub upload_id: std::option::Option<std::string::String>,
 }
 impl AbortMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<& str> {
+    pub fn vault_name(&self) -> std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload to delete.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
 }
-impl  std::fmt::Debug for AbortMultipartUploadInput  {
+impl std::fmt::Debug for AbortMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortMultipartUploadInput");
         formatter.field("account_id", &self.account_id);
@@ -5680,4 +8033,3 @@ impl  std::fmt::Debug for AbortMultipartUploadInput  {
         formatter.finish()
     }
 }
-
