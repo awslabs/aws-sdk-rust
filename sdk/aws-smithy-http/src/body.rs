@@ -25,8 +25,8 @@ pin_project! {
     /// For handling responses, the type of the body will be controlled
     /// by the HTTP stack.
     ///
-    /// TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
-    /// between hyper::Body and our Body
+    // TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
+    // between hyper::Body and our Body
     pub struct SdkBody {
         #[pin]
         inner: Inner,
