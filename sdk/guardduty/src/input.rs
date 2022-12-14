@@ -7752,7 +7752,9 @@ impl ListDetectorsInput {
                     );
                 }
                 if let Some(inner_44) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    }
                 }
                 Ok(())
             }
@@ -7943,7 +7945,9 @@ impl ListFiltersInput {
                     );
                 }
                 if let Some(inner_46) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                    }
                 }
                 Ok(())
             }
@@ -8416,7 +8420,9 @@ impl ListInvitationsInput {
                     );
                 }
                 if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 Ok(())
             }
@@ -8607,7 +8613,9 @@ impl ListIpSetsInput {
                     );
                 }
                 if let Some(inner_50) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 Ok(())
             }
@@ -8813,13 +8821,17 @@ impl ListMembersInput {
                     );
                 }
                 if let Some(inner_52) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_52));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_52));
+                    }
                 }
                 if let Some(inner_53) = &_input.only_associated {
-                    query.push_kv(
-                        "onlyAssociated",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
-                    );
+                    {
+                        query.push_kv(
+                            "onlyAssociated",
+                            &aws_smithy_http::query::fmt_string(&inner_53),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8976,7 +8988,9 @@ impl ListOrganizationAdminAccountsInput {
                     );
                 }
                 if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    }
                 }
                 Ok(())
             }
@@ -9169,7 +9183,9 @@ impl ListPublishingDestinationsInput {
                     );
                 }
                 if let Some(inner_56) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+                    }
                 }
                 Ok(())
             }
@@ -9510,7 +9526,9 @@ impl ListThreatIntelSetsInput {
                     );
                 }
                 if let Some(inner_59) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
+                    }
                 }
                 Ok(())
             }

@@ -522,29 +522,48 @@ impl GetLifecyclePoliciesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.policy_ids {
-                    for inner_3 in inner_2 {
-                        query.push_kv("policyIds", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        for inner_3 in inner_2 {
+                            query.push_kv(
+                                "policyIds",
+                                &aws_smithy_http::query::fmt_string(&inner_3),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_4) = &_input.state {
-                    query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 if let Some(inner_5) = &_input.resource_types {
-                    for inner_6 in inner_5 {
-                        query.push_kv(
-                            "resourceTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_6),
-                        );
+                    {
+                        for inner_6 in inner_5 {
+                            query.push_kv(
+                                "resourceTypes",
+                                &aws_smithy_http::query::fmt_string(&inner_6),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_7) = &_input.target_tags {
-                    for inner_8 in inner_7 {
-                        query.push_kv("targetTags", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        for inner_8 in inner_7 {
+                            query.push_kv(
+                                "targetTags",
+                                &aws_smithy_http::query::fmt_string(&inner_8),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_9) = &_input.tags_to_add {
-                    for inner_10 in inner_9 {
-                        query.push_kv("tagsToAdd", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        for inner_10 in inner_9 {
+                            query.push_kv(
+                                "tagsToAdd",
+                                &aws_smithy_http::query::fmt_string(&inner_10),
+                            );
+                        }
                     }
                 }
                 Ok(())

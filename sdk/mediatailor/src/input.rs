@@ -4223,10 +4223,12 @@ impl GetChannelScheduleInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.duration_minutes {
-                    query.push_kv(
-                        "durationMinutes",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
-                    );
+                    {
+                        query.push_kv(
+                            "durationMinutes",
+                            &aws_smithy_http::query::fmt_string(&inner_33),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4235,7 +4237,9 @@ impl GetChannelScheduleInput {
                     );
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -4738,7 +4742,9 @@ impl ListAlertsInput {
                     );
                 }
                 if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 let inner_39 = &_input.resource_arn;
                 let inner_39 = inner_39.as_ref().ok_or_else(|| {
@@ -4912,7 +4918,9 @@ impl ListChannelsInput {
                     );
                 }
                 if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 Ok(())
             }
@@ -5106,7 +5114,9 @@ impl ListLiveSourcesInput {
                     );
                 }
                 if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 Ok(())
             }
@@ -5263,7 +5273,9 @@ impl ListPlaybackConfigurationsInput {
                     );
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 Ok(())
             }
@@ -5636,7 +5648,9 @@ impl ListSourceLocationsInput {
                     );
                 }
                 if let Some(inner_45) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 Ok(())
             }
@@ -5978,7 +5992,9 @@ impl ListVodSourcesInput {
                     );
                 }
                 if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 Ok(())
             }

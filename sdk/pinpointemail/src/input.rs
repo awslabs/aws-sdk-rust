@@ -2411,16 +2411,22 @@ impl GetDedicatedIpsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.pool_name {
-                    query.push_kv("PoolName", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("PoolName", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if let Some(inner_14) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
-                    );
+                    if *inner_14 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3363,13 +3369,17 @@ impl ListConfigurationSetsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 if let Some(inner_22) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
-                    );
+                    if *inner_22 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3520,13 +3530,17 @@ impl ListDedicatedIpPoolsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 if let Some(inner_24) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
-                    );
+                    if *inner_24 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3680,13 +3694,17 @@ impl ListDeliverabilityTestReportsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
                 if let Some(inner_26) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
-                    );
+                    if *inner_26 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_26).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3934,13 +3952,17 @@ impl ListDomainDeliverabilityCampaignsInput {
                     )?,
                 );
                 if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 if let Some(inner_31) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
-                    );
+                    if *inner_31 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4093,13 +4115,17 @@ impl ListEmailIdentitiesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 if let Some(inner_33) = &_input.page_size {
-                    query.push_kv(
-                        "PageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
-                    );
+                    if *inner_33 != 0 {
+                        query.push_kv(
+                            "PageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

@@ -94,7 +94,9 @@ impl DeleteThingShadowInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 Ok(())
             }
@@ -409,7 +411,9 @@ impl GetThingShadowInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -596,13 +600,17 @@ impl ListNamedShadowsForThingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.page_size {
-                    query.push_kv(
-                        "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "pageSize",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -753,7 +761,9 @@ impl ListRetainedMessagesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1164,7 +1174,9 @@ impl UpdateThingShadowInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.shadow_name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }

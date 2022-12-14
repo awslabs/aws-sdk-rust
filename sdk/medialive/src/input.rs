@@ -5714,7 +5714,9 @@ impl DescribeScheduleInput {
                     );
                 }
                 if let Some(inner_29) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
                 }
                 Ok(())
             }
@@ -5869,7 +5871,9 @@ impl ListChannelsInput {
                     );
                 }
                 if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 Ok(())
             }
@@ -6026,7 +6030,9 @@ impl ListInputDevicesInput {
                     );
                 }
                 if let Some(inner_31) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 Ok(())
             }
@@ -6198,7 +6204,9 @@ impl ListInputDeviceTransfersInput {
                     );
                 }
                 if let Some(inner_32) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 let inner_33 = &_input.transfer_type;
                 let inner_33 = inner_33.as_ref().ok_or_else(|| {
@@ -6372,7 +6380,9 @@ impl ListInputsInput {
                     );
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -6529,7 +6539,9 @@ impl ListInputSecurityGroupsInput {
                     );
                 }
                 if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 Ok(())
             }
@@ -6684,7 +6696,9 @@ impl ListMultiplexesInput {
                     );
                 }
                 if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 Ok(())
             }
@@ -6877,7 +6891,9 @@ impl ListMultiplexProgramsInput {
                     );
                 }
                 if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 Ok(())
             }
@@ -7167,22 +7183,30 @@ impl ListOfferingsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.channel_class {
-                    query.push_kv(
-                        "channelClass",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
-                    );
+                    {
+                        query.push_kv(
+                            "channelClass",
+                            &aws_smithy_http::query::fmt_string(&inner_39),
+                        );
+                    }
                 }
                 if let Some(inner_40) = &_input.channel_configuration {
-                    query.push_kv(
-                        "channelConfiguration",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
-                    );
+                    {
+                        query.push_kv(
+                            "channelConfiguration",
+                            &aws_smithy_http::query::fmt_string(&inner_40),
+                        );
+                    }
                 }
                 if let Some(inner_41) = &_input.codec {
-                    query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 if let Some(inner_42) = &_input.duration {
-                    query.push_kv("duration", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("duration", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7191,40 +7215,54 @@ impl ListOfferingsInput {
                     );
                 }
                 if let Some(inner_43) = &_input.maximum_bitrate {
-                    query.push_kv(
-                        "maximumBitrate",
-                        &aws_smithy_http::query::fmt_string(&inner_43),
-                    );
+                    {
+                        query.push_kv(
+                            "maximumBitrate",
+                            &aws_smithy_http::query::fmt_string(&inner_43),
+                        );
+                    }
                 }
                 if let Some(inner_44) = &_input.maximum_framerate {
-                    query.push_kv(
-                        "maximumFramerate",
-                        &aws_smithy_http::query::fmt_string(&inner_44),
-                    );
+                    {
+                        query.push_kv(
+                            "maximumFramerate",
+                            &aws_smithy_http::query::fmt_string(&inner_44),
+                        );
+                    }
                 }
                 if let Some(inner_45) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 if let Some(inner_46) = &_input.resolution {
-                    query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_46));
+                    {
+                        query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_46));
+                    }
                 }
                 if let Some(inner_47) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
-                    );
+                    {
+                        query.push_kv(
+                            "resourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_47),
+                        );
+                    }
                 }
                 if let Some(inner_48) = &_input.special_feature {
-                    query.push_kv(
-                        "specialFeature",
-                        &aws_smithy_http::query::fmt_string(&inner_48),
-                    );
+                    {
+                        query.push_kv(
+                            "specialFeature",
+                            &aws_smithy_http::query::fmt_string(&inner_48),
+                        );
+                    }
                 }
                 if let Some(inner_49) = &_input.video_quality {
-                    query.push_kv(
-                        "videoQuality",
-                        &aws_smithy_http::query::fmt_string(&inner_49),
-                    );
+                    {
+                        query.push_kv(
+                            "videoQuality",
+                            &aws_smithy_http::query::fmt_string(&inner_49),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7489,13 +7527,17 @@ impl ListReservationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.channel_class {
-                    query.push_kv(
-                        "channelClass",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
-                    );
+                    {
+                        query.push_kv(
+                            "channelClass",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
                 if let Some(inner_51) = &_input.codec {
-                    query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_51));
+                    {
+                        query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_51));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7504,40 +7546,54 @@ impl ListReservationsInput {
                     );
                 }
                 if let Some(inner_52) = &_input.maximum_bitrate {
-                    query.push_kv(
-                        "maximumBitrate",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
-                    );
+                    {
+                        query.push_kv(
+                            "maximumBitrate",
+                            &aws_smithy_http::query::fmt_string(&inner_52),
+                        );
+                    }
                 }
                 if let Some(inner_53) = &_input.maximum_framerate {
-                    query.push_kv(
-                        "maximumFramerate",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
-                    );
+                    {
+                        query.push_kv(
+                            "maximumFramerate",
+                            &aws_smithy_http::query::fmt_string(&inner_53),
+                        );
+                    }
                 }
                 if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    }
                 }
                 if let Some(inner_55) = &_input.resolution {
-                    query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 if let Some(inner_56) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_56),
-                    );
+                    {
+                        query.push_kv(
+                            "resourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_56),
+                        );
+                    }
                 }
                 if let Some(inner_57) = &_input.special_feature {
-                    query.push_kv(
-                        "specialFeature",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
+                    {
+                        query.push_kv(
+                            "specialFeature",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
                 if let Some(inner_58) = &_input.video_quality {
-                    query.push_kv(
-                        "videoQuality",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
-                    );
+                    {
+                        query.push_kv(
+                            "videoQuality",
+                            &aws_smithy_http::query::fmt_string(&inner_58),
+                        );
+                    }
                 }
                 Ok(())
             }

@@ -6605,10 +6605,12 @@ impl ExportApiInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.export_version {
-                    query.push_kv(
-                        "exportVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
-                    );
+                    {
+                        query.push_kv(
+                            "exportVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_46),
+                        );
+                    }
                 }
                 if _input.include_extensions {
                     query.push_kv(
@@ -6634,7 +6636,9 @@ impl ExportApiInput {
                 }
                 query.push_kv("outputType", &aws_smithy_http::query::fmt_string(&inner_47));
                 if let Some(inner_48) = &_input.stage_name {
-                    query.push_kv("stageName", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("stageName", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 Ok(())
             }
@@ -7146,10 +7150,14 @@ impl GetApiMappingsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_53) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                    }
                 }
                 Ok(())
             }
@@ -7298,10 +7306,14 @@ impl GetApisInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_55) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 if let Some(inner_56) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+                    }
                 }
                 Ok(())
             }
@@ -7665,10 +7677,14 @@ impl GetAuthorizersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_60) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_60));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
                 }
                 if let Some(inner_61) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                    }
                 }
                 Ok(())
             }
@@ -8034,10 +8050,14 @@ impl GetDeploymentsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_65));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_65));
+                    }
                 }
                 if let Some(inner_66) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 Ok(())
             }
@@ -8336,10 +8356,14 @@ impl GetDomainNamesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_68) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_68));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_68));
+                    }
                 }
                 if let Some(inner_69) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 Ok(())
             }
@@ -8961,10 +8985,14 @@ impl GetIntegrationResponsesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_77) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_77));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_77));
+                    }
                 }
                 if let Some(inner_78) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                    }
                 }
                 Ok(())
             }
@@ -9145,10 +9173,14 @@ impl GetIntegrationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_80) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
                 if let Some(inner_81) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_81));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_81));
+                    }
                 }
                 Ok(())
             }
@@ -9509,10 +9541,14 @@ impl GetModelsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_85) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_85));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_85));
+                    }
                 }
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 Ok(())
             }
@@ -10312,10 +10348,14 @@ impl GetRouteResponsesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_96) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_96));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_96));
+                    }
                 }
                 if let Some(inner_97) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 Ok(())
             }
@@ -10496,10 +10536,14 @@ impl GetRoutesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_99) = &_input.max_results {
-                    query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_99));
+                    {
+                        query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_99));
+                    }
                 }
                 if let Some(inner_100) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
+                    }
                 }
                 Ok(())
             }
@@ -10858,13 +10902,17 @@ impl GetStagesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_104) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        &aws_smithy_http::query::fmt_string(&inner_104),
-                    );
+                    {
+                        query.push_kv(
+                            "maxResults",
+                            &aws_smithy_http::query::fmt_string(&inner_104),
+                        );
+                    }
                 }
                 if let Some(inner_105) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_105));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_105));
+                    }
                 }
                 Ok(())
             }
@@ -11301,13 +11349,17 @@ impl GetVpcLinksInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_108) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        &aws_smithy_http::query::fmt_string(&inner_108),
-                    );
+                    {
+                        query.push_kv(
+                            "maxResults",
+                            &aws_smithy_http::query::fmt_string(&inner_108),
+                        );
+                    }
                 }
                 if let Some(inner_109) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
+                    }
                 }
                 Ok(())
             }
@@ -11468,7 +11520,9 @@ impl ImportApiInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_110) = &_input.basepath {
-                    query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_110));
+                    {
+                        query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_110));
+                    }
                 }
                 if _input.fail_on_warnings {
                     query.push_kv(
@@ -11680,7 +11734,9 @@ impl ReimportApiInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_112) = &_input.basepath {
-                    query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_112));
+                    {
+                        query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_112));
+                    }
                 }
                 if _input.fail_on_warnings {
                     query.push_kv(

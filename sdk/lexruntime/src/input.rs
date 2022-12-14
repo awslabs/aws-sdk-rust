@@ -379,10 +379,12 @@ impl GetSessionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.checkpoint_label_filter {
-                    query.push_kv(
-                        "checkpointLabelFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
-                    );
+                    {
+                        query.push_kv(
+                            "checkpointLabelFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_7),
+                        );
+                    }
                 }
                 Ok(())
             }

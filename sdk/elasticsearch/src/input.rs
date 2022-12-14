@@ -2462,7 +2462,9 @@ impl DescribeDomainChangeProgressInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_10) = &_input.change_id {
-                    query.push_kv("changeid", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("changeid", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -3129,7 +3131,9 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.domain_name {
-                    query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 Ok(())
             }
@@ -3867,7 +3871,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.reserved_elasticsearch_instance_offering_id {
-                    query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3876,7 +3882,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
                     );
                 }
                 if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 Ok(())
             }
@@ -4047,10 +4055,12 @@ impl DescribeReservedElasticsearchInstancesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.reserved_elasticsearch_instance_id {
-                    query.push_kv(
-                        "reservationId",
-                        &aws_smithy_http::query::fmt_string(&inner_18),
-                    );
+                    {
+                        query.push_kv(
+                            "reservationId",
+                            &aws_smithy_http::query::fmt_string(&inner_18),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4059,7 +4069,9 @@ impl DescribeReservedElasticsearchInstancesInput {
                     );
                 }
                 if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 Ok(())
             }
@@ -4383,7 +4395,9 @@ impl GetCompatibleElasticsearchVersionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_22) = &_input.domain_name {
-                    query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 Ok(())
             }
@@ -4576,7 +4590,9 @@ impl GetPackageVersionHistoryInput {
                     );
                 }
                 if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 Ok(())
             }
@@ -4769,7 +4785,9 @@ impl GetUpgradeHistoryInput {
                     );
                 }
                 if let Some(inner_26) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_26));
+                    }
                 }
                 Ok(())
             }
@@ -5061,7 +5079,9 @@ impl ListDomainNamesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.engine_type {
-                    query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_28));
+                    {
+                        query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_28));
+                    }
                 }
                 Ok(())
             }
@@ -5254,7 +5274,9 @@ impl ListDomainsForPackageInput {
                     );
                 }
                 if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 Ok(())
             }
@@ -5456,7 +5478,9 @@ impl ListElasticsearchInstanceTypesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.domain_name {
-                    query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -5465,7 +5489,9 @@ impl ListElasticsearchInstanceTypesInput {
                     );
                 }
                 if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    }
                 }
                 Ok(())
             }
@@ -5622,7 +5648,9 @@ impl ListElasticsearchVersionsInput {
                     );
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -5815,7 +5843,9 @@ impl ListPackagesForDomainInput {
                     );
                 }
                 if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 Ok(())
             }

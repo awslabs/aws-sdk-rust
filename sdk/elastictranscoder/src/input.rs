@@ -1396,10 +1396,14 @@ impl ListJobsByPipelineInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.ascending {
-                    query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 if let Some(inner_6) = &_input.page_token {
-                    query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 Ok(())
             }
@@ -1582,10 +1586,14 @@ impl ListJobsByStatusInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.ascending {
-                    query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 if let Some(inner_9) = &_input.page_token {
-                    query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 Ok(())
             }
@@ -1734,10 +1742,14 @@ impl ListPipelinesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_10) = &_input.ascending {
-                    query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.page_token {
-                    query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 Ok(())
             }
@@ -1886,10 +1898,14 @@ impl ListPresetsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.ascending {
-                    query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 if let Some(inner_13) = &_input.page_token {
-                    query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 Ok(())
             }

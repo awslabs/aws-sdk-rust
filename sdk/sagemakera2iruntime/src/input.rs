@@ -440,22 +440,26 @@ impl ListHumanLoopsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.creation_time_after {
-                    query.push_kv(
-                        "CreationTimeAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_3,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "CreationTimeAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_3,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_4) = &_input.creation_time_before {
-                    query.push_kv(
-                        "CreationTimeBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_4,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "CreationTimeBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_4,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 let inner_5 = &_input.flow_definition_arn;
                 let inner_5 = inner_5.as_ref().ok_or_else(|| {
@@ -477,16 +481,22 @@ impl ListHumanLoopsInput {
                     &aws_smithy_http::query::fmt_string(&inner_5),
                 );
                 if let Some(inner_6) = &_input.sort_order {
-                    query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

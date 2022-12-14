@@ -790,10 +790,12 @@ impl DeleteConnectorInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.current_version {
-                    query.push_kv(
-                        "currentVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
-                    );
+                    {
+                        query.push_kv(
+                            "currentVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_2),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1577,10 +1579,12 @@ impl ListConnectorsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.connector_name_prefix {
-                    query.push_kv(
-                        "connectorNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
-                    );
+                    {
+                        query.push_kv(
+                            "connectorNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_7),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1589,7 +1593,9 @@ impl ListConnectorsInput {
                     );
                 }
                 if let Some(inner_8) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -1746,7 +1752,9 @@ impl ListCustomPluginsInput {
                     );
                 }
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 Ok(())
             }
@@ -1903,7 +1911,9 @@ impl ListWorkerConfigurationsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }

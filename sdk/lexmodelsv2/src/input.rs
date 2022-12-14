@@ -2245,10 +2245,12 @@ impl CreateResourcePolicyStatementInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.expected_revision_id {
-                    query.push_kv(
-                        "expectedRevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
+                    {
+                        query.push_kv(
+                            "expectedRevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_13),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4826,10 +4828,12 @@ impl DeleteResourcePolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.expected_revision_id {
-                    query.push_kv(
-                        "expectedRevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
-                    );
+                    {
+                        query.push_kv(
+                            "expectedRevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_39),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5041,10 +5045,12 @@ impl DeleteResourcePolicyStatementInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.expected_revision_id {
-                    query.push_kv(
-                        "expectedRevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_42),
-                    );
+                    {
+                        query.push_kv(
+                            "expectedRevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_42),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5763,10 +5769,14 @@ impl DeleteUtterancesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_53) = &_input.locale_id {
-                    query.push_kv("localeId", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("localeId", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.session_id {
-                    query.push_kv("sessionId", &aws_smithy_http::query::fmt_string(&inner_54));
+                    {
+                        query.push_kv("sessionId", &aws_smithy_http::query::fmt_string(&inner_54));
+                    }
                 }
                 Ok(())
             }
@@ -14965,10 +14975,12 @@ impl UpdateResourcePolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_142) = &_input.expected_revision_id {
-                    query.push_kv(
-                        "expectedRevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_142),
-                    );
+                    {
+                        query.push_kv(
+                            "expectedRevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_142),
+                        );
+                    }
                 }
                 Ok(())
             }

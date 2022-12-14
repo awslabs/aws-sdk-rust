@@ -7732,10 +7732,14 @@ impl ListAccessPointsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.bucket {
-                    query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 if let Some(inner_36) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -7918,7 +7922,9 @@ impl ListAccessPointsForObjectLambdaInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8121,21 +8127,27 @@ impl ListJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.job_statuses {
-                    for inner_39 in inner_38 {
-                        query.push_kv(
-                            "jobStatuses",
-                            &aws_smithy_http::query::fmt_string(&inner_39),
-                        );
+                    {
+                        for inner_39 in inner_38 {
+                            query.push_kv(
+                                "jobStatuses",
+                                &aws_smithy_http::query::fmt_string(&inner_39),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_40) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 if let Some(inner_41) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
-                    );
+                    if *inner_41 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8309,7 +8321,9 @@ impl ListMultiRegionAccessPointsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8522,7 +8536,9 @@ impl ListRegionalBucketsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -8692,7 +8708,9 @@ impl ListStorageLensConfigurationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_44) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                    }
                 }
                 Ok(())
             }
@@ -11758,10 +11776,12 @@ impl UpdateJobStatusInput {
                     &aws_smithy_http::query::fmt_string(&inner_58),
                 );
                 if let Some(inner_59) = &_input.status_update_reason {
-                    query.push_kv(
-                        "statusUpdateReason",
-                        &aws_smithy_http::query::fmt_string(&inner_59),
-                    );
+                    {
+                        query.push_kv(
+                            "statusUpdateReason",
+                            &aws_smithy_http::query::fmt_string(&inner_59),
+                        );
+                    }
                 }
                 Ok(())
             }

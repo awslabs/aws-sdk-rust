@@ -25,7 +25,9 @@ impl std::fmt::Display for TrustedSignerDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrustedSignerDoesNotExist")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -90,7 +92,9 @@ impl std::fmt::Display for TooManyTrustedSigners {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTrustedSigners")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -158,7 +162,9 @@ impl std::fmt::Display for TooManyStreamingDistributionCnamEs {
             "TooManyStreamingDistributionCnamEs [TooManyStreamingDistributionCNAMEs]"
         )?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -223,7 +229,9 @@ impl std::fmt::Display for PreconditionFailed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PreconditionFailed")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -288,7 +296,9 @@ impl std::fmt::Display for NoSuchStreamingDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchStreamingDistribution")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -353,7 +363,9 @@ impl std::fmt::Display for MissingBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingBody")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -418,7 +430,9 @@ impl std::fmt::Display for InvalidOriginAccessIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginAccessIdentity")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -483,7 +497,9 @@ impl std::fmt::Display for InvalidOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginAccessControl")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -548,7 +564,9 @@ impl std::fmt::Display for InvalidIfMatchVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIfMatchVersion")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -613,7 +631,9 @@ impl std::fmt::Display for InvalidArgument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgument")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -678,7 +698,9 @@ impl std::fmt::Display for InconsistentQuantities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InconsistentQuantities")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -743,7 +765,9 @@ impl std::fmt::Display for IllegalUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalUpdate")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -808,7 +832,9 @@ impl std::fmt::Display for CnameAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CnameAlreadyExists [CNAMEAlreadyExists]")?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -873,7 +899,9 @@ impl std::fmt::Display for AccessDenied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDenied")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -939,7 +967,9 @@ impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCustomHeadersInResponseHeadersPolicy")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -1008,7 +1038,9 @@ impl std::fmt::Display for TooLongCspInResponseHeadersPolicy {
             "TooLongCspInResponseHeadersPolicy [TooLongCSPInResponseHeadersPolicy]"
         )?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1073,7 +1105,9 @@ impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResponseHeadersPolicyAlreadyExists")?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1138,7 +1172,9 @@ impl std::fmt::Display for NoSuchResponseHeadersPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchResponseHeadersPolicy")?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1203,7 +1239,9 @@ impl std::fmt::Display for NoSuchRealtimeLogConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchRealtimeLogConfig")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1268,7 +1306,9 @@ impl std::fmt::Display for NoSuchPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchPublicKey")?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1333,7 +1373,9 @@ impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotChangeImmutablePublicKeyFields")?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1398,7 +1440,9 @@ impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInOriginRequestPolicy")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1463,7 +1507,9 @@ impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInOriginRequestPolicy")?;
         if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+            {
+                write!(f, ": {}", inner_23)?;
+            }
         }
         Ok(())
     }
@@ -1528,7 +1574,9 @@ impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInOriginRequestPolicy")?;
         if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+            {
+                write!(f, ": {}", inner_24)?;
+            }
         }
         Ok(())
     }
@@ -1593,7 +1641,9 @@ impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyAlreadyExists")?;
         if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+            {
+                write!(f, ": {}", inner_25)?;
+            }
         }
         Ok(())
     }
@@ -1658,7 +1708,9 @@ impl std::fmt::Display for NoSuchOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOriginRequestPolicy")?;
         if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+            {
+                write!(f, ": {}", inner_26)?;
+            }
         }
         Ok(())
     }
@@ -1723,7 +1775,9 @@ impl std::fmt::Display for OriginAccessControlAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginAccessControlAlreadyExists")?;
         if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+            {
+                write!(f, ": {}", inner_27)?;
+            }
         }
         Ok(())
     }
@@ -1788,7 +1842,9 @@ impl std::fmt::Display for NoSuchOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOriginAccessControl")?;
         if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+            {
+                write!(f, ": {}", inner_28)?;
+            }
         }
         Ok(())
     }
@@ -1853,7 +1909,9 @@ impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeysInKeyGroup")?;
         if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+            {
+                write!(f, ": {}", inner_29)?;
+            }
         }
         Ok(())
     }
@@ -1918,7 +1976,9 @@ impl std::fmt::Display for NoSuchResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchResource")?;
         if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+            {
+                write!(f, ": {}", inner_30)?;
+            }
         }
         Ok(())
     }
@@ -1983,7 +2043,9 @@ impl std::fmt::Display for KeyGroupAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeyGroupAlreadyExists")?;
         if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+            {
+                write!(f, ": {}", inner_31)?;
+            }
         }
         Ok(())
     }
@@ -2048,7 +2110,9 @@ impl std::fmt::Display for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperation")?;
         if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+            {
+                write!(f, ": {}", inner_32)?;
+            }
         }
         Ok(())
     }
@@ -2113,7 +2177,9 @@ impl std::fmt::Display for NoSuchFunctionExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFunctionExists")?;
         if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+            {
+                write!(f, ": {}", inner_33)?;
+            }
         }
         Ok(())
     }
@@ -2178,7 +2244,9 @@ impl std::fmt::Display for FunctionSizeLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionSizeLimitExceeded")?;
         if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+            {
+                write!(f, ": {}", inner_34)?;
+            }
         }
         Ok(())
     }
@@ -2243,7 +2311,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionFieldPatterns")?;
         if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+            {
+                write!(f, ": {}", inner_35)?;
+            }
         }
         Ok(())
     }
@@ -2308,7 +2378,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionEncryptionEntities")?;
         if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+            {
+                write!(f, ": {}", inner_36)?;
+            }
         }
         Ok(())
     }
@@ -2373,7 +2445,9 @@ impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionProfile")?;
         if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+            {
+                write!(f, ": {}", inner_37)?;
+            }
         }
         Ok(())
     }
@@ -2438,7 +2512,9 @@ impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileSizeExceeded")?;
         if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+            {
+                write!(f, ": {}", inner_38)?;
+            }
         }
         Ok(())
     }
@@ -2503,7 +2579,9 @@ impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileAlreadyExists")?;
         if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+            {
+                write!(f, ": {}", inner_39)?;
+            }
         }
         Ok(())
     }
@@ -2568,7 +2646,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionQueryArgProfiles")?;
         if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+            {
+                write!(f, ": {}", inner_40)?;
+            }
         }
         Ok(())
     }
@@ -2633,7 +2713,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionContentTypeProfiles")?;
         if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+            {
+                write!(f, ": {}", inner_41)?;
+            }
         }
         Ok(())
     }
@@ -2699,7 +2781,9 @@ impl std::fmt::Display for QueryArgProfileEmpty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryArgProfileEmpty")?;
         if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+            {
+                write!(f, ": {}", inner_42)?;
+            }
         }
         Ok(())
     }
@@ -2764,7 +2848,9 @@ impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionConfig")?;
         if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+            {
+                write!(f, ": {}", inner_43)?;
+            }
         }
         Ok(())
     }
@@ -2829,7 +2915,9 @@ impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrustedKeyGroupDoesNotExist")?;
         if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+            {
+                write!(f, ": {}", inner_44)?;
+            }
         }
         Ok(())
     }
@@ -2894,7 +2982,9 @@ impl std::fmt::Display for TooManyQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringParameters")?;
         if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+            {
+                write!(f, ": {}", inner_45)?;
+            }
         }
         Ok(())
     }
@@ -2959,7 +3049,9 @@ impl std::fmt::Display for TooManyOrigins {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOrigins")?;
         if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+            {
+                write!(f, ": {}", inner_46)?;
+            }
         }
         Ok(())
     }
@@ -3024,7 +3116,9 @@ impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginGroupsPerDistribution")?;
         if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+            {
+                write!(f, ": {}", inner_47)?;
+            }
         }
         Ok(())
     }
@@ -3089,7 +3183,9 @@ impl std::fmt::Display for TooManyOriginCustomHeaders {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginCustomHeaders")?;
         if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+            {
+                write!(f, ": {}", inner_48)?;
+            }
         }
         Ok(())
     }
@@ -3154,7 +3250,9 @@ impl std::fmt::Display for TooManyLambdaFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyLambdaFunctionAssociations")?;
         if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+            {
+                write!(f, ": {}", inner_49)?;
+            }
         }
         Ok(())
     }
@@ -3219,7 +3317,9 @@ impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroupsAssociatedToDistribution")?;
         if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+            {
+                write!(f, ": {}", inner_50)?;
+            }
         }
         Ok(())
     }
@@ -3284,7 +3384,9 @@ impl std::fmt::Display for TooManyHeadersInForwardedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInForwardedValues")?;
         if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+            {
+                write!(f, ": {}", inner_51)?;
+            }
         }
         Ok(())
     }
@@ -3349,7 +3451,9 @@ impl std::fmt::Display for TooManyFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctionAssociations")?;
         if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+            {
+                write!(f, ": {}", inner_52)?;
+            }
         }
         Ok(())
     }
@@ -3417,7 +3521,9 @@ impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
             "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
         )?;
         if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+            {
+                write!(f, ": {}", inner_53)?;
+            }
         }
         Ok(())
     }
@@ -3482,7 +3588,9 @@ impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithLambdaAssociations")?;
         if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+            {
+                write!(f, ": {}", inner_54)?;
+            }
         }
         Ok(())
     }
@@ -3547,7 +3655,9 @@ impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithFunctionAssociations")?;
         if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+            {
+                write!(f, ": {}", inner_55)?;
+            }
         }
         Ok(())
     }
@@ -3613,7 +3723,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToResponseHeadersPolicy")?;
         if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+            {
+                write!(f, ": {}", inner_56)?;
+            }
         }
         Ok(())
     }
@@ -3680,7 +3792,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToOriginRequestPolicy")?;
         if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+            {
+                write!(f, ": {}", inner_57)?;
+            }
         }
         Ok(())
     }
@@ -3746,7 +3860,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToKeyGroup")?;
         if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+            {
+                write!(f, ": {}", inner_58)?;
+            }
         }
         Ok(())
     }
@@ -3815,7 +3931,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionC
             "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
         )?;
         if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+            {
+                write!(f, ": {}", inner_59)?;
+            }
         }
         Ok(())
     }
@@ -3884,7 +4002,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToCachePolicy")?;
         if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+            {
+                write!(f, ": {}", inner_60)?;
+            }
         }
         Ok(())
     }
@@ -3949,7 +4069,9 @@ impl std::fmt::Display for TooManyDistributionCnamEs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionCnamEs [TooManyDistributionCNAMEs]")?;
         if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+            {
+                write!(f, ": {}", inner_61)?;
+            }
         }
         Ok(())
     }
@@ -4014,7 +4136,9 @@ impl std::fmt::Display for TooManyCookieNamesInWhiteList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookieNamesInWhiteList")?;
         if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+            {
+                write!(f, ": {}", inner_62)?;
+            }
         }
         Ok(())
     }
@@ -4079,7 +4203,9 @@ impl std::fmt::Display for TooManyCertificates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCertificates")?;
         if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+            {
+                write!(f, ": {}", inner_63)?;
+            }
         }
         Ok(())
     }
@@ -4144,7 +4270,9 @@ impl std::fmt::Display for TooManyCacheBehaviors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCacheBehaviors")?;
         if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+            {
+                write!(f, ": {}", inner_64)?;
+            }
         }
         Ok(())
     }
@@ -4209,7 +4337,9 @@ impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigOwnerMismatch")?;
         if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+            {
+                write!(f, ": {}", inner_65)?;
+            }
         }
         Ok(())
     }
@@ -4274,7 +4404,9 @@ impl std::fmt::Display for NoSuchOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOrigin")?;
         if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+            {
+                write!(f, ": {}", inner_66)?;
+            }
         }
         Ok(())
     }
@@ -4339,7 +4471,9 @@ impl std::fmt::Display for NoSuchDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchDistribution")?;
         if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+            {
+                write!(f, ": {}", inner_67)?;
+            }
         }
         Ok(())
     }
@@ -4404,7 +4538,9 @@ impl std::fmt::Display for NoSuchCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCachePolicy")?;
         if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+            {
+                write!(f, ": {}", inner_68)?;
+            }
         }
         Ok(())
     }
@@ -4469,7 +4605,9 @@ impl std::fmt::Display for InvalidWebAclId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidWebAclId [InvalidWebACLId]")?;
         if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+            {
+                write!(f, ": {}", inner_69)?;
+            }
         }
         Ok(())
     }
@@ -4534,7 +4672,9 @@ impl std::fmt::Display for InvalidViewerCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidViewerCertificate")?;
         if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+            {
+                write!(f, ": {}", inner_70)?;
+            }
         }
         Ok(())
     }
@@ -4599,7 +4739,9 @@ impl std::fmt::Display for InvalidTtlOrder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTtlOrder [InvalidTTLOrder]")?;
         if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+            {
+                write!(f, ": {}", inner_71)?;
+            }
         }
         Ok(())
     }
@@ -4664,7 +4806,9 @@ impl std::fmt::Display for InvalidResponseCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResponseCode")?;
         if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+            {
+                write!(f, ": {}", inner_72)?;
+            }
         }
         Ok(())
     }
@@ -4729,7 +4873,9 @@ impl std::fmt::Display for InvalidRequiredProtocol {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequiredProtocol")?;
         if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+            {
+                write!(f, ": {}", inner_73)?;
+            }
         }
         Ok(())
     }
@@ -4794,7 +4940,9 @@ impl std::fmt::Display for InvalidRelativePath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRelativePath")?;
         if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+            {
+                write!(f, ": {}", inner_74)?;
+            }
         }
         Ok(())
     }
@@ -4859,7 +5007,9 @@ impl std::fmt::Display for InvalidQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStringParameters")?;
         if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+            {
+                write!(f, ": {}", inner_75)?;
+            }
         }
         Ok(())
     }
@@ -4924,7 +5074,9 @@ impl std::fmt::Display for InvalidOriginReadTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginReadTimeout")?;
         if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+            {
+                write!(f, ": {}", inner_76)?;
+            }
         }
         Ok(())
     }
@@ -4989,7 +5141,9 @@ impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginKeepaliveTimeout")?;
         if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+            {
+                write!(f, ": {}", inner_77)?;
+            }
         }
         Ok(())
     }
@@ -5054,7 +5208,9 @@ impl std::fmt::Display for InvalidMinimumProtocolVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMinimumProtocolVersion")?;
         if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+            {
+                write!(f, ": {}", inner_78)?;
+            }
         }
         Ok(())
     }
@@ -5119,7 +5275,9 @@ impl std::fmt::Display for InvalidLocationCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLocationCode")?;
         if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+            {
+                write!(f, ": {}", inner_79)?;
+            }
         }
         Ok(())
     }
@@ -5184,7 +5342,9 @@ impl std::fmt::Display for InvalidLambdaFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLambdaFunctionAssociation")?;
         if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+            {
+                write!(f, ": {}", inner_80)?;
+            }
         }
         Ok(())
     }
@@ -5249,7 +5409,9 @@ impl std::fmt::Display for InvalidHeadersForS3Origin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHeadersForS3Origin")?;
         if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+            {
+                write!(f, ": {}", inner_81)?;
+            }
         }
         Ok(())
     }
@@ -5314,7 +5476,9 @@ impl std::fmt::Display for InvalidGeoRestrictionParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGeoRestrictionParameter")?;
         if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+            {
+                write!(f, ": {}", inner_82)?;
+            }
         }
         Ok(())
     }
@@ -5379,7 +5543,9 @@ impl std::fmt::Display for InvalidFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFunctionAssociation")?;
         if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+            {
+                write!(f, ": {}", inner_83)?;
+            }
         }
         Ok(())
     }
@@ -5444,7 +5610,9 @@ impl std::fmt::Display for InvalidForwardCookies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidForwardCookies")?;
         if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+            {
+                write!(f, ": {}", inner_84)?;
+            }
         }
         Ok(())
     }
@@ -5509,7 +5677,9 @@ impl std::fmt::Display for InvalidErrorCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidErrorCode")?;
         if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+            {
+                write!(f, ": {}", inner_85)?;
+            }
         }
         Ok(())
     }
@@ -5574,7 +5744,9 @@ impl std::fmt::Display for InvalidDomainNameForOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDomainNameForOriginAccessControl")?;
         if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+            {
+                write!(f, ": {}", inner_86)?;
+            }
         }
         Ok(())
     }
@@ -5639,7 +5811,9 @@ impl std::fmt::Display for InvalidDefaultRootObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDefaultRootObject")?;
         if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+            {
+                write!(f, ": {}", inner_87)?;
+            }
         }
         Ok(())
     }
@@ -5704,7 +5878,9 @@ impl std::fmt::Display for IllegalOriginAccessConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalOriginAccessConfiguration")?;
         if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+            {
+                write!(f, ": {}", inner_88)?;
+            }
         }
         Ok(())
     }
@@ -5773,7 +5949,9 @@ impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCache
             "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
         )?;
         if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+            {
+                write!(f, ": {}", inner_89)?;
+            }
         }
         Ok(())
     }
@@ -5842,7 +6020,9 @@ impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCloudFrontOriginAccessIdentity")?;
         if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+            {
+                write!(f, ": {}", inner_90)?;
+            }
         }
         Ok(())
     }
@@ -5907,7 +6087,9 @@ impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInCachePolicy")?;
         if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+            {
+                write!(f, ": {}", inner_91)?;
+            }
         }
         Ok(())
     }
@@ -5972,7 +6154,9 @@ impl std::fmt::Display for TooManyHeadersInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInCachePolicy")?;
         if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+            {
+                write!(f, ": {}", inner_92)?;
+            }
         }
         Ok(())
     }
@@ -6037,7 +6221,9 @@ impl std::fmt::Display for TooManyCookiesInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInCachePolicy")?;
         if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+            {
+                write!(f, ": {}", inner_93)?;
+            }
         }
         Ok(())
     }
@@ -6102,7 +6288,9 @@ impl std::fmt::Display for CachePolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyAlreadyExists")?;
         if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+            {
+                write!(f, ": {}", inner_94)?;
+            }
         }
         Ok(())
     }
@@ -6167,7 +6355,9 @@ impl std::fmt::Display for InvalidTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagging")?;
         if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+            {
+                write!(f, ": {}", inner_95)?;
+            }
         }
         Ok(())
     }
@@ -6232,7 +6422,9 @@ impl std::fmt::Display for TestFunctionFailed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TestFunctionFailed")?;
         if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+            {
+                write!(f, ": {}", inner_96)?;
+            }
         }
         Ok(())
     }
@@ -6297,7 +6489,9 @@ impl std::fmt::Display for NoSuchMonitoringSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchMonitoringSubscription")?;
         if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+            {
+                write!(f, ": {}", inner_97)?;
+            }
         }
         Ok(())
     }
@@ -6362,7 +6556,9 @@ impl std::fmt::Display for NoSuchInvalidation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchInvalidation")?;
         if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+            {
+                write!(f, ": {}", inner_98)?;
+            }
         }
         Ok(())
     }
@@ -6427,7 +6623,9 @@ impl std::fmt::Display for StreamingDistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionNotDisabled")?;
         if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+            {
+                write!(f, ": {}", inner_99)?;
+            }
         }
         Ok(())
     }
@@ -6492,7 +6690,9 @@ impl std::fmt::Display for ResponseHeadersPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResponseHeadersPolicyInUse")?;
         if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+            {
+                write!(f, ": {}", inner_100)?;
+            }
         }
         Ok(())
     }
@@ -6557,7 +6757,9 @@ impl std::fmt::Display for IllegalDelete {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalDelete")?;
         if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+            {
+                write!(f, ": {}", inner_101)?;
+            }
         }
         Ok(())
     }
@@ -6622,7 +6824,9 @@ impl std::fmt::Display for RealtimeLogConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigInUse")?;
         if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+            {
+                write!(f, ": {}", inner_102)?;
+            }
         }
         Ok(())
     }
@@ -6687,7 +6891,9 @@ impl std::fmt::Display for PublicKeyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyInUse")?;
         if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+            {
+                write!(f, ": {}", inner_103)?;
+            }
         }
         Ok(())
     }
@@ -6752,7 +6958,9 @@ impl std::fmt::Display for OriginRequestPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyInUse")?;
         if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+            {
+                write!(f, ": {}", inner_104)?;
+            }
         }
         Ok(())
     }
@@ -6817,7 +7025,9 @@ impl std::fmt::Display for OriginAccessControlInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginAccessControlInUse")?;
         if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+            {
+                write!(f, ": {}", inner_105)?;
+            }
         }
         Ok(())
     }
@@ -6882,7 +7092,9 @@ impl std::fmt::Display for ResourceInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUse")?;
         if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+            {
+                write!(f, ": {}", inner_106)?;
+            }
         }
         Ok(())
     }
@@ -6947,7 +7159,9 @@ impl std::fmt::Display for FunctionInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionInUse")?;
         if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+            {
+                write!(f, ": {}", inner_107)?;
+            }
         }
         Ok(())
     }
@@ -7012,7 +7226,9 @@ impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileInUse")?;
         if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+            {
+                write!(f, ": {}", inner_108)?;
+            }
         }
         Ok(())
     }
@@ -7077,7 +7293,9 @@ impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigInUse")?;
         if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+            {
+                write!(f, ": {}", inner_109)?;
+            }
         }
         Ok(())
     }
@@ -7142,7 +7360,9 @@ impl std::fmt::Display for DistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionNotDisabled")?;
         if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+            {
+                write!(f, ": {}", inner_110)?;
+            }
         }
         Ok(())
     }
@@ -7207,7 +7427,9 @@ impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityInUse")?;
         if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+            {
+                write!(f, ": {}", inner_111)?;
+            }
         }
         Ok(())
     }
@@ -7272,7 +7494,9 @@ impl std::fmt::Display for CachePolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyInUse")?;
         if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+            {
+                write!(f, ": {}", inner_112)?;
+            }
         }
         Ok(())
     }
@@ -7337,7 +7561,9 @@ impl std::fmt::Display for TooManyStreamingDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyStreamingDistributions")?;
         if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+            {
+                write!(f, ": {}", inner_113)?;
+            }
         }
         Ok(())
     }
@@ -7402,7 +7628,9 @@ impl std::fmt::Display for StreamingDistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionAlreadyExists")?;
         if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+            {
+                write!(f, ": {}", inner_114)?;
+            }
         }
         Ok(())
     }
@@ -7467,7 +7695,9 @@ impl std::fmt::Display for InvalidOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOrigin")?;
         if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+            {
+                write!(f, ": {}", inner_115)?;
+            }
         }
         Ok(())
     }
@@ -7533,7 +7763,9 @@ impl std::fmt::Display for TooManyResponseHeadersPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyResponseHeadersPolicies")?;
         if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+            {
+                write!(f, ": {}", inner_116)?;
+            }
         }
         Ok(())
     }
@@ -7598,7 +7830,9 @@ impl std::fmt::Display for TooManyRealtimeLogConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRealtimeLogConfigs")?;
         if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+            {
+                write!(f, ": {}", inner_117)?;
+            }
         }
         Ok(())
     }
@@ -7663,7 +7897,9 @@ impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigAlreadyExists")?;
         if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+            {
+                write!(f, ": {}", inner_118)?;
+            }
         }
         Ok(())
     }
@@ -7728,7 +7964,9 @@ impl std::fmt::Display for TooManyPublicKeys {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeys")?;
         if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+            {
+                write!(f, ": {}", inner_119)?;
+            }
         }
         Ok(())
     }
@@ -7793,7 +8031,9 @@ impl std::fmt::Display for PublicKeyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyAlreadyExists")?;
         if let Some(inner_120) = &self.message {
-            write!(f, ": {}", inner_120)?;
+            {
+                write!(f, ": {}", inner_120)?;
+            }
         }
         Ok(())
     }
@@ -7858,7 +8098,9 @@ impl std::fmt::Display for TooManyOriginRequestPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginRequestPolicies")?;
         if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+            {
+                write!(f, ": {}", inner_121)?;
+            }
         }
         Ok(())
     }
@@ -7924,7 +8166,9 @@ impl std::fmt::Display for TooManyOriginAccessControls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginAccessControls")?;
         if let Some(inner_122) = &self.message {
-            write!(f, ": {}", inner_122)?;
+            {
+                write!(f, ": {}", inner_122)?;
+            }
         }
         Ok(())
     }
@@ -7989,7 +8233,9 @@ impl std::fmt::Display for MonitoringSubscriptionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MonitoringSubscriptionAlreadyExists")?;
         if let Some(inner_123) = &self.message {
-            write!(f, ": {}", inner_123)?;
+            {
+                write!(f, ": {}", inner_123)?;
+            }
         }
         Ok(())
     }
@@ -8054,7 +8300,9 @@ impl std::fmt::Display for TooManyKeyGroups {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroups")?;
         if let Some(inner_124) = &self.message {
-            write!(f, ": {}", inner_124)?;
+            {
+                write!(f, ": {}", inner_124)?;
+            }
         }
         Ok(())
     }
@@ -8119,7 +8367,9 @@ impl std::fmt::Display for TooManyInvalidationsInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyInvalidationsInProgress")?;
         if let Some(inner_125) = &self.message {
-            write!(f, ": {}", inner_125)?;
+            {
+                write!(f, ": {}", inner_125)?;
+            }
         }
         Ok(())
     }
@@ -8184,7 +8434,9 @@ impl std::fmt::Display for BatchTooLarge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchTooLarge")?;
         if let Some(inner_126) = &self.message {
-            write!(f, ": {}", inner_126)?;
+            {
+                write!(f, ": {}", inner_126)?;
+            }
         }
         Ok(())
     }
@@ -8249,7 +8501,9 @@ impl std::fmt::Display for TooManyFunctions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctions")?;
         if let Some(inner_127) = &self.message {
-            write!(f, ": {}", inner_127)?;
+            {
+                write!(f, ": {}", inner_127)?;
+            }
         }
         Ok(())
     }
@@ -8314,7 +8568,9 @@ impl std::fmt::Display for FunctionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionAlreadyExists")?;
         if let Some(inner_128) = &self.message {
-            write!(f, ": {}", inner_128)?;
+            {
+                write!(f, ": {}", inner_128)?;
+            }
         }
         Ok(())
     }
@@ -8379,7 +8635,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionProfiles")?;
         if let Some(inner_129) = &self.message {
-            write!(f, ": {}", inner_129)?;
+            {
+                write!(f, ": {}", inner_129)?;
+            }
         }
         Ok(())
     }
@@ -8444,7 +8702,9 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionConfigs")?;
         if let Some(inner_130) = &self.message {
-            write!(f, ": {}", inner_130)?;
+            {
+                write!(f, ": {}", inner_130)?;
+            }
         }
         Ok(())
     }
@@ -8509,7 +8769,9 @@ impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigAlreadyExists")?;
         if let Some(inner_131) = &self.message {
-            write!(f, ": {}", inner_131)?;
+            {
+                write!(f, ": {}", inner_131)?;
+            }
         }
         Ok(())
     }
@@ -8574,7 +8836,9 @@ impl std::fmt::Display for TooManyDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributions")?;
         if let Some(inner_132) = &self.message {
-            write!(f, ": {}", inner_132)?;
+            {
+                write!(f, ": {}", inner_132)?;
+            }
         }
         Ok(())
     }
@@ -8639,7 +8903,9 @@ impl std::fmt::Display for InvalidProtocolSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidProtocolSettings")?;
         if let Some(inner_133) = &self.message {
-            write!(f, ": {}", inner_133)?;
+            {
+                write!(f, ": {}", inner_133)?;
+            }
         }
         Ok(())
     }
@@ -8704,7 +8970,9 @@ impl std::fmt::Display for DistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionAlreadyExists")?;
         if let Some(inner_134) = &self.message {
-            write!(f, ": {}", inner_134)?;
+            {
+                write!(f, ": {}", inner_134)?;
+            }
         }
         Ok(())
     }
@@ -8770,7 +9038,9 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToOriginAccessControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToOriginAccessControl")?;
         if let Some(inner_135) = &self.message {
-            write!(f, ": {}", inner_135)?;
+            {
+                write!(f, ": {}", inner_135)?;
+            }
         }
         Ok(())
     }
@@ -8836,7 +9106,9 @@ impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCloudFrontOriginAccessIdentities")?;
         if let Some(inner_136) = &self.message {
-            write!(f, ": {}", inner_136)?;
+            {
+                write!(f, ": {}", inner_136)?;
+            }
         }
         Ok(())
     }
@@ -8901,7 +9173,9 @@ impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityAlreadyExists")?;
         if let Some(inner_137) = &self.message {
-            write!(f, ": {}", inner_137)?;
+            {
+                write!(f, ": {}", inner_137)?;
+            }
         }
         Ok(())
     }
@@ -8966,7 +9240,9 @@ impl std::fmt::Display for TooManyCachePolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCachePolicies")?;
         if let Some(inner_138) = &self.message {
-            write!(f, ": {}", inner_138)?;
+            {
+                write!(f, ": {}", inner_138)?;
+            }
         }
         Ok(())
     }

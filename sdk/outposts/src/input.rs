@@ -1841,13 +1841,17 @@ impl GetOutpostInstanceTypesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if let Some(inner_10) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
-                    );
+                    if *inner_10 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2389,21 +2393,27 @@ impl ListAssetsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.host_id_filter {
-                    for inner_16 in inner_15 {
-                        query.push_kv(
-                            "HostIdFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_16),
-                        );
+                    {
+                        for inner_16 in inner_15 {
+                            query.push_kv(
+                                "HostIdFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_16),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_17) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
-                    );
+                    if *inner_17 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_18) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 Ok(())
             }
@@ -2628,36 +2638,46 @@ impl ListCatalogItemsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 if let Some(inner_20) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                    );
+                    if *inner_20 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_21) = &_input.item_class_filter {
-                    for inner_22 in inner_21 {
-                        query.push_kv(
-                            "ItemClassFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_22),
-                        );
+                    {
+                        for inner_22 in inner_21 {
+                            query.push_kv(
+                                "ItemClassFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_22),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_23) = &_input.supported_storage_filter {
-                    for inner_24 in inner_23 {
-                        query.push_kv(
-                            "SupportedStorageFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_24),
-                        );
+                    {
+                        for inner_24 in inner_23 {
+                            query.push_kv(
+                                "SupportedStorageFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_24),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_25) = &_input.ec2_family_filter {
-                    for inner_26 in inner_25 {
-                        query.push_kv(
-                            "EC2FamilyFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_26),
-                        );
+                    {
+                        for inner_26 in inner_25 {
+                            query.push_kv(
+                                "EC2FamilyFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_26),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -2822,19 +2842,25 @@ impl ListOrdersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.outpost_identifier_filter {
-                    query.push_kv(
-                        "OutpostIdentifierFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_27),
-                    );
+                    {
+                        query.push_kv(
+                            "OutpostIdentifierFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_27),
+                        );
+                    }
                 }
                 if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    }
                 }
                 if let Some(inner_29) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
-                    );
+                    if *inner_29 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_29).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3058,36 +3084,46 @@ impl ListOutpostsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 if let Some(inner_31) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
-                    );
+                    if *inner_31 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_32) = &_input.life_cycle_status_filter {
-                    for inner_33 in inner_32 {
-                        query.push_kv(
-                            "LifeCycleStatusFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_33),
-                        );
+                    {
+                        for inner_33 in inner_32 {
+                            query.push_kv(
+                                "LifeCycleStatusFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_33),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_34) = &_input.availability_zone_filter {
-                    for inner_35 in inner_34 {
-                        query.push_kv(
-                            "AvailabilityZoneFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_35),
-                        );
+                    {
+                        for inner_35 in inner_34 {
+                            query.push_kv(
+                                "AvailabilityZoneFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_35),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_36) = &_input.availability_zone_id_filter {
-                    for inner_37 in inner_36 {
-                        query.push_kv(
-                            "AvailabilityZoneIdFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_37),
-                        );
+                    {
+                        for inner_37 in inner_36 {
+                            query.push_kv(
+                                "AvailabilityZoneIdFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_37),
+                            );
+                        }
                     }
                 }
                 Ok(())
@@ -3323,36 +3359,46 @@ impl ListSitesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 if let Some(inner_39) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
-                    );
+                    if *inner_39 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_40) = &_input.operating_address_country_code_filter {
-                    for inner_41 in inner_40 {
-                        query.push_kv(
-                            "OperatingAddressCountryCodeFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_41),
-                        );
+                    {
+                        for inner_41 in inner_40 {
+                            query.push_kv(
+                                "OperatingAddressCountryCodeFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_41),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_42) = &_input.operating_address_state_or_region_filter {
-                    for inner_43 in inner_42 {
-                        query.push_kv(
-                            "OperatingAddressStateOrRegionFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_43),
-                        );
+                    {
+                        for inner_43 in inner_42 {
+                            query.push_kv(
+                                "OperatingAddressStateOrRegionFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_43),
+                            );
+                        }
                     }
                 }
                 if let Some(inner_44) = &_input.operating_address_city_filter {
-                    for inner_45 in inner_44 {
-                        query.push_kv(
-                            "OperatingAddressCityFilter",
-                            &aws_smithy_http::query::fmt_string(&inner_45),
-                        );
+                    {
+                        for inner_45 in inner_44 {
+                            query.push_kv(
+                                "OperatingAddressCityFilter",
+                                &aws_smithy_http::query::fmt_string(&inner_45),
+                            );
+                        }
                     }
                 }
                 Ok(())

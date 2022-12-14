@@ -1607,10 +1607,12 @@ impl DeleteEntityInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.is_recursive {
-                    query.push_kv(
-                        "isRecursive",
-                        aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
-                    );
+                    if *inner_11 {
+                        query.push_kv(
+                            "isRecursive",
+                            aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

@@ -134,10 +134,12 @@ impl AssociateExternalConnectionInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
                 if let Some(inner_2) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_2),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_2),
+                        );
+                    }
                 }
                 let inner_3 = &_input.repository;
                 let inner_3 = inner_3.as_ref().ok_or_else(|| {
@@ -500,10 +502,12 @@ impl CopyPackageVersionsInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
                 if let Some(inner_6) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 let inner_7 = &_input.source_repository;
                 let inner_7 = inner_7.as_ref().ok_or_else(|| {
@@ -552,7 +556,9 @@ impl CopyPackageVersionsInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_9));
                 if let Some(inner_10) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 let inner_11 = &_input.package;
                 let inner_11 = inner_11.as_ref().ok_or_else(|| {
@@ -1019,10 +1025,12 @@ impl CreateRepositoryInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
                 if let Some(inner_14) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_14),
+                        );
+                    }
                 }
                 let inner_15 = &_input.repository;
                 let inner_15 = inner_15.as_ref().ok_or_else(|| {
@@ -1217,10 +1225,12 @@ impl DeleteDomainInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
                 if let Some(inner_17) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_17),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1402,16 +1412,20 @@ impl DeleteDomainPermissionsPolicyInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
                 if let Some(inner_19) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_19),
+                        );
+                    }
                 }
                 if let Some(inner_20) = &_input.policy_revision {
-                    query.push_kv(
-                        "policy-revision",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "policy-revision",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1675,10 +1689,12 @@ impl DeletePackageVersionsInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
                 if let Some(inner_22) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_22),
+                        );
+                    }
                 }
                 let inner_23 = &_input.repository;
                 let inner_23 = inner_23.as_ref().ok_or_else(|| {
@@ -1705,7 +1721,9 @@ impl DeletePackageVersionsInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_24));
                 if let Some(inner_25) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
                 let inner_26 = &_input.package;
                 let inner_26 = inner_26.as_ref().ok_or_else(|| {
@@ -1916,10 +1934,12 @@ impl DeleteRepositoryInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
                 if let Some(inner_28) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_28),
+                        );
+                    }
                 }
                 let inner_29 = &_input.repository;
                 let inner_29 = inner_29.as_ref().ok_or_else(|| {
@@ -2130,10 +2150,12 @@ impl DeleteRepositoryPermissionsPolicyInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
                 if let Some(inner_31) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_31),
+                        );
+                    }
                 }
                 let inner_32 = &_input.repository;
                 let inner_32 = inner_32.as_ref().ok_or_else(|| {
@@ -2152,10 +2174,12 @@ impl DeleteRepositoryPermissionsPolicyInput {
                 }
                 query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_32));
                 if let Some(inner_33) = &_input.policy_revision {
-                    query.push_kv(
-                        "policy-revision",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
-                    );
+                    {
+                        query.push_kv(
+                            "policy-revision",
+                            &aws_smithy_http::query::fmt_string(&inner_33),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2320,10 +2344,12 @@ impl DescribeDomainInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
                 if let Some(inner_35) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_35),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_35),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2549,10 +2575,12 @@ impl DescribePackageInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
                 if let Some(inner_37) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_37),
+                        );
+                    }
                 }
                 let inner_38 = &_input.repository;
                 let inner_38 = inner_38.as_ref().ok_or_else(|| {
@@ -2579,7 +2607,9 @@ impl DescribePackageInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_39));
                 if let Some(inner_40) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 let inner_41 = &_input.package;
                 let inner_41 = inner_41.as_ref().ok_or_else(|| {
@@ -2838,10 +2868,12 @@ impl DescribePackageVersionInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
                 if let Some(inner_43) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_43),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_43),
+                        );
+                    }
                 }
                 let inner_44 = &_input.repository;
                 let inner_44 = inner_44.as_ref().ok_or_else(|| {
@@ -2868,7 +2900,9 @@ impl DescribePackageVersionInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_45));
                 if let Some(inner_46) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_46));
+                    }
                 }
                 let inner_47 = &_input.package;
                 let inner_47 = inner_47.as_ref().ok_or_else(|| {
@@ -3079,10 +3113,12 @@ impl DescribeRepositoryInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
                 if let Some(inner_50) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
                 let inner_51 = &_input.repository;
                 let inner_51 = inner_51.as_ref().ok_or_else(|| {
@@ -3293,10 +3329,12 @@ impl DisassociateExternalConnectionInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
                 if let Some(inner_53) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_53),
+                        );
+                    }
                 }
                 let inner_54 = &_input.repository;
                 let inner_54 = inner_54.as_ref().ok_or_else(|| {
@@ -3624,10 +3662,12 @@ impl DisposePackageVersionsInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
                 if let Some(inner_57) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
                 let inner_58 = &_input.repository;
                 let inner_58 = inner_58.as_ref().ok_or_else(|| {
@@ -3654,7 +3694,9 @@ impl DisposePackageVersionsInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_59));
                 if let Some(inner_60) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
                 }
                 let inner_61 = &_input.package;
                 let inner_61 = inner_61.as_ref().ok_or_else(|| {
@@ -3865,16 +3907,20 @@ impl GetAuthorizationTokenInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
                 if let Some(inner_63) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_63),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_63),
+                        );
+                    }
                 }
                 if let Some(inner_64) = &_input.duration_seconds {
-                    query.push_kv(
-                        "duration",
-                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
-                    );
+                    if *inner_64 != 0 {
+                        query.push_kv(
+                            "duration",
+                            aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4041,10 +4087,12 @@ impl GetDomainPermissionsPolicyInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
                 if let Some(inner_66) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_66),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_66),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4314,10 +4362,12 @@ impl GetPackageVersionAssetInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
                 if let Some(inner_68) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_68),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_68),
+                        );
+                    }
                 }
                 let inner_69 = &_input.repository;
                 let inner_69 = inner_69.as_ref().ok_or_else(|| {
@@ -4344,7 +4394,9 @@ impl GetPackageVersionAssetInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_70));
                 if let Some(inner_71) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
                 }
                 let inner_72 = &_input.package;
                 let inner_72 = inner_72.as_ref().ok_or_else(|| {
@@ -4395,7 +4447,9 @@ impl GetPackageVersionAssetInput {
                 }
                 query.push_kv("asset", &aws_smithy_http::query::fmt_string(&inner_74));
                 if let Some(inner_75) = &_input.package_version_revision {
-                    query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("revision", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 Ok(())
             }
@@ -4638,10 +4692,12 @@ impl GetPackageVersionReadmeInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
                 if let Some(inner_77) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_77),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_77),
+                        );
+                    }
                 }
                 let inner_78 = &_input.repository;
                 let inner_78 = inner_78.as_ref().ok_or_else(|| {
@@ -4668,7 +4724,9 @@ impl GetPackageVersionReadmeInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_79));
                 if let Some(inner_80) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
                 let inner_81 = &_input.package;
                 let inner_81 = inner_81.as_ref().ok_or_else(|| {
@@ -4894,10 +4952,12 @@ impl GetRepositoryEndpointInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
                 if let Some(inner_84) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_84),
+                        );
+                    }
                 }
                 let inner_85 = &_input.repository;
                 let inner_85 = inner_85.as_ref().ok_or_else(|| {
@@ -5101,10 +5161,12 @@ impl GetRepositoryPermissionsPolicyInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
                 if let Some(inner_88) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_88),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_88),
+                        );
+                    }
                 }
                 let inner_89 = &_input.repository;
                 let inner_89 = inner_89.as_ref().ok_or_else(|| {
@@ -5555,10 +5617,12 @@ impl ListPackagesInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
                 if let Some(inner_91) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_91),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_91),
+                        );
+                    }
                 }
                 let inner_92 = &_input.repository;
                 let inner_92 = inner_92.as_ref().ok_or_else(|| {
@@ -5577,31 +5641,45 @@ impl ListPackagesInput {
                 }
                 query.push_kv("repository", &aws_smithy_http::query::fmt_string(&inner_92));
                 if let Some(inner_93) = &_input.format {
-                    query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
+                    {
+                        query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_93));
+                    }
                 }
                 if let Some(inner_94) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_94));
+                    }
                 }
                 if let Some(inner_95) = &_input.package_prefix {
-                    query.push_kv(
-                        "package-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_95),
-                    );
+                    {
+                        query.push_kv(
+                            "package-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_95),
+                        );
+                    }
                 }
                 if let Some(inner_96) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
-                    );
+                    if *inner_96 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_97) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 if let Some(inner_98) = &_input.publish {
-                    query.push_kv("publish", &aws_smithy_http::query::fmt_string(&inner_98));
+                    {
+                        query.push_kv("publish", &aws_smithy_http::query::fmt_string(&inner_98));
+                    }
                 }
                 if let Some(inner_99) = &_input.upstream {
-                    query.push_kv("upstream", &aws_smithy_http::query::fmt_string(&inner_99));
+                    {
+                        query.push_kv("upstream", &aws_smithy_http::query::fmt_string(&inner_99));
+                    }
                 }
                 Ok(())
             }
@@ -5868,10 +5946,12 @@ impl ListPackageVersionAssetsInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
                 if let Some(inner_101) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_101),
+                        );
+                    }
                 }
                 let inner_102 = &_input.repository;
                 let inner_102 = inner_102.as_ref().ok_or_else(|| {
@@ -5901,7 +5981,9 @@ impl ListPackageVersionAssetsInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_103));
                 if let Some(inner_104) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_104));
+                    }
                 }
                 let inner_105 = &_input.package;
                 let inner_105 = inner_105.as_ref().ok_or_else(|| {
@@ -5936,16 +6018,20 @@ impl ListPackageVersionAssetsInput {
                 }
                 query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_106));
                 if let Some(inner_107) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
-                    );
+                    if *inner_107 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_107).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_108) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_108),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_108),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6201,10 +6287,12 @@ impl ListPackageVersionDependenciesInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
                 if let Some(inner_110) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_110),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_110),
+                        );
+                    }
                 }
                 let inner_111 = &_input.repository;
                 let inner_111 = inner_111.as_ref().ok_or_else(|| {
@@ -6234,7 +6322,9 @@ impl ListPackageVersionDependenciesInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_112));
                 if let Some(inner_113) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_113));
+                    }
                 }
                 let inner_114 = &_input.package;
                 let inner_114 = inner_114.as_ref().ok_or_else(|| {
@@ -6269,10 +6359,12 @@ impl ListPackageVersionDependenciesInput {
                 }
                 query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_115));
                 if let Some(inner_116) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_116),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_116),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6569,10 +6661,12 @@ impl ListPackageVersionsInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
                 if let Some(inner_118) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_118),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_118),
+                        );
+                    }
                 }
                 let inner_119 = &_input.repository;
                 let inner_119 = inner_119.as_ref().ok_or_else(|| {
@@ -6602,7 +6696,9 @@ impl ListPackageVersionsInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_120));
                 if let Some(inner_121) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_121));
+                    }
                 }
                 let inner_122 = &_input.package;
                 let inner_122 = inner_122.as_ref().ok_or_else(|| {
@@ -6621,28 +6717,38 @@ impl ListPackageVersionsInput {
                 }
                 query.push_kv("package", &aws_smithy_http::query::fmt_string(&inner_122));
                 if let Some(inner_123) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_123));
+                    }
                 }
                 if let Some(inner_124) = &_input.sort_by {
-                    query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
+                    {
+                        query.push_kv("sortBy", &aws_smithy_http::query::fmt_string(&inner_124));
+                    }
                 }
                 if let Some(inner_125) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
-                    );
+                    if *inner_125 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_125).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_126) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_126),
+                        );
+                    }
                 }
                 if let Some(inner_127) = &_input.origin_type {
-                    query.push_kv(
-                        "originType",
-                        &aws_smithy_http::query::fmt_string(&inner_127),
-                    );
+                    {
+                        query.push_kv(
+                            "originType",
+                            &aws_smithy_http::query::fmt_string(&inner_127),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6808,22 +6914,28 @@ impl ListRepositoriesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_128) = &_input.repository_prefix {
-                    query.push_kv(
-                        "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_128),
-                    );
+                    {
+                        query.push_kv(
+                            "repository-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_128),
+                        );
+                    }
                 }
                 if let Some(inner_129) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
-                    );
+                    if *inner_129 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_129).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_130) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_130),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_130),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7044,34 +7156,44 @@ impl ListRepositoriesInDomainInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
                 if let Some(inner_132) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_132),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_132),
+                        );
+                    }
                 }
                 if let Some(inner_133) = &_input.administrator_account {
-                    query.push_kv(
-                        "administrator-account",
-                        &aws_smithy_http::query::fmt_string(&inner_133),
-                    );
+                    {
+                        query.push_kv(
+                            "administrator-account",
+                            &aws_smithy_http::query::fmt_string(&inner_133),
+                        );
+                    }
                 }
                 if let Some(inner_134) = &_input.repository_prefix {
-                    query.push_kv(
-                        "repository-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_134),
-                    );
+                    {
+                        query.push_kv(
+                            "repository-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_134),
+                        );
+                    }
                 }
                 if let Some(inner_135) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
-                    );
+                    if *inner_135 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_136) = &_input.next_token {
-                    query.push_kv(
-                        "next-token",
-                        &aws_smithy_http::query::fmt_string(&inner_136),
-                    );
+                    {
+                        query.push_kv(
+                            "next-token",
+                            &aws_smithy_http::query::fmt_string(&inner_136),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7654,10 +7776,12 @@ impl PutPackageOriginConfigurationInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
                 if let Some(inner_139) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_139),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_139),
+                        );
+                    }
                 }
                 let inner_140 = &_input.repository;
                 let inner_140 = inner_140.as_ref().ok_or_else(|| {
@@ -7687,7 +7811,9 @@ impl PutPackageOriginConfigurationInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_141));
                 if let Some(inner_142) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_142));
+                    }
                 }
                 let inner_143 = &_input.package;
                 let inner_143 = inner_143.as_ref().ok_or_else(|| {
@@ -7926,10 +8052,12 @@ impl PutRepositoryPermissionsPolicyInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
                 if let Some(inner_145) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_145),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_145),
+                        );
+                    }
                 }
                 let inner_146 = &_input.repository;
                 let inner_146 = inner_146.as_ref().ok_or_else(|| {
@@ -8646,10 +8774,12 @@ impl UpdatePackageVersionsStatusInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
                 if let Some(inner_150) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_150),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_150),
+                        );
+                    }
                 }
                 let inner_151 = &_input.repository;
                 let inner_151 = inner_151.as_ref().ok_or_else(|| {
@@ -8679,7 +8809,9 @@ impl UpdatePackageVersionsStatusInput {
                 })?;
                 query.push_kv("format", &aws_smithy_http::query::fmt_string(&inner_152));
                 if let Some(inner_153) = &_input.namespace {
-                    query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
+                    {
+                        query.push_kv("namespace", &aws_smithy_http::query::fmt_string(&inner_153));
+                    }
                 }
                 let inner_154 = &_input.package;
                 let inner_154 = inner_154.as_ref().ok_or_else(|| {
@@ -8920,10 +9052,12 @@ impl UpdateRepositoryInput {
                 }
                 query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
                 if let Some(inner_156) = &_input.domain_owner {
-                    query.push_kv(
-                        "domain-owner",
-                        &aws_smithy_http::query::fmt_string(&inner_156),
-                    );
+                    {
+                        query.push_kv(
+                            "domain-owner",
+                            &aws_smithy_http::query::fmt_string(&inner_156),
+                        );
+                    }
                 }
                 let inner_157 = &_input.repository;
                 let inner_157 = inner_157.as_ref().ok_or_else(|| {

@@ -13922,31 +13922,39 @@ impl GetContainerLogInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.start_time {
-                    query.push_kv(
-                        "startTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_1,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "startTime",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_1,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_2) = &_input.end_time {
-                    query.push_kv(
-                        "endTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_2,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "endTime",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_2,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_3) = &_input.filter_pattern {
-                    query.push_kv(
-                        "filterPattern",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
-                    );
+                    {
+                        query.push_kv(
+                            "filterPattern",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
                 }
                 if let Some(inner_4) = &_input.page_token {
-                    query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 Ok(())
             }
@@ -14691,10 +14699,12 @@ impl GetContainerServicesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.service_name {
-                    query.push_kv(
-                        "serviceName",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "serviceName",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 Ok(())
             }

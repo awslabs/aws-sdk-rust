@@ -89,27 +89,29 @@ pub fn add_headers_send_api_asset(
         }
     }
     if let Some(inner_11) = &input.request_headers {
-        for (k, v) in inner_11 {
-            use std::str::FromStr;
-            let header_name = http::header::HeaderName::from_str(&format!(
-                "{}{}",
-                "x-amzn-dataexchange-header-", &k
-            ))
-            .map_err(|err| {
-                aws_smithy_http::operation::error::BuildError::invalid_field(
-                    "request_headers",
-                    format!("`{k}` cannot be used as a header name: {err}"),
-                )
-            })?;
-            let header_value = v.as_str();
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+        {
+            for (k, v) in inner_11 {
+                use std::str::FromStr;
+                let header_name = http::header::HeaderName::from_str(&format!(
+                    "{}{}",
+                    "x-amzn-dataexchange-header-", &k
+                ))
+                .map_err(|err| {
                     aws_smithy_http::operation::error::BuildError::invalid_field(
                         "request_headers",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
+                        format!("`{k}` cannot be used as a header name: {err}"),
                     )
                 })?;
-            builder = builder.header(header_name, header_value);
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        aws_smithy_http::operation::error::BuildError::invalid_field(
+                            "request_headers",
+                            format!("`{}` cannot be used as a header value: {}", v, err),
+                        )
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)

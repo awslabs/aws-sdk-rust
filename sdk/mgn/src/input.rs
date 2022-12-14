@@ -2389,7 +2389,9 @@ impl DescribeVcenterClientsInput {
                     );
                 }
                 if let Some(inner_1) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+                    }
                 }
                 Ok(())
             }

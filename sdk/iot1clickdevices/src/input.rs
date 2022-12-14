@@ -1139,7 +1139,9 @@ impl ListDeviceEventsInput {
                     );
                 }
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 let inner_10 = &_input.to_time_stamp;
                 let inner_10 = inner_10.as_ref().ok_or_else(|| {
@@ -1314,7 +1316,9 @@ impl ListDevicesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.device_type {
-                    query.push_kv("deviceType", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("deviceType", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1323,7 +1327,9 @@ impl ListDevicesInput {
                     );
                 }
                 if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }

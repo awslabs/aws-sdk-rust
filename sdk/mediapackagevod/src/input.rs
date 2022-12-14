@@ -1809,13 +1809,17 @@ impl ListAssetsInput {
                     );
                 }
                 if let Some(inner_8) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 if let Some(inner_9) = &_input.packaging_group_id {
-                    query.push_kv(
-                        "packagingGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_9),
-                    );
+                    {
+                        query.push_kv(
+                            "packagingGroupId",
+                            &aws_smithy_http::query::fmt_string(&inner_9),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1987,13 +1991,17 @@ impl ListPackagingConfigurationsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.packaging_group_id {
-                    query.push_kv(
-                        "packagingGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "packagingGroupId",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2150,7 +2158,9 @@ impl ListPackagingGroupsInput {
                     );
                 }
                 if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }

@@ -96,13 +96,19 @@ impl CreateProjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_1));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_1));
+                    }
                 }
                 if let Some(inner_2) = &_input.region {
-                    query.push_kv("region", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("region", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 if let Some(inner_3) = &_input.snapshot_id {
-                    query.push_kv("snapshotId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("snapshotId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 Ok(())
             }
@@ -758,10 +764,14 @@ impl ExportBundleInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.project_id {
-                    query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 if let Some(inner_9) = &_input.platform {
-                    query.push_kv("platform", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("platform", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 Ok(())
             }
@@ -1062,7 +1072,9 @@ impl ListBundlesInput {
                     );
                 }
                 if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 Ok(())
             }
@@ -1217,7 +1229,9 @@ impl ListProjectsInput {
                     );
                 }
                 if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }

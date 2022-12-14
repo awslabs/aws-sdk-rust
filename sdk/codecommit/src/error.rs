@@ -25,7 +25,9 @@ impl std::fmt::Display for RepositoryNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNameRequiredException")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -90,7 +92,9 @@ impl std::fmt::Display for RepositoryNameExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNameExistsException")?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -155,7 +159,9 @@ impl std::fmt::Display for RepositoryDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryDoesNotExistException")?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -222,7 +228,9 @@ impl std::fmt::Display for InvalidRepositoryNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryNameException")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -287,7 +295,9 @@ impl std::fmt::Display for InvalidRepositoryDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryDescriptionException")?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -352,7 +362,9 @@ impl std::fmt::Display for EncryptionKeyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyUnavailableException")?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -417,7 +429,9 @@ impl std::fmt::Display for EncryptionKeyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyNotFoundException")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -482,7 +496,9 @@ impl std::fmt::Display for EncryptionKeyDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyDisabledException")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -547,7 +563,9 @@ impl std::fmt::Display for EncryptionKeyAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionKeyAccessDeniedException")?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -612,7 +630,9 @@ impl std::fmt::Display for EncryptionIntegrityChecksFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EncryptionIntegrityChecksFailedException")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -677,7 +697,9 @@ impl std::fmt::Display for TitleRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TitleRequiredException")?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -742,7 +764,9 @@ impl std::fmt::Display for PullRequestIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestIdRequiredException")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -807,7 +831,9 @@ impl std::fmt::Display for PullRequestDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestDoesNotExistException")?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -872,7 +898,9 @@ impl std::fmt::Display for PullRequestAlreadyClosedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestAlreadyClosedException")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -937,7 +965,9 @@ impl std::fmt::Display for InvalidTitleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTitleException")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -1002,7 +1032,9 @@ impl std::fmt::Display for InvalidPullRequestIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestIdException")?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1067,7 +1099,9 @@ impl std::fmt::Display for PullRequestStatusRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestStatusRequiredException")?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1132,7 +1166,9 @@ impl std::fmt::Display for InvalidPullRequestStatusUpdateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestStatusUpdateException")?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1197,7 +1233,9 @@ impl std::fmt::Display for InvalidPullRequestStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestStatusException")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1262,7 +1300,9 @@ impl std::fmt::Display for InvalidDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDescriptionException")?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }
@@ -1327,7 +1367,9 @@ impl std::fmt::Display for RevisionNotCurrentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionNotCurrentException")?;
         if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+            {
+                write!(f, ": {}", inner_21)?;
+            }
         }
         Ok(())
     }
@@ -1392,7 +1434,9 @@ impl std::fmt::Display for RevisionIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionIdRequiredException")?;
         if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+            {
+                write!(f, ": {}", inner_22)?;
+            }
         }
         Ok(())
     }
@@ -1457,7 +1501,9 @@ impl std::fmt::Display for PullRequestCannotBeApprovedByAuthorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestCannotBeApprovedByAuthorException")?;
         if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+            {
+                write!(f, ": {}", inner_23)?;
+            }
         }
         Ok(())
     }
@@ -1522,7 +1568,9 @@ impl std::fmt::Display for MaximumNumberOfApprovalsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumNumberOfApprovalsExceededException")?;
         if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+            {
+                write!(f, ": {}", inner_24)?;
+            }
         }
         Ok(())
     }
@@ -1587,7 +1635,9 @@ impl std::fmt::Display for InvalidRevisionIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRevisionIdException")?;
         if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+            {
+                write!(f, ": {}", inner_25)?;
+            }
         }
         Ok(())
     }
@@ -1652,7 +1702,9 @@ impl std::fmt::Display for InvalidApprovalStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalStateException")?;
         if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+            {
+                write!(f, ": {}", inner_26)?;
+            }
         }
         Ok(())
     }
@@ -1717,7 +1769,9 @@ impl std::fmt::Display for ApprovalStateRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalStateRequiredException")?;
         if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+            {
+                write!(f, ": {}", inner_27)?;
+            }
         }
         Ok(())
     }
@@ -1782,7 +1836,9 @@ impl std::fmt::Display for InvalidRuleContentSha256Exception {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRuleContentSha256Exception")?;
         if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+            {
+                write!(f, ": {}", inner_28)?;
+            }
         }
         Ok(())
     }
@@ -1847,7 +1903,9 @@ impl std::fmt::Display for InvalidApprovalRuleNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleNameException")?;
         if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+            {
+                write!(f, ": {}", inner_29)?;
+            }
         }
         Ok(())
     }
@@ -1912,7 +1970,9 @@ impl std::fmt::Display for InvalidApprovalRuleContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleContentException")?;
         if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+            {
+                write!(f, ": {}", inner_30)?;
+            }
         }
         Ok(())
     }
@@ -1977,7 +2037,9 @@ impl std::fmt::Display for CannotModifyApprovalRuleFromTemplateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotModifyApprovalRuleFromTemplateException")?;
         if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+            {
+                write!(f, ": {}", inner_31)?;
+            }
         }
         Ok(())
     }
@@ -2042,7 +2104,9 @@ impl std::fmt::Display for ApprovalRuleNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleNameRequiredException")?;
         if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+            {
+                write!(f, ": {}", inner_32)?;
+            }
         }
         Ok(())
     }
@@ -2107,7 +2171,9 @@ impl std::fmt::Display for ApprovalRuleDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleDoesNotExistException")?;
         if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+            {
+                write!(f, ": {}", inner_33)?;
+            }
         }
         Ok(())
     }
@@ -2172,7 +2238,9 @@ impl std::fmt::Display for ApprovalRuleContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleContentRequiredException")?;
         if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+            {
+                write!(f, ": {}", inner_34)?;
+            }
         }
         Ok(())
     }
@@ -2237,7 +2305,9 @@ impl std::fmt::Display for InvalidBranchNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBranchNameException")?;
         if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+            {
+                write!(f, ": {}", inner_35)?;
+            }
         }
         Ok(())
     }
@@ -2302,7 +2372,9 @@ impl std::fmt::Display for BranchNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameRequiredException")?;
         if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+            {
+                write!(f, ": {}", inner_36)?;
+            }
         }
         Ok(())
     }
@@ -2367,7 +2439,9 @@ impl std::fmt::Display for BranchDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchDoesNotExistException")?;
         if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+            {
+                write!(f, ": {}", inner_37)?;
+            }
         }
         Ok(())
     }
@@ -2432,7 +2506,9 @@ impl std::fmt::Display for InvalidCommentIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommentIdException")?;
         if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+            {
+                write!(f, ": {}", inner_38)?;
+            }
         }
         Ok(())
     }
@@ -2497,7 +2573,9 @@ impl std::fmt::Display for CommentNotCreatedByCallerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentNotCreatedByCallerException")?;
         if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+            {
+                write!(f, ": {}", inner_39)?;
+            }
         }
         Ok(())
     }
@@ -2562,7 +2640,9 @@ impl std::fmt::Display for CommentIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentIdRequiredException")?;
         if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+            {
+                write!(f, ": {}", inner_40)?;
+            }
         }
         Ok(())
     }
@@ -2627,7 +2707,9 @@ impl std::fmt::Display for CommentDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentDoesNotExistException")?;
         if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+            {
+                write!(f, ": {}", inner_41)?;
+            }
         }
         Ok(())
     }
@@ -2692,7 +2774,9 @@ impl std::fmt::Display for CommentDeletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentDeletedException")?;
         if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+            {
+                write!(f, ": {}", inner_42)?;
+            }
         }
         Ok(())
     }
@@ -2757,7 +2841,9 @@ impl std::fmt::Display for CommentContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentContentSizeLimitExceededException")?;
         if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+            {
+                write!(f, ": {}", inner_43)?;
+            }
         }
         Ok(())
     }
@@ -2822,7 +2908,9 @@ impl std::fmt::Display for CommentContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommentContentRequiredException")?;
         if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+            {
+                write!(f, ": {}", inner_44)?;
+            }
         }
         Ok(())
     }
@@ -2887,7 +2975,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateNameException")?;
         if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+            {
+                write!(f, ": {}", inner_45)?;
+            }
         }
         Ok(())
     }
@@ -2952,7 +3042,9 @@ impl std::fmt::Display for ApprovalRuleTemplateNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateNameRequiredException")?;
         if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+            {
+                write!(f, ": {}", inner_46)?;
+            }
         }
         Ok(())
     }
@@ -3017,7 +3109,9 @@ impl std::fmt::Display for ApprovalRuleTemplateNameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateNameAlreadyExistsException")?;
         if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+            {
+                write!(f, ": {}", inner_47)?;
+            }
         }
         Ok(())
     }
@@ -3083,7 +3177,9 @@ impl std::fmt::Display for ApprovalRuleTemplateDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateDoesNotExistException")?;
         if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+            {
+                write!(f, ": {}", inner_48)?;
+            }
         }
         Ok(())
     }
@@ -3148,7 +3244,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateDescriptionException")?;
         if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+            {
+                write!(f, ": {}", inner_49)?;
+            }
         }
         Ok(())
     }
@@ -3214,7 +3312,9 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateContentException")?;
         if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+            {
+                write!(f, ": {}", inner_50)?;
+            }
         }
         Ok(())
     }
@@ -3279,7 +3379,9 @@ impl std::fmt::Display for ApprovalRuleTemplateContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateContentRequiredException")?;
         if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+            {
+                write!(f, ": {}", inner_51)?;
+            }
         }
         Ok(())
     }
@@ -3344,7 +3446,9 @@ impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+            {
+                write!(f, ": {}", inner_52)?;
+            }
         }
         Ok(())
     }
@@ -3409,7 +3513,9 @@ impl std::fmt::Display for TagPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagPolicyException")?;
         if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+            {
+                write!(f, ": {}", inner_53)?;
+            }
         }
         Ok(())
     }
@@ -3474,7 +3580,9 @@ impl std::fmt::Display for TagKeysListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagKeysListRequiredException")?;
         if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+            {
+                write!(f, ": {}", inner_54)?;
+            }
         }
         Ok(())
     }
@@ -3539,7 +3647,9 @@ impl std::fmt::Display for ResourceArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceArnRequiredException")?;
         if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+            {
+                write!(f, ": {}", inner_55)?;
+            }
         }
         Ok(())
     }
@@ -3604,7 +3714,9 @@ impl std::fmt::Display for InvalidTagKeysListException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagKeysListException")?;
         if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+            {
+                write!(f, ": {}", inner_56)?;
+            }
         }
         Ok(())
     }
@@ -3669,7 +3781,9 @@ impl std::fmt::Display for InvalidSystemTagUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSystemTagUsageException")?;
         if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+            {
+                write!(f, ": {}", inner_57)?;
+            }
         }
         Ok(())
     }
@@ -3734,7 +3848,9 @@ impl std::fmt::Display for InvalidResourceArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceArnException")?;
         if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+            {
+                write!(f, ": {}", inner_58)?;
+            }
         }
         Ok(())
     }
@@ -3799,7 +3915,9 @@ impl std::fmt::Display for RepositoryTriggersListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggersListRequiredException")?;
         if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+            {
+                write!(f, ": {}", inner_59)?;
+            }
         }
         Ok(())
     }
@@ -3864,7 +3982,9 @@ impl std::fmt::Display for RepositoryTriggerNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerNameRequiredException")?;
         if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+            {
+                write!(f, ": {}", inner_60)?;
+            }
         }
         Ok(())
     }
@@ -3929,7 +4049,9 @@ impl std::fmt::Display for RepositoryTriggerEventsListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerEventsListRequiredException")?;
         if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+            {
+                write!(f, ": {}", inner_61)?;
+            }
         }
         Ok(())
     }
@@ -3994,7 +4116,9 @@ impl std::fmt::Display for RepositoryTriggerDestinationArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerDestinationArnRequiredException")?;
         if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+            {
+                write!(f, ": {}", inner_62)?;
+            }
         }
         Ok(())
     }
@@ -4060,7 +4184,9 @@ impl std::fmt::Display for RepositoryTriggerBranchNameListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggerBranchNameListRequiredException")?;
         if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+            {
+                write!(f, ": {}", inner_63)?;
+            }
         }
         Ok(())
     }
@@ -4126,7 +4252,9 @@ impl std::fmt::Display for MaximumRepositoryTriggersExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRepositoryTriggersExceededException")?;
         if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+            {
+                write!(f, ": {}", inner_64)?;
+            }
         }
         Ok(())
     }
@@ -4191,7 +4319,9 @@ impl std::fmt::Display for MaximumBranchesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumBranchesExceededException")?;
         if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+            {
+                write!(f, ": {}", inner_65)?;
+            }
         }
         Ok(())
     }
@@ -4256,7 +4386,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerRegionException")?;
         if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+            {
+                write!(f, ": {}", inner_66)?;
+            }
         }
         Ok(())
     }
@@ -4321,7 +4453,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerNameException")?;
         if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+            {
+                write!(f, ": {}", inner_67)?;
+            }
         }
         Ok(())
     }
@@ -4386,7 +4520,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerEventsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerEventsException")?;
         if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+            {
+                write!(f, ": {}", inner_68)?;
+            }
         }
         Ok(())
     }
@@ -4451,7 +4587,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerDestinationArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerDestinationArnException")?;
         if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+            {
+                write!(f, ": {}", inner_69)?;
+            }
         }
         Ok(())
     }
@@ -4517,7 +4655,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerCustomDataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerCustomDataException")?;
         if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+            {
+                write!(f, ": {}", inner_70)?;
+            }
         }
         Ok(())
     }
@@ -4582,7 +4722,9 @@ impl std::fmt::Display for InvalidRepositoryTriggerBranchNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRepositoryTriggerBranchNameException")?;
         if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+            {
+                write!(f, ": {}", inner_71)?;
+            }
         }
         Ok(())
     }
@@ -4647,7 +4789,9 @@ impl std::fmt::Display for TagsMapRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagsMapRequiredException")?;
         if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+            {
+                write!(f, ": {}", inner_72)?;
+            }
         }
         Ok(())
     }
@@ -4712,7 +4856,9 @@ impl std::fmt::Display for InvalidTagsMapException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagsMapException")?;
         if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+            {
+                write!(f, ": {}", inner_73)?;
+            }
         }
         Ok(())
     }
@@ -4777,7 +4923,9 @@ impl std::fmt::Display for SameFileContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SameFileContentException")?;
         if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+            {
+                write!(f, ": {}", inner_74)?;
+            }
         }
         Ok(())
     }
@@ -4842,7 +4990,9 @@ impl std::fmt::Display for PathRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PathRequiredException")?;
         if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+            {
+                write!(f, ": {}", inner_75)?;
+            }
         }
         Ok(())
     }
@@ -4907,7 +5057,9 @@ impl std::fmt::Display for ParentCommitIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitIdRequiredException")?;
         if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+            {
+                write!(f, ": {}", inner_76)?;
+            }
         }
         Ok(())
     }
@@ -4972,7 +5124,9 @@ impl std::fmt::Display for ParentCommitIdOutdatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitIdOutdatedException")?;
         if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+            {
+                write!(f, ": {}", inner_77)?;
+            }
         }
         Ok(())
     }
@@ -5037,7 +5191,9 @@ impl std::fmt::Display for ParentCommitDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ParentCommitDoesNotExistException")?;
         if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+            {
+                write!(f, ": {}", inner_78)?;
+            }
         }
         Ok(())
     }
@@ -5102,7 +5258,9 @@ impl std::fmt::Display for NameLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NameLengthExceededException")?;
         if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+            {
+                write!(f, ": {}", inner_79)?;
+            }
         }
         Ok(())
     }
@@ -5167,7 +5325,9 @@ impl std::fmt::Display for InvalidPathException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPathException")?;
         if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+            {
+                write!(f, ": {}", inner_80)?;
+            }
         }
         Ok(())
     }
@@ -5232,7 +5392,9 @@ impl std::fmt::Display for InvalidParentCommitIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParentCommitIdException")?;
         if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+            {
+                write!(f, ": {}", inner_81)?;
+            }
         }
         Ok(())
     }
@@ -5297,7 +5459,9 @@ impl std::fmt::Display for InvalidFileModeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFileModeException")?;
         if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+            {
+                write!(f, ": {}", inner_82)?;
+            }
         }
         Ok(())
     }
@@ -5362,7 +5526,9 @@ impl std::fmt::Display for InvalidEmailException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEmailException")?;
         if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+            {
+                write!(f, ": {}", inner_83)?;
+            }
         }
         Ok(())
     }
@@ -5427,7 +5593,9 @@ impl std::fmt::Display for InvalidDeletionParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeletionParameterException")?;
         if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+            {
+                write!(f, ": {}", inner_84)?;
+            }
         }
         Ok(())
     }
@@ -5492,7 +5660,9 @@ impl std::fmt::Display for FolderContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FolderContentSizeLimitExceededException")?;
         if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+            {
+                write!(f, ": {}", inner_85)?;
+            }
         }
         Ok(())
     }
@@ -5557,7 +5727,9 @@ impl std::fmt::Display for FilePathConflictsWithSubmodulePathException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FilePathConflictsWithSubmodulePathException")?;
         if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+            {
+                write!(f, ": {}", inner_86)?;
+            }
         }
         Ok(())
     }
@@ -5622,7 +5794,9 @@ impl std::fmt::Display for FileNameConflictsWithDirectoryNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileNameConflictsWithDirectoryNameException")?;
         if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+            {
+                write!(f, ": {}", inner_87)?;
+            }
         }
         Ok(())
     }
@@ -5687,7 +5861,9 @@ impl std::fmt::Display for FileContentSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentSizeLimitExceededException")?;
         if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+            {
+                write!(f, ": {}", inner_88)?;
+            }
         }
         Ok(())
     }
@@ -5752,7 +5928,9 @@ impl std::fmt::Display for FileContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentRequiredException")?;
         if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+            {
+                write!(f, ": {}", inner_89)?;
+            }
         }
         Ok(())
     }
@@ -5817,7 +5995,9 @@ impl std::fmt::Display for DirectoryNameConflictsWithFileNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryNameConflictsWithFileNameException")?;
         if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+            {
+                write!(f, ": {}", inner_90)?;
+            }
         }
         Ok(())
     }
@@ -5882,7 +6062,9 @@ impl std::fmt::Display for CommitMessageLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitMessageLengthExceededException")?;
         if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+            {
+                write!(f, ": {}", inner_91)?;
+            }
         }
         Ok(())
     }
@@ -5947,7 +6129,9 @@ impl std::fmt::Display for BranchNameIsTagNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameIsTagNameException")?;
         if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+            {
+                write!(f, ": {}", inner_92)?;
+            }
         }
         Ok(())
     }
@@ -6012,7 +6196,9 @@ impl std::fmt::Display for ReactionValueRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReactionValueRequiredException")?;
         if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+            {
+                write!(f, ": {}", inner_93)?;
+            }
         }
         Ok(())
     }
@@ -6077,7 +6263,9 @@ impl std::fmt::Display for ReactionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReactionLimitExceededException")?;
         if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+            {
+                write!(f, ": {}", inner_94)?;
+            }
         }
         Ok(())
     }
@@ -6142,7 +6330,9 @@ impl std::fmt::Display for InvalidReactionValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReactionValueException")?;
         if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+            {
+                write!(f, ": {}", inner_95)?;
+            }
         }
         Ok(())
     }
@@ -6207,7 +6397,9 @@ impl std::fmt::Display for InvalidClientRequestTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClientRequestTokenException")?;
         if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+            {
+                write!(f, ": {}", inner_96)?;
+            }
         }
         Ok(())
     }
@@ -6272,7 +6464,9 @@ impl std::fmt::Display for IdempotencyParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotencyParameterMismatchException")?;
         if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+            {
+                write!(f, ": {}", inner_97)?;
+            }
         }
         Ok(())
     }
@@ -6337,7 +6531,9 @@ impl std::fmt::Display for ClientRequestTokenRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientRequestTokenRequiredException")?;
         if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+            {
+                write!(f, ": {}", inner_98)?;
+            }
         }
         Ok(())
     }
@@ -6402,7 +6598,9 @@ impl std::fmt::Display for RepositoryNotAssociatedWithPullRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNotAssociatedWithPullRequestException")?;
         if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+            {
+                write!(f, ": {}", inner_99)?;
+            }
         }
         Ok(())
     }
@@ -6468,7 +6666,9 @@ impl std::fmt::Display for PathDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PathDoesNotExistException")?;
         if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+            {
+                write!(f, ": {}", inner_100)?;
+            }
         }
         Ok(())
     }
@@ -6533,7 +6733,9 @@ impl std::fmt::Display for InvalidRelativeFileVersionEnumException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRelativeFileVersionEnumException")?;
         if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+            {
+                write!(f, ": {}", inner_101)?;
+            }
         }
         Ok(())
     }
@@ -6598,7 +6800,9 @@ impl std::fmt::Display for InvalidFilePositionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFilePositionException")?;
         if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+            {
+                write!(f, ": {}", inner_102)?;
+            }
         }
         Ok(())
     }
@@ -6663,7 +6867,9 @@ impl std::fmt::Display for InvalidFileLocationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFileLocationException")?;
         if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+            {
+                write!(f, ": {}", inner_103)?;
+            }
         }
         Ok(())
     }
@@ -6728,7 +6934,9 @@ impl std::fmt::Display for InvalidCommitIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommitIdException")?;
         if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+            {
+                write!(f, ": {}", inner_104)?;
+            }
         }
         Ok(())
     }
@@ -6793,7 +7001,9 @@ impl std::fmt::Display for CommitIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdRequiredException")?;
         if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+            {
+                write!(f, ": {}", inner_105)?;
+            }
         }
         Ok(())
     }
@@ -6858,7 +7068,9 @@ impl std::fmt::Display for CommitDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitDoesNotExistException")?;
         if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+            {
+                write!(f, ": {}", inner_106)?;
+            }
         }
         Ok(())
     }
@@ -6923,7 +7135,9 @@ impl std::fmt::Display for BeforeCommitIdAndAfterCommitIdAreSameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BeforeCommitIdAndAfterCommitIdAreSameException")?;
         if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+            {
+                write!(f, ": {}", inner_107)?;
+            }
         }
         Ok(())
     }
@@ -6989,7 +7203,9 @@ impl std::fmt::Display for OverrideStatusRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OverrideStatusRequiredException")?;
         if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+            {
+                write!(f, ": {}", inner_108)?;
+            }
         }
         Ok(())
     }
@@ -7054,7 +7270,9 @@ impl std::fmt::Display for OverrideAlreadySetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OverrideAlreadySetException")?;
         if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+            {
+                write!(f, ": {}", inner_109)?;
+            }
         }
         Ok(())
     }
@@ -7119,7 +7337,9 @@ impl std::fmt::Display for InvalidOverrideStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOverrideStatusException")?;
         if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+            {
+                write!(f, ": {}", inner_110)?;
+            }
         }
         Ok(())
     }
@@ -7184,7 +7404,9 @@ impl std::fmt::Display for TipsDivergenceExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TipsDivergenceExceededException")?;
         if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+            {
+                write!(f, ": {}", inner_111)?;
+            }
         }
         Ok(())
     }
@@ -7249,7 +7471,9 @@ impl std::fmt::Display for TipOfSourceReferenceIsDifferentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TipOfSourceReferenceIsDifferentException")?;
         if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+            {
+                write!(f, ": {}", inner_112)?;
+            }
         }
         Ok(())
     }
@@ -7314,7 +7538,9 @@ impl std::fmt::Display for ReplacementTypeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplacementTypeRequiredException")?;
         if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+            {
+                write!(f, ": {}", inner_113)?;
+            }
         }
         Ok(())
     }
@@ -7379,7 +7605,9 @@ impl std::fmt::Display for ReplacementContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplacementContentRequiredException")?;
         if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+            {
+                write!(f, ": {}", inner_114)?;
+            }
         }
         Ok(())
     }
@@ -7444,7 +7672,9 @@ impl std::fmt::Display for PullRequestApprovalRulesNotSatisfiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PullRequestApprovalRulesNotSatisfiedException")?;
         if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+            {
+                write!(f, ": {}", inner_115)?;
+            }
         }
         Ok(())
     }
@@ -7509,7 +7739,9 @@ impl std::fmt::Display for MultipleConflictResolutionEntriesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MultipleConflictResolutionEntriesException")?;
         if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+            {
+                write!(f, ": {}", inner_116)?;
+            }
         }
         Ok(())
     }
@@ -7574,7 +7806,9 @@ impl std::fmt::Display for MaximumItemsToCompareExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumItemsToCompareExceededException")?;
         if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+            {
+                write!(f, ": {}", inner_117)?;
+            }
         }
         Ok(())
     }
@@ -7639,7 +7873,9 @@ impl std::fmt::Display for MaximumFileContentToLoadExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumFileContentToLoadExceededException")?;
         if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+            {
+                write!(f, ": {}", inner_118)?;
+            }
         }
         Ok(())
     }
@@ -7704,7 +7940,9 @@ impl std::fmt::Display for MaximumConflictResolutionEntriesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumConflictResolutionEntriesExceededException")?;
         if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+            {
+                write!(f, ": {}", inner_119)?;
+            }
         }
         Ok(())
     }
@@ -7770,7 +8008,9 @@ impl std::fmt::Display for ManualMergeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ManualMergeRequiredException")?;
         if let Some(inner_120) = &self.message {
-            write!(f, ": {}", inner_120)?;
+            {
+                write!(f, ": {}", inner_120)?;
+            }
         }
         Ok(())
     }
@@ -7835,7 +8075,9 @@ impl std::fmt::Display for InvalidReplacementTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReplacementTypeException")?;
         if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+            {
+                write!(f, ": {}", inner_121)?;
+            }
         }
         Ok(())
     }
@@ -7900,7 +8142,9 @@ impl std::fmt::Display for InvalidReplacementContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReplacementContentException")?;
         if let Some(inner_122) = &self.message {
-            write!(f, ": {}", inner_122)?;
+            {
+                write!(f, ": {}", inner_122)?;
+            }
         }
         Ok(())
     }
@@ -7965,7 +8209,9 @@ impl std::fmt::Display for InvalidConflictResolutionStrategyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictResolutionStrategyException")?;
         if let Some(inner_123) = &self.message {
-            write!(f, ": {}", inner_123)?;
+            {
+                write!(f, ": {}", inner_123)?;
+            }
         }
         Ok(())
     }
@@ -8030,7 +8276,9 @@ impl std::fmt::Display for InvalidConflictResolutionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictResolutionException")?;
         if let Some(inner_124) = &self.message {
-            write!(f, ": {}", inner_124)?;
+            {
+                write!(f, ": {}", inner_124)?;
+            }
         }
         Ok(())
     }
@@ -8095,7 +8343,9 @@ impl std::fmt::Display for InvalidConflictDetailLevelException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidConflictDetailLevelException")?;
         if let Some(inner_125) = &self.message {
-            write!(f, ": {}", inner_125)?;
+            {
+                write!(f, ": {}", inner_125)?;
+            }
         }
         Ok(())
     }
@@ -8160,7 +8410,9 @@ impl std::fmt::Display for ConcurrentReferenceUpdateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentReferenceUpdateException")?;
         if let Some(inner_126) = &self.message {
-            write!(f, ": {}", inner_126)?;
+            {
+                write!(f, ": {}", inner_126)?;
+            }
         }
         Ok(())
     }
@@ -8225,7 +8477,9 @@ impl std::fmt::Display for ReferenceDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceDoesNotExistException")?;
         if let Some(inner_127) = &self.message {
-            write!(f, ": {}", inner_127)?;
+            {
+                write!(f, ": {}", inner_127)?;
+            }
         }
         Ok(())
     }
@@ -8290,7 +8544,9 @@ impl std::fmt::Display for InvalidTargetBranchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetBranchException")?;
         if let Some(inner_128) = &self.message {
-            write!(f, ": {}", inner_128)?;
+            {
+                write!(f, ": {}", inner_128)?;
+            }
         }
         Ok(())
     }
@@ -8355,7 +8611,9 @@ impl std::fmt::Display for InvalidCommitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCommitException")?;
         if let Some(inner_129) = &self.message {
-            write!(f, ": {}", inner_129)?;
+            {
+                write!(f, ": {}", inner_129)?;
+            }
         }
         Ok(())
     }
@@ -8420,7 +8678,9 @@ impl std::fmt::Display for FileModeRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileModeRequiredException")?;
         if let Some(inner_130) = &self.message {
-            write!(f, ": {}", inner_130)?;
+            {
+                write!(f, ": {}", inner_130)?;
+            }
         }
         Ok(())
     }
@@ -8485,7 +8745,9 @@ impl std::fmt::Display for CommitRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitRequiredException")?;
         if let Some(inner_131) = &self.message {
-            write!(f, ": {}", inner_131)?;
+            {
+                write!(f, ": {}", inner_131)?;
+            }
         }
         Ok(())
     }
@@ -8550,7 +8812,9 @@ impl std::fmt::Display for InvalidMaxResultsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxResultsException")?;
         if let Some(inner_132) = &self.message {
-            write!(f, ": {}", inner_132)?;
+            {
+                write!(f, ": {}", inner_132)?;
+            }
         }
         Ok(())
     }
@@ -8615,7 +8879,9 @@ impl std::fmt::Display for InvalidContinuationTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidContinuationTokenException")?;
         if let Some(inner_133) = &self.message {
-            write!(f, ": {}", inner_133)?;
+            {
+                write!(f, ": {}", inner_133)?;
+            }
         }
         Ok(())
     }
@@ -8680,7 +8946,9 @@ impl std::fmt::Display for InvalidSortByException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSortByException")?;
         if let Some(inner_134) = &self.message {
-            write!(f, ": {}", inner_134)?;
+            {
+                write!(f, ": {}", inner_134)?;
+            }
         }
         Ok(())
     }
@@ -8745,7 +9013,9 @@ impl std::fmt::Display for InvalidOrderException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOrderException")?;
         if let Some(inner_135) = &self.message {
-            write!(f, ": {}", inner_135)?;
+            {
+                write!(f, ": {}", inner_135)?;
+            }
         }
         Ok(())
     }
@@ -8810,7 +9080,9 @@ impl std::fmt::Display for InvalidAuthorArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAuthorArnException")?;
         if let Some(inner_136) = &self.message {
-            write!(f, ": {}", inner_136)?;
+            {
+                write!(f, ": {}", inner_136)?;
+            }
         }
         Ok(())
     }
@@ -8875,7 +9147,9 @@ impl std::fmt::Display for AuthorDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorDoesNotExistException")?;
         if let Some(inner_137) = &self.message {
-            write!(f, ": {}", inner_137)?;
+            {
+                write!(f, ": {}", inner_137)?;
+            }
         }
         Ok(())
     }
@@ -8940,7 +9214,9 @@ impl std::fmt::Display for MergeOptionRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MergeOptionRequiredException")?;
         if let Some(inner_138) = &self.message {
-            write!(f, ": {}", inner_138)?;
+            {
+                write!(f, ": {}", inner_138)?;
+            }
         }
         Ok(())
     }
@@ -9005,7 +9281,9 @@ impl std::fmt::Display for InvalidSourceCommitSpecifierException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSourceCommitSpecifierException")?;
         if let Some(inner_139) = &self.message {
-            write!(f, ": {}", inner_139)?;
+            {
+                write!(f, ": {}", inner_139)?;
+            }
         }
         Ok(())
     }
@@ -9070,7 +9348,9 @@ impl std::fmt::Display for InvalidMergeOptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMergeOptionException")?;
         if let Some(inner_140) = &self.message {
-            write!(f, ": {}", inner_140)?;
+            {
+                write!(f, ": {}", inner_140)?;
+            }
         }
         Ok(())
     }
@@ -9135,7 +9415,9 @@ impl std::fmt::Display for InvalidMaxConflictFilesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxConflictFilesException")?;
         if let Some(inner_141) = &self.message {
-            write!(f, ": {}", inner_141)?;
+            {
+                write!(f, ": {}", inner_141)?;
+            }
         }
         Ok(())
     }
@@ -9200,7 +9482,9 @@ impl std::fmt::Display for InvalidDestinationCommitSpecifierException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDestinationCommitSpecifierException")?;
         if let Some(inner_142) = &self.message {
-            write!(f, ": {}", inner_142)?;
+            {
+                write!(f, ": {}", inner_142)?;
+            }
         }
         Ok(())
     }
@@ -9265,7 +9549,9 @@ impl std::fmt::Display for FolderDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FolderDoesNotExistException")?;
         if let Some(inner_143) = &self.message {
-            write!(f, ": {}", inner_143)?;
+            {
+                write!(f, ": {}", inner_143)?;
+            }
         }
         Ok(())
     }
@@ -9330,7 +9616,9 @@ impl std::fmt::Display for FileTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileTooLargeException")?;
         if let Some(inner_144) = &self.message {
-            write!(f, ": {}", inner_144)?;
+            {
+                write!(f, ": {}", inner_144)?;
+            }
         }
         Ok(())
     }
@@ -9395,7 +9683,9 @@ impl std::fmt::Display for FileDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileDoesNotExistException")?;
         if let Some(inner_145) = &self.message {
-            write!(f, ": {}", inner_145)?;
+            {
+                write!(f, ": {}", inner_145)?;
+            }
         }
         Ok(())
     }
@@ -9460,7 +9750,9 @@ impl std::fmt::Display for CommitIdDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdDoesNotExistException")?;
         if let Some(inner_146) = &self.message {
-            write!(f, ": {}", inner_146)?;
+            {
+                write!(f, ": {}", inner_146)?;
+            }
         }
         Ok(())
     }
@@ -9525,7 +9817,9 @@ impl std::fmt::Display for InvalidReactionUserArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReactionUserArnException")?;
         if let Some(inner_147) = &self.message {
-            write!(f, ": {}", inner_147)?;
+            {
+                write!(f, ": {}", inner_147)?;
+            }
         }
         Ok(())
     }
@@ -9590,7 +9884,9 @@ impl std::fmt::Display for InvalidBlobIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBlobIdException")?;
         if let Some(inner_148) = &self.message {
-            write!(f, ": {}", inner_148)?;
+            {
+                write!(f, ": {}", inner_148)?;
+            }
         }
         Ok(())
     }
@@ -9655,7 +9951,9 @@ impl std::fmt::Display for BlobIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlobIdRequiredException")?;
         if let Some(inner_149) = &self.message {
-            write!(f, ": {}", inner_149)?;
+            {
+                write!(f, ": {}", inner_149)?;
+            }
         }
         Ok(())
     }
@@ -9720,7 +10018,9 @@ impl std::fmt::Display for BlobIdDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BlobIdDoesNotExistException")?;
         if let Some(inner_150) = &self.message {
-            write!(f, ": {}", inner_150)?;
+            {
+                write!(f, ": {}", inner_150)?;
+            }
         }
         Ok(())
     }
@@ -9785,7 +10085,9 @@ impl std::fmt::Display for InvalidPullRequestEventTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPullRequestEventTypeException")?;
         if let Some(inner_151) = &self.message {
-            write!(f, ": {}", inner_151)?;
+            {
+                write!(f, ": {}", inner_151)?;
+            }
         }
         Ok(())
     }
@@ -9850,7 +10152,9 @@ impl std::fmt::Display for InvalidActorArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidActorArnException")?;
         if let Some(inner_152) = &self.message {
-            write!(f, ": {}", inner_152)?;
+            {
+                write!(f, ": {}", inner_152)?;
+            }
         }
         Ok(())
     }
@@ -9915,7 +10219,9 @@ impl std::fmt::Display for ActorDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActorDoesNotExistException")?;
         if let Some(inner_153) = &self.message {
-            write!(f, ": {}", inner_153)?;
+            {
+                write!(f, ": {}", inner_153)?;
+            }
         }
         Ok(())
     }
@@ -9980,7 +10286,9 @@ impl std::fmt::Display for InvalidMaxMergeHunksException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxMergeHunksException")?;
         if let Some(inner_154) = &self.message {
-            write!(f, ": {}", inner_154)?;
+            {
+                write!(f, ": {}", inner_154)?;
+            }
         }
         Ok(())
     }
@@ -10045,7 +10353,9 @@ impl std::fmt::Display for CannotDeleteApprovalRuleFromTemplateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotDeleteApprovalRuleFromTemplateException")?;
         if let Some(inner_155) = &self.message {
-            write!(f, ": {}", inner_155)?;
+            {
+                write!(f, ": {}", inner_155)?;
+            }
         }
         Ok(())
     }
@@ -10110,7 +10420,9 @@ impl std::fmt::Display for DefaultBranchCannotBeDeletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultBranchCannotBeDeletedException")?;
         if let Some(inner_156) = &self.message {
-            write!(f, ": {}", inner_156)?;
+            {
+                write!(f, ": {}", inner_156)?;
+            }
         }
         Ok(())
     }
@@ -10175,7 +10487,9 @@ impl std::fmt::Display for ApprovalRuleTemplateInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateInUseException")?;
         if let Some(inner_157) = &self.message {
-            write!(f, ": {}", inner_157)?;
+            {
+                write!(f, ": {}", inner_157)?;
+            }
         }
         Ok(())
     }
@@ -10240,7 +10554,9 @@ impl std::fmt::Display for RepositoryLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryLimitExceededException")?;
         if let Some(inner_158) = &self.message {
-            write!(f, ": {}", inner_158)?;
+            {
+                write!(f, ": {}", inner_158)?;
+            }
         }
         Ok(())
     }
@@ -10305,7 +10621,9 @@ impl std::fmt::Display for NumberOfRulesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfRulesExceededException")?;
         if let Some(inner_159) = &self.message {
-            write!(f, ": {}", inner_159)?;
+            {
+                write!(f, ": {}", inner_159)?;
+            }
         }
         Ok(())
     }
@@ -10370,7 +10688,9 @@ impl std::fmt::Display for ApprovalRuleNameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleNameAlreadyExistsException")?;
         if let Some(inner_160) = &self.message {
-            write!(f, ": {}", inner_160)?;
+            {
+                write!(f, ": {}", inner_160)?;
+            }
         }
         Ok(())
     }
@@ -10435,7 +10755,9 @@ impl std::fmt::Display for TargetsRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetsRequiredException")?;
         if let Some(inner_161) = &self.message {
-            write!(f, ": {}", inner_161)?;
+            {
+                write!(f, ": {}", inner_161)?;
+            }
         }
         Ok(())
     }
@@ -10500,7 +10822,9 @@ impl std::fmt::Display for TargetRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TargetRequiredException")?;
         if let Some(inner_162) = &self.message {
-            write!(f, ": {}", inner_162)?;
+            {
+                write!(f, ": {}", inner_162)?;
+            }
         }
         Ok(())
     }
@@ -10565,7 +10889,9 @@ impl std::fmt::Display for SourceAndDestinationAreSameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceAndDestinationAreSameException")?;
         if let Some(inner_163) = &self.message {
-            write!(f, ": {}", inner_163)?;
+            {
+                write!(f, ": {}", inner_163)?;
+            }
         }
         Ok(())
     }
@@ -10630,7 +10956,9 @@ impl std::fmt::Display for ReferenceTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceTypeNotSupportedException")?;
         if let Some(inner_164) = &self.message {
-            write!(f, ": {}", inner_164)?;
+            {
+                write!(f, ": {}", inner_164)?;
+            }
         }
         Ok(())
     }
@@ -10695,7 +11023,9 @@ impl std::fmt::Display for ReferenceNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReferenceNameRequiredException")?;
         if let Some(inner_165) = &self.message {
-            write!(f, ": {}", inner_165)?;
+            {
+                write!(f, ": {}", inner_165)?;
+            }
         }
         Ok(())
     }
@@ -10760,7 +11090,9 @@ impl std::fmt::Display for MultipleRepositoriesInPullRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MultipleRepositoriesInPullRequestException")?;
         if let Some(inner_166) = &self.message {
-            write!(f, ": {}", inner_166)?;
+            {
+                write!(f, ": {}", inner_166)?;
+            }
         }
         Ok(())
     }
@@ -10825,7 +11157,9 @@ impl std::fmt::Display for MaximumOpenPullRequestsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumOpenPullRequestsExceededException")?;
         if let Some(inner_167) = &self.message {
-            write!(f, ": {}", inner_167)?;
+            {
+                write!(f, ": {}", inner_167)?;
+            }
         }
         Ok(())
     }
@@ -10890,7 +11224,9 @@ impl std::fmt::Display for InvalidTargetsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetsException")?;
         if let Some(inner_168) = &self.message {
-            write!(f, ": {}", inner_168)?;
+            {
+                write!(f, ": {}", inner_168)?;
+            }
         }
         Ok(())
     }
@@ -10955,7 +11291,9 @@ impl std::fmt::Display for InvalidTargetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetException")?;
         if let Some(inner_169) = &self.message {
-            write!(f, ": {}", inner_169)?;
+            {
+                write!(f, ": {}", inner_169)?;
+            }
         }
         Ok(())
     }
@@ -11020,7 +11358,9 @@ impl std::fmt::Display for InvalidReferenceNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReferenceNameException")?;
         if let Some(inner_170) = &self.message {
-            write!(f, ": {}", inner_170)?;
+            {
+                write!(f, ": {}", inner_170)?;
+            }
         }
         Ok(())
     }
@@ -11085,7 +11425,9 @@ impl std::fmt::Display for SourceFileOrContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceFileOrContentRequiredException")?;
         if let Some(inner_171) = &self.message {
-            write!(f, ": {}", inner_171)?;
+            {
+                write!(f, ": {}", inner_171)?;
+            }
         }
         Ok(())
     }
@@ -11150,7 +11492,9 @@ impl std::fmt::Display for SamePathRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SamePathRequestException")?;
         if let Some(inner_172) = &self.message {
-            write!(f, ": {}", inner_172)?;
+            {
+                write!(f, ": {}", inner_172)?;
+            }
         }
         Ok(())
     }
@@ -11215,7 +11559,9 @@ impl std::fmt::Display for RestrictedSourceFileException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RestrictedSourceFileException")?;
         if let Some(inner_173) = &self.message {
-            write!(f, ": {}", inner_173)?;
+            {
+                write!(f, ": {}", inner_173)?;
+            }
         }
         Ok(())
     }
@@ -11280,7 +11626,9 @@ impl std::fmt::Display for PutFileEntryConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PutFileEntryConflictException")?;
         if let Some(inner_174) = &self.message {
-            write!(f, ": {}", inner_174)?;
+            {
+                write!(f, ": {}", inner_174)?;
+            }
         }
         Ok(())
     }
@@ -11345,7 +11693,9 @@ impl std::fmt::Display for NoChangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoChangeException")?;
         if let Some(inner_175) = &self.message {
-            write!(f, ": {}", inner_175)?;
+            {
+                write!(f, ": {}", inner_175)?;
+            }
         }
         Ok(())
     }
@@ -11410,7 +11760,9 @@ impl std::fmt::Display for MaximumFileEntriesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumFileEntriesExceededException")?;
         if let Some(inner_176) = &self.message {
-            write!(f, ": {}", inner_176)?;
+            {
+                write!(f, ": {}", inner_176)?;
+            }
         }
         Ok(())
     }
@@ -11475,7 +11827,9 @@ impl std::fmt::Display for FileEntryRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileEntryRequiredException")?;
         if let Some(inner_177) = &self.message {
-            write!(f, ": {}", inner_177)?;
+            {
+                write!(f, ": {}", inner_177)?;
+            }
         }
         Ok(())
     }
@@ -11540,7 +11894,9 @@ impl std::fmt::Display for FileContentAndSourceFileSpecifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileContentAndSourceFileSpecifiedException")?;
         if let Some(inner_178) = &self.message {
-            write!(f, ": {}", inner_178)?;
+            {
+                write!(f, ": {}", inner_178)?;
+            }
         }
         Ok(())
     }
@@ -11605,7 +11961,9 @@ impl std::fmt::Display for BranchNameExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BranchNameExistsException")?;
         if let Some(inner_179) = &self.message {
-            write!(f, ": {}", inner_179)?;
+            {
+                write!(f, ": {}", inner_179)?;
+            }
         }
         Ok(())
     }
@@ -11670,7 +12028,9 @@ impl std::fmt::Display for NumberOfRuleTemplatesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfRuleTemplatesExceededException")?;
         if let Some(inner_180) = &self.message {
-            write!(f, ": {}", inner_180)?;
+            {
+                write!(f, ": {}", inner_180)?;
+            }
         }
         Ok(())
     }
@@ -11735,7 +12095,9 @@ impl std::fmt::Display for RepositoryNamesRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNamesRequiredException")?;
         if let Some(inner_181) = &self.message {
-            write!(f, ": {}", inner_181)?;
+            {
+                write!(f, ": {}", inner_181)?;
+            }
         }
         Ok(())
     }
@@ -11800,7 +12162,9 @@ impl std::fmt::Display for MaximumRepositoryNamesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRepositoryNamesExceededException")?;
         if let Some(inner_182) = &self.message {
-            write!(f, ": {}", inner_182)?;
+            {
+                write!(f, ": {}", inner_182)?;
+            }
         }
         Ok(())
     }
@@ -11865,7 +12229,9 @@ impl std::fmt::Display for CommitIdsListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdsListRequiredException")?;
         if let Some(inner_183) = &self.message {
-            write!(f, ": {}", inner_183)?;
+            {
+                write!(f, ": {}", inner_183)?;
+            }
         }
         Ok(())
     }
@@ -11930,7 +12296,9 @@ impl std::fmt::Display for CommitIdsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CommitIdsLimitExceededException")?;
         if let Some(inner_184) = &self.message {
-            write!(f, ": {}", inner_184)?;
+            {
+                write!(f, ": {}", inner_184)?;
+            }
         }
         Ok(())
     }
@@ -11995,7 +12363,9 @@ impl std::fmt::Display for MaximumRuleTemplatesAssociatedWithRepositoryException
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumRuleTemplatesAssociatedWithRepositoryException")?;
         if let Some(inner_185) = &self.message {
-            write!(f, ": {}", inner_185)?;
+            {
+                write!(f, ": {}", inner_185)?;
+            }
         }
         Ok(())
     }

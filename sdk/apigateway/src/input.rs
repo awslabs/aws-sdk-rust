@@ -8425,10 +8425,12 @@ impl GetApiKeyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_59) = &_input.include_value {
-                    query.push_kv(
-                        "includeValue",
-                        aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
-                    );
+                    if *inner_59 {
+                        query.push_kv(
+                            "includeValue",
+                            aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8615,25 +8617,35 @@ impl GetApiKeysInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_60) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_60));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
                 }
                 if let Some(inner_61) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
-                    );
+                    if *inner_61 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_62) = &_input.name_query {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 if let Some(inner_63) = &_input.customer_id {
-                    query.push_kv("customerId", &aws_smithy_http::query::fmt_string(&inner_63));
+                    {
+                        query.push_kv("customerId", &aws_smithy_http::query::fmt_string(&inner_63));
+                    }
                 }
                 if let Some(inner_64) = &_input.include_values {
-                    query.push_kv(
-                        "includeValues",
-                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
-                    );
+                    if *inner_64 {
+                        query.push_kv(
+                            "includeValues",
+                            aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9011,13 +9023,17 @@ impl GetAuthorizersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_68) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_68));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_68));
+                    }
                 }
                 if let Some(inner_69) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
-                    );
+                    if *inner_69 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9396,13 +9412,17 @@ impl GetBasePathMappingsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_73) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_73));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_73));
+                    }
                 }
                 if let Some(inner_74) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
-                    );
+                    if *inner_74 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9716,13 +9736,17 @@ impl GetClientCertificatesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_76) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_76));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_76));
+                    }
                 }
                 if let Some(inner_77) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
-                    );
+                    if *inner_77 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_77).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9943,8 +9967,10 @@ impl GetDeploymentInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_80) = &_input.embed {
-                    for inner_81 in inner_80 {
-                        query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_81));
+                    {
+                        for inner_81 in inner_80 {
+                            query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_81));
+                        }
                     }
                 }
                 Ok(())
@@ -10134,13 +10160,17 @@ impl GetDeploymentsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_83) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_83));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_83));
+                    }
                 }
                 if let Some(inner_84) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
-                    );
+                    if *inner_84 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10576,28 +10606,40 @@ impl GetDocumentationPartsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_88) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_88));
+                    {
+                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_88));
+                    }
                 }
                 if let Some(inner_89) = &_input.name_query {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_89));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_89));
+                    }
                 }
                 if let Some(inner_90) = &_input.path {
-                    query.push_kv("path", &aws_smithy_http::query::fmt_string(&inner_90));
+                    {
+                        query.push_kv("path", &aws_smithy_http::query::fmt_string(&inner_90));
+                    }
                 }
                 if let Some(inner_91) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_91));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_91));
+                    }
                 }
                 if let Some(inner_92) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
-                    );
+                    if *inner_92 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_92).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_93) = &_input.location_status {
-                    query.push_kv(
-                        "locationStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_93),
-                    );
+                    {
+                        query.push_kv(
+                            "locationStatus",
+                            &aws_smithy_http::query::fmt_string(&inner_93),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10979,13 +11021,17 @@ impl GetDocumentationVersionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_97) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_97));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_97));
+                    }
                 }
                 if let Some(inner_98) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
-                    );
+                    if *inner_98 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11292,13 +11338,17 @@ impl GetDomainNamesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_100) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_100));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_100));
+                    }
                 }
                 if let Some(inner_101) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
-                    );
+                    if *inner_101 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_101).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11938,13 +11988,17 @@ impl GetGatewayResponsesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_108) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_108));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_108));
+                    }
                 }
                 if let Some(inner_109) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_109).encode(),
-                    );
+                    if *inner_109 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_109).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13265,13 +13319,17 @@ impl GetModelsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_127) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_127));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_127));
+                    }
                 }
                 if let Some(inner_128) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_128).encode(),
-                    );
+                    if *inner_128 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_128).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13839,13 +13897,17 @@ impl GetRequestValidatorsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_134) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_134));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_134));
+                    }
                 }
                 if let Some(inner_135) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
-                    );
+                    if *inner_135 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -14063,8 +14125,10 @@ impl GetResourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_138) = &_input.embed {
-                    for inner_139 in inner_138 {
-                        query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_139));
+                    {
+                        for inner_139 in inner_138 {
+                            query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_139));
+                        }
                     }
                 }
                 Ok(())
@@ -14275,17 +14339,23 @@ impl GetResourcesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_141) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_141));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_141));
+                    }
                 }
                 if let Some(inner_142) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
-                    );
+                    if *inner_142 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_142).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_143) = &_input.embed {
-                    for inner_144 in inner_143 {
-                        query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_144));
+                    {
+                        for inner_144 in inner_143 {
+                            query.push_kv("embed", &aws_smithy_http::query::fmt_string(&inner_144));
+                        }
                     }
                 }
                 Ok(())
@@ -14589,13 +14659,17 @@ impl GetRestApisInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_146) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_146));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_146));
+                    }
                 }
                 if let Some(inner_147) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_147).encode(),
-                    );
+                    if *inner_147 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_147).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15140,13 +15214,17 @@ impl GetSdkTypesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_152) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_152));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_152));
+                    }
                 }
                 if let Some(inner_153) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_153).encode(),
-                    );
+                    if *inner_153 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_153).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15510,10 +15588,12 @@ impl GetStagesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_157) = &_input.deployment_id {
-                    query.push_kv(
-                        "deploymentId",
-                        &aws_smithy_http::query::fmt_string(&inner_157),
-                    );
+                    {
+                        query.push_kv(
+                            "deploymentId",
+                            &aws_smithy_http::query::fmt_string(&inner_157),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15696,13 +15776,17 @@ impl GetTagsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_159) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_159));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_159));
+                    }
                 }
                 if let Some(inner_160) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_160).encode(),
-                    );
+                    if *inner_160 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_160).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -15928,7 +16012,9 @@ impl GetUsageInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_162) = &_input.key_id {
-                    query.push_kv("keyId", &aws_smithy_http::query::fmt_string(&inner_162));
+                    {
+                        query.push_kv("keyId", &aws_smithy_http::query::fmt_string(&inner_162));
+                    }
                 }
                 let inner_163 = &_input.start_date;
                 let inner_163 = inner_163.as_ref().ok_or_else(|| {
@@ -15963,13 +16049,17 @@ impl GetUsageInput {
                 }
                 query.push_kv("endDate", &aws_smithy_http::query::fmt_string(&inner_164));
                 if let Some(inner_165) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_165));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_165));
+                    }
                 }
                 if let Some(inner_166) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_166).encode(),
-                    );
+                    if *inner_166 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_166).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -16519,16 +16609,22 @@ impl GetUsagePlanKeysInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_171) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_171));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_171));
+                    }
                 }
                 if let Some(inner_172) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_172).encode(),
-                    );
+                    if *inner_172 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_172).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_173) = &_input.name_query {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_173));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_173));
+                    }
                 }
                 Ok(())
             }
@@ -16693,16 +16789,22 @@ impl GetUsagePlansInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_174) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_174));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_174));
+                    }
                 }
                 if let Some(inner_175) = &_input.key_id {
-                    query.push_kv("keyId", &aws_smithy_http::query::fmt_string(&inner_175));
+                    {
+                        query.push_kv("keyId", &aws_smithy_http::query::fmt_string(&inner_175));
+                    }
                 }
                 if let Some(inner_176) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_176).encode(),
-                    );
+                    if *inner_176 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_176).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17005,13 +17107,17 @@ impl GetVpcLinksInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_178) = &_input.position {
-                    query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_178));
+                    {
+                        query.push_kv("position", &aws_smithy_http::query::fmt_string(&inner_178));
+                    }
                 }
                 if let Some(inner_179) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_179).encode(),
-                    );
+                    if *inner_179 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_179).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17409,7 +17515,9 @@ impl ImportDocumentationPartsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_182) = &_input.mode {
-                    query.push_kv("mode", &aws_smithy_http::query::fmt_string(&inner_182));
+                    {
+                        query.push_kv("mode", &aws_smithy_http::query::fmt_string(&inner_182));
+                    }
                 }
                 if _input.fail_on_warnings {
                     query.push_kv(
@@ -17624,12 +17732,14 @@ impl ImportRestApiInput {
                 query.push_kv("mode", "import");
                 let protected_params = ["mode", "failonwarnings"];
                 if let Some(inner_183) = &_input.parameters {
-                    for (k, v) in inner_183 {
-                        if !protected_params.contains(&k.as_str()) {
-                            query.push_kv(
-                                &aws_smithy_http::query::fmt_string(k),
-                                &aws_smithy_http::query::fmt_string(v),
-                            );
+                    {
+                        for (k, v) in inner_183 {
+                            if !protected_params.contains(&k.as_str()) {
+                                query.push_kv(
+                                    &aws_smithy_http::query::fmt_string(k),
+                                    &aws_smithy_http::query::fmt_string(v),
+                                );
+                            }
                         }
                     }
                 }
@@ -19656,17 +19766,21 @@ impl PutRestApiInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let protected_params = ["mode", "failonwarnings"];
                 if let Some(inner_201) = &_input.parameters {
-                    for (k, v) in inner_201 {
-                        if !protected_params.contains(&k.as_str()) {
-                            query.push_kv(
-                                &aws_smithy_http::query::fmt_string(k),
-                                &aws_smithy_http::query::fmt_string(v),
-                            );
+                    {
+                        for (k, v) in inner_201 {
+                            if !protected_params.contains(&k.as_str()) {
+                                query.push_kv(
+                                    &aws_smithy_http::query::fmt_string(k),
+                                    &aws_smithy_http::query::fmt_string(v),
+                                );
+                            }
                         }
                     }
                 }
                 if let Some(inner_202) = &_input.mode {
-                    query.push_kv("mode", &aws_smithy_http::query::fmt_string(&inner_202));
+                    {
+                        query.push_kv("mode", &aws_smithy_http::query::fmt_string(&inner_202));
+                    }
                 }
                 if _input.fail_on_warnings {
                     query.push_kv(

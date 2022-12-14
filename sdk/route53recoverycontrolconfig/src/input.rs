@@ -2119,7 +2119,9 @@ impl ListAssociatedRoute53HealthChecksInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -2274,7 +2276,9 @@ impl ListClustersInput {
                     );
                 }
                 if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 Ok(())
             }
@@ -2437,7 +2441,9 @@ impl ListControlPanelsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.cluster_arn {
-                    query.push_kv("ClusterArn", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("ClusterArn", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2446,7 +2452,9 @@ impl ListControlPanelsInput {
                     );
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 Ok(())
             }
@@ -2642,7 +2650,9 @@ impl ListRoutingControlsInput {
                     );
                 }
                 if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 Ok(())
             }
@@ -2836,7 +2846,9 @@ impl ListSafetyRulesInput {
                     );
                 }
                 if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 Ok(())
             }

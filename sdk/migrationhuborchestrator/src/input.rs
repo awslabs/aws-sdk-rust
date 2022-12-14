@@ -2476,7 +2476,9 @@ impl ListPluginsInput {
                     );
                 }
                 if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 Ok(())
             }
@@ -2791,10 +2793,14 @@ impl ListTemplatesInput {
                     );
                 }
                 if let Some(inner_21) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 if let Some(inner_22) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 Ok(())
             }
@@ -2987,7 +2993,9 @@ impl ListTemplateStepGroupsInput {
                     );
                 }
                 if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 Ok(())
             }
@@ -3171,7 +3179,9 @@ impl ListTemplateStepsInput {
                     );
                 }
                 if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
                 let inner_26 = &_input.template_id;
                 let inner_26 = inner_26.as_ref().ok_or_else(|| {
@@ -3418,22 +3428,32 @@ impl ListWorkflowsInput {
                     );
                 }
                 if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    }
                 }
                 if let Some(inner_29) = &_input.template_id {
-                    query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        query.push_kv("templateId", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
                 }
                 if let Some(inner_30) = &_input.ads_application_configuration_name {
-                    query.push_kv(
-                        "adsApplicationConfigurationName",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    {
+                        query.push_kv(
+                            "adsApplicationConfigurationName",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
+                        );
+                    }
                 }
                 if let Some(inner_31) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 if let Some(inner_32) = &_input.name {
-                    query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 Ok(())
             }
@@ -3596,7 +3616,9 @@ impl ListWorkflowStepGroupsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3840,7 +3862,9 @@ impl ListWorkflowStepsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(

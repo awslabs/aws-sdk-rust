@@ -1040,10 +1040,12 @@ impl DeleteResourcePolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1681,10 +1683,12 @@ impl DescribeCodeBindingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_15),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_15),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2205,10 +2209,12 @@ impl DescribeSchemaInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2431,10 +2437,12 @@ impl ExportSchemaInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_23),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_23),
+                        );
+                    }
                 }
                 let inner_24 = &_input.r#type;
                 let inner_24 = inner_24.as_ref().ok_or_else(|| {
@@ -2688,10 +2696,12 @@ impl GetCodeBindingSourceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_28),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_28),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2996,10 +3006,12 @@ impl GetResourcePolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_29) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_29),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_29),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3178,10 +3190,12 @@ impl ListDiscoverersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.discoverer_id_prefix {
-                    query.push_kv(
-                        "discovererIdPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    {
+                        query.push_kv(
+                            "discovererIdPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
+                        );
+                    }
                 }
                 if _input.limit != 0 {
                     query.push_kv(
@@ -3190,13 +3204,17 @@ impl ListDiscoverersInput {
                     );
                 }
                 if let Some(inner_31) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 if let Some(inner_32) = &_input.source_arn_prefix {
-                    query.push_kv(
-                        "sourceArnPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_32),
-                    );
+                    {
+                        query.push_kv(
+                            "sourceArnPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_32),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3378,16 +3396,22 @@ impl ListRegistriesInput {
                     );
                 }
                 if let Some(inner_33) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+                    }
                 }
                 if let Some(inner_34) = &_input.registry_name_prefix {
-                    query.push_kv(
-                        "registryNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
-                    );
+                    {
+                        query.push_kv(
+                            "registryNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_34),
+                        );
+                    }
                 }
                 if let Some(inner_35) = &_input.scope {
-                    query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 Ok(())
             }
@@ -3596,13 +3620,17 @@ impl ListSchemasInput {
                     );
                 }
                 if let Some(inner_37) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if let Some(inner_38) = &_input.schema_name_prefix {
-                    query.push_kv(
-                        "schemaNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_38),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_38),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3830,7 +3858,9 @@ impl ListSchemaVersionsInput {
                     );
                 }
                 if let Some(inner_41) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 Ok(())
             }
@@ -4214,10 +4244,12 @@ impl PutCodeBindingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.schema_version {
-                    query.push_kv(
-                        "schemaVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_46),
-                    );
+                    {
+                        query.push_kv(
+                            "schemaVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_46),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4383,10 +4415,12 @@ impl PutResourcePolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_47) = &_input.registry_name {
-                    query.push_kv(
-                        "registryName",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
-                    );
+                    {
+                        query.push_kv(
+                            "registryName",
+                            &aws_smithy_http::query::fmt_string(&inner_47),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4622,7 +4656,9 @@ impl SearchSchemasInput {
                     );
                 }
                 if let Some(inner_50) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 Ok(())
             }

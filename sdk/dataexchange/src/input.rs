@@ -2502,7 +2502,9 @@ impl ListDataSetRevisionsInput {
                     );
                 }
                 if let Some(inner_19) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 Ok(())
             }
@@ -2669,10 +2671,14 @@ impl ListDataSetsInput {
                     );
                 }
                 if let Some(inner_20) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 if let Some(inner_21) = &_input.origin {
-                    query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("origin", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 Ok(())
             }
@@ -2838,10 +2844,12 @@ impl ListEventActionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_22) = &_input.event_source_id {
-                    query.push_kv(
-                        "eventSourceId",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
-                    );
+                    {
+                        query.push_kv(
+                            "eventSourceId",
+                            &aws_smithy_http::query::fmt_string(&inner_22),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2850,7 +2858,9 @@ impl ListEventActionsInput {
                     );
                 }
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 Ok(())
             }
@@ -3023,7 +3033,9 @@ impl ListJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_24) = &_input.data_set_id {
-                    query.push_kv("dataSetId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("dataSetId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3032,10 +3044,14 @@ impl ListJobsInput {
                     );
                 }
                 if let Some(inner_25) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
                 if let Some(inner_26) = &_input.revision_id {
-                    query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_26));
+                    }
                 }
                 Ok(())
             }
@@ -3258,7 +3274,9 @@ impl ListRevisionAssetsInput {
                     );
                 }
                 if let Some(inner_29) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
                 }
                 Ok(())
             }

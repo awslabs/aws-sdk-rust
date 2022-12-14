@@ -2671,10 +2671,12 @@ impl ExportLensInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.lens_version {
-                    query.push_kv(
-                        "LensVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
-                    );
+                    {
+                        query.push_kv(
+                            "LensVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_19),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3096,10 +3098,12 @@ impl GetLensInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_24) = &_input.lens_version {
-                    query.push_kv(
-                        "LensVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_24),
-                    );
+                    {
+                        query.push_kv(
+                            "LensVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_24),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3732,16 +3736,20 @@ impl GetLensVersionDifferenceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.base_lens_version {
-                    query.push_kv(
-                        "BaseLensVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_30),
-                    );
+                    {
+                        query.push_kv(
+                            "BaseLensVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_30),
+                        );
+                    }
                 }
                 if let Some(inner_31) = &_input.target_lens_version {
-                    query.push_kv(
-                        "TargetLensVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
-                    );
+                    {
+                        query.push_kv(
+                            "TargetLensVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_31),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4526,7 +4534,9 @@ impl ListAnswersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.pillar_id {
-                    query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_37));
+                    {
+                        query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_37));
+                    }
                 }
                 if _input.milestone_number != 0 {
                     query.push_kv(
@@ -4536,7 +4546,9 @@ impl ListAnswersInput {
                     );
                 }
                 if let Some(inner_38) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4730,7 +4742,9 @@ impl ListLensesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_39));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4739,13 +4753,19 @@ impl ListLensesInput {
                     );
                 }
                 if let Some(inner_40) = &_input.lens_type {
-                    query.push_kv("LensType", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("LensType", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 if let Some(inner_41) = &_input.lens_status {
-                    query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("LensStatus", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 if let Some(inner_42) = &_input.lens_name {
-                    query.push_kv("LensName", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("LensName", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 Ok(())
             }
@@ -4998,7 +5018,9 @@ impl ListLensReviewImprovementsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.pillar_id {
-                    query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 if _input.milestone_number != 0 {
                     query.push_kv(
@@ -5008,7 +5030,9 @@ impl ListLensReviewImprovementsInput {
                     );
                 }
                 if let Some(inner_46) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -5220,7 +5244,9 @@ impl ListLensReviewsInput {
                     );
                 }
                 if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -5440,13 +5466,17 @@ impl ListLensSharesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.shared_with_prefix {
-                    query.push_kv(
-                        "SharedWithPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
-                    );
+                    {
+                        query.push_kv(
+                            "SharedWithPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
                 if let Some(inner_51) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_51));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -5455,7 +5485,9 @@ impl ListLensSharesInput {
                     );
                 }
                 if let Some(inner_52) = &_input.status {
-                    query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_52));
+                    {
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_52));
+                    }
                 }
                 Ok(())
             }
@@ -6005,25 +6037,33 @@ impl ListShareInvitationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_54) = &_input.workload_name_prefix {
-                    query.push_kv(
-                        "WorkloadNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_54),
-                    );
+                    {
+                        query.push_kv(
+                            "WorkloadNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_54),
+                        );
+                    }
                 }
                 if let Some(inner_55) = &_input.lens_name_prefix {
-                    query.push_kv(
-                        "LensNamePrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_55),
-                    );
+                    {
+                        query.push_kv(
+                            "LensNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_55),
+                        );
+                    }
                 }
                 if let Some(inner_56) = &_input.share_resource_type {
-                    query.push_kv(
-                        "ShareResourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_56),
-                    );
+                    {
+                        query.push_kv(
+                            "ShareResourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_56),
+                        );
+                    }
                 }
                 if let Some(inner_57) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -6558,13 +6598,17 @@ impl ListWorkloadSharesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_60) = &_input.shared_with_prefix {
-                    query.push_kv(
-                        "SharedWithPrefix",
-                        &aws_smithy_http::query::fmt_string(&inner_60),
-                    );
+                    {
+                        query.push_kv(
+                            "SharedWithPrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_60),
+                        );
+                    }
                 }
                 if let Some(inner_61) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_61));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -6573,7 +6617,9 @@ impl ListWorkloadSharesInput {
                     );
                 }
                 if let Some(inner_62) = &_input.status {
-                    query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 Ok(())
             }

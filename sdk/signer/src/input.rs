@@ -784,10 +784,12 @@ impl GetSigningProfileInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.profile_owner {
-                    query.push_kv(
-                        "profileOwner",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "profileOwner",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -962,7 +964,9 @@ impl ListProfilePermissionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -1204,25 +1208,35 @@ impl ListSigningJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if let Some(inner_10) = &_input.platform_id {
-                    query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.requested_by {
-                    query.push_kv(
-                        "requestedBy",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "requestedBy",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 if let Some(inner_12) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
-                    );
+                    if *inner_12 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if _input.is_revoked {
                     query.push_kv(
@@ -1231,25 +1245,31 @@ impl ListSigningJobsInput {
                     );
                 }
                 if let Some(inner_14) = &_input.signature_expires_before {
-                    query.push_kv(
-                        "signatureExpiresBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_14,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "signatureExpiresBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_14,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_15) = &_input.signature_expires_after {
-                    query.push_kv(
-                        "signatureExpiresAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_15,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "signatureExpiresAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_15,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_16) = &_input.job_invoker {
-                    query.push_kv("jobInvoker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("jobInvoker", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 Ok(())
             }
@@ -1436,22 +1456,32 @@ impl ListSigningPlatformsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 if let Some(inner_18) = &_input.partner {
-                    query.push_kv("partner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("partner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 if let Some(inner_19) = &_input.target {
-                    query.push_kv("target", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("target", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 if let Some(inner_20) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
-                    );
+                    if *inner_20 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_21) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 Ok(())
             }
@@ -1654,20 +1684,31 @@ impl ListSigningProfilesInput {
                     );
                 }
                 if let Some(inner_22) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
-                    );
+                    if *inner_22 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 if let Some(inner_24) = &_input.platform_id {
-                    query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("platformId", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 if let Some(inner_25) = &_input.statuses {
-                    for inner_26 in inner_25 {
-                        query.push_kv("statuses", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        for inner_26 in inner_25 {
+                            query.push_kv(
+                                "statuses",
+                                &aws_smithy_http::query::fmt_string(&inner_26),
+                            );
+                        }
                     }
                 }
                 Ok(())

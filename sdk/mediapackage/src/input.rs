@@ -1719,7 +1719,9 @@ impl ListChannelsInput {
                     );
                 }
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 Ok(())
             }
@@ -1898,16 +1900,20 @@ impl ListHarvestJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.include_channel_id {
-                    query.push_kv(
-                        "includeChannelId",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
-                    );
+                    {
+                        query.push_kv(
+                            "includeChannelId",
+                            &aws_smithy_http::query::fmt_string(&inner_8),
+                        );
+                    }
                 }
                 if let Some(inner_9) = &_input.include_status {
-                    query.push_kv(
-                        "includeStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_9),
-                    );
+                    {
+                        query.push_kv(
+                            "includeStatus",
+                            &aws_smithy_http::query::fmt_string(&inner_9),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1916,7 +1922,9 @@ impl ListHarvestJobsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -2079,7 +2087,9 @@ impl ListOriginEndpointsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.channel_id {
-                    query.push_kv("channelId", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("channelId", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2088,7 +2098,9 @@ impl ListOriginEndpointsInput {
                     );
                 }
                 if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }

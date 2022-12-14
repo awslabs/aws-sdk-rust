@@ -6881,7 +6881,9 @@ impl GetPlaceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_40) = &_input.language {
-                    query.push_kv("language", &aws_smithy_http::query::fmt_string(&inner_40));
+                    {
+                        query.push_kv("language", &aws_smithy_http::query::fmt_string(&inner_40));
+                    }
                 }
                 Ok(())
             }

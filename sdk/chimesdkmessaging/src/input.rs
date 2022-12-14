@@ -1909,10 +1909,12 @@ impl DeleteChannelInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_8),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_8),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2491,10 +2493,12 @@ impl DeleteChannelMembershipInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_14),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2722,10 +2726,12 @@ impl DeleteChannelMessageInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_17),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_17),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3665,10 +3671,12 @@ impl DescribeChannelMembershipInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_26) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_26),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_26),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4914,10 +4922,12 @@ impl GetChannelMessageInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_39),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5145,10 +5155,12 @@ impl GetChannelMessageStatusInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "message-status");
                 if let Some(inner_42) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_42),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_42),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5461,13 +5473,17 @@ impl ListChannelBansInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_44) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
-                    );
+                    if *inner_44 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_45) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 Ok(())
             }
@@ -5653,13 +5669,17 @@ impl ListChannelFlowsInput {
                     &aws_smithy_http::query::fmt_string(&inner_46),
                 );
                 if let Some(inner_47) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
-                    );
+                    if *inner_47 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 Ok(())
             }
@@ -5892,22 +5912,30 @@ impl ListChannelMembershipsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.r#type {
-                    query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_50));
+                    {
+                        query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_50));
+                    }
                 }
                 if let Some(inner_51) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
-                    );
+                    if *inner_51 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_51).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_52) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_52));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_52));
+                    }
                 }
                 if let Some(inner_53) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_53),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_53),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6090,19 +6118,25 @@ impl ListChannelMembershipsForAppInstanceUserInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "app-instance-user-memberships");
                 if let Some(inner_54) = &_input.app_instance_user_arn {
-                    query.push_kv(
-                        "app-instance-user-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_54),
-                    );
+                    {
+                        query.push_kv(
+                            "app-instance-user-arn",
+                            &aws_smithy_http::query::fmt_string(&inner_54),
+                        );
+                    }
                 }
                 if let Some(inner_55) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
-                    );
+                    if *inner_55 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_56) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_56));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_56));
+                    }
                 }
                 Ok(())
             }
@@ -6370,40 +6404,52 @@ impl ListChannelMessagesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_58) = &_input.sort_order {
-                    query.push_kv("sort-order", &aws_smithy_http::query::fmt_string(&inner_58));
+                    {
+                        query.push_kv("sort-order", &aws_smithy_http::query::fmt_string(&inner_58));
+                    }
                 }
                 if let Some(inner_59) = &_input.not_before {
-                    query.push_kv(
-                        "not-before",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_59,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "not-before",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_59,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_60) = &_input.not_after {
-                    query.push_kv(
-                        "not-after",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_60,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "not-after",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_60,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_61) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
-                    );
+                    if *inner_61 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_62) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 if let Some(inner_63) = &_input.sub_channel_id {
-                    query.push_kv(
-                        "sub-channel-id",
-                        &aws_smithy_http::query::fmt_string(&inner_63),
-                    );
+                    {
+                        query.push_kv(
+                            "sub-channel-id",
+                            &aws_smithy_http::query::fmt_string(&inner_63),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -6603,13 +6649,17 @@ impl ListChannelModeratorsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
-                    );
+                    if *inner_65 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_65).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_66) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 Ok(())
             }
@@ -6821,16 +6871,22 @@ impl ListChannelsInput {
                     &aws_smithy_http::query::fmt_string(&inner_67),
                 );
                 if let Some(inner_68) = &_input.privacy {
-                    query.push_kv("privacy", &aws_smithy_http::query::fmt_string(&inner_68));
+                    {
+                        query.push_kv("privacy", &aws_smithy_http::query::fmt_string(&inner_68));
+                    }
                 }
                 if let Some(inner_69) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
-                    );
+                    if *inner_69 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_69).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_70) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_70));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_70));
+                    }
                 }
                 Ok(())
             }
@@ -7017,13 +7073,17 @@ impl ListChannelsAssociatedWithChannelFlowInput {
                     &aws_smithy_http::query::fmt_string(&inner_71),
                 );
                 if let Some(inner_72) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
-                    );
+                    if *inner_72 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_73) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_73));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_73));
+                    }
                 }
                 Ok(())
             }
@@ -7202,19 +7262,25 @@ impl ListChannelsModeratedByAppInstanceUserInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("scope", "app-instance-user-moderated-channels");
                 if let Some(inner_74) = &_input.app_instance_user_arn {
-                    query.push_kv(
-                        "app-instance-user-arn",
-                        &aws_smithy_http::query::fmt_string(&inner_74),
-                    );
+                    {
+                        query.push_kv(
+                            "app-instance-user-arn",
+                            &aws_smithy_http::query::fmt_string(&inner_74),
+                        );
+                    }
                 }
                 if let Some(inner_75) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
-                    );
+                    if *inner_75 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_76) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_76));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_76));
+                    }
                 }
                 Ok(())
             }
@@ -7415,13 +7481,17 @@ impl ListSubChannelsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_78) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
-                    );
+                    if *inner_78 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_79) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_79));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_79));
+                    }
                 }
                 Ok(())
             }
@@ -8222,13 +8292,17 @@ impl SearchChannelsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("operation", "search");
                 if let Some(inner_85) = &_input.max_results {
-                    query.push_kv(
-                        "max-results",
-                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
-                    );
+                    if *inner_85 != 0 {
+                        query.push_kv(
+                            "max-results",
+                            aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 Ok(())
             }

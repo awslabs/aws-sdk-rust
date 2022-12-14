@@ -2943,7 +2943,9 @@ impl DescribeHubInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.hub_arn {
-                    query.push_kv("HubArn", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("HubArn", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 Ok(())
             }
@@ -3222,7 +3224,9 @@ impl DescribeProductsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3231,7 +3235,9 @@ impl DescribeProductsInput {
                     );
                 }
                 if let Some(inner_6) = &_input.product_arn {
-                    query.push_kv("ProductArn", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("ProductArn", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 Ok(())
             }
@@ -3384,7 +3390,9 @@ impl DescribeStandardsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3582,7 +3590,9 @@ impl DescribeStandardsControlsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -6486,7 +6496,9 @@ impl ListEnabledProductsForImportInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -6643,7 +6655,9 @@ impl ListFindingAggregatorsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -6806,7 +6820,9 @@ impl ListInvitationsInput {
                     );
                 }
                 if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 Ok(())
             }
@@ -6985,7 +7001,9 @@ impl ListMembersInput {
                     );
                 }
                 if let Some(inner_16) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 Ok(())
             }
@@ -7142,7 +7160,9 @@ impl ListOrganizationAdminAccountsInput {
                     );
                 }
                 if let Some(inner_17) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 Ok(())
             }

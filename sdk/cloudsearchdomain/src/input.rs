@@ -324,19 +324,29 @@ impl SearchInput {
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
                 if let Some(inner_1) = &_input.cursor {
-                    query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+                    {
+                        query.push_kv("cursor", &aws_smithy_http::query::fmt_string(&inner_1));
+                    }
                 }
                 if let Some(inner_2) = &_input.expr {
-                    query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("expr", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 if let Some(inner_3) = &_input.facet {
-                    query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("facet", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 if let Some(inner_4) = &_input.filter_query {
-                    query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("fq", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 if let Some(inner_5) = &_input.highlight {
-                    query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("highlight", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 if _input.partial {
                     query.push_kv(
@@ -361,13 +371,19 @@ impl SearchInput {
                 }
                 query.push_kv("q", &aws_smithy_http::query::fmt_string(&inner_6));
                 if let Some(inner_7) = &_input.query_options {
-                    query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("q.options", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 if let Some(inner_8) = &_input.query_parser {
-                    query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("q.parser", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 if let Some(inner_9) = &_input.r#return {
-                    query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("return", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if _input.size != 0 {
                     query.push_kv(
@@ -376,7 +392,9 @@ impl SearchInput {
                     );
                 }
                 if let Some(inner_10) = &_input.sort {
-                    query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if _input.start != 0 {
                     query.push_kv(
@@ -385,7 +403,9 @@ impl SearchInput {
                     );
                 }
                 if let Some(inner_11) = &_input.stats {
-                    query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("stats", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 Ok(())
             }

@@ -4405,10 +4405,12 @@ impl DeleteQueuedMessagesInput {
                 }
                 query.push_kv("messageId", &aws_smithy_http::query::fmt_string(&inner_15));
                 if let Some(inner_16) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "WirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_16),
-                    );
+                    {
+                        query.push_kv(
+                            "WirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_16),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8210,10 +8212,12 @@ impl GetResourceEventConfigurationInput {
                     &aws_smithy_http::query::fmt_string(&inner_46),
                 );
                 if let Some(inner_47) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_47),
-                    );
+                    {
+                        query.push_kv(
+                            "partnerType",
+                            &aws_smithy_http::query::fmt_string(&inner_47),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8552,10 +8556,12 @@ impl GetServiceEndpointInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.service_type {
-                    query.push_kv(
-                        "serviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_50),
-                    );
+                    {
+                        query.push_kv(
+                            "serviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_50),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10128,7 +10134,9 @@ impl ListDestinationsInput {
                     );
                 }
                 if let Some(inner_62) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 Ok(())
             }
@@ -10279,7 +10287,9 @@ impl ListDeviceProfilesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_63) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10468,7 +10478,9 @@ impl ListEventConfigurationsInput {
                     );
                 }
                 if let Some(inner_65) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_65));
+                    }
                 }
                 Ok(())
             }
@@ -10617,7 +10629,9 @@ impl ListFuotaTasksInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_66) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10774,7 +10788,9 @@ impl ListMulticastGroupsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -10963,7 +10979,9 @@ impl ListMulticastGroupsByFuotaTaskInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_69) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11127,7 +11145,9 @@ impl ListNetworkAnalyzerConfigurationsInput {
                     );
                 }
                 if let Some(inner_70) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_70));
+                    }
                 }
                 Ok(())
             }
@@ -11278,7 +11298,9 @@ impl ListPartnerAccountsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_71) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11450,10 +11472,12 @@ impl ListPositionConfigurationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_72) = &_input.resource_type {
-                    query.push_kv(
-                        "resourceType",
-                        &aws_smithy_http::query::fmt_string(&inner_72),
-                    );
+                    {
+                        query.push_kv(
+                            "resourceType",
+                            &aws_smithy_http::query::fmt_string(&inner_72),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11462,7 +11486,9 @@ impl ListPositionConfigurationsInput {
                     );
                 }
                 if let Some(inner_73) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_73));
+                    }
                 }
                 Ok(())
             }
@@ -11660,7 +11686,9 @@ impl ListQueuedMessagesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_75) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -11669,10 +11697,12 @@ impl ListQueuedMessagesInput {
                     );
                 }
                 if let Some(inner_76) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "WirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_76),
-                    );
+                    {
+                        query.push_kv(
+                            "WirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_76),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11823,7 +11853,9 @@ impl ListServiceProfilesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_77) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_77));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -12231,43 +12263,57 @@ impl ListWirelessDevicesInput {
                     );
                 }
                 if let Some(inner_79) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+                    }
                 }
                 if let Some(inner_80) = &_input.destination_name {
-                    query.push_kv(
-                        "destinationName",
-                        &aws_smithy_http::query::fmt_string(&inner_80),
-                    );
+                    {
+                        query.push_kv(
+                            "destinationName",
+                            &aws_smithy_http::query::fmt_string(&inner_80),
+                        );
+                    }
                 }
                 if let Some(inner_81) = &_input.device_profile_id {
-                    query.push_kv(
-                        "deviceProfileId",
-                        &aws_smithy_http::query::fmt_string(&inner_81),
-                    );
+                    {
+                        query.push_kv(
+                            "deviceProfileId",
+                            &aws_smithy_http::query::fmt_string(&inner_81),
+                        );
+                    }
                 }
                 if let Some(inner_82) = &_input.service_profile_id {
-                    query.push_kv(
-                        "serviceProfileId",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
-                    );
+                    {
+                        query.push_kv(
+                            "serviceProfileId",
+                            &aws_smithy_http::query::fmt_string(&inner_82),
+                        );
+                    }
                 }
                 if let Some(inner_83) = &_input.wireless_device_type {
-                    query.push_kv(
-                        "wirelessDeviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_83),
-                    );
+                    {
+                        query.push_kv(
+                            "wirelessDeviceType",
+                            &aws_smithy_http::query::fmt_string(&inner_83),
+                        );
+                    }
                 }
                 if let Some(inner_84) = &_input.fuota_task_id {
-                    query.push_kv(
-                        "fuotaTaskId",
-                        &aws_smithy_http::query::fmt_string(&inner_84),
-                    );
+                    {
+                        query.push_kv(
+                            "fuotaTaskId",
+                            &aws_smithy_http::query::fmt_string(&inner_84),
+                        );
+                    }
                 }
                 if let Some(inner_85) = &_input.multicast_group_id {
-                    query.push_kv(
-                        "multicastGroupId",
-                        &aws_smithy_http::query::fmt_string(&inner_85),
-                    );
+                    {
+                        query.push_kv(
+                            "multicastGroupId",
+                            &aws_smithy_http::query::fmt_string(&inner_85),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -12418,7 +12464,9 @@ impl ListWirelessGatewaysInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -12601,13 +12649,17 @@ impl ListWirelessGatewayTaskDefinitionsInput {
                     );
                 }
                 if let Some(inner_87) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_87));
+                    }
                 }
                 if let Some(inner_88) = &_input.task_definition_type {
-                    query.push_kv(
-                        "taskDefinitionType",
-                        &aws_smithy_http::query::fmt_string(&inner_88),
-                    );
+                    {
+                        query.push_kv(
+                            "taskDefinitionType",
+                            &aws_smithy_http::query::fmt_string(&inner_88),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -17114,10 +17166,12 @@ impl UpdateResourceEventConfigurationInput {
                     &aws_smithy_http::query::fmt_string(&inner_115),
                 );
                 if let Some(inner_116) = &_input.partner_type {
-                    query.push_kv(
-                        "partnerType",
-                        &aws_smithy_http::query::fmt_string(&inner_116),
-                    );
+                    {
+                        query.push_kv(
+                            "partnerType",
+                            &aws_smithy_http::query::fmt_string(&inner_116),
+                        );
+                    }
                 }
                 Ok(())
             }

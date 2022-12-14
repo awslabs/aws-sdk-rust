@@ -25,7 +25,9 @@ impl std::fmt::Display for WafStaleDataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafStaleDataException [WAFStaleDataException]")?;
         if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+            {
+                write!(f, ": {}", inner_1)?;
+            }
         }
         Ok(())
     }
@@ -93,7 +95,9 @@ impl std::fmt::Display for WafNonexistentItemException {
             "WafNonexistentItemException [WAFNonexistentItemException]"
         )?;
         if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+            {
+                write!(f, ": {}", inner_2)?;
+            }
         }
         Ok(())
     }
@@ -167,7 +171,9 @@ impl std::fmt::Display for WafNonexistentContainerException {
             "WafNonexistentContainerException [WAFNonexistentContainerException]"
         )?;
         if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+            {
+                write!(f, ": {}", inner_3)?;
+            }
         }
         Ok(())
     }
@@ -232,7 +238,9 @@ impl std::fmt::Display for WafLimitsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafLimitsExceededException [WAFLimitsExceededException]")?;
         if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+            {
+                write!(f, ": {}", inner_4)?;
+            }
         }
         Ok(())
     }
@@ -337,7 +345,9 @@ impl std::fmt::Display for WafInvalidParameterException {
             "WafInvalidParameterException [WAFInvalidParameterException]"
         )?;
         if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+            {
+                write!(f, ": {}", inner_5)?;
+            }
         }
         Ok(())
     }
@@ -454,7 +464,9 @@ impl std::fmt::Display for WafInvalidOperationException {
             "WafInvalidOperationException [WAFInvalidOperationException]"
         )?;
         if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+            {
+                write!(f, ": {}", inner_6)?;
+            }
         }
         Ok(())
     }
@@ -519,7 +531,9 @@ impl std::fmt::Display for WafInvalidAccountException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafInvalidAccountException [WAFInvalidAccountException]")?;
         if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+            {
+                write!(f, ": {}", inner_7)?;
+            }
         }
         Ok(())
     }
@@ -584,7 +598,9 @@ impl std::fmt::Display for WafInternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafInternalErrorException [WAFInternalErrorException]")?;
         if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+            {
+                write!(f, ": {}", inner_8)?;
+            }
         }
         Ok(())
     }
@@ -652,7 +668,9 @@ impl std::fmt::Display for WafSubscriptionNotFoundException {
             "WafSubscriptionNotFoundException [WAFSubscriptionNotFoundException]"
         )?;
         if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+            {
+                write!(f, ": {}", inner_9)?;
+            }
         }
         Ok(())
     }
@@ -721,7 +739,9 @@ impl std::fmt::Display for WafReferencedItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafReferencedItemException [WAFReferencedItemException]")?;
         if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+            {
+                write!(f, ": {}", inner_10)?;
+            }
         }
         Ok(())
     }
@@ -789,7 +809,9 @@ impl std::fmt::Display for WafInvalidRegexPatternException {
             "WafInvalidRegexPatternException [WAFInvalidRegexPatternException]"
         )?;
         if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+            {
+                write!(f, ": {}", inner_11)?;
+            }
         }
         Ok(())
     }
@@ -854,7 +876,9 @@ impl std::fmt::Display for WafDisallowedNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafDisallowedNameException [WAFDisallowedNameException]")?;
         if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+            {
+                write!(f, ": {}", inner_12)?;
+            }
         }
         Ok(())
     }
@@ -922,7 +946,9 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
             "WafTagOperationInternalErrorException [WAFTagOperationInternalErrorException]"
         )?;
         if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+            {
+                write!(f, ": {}", inner_13)?;
+            }
         }
         Ok(())
     }
@@ -987,7 +1013,9 @@ impl std::fmt::Display for WafTagOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafTagOperationException [WAFTagOperationException]")?;
         if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+            {
+                write!(f, ": {}", inner_14)?;
+            }
         }
         Ok(())
     }
@@ -1052,7 +1080,9 @@ impl std::fmt::Display for WafBadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafBadRequestException [WAFBadRequestException]")?;
         if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+            {
+                write!(f, ": {}", inner_15)?;
+            }
         }
         Ok(())
     }
@@ -1131,7 +1161,9 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
             "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]"
         )?;
         if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+            {
+                write!(f, ": {}", inner_16)?;
+            }
         }
         Ok(())
     }
@@ -1199,7 +1231,9 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
             "WafServiceLinkedRoleErrorException [WAFServiceLinkedRoleErrorException]"
         )?;
         if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+            {
+                write!(f, ": {}", inner_17)?;
+            }
         }
         Ok(())
     }
@@ -1267,7 +1301,9 @@ impl std::fmt::Display for WafUnavailableEntityException {
             "WafUnavailableEntityException [WAFUnavailableEntityException]"
         )?;
         if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+            {
+                write!(f, ": {}", inner_18)?;
+            }
         }
         Ok(())
     }
@@ -1338,7 +1374,9 @@ impl std::fmt::Display for WafNonEmptyEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafNonEmptyEntityException [WAFNonEmptyEntityException]")?;
         if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+            {
+                write!(f, ": {}", inner_19)?;
+            }
         }
         Ok(())
     }
@@ -1433,7 +1471,9 @@ impl std::fmt::Display for WafEntityMigrationException {
             "WafEntityMigrationException [WAFEntityMigrationException]"
         )?;
         if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+            {
+                write!(f, ": {}", inner_20)?;
+            }
         }
         Ok(())
     }

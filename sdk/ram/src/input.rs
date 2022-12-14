@@ -959,7 +959,9 @@ impl DeleteResourceShareInput {
                     &aws_smithy_http::query::fmt_string(&inner_1),
                 );
                 if let Some(inner_2) = &_input.client_token {
-                    query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 Ok(())
             }

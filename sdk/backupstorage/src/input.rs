@@ -704,7 +704,9 @@ impl ListChunksInput {
                     );
                 }
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 Ok(())
             }
@@ -952,16 +954,20 @@ impl ListObjectsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.starting_object_name {
-                    query.push_kv(
-                        "starting-object-name",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "starting-object-name",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 if let Some(inner_12) = &_input.starting_object_prefix {
-                    query.push_kv(
-                        "starting-object-prefix",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
-                    );
+                    {
+                        query.push_kv(
+                            "starting-object-prefix",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -970,25 +976,31 @@ impl ListObjectsInput {
                     );
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 if let Some(inner_14) = &_input.created_before {
-                    query.push_kv(
-                        "created-before",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_14,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "created-before",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_14,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_15) = &_input.created_after {
-                    query.push_kv(
-                        "created-after",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_15,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "created-after",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_15,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1323,10 +1335,12 @@ impl NotifyObjectCompleteInput {
                     &aws_smithy_http::query::fmt_string(&inner_19),
                 );
                 if let Some(inner_20) = &_input.metadata_string {
-                    query.push_kv(
-                        "metadata-string",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "metadata-string",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 if _input.metadata_blob_length != 0 {
                     query.push_kv(
@@ -1336,16 +1350,20 @@ impl NotifyObjectCompleteInput {
                     );
                 }
                 if let Some(inner_21) = &_input.metadata_blob_checksum {
-                    query.push_kv(
-                        "metadata-checksum",
-                        &aws_smithy_http::query::fmt_string(&inner_21),
-                    );
+                    {
+                        query.push_kv(
+                            "metadata-checksum",
+                            &aws_smithy_http::query::fmt_string(&inner_21),
+                        );
+                    }
                 }
                 if let Some(inner_22) = &_input.metadata_blob_checksum_algorithm {
-                    query.push_kv(
-                        "metadata-checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_22),
-                    );
+                    {
+                        query.push_kv(
+                            "metadata-checksum-algorithm",
+                            &aws_smithy_http::query::fmt_string(&inner_22),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2002,10 +2020,12 @@ impl PutObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_31) = &_input.metadata_string {
-                    query.push_kv(
-                        "metadata-string",
-                        &aws_smithy_http::query::fmt_string(&inner_31),
-                    );
+                    {
+                        query.push_kv(
+                            "metadata-string",
+                            &aws_smithy_http::query::fmt_string(&inner_31),
+                        );
+                    }
                 }
                 if _input.inline_chunk_length != 0 {
                     query.push_kv(
@@ -2015,25 +2035,33 @@ impl PutObjectInput {
                     );
                 }
                 if let Some(inner_32) = &_input.inline_chunk_checksum {
-                    query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("checksum", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 if let Some(inner_33) = &_input.inline_chunk_checksum_algorithm {
-                    query.push_kv(
-                        "checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_33),
-                    );
+                    {
+                        query.push_kv(
+                            "checksum-algorithm",
+                            &aws_smithy_http::query::fmt_string(&inner_33),
+                        );
+                    }
                 }
                 if let Some(inner_34) = &_input.object_checksum {
-                    query.push_kv(
-                        "object-checksum",
-                        &aws_smithy_http::query::fmt_string(&inner_34),
-                    );
+                    {
+                        query.push_kv(
+                            "object-checksum",
+                            &aws_smithy_http::query::fmt_string(&inner_34),
+                        );
+                    }
                 }
                 if let Some(inner_35) = &_input.object_checksum_algorithm {
-                    query.push_kv(
-                        "object-checksum-algorithm",
-                        &aws_smithy_http::query::fmt_string(&inner_35),
-                    );
+                    {
+                        query.push_kv(
+                            "object-checksum-algorithm",
+                            &aws_smithy_http::query::fmt_string(&inner_35),
+                        );
+                    }
                 }
                 if _input.throw_on_duplicate {
                     query.push_kv(

@@ -1587,16 +1587,20 @@ impl DeregisterPackageVersionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_6),
-                    );
+                    {
+                        query.push_kv(
+                            "OwnerAccount",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
                 }
                 if let Some(inner_7) = &_input.updated_latest_patch_version {
-                    query.push_kv(
-                        "UpdatedLatestPatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_7),
-                    );
+                    {
+                        query.push_kv(
+                            "UpdatedLatestPatchVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_7),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -2371,10 +2375,12 @@ impl DescribeNodeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
+                    {
+                        query.push_kv(
+                            "OwnerAccount",
+                            &aws_smithy_http::query::fmt_string(&inner_13),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3048,16 +3054,20 @@ impl DescribePackageVersionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_19) = &_input.owner_account {
-                    query.push_kv(
-                        "OwnerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_19),
-                    );
+                    {
+                        query.push_kv(
+                            "OwnerAccount",
+                            &aws_smithy_http::query::fmt_string(&inner_19),
+                        );
+                    }
                 }
                 if let Some(inner_20) = &_input.patch_version {
-                    query.push_kv(
-                        "PatchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_20),
-                    );
+                    {
+                        query.push_kv(
+                            "PatchVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_20),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -3253,7 +3263,9 @@ impl ListApplicationInstanceDependenciesInput {
                     );
                 }
                 if let Some(inner_22) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 Ok(())
             }
@@ -3449,7 +3461,9 @@ impl ListApplicationInstanceNodeInstancesInput {
                     );
                 }
                 if let Some(inner_24) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 Ok(())
             }
@@ -3627,13 +3641,17 @@ impl ListApplicationInstancesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_25) = &_input.device_id {
-                    query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_25));
+                    {
+                        query.push_kv("deviceId", &aws_smithy_http::query::fmt_string(&inner_25));
+                    }
                 }
                 if let Some(inner_26) = &_input.status_filter {
-                    query.push_kv(
-                        "statusFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_26),
-                    );
+                    {
+                        query.push_kv(
+                            "statusFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_26),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3642,7 +3660,9 @@ impl ListApplicationInstancesInput {
                     );
                 }
                 if let Some(inner_27) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+                    }
                 }
                 Ok(())
             }
@@ -3852,7 +3872,9 @@ impl ListDevicesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_28) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_28));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3861,19 +3883,27 @@ impl ListDevicesInput {
                     );
                 }
                 if let Some(inner_29) = &_input.sort_by {
-                    query.push_kv("SortBy", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        query.push_kv("SortBy", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
                 }
                 if let Some(inner_30) = &_input.sort_order {
-                    query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 if let Some(inner_31) = &_input.name_filter {
-                    query.push_kv("NameFilter", &aws_smithy_http::query::fmt_string(&inner_31));
+                    {
+                        query.push_kv("NameFilter", &aws_smithy_http::query::fmt_string(&inner_31));
+                    }
                 }
                 if let Some(inner_32) = &_input.device_aggregated_status_filter {
-                    query.push_kv(
-                        "DeviceAggregatedStatusFilter",
-                        &aws_smithy_http::query::fmt_string(&inner_32),
-                    );
+                    {
+                        query.push_kv(
+                            "DeviceAggregatedStatusFilter",
+                            &aws_smithy_http::query::fmt_string(&inner_32),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -4034,10 +4064,14 @@ impl ListDevicesJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.device_id {
-                    query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_33));
+                    {
+                        query.push_kv("DeviceId", &aws_smithy_http::query::fmt_string(&inner_33));
+                    }
                 }
                 if let Some(inner_34) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4194,7 +4228,9 @@ impl ListNodeFromTemplateJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4421,34 +4457,46 @@ impl ListNodesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 if let Some(inner_37) = &_input.owner_account {
-                    query.push_kv(
-                        "ownerAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_37),
-                    );
+                    {
+                        query.push_kv(
+                            "ownerAccount",
+                            &aws_smithy_http::query::fmt_string(&inner_37),
+                        );
+                    }
                 }
                 if let Some(inner_38) = &_input.package_name {
-                    query.push_kv(
-                        "packageName",
-                        &aws_smithy_http::query::fmt_string(&inner_38),
-                    );
+                    {
+                        query.push_kv(
+                            "packageName",
+                            &aws_smithy_http::query::fmt_string(&inner_38),
+                        );
+                    }
                 }
                 if let Some(inner_39) = &_input.package_version {
-                    query.push_kv(
-                        "packageVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_39),
-                    );
+                    {
+                        query.push_kv(
+                            "packageVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_39),
+                        );
+                    }
                 }
                 if let Some(inner_40) = &_input.patch_version {
-                    query.push_kv(
-                        "patchVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_40),
-                    );
+                    {
+                        query.push_kv(
+                            "patchVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_40),
+                        );
+                    }
                 }
                 if let Some(inner_41) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4603,7 +4651,9 @@ impl ListPackageImportJobsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -4764,7 +4814,9 @@ impl ListPackagesInput {
                     );
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
+                    }
                 }
                 Ok(())
             }

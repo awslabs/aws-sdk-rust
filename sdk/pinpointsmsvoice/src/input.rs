@@ -918,10 +918,14 @@ impl ListConfigurationSetsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 if let Some(inner_7) = &_input.page_size {
-                    query.push_kv("PageSize", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("PageSize", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 Ok(())
             }

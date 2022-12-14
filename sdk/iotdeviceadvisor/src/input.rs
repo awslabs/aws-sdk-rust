@@ -410,13 +410,17 @@ impl GetEndpointInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.thing_arn {
-                    query.push_kv("thingArn", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("thingArn", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 if let Some(inner_3) = &_input.certificate_arn {
-                    query.push_kv(
-                        "certificateArn",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
-                    );
+                    {
+                        query.push_kv(
+                            "certificateArn",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -597,10 +601,12 @@ impl GetSuiteDefinitionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.suite_definition_version {
-                    query.push_kv(
-                        "suiteDefinitionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_5),
-                    );
+                    {
+                        query.push_kv(
+                            "suiteDefinitionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -1129,7 +1135,9 @@ impl ListSuiteDefinitionsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -1308,16 +1316,20 @@ impl ListSuiteRunsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.suite_definition_id {
-                    query.push_kv(
-                        "suiteDefinitionId",
-                        &aws_smithy_http::query::fmt_string(&inner_11),
-                    );
+                    {
+                        query.push_kv(
+                            "suiteDefinitionId",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
+                    }
                 }
                 if let Some(inner_12) = &_input.suite_definition_version {
-                    query.push_kv(
-                        "suiteDefinitionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_12),
-                    );
+                    {
+                        query.push_kv(
+                            "suiteDefinitionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -1326,7 +1338,9 @@ impl ListSuiteRunsInput {
                     );
                 }
                 if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 Ok(())
             }

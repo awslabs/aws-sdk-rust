@@ -174,7 +174,9 @@ impl AddLayerVersionPermissionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.revision_id {
-                    query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("RevisionId", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 Ok(())
             }
@@ -502,7 +504,9 @@ impl AddPermissionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
                 }
                 Ok(())
             }
@@ -2151,7 +2155,9 @@ impl CreateFunctionUrlConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -2861,7 +2867,9 @@ impl DeleteFunctionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 Ok(())
             }
@@ -3391,7 +3399,9 @@ impl DeleteFunctionEventInvokeConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 Ok(())
             }
@@ -3583,7 +3593,9 @@ impl DeleteFunctionUrlConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_20) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 Ok(())
             }
@@ -4770,7 +4782,9 @@ impl GetFunctionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_30));
+                    }
                 }
                 Ok(())
             }
@@ -5300,7 +5314,9 @@ impl GetFunctionConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_34));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_34));
+                    }
                 }
                 Ok(())
             }
@@ -5492,7 +5508,9 @@ impl GetFunctionEventInvokeConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_36));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_36));
+                    }
                 }
                 Ok(())
             }
@@ -5684,7 +5702,9 @@ impl GetFunctionUrlConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_38));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_38));
+                    }
                 }
                 Ok(())
             }
@@ -6377,7 +6397,9 @@ impl GetPolicyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 Ok(())
             }
@@ -6836,7 +6858,9 @@ impl InvokeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_49));
+                    }
                 }
                 Ok(())
             }
@@ -7262,19 +7286,25 @@ impl ListAliasesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_52) = &_input.function_version {
-                    query.push_kv(
-                        "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_52),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_52),
+                        );
+                    }
                 }
                 if let Some(inner_53) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_53));
+                    }
                 }
                 if let Some(inner_54) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
-                    );
+                    if *inner_54 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7426,13 +7456,17 @@ impl ListCodeSigningConfigsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_55) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_55));
+                    }
                 }
                 if let Some(inner_56) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
-                    );
+                    if *inner_56 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7642,25 +7676,33 @@ impl ListEventSourceMappingsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_57) = &_input.event_source_arn {
-                    query.push_kv(
-                        "EventSourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_57),
-                    );
+                    {
+                        query.push_kv(
+                            "EventSourceArn",
+                            &aws_smithy_http::query::fmt_string(&inner_57),
+                        );
+                    }
                 }
                 if let Some(inner_58) = &_input.function_name {
-                    query.push_kv(
-                        "FunctionName",
-                        &aws_smithy_http::query::fmt_string(&inner_58),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionName",
+                            &aws_smithy_http::query::fmt_string(&inner_58),
+                        );
+                    }
                 }
                 if let Some(inner_59) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_59));
+                    }
                 }
                 if let Some(inner_60) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
-                    );
+                    if *inner_60 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -7864,13 +7906,17 @@ impl ListFunctionEventInvokeConfigsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_62) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 if let Some(inner_63) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
-                    );
+                    if *inner_63 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8049,25 +8095,33 @@ impl ListFunctionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_64) = &_input.master_region {
-                    query.push_kv(
-                        "MasterRegion",
-                        &aws_smithy_http::query::fmt_string(&inner_64),
-                    );
+                    {
+                        query.push_kv(
+                            "MasterRegion",
+                            &aws_smithy_http::query::fmt_string(&inner_64),
+                        );
+                    }
                 }
                 if let Some(inner_65) = &_input.function_version {
-                    query.push_kv(
-                        "FunctionVersion",
-                        &aws_smithy_http::query::fmt_string(&inner_65),
-                    );
+                    {
+                        query.push_kv(
+                            "FunctionVersion",
+                            &aws_smithy_http::query::fmt_string(&inner_65),
+                        );
+                    }
                 }
                 if let Some(inner_66) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_66));
+                    }
                 }
                 if let Some(inner_67) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
-                    );
+                    if *inner_67 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8257,13 +8311,17 @@ impl ListFunctionsByCodeSigningConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_69) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 if let Some(inner_70) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
-                    );
+                    if *inner_70 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8467,13 +8525,17 @@ impl ListFunctionUrlConfigsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_72) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                    }
                 }
                 if let Some(inner_73) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
-                    );
+                    if *inner_73 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8652,25 +8714,33 @@ impl ListLayersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_74) = &_input.compatible_runtime {
-                    query.push_kv(
-                        "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_74),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleRuntime",
+                            &aws_smithy_http::query::fmt_string(&inner_74),
+                        );
+                    }
                 }
                 if let Some(inner_75) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_75));
+                    }
                 }
                 if let Some(inner_76) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
-                    );
+                    if *inner_76 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_77) = &_input.compatible_architecture {
-                    query.push_kv(
-                        "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_77),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleArchitecture",
+                            &aws_smithy_http::query::fmt_string(&inner_77),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -8887,25 +8957,33 @@ impl ListLayerVersionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_79) = &_input.compatible_runtime {
-                    query.push_kv(
-                        "CompatibleRuntime",
-                        &aws_smithy_http::query::fmt_string(&inner_79),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleRuntime",
+                            &aws_smithy_http::query::fmt_string(&inner_79),
+                        );
+                    }
                 }
                 if let Some(inner_80) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
                 if let Some(inner_81) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
-                    );
+                    if *inner_81 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_82) = &_input.compatible_architecture {
-                    query.push_kv(
-                        "CompatibleArchitecture",
-                        &aws_smithy_http::query::fmt_string(&inner_82),
-                    );
+                    {
+                        query.push_kv(
+                            "CompatibleArchitecture",
+                            &aws_smithy_http::query::fmt_string(&inner_82),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9110,13 +9188,17 @@ impl ListProvisionedConcurrencyConfigsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("List", "ALL");
                 if let Some(inner_84) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_84));
+                    }
                 }
                 if let Some(inner_85) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
-                    );
+                    if *inner_85 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -9463,13 +9545,17 @@ impl ListVersionsByFunctionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_88) = &_input.marker {
-                    query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                    {
+                        query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_88));
+                    }
                 }
                 if let Some(inner_89) = &_input.max_items {
-                    query.push_kv(
-                        "MaxItems",
-                        aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
-                    );
+                    if *inner_89 != 0 {
+                        query.push_kv(
+                            "MaxItems",
+                            aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -10586,7 +10672,9 @@ impl PutFunctionEventInvokeConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_95) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_95));
+                    }
                 }
                 Ok(())
             }
@@ -11064,10 +11152,12 @@ impl RemoveLayerVersionPermissionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_101) = &_input.revision_id {
-                    query.push_kv(
-                        "RevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_101),
-                    );
+                    {
+                        query.push_kv(
+                            "RevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_101),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -11303,13 +11393,17 @@ impl RemovePermissionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_104) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_104));
+                    }
                 }
                 if let Some(inner_105) = &_input.revision_id {
-                    query.push_kv(
-                        "RevisionId",
-                        &aws_smithy_http::query::fmt_string(&inner_105),
-                    );
+                    {
+                        query.push_kv(
+                            "RevisionId",
+                            &aws_smithy_http::query::fmt_string(&inner_105),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -13528,7 +13622,9 @@ impl UpdateFunctionEventInvokeConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_117) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_117));
+                    }
                 }
                 Ok(())
             }
@@ -13760,7 +13856,9 @@ impl UpdateFunctionUrlConfigInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_119) = &_input.qualifier {
-                    query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                    {
+                        query.push_kv("Qualifier", &aws_smithy_http::query::fmt_string(&inner_119));
+                    }
                 }
                 Ok(())
             }

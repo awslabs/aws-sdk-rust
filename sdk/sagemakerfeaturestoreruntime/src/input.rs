@@ -521,8 +521,13 @@ impl GetRecordInput {
                     &aws_smithy_http::query::fmt_string(&inner_5),
                 );
                 if let Some(inner_6) = &_input.feature_names {
-                    for inner_7 in inner_6 {
-                        query.push_kv("FeatureName", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        for inner_7 in inner_6 {
+                            query.push_kv(
+                                "FeatureName",
+                                &aws_smithy_http::query::fmt_string(&inner_7),
+                            );
+                        }
                     }
                 }
                 Ok(())

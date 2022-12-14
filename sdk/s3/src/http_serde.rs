@@ -876,26 +876,27 @@ pub fn add_headers_copy_object(
         }
     }
     if let Some(inner_98) = &input.metadata {
-        for (k, v) in inner_98 {
-            use std::str::FromStr;
-            let header_name =
-                http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(
-                    |err| {
+        {
+            for (k, v) in inner_98 {
+                use std::str::FromStr;
+                let header_name =
+                    http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
+                        .map_err(|err| {
+                            aws_smithy_http::operation::error::BuildError::invalid_field(
+                                "metadata",
+                                format!("`{k}` cannot be used as a header name: {err}"),
+                            )
+                        })?;
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         aws_smithy_http::operation::error::BuildError::invalid_field(
                             "metadata",
-                            format!("`{k}` cannot be used as a header name: {err}"),
+                            format!("`{}` cannot be used as a header value: {}", v, err),
                         )
-                    },
-                )?;
-            let header_value = v.as_str();
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
-                    )
-                })?;
-            builder = builder.header(header_name, header_value);
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)
@@ -1520,26 +1521,27 @@ pub fn add_headers_create_multipart_upload(
         }
     }
     if let Some(inner_167) = &input.metadata {
-        for (k, v) in inner_167 {
-            use std::str::FromStr;
-            let header_name =
-                http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(
-                    |err| {
+        {
+            for (k, v) in inner_167 {
+                use std::str::FromStr;
+                let header_name =
+                    http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
+                        .map_err(|err| {
+                            aws_smithy_http::operation::error::BuildError::invalid_field(
+                                "metadata",
+                                format!("`{k}` cannot be used as a header name: {err}"),
+                            )
+                        })?;
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         aws_smithy_http::operation::error::BuildError::invalid_field(
                             "metadata",
-                            format!("`{k}` cannot be used as a header name: {err}"),
+                            format!("`{}` cannot be used as a header value: {}", v, err),
                         )
-                    },
-                )?;
-            let header_value = v.as_str();
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
-                    )
-                })?;
-            builder = builder.header(header_name, header_value);
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)
@@ -5187,26 +5189,27 @@ pub fn add_headers_put_object(
         }
     }
     if let Some(inner_526) = &input.metadata {
-        for (k, v) in inner_526 {
-            use std::str::FromStr;
-            let header_name =
-                http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(
-                    |err| {
+        {
+            for (k, v) in inner_526 {
+                use std::str::FromStr;
+                let header_name =
+                    http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
+                        .map_err(|err| {
+                            aws_smithy_http::operation::error::BuildError::invalid_field(
+                                "metadata",
+                                format!("`{k}` cannot be used as a header name: {err}"),
+                            )
+                        })?;
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         aws_smithy_http::operation::error::BuildError::invalid_field(
                             "metadata",
-                            format!("`{k}` cannot be used as a header name: {err}"),
+                            format!("`{}` cannot be used as a header value: {}", v, err),
                         )
-                    },
-                )?;
-            let header_value = v.as_str();
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
-                    )
-                })?;
-            builder = builder.header(header_name, header_value);
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)
@@ -7096,26 +7099,27 @@ pub fn add_headers_write_get_object_response(
         }
     }
     if let Some(inner_724) = &input.metadata {
-        for (k, v) in inner_724 {
-            use std::str::FromStr;
-            let header_name =
-                http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(
-                    |err| {
+        {
+            for (k, v) in inner_724 {
+                use std::str::FromStr;
+                let header_name =
+                    http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
+                        .map_err(|err| {
+                            aws_smithy_http::operation::error::BuildError::invalid_field(
+                                "metadata",
+                                format!("`{k}` cannot be used as a header name: {err}"),
+                            )
+                        })?;
+                let header_value = v.as_str();
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         aws_smithy_http::operation::error::BuildError::invalid_field(
                             "metadata",
-                            format!("`{k}` cannot be used as a header name: {err}"),
+                            format!("`{}` cannot be used as a header value: {}", v, err),
                         )
-                    },
-                )?;
-            let header_value = v.as_str();
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
-                    )
-                })?;
-            builder = builder.header(header_name, header_value);
+                    })?;
+                builder = builder.header(header_name, header_value);
+            }
         }
     }
     Ok(builder)

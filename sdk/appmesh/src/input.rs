@@ -193,7 +193,9 @@ impl CreateGatewayRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
                 }
                 Ok(())
             }
@@ -663,7 +665,9 @@ impl CreateRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_6));
+                    }
                 }
                 Ok(())
             }
@@ -918,7 +922,9 @@ impl CreateVirtualGatewayInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_8));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_8));
+                    }
                 }
                 Ok(())
             }
@@ -1175,7 +1181,9 @@ impl CreateVirtualNodeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_10) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -1430,7 +1438,9 @@ impl CreateVirtualRouterInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 Ok(())
             }
@@ -1685,7 +1695,9 @@ impl CreateVirtualServiceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 Ok(())
             }
@@ -1939,7 +1951,9 @@ impl DeleteGatewayRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 Ok(())
             }
@@ -2318,7 +2332,9 @@ impl DeleteRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 Ok(())
             }
@@ -2528,7 +2544,9 @@ impl DeleteVirtualGatewayInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_26) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_26));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_26));
+                    }
                 }
                 Ok(())
             }
@@ -2738,7 +2756,9 @@ impl DeleteVirtualNodeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_29) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_29));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_29));
+                    }
                 }
                 Ok(())
             }
@@ -2948,7 +2968,9 @@ impl DeleteVirtualRouterInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_32));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_32));
+                    }
                 }
                 Ok(())
             }
@@ -3158,7 +3180,9 @@ impl DeleteVirtualServiceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_35));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_35));
+                    }
                 }
                 Ok(())
             }
@@ -3396,7 +3420,9 @@ impl DescribeGatewayRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_39));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_39));
+                    }
                 }
                 Ok(())
             }
@@ -3565,7 +3591,9 @@ impl DescribeMeshInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_41) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_41));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_41));
+                    }
                 }
                 Ok(())
             }
@@ -3798,7 +3826,9 @@ impl DescribeRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_45));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_45));
+                    }
                 }
                 Ok(())
             }
@@ -4008,7 +4038,9 @@ impl DescribeVirtualGatewayInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_48));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_48));
+                    }
                 }
                 Ok(())
             }
@@ -4218,7 +4250,9 @@ impl DescribeVirtualNodeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_51) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_51));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_51));
+                    }
                 }
                 Ok(())
             }
@@ -4428,7 +4462,9 @@ impl DescribeVirtualRouterInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_54) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_54));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_54));
+                    }
                 }
                 Ok(())
             }
@@ -4638,7 +4674,9 @@ impl DescribeVirtualServiceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_57) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_57));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_57));
+                    }
                 }
                 Ok(())
             }
@@ -4866,16 +4904,22 @@ impl ListGatewayRoutesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_60) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
+                    }
                 }
                 if let Some(inner_61) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
-                    );
+                    if *inner_61 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_62) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_62));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_62));
+                    }
                 }
                 Ok(())
             }
@@ -5028,13 +5072,17 @@ impl ListMeshesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_63) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+                    }
                 }
                 if let Some(inner_64) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
-                    );
+                    if *inner_64 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5266,16 +5314,22 @@ impl ListRoutesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
+                    }
                 }
                 if let Some(inner_68) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
-                    );
+                    if *inner_68 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_69) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_69));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_69));
+                    }
                 }
                 Ok(())
             }
@@ -5457,13 +5511,17 @@ impl ListTagsForResourceInput {
                     &aws_smithy_http::query::fmt_string(&inner_70),
                 );
                 if let Some(inner_71) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+                    }
                 }
                 if let Some(inner_72) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
-                    );
+                    if *inner_72 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }
@@ -5662,16 +5720,22 @@ impl ListVirtualGatewaysInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_74) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_74));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_74));
+                    }
                 }
                 if let Some(inner_75) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
-                    );
+                    if *inner_75 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_76) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_76));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_76));
+                    }
                 }
                 Ok(())
             }
@@ -5870,16 +5934,22 @@ impl ListVirtualNodesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_78) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
+                    }
                 }
                 if let Some(inner_79) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
-                    );
+                    if *inner_79 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_80) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_80));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_80));
+                    }
                 }
                 Ok(())
             }
@@ -6078,16 +6148,22 @@ impl ListVirtualRoutersInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_82) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
+                    }
                 }
                 if let Some(inner_83) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
-                    );
+                    if *inner_83 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_84) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_84));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_84));
+                    }
                 }
                 Ok(())
             }
@@ -6286,16 +6362,22 @@ impl ListVirtualServicesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_86) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
+                    }
                 }
                 if let Some(inner_87) = &_input.limit {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
-                    );
+                    if *inner_87 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_88) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_88));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_88));
+                    }
                 }
                 Ok(())
             }
@@ -6939,7 +7021,9 @@ impl UpdateGatewayRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_94) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_94));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_94));
+                    }
                 }
                 Ok(())
             }
@@ -7400,7 +7484,9 @@ impl UpdateRouteInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_99) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_99));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_99));
+                    }
                 }
                 Ok(())
             }
@@ -7654,7 +7740,9 @@ impl UpdateVirtualGatewayInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_102) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_102));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_102));
+                    }
                 }
                 Ok(())
             }
@@ -7910,7 +7998,9 @@ impl UpdateVirtualNodeInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_105) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_105));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_105));
+                    }
                 }
                 Ok(())
             }
@@ -8164,7 +8254,9 @@ impl UpdateVirtualRouterInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_108) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_108));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_108));
+                    }
                 }
                 Ok(())
             }
@@ -8418,7 +8510,9 @@ impl UpdateVirtualServiceInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_111) = &_input.mesh_owner {
-                    query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_111));
+                    {
+                        query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_111));
+                    }
                 }
                 Ok(())
             }

@@ -1260,17 +1260,23 @@ impl ListApplicationsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if let Some(inner_10) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
-                    );
+                    if *inner_10 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_11) = &_input.states {
-                    for inner_12 in inner_11 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        for inner_12 in inner_11 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_12));
+                        }
                     }
                 }
                 Ok(())
@@ -1510,35 +1516,45 @@ impl ListJobRunsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 if let Some(inner_15) = &_input.max_results {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
-                    );
+                    if *inner_15 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_16) = &_input.created_at_after {
-                    query.push_kv(
-                        "createdAtAfter",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_16,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdAtAfter",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_16,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_17) = &_input.created_at_before {
-                    query.push_kv(
-                        "createdAtBefore",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_17,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
+                    {
+                        query.push_kv(
+                            "createdAtBefore",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_17,
+                                aws_smithy_types::date_time::Format::DateTime,
+                            )?,
+                        );
+                    }
                 }
                 if let Some(inner_18) = &_input.states {
-                    for inner_19 in inner_18 {
-                        query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        for inner_19 in inner_18 {
+                            query.push_kv("states", &aws_smithy_http::query::fmt_string(&inner_19));
+                        }
                     }
                 }
                 Ok(())

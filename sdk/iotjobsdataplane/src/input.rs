@@ -142,16 +142,20 @@ impl DescribeJobExecutionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.include_job_document {
-                    query.push_kv(
-                        "includeJobDocument",
-                        aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
-                    );
+                    if *inner_3 {
+                        query.push_kv(
+                            "includeJobDocument",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_4) = &_input.execution_number {
-                    query.push_kv(
-                        "executionNumber",
-                        aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                    );
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "executionNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

@@ -3009,16 +3009,24 @@ impl ListJobsInput {
                     );
                 }
                 if let Some(inner_10) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 if let Some(inner_11) = &_input.order {
-                    query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_11));
+                    }
                 }
                 if let Some(inner_12) = &_input.queue {
-                    query.push_kv("queue", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("queue", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 if let Some(inner_13) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_13));
+                    }
                 }
                 Ok(())
             }
@@ -3206,10 +3214,14 @@ impl ListJobTemplatesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_14));
+                    }
                 }
                 if let Some(inner_15) = &_input.list_by {
-                    query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_15));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3218,10 +3230,14 @@ impl ListJobTemplatesInput {
                     );
                 }
                 if let Some(inner_16) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
+                    }
                 }
                 if let Some(inner_17) = &_input.order {
-                    query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 Ok(())
             }
@@ -3409,10 +3425,14 @@ impl ListPresetsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.category {
-                    query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_18));
+                    {
+                        query.push_kv("category", &aws_smithy_http::query::fmt_string(&inner_18));
+                    }
                 }
                 if let Some(inner_19) = &_input.list_by {
-                    query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_19));
+                    {
+                        query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_19));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3421,10 +3441,14 @@ impl ListPresetsInput {
                     );
                 }
                 if let Some(inner_20) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_20));
+                    }
                 }
                 if let Some(inner_21) = &_input.order {
-                    query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 Ok(())
             }
@@ -3600,7 +3624,9 @@ impl ListQueuesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_22) = &_input.list_by {
-                    query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_22));
+                    {
+                        query.push_kv("listBy", &aws_smithy_http::query::fmt_string(&inner_22));
+                    }
                 }
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3609,10 +3635,14 @@ impl ListQueuesInput {
                     );
                 }
                 if let Some(inner_23) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
+                    }
                 }
                 if let Some(inner_24) = &_input.order {
-                    query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_24));
+                    {
+                        query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_24));
+                    }
                 }
                 Ok(())
             }

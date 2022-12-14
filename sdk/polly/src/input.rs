@@ -248,13 +248,17 @@ impl DescribeVoicesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.engine {
-                    query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
                 }
                 if let Some(inner_3) = &_input.language_code {
-                    query.push_kv(
-                        "LanguageCode",
-                        &aws_smithy_http::query::fmt_string(&inner_3),
-                    );
+                    {
+                        query.push_kv(
+                            "LanguageCode",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
                 }
                 if _input.include_additional_language_codes {
                     query.push_kv(
@@ -266,7 +270,9 @@ impl DescribeVoicesInput {
                     );
                 }
                 if let Some(inner_4) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
                 }
                 Ok(())
             }
@@ -695,7 +701,9 @@ impl ListLexiconsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
+                    }
                 }
                 Ok(())
             }
@@ -858,16 +866,22 @@ impl ListSpeechSynthesisTasksInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.max_results {
-                    query.push_kv(
-                        "MaxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
-                    );
+                    if *inner_8 != 0 {
+                        query.push_kv(
+                            "MaxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                        );
+                    }
                 }
                 if let Some(inner_9) = &_input.next_token {
-                    query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    {
+                        query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
+                    }
                 }
                 if let Some(inner_10) = &_input.status {
-                    query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_10));
+                    {
+                        query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_10));
+                    }
                 }
                 Ok(())
             }
@@ -1637,20 +1651,26 @@ impl SynthesizeSpeechInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.engine {
-                    query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_12));
+                    }
                 }
                 if let Some(inner_13) = &_input.language_code {
-                    query.push_kv(
-                        "LanguageCode",
-                        &aws_smithy_http::query::fmt_string(&inner_13),
-                    );
+                    {
+                        query.push_kv(
+                            "LanguageCode",
+                            &aws_smithy_http::query::fmt_string(&inner_13),
+                        );
+                    }
                 }
                 if let Some(inner_14) = &_input.lexicon_names {
-                    for inner_15 in inner_14 {
-                        query.push_kv(
-                            "LexiconNames",
-                            &aws_smithy_http::query::fmt_string(&inner_15),
-                        );
+                    {
+                        for inner_15 in inner_14 {
+                            query.push_kv(
+                                "LexiconNames",
+                                &aws_smithy_http::query::fmt_string(&inner_15),
+                            );
+                        }
                     }
                 }
                 let inner_16 = &_input.output_format;
@@ -1665,14 +1685,18 @@ impl SynthesizeSpeechInput {
                     &aws_smithy_http::query::fmt_string(&inner_16),
                 );
                 if let Some(inner_17) = &_input.sample_rate {
-                    query.push_kv("SampleRate", &aws_smithy_http::query::fmt_string(&inner_17));
+                    {
+                        query.push_kv("SampleRate", &aws_smithy_http::query::fmt_string(&inner_17));
+                    }
                 }
                 if let Some(inner_18) = &_input.speech_mark_types {
-                    for inner_19 in inner_18 {
-                        query.push_kv(
-                            "SpeechMarkTypes",
-                            &aws_smithy_http::query::fmt_string(&inner_19),
-                        );
+                    {
+                        for inner_19 in inner_18 {
+                            query.push_kv(
+                                "SpeechMarkTypes",
+                                &aws_smithy_http::query::fmt_string(&inner_19),
+                            );
+                        }
                     }
                 }
                 let inner_20 = &_input.text;
@@ -1692,7 +1716,9 @@ impl SynthesizeSpeechInput {
                 }
                 query.push_kv("Text", &aws_smithy_http::query::fmt_string(&inner_20));
                 if let Some(inner_21) = &_input.text_type {
-                    query.push_kv("TextType", &aws_smithy_http::query::fmt_string(&inner_21));
+                    {
+                        query.push_kv("TextType", &aws_smithy_http::query::fmt_string(&inner_21));
+                    }
                 }
                 let inner_22 = &_input.voice_id;
                 let inner_22 = inner_22.as_ref().ok_or_else(|| {
