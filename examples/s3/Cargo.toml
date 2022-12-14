@@ -18,11 +18,14 @@ assert_cmd = "2.0"
 predicates = "2.1"
 
 [dependencies]
-tokio-stream = "0.1.8"
-md-5 = "0.10.1"
 bytes = "0.4.12"
+http = "0.2.8"
 http-body = "0.4.5"
+md-5 = "0.10.1"
 rand = "0.5.0"
+thiserror = "1.0"
+tokio-stream = "0.1.8"
+tracing = "0.1.37"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
@@ -36,13 +39,26 @@ version = "0.52.0"
 path = "../../sdk/s3"
 version = "0.22.0"
 
-[dependencies.tokio]
-version = "1.20.1"
-features = ["full"]
+[dependencies.aws-smithy-http]
+features = ["rt-tokio"]
+path = "../../sdk/aws-smithy-http"
+version = "0.52.0"
+
+[dependencies.aws-smithy-types]
+path = "../../sdk/aws-smithy-types"
+version = "0.52.0"
+
+[dependencies.futures-util]
+version = "0.3.21"
+features = ["alloc"]
 
 [dependencies.structopt]
 version = "0.3"
 default-features = false
+
+[dependencies.tokio]
+version = "1.20.1"
+features = ["full"]
 
 [dependencies.tracing-subscriber]
 version = "0.3.5"
@@ -51,12 +67,3 @@ features = ["env-filter"]
 [dependencies.uuid]
 version = "0.8"
 features = ["serde", "v4"]
-
-[dependencies.aws-smithy-http]
-features = ["rt-tokio"]
-path = "../../sdk/aws-smithy-http"
-version = "0.52.0"
-
-[dependencies.futures-util]
-version = "0.3.21"
-features = ["alloc"]

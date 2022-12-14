@@ -7,7 +7,7 @@ description = "An example demonstrating setting a custom root certificate with r
 publish = false
 
 [dependencies]
-rustls = "0.20.6"
+rustls = "0.20.7"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
@@ -23,7 +23,7 @@ path = "../../sdk/s3"
 version = "0.22.0"
 
 [dependencies.tokio]
-version = "1.20.1"
+version = "1.21.2"
 features = ["full"]
 
 [dependencies.hyper-rustls]
