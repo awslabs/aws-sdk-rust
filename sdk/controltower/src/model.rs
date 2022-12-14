@@ -208,6 +208,42 @@ impl ControlOperation {
     }
 }
 
+/// When writing a match expression against `ControlOperationStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let controloperationstatus = unimplemented!();
+/// match controloperationstatus {
+///     ControlOperationStatus::Failed => { /* ... */ },
+///     ControlOperationStatus::InProgress => { /* ... */ },
+///     ControlOperationStatus::Succeeded => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `controloperationstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ControlOperationStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ControlOperationStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ControlOperationStatus::NewFeature` is defined.
+/// Specifically, when `controloperationstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ControlOperationStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -226,8 +262,8 @@ pub enum ControlOperationStatus {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ControlOperationStatus {
     fn from(s: &str) -> Self {
@@ -235,7 +271,9 @@ impl std::convert::From<&str> for ControlOperationStatus {
             "FAILED" => ControlOperationStatus::Failed,
             "IN_PROGRESS" => ControlOperationStatus::InProgress,
             "SUCCEEDED" => ControlOperationStatus::Succeeded,
-            other => ControlOperationStatus::Unknown(other.to_owned()),
+            other => {
+                ControlOperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -253,7 +291,7 @@ impl ControlOperationStatus {
             ControlOperationStatus::Failed => "FAILED",
             ControlOperationStatus::InProgress => "IN_PROGRESS",
             ControlOperationStatus::Succeeded => "SUCCEEDED",
-            ControlOperationStatus::Unknown(s) => s.as_ref(),
+            ControlOperationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -267,6 +305,41 @@ impl AsRef<str> for ControlOperationStatus {
     }
 }
 
+/// When writing a match expression against `ControlOperationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let controloperationtype = unimplemented!();
+/// match controloperationtype {
+///     ControlOperationType::DisableControl => { /* ... */ },
+///     ControlOperationType::EnableControl => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `controloperationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ControlOperationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ControlOperationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ControlOperationType::NewFeature` is defined.
+/// Specifically, when `controloperationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ControlOperationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -283,15 +356,17 @@ pub enum ControlOperationType {
     DisableControl,
     #[allow(missing_docs)] // documentation missing in model
     EnableControl,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ControlOperationType {
     fn from(s: &str) -> Self {
         match s {
             "DISABLE_CONTROL" => ControlOperationType::DisableControl,
             "ENABLE_CONTROL" => ControlOperationType::EnableControl,
-            other => ControlOperationType::Unknown(other.to_owned()),
+            other => {
+                ControlOperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -308,7 +383,7 @@ impl ControlOperationType {
         match self {
             ControlOperationType::DisableControl => "DISABLE_CONTROL",
             ControlOperationType::EnableControl => "ENABLE_CONTROL",
-            ControlOperationType::Unknown(s) => s.as_ref(),
+            ControlOperationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

@@ -836,6 +836,41 @@ impl Tag {
     }
 }
 
+/// When writing a match expression against `StabilityStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let stabilitystatus = unimplemented!();
+/// match stabilitystatus {
+///     StabilityStatus::Stabilizing => { /* ... */ },
+///     StabilityStatus::SteadyState => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `stabilitystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `StabilityStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `StabilityStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `StabilityStatus::NewFeature` is defined.
+/// Specifically, when `stabilitystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `StabilityStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -852,15 +887,15 @@ pub enum StabilityStatus {
     Stabilizing,
     #[allow(missing_docs)] // documentation missing in model
     SteadyState,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StabilityStatus {
     fn from(s: &str) -> Self {
         match s {
             "STABILIZING" => StabilityStatus::Stabilizing,
             "STEADY_STATE" => StabilityStatus::SteadyState,
-            other => StabilityStatus::Unknown(other.to_owned()),
+            other => StabilityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -877,7 +912,7 @@ impl StabilityStatus {
         match self {
             StabilityStatus::Stabilizing => "STABILIZING",
             StabilityStatus::SteadyState => "STEADY_STATE",
-            StabilityStatus::Unknown(s) => s.as_ref(),
+            StabilityStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -966,6 +1001,40 @@ impl Scale {
     }
 }
 
+/// When writing a match expression against `ScaleUnit`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scaleunit = unimplemented!();
+/// match scaleunit {
+///     ScaleUnit::Percent => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scaleunit` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ScaleUnit::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ScaleUnit::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ScaleUnit::NewFeature` is defined.
+/// Specifically, when `scaleunit` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ScaleUnit::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -980,14 +1049,14 @@ impl Scale {
 pub enum ScaleUnit {
     #[allow(missing_docs)] // documentation missing in model
     Percent,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScaleUnit {
     fn from(s: &str) -> Self {
         match s {
             "PERCENT" => ScaleUnit::Percent,
-            other => ScaleUnit::Unknown(other.to_owned()),
+            other => ScaleUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1003,7 +1072,7 @@ impl ScaleUnit {
     pub fn as_str(&self) -> &str {
         match self {
             ScaleUnit::Percent => "PERCENT",
-            ScaleUnit::Unknown(s) => s.as_ref(),
+            ScaleUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1487,6 +1556,41 @@ impl AwsVpcConfiguration {
     }
 }
 
+/// When writing a match expression against `AssignPublicIp`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let assignpublicip = unimplemented!();
+/// match assignpublicip {
+///     AssignPublicIp::Disabled => { /* ... */ },
+///     AssignPublicIp::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `assignpublicip` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AssignPublicIp::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AssignPublicIp::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AssignPublicIp::NewFeature` is defined.
+/// Specifically, when `assignpublicip` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AssignPublicIp::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1503,15 +1607,15 @@ pub enum AssignPublicIp {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AssignPublicIp {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AssignPublicIp::Disabled,
             "ENABLED" => AssignPublicIp::Enabled,
-            other => AssignPublicIp::Unknown(other.to_owned()),
+            other => AssignPublicIp::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1528,7 +1632,7 @@ impl AssignPublicIp {
         match self {
             AssignPublicIp::Disabled => "DISABLED",
             AssignPublicIp::Enabled => "ENABLED",
-            AssignPublicIp::Unknown(s) => s.as_ref(),
+            AssignPublicIp::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1652,6 +1756,42 @@ impl CapacityProviderStrategyItem {
     }
 }
 
+/// When writing a match expression against `LaunchType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let launchtype = unimplemented!();
+/// match launchtype {
+///     LaunchType::Ec2 => { /* ... */ },
+///     LaunchType::External => { /* ... */ },
+///     LaunchType::Fargate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `launchtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LaunchType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LaunchType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LaunchType::NewFeature` is defined.
+/// Specifically, when `launchtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LaunchType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1670,8 +1810,8 @@ pub enum LaunchType {
     External,
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LaunchType {
     fn from(s: &str) -> Self {
@@ -1679,7 +1819,7 @@ impl std::convert::From<&str> for LaunchType {
             "EC2" => LaunchType::Ec2,
             "EXTERNAL" => LaunchType::External,
             "FARGATE" => LaunchType::Fargate,
-            other => LaunchType::Unknown(other.to_owned()),
+            other => LaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1697,7 +1837,7 @@ impl LaunchType {
             LaunchType::Ec2 => "EC2",
             LaunchType::External => "EXTERNAL",
             LaunchType::Fargate => "FARGATE",
-            LaunchType::Unknown(s) => s.as_ref(),
+            LaunchType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2581,6 +2721,42 @@ impl Service {
     }
 }
 
+/// When writing a match expression against `PropagateTags`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let propagatetags = unimplemented!();
+/// match propagatetags {
+///     PropagateTags::None => { /* ... */ },
+///     PropagateTags::Service => { /* ... */ },
+///     PropagateTags::TaskDefinition => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `propagatetags` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PropagateTags::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PropagateTags::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PropagateTags::NewFeature` is defined.
+/// Specifically, when `propagatetags` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PropagateTags::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2599,8 +2775,8 @@ pub enum PropagateTags {
     Service,
     #[allow(missing_docs)] // documentation missing in model
     TaskDefinition,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PropagateTags {
     fn from(s: &str) -> Self {
@@ -2608,7 +2784,7 @@ impl std::convert::From<&str> for PropagateTags {
             "NONE" => PropagateTags::None,
             "SERVICE" => PropagateTags::Service,
             "TASK_DEFINITION" => PropagateTags::TaskDefinition,
-            other => PropagateTags::Unknown(other.to_owned()),
+            other => PropagateTags::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2626,7 +2802,7 @@ impl PropagateTags {
             PropagateTags::None => "NONE",
             PropagateTags::Service => "SERVICE",
             PropagateTags::TaskDefinition => "TASK_DEFINITION",
-            PropagateTags::Unknown(s) => s.as_ref(),
+            PropagateTags::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2782,6 +2958,42 @@ impl DeploymentController {
     }
 }
 
+/// When writing a match expression against `DeploymentControllerType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deploymentcontrollertype = unimplemented!();
+/// match deploymentcontrollertype {
+///     DeploymentControllerType::CodeDeploy => { /* ... */ },
+///     DeploymentControllerType::Ecs => { /* ... */ },
+///     DeploymentControllerType::External => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deploymentcontrollertype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeploymentControllerType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeploymentControllerType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeploymentControllerType::NewFeature` is defined.
+/// Specifically, when `deploymentcontrollertype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeploymentControllerType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2800,8 +3012,8 @@ pub enum DeploymentControllerType {
     Ecs,
     #[allow(missing_docs)] // documentation missing in model
     External,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeploymentControllerType {
     fn from(s: &str) -> Self {
@@ -2809,7 +3021,9 @@ impl std::convert::From<&str> for DeploymentControllerType {
             "CODE_DEPLOY" => DeploymentControllerType::CodeDeploy,
             "ECS" => DeploymentControllerType::Ecs,
             "EXTERNAL" => DeploymentControllerType::External,
-            other => DeploymentControllerType::Unknown(other.to_owned()),
+            other => DeploymentControllerType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -2827,7 +3041,7 @@ impl DeploymentControllerType {
             DeploymentControllerType::CodeDeploy => "CODE_DEPLOY",
             DeploymentControllerType::Ecs => "ECS",
             DeploymentControllerType::External => "EXTERNAL",
-            DeploymentControllerType::Unknown(s) => s.as_ref(),
+            DeploymentControllerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2841,6 +3055,41 @@ impl AsRef<str> for DeploymentControllerType {
     }
 }
 
+/// When writing a match expression against `SchedulingStrategy`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let schedulingstrategy = unimplemented!();
+/// match schedulingstrategy {
+///     SchedulingStrategy::Daemon => { /* ... */ },
+///     SchedulingStrategy::Replica => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `schedulingstrategy` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SchedulingStrategy::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SchedulingStrategy::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SchedulingStrategy::NewFeature` is defined.
+/// Specifically, when `schedulingstrategy` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SchedulingStrategy::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2857,15 +3106,17 @@ pub enum SchedulingStrategy {
     Daemon,
     #[allow(missing_docs)] // documentation missing in model
     Replica,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SchedulingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "DAEMON" => SchedulingStrategy::Daemon,
             "REPLICA" => SchedulingStrategy::Replica,
-            other => SchedulingStrategy::Unknown(other.to_owned()),
+            other => {
+                SchedulingStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2882,7 +3133,7 @@ impl SchedulingStrategy {
         match self {
             SchedulingStrategy::Daemon => "DAEMON",
             SchedulingStrategy::Replica => "REPLICA",
-            SchedulingStrategy::Unknown(s) => s.as_ref(),
+            SchedulingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2974,6 +3225,42 @@ impl PlacementStrategy {
     }
 }
 
+/// When writing a match expression against `PlacementStrategyType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let placementstrategytype = unimplemented!();
+/// match placementstrategytype {
+///     PlacementStrategyType::Binpack => { /* ... */ },
+///     PlacementStrategyType::Random => { /* ... */ },
+///     PlacementStrategyType::Spread => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `placementstrategytype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PlacementStrategyType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PlacementStrategyType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PlacementStrategyType::NewFeature` is defined.
+/// Specifically, when `placementstrategytype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PlacementStrategyType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2992,8 +3279,8 @@ pub enum PlacementStrategyType {
     Random,
     #[allow(missing_docs)] // documentation missing in model
     Spread,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PlacementStrategyType {
     fn from(s: &str) -> Self {
@@ -3001,7 +3288,9 @@ impl std::convert::From<&str> for PlacementStrategyType {
             "binpack" => PlacementStrategyType::Binpack,
             "random" => PlacementStrategyType::Random,
             "spread" => PlacementStrategyType::Spread,
-            other => PlacementStrategyType::Unknown(other.to_owned()),
+            other => {
+                PlacementStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3019,7 +3308,7 @@ impl PlacementStrategyType {
             PlacementStrategyType::Binpack => "binpack",
             PlacementStrategyType::Random => "random",
             PlacementStrategyType::Spread => "spread",
-            PlacementStrategyType::Unknown(s) => s.as_ref(),
+            PlacementStrategyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -3113,6 +3402,41 @@ impl PlacementConstraint {
     }
 }
 
+/// When writing a match expression against `PlacementConstraintType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let placementconstrainttype = unimplemented!();
+/// match placementconstrainttype {
+///     PlacementConstraintType::DistinctInstance => { /* ... */ },
+///     PlacementConstraintType::MemberOf => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `placementconstrainttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PlacementConstraintType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PlacementConstraintType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PlacementConstraintType::NewFeature` is defined.
+/// Specifically, when `placementconstrainttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PlacementConstraintType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3129,15 +3453,17 @@ pub enum PlacementConstraintType {
     DistinctInstance,
     #[allow(missing_docs)] // documentation missing in model
     MemberOf,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PlacementConstraintType {
     fn from(s: &str) -> Self {
         match s {
             "distinctInstance" => PlacementConstraintType::DistinctInstance,
             "memberOf" => PlacementConstraintType::MemberOf,
-            other => PlacementConstraintType::Unknown(other.to_owned()),
+            other => PlacementConstraintType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -3154,7 +3480,7 @@ impl PlacementConstraintType {
         match self {
             PlacementConstraintType::DistinctInstance => "distinctInstance",
             PlacementConstraintType::MemberOf => "memberOf",
-            PlacementConstraintType::Unknown(s) => s.as_ref(),
+            PlacementConstraintType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -3773,6 +4099,42 @@ impl Deployment {
     }
 }
 
+/// When writing a match expression against `DeploymentRolloutState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let deploymentrolloutstate = unimplemented!();
+/// match deploymentrolloutstate {
+///     DeploymentRolloutState::Completed => { /* ... */ },
+///     DeploymentRolloutState::Failed => { /* ... */ },
+///     DeploymentRolloutState::InProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `deploymentrolloutstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeploymentRolloutState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeploymentRolloutState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeploymentRolloutState::NewFeature` is defined.
+/// Specifically, when `deploymentrolloutstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeploymentRolloutState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3791,8 +4153,8 @@ pub enum DeploymentRolloutState {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeploymentRolloutState {
     fn from(s: &str) -> Self {
@@ -3800,7 +4162,9 @@ impl std::convert::From<&str> for DeploymentRolloutState {
             "COMPLETED" => DeploymentRolloutState::Completed,
             "FAILED" => DeploymentRolloutState::Failed,
             "IN_PROGRESS" => DeploymentRolloutState::InProgress,
-            other => DeploymentRolloutState::Unknown(other.to_owned()),
+            other => {
+                DeploymentRolloutState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -3818,7 +4182,7 @@ impl DeploymentRolloutState {
             DeploymentRolloutState::Completed => "COMPLETED",
             DeploymentRolloutState::Failed => "FAILED",
             DeploymentRolloutState::InProgress => "IN_PROGRESS",
-            DeploymentRolloutState::Unknown(s) => s.as_ref(),
+            DeploymentRolloutState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -4905,6 +5269,43 @@ impl InstanceHealthCheckResult {
     }
 }
 
+/// When writing a match expression against `InstanceHealthCheckState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancehealthcheckstate = unimplemented!();
+/// match instancehealthcheckstate {
+///     InstanceHealthCheckState::Impaired => { /* ... */ },
+///     InstanceHealthCheckState::Initializing => { /* ... */ },
+///     InstanceHealthCheckState::InsufficientData => { /* ... */ },
+///     InstanceHealthCheckState::Ok => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancehealthcheckstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceHealthCheckState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceHealthCheckState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceHealthCheckState::NewFeature` is defined.
+/// Specifically, when `instancehealthcheckstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceHealthCheckState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4925,8 +5326,8 @@ pub enum InstanceHealthCheckState {
     InsufficientData,
     #[allow(missing_docs)] // documentation missing in model
     Ok,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceHealthCheckState {
     fn from(s: &str) -> Self {
@@ -4935,7 +5336,9 @@ impl std::convert::From<&str> for InstanceHealthCheckState {
             "INITIALIZING" => InstanceHealthCheckState::Initializing,
             "INSUFFICIENT_DATA" => InstanceHealthCheckState::InsufficientData,
             "OK" => InstanceHealthCheckState::Ok,
-            other => InstanceHealthCheckState::Unknown(other.to_owned()),
+            other => InstanceHealthCheckState::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -4954,7 +5357,7 @@ impl InstanceHealthCheckState {
             InstanceHealthCheckState::Initializing => "INITIALIZING",
             InstanceHealthCheckState::InsufficientData => "INSUFFICIENT_DATA",
             InstanceHealthCheckState::Ok => "OK",
-            InstanceHealthCheckState::Unknown(s) => s.as_ref(),
+            InstanceHealthCheckState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -4968,6 +5371,40 @@ impl AsRef<str> for InstanceHealthCheckState {
     }
 }
 
+/// When writing a match expression against `InstanceHealthCheckType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let instancehealthchecktype = unimplemented!();
+/// match instancehealthchecktype {
+///     InstanceHealthCheckType::ContainerRuntime => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `instancehealthchecktype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `InstanceHealthCheckType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `InstanceHealthCheckType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `InstanceHealthCheckType::NewFeature` is defined.
+/// Specifically, when `instancehealthchecktype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `InstanceHealthCheckType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4982,14 +5419,16 @@ impl AsRef<str> for InstanceHealthCheckState {
 pub enum InstanceHealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
     ContainerRuntime,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceHealthCheckType {
     fn from(s: &str) -> Self {
         match s {
             "CONTAINER_RUNTIME" => InstanceHealthCheckType::ContainerRuntime,
-            other => InstanceHealthCheckType::Unknown(other.to_owned()),
+            other => InstanceHealthCheckType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5005,7 +5444,7 @@ impl InstanceHealthCheckType {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceHealthCheckType::ContainerRuntime => "CONTAINER_RUNTIME",
-            InstanceHealthCheckType::Unknown(s) => s.as_ref(),
+            InstanceHealthCheckType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -5336,6 +5775,40 @@ impl Attribute {
     }
 }
 
+/// When writing a match expression against `TargetType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let targettype = unimplemented!();
+/// match targettype {
+///     TargetType::ContainerInstance => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `targettype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TargetType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TargetType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TargetType::NewFeature` is defined.
+/// Specifically, when `targettype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5350,14 +5823,14 @@ impl Attribute {
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     ContainerInstance,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "container-instance" => TargetType::ContainerInstance,
-            other => TargetType::Unknown(other.to_owned()),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -5373,7 +5846,7 @@ impl TargetType {
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::ContainerInstance => "container-instance",
-            TargetType::Unknown(s) => s.as_ref(),
+            TargetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -5387,6 +5860,45 @@ impl AsRef<str> for TargetType {
     }
 }
 
+/// When writing a match expression against `AgentUpdateStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let agentupdatestatus = unimplemented!();
+/// match agentupdatestatus {
+///     AgentUpdateStatus::Failed => { /* ... */ },
+///     AgentUpdateStatus::Pending => { /* ... */ },
+///     AgentUpdateStatus::Staged => { /* ... */ },
+///     AgentUpdateStatus::Staging => { /* ... */ },
+///     AgentUpdateStatus::Updated => { /* ... */ },
+///     AgentUpdateStatus::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `agentupdatestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AgentUpdateStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AgentUpdateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AgentUpdateStatus::NewFeature` is defined.
+/// Specifically, when `agentupdatestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AgentUpdateStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5411,8 +5923,8 @@ pub enum AgentUpdateStatus {
     Updated,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AgentUpdateStatus {
     fn from(s: &str) -> Self {
@@ -5423,7 +5935,9 @@ impl std::convert::From<&str> for AgentUpdateStatus {
             "STAGING" => AgentUpdateStatus::Staging,
             "UPDATED" => AgentUpdateStatus::Updated,
             "UPDATING" => AgentUpdateStatus::Updating,
-            other => AgentUpdateStatus::Unknown(other.to_owned()),
+            other => {
+                AgentUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -5444,7 +5958,7 @@ impl AgentUpdateStatus {
             AgentUpdateStatus::Staging => "STAGING",
             AgentUpdateStatus::Updated => "UPDATED",
             AgentUpdateStatus::Updating => "UPDATING",
-            AgentUpdateStatus::Unknown(s) => s.as_ref(),
+            AgentUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -5725,6 +6239,44 @@ impl VersionInfo {
     }
 }
 
+/// When writing a match expression against `ContainerInstanceStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerinstancestatus = unimplemented!();
+/// match containerinstancestatus {
+///     ContainerInstanceStatus::Active => { /* ... */ },
+///     ContainerInstanceStatus::Deregistering => { /* ... */ },
+///     ContainerInstanceStatus::Draining => { /* ... */ },
+///     ContainerInstanceStatus::Registering => { /* ... */ },
+///     ContainerInstanceStatus::RegistrationFailed => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerinstancestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerInstanceStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerInstanceStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerInstanceStatus::NewFeature` is defined.
+/// Specifically, when `containerinstancestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerInstanceStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -5747,8 +6299,8 @@ pub enum ContainerInstanceStatus {
     Registering,
     #[allow(missing_docs)] // documentation missing in model
     RegistrationFailed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerInstanceStatus {
     fn from(s: &str) -> Self {
@@ -5758,7 +6310,9 @@ impl std::convert::From<&str> for ContainerInstanceStatus {
             "DRAINING" => ContainerInstanceStatus::Draining,
             "REGISTERING" => ContainerInstanceStatus::Registering,
             "REGISTRATION_FAILED" => ContainerInstanceStatus::RegistrationFailed,
-            other => ContainerInstanceStatus::Unknown(other.to_owned()),
+            other => ContainerInstanceStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -5778,7 +6332,7 @@ impl ContainerInstanceStatus {
             ContainerInstanceStatus::Draining => "DRAINING",
             ContainerInstanceStatus::Registering => "REGISTERING",
             ContainerInstanceStatus::RegistrationFailed => "REGISTRATION_FAILED",
-            ContainerInstanceStatus::Unknown(s) => s.as_ref(),
+            ContainerInstanceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -6577,6 +7131,40 @@ impl ClusterSetting {
     }
 }
 
+/// When writing a match expression against `ClusterSettingName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clustersettingname = unimplemented!();
+/// match clustersettingname {
+///     ClusterSettingName::ContainerInsights => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clustersettingname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClusterSettingName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClusterSettingName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClusterSettingName::NewFeature` is defined.
+/// Specifically, when `clustersettingname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClusterSettingName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -6591,14 +7179,16 @@ impl ClusterSetting {
 pub enum ClusterSettingName {
     #[allow(missing_docs)] // documentation missing in model
     ContainerInsights,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClusterSettingName {
     fn from(s: &str) -> Self {
         match s {
             "containerInsights" => ClusterSettingName::ContainerInsights,
-            other => ClusterSettingName::Unknown(other.to_owned()),
+            other => {
+                ClusterSettingName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -6614,7 +7204,7 @@ impl ClusterSettingName {
     pub fn as_str(&self) -> &str {
         match self {
             ClusterSettingName::ContainerInsights => "containerInsights",
-            ClusterSettingName::Unknown(s) => s.as_ref(),
+            ClusterSettingName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -6994,6 +7584,42 @@ impl ExecuteCommandLogConfiguration {
     }
 }
 
+/// When writing a match expression against `ExecuteCommandLogging`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let executecommandlogging = unimplemented!();
+/// match executecommandlogging {
+///     ExecuteCommandLogging::Default => { /* ... */ },
+///     ExecuteCommandLogging::None => { /* ... */ },
+///     ExecuteCommandLogging::Override => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `executecommandlogging` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ExecuteCommandLogging::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ExecuteCommandLogging::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ExecuteCommandLogging::NewFeature` is defined.
+/// Specifically, when `executecommandlogging` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ExecuteCommandLogging::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7012,8 +7638,8 @@ pub enum ExecuteCommandLogging {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Override,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExecuteCommandLogging {
     fn from(s: &str) -> Self {
@@ -7021,7 +7647,9 @@ impl std::convert::From<&str> for ExecuteCommandLogging {
             "DEFAULT" => ExecuteCommandLogging::Default,
             "NONE" => ExecuteCommandLogging::None,
             "OVERRIDE" => ExecuteCommandLogging::Override,
-            other => ExecuteCommandLogging::Unknown(other.to_owned()),
+            other => {
+                ExecuteCommandLogging::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -7039,7 +7667,7 @@ impl ExecuteCommandLogging {
             ExecuteCommandLogging::Default => "DEFAULT",
             ExecuteCommandLogging::None => "NONE",
             ExecuteCommandLogging::Override => "OVERRIDE",
-            ExecuteCommandLogging::Unknown(s) => s.as_ref(),
+            ExecuteCommandLogging::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -7383,6 +8011,45 @@ impl CapacityProvider {
     }
 }
 
+/// When writing a match expression against `CapacityProviderUpdateStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let capacityproviderupdatestatus = unimplemented!();
+/// match capacityproviderupdatestatus {
+///     CapacityProviderUpdateStatus::DeleteComplete => { /* ... */ },
+///     CapacityProviderUpdateStatus::DeleteFailed => { /* ... */ },
+///     CapacityProviderUpdateStatus::DeleteInProgress => { /* ... */ },
+///     CapacityProviderUpdateStatus::UpdateComplete => { /* ... */ },
+///     CapacityProviderUpdateStatus::UpdateFailed => { /* ... */ },
+///     CapacityProviderUpdateStatus::UpdateInProgress => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `capacityproviderupdatestatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CapacityProviderUpdateStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CapacityProviderUpdateStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CapacityProviderUpdateStatus::NewFeature` is defined.
+/// Specifically, when `capacityproviderupdatestatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CapacityProviderUpdateStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7407,8 +8074,8 @@ pub enum CapacityProviderUpdateStatus {
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CapacityProviderUpdateStatus {
     fn from(s: &str) -> Self {
@@ -7419,7 +8086,9 @@ impl std::convert::From<&str> for CapacityProviderUpdateStatus {
             "UPDATE_COMPLETE" => CapacityProviderUpdateStatus::UpdateComplete,
             "UPDATE_FAILED" => CapacityProviderUpdateStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => CapacityProviderUpdateStatus::UpdateInProgress,
-            other => CapacityProviderUpdateStatus::Unknown(other.to_owned()),
+            other => CapacityProviderUpdateStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -7440,7 +8109,7 @@ impl CapacityProviderUpdateStatus {
             CapacityProviderUpdateStatus::UpdateComplete => "UPDATE_COMPLETE",
             CapacityProviderUpdateStatus::UpdateFailed => "UPDATE_FAILED",
             CapacityProviderUpdateStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            CapacityProviderUpdateStatus::Unknown(s) => s.as_ref(),
+            CapacityProviderUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -7591,6 +8260,41 @@ impl AutoScalingGroupProvider {
     }
 }
 
+/// When writing a match expression against `ManagedTerminationProtection`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let managedterminationprotection = unimplemented!();
+/// match managedterminationprotection {
+///     ManagedTerminationProtection::Disabled => { /* ... */ },
+///     ManagedTerminationProtection::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `managedterminationprotection` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ManagedTerminationProtection::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ManagedTerminationProtection::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ManagedTerminationProtection::NewFeature` is defined.
+/// Specifically, when `managedterminationprotection` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ManagedTerminationProtection::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7607,15 +8311,17 @@ pub enum ManagedTerminationProtection {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ManagedTerminationProtection {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ManagedTerminationProtection::Disabled,
             "ENABLED" => ManagedTerminationProtection::Enabled,
-            other => ManagedTerminationProtection::Unknown(other.to_owned()),
+            other => ManagedTerminationProtection::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -7632,7 +8338,7 @@ impl ManagedTerminationProtection {
         match self {
             ManagedTerminationProtection::Disabled => "DISABLED",
             ManagedTerminationProtection::Enabled => "ENABLED",
-            ManagedTerminationProtection::Unknown(s) => s.as_ref(),
+            ManagedTerminationProtection::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -7786,6 +8492,41 @@ impl ManagedScaling {
     }
 }
 
+/// When writing a match expression against `ManagedScalingStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let managedscalingstatus = unimplemented!();
+/// match managedscalingstatus {
+///     ManagedScalingStatus::Disabled => { /* ... */ },
+///     ManagedScalingStatus::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `managedscalingstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ManagedScalingStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ManagedScalingStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ManagedScalingStatus::NewFeature` is defined.
+/// Specifically, when `managedscalingstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ManagedScalingStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7802,15 +8543,17 @@ pub enum ManagedScalingStatus {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ManagedScalingStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ManagedScalingStatus::Disabled,
             "ENABLED" => ManagedScalingStatus::Enabled,
-            other => ManagedScalingStatus::Unknown(other.to_owned()),
+            other => {
+                ManagedScalingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -7827,7 +8570,7 @@ impl ManagedScalingStatus {
         match self {
             ManagedScalingStatus::Disabled => "DISABLED",
             ManagedScalingStatus::Enabled => "ENABLED",
-            ManagedScalingStatus::Unknown(s) => s.as_ref(),
+            ManagedScalingStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -7841,6 +8584,41 @@ impl AsRef<str> for ManagedScalingStatus {
     }
 }
 
+/// When writing a match expression against `CapacityProviderStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let capacityproviderstatus = unimplemented!();
+/// match capacityproviderstatus {
+///     CapacityProviderStatus::Active => { /* ... */ },
+///     CapacityProviderStatus::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `capacityproviderstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CapacityProviderStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CapacityProviderStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CapacityProviderStatus::NewFeature` is defined.
+/// Specifically, when `capacityproviderstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CapacityProviderStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -7857,15 +8635,17 @@ pub enum CapacityProviderStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CapacityProviderStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CapacityProviderStatus::Active,
             "INACTIVE" => CapacityProviderStatus::Inactive,
-            other => CapacityProviderStatus::Unknown(other.to_owned()),
+            other => {
+                CapacityProviderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -7882,7 +8662,7 @@ impl CapacityProviderStatus {
         match self {
             CapacityProviderStatus::Active => "ACTIVE",
             CapacityProviderStatus::Inactive => "INACTIVE",
-            CapacityProviderStatus::Unknown(s) => s.as_ref(),
+            CapacityProviderStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -8124,6 +8904,40 @@ impl ManagedAgentStateChange {
     }
 }
 
+/// When writing a match expression against `ManagedAgentName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let managedagentname = unimplemented!();
+/// match managedagentname {
+///     ManagedAgentName::ExecuteCommandAgent => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `managedagentname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ManagedAgentName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ManagedAgentName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ManagedAgentName::NewFeature` is defined.
+/// Specifically, when `managedagentname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ManagedAgentName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8138,14 +8952,14 @@ impl ManagedAgentStateChange {
 pub enum ManagedAgentName {
     #[allow(missing_docs)] // documentation missing in model
     ExecuteCommandAgent,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ManagedAgentName {
     fn from(s: &str) -> Self {
         match s {
             "ExecuteCommandAgent" => ManagedAgentName::ExecuteCommandAgent,
-            other => ManagedAgentName::Unknown(other.to_owned()),
+            other => ManagedAgentName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -8161,7 +8975,7 @@ impl ManagedAgentName {
     pub fn as_str(&self) -> &str {
         match self {
             ManagedAgentName::ExecuteCommandAgent => "ExecuteCommandAgent",
-            ManagedAgentName::Unknown(s) => s.as_ref(),
+            ManagedAgentName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -8559,6 +9373,41 @@ impl NetworkBinding {
     }
 }
 
+/// When writing a match expression against `TransportProtocol`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let transportprotocol = unimplemented!();
+/// match transportprotocol {
+///     TransportProtocol::Tcp => { /* ... */ },
+///     TransportProtocol::Udp => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `transportprotocol` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TransportProtocol::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TransportProtocol::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TransportProtocol::NewFeature` is defined.
+/// Specifically, when `transportprotocol` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TransportProtocol::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -8575,15 +9424,17 @@ pub enum TransportProtocol {
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TransportProtocol {
     fn from(s: &str) -> Self {
         match s {
             "tcp" => TransportProtocol::Tcp,
             "udp" => TransportProtocol::Udp,
-            other => TransportProtocol::Unknown(other.to_owned()),
+            other => {
+                TransportProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -8600,7 +9451,7 @@ impl TransportProtocol {
         match self {
             TransportProtocol::Tcp => "tcp",
             TransportProtocol::Udp => "udp",
-            TransportProtocol::Unknown(s) => s.as_ref(),
+            TransportProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -9721,6 +10572,42 @@ impl EphemeralStorage {
     }
 }
 
+/// When writing a match expression against `TaskStopCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskstopcode = unimplemented!();
+/// match taskstopcode {
+///     TaskStopCode::EssentialContainerExited => { /* ... */ },
+///     TaskStopCode::TaskFailedToStart => { /* ... */ },
+///     TaskStopCode::UserInitiated => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskstopcode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskStopCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskStopCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskStopCode::NewFeature` is defined.
+/// Specifically, when `taskstopcode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskStopCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9739,8 +10626,8 @@ pub enum TaskStopCode {
     TaskFailedToStart,
     #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskStopCode {
     fn from(s: &str) -> Self {
@@ -9748,7 +10635,7 @@ impl std::convert::From<&str> for TaskStopCode {
             "EssentialContainerExited" => TaskStopCode::EssentialContainerExited,
             "TaskFailedToStart" => TaskStopCode::TaskFailedToStart,
             "UserInitiated" => TaskStopCode::UserInitiated,
-            other => TaskStopCode::Unknown(other.to_owned()),
+            other => TaskStopCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -9766,7 +10653,7 @@ impl TaskStopCode {
             TaskStopCode::EssentialContainerExited => "EssentialContainerExited",
             TaskStopCode::TaskFailedToStart => "TaskFailedToStart",
             TaskStopCode::UserInitiated => "UserInitiated",
-            TaskStopCode::Unknown(s) => s.as_ref(),
+            TaskStopCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -10415,6 +11302,41 @@ impl ResourceRequirement {
     }
 }
 
+/// When writing a match expression against `ResourceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let resourcetype = unimplemented!();
+/// match resourcetype {
+///     ResourceType::Gpu => { /* ... */ },
+///     ResourceType::InferenceAccelerator => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `resourcetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ResourceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ResourceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ResourceType::NewFeature` is defined.
+/// Specifically, when `resourcetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10431,15 +11353,15 @@ pub enum ResourceType {
     Gpu,
     #[allow(missing_docs)] // documentation missing in model
     InferenceAccelerator,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "GPU" => ResourceType::Gpu,
             "InferenceAccelerator" => ResourceType::InferenceAccelerator,
-            other => ResourceType::Unknown(other.to_owned()),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -10456,7 +11378,7 @@ impl ResourceType {
         match self {
             ResourceType::Gpu => "GPU",
             ResourceType::InferenceAccelerator => "InferenceAccelerator",
-            ResourceType::Unknown(s) => s.as_ref(),
+            ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -10554,6 +11476,40 @@ impl EnvironmentFile {
     }
 }
 
+/// When writing a match expression against `EnvironmentFileType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let environmentfiletype = unimplemented!();
+/// match environmentfiletype {
+///     EnvironmentFileType::S3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `environmentfiletype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EnvironmentFileType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EnvironmentFileType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EnvironmentFileType::NewFeature` is defined.
+/// Specifically, when `environmentfiletype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EnvironmentFileType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -10568,14 +11524,16 @@ impl EnvironmentFile {
 pub enum EnvironmentFileType {
     #[allow(missing_docs)] // documentation missing in model
     S3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EnvironmentFileType {
     fn from(s: &str) -> Self {
         match s {
             "s3" => EnvironmentFileType::S3,
-            other => EnvironmentFileType::Unknown(other.to_owned()),
+            other => {
+                EnvironmentFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -10591,7 +11549,7 @@ impl EnvironmentFileType {
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentFileType::S3 => "s3",
-            EnvironmentFileType::Unknown(s) => s.as_ref(),
+            EnvironmentFileType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -10680,6 +11638,42 @@ impl InferenceAccelerator {
     }
 }
 
+/// When writing a match expression against `HealthStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let healthstatus = unimplemented!();
+/// match healthstatus {
+///     HealthStatus::Healthy => { /* ... */ },
+///     HealthStatus::Unhealthy => { /* ... */ },
+///     HealthStatus::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `healthstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `HealthStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `HealthStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `HealthStatus::NewFeature` is defined.
+/// Specifically, when `healthstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `HealthStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// _Note: `HealthStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -10698,8 +11692,8 @@ pub enum HealthStatus {
     Unhealthy,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HealthStatus {
     fn from(s: &str) -> Self {
@@ -10707,7 +11701,7 @@ impl std::convert::From<&str> for HealthStatus {
             "HEALTHY" => HealthStatus::Healthy,
             "UNHEALTHY" => HealthStatus::Unhealthy,
             "UNKNOWN" => HealthStatus::UnknownValue,
-            other => HealthStatus::Unknown(other.to_owned()),
+            other => HealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -10725,7 +11719,7 @@ impl HealthStatus {
             HealthStatus::Healthy => "HEALTHY",
             HealthStatus::Unhealthy => "UNHEALTHY",
             HealthStatus::UnknownValue => "UNKNOWN",
-            HealthStatus::Unknown(s) => s.as_ref(),
+            HealthStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -11391,6 +12385,41 @@ impl NetworkInterface {
     }
 }
 
+/// When writing a match expression against `Connectivity`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let connectivity = unimplemented!();
+/// match connectivity {
+///     Connectivity::Connected => { /* ... */ },
+///     Connectivity::Disconnected => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `connectivity` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Connectivity::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Connectivity::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Connectivity::NewFeature` is defined.
+/// Specifically, when `connectivity` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Connectivity::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -11407,15 +12436,15 @@ pub enum Connectivity {
     Connected,
     #[allow(missing_docs)] // documentation missing in model
     Disconnected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Connectivity {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTED" => Connectivity::Connected,
             "DISCONNECTED" => Connectivity::Disconnected,
-            other => Connectivity::Unknown(other.to_owned()),
+            other => Connectivity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -11432,7 +12461,7 @@ impl Connectivity {
         match self {
             Connectivity::Connected => "CONNECTED",
             Connectivity::Disconnected => "DISCONNECTED",
-            Connectivity::Unknown(s) => s.as_ref(),
+            Connectivity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12422,6 +13451,40 @@ impl ProxyConfiguration {
     }
 }
 
+/// When writing a match expression against `ProxyConfigurationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let proxyconfigurationtype = unimplemented!();
+/// match proxyconfigurationtype {
+///     ProxyConfigurationType::Appmesh => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `proxyconfigurationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ProxyConfigurationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ProxyConfigurationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ProxyConfigurationType::NewFeature` is defined.
+/// Specifically, when `proxyconfigurationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ProxyConfigurationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12436,14 +13499,16 @@ impl ProxyConfiguration {
 pub enum ProxyConfigurationType {
     #[allow(missing_docs)] // documentation missing in model
     Appmesh,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProxyConfigurationType {
     fn from(s: &str) -> Self {
         match s {
             "APPMESH" => ProxyConfigurationType::Appmesh,
-            other => ProxyConfigurationType::Unknown(other.to_owned()),
+            other => {
+                ProxyConfigurationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -12459,7 +13524,7 @@ impl ProxyConfigurationType {
     pub fn as_str(&self) -> &str {
         match self {
             ProxyConfigurationType::Appmesh => "APPMESH",
-            ProxyConfigurationType::Unknown(s) => s.as_ref(),
+            ProxyConfigurationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12473,6 +13538,42 @@ impl AsRef<str> for ProxyConfigurationType {
     }
 }
 
+/// When writing a match expression against `IpcMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ipcmode = unimplemented!();
+/// match ipcmode {
+///     IpcMode::Host => { /* ... */ },
+///     IpcMode::None => { /* ... */ },
+///     IpcMode::Task => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ipcmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `IpcMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `IpcMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `IpcMode::NewFeature` is defined.
+/// Specifically, when `ipcmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `IpcMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12491,8 +13592,8 @@ pub enum IpcMode {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Task,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpcMode {
     fn from(s: &str) -> Self {
@@ -12500,7 +13601,7 @@ impl std::convert::From<&str> for IpcMode {
             "host" => IpcMode::Host,
             "none" => IpcMode::None,
             "task" => IpcMode::Task,
-            other => IpcMode::Unknown(other.to_owned()),
+            other => IpcMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -12518,7 +13619,7 @@ impl IpcMode {
             IpcMode::Host => "host",
             IpcMode::None => "none",
             IpcMode::Task => "task",
-            IpcMode::Unknown(s) => s.as_ref(),
+            IpcMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12532,6 +13633,41 @@ impl AsRef<str> for IpcMode {
     }
 }
 
+/// When writing a match expression against `PidMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let pidmode = unimplemented!();
+/// match pidmode {
+///     PidMode::Host => { /* ... */ },
+///     PidMode::Task => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `pidmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PidMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PidMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PidMode::NewFeature` is defined.
+/// Specifically, when `pidmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PidMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12548,15 +13684,15 @@ pub enum PidMode {
     Host,
     #[allow(missing_docs)] // documentation missing in model
     Task,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PidMode {
     fn from(s: &str) -> Self {
         match s {
             "host" => PidMode::Host,
             "task" => PidMode::Task,
-            other => PidMode::Unknown(other.to_owned()),
+            other => PidMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -12573,7 +13709,7 @@ impl PidMode {
         match self {
             PidMode::Host => "host",
             PidMode::Task => "task",
-            PidMode::Unknown(s) => s.as_ref(),
+            PidMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12587,6 +13723,42 @@ impl AsRef<str> for PidMode {
     }
 }
 
+/// When writing a match expression against `Compatibility`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let compatibility = unimplemented!();
+/// match compatibility {
+///     Compatibility::Ec2 => { /* ... */ },
+///     Compatibility::External => { /* ... */ },
+///     Compatibility::Fargate => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `compatibility` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Compatibility::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Compatibility::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Compatibility::NewFeature` is defined.
+/// Specifically, when `compatibility` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Compatibility::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12605,8 +13777,8 @@ pub enum Compatibility {
     External,
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Compatibility {
     fn from(s: &str) -> Self {
@@ -12614,7 +13786,7 @@ impl std::convert::From<&str> for Compatibility {
             "EC2" => Compatibility::Ec2,
             "EXTERNAL" => Compatibility::External,
             "FARGATE" => Compatibility::Fargate,
-            other => Compatibility::Unknown(other.to_owned()),
+            other => Compatibility::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -12632,7 +13804,7 @@ impl Compatibility {
             Compatibility::Ec2 => "EC2",
             Compatibility::External => "EXTERNAL",
             Compatibility::Fargate => "FARGATE",
-            Compatibility::Unknown(s) => s.as_ref(),
+            Compatibility::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12732,6 +13904,47 @@ impl RuntimePlatform {
     }
 }
 
+/// When writing a match expression against `OsFamily`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let osfamily = unimplemented!();
+/// match osfamily {
+///     OsFamily::Linux => { /* ... */ },
+///     OsFamily::WindowsServer2004Core => { /* ... */ },
+///     OsFamily::WindowsServer2016Full => { /* ... */ },
+///     OsFamily::WindowsServer2019Core => { /* ... */ },
+///     OsFamily::WindowsServer2019Full => { /* ... */ },
+///     OsFamily::WindowsServer2022Core => { /* ... */ },
+///     OsFamily::WindowsServer2022Full => { /* ... */ },
+///     OsFamily::WindowsServer20H2Core => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `osfamily` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `OsFamily::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `OsFamily::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `OsFamily::NewFeature` is defined.
+/// Specifically, when `osfamily` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `OsFamily::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12760,8 +13973,8 @@ pub enum OsFamily {
     WindowsServer2022Full,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer20H2Core,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OsFamily {
     fn from(s: &str) -> Self {
@@ -12774,7 +13987,7 @@ impl std::convert::From<&str> for OsFamily {
             "WINDOWS_SERVER_2022_CORE" => OsFamily::WindowsServer2022Core,
             "WINDOWS_SERVER_2022_FULL" => OsFamily::WindowsServer2022Full,
             "WINDOWS_SERVER_20H2_CORE" => OsFamily::WindowsServer20H2Core,
-            other => OsFamily::Unknown(other.to_owned()),
+            other => OsFamily::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -12797,7 +14010,7 @@ impl OsFamily {
             OsFamily::WindowsServer2022Core => "WINDOWS_SERVER_2022_CORE",
             OsFamily::WindowsServer2022Full => "WINDOWS_SERVER_2022_FULL",
             OsFamily::WindowsServer20H2Core => "WINDOWS_SERVER_20H2_CORE",
-            OsFamily::Unknown(s) => s.as_ref(),
+            OsFamily::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12820,6 +14033,41 @@ impl AsRef<str> for OsFamily {
     }
 }
 
+/// When writing a match expression against `CpuArchitecture`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let cpuarchitecture = unimplemented!();
+/// match cpuarchitecture {
+///     CpuArchitecture::Arm64 => { /* ... */ },
+///     CpuArchitecture::X8664 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `cpuarchitecture` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CpuArchitecture::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CpuArchitecture::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CpuArchitecture::NewFeature` is defined.
+/// Specifically, when `cpuarchitecture` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CpuArchitecture::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12836,15 +14084,15 @@ pub enum CpuArchitecture {
     Arm64,
     #[allow(missing_docs)] // documentation missing in model
     X8664,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CpuArchitecture {
     fn from(s: &str) -> Self {
         match s {
             "ARM64" => CpuArchitecture::Arm64,
             "X86_64" => CpuArchitecture::X8664,
-            other => CpuArchitecture::Unknown(other.to_owned()),
+            other => CpuArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -12861,7 +14109,7 @@ impl CpuArchitecture {
         match self {
             CpuArchitecture::Arm64 => "ARM64",
             CpuArchitecture::X8664 => "X86_64",
-            CpuArchitecture::Unknown(s) => s.as_ref(),
+            CpuArchitecture::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -12960,6 +14208,40 @@ impl TaskDefinitionPlacementConstraint {
     }
 }
 
+/// When writing a match expression against `TaskDefinitionPlacementConstraintType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskdefinitionplacementconstrainttype = unimplemented!();
+/// match taskdefinitionplacementconstrainttype {
+///     TaskDefinitionPlacementConstraintType::MemberOf => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskdefinitionplacementconstrainttype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskDefinitionPlacementConstraintType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskDefinitionPlacementConstraintType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskDefinitionPlacementConstraintType::NewFeature` is defined.
+/// Specifically, when `taskdefinitionplacementconstrainttype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskDefinitionPlacementConstraintType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -12974,14 +14256,16 @@ impl TaskDefinitionPlacementConstraint {
 pub enum TaskDefinitionPlacementConstraintType {
     #[allow(missing_docs)] // documentation missing in model
     MemberOf,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskDefinitionPlacementConstraintType {
     fn from(s: &str) -> Self {
         match s {
             "memberOf" => TaskDefinitionPlacementConstraintType::MemberOf,
-            other => TaskDefinitionPlacementConstraintType::Unknown(other.to_owned()),
+            other => TaskDefinitionPlacementConstraintType::Unknown(
+                crate::types::UnknownVariantValue(other.to_owned()),
+            ),
         }
     }
 }
@@ -12997,7 +14281,7 @@ impl TaskDefinitionPlacementConstraintType {
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionPlacementConstraintType::MemberOf => "memberOf",
-            TaskDefinitionPlacementConstraintType::Unknown(s) => s.as_ref(),
+            TaskDefinitionPlacementConstraintType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -13011,6 +14295,41 @@ impl AsRef<str> for TaskDefinitionPlacementConstraintType {
     }
 }
 
+/// When writing a match expression against `TaskDefinitionStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskdefinitionstatus = unimplemented!();
+/// match taskdefinitionstatus {
+///     TaskDefinitionStatus::Active => { /* ... */ },
+///     TaskDefinitionStatus::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskdefinitionstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskDefinitionStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskDefinitionStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskDefinitionStatus::NewFeature` is defined.
+/// Specifically, when `taskdefinitionstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskDefinitionStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13027,15 +14346,17 @@ pub enum TaskDefinitionStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskDefinitionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => TaskDefinitionStatus::Active,
             "INACTIVE" => TaskDefinitionStatus::Inactive,
-            other => TaskDefinitionStatus::Unknown(other.to_owned()),
+            other => {
+                TaskDefinitionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -13052,7 +14373,7 @@ impl TaskDefinitionStatus {
         match self {
             TaskDefinitionStatus::Active => "ACTIVE",
             TaskDefinitionStatus::Inactive => "INACTIVE",
-            TaskDefinitionStatus::Unknown(s) => s.as_ref(),
+            TaskDefinitionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -13684,6 +15005,41 @@ impl EfsAuthorizationConfig {
     }
 }
 
+/// When writing a match expression against `EfsAuthorizationConfigIam`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let efsauthorizationconfigiam = unimplemented!();
+/// match efsauthorizationconfigiam {
+///     EfsAuthorizationConfigIam::Disabled => { /* ... */ },
+///     EfsAuthorizationConfigIam::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `efsauthorizationconfigiam` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EfsAuthorizationConfigIam::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EfsAuthorizationConfigIam::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EfsAuthorizationConfigIam::NewFeature` is defined.
+/// Specifically, when `efsauthorizationconfigiam` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EfsAuthorizationConfigIam::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13700,15 +15056,17 @@ pub enum EfsAuthorizationConfigIam {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EfsAuthorizationConfigIam {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EfsAuthorizationConfigIam::Disabled,
             "ENABLED" => EfsAuthorizationConfigIam::Enabled,
-            other => EfsAuthorizationConfigIam::Unknown(other.to_owned()),
+            other => EfsAuthorizationConfigIam::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -13725,7 +15083,7 @@ impl EfsAuthorizationConfigIam {
         match self {
             EfsAuthorizationConfigIam::Disabled => "DISABLED",
             EfsAuthorizationConfigIam::Enabled => "ENABLED",
-            EfsAuthorizationConfigIam::Unknown(s) => s.as_ref(),
+            EfsAuthorizationConfigIam::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -13739,6 +15097,41 @@ impl AsRef<str> for EfsAuthorizationConfigIam {
     }
 }
 
+/// When writing a match expression against `EfsTransitEncryption`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let efstransitencryption = unimplemented!();
+/// match efstransitencryption {
+///     EfsTransitEncryption::Disabled => { /* ... */ },
+///     EfsTransitEncryption::Enabled => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `efstransitencryption` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EfsTransitEncryption::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EfsTransitEncryption::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EfsTransitEncryption::NewFeature` is defined.
+/// Specifically, when `efstransitencryption` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EfsTransitEncryption::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13755,15 +15148,17 @@ pub enum EfsTransitEncryption {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EfsTransitEncryption {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EfsTransitEncryption::Disabled,
             "ENABLED" => EfsTransitEncryption::Enabled,
-            other => EfsTransitEncryption::Unknown(other.to_owned()),
+            other => {
+                EfsTransitEncryption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -13780,7 +15175,7 @@ impl EfsTransitEncryption {
         match self {
             EfsTransitEncryption::Disabled => "DISABLED",
             EfsTransitEncryption::Enabled => "ENABLED",
-            EfsTransitEncryption::Unknown(s) => s.as_ref(),
+            EfsTransitEncryption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -13979,6 +15374,41 @@ impl DockerVolumeConfiguration {
     }
 }
 
+/// When writing a match expression against `Scope`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let scope = unimplemented!();
+/// match scope {
+///     Scope::Shared => { /* ... */ },
+///     Scope::Task => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `scope` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Scope::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Scope::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Scope::NewFeature` is defined.
+/// Specifically, when `scope` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Scope::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -13995,15 +15425,15 @@ pub enum Scope {
     Shared,
     #[allow(missing_docs)] // documentation missing in model
     Task,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Scope {
     fn from(s: &str) -> Self {
         match s {
             "shared" => Scope::Shared,
             "task" => Scope::Task,
-            other => Scope::Unknown(other.to_owned()),
+            other => Scope::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -14020,7 +15450,7 @@ impl Scope {
         match self {
             Scope::Shared => "shared",
             Scope::Task => "task",
-            Scope::Unknown(s) => s.as_ref(),
+            Scope::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -14093,6 +15523,43 @@ impl HostVolumeProperties {
     }
 }
 
+/// When writing a match expression against `NetworkMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let networkmode = unimplemented!();
+/// match networkmode {
+///     NetworkMode::Awsvpc => { /* ... */ },
+///     NetworkMode::Bridge => { /* ... */ },
+///     NetworkMode::Host => { /* ... */ },
+///     NetworkMode::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `networkmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `NetworkMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `NetworkMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `NetworkMode::NewFeature` is defined.
+/// Specifically, when `networkmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `NetworkMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -14113,8 +15580,8 @@ pub enum NetworkMode {
     Host,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NetworkMode {
     fn from(s: &str) -> Self {
@@ -14123,7 +15590,7 @@ impl std::convert::From<&str> for NetworkMode {
             "bridge" => NetworkMode::Bridge,
             "host" => NetworkMode::Host,
             "none" => NetworkMode::None,
-            other => NetworkMode::Unknown(other.to_owned()),
+            other => NetworkMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -14142,7 +15609,7 @@ impl NetworkMode {
             NetworkMode::Bridge => "bridge",
             NetworkMode::Host => "host",
             NetworkMode::None => "none",
-            NetworkMode::Unknown(s) => s.as_ref(),
+            NetworkMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -15782,6 +17249,41 @@ impl FirelensConfiguration {
     }
 }
 
+/// When writing a match expression against `FirelensConfigurationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let firelensconfigurationtype = unimplemented!();
+/// match firelensconfigurationtype {
+///     FirelensConfigurationType::Fluentbit => { /* ... */ },
+///     FirelensConfigurationType::Fluentd => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `firelensconfigurationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `FirelensConfigurationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `FirelensConfigurationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `FirelensConfigurationType::NewFeature` is defined.
+/// Specifically, when `firelensconfigurationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `FirelensConfigurationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -15798,15 +17300,17 @@ pub enum FirelensConfigurationType {
     Fluentbit,
     #[allow(missing_docs)] // documentation missing in model
     Fluentd,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FirelensConfigurationType {
     fn from(s: &str) -> Self {
         match s {
             "fluentbit" => FirelensConfigurationType::Fluentbit,
             "fluentd" => FirelensConfigurationType::Fluentd,
-            other => FirelensConfigurationType::Unknown(other.to_owned()),
+            other => FirelensConfigurationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -15823,7 +17327,7 @@ impl FirelensConfigurationType {
         match self {
             FirelensConfigurationType::Fluentbit => "fluentbit",
             FirelensConfigurationType::Fluentd => "fluentd",
-            FirelensConfigurationType::Unknown(s) => s.as_ref(),
+            FirelensConfigurationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -16363,6 +17867,47 @@ impl Secret {
     }
 }
 
+/// When writing a match expression against `LogDriver`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let logdriver = unimplemented!();
+/// match logdriver {
+///     LogDriver::Awsfirelens => { /* ... */ },
+///     LogDriver::Awslogs => { /* ... */ },
+///     LogDriver::Fluentd => { /* ... */ },
+///     LogDriver::Gelf => { /* ... */ },
+///     LogDriver::Journald => { /* ... */ },
+///     LogDriver::JsonFile => { /* ... */ },
+///     LogDriver::Splunk => { /* ... */ },
+///     LogDriver::Syslog => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `logdriver` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LogDriver::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LogDriver::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LogDriver::NewFeature` is defined.
+/// Specifically, when `logdriver` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LogDriver::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16391,8 +17936,8 @@ pub enum LogDriver {
     Splunk,
     #[allow(missing_docs)] // documentation missing in model
     Syslog,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LogDriver {
     fn from(s: &str) -> Self {
@@ -16405,7 +17950,7 @@ impl std::convert::From<&str> for LogDriver {
             "json-file" => LogDriver::JsonFile,
             "splunk" => LogDriver::Splunk,
             "syslog" => LogDriver::Syslog,
-            other => LogDriver::Unknown(other.to_owned()),
+            other => LogDriver::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -16428,7 +17973,7 @@ impl LogDriver {
             LogDriver::JsonFile => "json-file",
             LogDriver::Splunk => "splunk",
             LogDriver::Syslog => "syslog",
-            LogDriver::Unknown(s) => s.as_ref(),
+            LogDriver::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -16547,6 +18092,54 @@ impl Ulimit {
     }
 }
 
+/// When writing a match expression against `UlimitName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let ulimitname = unimplemented!();
+/// match ulimitname {
+///     UlimitName::Core => { /* ... */ },
+///     UlimitName::Cpu => { /* ... */ },
+///     UlimitName::Data => { /* ... */ },
+///     UlimitName::Fsize => { /* ... */ },
+///     UlimitName::Locks => { /* ... */ },
+///     UlimitName::Memlock => { /* ... */ },
+///     UlimitName::Msgqueue => { /* ... */ },
+///     UlimitName::Nice => { /* ... */ },
+///     UlimitName::Nofile => { /* ... */ },
+///     UlimitName::Nproc => { /* ... */ },
+///     UlimitName::Rss => { /* ... */ },
+///     UlimitName::Rtprio => { /* ... */ },
+///     UlimitName::Rttime => { /* ... */ },
+///     UlimitName::Sigpending => { /* ... */ },
+///     UlimitName::Stack => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `ulimitname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `UlimitName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `UlimitName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `UlimitName::NewFeature` is defined.
+/// Specifically, when `ulimitname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `UlimitName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16589,8 +18182,8 @@ pub enum UlimitName {
     Sigpending,
     #[allow(missing_docs)] // documentation missing in model
     Stack,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UlimitName {
     fn from(s: &str) -> Self {
@@ -16610,7 +18203,7 @@ impl std::convert::From<&str> for UlimitName {
             "rttime" => UlimitName::Rttime,
             "sigpending" => UlimitName::Sigpending,
             "stack" => UlimitName::Stack,
-            other => UlimitName::Unknown(other.to_owned()),
+            other => UlimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -16640,7 +18233,7 @@ impl UlimitName {
             UlimitName::Rttime => "rttime",
             UlimitName::Sigpending => "sigpending",
             UlimitName::Stack => "stack",
-            UlimitName::Unknown(s) => s.as_ref(),
+            UlimitName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -16857,6 +18450,43 @@ impl ContainerDependency {
     }
 }
 
+/// When writing a match expression against `ContainerCondition`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containercondition = unimplemented!();
+/// match containercondition {
+///     ContainerCondition::Complete => { /* ... */ },
+///     ContainerCondition::Healthy => { /* ... */ },
+///     ContainerCondition::Start => { /* ... */ },
+///     ContainerCondition::Success => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containercondition` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerCondition::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerCondition::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerCondition::NewFeature` is defined.
+/// Specifically, when `containercondition` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerCondition::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -16877,8 +18507,8 @@ pub enum ContainerCondition {
     Start,
     #[allow(missing_docs)] // documentation missing in model
     Success,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerCondition {
     fn from(s: &str) -> Self {
@@ -16887,7 +18517,9 @@ impl std::convert::From<&str> for ContainerCondition {
             "HEALTHY" => ContainerCondition::Healthy,
             "START" => ContainerCondition::Start,
             "SUCCESS" => ContainerCondition::Success,
-            other => ContainerCondition::Unknown(other.to_owned()),
+            other => {
+                ContainerCondition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -16906,7 +18538,7 @@ impl ContainerCondition {
             ContainerCondition::Healthy => "HEALTHY",
             ContainerCondition::Start => "START",
             ContainerCondition::Success => "SUCCESS",
-            ContainerCondition::Unknown(s) => s.as_ref(),
+            ContainerCondition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -17387,6 +19019,42 @@ impl Device {
     }
 }
 
+/// When writing a match expression against `DeviceCgroupPermission`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let devicecgrouppermission = unimplemented!();
+/// match devicecgrouppermission {
+///     DeviceCgroupPermission::Mknod => { /* ... */ },
+///     DeviceCgroupPermission::Read => { /* ... */ },
+///     DeviceCgroupPermission::Write => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `devicecgrouppermission` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DeviceCgroupPermission::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DeviceCgroupPermission::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DeviceCgroupPermission::NewFeature` is defined.
+/// Specifically, when `devicecgrouppermission` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DeviceCgroupPermission::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -17405,8 +19073,8 @@ pub enum DeviceCgroupPermission {
     Read,
     #[allow(missing_docs)] // documentation missing in model
     Write,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeviceCgroupPermission {
     fn from(s: &str) -> Self {
@@ -17414,7 +19082,9 @@ impl std::convert::From<&str> for DeviceCgroupPermission {
             "mknod" => DeviceCgroupPermission::Mknod,
             "read" => DeviceCgroupPermission::Read,
             "write" => DeviceCgroupPermission::Write,
-            other => DeviceCgroupPermission::Unknown(other.to_owned()),
+            other => {
+                DeviceCgroupPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -17432,7 +19102,7 @@ impl DeviceCgroupPermission {
             DeviceCgroupPermission::Mknod => "mknod",
             DeviceCgroupPermission::Read => "read",
             DeviceCgroupPermission::Write => "write",
-            DeviceCgroupPermission::Unknown(s) => s.as_ref(),
+            DeviceCgroupPermission::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18004,6 +19674,40 @@ impl PlatformDevice {
     }
 }
 
+/// When writing a match expression against `PlatformDeviceType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let platformdevicetype = unimplemented!();
+/// match platformdevicetype {
+///     PlatformDeviceType::Gpu => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `platformdevicetype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `PlatformDeviceType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `PlatformDeviceType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `PlatformDeviceType::NewFeature` is defined.
+/// Specifically, when `platformdevicetype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `PlatformDeviceType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18018,14 +19722,16 @@ impl PlatformDevice {
 pub enum PlatformDeviceType {
     #[allow(missing_docs)] // documentation missing in model
     Gpu,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PlatformDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "GPU" => PlatformDeviceType::Gpu,
-            other => PlatformDeviceType::Unknown(other.to_owned()),
+            other => {
+                PlatformDeviceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -18041,7 +19747,7 @@ impl PlatformDeviceType {
     pub fn as_str(&self) -> &str {
         match self {
             PlatformDeviceType::Gpu => "GPU",
-            PlatformDeviceType::Unknown(s) => s.as_ref(),
+            PlatformDeviceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18153,6 +19859,44 @@ impl Setting {
     }
 }
 
+/// When writing a match expression against `SettingName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let settingname = unimplemented!();
+/// match settingname {
+///     SettingName::AwsvpcTrunking => { /* ... */ },
+///     SettingName::ContainerInsights => { /* ... */ },
+///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
+///     SettingName::ServiceLongArnFormat => { /* ... */ },
+///     SettingName::TaskLongArnFormat => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `settingname` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SettingName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SettingName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SettingName::NewFeature` is defined.
+/// Specifically, when `settingname` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SettingName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18175,8 +19919,8 @@ pub enum SettingName {
     ServiceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
     TaskLongArnFormat,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SettingName {
     fn from(s: &str) -> Self {
@@ -18186,7 +19930,7 @@ impl std::convert::From<&str> for SettingName {
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
             "serviceLongArnFormat" => SettingName::ServiceLongArnFormat,
             "taskLongArnFormat" => SettingName::TaskLongArnFormat,
-            other => SettingName::Unknown(other.to_owned()),
+            other => SettingName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18206,7 +19950,7 @@ impl SettingName {
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
             SettingName::ServiceLongArnFormat => "serviceLongArnFormat",
             SettingName::TaskLongArnFormat => "taskLongArnFormat",
-            SettingName::Unknown(s) => s.as_ref(),
+            SettingName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18226,6 +19970,42 @@ impl AsRef<str> for SettingName {
     }
 }
 
+/// When writing a match expression against `DesiredStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let desiredstatus = unimplemented!();
+/// match desiredstatus {
+///     DesiredStatus::Pending => { /* ... */ },
+///     DesiredStatus::Running => { /* ... */ },
+///     DesiredStatus::Stopped => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `desiredstatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DesiredStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DesiredStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DesiredStatus::NewFeature` is defined.
+/// Specifically, when `desiredstatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DesiredStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18244,8 +20024,8 @@ pub enum DesiredStatus {
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DesiredStatus {
     fn from(s: &str) -> Self {
@@ -18253,7 +20033,7 @@ impl std::convert::From<&str> for DesiredStatus {
             "PENDING" => DesiredStatus::Pending,
             "RUNNING" => DesiredStatus::Running,
             "STOPPED" => DesiredStatus::Stopped,
-            other => DesiredStatus::Unknown(other.to_owned()),
+            other => DesiredStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18271,7 +20051,7 @@ impl DesiredStatus {
             DesiredStatus::Pending => "PENDING",
             DesiredStatus::Running => "RUNNING",
             DesiredStatus::Stopped => "STOPPED",
-            DesiredStatus::Unknown(s) => s.as_ref(),
+            DesiredStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18285,6 +20065,41 @@ impl AsRef<str> for DesiredStatus {
     }
 }
 
+/// When writing a match expression against `SortOrder`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sortorder = unimplemented!();
+/// match sortorder {
+///     SortOrder::Asc => { /* ... */ },
+///     SortOrder::Desc => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sortorder` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SortOrder::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SortOrder::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SortOrder::NewFeature` is defined.
+/// Specifically, when `sortorder` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18301,15 +20116,15 @@ pub enum SortOrder {
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Desc,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASC" => SortOrder::Asc,
             "DESC" => SortOrder::Desc,
-            other => SortOrder::Unknown(other.to_owned()),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18326,7 +20141,7 @@ impl SortOrder {
         match self {
             SortOrder::Asc => "ASC",
             SortOrder::Desc => "DESC",
-            SortOrder::Unknown(s) => s.as_ref(),
+            SortOrder::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18340,6 +20155,42 @@ impl AsRef<str> for SortOrder {
     }
 }
 
+/// When writing a match expression against `TaskDefinitionFamilyStatus`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskdefinitionfamilystatus = unimplemented!();
+/// match taskdefinitionfamilystatus {
+///     TaskDefinitionFamilyStatus::Active => { /* ... */ },
+///     TaskDefinitionFamilyStatus::All => { /* ... */ },
+///     TaskDefinitionFamilyStatus::Inactive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskdefinitionfamilystatus` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskDefinitionFamilyStatus::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskDefinitionFamilyStatus::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskDefinitionFamilyStatus::NewFeature` is defined.
+/// Specifically, when `taskdefinitionfamilystatus` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskDefinitionFamilyStatus::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18358,8 +20209,8 @@ pub enum TaskDefinitionFamilyStatus {
     All,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskDefinitionFamilyStatus {
     fn from(s: &str) -> Self {
@@ -18367,7 +20218,9 @@ impl std::convert::From<&str> for TaskDefinitionFamilyStatus {
             "ACTIVE" => TaskDefinitionFamilyStatus::Active,
             "ALL" => TaskDefinitionFamilyStatus::All,
             "INACTIVE" => TaskDefinitionFamilyStatus::Inactive,
-            other => TaskDefinitionFamilyStatus::Unknown(other.to_owned()),
+            other => TaskDefinitionFamilyStatus::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -18385,7 +20238,7 @@ impl TaskDefinitionFamilyStatus {
             TaskDefinitionFamilyStatus::Active => "ACTIVE",
             TaskDefinitionFamilyStatus::All => "ALL",
             TaskDefinitionFamilyStatus::Inactive => "INACTIVE",
-            TaskDefinitionFamilyStatus::Unknown(s) => s.as_ref(),
+            TaskDefinitionFamilyStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18494,6 +20347,40 @@ impl Session {
     }
 }
 
+/// When writing a match expression against `TaskSetField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let tasksetfield = unimplemented!();
+/// match tasksetfield {
+///     TaskSetField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `tasksetfield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskSetField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskSetField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskSetField::NewFeature` is defined.
+/// Specifically, when `tasksetfield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskSetField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18508,14 +20395,14 @@ impl Session {
 pub enum TaskSetField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskSetField {
     fn from(s: &str) -> Self {
         match s {
             "TAGS" => TaskSetField::Tags,
-            other => TaskSetField::Unknown(other.to_owned()),
+            other => TaskSetField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18531,7 +20418,7 @@ impl TaskSetField {
     pub fn as_str(&self) -> &str {
         match self {
             TaskSetField::Tags => "TAGS",
-            TaskSetField::Unknown(s) => s.as_ref(),
+            TaskSetField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18545,6 +20432,40 @@ impl AsRef<str> for TaskSetField {
     }
 }
 
+/// When writing a match expression against `TaskField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskfield = unimplemented!();
+/// match taskfield {
+///     TaskField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskfield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskField::NewFeature` is defined.
+/// Specifically, when `taskfield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18559,14 +20480,14 @@ impl AsRef<str> for TaskSetField {
 pub enum TaskField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskField {
     fn from(s: &str) -> Self {
         match s {
             "TAGS" => TaskField::Tags,
-            other => TaskField::Unknown(other.to_owned()),
+            other => TaskField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18582,7 +20503,7 @@ impl TaskField {
     pub fn as_str(&self) -> &str {
         match self {
             TaskField::Tags => "TAGS",
-            TaskField::Unknown(s) => s.as_ref(),
+            TaskField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18596,6 +20517,40 @@ impl AsRef<str> for TaskField {
     }
 }
 
+/// When writing a match expression against `TaskDefinitionField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let taskdefinitionfield = unimplemented!();
+/// match taskdefinitionfield {
+///     TaskDefinitionField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `taskdefinitionfield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TaskDefinitionField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TaskDefinitionField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TaskDefinitionField::NewFeature` is defined.
+/// Specifically, when `taskdefinitionfield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TaskDefinitionField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18610,14 +20565,16 @@ impl AsRef<str> for TaskField {
 pub enum TaskDefinitionField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TaskDefinitionField {
     fn from(s: &str) -> Self {
         match s {
             "TAGS" => TaskDefinitionField::Tags,
-            other => TaskDefinitionField::Unknown(other.to_owned()),
+            other => {
+                TaskDefinitionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -18633,7 +20590,7 @@ impl TaskDefinitionField {
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionField::Tags => "TAGS",
-            TaskDefinitionField::Unknown(s) => s.as_ref(),
+            TaskDefinitionField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18647,6 +20604,40 @@ impl AsRef<str> for TaskDefinitionField {
     }
 }
 
+/// When writing a match expression against `ServiceField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let servicefield = unimplemented!();
+/// match servicefield {
+///     ServiceField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `servicefield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ServiceField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ServiceField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ServiceField::NewFeature` is defined.
+/// Specifically, when `servicefield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ServiceField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18661,14 +20652,14 @@ impl AsRef<str> for TaskDefinitionField {
 pub enum ServiceField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceField {
     fn from(s: &str) -> Self {
         match s {
             "TAGS" => ServiceField::Tags,
-            other => ServiceField::Unknown(other.to_owned()),
+            other => ServiceField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18684,7 +20675,7 @@ impl ServiceField {
     pub fn as_str(&self) -> &str {
         match self {
             ServiceField::Tags => "TAGS",
-            ServiceField::Unknown(s) => s.as_ref(),
+            ServiceField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18698,6 +20689,41 @@ impl AsRef<str> for ServiceField {
     }
 }
 
+/// When writing a match expression against `ContainerInstanceField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let containerinstancefield = unimplemented!();
+/// match containerinstancefield {
+///     ContainerInstanceField::ContainerInstanceHealth => { /* ... */ },
+///     ContainerInstanceField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `containerinstancefield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ContainerInstanceField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ContainerInstanceField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ContainerInstanceField::NewFeature` is defined.
+/// Specifically, when `containerinstancefield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ContainerInstanceField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18714,15 +20740,17 @@ pub enum ContainerInstanceField {
     ContainerInstanceHealth,
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerInstanceField {
     fn from(s: &str) -> Self {
         match s {
             "CONTAINER_INSTANCE_HEALTH" => ContainerInstanceField::ContainerInstanceHealth,
             "TAGS" => ContainerInstanceField::Tags,
-            other => ContainerInstanceField::Unknown(other.to_owned()),
+            other => {
+                ContainerInstanceField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -18739,7 +20767,7 @@ impl ContainerInstanceField {
         match self {
             ContainerInstanceField::ContainerInstanceHealth => "CONTAINER_INSTANCE_HEALTH",
             ContainerInstanceField::Tags => "TAGS",
-            ContainerInstanceField::Unknown(s) => s.as_ref(),
+            ContainerInstanceField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18753,6 +20781,44 @@ impl AsRef<str> for ContainerInstanceField {
     }
 }
 
+/// When writing a match expression against `ClusterField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let clusterfield = unimplemented!();
+/// match clusterfield {
+///     ClusterField::Attachments => { /* ... */ },
+///     ClusterField::Configurations => { /* ... */ },
+///     ClusterField::Settings => { /* ... */ },
+///     ClusterField::Statistics => { /* ... */ },
+///     ClusterField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `clusterfield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ClusterField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ClusterField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ClusterField::NewFeature` is defined.
+/// Specifically, when `clusterfield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ClusterField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18775,8 +20841,8 @@ pub enum ClusterField {
     Statistics,
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ClusterField {
     fn from(s: &str) -> Self {
@@ -18786,7 +20852,7 @@ impl std::convert::From<&str> for ClusterField {
             "SETTINGS" => ClusterField::Settings,
             "STATISTICS" => ClusterField::Statistics,
             "TAGS" => ClusterField::Tags,
-            other => ClusterField::Unknown(other.to_owned()),
+            other => ClusterField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -18806,7 +20872,7 @@ impl ClusterField {
             ClusterField::Settings => "SETTINGS",
             ClusterField::Statistics => "STATISTICS",
             ClusterField::Tags => "TAGS",
-            ClusterField::Unknown(s) => s.as_ref(),
+            ClusterField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -18826,6 +20892,40 @@ impl AsRef<str> for ClusterField {
     }
 }
 
+/// When writing a match expression against `CapacityProviderField`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let capacityproviderfield = unimplemented!();
+/// match capacityproviderfield {
+///     CapacityProviderField::Tags => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `capacityproviderfield` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CapacityProviderField::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CapacityProviderField::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CapacityProviderField::NewFeature` is defined.
+/// Specifically, when `capacityproviderfield` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CapacityProviderField::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -18840,14 +20940,16 @@ impl AsRef<str> for ClusterField {
 pub enum CapacityProviderField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CapacityProviderField {
     fn from(s: &str) -> Self {
         match s {
             "TAGS" => CapacityProviderField::Tags,
-            other => CapacityProviderField::Unknown(other.to_owned()),
+            other => {
+                CapacityProviderField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -18863,7 +20965,7 @@ impl CapacityProviderField {
     pub fn as_str(&self) -> &str {
         match self {
             CapacityProviderField::Tags => "TAGS",
-            CapacityProviderField::Unknown(s) => s.as_ref(),
+            CapacityProviderField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

@@ -225,6 +225,41 @@ impl EntitlementValue {
     }
 }
 
+/// When writing a match expression against `GetEntitlementFilterName`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let getentitlementfiltername = unimplemented!();
+/// match getentitlementfiltername {
+///     GetEntitlementFilterName::CustomerIdentifier => { /* ... */ },
+///     GetEntitlementFilterName::Dimension => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `getentitlementfiltername` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `GetEntitlementFilterName::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `GetEntitlementFilterName::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `GetEntitlementFilterName::NewFeature` is defined.
+/// Specifically, when `getentitlementfiltername` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `GetEntitlementFilterName::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -241,15 +276,17 @@ pub enum GetEntitlementFilterName {
     CustomerIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     Dimension,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GetEntitlementFilterName {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOMER_IDENTIFIER" => GetEntitlementFilterName::CustomerIdentifier,
             "DIMENSION" => GetEntitlementFilterName::Dimension,
-            other => GetEntitlementFilterName::Unknown(other.to_owned()),
+            other => GetEntitlementFilterName::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -266,7 +303,7 @@ impl GetEntitlementFilterName {
         match self {
             GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
             GetEntitlementFilterName::Dimension => "DIMENSION",
-            GetEntitlementFilterName::Unknown(s) => s.as_ref(),
+            GetEntitlementFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

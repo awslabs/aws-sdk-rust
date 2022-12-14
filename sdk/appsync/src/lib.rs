@@ -55,14 +55,10 @@ mod operation_deser;
 mod operation_ser;
 /// Output structures for operations.
 pub mod output;
+/// Data primitives referenced by other data types.
+pub mod types;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Re-exported types from supporting crates.
-pub mod types {
-    pub use aws_smithy_http::result::SdkError;
-    pub use aws_smithy_types::error::display::DisplayErrorContext;
-    pub use aws_smithy_types::Blob;
-}
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("appsync", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;

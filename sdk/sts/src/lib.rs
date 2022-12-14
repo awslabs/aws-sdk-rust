@@ -56,15 +56,11 @@ mod operation_ser;
 pub mod output;
 mod query_ser;
 mod rest_xml_wrapped_errors;
+/// Data primitives referenced by other data types.
+pub mod types;
 mod xml_deser;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Re-exported types from supporting crates.
-pub mod types {
-    pub use aws_smithy_http::result::SdkError;
-    pub use aws_smithy_types::error::display::DisplayErrorContext;
-    pub use aws_smithy_types::DateTime;
-}
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("sts", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;

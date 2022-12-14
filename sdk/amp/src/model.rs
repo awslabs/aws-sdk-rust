@@ -75,6 +75,43 @@ impl ValidationExceptionField {
     }
 }
 
+/// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let validationexceptionreason = unimplemented!();
+/// match validationexceptionreason {
+///     ValidationExceptionReason::CannotParse => { /* ... */ },
+///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::Other => { /* ... */ },
+///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `validationexceptionreason` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `ValidationExceptionReason::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `ValidationExceptionReason::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `ValidationExceptionReason::NewFeature` is defined.
+/// Specifically, when `validationexceptionreason` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// Possible reasons a request failed validation.
 #[non_exhaustive]
 #[derive(
@@ -95,8 +132,8 @@ pub enum ValidationExceptionReason {
     Other,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -105,7 +142,9 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(other.to_owned()),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -124,7 +163,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(s) => s.as_ref(),
+            ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -383,6 +422,44 @@ impl WorkspaceStatus {
     }
 }
 
+/// When writing a match expression against `WorkspaceStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let workspacestatuscode = unimplemented!();
+/// match workspacestatuscode {
+///     WorkspaceStatusCode::Active => { /* ... */ },
+///     WorkspaceStatusCode::Creating => { /* ... */ },
+///     WorkspaceStatusCode::CreationFailed => { /* ... */ },
+///     WorkspaceStatusCode::Deleting => { /* ... */ },
+///     WorkspaceStatusCode::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `workspacestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `WorkspaceStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `WorkspaceStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `WorkspaceStatusCode::NewFeature` is defined.
+/// Specifically, when `workspacestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `WorkspaceStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// State of a workspace.
 #[non_exhaustive]
 #[derive(
@@ -405,8 +482,8 @@ pub enum WorkspaceStatusCode {
     Deleting,
     /// Workspace is being updated. Updates are allowed only when status is ACTIVE.
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for WorkspaceStatusCode {
     fn from(s: &str) -> Self {
@@ -416,7 +493,9 @@ impl std::convert::From<&str> for WorkspaceStatusCode {
             "CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
             "DELETING" => WorkspaceStatusCode::Deleting,
             "UPDATING" => WorkspaceStatusCode::Updating,
-            other => WorkspaceStatusCode::Unknown(other.to_owned()),
+            other => {
+                WorkspaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -436,7 +515,7 @@ impl WorkspaceStatusCode {
             WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
             WorkspaceStatusCode::Deleting => "DELETING",
             WorkspaceStatusCode::Updating => "UPDATING",
-            WorkspaceStatusCode::Unknown(s) => s.as_ref(),
+            WorkspaceStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -927,6 +1006,45 @@ impl RuleGroupsNamespaceStatus {
     }
 }
 
+/// When writing a match expression against `RuleGroupsNamespaceStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let rulegroupsnamespacestatuscode = unimplemented!();
+/// match rulegroupsnamespacestatuscode {
+///     RuleGroupsNamespaceStatusCode::Active => { /* ... */ },
+///     RuleGroupsNamespaceStatusCode::Creating => { /* ... */ },
+///     RuleGroupsNamespaceStatusCode::CreationFailed => { /* ... */ },
+///     RuleGroupsNamespaceStatusCode::Deleting => { /* ... */ },
+///     RuleGroupsNamespaceStatusCode::UpdateFailed => { /* ... */ },
+///     RuleGroupsNamespaceStatusCode::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `rulegroupsnamespacestatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RuleGroupsNamespaceStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RuleGroupsNamespaceStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RuleGroupsNamespaceStatusCode::NewFeature` is defined.
+/// Specifically, when `rulegroupsnamespacestatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RuleGroupsNamespaceStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// State of a namespace.
 #[non_exhaustive]
 #[derive(
@@ -951,8 +1069,8 @@ pub enum RuleGroupsNamespaceStatusCode {
     UpdateFailed,
     /// Namespace is being updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
     fn from(s: &str) -> Self {
@@ -963,7 +1081,9 @@ impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
             "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
             "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
             "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
-            other => RuleGroupsNamespaceStatusCode::Unknown(other.to_owned()),
+            other => RuleGroupsNamespaceStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -984,7 +1104,7 @@ impl RuleGroupsNamespaceStatusCode {
             RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
             RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
             RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
-            RuleGroupsNamespaceStatusCode::Unknown(s) => s.as_ref(),
+            RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1293,6 +1413,45 @@ impl LoggingConfigurationStatus {
     }
 }
 
+/// When writing a match expression against `LoggingConfigurationStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let loggingconfigurationstatuscode = unimplemented!();
+/// match loggingconfigurationstatuscode {
+///     LoggingConfigurationStatusCode::Active => { /* ... */ },
+///     LoggingConfigurationStatusCode::Creating => { /* ... */ },
+///     LoggingConfigurationStatusCode::CreationFailed => { /* ... */ },
+///     LoggingConfigurationStatusCode::Deleting => { /* ... */ },
+///     LoggingConfigurationStatusCode::UpdateFailed => { /* ... */ },
+///     LoggingConfigurationStatusCode::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `loggingconfigurationstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LoggingConfigurationStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LoggingConfigurationStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LoggingConfigurationStatusCode::NewFeature` is defined.
+/// Specifically, when `loggingconfigurationstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LoggingConfigurationStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// State of a logging configuration.
 #[non_exhaustive]
 #[derive(
@@ -1317,8 +1476,8 @@ pub enum LoggingConfigurationStatusCode {
     UpdateFailed,
     /// Logging configuration is being updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LoggingConfigurationStatusCode {
     fn from(s: &str) -> Self {
@@ -1329,7 +1488,9 @@ impl std::convert::From<&str> for LoggingConfigurationStatusCode {
             "DELETING" => LoggingConfigurationStatusCode::Deleting,
             "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
             "UPDATING" => LoggingConfigurationStatusCode::Updating,
-            other => LoggingConfigurationStatusCode::Unknown(other.to_owned()),
+            other => LoggingConfigurationStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1350,7 +1511,7 @@ impl LoggingConfigurationStatusCode {
             LoggingConfigurationStatusCode::Deleting => "DELETING",
             LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
             LoggingConfigurationStatusCode::Updating => "UPDATING",
-            LoggingConfigurationStatusCode::Unknown(s) => s.as_ref(),
+            LoggingConfigurationStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1604,6 +1765,45 @@ impl AlertManagerDefinitionStatus {
     }
 }
 
+/// When writing a match expression against `AlertManagerDefinitionStatusCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let alertmanagerdefinitionstatuscode = unimplemented!();
+/// match alertmanagerdefinitionstatuscode {
+///     AlertManagerDefinitionStatusCode::Active => { /* ... */ },
+///     AlertManagerDefinitionStatusCode::Creating => { /* ... */ },
+///     AlertManagerDefinitionStatusCode::CreationFailed => { /* ... */ },
+///     AlertManagerDefinitionStatusCode::Deleting => { /* ... */ },
+///     AlertManagerDefinitionStatusCode::UpdateFailed => { /* ... */ },
+///     AlertManagerDefinitionStatusCode::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `alertmanagerdefinitionstatuscode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `AlertManagerDefinitionStatusCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `AlertManagerDefinitionStatusCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `AlertManagerDefinitionStatusCode::NewFeature` is defined.
+/// Specifically, when `alertmanagerdefinitionstatuscode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `AlertManagerDefinitionStatusCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// State of an alert manager definition.
 #[non_exhaustive]
 #[derive(
@@ -1628,8 +1828,8 @@ pub enum AlertManagerDefinitionStatusCode {
     UpdateFailed,
     /// Definition is being updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
     fn from(s: &str) -> Self {
@@ -1640,7 +1840,9 @@ impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
             "DELETING" => AlertManagerDefinitionStatusCode::Deleting,
             "UPDATE_FAILED" => AlertManagerDefinitionStatusCode::UpdateFailed,
             "UPDATING" => AlertManagerDefinitionStatusCode::Updating,
-            other => AlertManagerDefinitionStatusCode::Unknown(other.to_owned()),
+            other => AlertManagerDefinitionStatusCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1661,7 +1863,7 @@ impl AlertManagerDefinitionStatusCode {
             AlertManagerDefinitionStatusCode::Deleting => "DELETING",
             AlertManagerDefinitionStatusCode::UpdateFailed => "UPDATE_FAILED",
             AlertManagerDefinitionStatusCode::Updating => "UPDATING",
-            AlertManagerDefinitionStatusCode::Unknown(s) => s.as_ref(),
+            AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

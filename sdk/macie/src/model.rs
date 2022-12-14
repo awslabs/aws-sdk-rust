@@ -364,6 +364,40 @@ impl ClassificationTypeUpdate {
     }
 }
 
+/// When writing a match expression against `S3ContinuousClassificationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3continuousclassificationtype = unimplemented!();
+/// match s3continuousclassificationtype {
+///     S3ContinuousClassificationType::Full => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3continuousclassificationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3ContinuousClassificationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3ContinuousClassificationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3ContinuousClassificationType::NewFeature` is defined.
+/// Specifically, when `s3continuousclassificationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3ContinuousClassificationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -378,14 +412,16 @@ impl ClassificationTypeUpdate {
 pub enum S3ContinuousClassificationType {
     #[allow(missing_docs)] // documentation missing in model
     Full,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3ContinuousClassificationType {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => S3ContinuousClassificationType::Full,
-            other => S3ContinuousClassificationType::Unknown(other.to_owned()),
+            other => S3ContinuousClassificationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -401,7 +437,7 @@ impl S3ContinuousClassificationType {
     pub fn as_str(&self) -> &str {
         match self {
             S3ContinuousClassificationType::Full => "FULL",
-            S3ContinuousClassificationType::Unknown(s) => s.as_ref(),
+            S3ContinuousClassificationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -415,6 +451,41 @@ impl AsRef<str> for S3ContinuousClassificationType {
     }
 }
 
+/// When writing a match expression against `S3OneTimeClassificationType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let s3onetimeclassificationtype = unimplemented!();
+/// match s3onetimeclassificationtype {
+///     S3OneTimeClassificationType::Full => { /* ... */ },
+///     S3OneTimeClassificationType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `s3onetimeclassificationtype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `S3OneTimeClassificationType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `S3OneTimeClassificationType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `S3OneTimeClassificationType::NewFeature` is defined.
+/// Specifically, when `s3onetimeclassificationtype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `S3OneTimeClassificationType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -431,15 +502,17 @@ pub enum S3OneTimeClassificationType {
     Full,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for S3OneTimeClassificationType {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => S3OneTimeClassificationType::Full,
             "NONE" => S3OneTimeClassificationType::None,
-            other => S3OneTimeClassificationType::Unknown(other.to_owned()),
+            other => S3OneTimeClassificationType::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -456,7 +529,7 @@ impl S3OneTimeClassificationType {
         match self {
             S3OneTimeClassificationType::Full => "FULL",
             S3OneTimeClassificationType::None => "NONE",
-            S3OneTimeClassificationType::Unknown(s) => s.as_ref(),
+            S3OneTimeClassificationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

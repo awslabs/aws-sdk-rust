@@ -141,6 +141,41 @@ impl S3EncryptionConfig {
     }
 }
 
+/// When writing a match expression against `EncryptionMode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let encryptionmode = unimplemented!();
+/// match encryptionmode {
+///     EncryptionMode::SseKms => { /* ... */ },
+///     EncryptionMode::SseS3 => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `encryptionmode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `EncryptionMode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `EncryptionMode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `EncryptionMode::NewFeature` is defined.
+/// Specifically, when `encryptionmode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `EncryptionMode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -157,15 +192,15 @@ pub enum EncryptionMode {
     SseKms,
     #[allow(missing_docs)] // documentation missing in model
     SseS3,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EncryptionMode {
     fn from(s: &str) -> Self {
         match s {
             "SSE_KMS" => EncryptionMode::SseKms,
             "SSE_S3" => EncryptionMode::SseS3,
-            other => EncryptionMode::Unknown(other.to_owned()),
+            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -182,7 +217,7 @@ impl EncryptionMode {
         match self {
             EncryptionMode::SseKms => "SSE_KMS",
             EncryptionMode::SseS3 => "SSE_S3",
-            EncryptionMode::Unknown(s) => s.as_ref(),
+            EncryptionMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1460,6 +1495,41 @@ impl CanaryRunStatus {
     }
 }
 
+/// When writing a match expression against `CanaryRunStateReasonCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canaryrunstatereasoncode = unimplemented!();
+/// match canaryrunstatereasoncode {
+///     CanaryRunStateReasonCode::CanaryFailure => { /* ... */ },
+///     CanaryRunStateReasonCode::ExecutionFailure => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canaryrunstatereasoncode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryRunStateReasonCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryRunStateReasonCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryRunStateReasonCode::NewFeature` is defined.
+/// Specifically, when `canaryrunstatereasoncode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryRunStateReasonCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1476,15 +1546,17 @@ pub enum CanaryRunStateReasonCode {
     CanaryFailure,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailure,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryRunStateReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "CANARY_FAILURE" => CanaryRunStateReasonCode::CanaryFailure,
             "EXECUTION_FAILURE" => CanaryRunStateReasonCode::ExecutionFailure,
-            other => CanaryRunStateReasonCode::Unknown(other.to_owned()),
+            other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(
+                other.to_owned(),
+            )),
         }
     }
 }
@@ -1501,7 +1573,7 @@ impl CanaryRunStateReasonCode {
         match self {
             CanaryRunStateReasonCode::CanaryFailure => "CANARY_FAILURE",
             CanaryRunStateReasonCode::ExecutionFailure => "EXECUTION_FAILURE",
-            CanaryRunStateReasonCode::Unknown(s) => s.as_ref(),
+            CanaryRunStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -1515,6 +1587,42 @@ impl AsRef<str> for CanaryRunStateReasonCode {
     }
 }
 
+/// When writing a match expression against `CanaryRunState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canaryrunstate = unimplemented!();
+/// match canaryrunstate {
+///     CanaryRunState::Failed => { /* ... */ },
+///     CanaryRunState::Passed => { /* ... */ },
+///     CanaryRunState::Running => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canaryrunstate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryRunState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryRunState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryRunState::NewFeature` is defined.
+/// Specifically, when `canaryrunstate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryRunState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -1533,8 +1641,8 @@ pub enum CanaryRunState {
     Passed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryRunState {
     fn from(s: &str) -> Self {
@@ -1542,7 +1650,7 @@ impl std::convert::From<&str> for CanaryRunState {
             "FAILED" => CanaryRunState::Failed,
             "PASSED" => CanaryRunState::Passed,
             "RUNNING" => CanaryRunState::Running,
-            other => CanaryRunState::Unknown(other.to_owned()),
+            other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1560,7 +1668,7 @@ impl CanaryRunState {
             CanaryRunState::Failed => "FAILED",
             CanaryRunState::Passed => "PASSED",
             CanaryRunState::Running => "RUNNING",
-            CanaryRunState::Unknown(s) => s.as_ref(),
+            CanaryRunState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2500,6 +2608,51 @@ impl CanaryStatus {
     }
 }
 
+/// When writing a match expression against `CanaryStateReasonCode`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canarystatereasoncode = unimplemented!();
+/// match canarystatereasoncode {
+///     CanaryStateReasonCode::CreateFailed => { /* ... */ },
+///     CanaryStateReasonCode::CreateInProgress => { /* ... */ },
+///     CanaryStateReasonCode::CreatePending => { /* ... */ },
+///     CanaryStateReasonCode::DeleteFailed => { /* ... */ },
+///     CanaryStateReasonCode::DeleteInProgress => { /* ... */ },
+///     CanaryStateReasonCode::InvalidPermissions => { /* ... */ },
+///     CanaryStateReasonCode::RollbackComplete => { /* ... */ },
+///     CanaryStateReasonCode::RollbackFailed => { /* ... */ },
+///     CanaryStateReasonCode::SyncDeleteInProgress => { /* ... */ },
+///     CanaryStateReasonCode::UpdateComplete => { /* ... */ },
+///     CanaryStateReasonCode::UpdateInProgress => { /* ... */ },
+///     CanaryStateReasonCode::UpdatePending => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canarystatereasoncode` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryStateReasonCode::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryStateReasonCode::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryStateReasonCode::NewFeature` is defined.
+/// Specifically, when `canarystatereasoncode` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryStateReasonCode::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2536,8 +2689,8 @@ pub enum CanaryStateReasonCode {
     UpdateInProgress,
     #[allow(missing_docs)] // documentation missing in model
     UpdatePending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
     fn from(s: &str) -> Self {
@@ -2554,7 +2707,9 @@ impl std::convert::From<&str> for CanaryStateReasonCode {
             "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
             "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
             "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
-            other => CanaryStateReasonCode::Unknown(other.to_owned()),
+            other => {
+                CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -2581,7 +2736,7 @@ impl CanaryStateReasonCode {
             CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
             CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
             CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
-            CanaryStateReasonCode::Unknown(s) => s.as_ref(),
+            CanaryStateReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -2608,6 +2763,48 @@ impl AsRef<str> for CanaryStateReasonCode {
     }
 }
 
+/// When writing a match expression against `CanaryState`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let canarystate = unimplemented!();
+/// match canarystate {
+///     CanaryState::Creating => { /* ... */ },
+///     CanaryState::Deleting => { /* ... */ },
+///     CanaryState::Error => { /* ... */ },
+///     CanaryState::Ready => { /* ... */ },
+///     CanaryState::Running => { /* ... */ },
+///     CanaryState::Starting => { /* ... */ },
+///     CanaryState::Stopped => { /* ... */ },
+///     CanaryState::Stopping => { /* ... */ },
+///     CanaryState::Updating => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `canarystate` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `CanaryState::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `CanaryState::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `CanaryState::NewFeature` is defined.
+/// Specifically, when `canarystate` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `CanaryState::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -2638,8 +2835,8 @@ pub enum CanaryState {
     Stopping,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CanaryState {
     fn from(s: &str) -> Self {
@@ -2653,7 +2850,7 @@ impl std::convert::From<&str> for CanaryState {
             "STOPPED" => CanaryState::Stopped,
             "STOPPING" => CanaryState::Stopping,
             "UPDATING" => CanaryState::Updating,
-            other => CanaryState::Unknown(other.to_owned()),
+            other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -2677,7 +2874,7 @@ impl CanaryState {
             CanaryState::Stopped => "STOPPED",
             CanaryState::Stopping => "STOPPING",
             CanaryState::Updating => "UPDATING",
-            CanaryState::Unknown(s) => s.as_ref(),
+            CanaryState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

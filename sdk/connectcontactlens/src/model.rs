@@ -674,6 +674,42 @@ impl CharacterOffsets {
     }
 }
 
+/// When writing a match expression against `SentimentValue`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let sentimentvalue = unimplemented!();
+/// match sentimentvalue {
+///     SentimentValue::Negative => { /* ... */ },
+///     SentimentValue::Neutral => { /* ... */ },
+///     SentimentValue::Positive => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `sentimentvalue` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `SentimentValue::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `SentimentValue::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `SentimentValue::NewFeature` is defined.
+/// Specifically, when `sentimentvalue` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `SentimentValue::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -692,8 +728,8 @@ pub enum SentimentValue {
     Neutral,
     #[allow(missing_docs)] // documentation missing in model
     Positive,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SentimentValue {
     fn from(s: &str) -> Self {
@@ -701,7 +737,7 @@ impl std::convert::From<&str> for SentimentValue {
             "NEGATIVE" => SentimentValue::Negative,
             "NEUTRAL" => SentimentValue::Neutral,
             "POSITIVE" => SentimentValue::Positive,
-            other => SentimentValue::Unknown(other.to_owned()),
+            other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -719,7 +755,7 @@ impl SentimentValue {
             SentimentValue::Negative => "NEGATIVE",
             SentimentValue::Neutral => "NEUTRAL",
             SentimentValue::Positive => "POSITIVE",
-            SentimentValue::Unknown(s) => s.as_ref(),
+            SentimentValue::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

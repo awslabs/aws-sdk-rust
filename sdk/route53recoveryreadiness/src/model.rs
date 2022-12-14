@@ -1310,6 +1310,43 @@ impl ReadinessCheckSummary {
     }
 }
 
+/// When writing a match expression against `Readiness`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let readiness = unimplemented!();
+/// match readiness {
+///     Readiness::NotAuthorized => { /* ... */ },
+///     Readiness::NotReady => { /* ... */ },
+///     Readiness::Ready => { /* ... */ },
+///     Readiness::UnknownValue => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `readiness` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `Readiness::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `Readiness::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `Readiness::NewFeature` is defined.
+/// Specifically, when `readiness` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `Readiness::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 /// <p>The readiness status.</p>
 ///
 /// _Note: `Readiness::Unknown` has been renamed to `::UnknownValue`._
@@ -1332,8 +1369,8 @@ pub enum Readiness {
     Ready,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Readiness {
     fn from(s: &str) -> Self {
@@ -1342,7 +1379,7 @@ impl std::convert::From<&str> for Readiness {
             "NOT_READY" => Readiness::NotReady,
             "READY" => Readiness::Ready,
             "UNKNOWN" => Readiness::UnknownValue,
-            other => Readiness::Unknown(other.to_owned()),
+            other => Readiness::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1361,7 +1398,7 @@ impl Readiness {
             Readiness::NotReady => "NOT_READY",
             Readiness::Ready => "READY",
             Readiness::UnknownValue => "UNKNOWN",
-            Readiness::Unknown(s) => s.as_ref(),
+            Readiness::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

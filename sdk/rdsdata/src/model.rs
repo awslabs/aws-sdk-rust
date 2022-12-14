@@ -541,6 +541,41 @@ impl ColumnMetadata {
     }
 }
 
+/// When writing a match expression against `RecordsFormatType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let recordsformattype = unimplemented!();
+/// match recordsformattype {
+///     RecordsFormatType::Json => { /* ... */ },
+///     RecordsFormatType::None => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `recordsformattype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `RecordsFormatType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `RecordsFormatType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `RecordsFormatType::NewFeature` is defined.
+/// Specifically, when `recordsformattype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `RecordsFormatType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -557,15 +592,17 @@ pub enum RecordsFormatType {
     Json,
     #[allow(missing_docs)] // documentation missing in model
     None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RecordsFormatType {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => RecordsFormatType::Json,
             "NONE" => RecordsFormatType::None,
-            other => RecordsFormatType::Unknown(other.to_owned()),
+            other => {
+                RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -582,7 +619,7 @@ impl RecordsFormatType {
         match self {
             RecordsFormatType::Json => "JSON",
             RecordsFormatType::None => "NONE",
-            RecordsFormatType::Unknown(s) => s.as_ref(),
+            RecordsFormatType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -685,6 +722,41 @@ impl ResultSetOptions {
     }
 }
 
+/// When writing a match expression against `LongReturnType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let longreturntype = unimplemented!();
+/// match longreturntype {
+///     LongReturnType::Long => { /* ... */ },
+///     LongReturnType::String => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `longreturntype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `LongReturnType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `LongReturnType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `LongReturnType::NewFeature` is defined.
+/// Specifically, when `longreturntype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `LongReturnType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -701,15 +773,15 @@ pub enum LongReturnType {
     Long,
     #[allow(missing_docs)] // documentation missing in model
     String,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LongReturnType {
     fn from(s: &str) -> Self {
         match s {
             "LONG" => LongReturnType::Long,
             "STRING" => LongReturnType::String,
-            other => LongReturnType::Unknown(other.to_owned()),
+            other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -726,7 +798,7 @@ impl LongReturnType {
         match self {
             LongReturnType::Long => "LONG",
             LongReturnType::String => "STRING",
-            LongReturnType::Unknown(s) => s.as_ref(),
+            LongReturnType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -740,6 +812,41 @@ impl AsRef<str> for LongReturnType {
     }
 }
 
+/// When writing a match expression against `DecimalReturnType`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let decimalreturntype = unimplemented!();
+/// match decimalreturntype {
+///     DecimalReturnType::DoubleOrLong => { /* ... */ },
+///     DecimalReturnType::String => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `decimalreturntype` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `DecimalReturnType::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `DecimalReturnType::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `DecimalReturnType::NewFeature` is defined.
+/// Specifically, when `decimalreturntype` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `DecimalReturnType::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -756,15 +863,17 @@ pub enum DecimalReturnType {
     DoubleOrLong,
     #[allow(missing_docs)] // documentation missing in model
     String,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DecimalReturnType {
     fn from(s: &str) -> Self {
         match s {
             "DOUBLE_OR_LONG" => DecimalReturnType::DoubleOrLong,
             "STRING" => DecimalReturnType::String,
-            other => DecimalReturnType::Unknown(other.to_owned()),
+            other => {
+                DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
+            }
         }
     }
 }
@@ -781,7 +890,7 @@ impl DecimalReturnType {
         match self {
             DecimalReturnType::DoubleOrLong => "DOUBLE_OR_LONG",
             DecimalReturnType::String => "STRING",
-            DecimalReturnType::Unknown(s) => s.as_ref(),
+            DecimalReturnType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.
@@ -922,6 +1031,45 @@ impl SqlParameter {
     }
 }
 
+/// When writing a match expression against `TypeHint`, it is important to ensure
+/// your code is forward-compatible. That is, if a match arm handles a case for a
+/// feature that is supported by the service but has not been represented as an enum
+/// variant in a current version of SDK, your code should continue to work when you
+/// upgrade SDK to a future version in which the enum does include a variant for that
+/// feature.
+///
+/// Here is an example of how you can make a match expression forward-compatible:
+///
+/// ```text
+/// # let typehint = unimplemented!();
+/// match typehint {
+///     TypeHint::Date => { /* ... */ },
+///     TypeHint::Decimal => { /* ... */ },
+///     TypeHint::Json => { /* ... */ },
+///     TypeHint::Time => { /* ... */ },
+///     TypeHint::Timestamp => { /* ... */ },
+///     TypeHint::Uuid => { /* ... */ },
+///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
+///     _ => { /* ... */ },
+/// }
+/// ```
+/// The above code demonstrates that when `typehint` represents
+/// `NewFeature`, the execution path will lead to the second last match arm,
+/// even though the enum does not contain a variant `TypeHint::NewFeature`
+/// in the current version of SDK. The reason is that the variable `other`,
+/// created by the `@` operator, is bound to
+/// `TypeHint::Unknown(UnknownVariantValue("NewFeature".to_owned()))`
+/// and calling `as_str` on it yields `"NewFeature"`.
+/// This match expression is forward-compatible when executed with a newer
+/// version of SDK where the variant `TypeHint::NewFeature` is defined.
+/// Specifically, when `typehint` represents `NewFeature`,
+/// the execution path will hit the second last match arm as before by virtue of
+/// calling `as_str` on `TypeHint::NewFeature` also yielding `"NewFeature"`.
+///
+/// Explicitly matching on the `Unknown` variant should
+/// be avoided for two reasons:
+/// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
+/// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -946,8 +1094,8 @@ pub enum TypeHint {
     Timestamp,
     #[allow(missing_docs)] // documentation missing in model
     Uuid,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+    /// `Unknown` contains new variants that have been added since this code was generated.
+    Unknown(crate::types::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TypeHint {
     fn from(s: &str) -> Self {
@@ -958,7 +1106,7 @@ impl std::convert::From<&str> for TypeHint {
             "TIME" => TypeHint::Time,
             "TIMESTAMP" => TypeHint::Timestamp,
             "UUID" => TypeHint::Uuid,
-            other => TypeHint::Unknown(other.to_owned()),
+            other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -979,7 +1127,7 @@ impl TypeHint {
             TypeHint::Time => "TIME",
             TypeHint::Timestamp => "TIMESTAMP",
             TypeHint::Uuid => "UUID",
-            TypeHint::Unknown(s) => s.as_ref(),
+            TypeHint::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` values of the enum members.

@@ -67,17 +67,10 @@ pub mod output;
 /// Paginators for the service
 pub mod paginator;
 pub mod presigning;
+/// Data primitives referenced by other data types.
+pub mod types;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-/// Re-exported types from supporting crates.
-pub mod types {
-    pub use aws_smithy_http::byte_stream::AggregatedBytes;
-    pub use aws_smithy_http::byte_stream::ByteStream;
-    pub use aws_smithy_http::result::SdkError;
-    pub use aws_smithy_types::error::display::DisplayErrorContext;
-    pub use aws_smithy_types::Blob;
-    pub use aws_smithy_types::DateTime;
-}
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("polly", PKG_VERSION);
 pub use aws_smithy_http::endpoint::Endpoint;
