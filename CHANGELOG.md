@@ -1,4 +1,131 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+December 14th, 2022
+===================
+**Breaking Changes:**
+- 🐛⚠ ([smithy-rs#1847](https://github.com/awslabs/smithy-rs/issues/1847)) Support Sigv4 signature generation on PowerPC 32 and 64 bit. This architecture cannot compile `ring`, so the implementation has been updated to rely on `hamc` + `sha2` to achive the same result with broader platform compatibility and higher performance. We also updated the CI which is now running as many tests as possible against i686 and PowerPC 32 and 64 bit.
+- ⚠ ([smithy-rs#1225](https://github.com/awslabs/smithy-rs/issues/1225), [smithy-rs#1918](https://github.com/awslabs/smithy-rs/issues/1918)) `<service>::Client::from_conf_conn` has been removed since it's now possible to configure the connection from the
+    shared and service configs. To update your code, pass connections to the `http_connector` method during config creation.
+
+    <details>
+    <summary>Example</summary>
+
+    before:
+
+    ```rust
+        let conf = aws_sdk_sts::Config::builder()
+            // The builder has no defaults but setting other fields is omitted for brevity...
+            .build();
+        let (server, request) = capture_request(None);
+        let client = aws_sdk_sts::Client::from_conf_conn(conf, server);
+    ```
+
+    after:
+
+    ```rust
+        let (server, request) = capture_request(None);
+        let conf = aws_sdk_sts::Config::builder()
+            // The builder has no defaults but setting other fields is omitted for brevity...
+            .http_connector(server)
+            .build();
+        let client = aws_sdk_sts::Client::from_conf(conf);
+    ```
+
+    </details>
+- ⚠ ([smithy-rs#1935](https://github.com/awslabs/smithy-rs/issues/1935)) Removed re-export of `aws_smithy_client::retry::Config` from the `middleware` module.
+- ⚠ ([smithy-rs#1926](https://github.com/awslabs/smithy-rs/issues/1926), [smithy-rs#1819](https://github.com/awslabs/smithy-rs/issues/1819)) Several breaking changes have been made to errors. See [the upgrade guide](https://github.com/awslabs/aws-sdk-rust/issues/657) for more information.
+- ⚠ ([smithy-rs#1945](https://github.com/awslabs/smithy-rs/issues/1945)) Generate enums that guide the users to write match expressions in a forward-compatible way.
+    Before this change, users could write a match expression against an enum in a non-forward-compatible way:
+    ```rust
+    match some_enum {
+        SomeEnum::Variant1 => { /* ... */ },
+        SomeEnum::Variant2 => { /* ... */ },
+        Unknown(value) if value == "NewVariant" => { /* ... */ },
+        _ => { /* ... */ },
+    }
+    ```
+    This code can handle a case for "NewVariant" with a version of SDK where the enum does not yet include `SomeEnum::NewVariant`, but breaks with another version of SDK where the enum defines `SomeEnum::NewVariant` because the execution will hit a different match arm, i.e. the last one.
+    After this change, users are guided to write the above match expression as follows:
+    ```rust
+    match some_enum {
+        SomeEnum::Variant1 => { /* ... */ },
+        SomeEnum::Variant2 => { /* ... */ },
+        other @ _ if other.as_str() == "NewVariant" => { /* ... */ },
+        _ => { /* ... */ },
+    }
+    ```
+    This is forward-compatible because the execution will hit the second last match arm regardless of whether the enum defines `SomeEnum::NewVariant` or not.
+- ⚠ ([smithy-rs#1984](https://github.com/awslabs/smithy-rs/issues/1984), [smithy-rs#1496](https://github.com/awslabs/smithy-rs/issues/1496)) Functions on `aws_smithy_http::endpoint::Endpoint` now return a `Result` instead of panicking.
+- ⚠ ([smithy-rs#1984](https://github.com/awslabs/smithy-rs/issues/1984), [smithy-rs#1496](https://github.com/awslabs/smithy-rs/issues/1496)) `Endpoint::mutable` now takes `impl AsRef<str>` instead of `Uri`. For the old functionality, use `Endpoint::mutable_uri`.
+- ⚠ ([smithy-rs#1984](https://github.com/awslabs/smithy-rs/issues/1984), [smithy-rs#1496](https://github.com/awslabs/smithy-rs/issues/1496)) `Endpoint::immutable` now takes `impl AsRef<str>` instead of `Uri`. For the old functionality, use `Endpoint::immutable_uri`.
+- ⚠ ([smithy-rs#1983](https://github.com/awslabs/smithy-rs/issues/1983), [smithy-rs#2029](https://github.com/awslabs/smithy-rs/issues/2029)) Implementation of the Debug trait for container shapes now redacts what is printed per the sensitive trait.
+- ⚠ ([smithy-rs#2065](https://github.com/awslabs/smithy-rs/issues/2065)) `SdkBody` callbacks have been removed. If you were using these, please [file an issue](https://github.com/awslabs/aws-sdk-rust/issues/new) so that we can better understand your use-case and provide the support you need.
+- ⚠ ([smithy-rs#2063](https://github.com/awslabs/smithy-rs/issues/2063)) `AwsEndpointStage`, a middleware which set endpoints and auth has been split into `AwsAuthStage` and `SmithyEndpointStage`. Related types have also been renamed.
+- ⚠ ([smithy-rs#1989](https://github.com/awslabs/smithy-rs/issues/1989)) The Unit type for a Union member is no longer rendered. The serializers and parsers generated now function accordingly in the absence of the inner data associated with the Unit type.
+
+**New this release:**
+- 🎉 ([smithy-rs#1225](https://github.com/awslabs/smithy-rs/issues/1225), [smithy-rs#1918](https://github.com/awslabs/smithy-rs/issues/1918)) <details>
+    <summary>The HTTP connector used when making requests is now configurable through `SdkConfig`.</summary>
+
+    ```rust
+    use std::time::Duration;
+    use aws_smithy_client::{Client, hyper_ext};
+    use aws_smithy_client::erase::DynConnector;
+    use aws_smithy_client::http_connector::ConnectorSettings;
+    use aws_types::SdkConfig;
+
+    let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+        .with_webpki_roots()
+        .https_only()
+        .enable_http1()
+        .enable_http2()
+        .build();
+
+    let smithy_connector = hyper_ext::Adapter::builder()
+        // Optionally set things like timeouts as well
+        .connector_settings(
+            ConnectorSettings::builder()
+                .connect_timeout(Duration::from_secs(5))
+                .build()
+        )
+        .build(https_connector);
+
+    let sdk_config = aws_config::from_env()
+        .http_connector(smithy_connector)
+        .load()
+        .await;
+
+    let client = Client::new(&sdk_config);
+
+    // When sent, this operation will go through the custom smithy connector instead of
+    // the default HTTP connector.
+    let op = client
+        .get_object()
+        .bucket("some-test-bucket")
+        .key("test.txt")
+        .send()
+        .await
+        .unwrap();
+    ```
+
+    </details>
+- 🎉 ([aws-sdk-rust#641](https://github.com/awslabs/aws-sdk-rust/issues/641), [smithy-rs#1892](https://github.com/awslabs/smithy-rs/issues/1892), @albe-rosado) Ability to add an inline policy or a list of policy ARNs to the `AssumeRoleProvider` builder.
+- 🎉 ([smithy-rs#2044](https://github.com/awslabs/smithy-rs/issues/2044), [smithy-rs#371](https://github.com/awslabs/smithy-rs/issues/371)) Fixed and improved the request `tracing` span hierarchy to improve log messages, profiling, and debuggability.
+- ([smithy-rs#1890](https://github.com/awslabs/smithy-rs/issues/1890)) Add test to exercise excluded headers in aws-sigv4.
+- ([smithy-rs#1801](https://github.com/awslabs/smithy-rs/issues/1801)) Add test ensuring that a response will error if the response body returns an EOF before the entire body has been read.
+- ([smithy-rs#1923](https://github.com/awslabs/smithy-rs/issues/1923)) Fix cargo audit issue on criterion.
+- ([smithy-rs#1918](https://github.com/awslabs/smithy-rs/issues/1918)) Add `to_vec` method to `aws_smithy_http::byte_stream::AggregatedBytes`.
+- 🐛 ([smithy-rs#1957](https://github.com/awslabs/smithy-rs/issues/1957)) It was possible in some cases to send some S3 requests without a required upload ID, causing a risk of unintended data
+    deletion and modification. Now, when an operation has query parameters that are marked as required, the omission of
+    those query parameters will cause a BuildError, preventing the invalid operation from being sent.
+- 🐛 ([smithy-rs#2018](https://github.com/awslabs/smithy-rs/issues/2018)) Normalize URI paths per RFC3986 when constructing canonical requests, except for S3.
+- ([smithy-rs#2064](https://github.com/awslabs/smithy-rs/issues/2064), [aws-sdk-rust#632](https://github.com/awslabs/aws-sdk-rust/issues/632)) The SDK clients now default max idle connections to 70 (previously unlimited) to reduce the likelihood of hitting max file handles in AWS Lambda.
+- ([smithy-rs#2057](https://github.com/awslabs/smithy-rs/issues/2057), [smithy-rs#371](https://github.com/awslabs/smithy-rs/issues/371)) Add more `tracing` events to signing and event streams
+- ([smithy-rs#2062](https://github.com/awslabs/smithy-rs/issues/2062)) Log an `info` on credentials cache miss and adjust level of some credential `tracing` spans/events.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @albe-rosado ([aws-sdk-rust#641](https://github.com/awslabs/aws-sdk-rust/issues/641), [smithy-rs#1892](https://github.com/awslabs/smithy-rs/issues/1892))
+
 October 26th, 2022
 ==================
 **Breaking Changes:**
